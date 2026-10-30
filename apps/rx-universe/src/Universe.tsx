@@ -5,6 +5,7 @@ import * as THREE from 'three';
 
 type Kind = 'organization' | 'technology' | 'hypothesis' | 'evidence';
 type Position = [number, number, number];
+type LabelPortal = React.RefObject<HTMLDivElement | null>;
 interface GraphNode { id: string; title: string; subtitle?: string; kind: Kind; position: Position; size: number }
 export interface UniverseProps { mode: '3d' | '2d'; filter: string; search: string; onSelect: (id: string) => void }
 const colors: Record<Kind, string> = { organization: '#4ce8c4', technology: '#62acff', hypothesis: '#a896f4', evidence: '#d8ab61' };
@@ -64,7 +65,7 @@ function StarCloud() {
   </group>;
 }
 
-function Node({ node, active, onSelect }: { node: GraphNode; active: boolean; onSelect: (id: string) => void }) {
+function Node({ node, active, onSelect, portal }: { node: GraphNode; active: boolean; onSelect: (id: string) => void; portal: LabelPortal }) {
   const [hover, setHover] = useState(false);
   useEffect(() => () => { document.body.style.cursor = ''; }, []);
   useEffect(() => { if (!active) { setHover(false); document.body.style.cursor = ''; } }, [active]);
@@ -77,7 +78,7 @@ function Node({ node, active, onSelect }: { node: GraphNode; active: boolean; on
     </mesh>
     <mesh><sphereGeometry args={[node.size * 1.65, 24, 24]} /><meshBasicMaterial color={color} transparent opacity={active ? (hover ? .16 : .065) : .015} depthWrite={false} /></mesh>
     {primary && <mesh rotation={[Math.PI / 2.8, .2, .3]}><torusGeometry args={[node.size * 2.1, .008, 8, 64]} /><meshBasicMaterial color={color} transparent opacity={active ? .55 : .06} /></mesh>}
-    {active && <Html center position={[0, -node.size - (primary ? .38 : .22), 0]} distanceFactor={15} style={{ pointerEvents: 'none' }}>
+    {active && <Html portal={portal as React.ComponentProps<typeof Html>['portal']} center position={[0, -node.size - (primary ? .38 : .22), 0]} distanceFactor={15} style={{ pointerEvents: 'none' }}>
       <button type="button" tabIndex={-1} onClick={() => onSelect(node.id)} style={{ pointerEvents: 'auto', color: primary ? '#deeee9' : color, background: primary ? 'rgba(8,20,22,.72)' : 'rgba(8,18,21,.53)', border: 'none', padding: primary ? '6px 9px' : '3px 6px', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: 'inherit', fontSize: primary ? 11 : 9, letterSpacing: primary ? '1px' : '.15px', fontWeight: primary ? 600 : 400, textAlign: 'center', opacity: primary || hover ? 1 : .78 }}>
         {node.title}{primary && <span style={{ display: 'block', color: '#78958e', fontSize: 8, letterSpacing: '.2px', marginTop: 5 }}>{node.subtitle}</span>}
       </button>
@@ -106,12 +107,12 @@ function ContextLossFallback({ onLost }: { onLost: () => void }) {
   }, [gl, onLost]);
   return null;
 }
-function Scene({ filter, search, onSelect }: Omit<UniverseProps, 'mode'>) {
+function Scene({ filter, search, onSelect, portal }: Omit<UniverseProps, 'mode'> & { portal: LabelPortal }) {
   const activeIds = new Set(nodes.filter(n => matches(n, filter, search)).map(n => n.id));
   return <>
     <StarCloud />
     {connections.map(([a, b]) => <GraphLink key={`${a}-${b}`} from={byId[a]} to={byId[b]} active={activeIds.has(a) && activeIds.has(b)} onSelect={onSelect} />)}
-    {nodes.map(node => <Node key={node.id} node={node} active={activeIds.has(node.id)} onSelect={onSelect} />)}
+    {nodes.map(node => <Node key={node.id} node={node} active={activeIds.has(node.id)} onSelect={onSelect} portal={portal} />)}
     <OrbitControls makeDefault enablePan enableZoom minDistance={8} maxDistance={25} maxPolarAngle={Math.PI * .8} minPolarAngle={Math.PI * .2} enableDamping={false} />
   </>;
 }
@@ -152,6 +153,8 @@ export default function Universe({ mode, filter, search, onSelect }: UniversePro
   const [keyboard, setKeyboard] = useState(false);
   const listId = useId();
   const listToggle = useRef<HTMLButtonElement>(null);
+  const [labelHost, setLabelHost] = useState<HTMLDivElement | null>(null);
+  const labelPortal = useMemo<LabelPortal>(() => ({ current: labelHost }), [labelHost]);
   const flat = <FlatGraph filter={filter} search={search} onSelect={onSelect} />;
   const activeNodes = nodes.filter(n => matches(n, filter, search));
   const activeIds = new Set(activeNodes.map(n => n.id));
@@ -159,9 +162,11 @@ export default function Universe({ mode, filter, search, onSelect }: UniversePro
   return <div className="universe-visual" style={{ position: 'relative', width: '100%', height: '100%', minHeight: 330, isolation: 'isolate', background: 'radial-gradient(ellipse at 48% 47%, rgba(20,59,58,.1), transparent 70%)' }}>
     <style>{`.universe-visual [role=button]:focus-visible circle:last-of-type { stroke: #fff; stroke-width: 2px; } .universe-visual button:focus-visible { outline: 2px solid #76d9c1; outline-offset: 3px; } .universe-visual .rx-link:focus-visible .rx-link-line, .universe-visual .rx-link:hover .rx-link-line { stroke: #d6fff2; stroke-width: 2px; opacity: 1; }`}</style>
     <div aria-hidden="true" style={{ position: 'absolute', inset: 0, zIndex: -1, opacity: .14, backgroundImage: 'radial-gradient(#78a09c .55px, transparent .55px)', backgroundSize: '24px 24px' }} />
-    {mode === '3d' && webgl ? <GraphBoundary fallback={flat}><Canvas camera={{ position: [0, .15, 15], fov: 40 }} dpr={[1, 1.5]} frameloop="demand" gl={{ antialias: true, alpha: true }} style={{ background: 'transparent' }}><ContextLossFallback onLost={() => setWebgl(false)} /><Scene filter={filter} search={search} onSelect={onSelect} /></Canvas></GraphBoundary> : flat}
-    <button type="button" ref={listToggle} onClick={() => setKeyboard(v => !v)} aria-expanded={keyboard} aria-controls={listId} style={{ position: 'absolute', right: 14, bottom: 30, padding: '5px 8px', border: '1px solid #263a3a', borderRadius: 4, color: '#92aaa4', background: '#0b171b', fontFamily: 'inherit', fontSize: 9, cursor: 'pointer' }}>노드 목록 {keyboard ? '−' : '+'}</button>
-    {keyboard && <div id={listId} aria-label="그래프 노드와 연결 목록" onKeyDown={event => { if (event.key === 'Escape') { setKeyboard(false); listToggle.current?.focus(); } }} style={{ position: 'absolute', right: 14, bottom: 61, maxHeight: 280, overflow: 'auto', width: 230, padding: 7, border: '1px solid #2b4140', background: '#0c181deF', borderRadius: 5 }}><div style={{ padding: '6px 7px', fontSize: 10, color: '#849b96' }}>노드 선택</div>{activeNodes.map(n => <button type="button" key={n.id} onClick={() => onSelect(n.id)} style={{ width: '100%', textAlign: 'left', background: 'transparent', border: 'none', color: colors[n.kind], padding: '8px 7px', fontSize: 11, cursor: 'pointer' }}>{n.title}</button>)}{activeConnections.length > 0 && <><div style={{ padding: '12px 7px 6px', fontSize: 10, color: '#849b96', borderTop: '1px solid #263a3a', marginTop: 5 }}>연결 근거 · 검증 전</div>{activeConnections.map(([a, b]) => <button type="button" key={`${a}-${b}`} onClick={() => onSelect('evidence')} aria-label={`${byId[a].title}와 ${byId[b].title} 연결 근거 보기`} style={{ width: '100%', textAlign: 'left', background: 'transparent', border: 'none', color: '#b6c5c0', padding: '8px 7px', fontSize: 10, cursor: 'pointer' }}>{byId[a].title} ↔ {byId[b].title}</button>)}</>}{!activeNodes.length && <span style={{ color: '#93a09f', fontSize: 11 }}>일치하는 노드가 없습니다.</span>}</div>}
+    {/* Drei owns this host's label children; React and Canvas never reconcile them. */}
+    <div ref={setLabelHost} className="universe-label-portal" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', overflow: 'hidden' }} />
+    {mode === '3d' && webgl ? labelHost && <GraphBoundary fallback={flat}><Canvas camera={{ position: [0, .15, 15], fov: 40 }} dpr={[1, 1.5]} frameloop="demand" gl={{ antialias: true, alpha: true }} style={{ background: 'transparent' }}><ContextLossFallback onLost={() => setWebgl(false)} /><Scene filter={filter} search={search} onSelect={onSelect} portal={labelPortal} /></Canvas></GraphBoundary> : flat}
+    <button type="button" ref={listToggle} onClick={() => setKeyboard(v => !v)} aria-expanded={keyboard} aria-controls={listId} style={{ position: 'absolute', right: 14, bottom: 30, zIndex: 2, padding: '5px 8px', border: '1px solid #263a3a', borderRadius: 4, color: '#92aaa4', background: '#0b171b', fontFamily: 'inherit', fontSize: 9, cursor: 'pointer' }}>노드 목록 {keyboard ? '−' : '+'}</button>
+    {keyboard && <div id={listId} aria-label="그래프 노드와 연결 목록" onKeyDown={event => { if (event.key === 'Escape') { setKeyboard(false); listToggle.current?.focus(); } }} style={{ position: 'absolute', right: 14, bottom: 61, zIndex: 2, maxHeight: 280, overflow: 'auto', width: 230, padding: 7, border: '1px solid #2b4140', background: '#0c181deF', borderRadius: 5 }}><div style={{ padding: '6px 7px', fontSize: 10, color: '#849b96' }}>노드 선택</div>{activeNodes.map(n => <button type="button" key={n.id} onClick={() => onSelect(n.id)} style={{ width: '100%', textAlign: 'left', background: 'transparent', border: 'none', color: colors[n.kind], padding: '8px 7px', fontSize: 11, cursor: 'pointer' }}>{n.title}</button>)}{activeConnections.length > 0 && <><div style={{ padding: '12px 7px 6px', fontSize: 10, color: '#849b96', borderTop: '1px solid #263a3a', marginTop: 5 }}>연결 근거 · 검증 전</div>{activeConnections.map(([a, b]) => <button type="button" key={`${a}-${b}`} onClick={() => onSelect('evidence')} aria-label={`${byId[a].title}와 ${byId[b].title} 연결 근거 보기`} style={{ width: '100%', textAlign: 'left', background: 'transparent', border: 'none', color: '#b6c5c0', padding: '8px 7px', fontSize: 10, cursor: 'pointer' }}>{byId[a].title} ↔ {byId[b].title}</button>)}</>}{!activeNodes.length && <span style={{ color: '#93a09f', fontSize: 11 }}>일치하는 노드가 없습니다.</span>}</div>}
     {!activeNodes.length && <div role="status" style={{ position: 'absolute', inset: '40% 20% auto', textAlign: 'center', color: '#acb9b5', fontSize: 13, padding: 15, background: '#0b171be6', border: '1px solid #273c3a', borderRadius: 6 }}>검색 조건에 맞는 노드가 없습니다.</div>}
   </div>;
 }

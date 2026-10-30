@@ -14,10 +14,19 @@ let server;
 let browser;
 let currentPage;
 let serverLog = '';
+const pendingDiagnostics = new Set();
 await mkdir(output, { recursive: true });
 
 function monitor(page, label) {
-  page.on('pageerror', error => report.page_errors.push({ page: label, message: error.message }));
+  page.on('pageerror', error => {
+    const entry = { page: label, message: error.message, stack: error.stack, timestamp: new Date().toISOString(), url: page.url(), heading: null };
+    report.page_errors.push(entry);
+    const pending = page.locator('main h1').textContent({ timeout: 2_000 })
+      .then(heading => { entry.heading = heading; })
+      .catch(() => { entry.heading = '(unavailable during navigation)'; });
+    pendingDiagnostics.add(pending);
+    void pending.finally(() => pendingDiagnostics.delete(pending));
+  });
   page.on('console', message => {
     if (message.type() === 'error') report.console_errors.push({ page: label, message: message.text(), location: message.location() });
   });
@@ -71,6 +80,7 @@ try {
   await page.goto(previewUrl, { waitUntil: 'networkidle' });
   await expect(page.locator('main h1')).toContainText('Command Center');
   await expect(page.locator('.graph-stage canvas, .graph-stage svg[role="group"]')).toHaveCount(1);
+  await screenshot(page, 'desktop-3d-command-center.png');
   report.checks.push('Desktop production entry and graph renderer loaded');
 
   for (const title of titles) {
@@ -152,6 +162,7 @@ try {
 
   // Aborted requests caused by normal navigation/unmount are not application failures.
   const failedRequests = report.failed_requests.filter(item => !item.error?.includes('ERR_ABORTED'));
+  await Promise.allSettled([...pendingDiagnostics]);
   assert.deepEqual(report.page_errors, [], 'Uncaught browser errors');
   assert.deepEqual(report.console_errors, [], 'Browser console errors');
   assert.deepEqual(failedRequests, [], 'Failed browser requests');
@@ -165,6 +176,7 @@ try {
   console.error(report.failure);
   process.exitCode = 1;
 } finally {
+  await Promise.allSettled([...pendingDiagnostics]);
   report.finished_at = new Date().toISOString();
   await writeFile(path.join(output, 'browser-report.json'), JSON.stringify(report, null, 2));
   if (serverLog) await writeFile(path.join(output, 'preview-server.log'), serverLog);
