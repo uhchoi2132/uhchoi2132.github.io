@@ -3,7 +3,7 @@
     "window_start": "2025-10-30",
     "window_end": "2026-10-30",
     "researched_at": "2026-10-30",
-    "snapshot_id": "rx-research-20261030-v1",
+    "snapshot_id": "rx-research-20261030-v2",
     "coverage_note": "2025-10-30~2026-10-30의 삼성 RX 관련 공개자료를 여러 출처군에서 조사한 수동 스냅샷입니다. 검색·원문 확인·출처 계보·상업화 단계와 미확인 영역을 기록했으며, 누락률이나 전수성은 실측하지 않았습니다.",
     "query_count": 133,
     "coverage_gaps": [
@@ -218,17 +218,17 @@
       {
         "kept": "media-001",
         "merged": "sds-012",
-        "reason": "Same source URL; www and query order normalized"
+        "reason": "Same source URL; distinct claims and entity tags preserved"
       },
       {
         "kept": "mi-020",
         "merged": "media-005",
-        "reason": "Same source URL; www and query order normalized"
+        "reason": "Same source URL; distinct claims and entity tags preserved"
       },
       {
         "kept": "sds-002",
         "merged": "tech-014",
-        "reason": "Same source URL; www and query order normalized"
+        "reason": "Same source URL; distinct claims and entity tags preserved"
       }
     ],
     "automatic_collection_status": "not_connected",
@@ -255,7 +255,9 @@
         "mes",
         "robot",
         "api",
-        "platform"
+        "platform",
+        "task",
+        "partner"
       ],
       "summary_ko": "리얼 서밋 현장 보도는 로봇 학습·데이터 관리와 다기종 운영을 연결하는 플랫폼 구상을 설명한다. 삼성SDS 발표자는 여러 로봇의 연속 운용이 어렵고 제조용 피지컬 AI가 아직 완성 단계가 아니라고 밝혔다.",
       "excerpt": "제조 현장에서 실제로 여러 로봇을 운영하는 피지컬 AI는 아직 완성 단계가 아니다",
@@ -274,6 +276,33 @@
       "evidence_locator": "2026-09-08 기사 본문, 배순민 발표·플랫폼 구성·현장 시연",
       "origin_key": "https://zdnet.co.kr/view/?no=20260908143333",
       "event_key": "real-summit-2026-09-08",
+      "claims": [
+        {
+          "text": "ZDNet은 삼성SDS 발표자가 제조 현장의 다중 로봇 운용용 피지컬 AI를 아직 완성 단계가 아니라고 설명했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:media-001",
+          "origin_record_id": "media-001",
+          "verification": "primary_read",
+          "evidence_locator": "2026-09-08 기사 본문, 배순민 발표·플랫폼 구성·현장 시연",
+          "limitations": [
+            "행사 시연 및 발표 내용이며 90일 상시 운영·복구시간·사람 개입률 실측 근거가 아니다.",
+            "플랫폼 구상과 인터페이스 표준화 계획을 공개 API 출시로 해석하지 않는다."
+          ]
+        },
+        {
+          "text": "ZDNet은 삼성SDS의 준비 중인 로봇 플랫폼이 인텔리전스와 플릿 영역으로 구성된다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:sds-012",
+          "origin_record_id": "sds-012",
+          "verification": "primary_read",
+          "evidence_locator": "플랫폼 인텔리전스·플릿, MES 연계, D-ART 본문",
+          "limitations": [
+            "현장 기자 보도이며 공개 API·세부 프로토콜 명세는 아니다.",
+            "10개 파트너 협력 계획을 10개 고객 또는 10개 유료 배포로 해석하지 않는다.",
+            "24시간·100대 언급은 운영 과제 설명이며 달성 KPI가 아니다."
+          ]
+        }
+      ],
       "duplicate_record_ids": [
         "sds-012"
       ]
@@ -310,7 +339,21 @@
       ],
       "evidence_locator": "기사 본문 안대정 부사장 질의응답·2027년 출시 계획; AI 자동요약 제외",
       "origin_key": "https://www.newspim.com/news/view/20260908000734",
-      "event_key": "real-summit-2026-09-08"
+      "event_key": "real-summit-2026-09-08",
+      "claims": [
+        {
+          "text": "뉴스핌 보도의 생산라인 1,000여 개와 MES 고객 430곳은 기존 사업 기반이며 로봇 플랫폼 유료 배포 실적으로 제시된 수치가 아니다.",
+          "kind": "media_report",
+          "id": "claim:media-002",
+          "origin_record_id": "media-002",
+          "verification": "primary_read",
+          "evidence_locator": "기사 본문 안대정 부사장 질의응답·2027년 출시 계획; AI 자동요약 제외",
+          "limitations": [
+            "언론의 현장 질의응답 보도이며 계약 원문을 확인한 자료가 아니다.",
+            "기존 MES 고객 수를 RX 고객 수·RX 반복매출로 합산하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "media",
@@ -343,7 +386,21 @@
       ],
       "evidence_locator": "기사 본문 10조 원 투자 질문에 대한 대표이사 답변",
       "origin_key": "https://zdnet.co.kr/view/?no=20260908122517",
-      "event_key": "real-summit-2026-09-08"
+      "event_key": "real-summit-2026-09-08",
+      "claims": [
+        {
+          "text": "ZDNet은 삼성SDS의 10조 원 계획이 여러 사업을 포괄한다고 보도했으며 이를 RX 소프트웨어 전용 예산으로 식별할 근거는 이 자료에 없다.",
+          "kind": "media_report",
+          "id": "claim:media-003",
+          "origin_record_id": "media-003",
+          "verification": "primary_read",
+          "evidence_locator": "기사 본문 10조 원 투자 질문에 대한 대표이사 답변",
+          "limitations": [
+            "전사 투자 계획을 RX 소프트웨어 예산·매출로 변환하지 않는다.",
+            "기사 본문을 직접 읽었으며 삽입 영상 전체를 시청한 기록은 아니다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "media",
@@ -375,7 +432,21 @@
         "보도에 언급된 거래액은 이 기록에서 공시 원문으로 재검증하지 않았으므로 RX 매출 지표로 등록하지 않는다."
       ],
       "evidence_locator": "기사의 '양사 역할 분담, 아직 비공개' 단락·회사 관계자 답변",
-      "origin_key": "https://www.smarttoday.co.kr/ko-kr/articles/112188"
+      "origin_key": "https://www.smarttoday.co.kr/ko-kr/articles/112188",
+      "claims": [
+        {
+          "text": "스마트투데이는 레인보우로보틱스가 고객별 제품 구성과 공급 용도·사업장 정보를 공개하기 어렵다고 답했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:media-004",
+          "origin_record_id": "media-004",
+          "verification": "primary_read",
+          "evidence_locator": "기사의 '양사 역할 분담, 아직 비공개' 단락·회사 관계자 답변",
+          "limitations": [
+            "미공개 역할 분담을 지분 관계만으로 추정하지 않는다.",
+            "보도에 언급된 거래액은 이 기록에서 공시 원문으로 재검증하지 않았으므로 RX 매출 지표로 등록하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "id": "mi-001",
@@ -409,7 +480,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "본문 75–118행(게시일·행사), 218–259행(로봇 협력·향후 플랫폼 계획)"
+      "evidence_locator": "본문 75–118행(게시일·행사), 218–259행(로봇 협력·향후 플랫폼 계획)",
+      "claims": [
+        {
+          "text": "미라콤은 REAL SUMMIT 2026에서 MES와 Robot Orchestration Platform을 연계할 계획을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:mi-001",
+          "origin_record_id": "mi-001",
+          "verification": "primary_read",
+          "evidence_locator": "본문 75–118행(게시일·행사), 218–259행(로봇 협력·향후 플랫폼 계획)",
+          "limitations": [
+            "향후 계획이며 범용 API 출시나 모든 관계사 적용 완료를 뜻하지 않음",
+            "앨리스 M1은 행사 전시이며 장기 생산 운영 증거가 아님"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-002",
@@ -442,7 +527,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "게시일 77행; AMXPO 행사 99–123행; 다음 단계 설명 510–528행"
+      "evidence_locator": "게시일 77행; AMXPO 행사 99–123행; 다음 단계 설명 510–528행",
+      "claims": [
+        {
+          "text": "미라콤이 공개한 자동차 안전부품 자재 공급 사례의 실제 피킹·이송은 작업자가 수행한다.",
+          "kind": "official_statement",
+          "id": "claim:mi-002",
+          "origin_record_id": "mi-002",
+          "verification": "primary_read",
+          "evidence_locator": "게시일 77행; AMXPO 행사 99–123행; 다음 단계 설명 510–528행",
+          "limitations": [
+            "고객 실명·계약금액·유료 운영기간 미공개",
+            "AI 구축 사례를 로봇 무인화 완료 사례로 승격할 수 없음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-003",
@@ -474,7 +573,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "제조 로보틱스 본문, RCS(Robot Control System) 설명 107–109행"
+      "evidence_locator": "제조 로보틱스 본문, RCS(Robot Control System) 설명 107–109행",
+      "claims": [
+        {
+          "text": "미라콤은 RCS를 제조·물류 로봇의 작업과 상태를 통합 제어·관리하는 시스템으로 설명한다.",
+          "kind": "official_statement",
+          "id": "claim:mi-003",
+          "origin_record_id": "mi-003",
+          "verification": "primary_read",
+          "evidence_locator": "제조 로보틱스 본문, RCS(Robot Control System) 설명 107–109행",
+          "limitations": [
+            "게시일 미표시로 최근 1년 신규 발표 집계에서 제외",
+            "SDS Job/Task 계층과의 정식 인터페이스 규격·지원 모델 목록은 이 문서로 확인되지 않음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-004",
@@ -508,7 +621,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "94행 소유·제품 표기; 107–127행 MCS/ACS 주요 기능"
+      "evidence_locator": "94행 소유·제품 표기; 107–127행 MCS/ACS 주요 기능",
+      "claims": [
+        {
+          "text": "미라콤 제품문서는 Nexplant MCS를 삼성SDS 솔루션으로 명시한다.",
+          "kind": "official_statement",
+          "id": "claim:mi-004",
+          "origin_record_id": "mi-004",
+          "verification": "primary_read",
+          "evidence_locator": "94행 소유·제품 표기; 107–127행 MCS/ACS 주요 기능",
+          "limitations": [
+            "게시일 미표시",
+            "기존 물류제어 기능이 신규 RX 공통 API 또는 SDS 로봇 오케스트레이션 출시를 증명하지 않음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-005",
@@ -541,7 +668,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "플랫폼 설명 122–175행"
+      "evidence_locator": "플랫폼 설명 122–175행",
+      "claims": [
+        {
+          "text": "미라콤은 Nexplant MESplus 플랫폼의 기능 확장 수단으로 Open API를 안내한다.",
+          "kind": "official_statement",
+          "id": "claim:mi-005",
+          "origin_record_id": "mi-005",
+          "verification": "primary_read",
+          "evidence_locator": "플랫폼 설명 122–175행",
+          "limitations": [
+            "게시일 미표시",
+            "MES Open API 표시는 그룹 공통 로봇 API 공식화와 동일하지 않음",
+            "API 엔드포인트·계약·지원 로봇 명세 미확인"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-006",
@@ -576,7 +718,23 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "기사승인 39행; 65–98행"
+      "evidence_locator": "기사승인 39행; 65–98행",
+      "claims": [
+        {
+          "text": "BI KOREA는 미라콤이 6개 제조기업 대상 AX·RX 현장 실증을 추진한다고 발표했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:mi-006",
+          "origin_record_id": "mi-006",
+          "verification": "primary_read",
+          "evidence_locator": "기사승인 39행; 65–98행",
+          "limitations": [
+            "사업 착수·추진 발표이며 6개사 모두의 구축 완료가 아님",
+            "생산량·불량률 개선은 목표이며 실측 아님",
+            "휴머노이드 적용의 고객별 배치·유료 상시 가동 여부 미공개",
+            "동일 2026-10-02 보도자료 재인용은 독립 근거가 아님"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-007",
@@ -607,7 +765,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "입력일 41행; 프로젝트 대상·일정 70–72행"
+      "evidence_locator": "입력일 41행; 프로젝트 대상·일정 70–72행",
+      "claims": [
+        {
+          "text": "한국경제 게재 보도자료에 따르면 미라콤은 그린코스 3공장 MES 구축 프로젝트 착수를 발표했다.",
+          "kind": "media_report",
+          "id": "claim:mi-007",
+          "origin_record_id": "mi-007",
+          "verification": "primary_read",
+          "evidence_locator": "입력일 41행; 프로젝트 대상·일정 70–72행",
+          "limitations": [
+            "MES 구축 사업이며 로봇 상시 운영 계약으로 분류하지 않음",
+            "향후 일정·확산 계획은 완료 사실이 아님"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-008",
@@ -640,7 +812,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "5행 기사 일시; 6–8행 사업 범위"
+      "evidence_locator": "5행 기사 일시; 6–8행 사업 범위",
+      "claims": [
+        {
+          "text": "BI KOREA는 미라콤이 한국철강·환영철강 디지털팩토리 구축 프로젝트에 착수한다고 발표했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:mi-008",
+          "origin_record_id": "mi-008",
+          "verification": "primary_read",
+          "evidence_locator": "5행 기사 일시; 6–8행 사업 범위",
+          "limitations": [
+            "로봇 도입 또는 자율운영 완료를 뜻하지 않음",
+            "기사 제목의 회사명 오탈자는 원문 제목을 보존",
+            "공식 신·구 언론목록에 날짜 차이가 있어 기사 본문의 2026-05-26을 채택"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-009",
@@ -670,7 +857,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "41행 날짜; 70행 내정; 78행 기업 작성·배포 고지"
+      "evidence_locator": "41행 날짜; 70행 내정; 78행 기업 작성·배포 고지",
+      "claims": [
+        {
+          "text": "삼성SDS 제공 보도자료는 안대중 디지털팩토리담당 부사장의 미라콤 대표이사 내정을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:mi-009",
+          "origin_record_id": "mi-009",
+          "verification": "primary_read",
+          "evidence_locator": "41행 날짜; 70행 내정; 78행 기업 작성·배포 고지",
+          "limitations": [
+            "내정 발표일과 법적 취임일은 다를 수 있음",
+            "내부 결재선·예산권한·비공개 보고라인을 추정하지 않음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-010",
@@ -702,7 +903,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "26–33행"
+      "evidence_locator": "26–33행",
+      "claims": [
+        {
+          "text": "전자과학은 미라콤과 켐토피아가 2025년 11월 25일 스마트팩토리·탄소중립 사업 MOU를 체결했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:mi-010",
+          "origin_record_id": "mi-010",
+          "verification": "primary_read",
+          "evidence_locator": "26–33행",
+          "limitations": [
+            "RX 로봇 계약이 아니라 제조 데이터·환경관리 인접 협력",
+            "MOU를 유료 고객 수주 또는 반복매출로 계산하지 않음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-011",
@@ -734,7 +949,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "115행 등록일; 130–148행 행사·세션"
+      "evidence_locator": "115행 등록일; 130–148행 행사·세션",
+      "claims": [
+        {
+          "text": "헬로티는 2025년 11월 21일 웨비나에서 미라콤의 MES·물류 자동화 연계 세션을 예고했다.",
+          "kind": "media_report",
+          "id": "claim:mi-011",
+          "origin_record_id": "mi-011",
+          "verification": "primary_read",
+          "evidence_locator": "115행 등록일; 130–148행 행사·세션",
+          "limitations": [
+            "공동 세미나 출연만으로 세 회사 간 사업 계약을 추정하지 않음",
+            "미라콤 언론목록에는 2025-11-06이나 실제 기사 등록일 2025-10-31을 채택"
+          ]
+        }
+      ],
+      "scheduled_event_date": "2025-11-21"
     },
     {
       "id": "mi-012",
@@ -767,7 +997,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "10행 행사일; 42–52행 세션표"
+      "evidence_locator": "10행 행사일; 42–52행 세션표",
+      "claims": [
+        {
+          "text": "AW 웨비나 운영 페이지는 미라콤의 MES·물류 자동화 연계 세션을 2025년 11월 21일 일정에 포함한다.",
+          "kind": "official_statement",
+          "id": "claim:mi-012",
+          "origin_record_id": "mi-012",
+          "verification": "primary_read",
+          "evidence_locator": "10행 행사일; 42–52행 세션표",
+          "limitations": [
+            "행사일과 게시일을 구분하며 게시일은 미상",
+            "발표 영상 자체와 실제 현장 운영은 검증하지 않음",
+            "mi-011과 같은 행사 계보"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-013",
@@ -798,7 +1043,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "미라콤 공식 구 언론목록 /user/Board/comm_notice.do?BD_NO=2 93–95행; 검색 색인; 원문 403"
+      "evidence_locator": "미라콤 공식 구 언론목록 /user/Board/comm_notice.do?BD_NO=2 93–95행; 검색 색인; 원문 403",
+      "claims": [
+        {
+          "text": "미라콤 공식 언론목록은 시장경제의 2026-03-04 AW 2026 미라콤 부스 보도를 등록한다.",
+          "kind": "media_report",
+          "id": "claim:mi-013",
+          "origin_record_id": "mi-013",
+          "verification": "access_blocked",
+          "evidence_locator": "미라콤 공식 구 언론목록 /user/Board/comm_notice.do?BD_NO=2 93–95행; 검색 색인; 원문 403",
+          "limitations": [
+            "원문 접근 차단으로 기술 세부 내용·운영 성과는 미확인",
+            "전시를 생산현장 상시 가동으로 간주하지 않음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-014",
@@ -831,7 +1090,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "본문 51행 초기 단계; 97–103행 확산 한계; 미라콤 /kr/customer-support/news/dn2 80행 날짜"
+      "evidence_locator": "본문 51행 초기 단계; 97–103행 확산 한계; 미라콤 /kr/customer-support/news/dn2 80행 날짜",
+      "claims": [
+        {
+          "text": "인더스트리뉴스 인터뷰에서 미라콤 사업부장은 AX·RX의 현장 확산이 아직 초기 단계라고 설명했다.",
+          "kind": "media_report",
+          "id": "claim:mi-014",
+          "origin_record_id": "mi-014",
+          "verification": "primary_read",
+          "evidence_locator": "본문 51행 초기 단계; 97–103행 확산 한계; 미라콤 /kr/customer-support/news/dn2 80행 날짜",
+          "limitations": [
+            "전략·인터뷰이며 다공장 반복배포 실적 증거가 아님",
+            "기사 본문 날짜 미표시: 미라콤 공식 언론목록의 2026-10-23 채택",
+            "FA저널 동명 기사는 같은 계보로 처리"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-015",
@@ -862,7 +1136,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "게시일 309행; 311–339행"
+      "evidence_locator": "게시일 309행; 311–339행",
+      "claims": [
+        {
+          "text": "삼성SDI는 인터배터리 2026에서 로봇용 파우치형 전고체 배터리 샘플 공개 계획을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:mi-015",
+          "origin_record_id": "mi-015",
+          "verification": "primary_read",
+          "evidence_locator": "게시일 309행; 311–339행",
+          "limitations": [
+            "샘플·개발 단계이며 로봇용 배터리 양산 실적이 아님",
+            "하드웨어 개발을 RX 소프트웨어 예산·매출과 합산하지 않음"
+          ]
+        }
+      ],
+      "scheduled_event_date": "2026-03-11"
     },
     {
       "id": "mi-016",
@@ -894,7 +1183,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "26행 기사 일시; 27–28행 컨콜 인용"
+      "evidence_locator": "26행 기사 일시; 27–28행 컨콜 인용",
+      "claims": [
+        {
+          "text": "이데일리 컨콜 보도에 따르면 삼성SDI는 휴머노이드용 전고체 배터리가 고객 성능평가 단계라고 밝혔다.",
+          "kind": "media_report",
+          "id": "claim:mi-016",
+          "origin_record_id": "mi-016",
+          "verification": "primary_read",
+          "evidence_locator": "26행 기사 일시; 27–28행 컨콜 인용",
+          "limitations": [
+            "9월 샘플 공급의 정확한 시작일·고객 실명 미공개",
+            "2027년 상용화는 목표이며 완료 사실이 아님",
+            "관련 컨콜 전재 기사들은 같은 회사 발언 계보"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-017",
@@ -926,7 +1230,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "공식 본문 92–104행; 행사 날짜 보조 출처 https://zdnet.co.kr/view/?no=20260722082924"
+      "evidence_locator": "공식 본문 92–104행; 행사 날짜 보조 출처 https://zdnet.co.kr/view/?no=20260722082924",
+      "claims": [
+        {
+          "text": "삼성디스플레이는 K-디스플레이 2026에서 휴머노이드용 OLED 디스플레이를 소개했다.",
+          "kind": "official_statement",
+          "id": "claim:mi-017",
+          "origin_record_id": "mi-017",
+          "verification": "primary_read",
+          "evidence_locator": "공식 본문 92–104행; 행사 날짜 보조 출처 https://zdnet.co.kr/view/?no=20260722082924",
+          "limitations": [
+            "읽힌 공식 페이지에 게시일 미표시",
+            "행사일은 2026-07-22 동시기 보도와 대조; 게시일 대입 금지",
+            "로봇 인터페이스 부품 전시가 제조 RX 플랫폼 책임을 뜻하지 않음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-018",
@@ -957,7 +1276,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "5행 게시일; 83–86행 CES 발언"
+      "evidence_locator": "5행 게시일; 83–86행 CES 발언",
+      "claims": [
+        {
+          "text": "아시아경제는 삼성전기 사장이 2026년 하반기 휴머노이드 카메라 모듈 생산 계획을 밝혔다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:mi-018",
+          "origin_record_id": "mi-018",
+          "verification": "primary_read",
+          "evidence_locator": "5행 게시일; 83–86행 CES 발언",
+          "limitations": [
+            "양산 계획 발표이며 실제 양산 개시 여부는 별도 확인 필요",
+            "로봇 부품 사업과 제조현장 RX SW 매출을 분리"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-019",
@@ -988,7 +1321,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "search_index",
-      "evidence_locator": "공식 검색 색인 게시일 2026년 3월 16일; 도구 원문 접근 실패"
+      "evidence_locator": "공식 검색 색인 게시일 2026년 3월 16일; 도구 원문 접근 실패",
+      "claims": [
+        {
+          "text": "NC AI 공식 검색 색인에는 삼성SDS가 K-피지컬AI 얼라이언스 참여 기업으로 제시돼 있다.",
+          "kind": "official_statement",
+          "id": "claim:mi-019",
+          "origin_record_id": "mi-019",
+          "verification": "access_blocked",
+          "evidence_locator": "공식 검색 색인 게시일 2026년 3월 16일; 도구 원문 접근 실패",
+          "limitations": [
+            "검색 색인 기반 후보이며 원문 정독 미완료",
+            "논문 원문과 수치 성능은 확인하지 않아 연구 결과로 확정하지 않음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-020",
@@ -1004,7 +1351,8 @@
         "miracom",
         "sds",
         "robot",
-        "partner"
+        "partner",
+        "rcs"
       ],
       "origin_key": "https://www.greened.kr/news/articleView.html?idxno=351622",
       "summary_ko": "인공지능 페스타 2026 현장 기사 후보다. 검색 색인은 레인보우 하드웨어와 미라콤 제조현장 소프트웨어의 역할을 설명하지만 원문은 403으로 접근하지 못했다.",
@@ -1016,11 +1364,41 @@
       "commercialization_stage": "demo",
       "limitations": [
         "원문 미검증: 계약·제품 지원 범위·배포 여부 확정 금지",
-        "검색 색인 목록의 2026-10-07 날짜를 사용"
+        "검색 색인 목록의 2026-10-07 날짜를 사용",
+        "원문 HTTP 403; 검색 색인으로만 발견했다.",
+        "정확한 게시일 미확인으로 시점 재생에서 제외한다.",
+        "2026-10-07 행사 취재일은 검색 요약에서 식별한 값이며 재확인이 필요하다."
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "search_index",
       "evidence_locator": "기사 및 발행사 검색 색인; 원문 403",
+      "claims": [
+        {
+          "text": "녹색경제신문 검색 색인은 인공지능 페스타 2026에서 레인보우 로봇과 미라콤 SW의 역할을 다룬 현장 보도를 제시한다.",
+          "kind": "media_report",
+          "id": "claim:mi-020",
+          "origin_record_id": "mi-020",
+          "verification": "access_blocked",
+          "evidence_locator": "기사 및 발행사 검색 색인; 원문 403",
+          "limitations": [
+            "원문 미검증: 계약·제품 지원 범위·배포 여부 확정 금지",
+            "검색 색인 목록의 2026-10-07 날짜를 사용"
+          ]
+        },
+        {
+          "text": "검색 색인은 AI FESTA 현장에서 레인보우 로봇과 미라콤 소프트웨어의 연계를 다룬 기사가 존재함을 보여주지만 상세 내용은 원문 접근 실패로 검증하지 못했다.",
+          "kind": "media_report",
+          "id": "claim:media-005",
+          "origin_record_id": "media-005",
+          "verification": "access_blocked",
+          "evidence_locator": "검색 결과 제목·요약; 원문 접근 차단",
+          "limitations": [
+            "원문 HTTP 403; 검색 색인으로만 발견했다.",
+            "정확한 게시일 미확인으로 시점 재생에서 제외한다.",
+            "2026-10-07 행사 취재일은 검색 요약에서 식별한 값이며 재확인이 필요하다."
+          ]
+        }
+      ],
       "duplicate_record_ids": [
         "media-005"
       ]
@@ -1054,7 +1432,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "23행 작성일; 60–69행 제품 구성; 86행 미라콤 기고 연락처"
+      "evidence_locator": "23행 작성일; 60–69행 제품 구성; 86행 미라콤 기고 연락처",
+      "claims": [
+        {
+          "text": "미라콤 기고는 Nexphere AI를 Platform·Analytics·Chat으로 구성된 제조 AI로 설명한다.",
+          "kind": "official_statement",
+          "id": "claim:mi-021",
+          "origin_record_id": "mi-021",
+          "verification": "primary_read",
+          "evidence_locator": "23행 작성일; 60–69행 제품 구성; 86행 미라콤 기고 연락처",
+          "limitations": [
+            "제품 설명·기고이며 독립 성능 검증이 아님",
+            "2025년 9월 최초 공개 사건을 2026년 신규 출시로 중복 집계하지 않음"
+          ]
+        }
+      ]
     },
     {
       "id": "mi-022",
@@ -1087,7 +1479,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "40행 게시일; 53–64행 구축·안정화 및 HIK Robot 협력"
+      "evidence_locator": "40행 게시일; 53–64행 구축·안정화 및 HIK Robot 협력",
+      "claims": [
+        {
+          "text": "ZDNet은 미라콤이 비츠로이엠 안산공장에 AGV 기반 SMS를 구축했다고 2025년 6월 30일 보도했다.",
+          "kind": "media_report",
+          "id": "claim:mi-022",
+          "origin_record_id": "mi-022",
+          "verification": "primary_read",
+          "evidence_locator": "40행 게시일; 53–64행 구축·안정화 및 HIK Robot 협력",
+          "limitations": [
+            "2025-10-30 이전 자료이므로 최근 1년 조사 실적에서 제외",
+            "계약금액·재계약·유료 반복매출·90일 가동 로그는 미공개",
+            "회사 발표 기반 구축 보도이며 독립 현장 감사가 아님"
+          ]
+        }
+      ]
     },
     {
       "id": "sds-001",
@@ -1117,7 +1524,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "보도자료 본문: 신사업·M&A 계획, 2026-04-15"
+      "evidence_locator": "보도자료 본문: 신사업·M&A 계획, 2026-04-15",
+      "claims": [
+        {
+          "text": "삼성SDS는 KKR 협력 발표에서 피지컬 AI를 신사업 추진 분야 중 하나로 명시했다.",
+          "kind": "official_statement",
+          "id": "claim:sds-001",
+          "origin_record_id": "sds-001",
+          "verification": "primary_read",
+          "evidence_locator": "보도자료 본문: 신사업·M&A 계획, 2026-04-15",
+          "limitations": [
+            "1.2조원 전환사채와 보유 현금은 전사 자금이며 RX 소프트웨어 예산이 아니다.",
+            "이 자료에 RX 전용 배정액이나 계약 실적이 없다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-002",
@@ -1133,7 +1554,10 @@
         "sds",
         "mes",
         "robot",
-        "partner"
+        "partner",
+        "factory",
+        "task",
+        "api"
       ],
       "origin_key": "https://www.samsungsds.com/kr/news/ss-260730.html",
       "summary_ko": "삼성SDS는 2026년 6월 삼성벤처투자를 통한 Walden Robotics 전략적 투자를 설명하고, 다양한 로봇을 통합 제어하여 MES와 연계하는 사업 추진 방침을 밝혔다.",
@@ -1153,6 +1577,33 @@
       "accessed_at": "2026-10-30",
       "date_basis": "page",
       "evidence_locator": "본문: 전략적 투자 및 로봇 오케스트레이션 단락",
+      "claims": [
+        {
+          "text": "삼성SDS는 다양한 로봇을 통합 제어해 MES와 연계하는 로봇 오케스트레이션 사업 추진을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:sds-002",
+          "origin_record_id": "sds-002",
+          "verification": "primary_read",
+          "evidence_locator": "본문: 전략적 투자 및 로봇 오케스트레이션 단락",
+          "limitations": [
+            "투자 사건은 2026년 6월로만 제시되어 정확한 사건일을 생성하지 않았다.",
+            "Walden 투자액·지분율 및 RX 전용 매출은 이 자료에서 확인되지 않는다."
+          ]
+        },
+        {
+          "text": "삼성SDS는 Walden Robotics 전략적 투자와 MES 연계 로봇 오케스트레이션 사업 추진 방침을 2분기 실적 발표에서 설명했다.",
+          "kind": "official_statement",
+          "id": "claim:tech-014",
+          "origin_record_id": "tech-014",
+          "verification": "primary_read",
+          "evidence_locator": "2026-07-30; 디지털 자산·피지컬 AI 분야 전략적 투자 확대 문단",
+          "limitations": [
+            "실적 보도자료이며 DART 공시 원문 자체는 아니다.",
+            "전사 매출·클라우드 매출·AI 인프라 투자 규모를 RX 매출 또는 RX SW 예산으로 간주하지 않는다.",
+            "외부 유료 계약, API 명세, 실제 생산 가동 기간은 본 자료에서 확인하지 못했다."
+          ]
+        }
+      ],
       "duplicate_record_ids": [
         "tech-014"
       ]
@@ -1188,7 +1639,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "현장 활용 사례 기술검증 결과 공유 및 최적 적용 방안 구체화"
+      "evidence_locator": "현장 활용 사례 기술검증 결과 공유 및 최적 적용 방안 구체화",
+      "claims": [
+        {
+          "text": "삼성SDS는 RX ART 2026에서 관계사 수작업의 로봇 적용 가능성을 검증한 결과를 공유했다.",
+          "kind": "official_statement",
+          "id": "claim:sds-003",
+          "origin_record_id": "sds-003",
+          "verification": "primary_read",
+          "evidence_locator": "현장 활용 사례 기술검증 결과 공유 및 최적 적용 방안 구체화",
+          "limitations": [
+            "행사 기간은 2026-08-31~2026-09-01 현지시간이다.",
+            "실제 현장 실증 전환은 향후 계획이며 유료 상시 가동을 입증하지 않는다.",
+            "G사의 실명을 임의로 특정하지 않았다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-004",
@@ -1222,7 +1688,23 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "AX의 영역을 디지털에서 피지컬 AI로 확장…RX 사업 본격화 단락"
+      "evidence_locator": "AX의 영역을 디지털에서 피지컬 AI로 확장…RX 사업 본격화 단락",
+      "claims": [
+        {
+          "text": "삼성SDS는 로봇 오케스트레이션 플랫폼을 2027년부터 선보일 계획을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:sds-004",
+          "origin_record_id": "sds-004",
+          "verification": "primary_read",
+          "evidence_locator": "AX의 영역을 디지털에서 피지컬 AI로 확장…RX 사업 본격화 단락",
+          "limitations": [
+            "2027년은 계획이며 출시 완료가 아니다.",
+            "430여 고객사는 기존 MES·설비·물류 자동화 경험으로 RX 고객 수가 아니다.",
+            "200명 FDE 계획은 AX 인력이며 RX 조직 규모가 아니다.",
+            "공개 API 명세나 유료 RX 고객 계약은 제시되지 않았다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-005",
@@ -1254,7 +1736,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "미래 성장 위한 글로벌 피지컬 AI 파트너십 구축 단락"
+      "evidence_locator": "미래 성장 위한 글로벌 피지컬 AI 파트너십 구축 단락",
+      "claims": [
+        {
+          "text": "삼성SDS는 2026년 10월 29일 관계사 현장에서 로봇 실증 사업을 추진 중이라고 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:sds-005",
+          "origin_record_id": "sds-005",
+          "verification": "primary_read",
+          "evidence_locator": "미래 성장 위한 글로벌 피지컬 AI 파트너십 구축 단락",
+          "limitations": [
+            "실증을 유료 상시 가동 또는 생산라인 상용 운영과 동일시하지 않는다.",
+            "분기 전사·클라우드 매출을 RX 매출로 합산하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-006",
@@ -1287,7 +1783,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "PDF 9~10페이지, Physical AI domain 단락"
+      "evidence_locator": "PDF 9~10페이지, Physical AI domain 단락",
+      "claims": [
+        {
+          "text": "삼성SDS 공식 IR 스크립트는 Walden을 시작으로 글로벌 로봇 파트너십을 확대할 계획을 설명한다.",
+          "kind": "official_statement",
+          "id": "claim:sds-006",
+          "origin_record_id": "sds-006",
+          "verification": "primary_read",
+          "evidence_locator": "PDF 9~10페이지, Physical AI domain 단락",
+          "limitations": [
+            "콜 사건일은 2026-07-30이나 PDF 게시일은 본문에서 확인되지 않았다.",
+            "URL의 업로드 경로 2026/08/03을 게시일로 확정하지 않았다.",
+            "Toyota 현장에 관한 설명은 SDS의 파트너 소개이며 SDS 고객 현장 실적이 아니다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-007",
@@ -1321,7 +1832,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "PDF 9페이지, RX business roadmap, lines 202–218"
+      "evidence_locator": "PDF 9페이지, RX business roadmap, lines 202–218",
+      "claims": [
+        {
+          "text": "삼성SDS 공식 Q3 IR 스크립트는 계열사 현장에서 약 10건의 PoC를 진행 중이라고 설명한다.",
+          "kind": "official_statement",
+          "id": "claim:sds-007",
+          "origin_record_id": "sds-007",
+          "verification": "primary_read",
+          "evidence_locator": "PDF 9페이지, RX business roadmap, lines 202–218",
+          "limitations": [
+            "약 10건은 PoC이며 실제 생산라인 파일럿은 다음 단계 계획이다.",
+            "회사 전체 제조 IT 경험인 1,000여 계열사 현장·430여 외부 고객은 RX 설치 수가 아니다.",
+            "콜 사건일은 2026-10-29로 확인되나 PDF 자체 게시일은 본문에 없어 별도 미확인으로 처리했다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-008",
@@ -1353,7 +1879,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "PDF 5페이지, Fourth / strategic mergers and acquisitions"
+      "evidence_locator": "PDF 5페이지, Fourth / strategic mergers and acquisitions",
+      "claims": [
+        {
+          "text": "삼성SDS의 2026년 1분기 IR 스크립트는 Physical AI 분야 기업 인수를 추진할 계획을 설명한다.",
+          "kind": "official_statement",
+          "id": "claim:sds-008",
+          "origin_record_id": "sds-008",
+          "verification": "primary_read",
+          "evidence_locator": "PDF 5페이지, Fourth / strategic mergers and acquisitions",
+          "limitations": [
+            "인수 추진 방향이며 개별 거래 완료를 의미하지 않는다.",
+            "2031년까지 전사 투자 목표를 RX 전용 예산으로 해석하지 않는다.",
+            "콜 사건일과 PDF 게시일을 구분하며 PDF 게시일은 미확인이다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-009",
@@ -1384,7 +1925,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "일시 및 전시 소개 본문"
+      "evidence_locator": "일시 및 전시 소개 본문",
+      "claims": [
+        {
+          "text": "삼성SDS의 공식 행사 안내는 AI FESTA 26에서 제조 현장의 로봇 전시를 소개한다.",
+          "kind": "official_statement",
+          "id": "claim:sds-009",
+          "origin_record_id": "sds-009",
+          "verification": "primary_read",
+          "evidence_locator": "일시 및 전시 소개 본문",
+          "limitations": [
+            "행사일은 2026-10-06~2026-10-08이며 게시일은 표시되지 않았다.",
+            "행사 홍보와 현장 상시 운영을 구분한다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-010",
@@ -1418,7 +1973,23 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "Walden Robotics 공식 게시물 본문"
+      "evidence_locator": "Walden Robotics 공식 게시물 본문",
+      "claims": [
+        {
+          "text": "Walden 공식 계정은 삼성SDS 인터페이스의 작업 지시와 로봇 수행 결과 증거를 연결하는 사례를 소개했다.",
+          "kind": "official_statement",
+          "id": "claim:sds-010",
+          "origin_record_id": "sds-010",
+          "verification": "primary_read",
+          "evidence_locator": "Walden Robotics 공식 게시물 본문",
+          "limitations": [
+            "상대 게시 시점만 표시되어 정확한 게시일은 미확인이다.",
+            "영상을 직접 재생 검증하지 않았으며 텍스트 설명만 확인했다.",
+            "시연 또는 사례 소개이며 사람 개입률·지속 가동 시간·유료 계약은 확인되지 않는다.",
+            "파트너 당사자 진술이며 독립 현장 감사가 아니다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-011",
@@ -1450,7 +2021,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "공식 게시물 본문"
+      "evidence_locator": "공식 게시물 본문",
+      "claims": [
+        {
+          "text": "Walden 공식 계정은 삼성SDS와 제조 사용 사례의 공동 PoC를 진행 중이라고 밝혔다.",
+          "kind": "official_statement",
+          "id": "claim:sds-011",
+          "origin_record_id": "sds-011",
+          "verification": "primary_read",
+          "evidence_locator": "공식 게시물 본문",
+          "limitations": [
+            "게시일이 2mo처럼 상대값으로만 표시되어 정확한 게시일·사건일은 미확인이다.",
+            "파트너 공식 홍보이며 계약 금액·장기 운영 KPI의 독립 증거는 아니다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-013",
@@ -1482,7 +2067,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "2026-10-29 14:26 기사 본문"
+      "evidence_locator": "2026-10-29 14:26 기사 본문",
+      "claims": [
+        {
+          "text": "뉴시스는 삼성SDS가 현장 실증 결과를 실제 생산라인 파일럿으로 발전시킬 계획이라고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:sds-013",
+          "origin_record_id": "sds-013",
+          "verification": "primary_read",
+          "evidence_locator": "2026-10-29 14:26 기사 본문",
+          "limitations": [
+            "공식 Q3 발언 재인용이며 독립 실증 검증 자료로 중복 계산하지 않는다.",
+            "이미지를 수집하지 않았으며 원문 전문을 재배포하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-014",
@@ -1514,7 +2113,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "Partners Include / Intelligence / Data / Simulation 단락"
+      "evidence_locator": "Partners Include / Intelligence / Data / Simulation 단락",
+      "claims": [
+        {
+          "text": "서울경제는 삼성SDS가 로봇 하드웨어·지능·데이터·시뮬레이션 분야 10개사와 Team REX를 구성했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:sds-014",
+          "origin_record_id": "sds-014",
+          "verification": "primary_read",
+          "evidence_locator": "Partners Include / Intelligence / Data / Simulation 단락",
+          "limitations": [
+            "영문 AI 번역본을 열람했으며 한국어 원문은 403으로 접근 차단되었다.",
+            "개별 파트너의 제품 성능과 투자 규모는 독립 검증하지 않았다.",
+            "10개사 명단은 언론 보도 단계이며 파트너별 원문 대조가 추가로 필요하다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-015",
@@ -1545,7 +2159,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "핵심 인사이트 및 로봇은 어떻게 작동되는가?"
+      "evidence_locator": "핵심 인사이트 및 로봇은 어떻게 작동되는가?",
+      "claims": [
+        {
+          "text": "삼성SDS 인사이트 필자는 로봇의 정밀 조작·데이터·스킬 러닝을 상용화 병목으로 분석한다.",
+          "kind": "inference",
+          "id": "claim:sds-015",
+          "origin_record_id": "sds-015",
+          "verification": "primary_read",
+          "evidence_locator": "핵심 인사이트 및 로봇은 어떻게 작동되는가?",
+          "limitations": [
+            "전문가 분석과 전망이며 삼성SDS 제품의 실측 성능이나 공식 출시 일정이 아니다.",
+            "다른 로봇 기업의 수치는 이 데이터베이스의 삼성 RX KPI로 전환하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-016",
@@ -1577,7 +2205,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "전재 고지·Physical AI의 가능성과 현실적 제약"
+      "evidence_locator": "전재 고지·Physical AI의 가능성과 현실적 제약",
+      "claims": [
+        {
+          "text": "삼성SDS가 전재한 CIO 글은 휴머노이드 확산에 비용·신뢰성·안전·기업 시스템 통합 검증이 필요하다고 보도한다.",
+          "kind": "media_report",
+          "id": "claim:sds-016",
+          "origin_record_id": "sds-016",
+          "verification": "primary_read",
+          "evidence_locator": "전재 고지·Physical AI의 가능성과 현실적 제약",
+          "limitations": [
+            "2026-02-02는 삼성SDS 전재일이며 CIO 원문일 2025-02-21은 조사기간 밖이다.",
+            "SDS 제품이나 고객 성과 증거가 아닌 일반 기술 배경이다.",
+            "원문과 전재문은 하나의 출처 계보로 집계한다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-017",
@@ -1608,7 +2251,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "전재 고지 및 지연의 벽 단락"
+      "evidence_locator": "전재 고지 및 지연의 벽 단락",
+      "claims": [
+        {
+          "text": "삼성SDS가 전재한 CIO 기고문은 피지컬 AI 현장 실행에 클라우드와 엣지·로컬 추론의 결합을 제안한다.",
+          "kind": "media_report",
+          "id": "claim:sds-017",
+          "origin_record_id": "sds-017",
+          "verification": "primary_read",
+          "evidence_locator": "전재 고지 및 지연의 벽 단락",
+          "limitations": [
+            "필자 의견과 일반 업계 사례로 삼성SDS의 상용 RX 아키텍처 증거가 아니다.",
+            "타 기업의 운영 개선 수치를 삼성 RX 실측으로 전환하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-018",
@@ -1640,7 +2297,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "PDF 5페이지, 주요 사업 성과"
+      "evidence_locator": "PDF 5페이지, 주요 사업 성과",
+      "claims": [
+        {
+          "text": "삼성SDS Q3 IR 자료는 RX 사업 진입과 글로벌 피지컬 AI 파트너 생태계 구축을 주요 사업 항목에 포함한다.",
+          "kind": "official_statement",
+          "id": "claim:sds-018",
+          "origin_record_id": "sds-018",
+          "verification": "primary_read",
+          "evidence_locator": "PDF 5페이지, 주요 사업 성과",
+          "limitations": [
+            "PDF 게시일은 본문에서 미확인이며 실적발표 사건일만 기록했다.",
+            "RX 독립 매출·반복매출 항목은 제시되지 않았고 전사 수치와 구분한다.",
+            "Q3 보도자료·스크립트와 같은 발표 계보로 집계한다."
+          ]
+        }
+      ]
     },
     {
       "id": "sds-019",
@@ -1671,7 +2343,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "본문 삼성SDS America 관련 단락"
+      "evidence_locator": "본문 삼성SDS America 관련 단락",
+      "claims": [
+        {
+          "text": "이데일리는 삼성SDS America가 실시간 영상 이해 및 피지컬 AI 연구 인력 채용을 시작했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:sds-019",
+          "origin_record_id": "sds-019",
+          "verification": "primary_read",
+          "evidence_locator": "본문 삼성SDS America 관련 단락",
+          "limitations": [
+            "언론 보도이며 공식 채용 원문의 게시일·충원 여부는 별도 확인이 필요하다.",
+            "채용 공고는 조직 전체 인원이나 예산을 뜻하지 않는다.",
+            "삼성전자 RX 조직과 SDS America 조직은 별도 법인으로 모델링해야 한다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1704,7 +2391,22 @@
         "전체 AI 팩토리 준공이나 로봇의 장기 무인 운영을 확인하는 자료가 아니다.",
         "NVIDIA와 삼성의 공동 발표이므로 독립 근거로 중복 가산하지 않는다."
       ],
-      "evidence_locator": "Accelerating the Transition to Intelligence-Driven Manufacturing / Building Out the AI Ecosystem Across Generative AI and Robotics"
+      "evidence_locator": "Accelerating the Transition to Intelligence-Driven Manufacturing / Building Out the AI Ecosystem Across Generative AI and Robotics",
+      "claims": [
+        {
+          "text": "삼성전자는 NVIDIA Omniverse 기반 제조 디지털 트윈과 Jetson Thor 등 로봇 플랫폼을 활용하는 AI 메가팩토리 계획을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:se-001",
+          "origin_record_id": "se-001",
+          "verification": "primary_read",
+          "evidence_locator": "Accelerating the Transition to Intelligence-Driven Manufacturing / Building Out the AI Ecosystem Across Generative AI and Robotics",
+          "limitations": [
+            "5만 GPU 계획은 RX SW 예산·매출이 아니다.",
+            "전체 AI 팩토리 준공이나 로봇의 장기 무인 운영을 확인하는 자료가 아니다.",
+            "NVIDIA와 삼성의 공동 발표이므로 독립 근거로 중복 가산하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1737,7 +2439,22 @@
         "삼성 뉴스룸과 동일 공동 발표 계보이다.",
         "NVIDIA 게시일 10월 30일, 삼성 한국 게시일 10월 31일로 차이가 있어 정확한 사건 시각은 미확정."
       ],
-      "evidence_locator": "Samsung Accelerates Smart Manufacturing With Digital Twins, Robotics and Generative AI"
+      "evidence_locator": "Samsung Accelerates Smart Manufacturing With Digital Twins, Robotics and Generative AI",
+      "claims": [
+        {
+          "text": "NVIDIA는 삼성전자가 Isaac Sim·Cosmos·Jetson Thor를 활용해 가상·실제 로봇 데이터와 원격조작을 연결한다고 밝혔다.",
+          "kind": "official_statement",
+          "id": "claim:se-002",
+          "origin_record_id": "se-002",
+          "verification": "primary_read",
+          "evidence_locator": "Samsung Accelerates Smart Manufacturing With Digital Twins, Robotics and Generative AI",
+          "limitations": [
+            "파트너의 기술·계획 설명이며 외부 독립 성능 검증이 아니다.",
+            "삼성 뉴스룸과 동일 공동 발표 계보이다.",
+            "NVIDIA 게시일 10월 30일, 삼성 한국 게시일 10월 31일로 차이가 있어 정확한 사건 시각은 미확정."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1767,7 +2484,20 @@
       "limitations": [
         "행사 의제 발표로 개별 로봇의 상용화·유료 운영을 입증하지 않는다."
       ],
-      "evidence_locator": "‘인공지능 전환’ 시대에 4대 핵심 기술 분야 제시"
+      "evidence_locator": "‘인공지능 전환’ 시대에 4대 핵심 기술 분야 제시",
+      "claims": [
+        {
+          "text": "삼성전자는 STC2025 기조연설에서 AI를 활용한 로봇 기술을 핵심 기술 분야로 소개했다.",
+          "kind": "official_statement",
+          "id": "claim:se-003",
+          "origin_record_id": "se-003",
+          "verification": "primary_read",
+          "evidence_locator": "‘인공지능 전환’ 시대에 4대 핵심 기술 분야 제시",
+          "limitations": [
+            "행사 의제 발표로 개별 로봇의 상용화·유료 운영을 입증하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1798,7 +2528,21 @@
         "2030년 목표이며 현재 전 공장 전환 완료를 의미하지 않는다.",
         "사람 개입률, 복구시간, RX 전용 매출은 이 자료에 공개되지 않았다."
       ],
-      "evidence_locator": "본문: AI 자율공장·휴머노이드 도입 계획"
+      "evidence_locator": "본문: AI 자율공장·휴머노이드 도입 계획",
+      "claims": [
+        {
+          "text": "삼성전자는 2030년 AI 자율공장 전환과 제조 현장 휴머노이드 로봇의 단계적 도입 추진을 공식 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:se-004",
+          "origin_record_id": "se-004",
+          "verification": "primary_read",
+          "evidence_locator": "본문: AI 자율공장·휴머노이드 도입 계획",
+          "limitations": [
+            "2030년 목표이며 현재 전 공장 전환 완료를 의미하지 않는다.",
+            "사람 개입률, 복구시간, RX 전용 매출은 이 자료에 공개되지 않았다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1829,7 +2573,21 @@
         "전시 시연과 생산라인의 상시 운영을 구분해야 한다.",
         "3월 1일 자율공장 전략과 같은 회사·전략의 후속 자료이다."
       ],
-      "evidence_locator": "Intelligent Infrastructure"
+      "evidence_locator": "Intelligent Infrastructure",
+      "claims": [
+        {
+          "text": "삼성전자는 MWC2026에서 AI 에이전트, 디지털 트윈 시뮬레이션, 실시간 분석의 제조 적용을 시연한다고 밝혔다.",
+          "kind": "official_statement",
+          "id": "claim:se-005",
+          "origin_record_id": "se-005",
+          "verification": "primary_read",
+          "evidence_locator": "Intelligent Infrastructure",
+          "limitations": [
+            "전시 시연과 생산라인의 상시 운영을 구분해야 한다.",
+            "3월 1일 자율공장 전략과 같은 회사·전략의 후속 자료이다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1861,7 +2619,22 @@
         "본문 렌더링에 게시일이 없어 삼성 Research 검색 인덱스의 2026-03-11 표시를 사용했다.",
         "삼성 Research /robotics 페이지는 열람 시 시스템 오류를 반환했다."
       ],
-      "evidence_locator": "1 Introduction / 2 Method; 날짜는 Robotics 검색 인덱스"
+      "evidence_locator": "1 Introduction / 2 Method; 날짜는 Robotics 검색 인덱스",
+      "claims": [
+        {
+          "text": "삼성 연구진은 DAM-VLA의 시뮬레이션 및 실제 픽앤플레이스 실험 결과를 공개했다.",
+          "kind": "research_result",
+          "id": "claim:se-006",
+          "origin_record_id": "se-006",
+          "verification": "primary_read",
+          "evidence_locator": "1 Introduction / 2 Method; 날짜는 Robotics 검색 인덱스",
+          "limitations": [
+            "연구 실험 결과를 산업 생산 성공률로 일반화할 수 없다.",
+            "본문 렌더링에 게시일이 없어 삼성 Research 검색 인덱스의 2026-03-11 표시를 사용했다.",
+            "삼성 Research /robotics 페이지는 열람 시 시스템 오류를 반환했다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1893,7 +2666,21 @@
         "삼성 RX 로봇 제품이나 그룹 공통 오케스트레이션 API의 근거가 아니다.",
         "영상 소개 기사를 읽었으며 영상의 촬영일·전체 장면을 별도 검증하지 않았다."
       ],
-      "evidence_locator": "본문 첫 두 단락"
+      "evidence_locator": "본문 첫 두 단락",
+      "claims": [
+        {
+          "text": "삼성전자는 KUKA 쇼룸에서 산업용 로봇과 자사 디스플레이를 결합한 설치 사례를 소개했다.",
+          "kind": "official_statement",
+          "id": "claim:se-007",
+          "origin_record_id": "se-007",
+          "verification": "primary_read",
+          "evidence_locator": "본문 첫 두 단락",
+          "limitations": [
+            "삼성 RX 로봇 제품이나 그룹 공통 오케스트레이션 API의 근거가 아니다.",
+            "영상 소개 기사를 읽었으며 영상의 촬영일·전체 장면을 별도 검증하지 않았다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1926,7 +2713,21 @@
         "총 2,655조원 및 영남 60조원은 그룹 복수 사업 투자 계획이며 RX SW 전용 예산이 아니다.",
         "계획 발표이며 투자 집행·준공·유료 운영 완료의 증거가 아니다."
       ],
-      "evidence_locator": "AX를 통해 기존 제조업을 최첨단 산업으로 전환"
+      "evidence_locator": "AX를 통해 기존 제조업을 최첨단 산업으로 전환",
+      "claims": [
+        {
+          "text": "삼성은 구미에서 삼성전자 휴머노이드 양산 라인과 삼성SDS AI 데이터센터를 각각 추진할 계획이라고 밝혔다.",
+          "kind": "official_statement",
+          "id": "claim:se-008",
+          "origin_record_id": "se-008",
+          "verification": "primary_read",
+          "evidence_locator": "AX를 통해 기존 제조업을 최첨단 산업으로 전환",
+          "limitations": [
+            "총 2,655조원 및 영남 60조원은 그룹 복수 사업 투자 계획이며 RX SW 전용 예산이 아니다.",
+            "계획 발표이며 투자 집행·준공·유료 운영 완료의 증거가 아니다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -1960,7 +2761,21 @@
         "6월 29일 그룹 투자 계획의 지역 상세 후속 자료로 총액을 중복 합산하지 않는다.",
         "영남 60조원은 로봇 외 배터리·부품·조선 등을 포괄하며 RX SW 예산이 아니다."
       ],
-      "evidence_locator": "① 삼성전자·삼성SDS / ④ 삼성중공업"
+      "evidence_locator": "① 삼성전자·삼성SDS / ④ 삼성중공업",
+      "claims": [
+        {
+          "text": "삼성은 구미 로봇 데이터 팩토리·휴머노이드 양산 체계와 거제 자율형 조선소 관련 투자 계획을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:se-009",
+          "origin_record_id": "se-009",
+          "verification": "primary_read",
+          "evidence_locator": "① 삼성전자·삼성SDS / ④ 삼성중공업",
+          "limitations": [
+            "6월 29일 그룹 투자 계획의 지역 상세 후속 자료로 총액을 중복 합산하지 않는다.",
+            "영남 60조원은 로봇 외 배터리·부품·조선 등을 포괄하며 RX SW 예산이 아니다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "media",
@@ -1993,7 +2808,22 @@
         "공개된 직속 관계 외 내부 권력구조·결재선·인원·예산을 추정하지 않는다.",
         "삼성SDS RX 조직과 별개인 삼성전자 조직이다."
       ],
-      "evidence_locator": "본문: RX사업추진실 신설·연구거점"
+      "evidence_locator": "본문: RX사업추진실 신설·연구거점",
+      "claims": [
+        {
+          "text": "연합뉴스는 삼성전자가 대표이사 직속 RX사업추진실 신설과 구미 로봇 데이터 팩토리 추진을 발표했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:se-010",
+          "origin_record_id": "se-010",
+          "verification": "primary_read",
+          "evidence_locator": "본문: RX사업추진실 신설·연구거점",
+          "limitations": [
+            "삼성 공식 원문 발표 페이지를 확보하지 못해 언론 보도로 분류한다.",
+            "공개된 직속 관계 외 내부 권력구조·결재선·인원·예산을 추정하지 않는다.",
+            "삼성SDS RX 조직과 별개인 삼성전자 조직이다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "media",
@@ -2025,7 +2855,22 @@
         "기사의 판매·흑자 보도이며 RX SW ARR·재계약의 증거가 아니다.",
         "개별 고객, 유료 상시 가동 기간, 사람 개입률은 확인하지 못했다."
       ],
-      "evidence_locator": "본문: 반기보고서 인용 및 관계자 발언"
+      "evidence_locator": "본문: 반기보고서 인용 및 관계자 발언",
+      "claims": [
+        {
+          "text": "ZDNet Korea는 레인보우로보틱스 미국법인이 RB-Y1 판매 확대로 2026년 상반기 흑자 전환했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:se-011",
+          "origin_record_id": "se-011",
+          "verification": "primary_read",
+          "evidence_locator": "본문: 반기보고서 인용 및 관계자 발언",
+          "limitations": [
+            "반기보고서 원문 재확인 전 재무 수치를 확정 KPI로 사용하지 않는다.",
+            "기사의 판매·흑자 보도이며 RX SW ARR·재계약의 증거가 아니다.",
+            "개별 고객, 유료 상시 가동 기간, 사람 개입률은 확인하지 못했다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -2061,6 +2906,21 @@
       "evidence_locator": "게시일 헤더 / West Chester dateline / 계약·서비스 본문",
       "related_urls": [
         "https://rainbow-robotics.com/e-tech-group-e-tech-group-레인보우로보틱스와-손잡고-미국-협동로봇/"
+      ],
+      "claims": [
+        {
+          "text": "E Tech Group은 레인보우 협동로봇의 미국 공인 시스템 통합·설치·1차 서비스 계약을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:se-012",
+          "origin_record_id": "se-012",
+          "verification": "primary_read",
+          "evidence_locator": "게시일 헤더 / West Chester dateline / 계약·서비스 본문",
+          "limitations": [
+            "본문 발표일은 9월 15일, 웹 게시일은 9월 21일이다.",
+            "상용 판매 가능 제품이라는 설명이며 특정 유료 고객 계약·매출액은 공개하지 않았다.",
+            "레인보우 9월 28일 번역 재게시와 동일 원출처이다."
+          ]
+        }
       ]
     },
     {
@@ -2096,7 +2956,22 @@
         "삼성 네트워크 제품 계약이며 삼성전자 RX·삼성SDS RX의 제품/API나 매출로 귀속하면 안 된다.",
         "90일 상시 운영·사람 개입률을 입증하지 않는다."
       ],
-      "evidence_locator": "AI-Powered Welding Robots at Shipyards / Autonomous Patrol Robots at Petrochemical Facilities"
+      "evidence_locator": "AI-Powered Welding Robots at Shipyards / Autonomous Patrol Robots at Petrochemical Facilities",
+      "claims": [
+        {
+          "text": "삼성전자는 KT·SKT AI RAN 사업 계약과 산업 현장에서의 피지컬 AI 검증 계획을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:se-013",
+          "origin_record_id": "se-013",
+          "verification": "primary_read",
+          "evidence_locator": "AI-Powered Welding Robots at Shipyards / Autonomous Patrol Robots at Petrochemical Facilities",
+          "limitations": [
+            "발표 당시 10월 착수 예정인 현장 검증 사업이다.",
+            "삼성 네트워크 제품 계약이며 삼성전자 RX·삼성SDS RX의 제품/API나 매출로 귀속하면 안 된다.",
+            "90일 상시 운영·사람 개입률을 입증하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -2128,7 +3003,21 @@
         "연구 발표는 상용 서비스 출시에 대한 확인이 아니다.",
         "공식 요약에 없는 세부 경제성·신뢰성 수치는 언론 원문 및 강연 원영상으로 별도 검증해야 한다."
       ],
-      "evidence_locator": "DX/DS 2개 트랙으로 나눠, AI 기술 혁신과 실제 활용 사례 소개"
+      "evidence_locator": "DX/DS 2개 트랙으로 나눠, AI 기술 혁신과 실제 활용 사례 소개",
+      "claims": [
+        {
+          "text": "삼성전자는 AI 포럼 2026에서 월드 모델과 로봇 기반 모델의 연구성과·한계를 소개했다고 밝혔다.",
+          "kind": "official_statement",
+          "id": "claim:se-014",
+          "origin_record_id": "se-014",
+          "verification": "primary_read",
+          "evidence_locator": "DX/DS 2개 트랙으로 나눠, AI 기술 혁신과 실제 활용 사례 소개",
+          "limitations": [
+            "연구 발표는 상용 서비스 출시에 대한 확인이 아니다.",
+            "공식 요약에 없는 세부 경제성·신뢰성 수치는 언론 원문 및 강연 원영상으로 별도 검증해야 한다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "media",
@@ -2165,6 +3054,22 @@
       "evidence_locator": "본문: 3계층 로봇 파운데이션 모델 및 신뢰성 한계",
       "related_urls": [
         "https://rainbow-robotics.com/공장-자동화-거쳐-가정으로-삼성-로봇-상용화-로/"
+      ],
+      "claims": [
+        {
+          "text": "이데일리는 삼성 RX 포럼 발표가 공장 자동화 우선 전략과 계층형 로봇 AI의 미해결 신뢰성 과제를 제시했다고 보도했다.",
+          "kind": "media_report",
+          "id": "claim:se-015",
+          "origin_record_id": "se-015",
+          "verification": "primary_read",
+          "evidence_locator": "본문: 3계층 로봇 파운데이션 모델 및 신뢰성 한계",
+          "limitations": [
+            "원 강연 영상·슬라이드 전체를 직접 검증하지 않았다.",
+            "99.99%는 산업 현장 요구·목표로 제시되었으며 실측 달성률로 등록하지 않는다.",
+            "레인보우 10월 2일 재게시·영어 번역은 같은 원보도이므로 독립 증거가 아니다.",
+            "로봇 비용 예시를 삼성 내부 예산으로 변환하지 않는다."
+          ]
+        }
       ]
     },
     {
@@ -2201,6 +3106,21 @@
       "evidence_locator": "본문: 협약 및 양사 역할",
       "related_urls": [
         "https://rainbow-robotics.com/sfa-레인보우로보틱스-ai-자율제조-기술-협력-맞손/"
+      ],
+      "claims": [
+        {
+          "text": "ZDNet Korea는 SFA와 레인보우로보틱스의 AI 자율제조·로봇 공동 R&D 및 영업 협력 MOU를 보도했다.",
+          "kind": "media_report",
+          "id": "claim:se-016",
+          "origin_record_id": "se-016",
+          "verification": "primary_read",
+          "evidence_locator": "본문: 협약 및 양사 역할",
+          "limitations": [
+            "MOU는 유료 수주·제품 통합 완료를 뜻하지 않는다.",
+            "SFA 역할을 삼성SDS 역할로 바꾸어 해석하면 안 된다.",
+            "레인보우 사이트의 기사 재게시와 동일 원보도이다."
+          ]
+        }
       ]
     },
     {
@@ -2234,7 +3154,22 @@
         "터보링크의 24시간 연속 가동은 구축 계획 표현이며 90일 운영 실적으로 등록하지 않는다.",
         "스마트공장 CSR 지원을 RX SW 반복매출과 동일시하지 않는다."
       ],
-      "evidence_locator": "프린피아 ‘피지컬AI로 공정의 자동화를 향해’ / 터보링크"
+      "evidence_locator": "프린피아 ‘피지컬AI로 공정의 자동화를 향해’ / 터보링크",
+      "claims": [
+        {
+          "text": "삼성 뉴스룸은 스마트비즈엑스포에서 프린피아의 로봇팔·자율주행 운반로봇 시연과 제조 AI 지원 사례를 소개했다.",
+          "kind": "official_statement",
+          "id": "claim:se-017",
+          "origin_record_id": "se-017",
+          "verification": "primary_read",
+          "evidence_locator": "프린피아 ‘피지컬AI로 공정의 자동화를 향해’ / 터보링크",
+          "limitations": [
+            "현장 시연·기업 자기보고이며 독립 측정 자료가 아니다.",
+            "터보링크의 24시간 연속 가동은 구축 계획 표현이며 90일 운영 실적으로 등록하지 않는다.",
+            "스마트공장 CSR 지원을 RX SW 반복매출과 동일시하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -2267,7 +3202,22 @@
         "삼성중공업 RX센터를 삼성전자 또는 삼성SDS의 조직으로 합치지 않는다.",
         "2026-01-04는 명장 선정 발표일이며 장비의 실제 도입일은 본문에서 특정되지 않았다."
       ],
-      "evidence_locator": "⑥ 삼성중공업(1명)"
+      "evidence_locator": "⑥ 삼성중공업(1명)",
+      "claims": [
+        {
+          "text": "삼성 공식 명장 자료는 삼성중공업 RX센터의 용접·도장 자동화 장비 개발·현장 적용 활동을 설명한다.",
+          "kind": "official_statement",
+          "id": "claim:se-018",
+          "origin_record_id": "se-018",
+          "verification": "primary_read",
+          "evidence_locator": "⑥ 삼성중공업(1명)",
+          "limitations": [
+            "현장 적용에 대한 회사 설명이며 로봇별 가동 기간·개입률·수익은 공개하지 않는다.",
+            "삼성중공업 RX센터를 삼성전자 또는 삼성SDS의 조직으로 합치지 않는다.",
+            "2026-01-04는 명장 선정 발표일이며 장비의 실제 도입일은 본문에서 특정되지 않았다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "official",
@@ -2300,7 +3250,22 @@
         "당시 발표 계획과 실제 지분 취득·기업결합 완료 시점은 구별해야 한다.",
         "2026년 RX사업추진실과 명칭·조직 이력을 동일 시점으로 소급하지 않는다."
       ],
-      "evidence_locator": "미래로봇추진단 신설… 로봇기술개발 선행 연구 집중"
+      "evidence_locator": "미래로봇추진단 신설… 로봇기술개발 선행 연구 집중",
+      "claims": [
+        {
+          "text": "삼성전자는 2024년 12월 31일 레인보우 지분 확대와 대표이사 직속 미래로봇추진단 신설을 발표했다.",
+          "kind": "official_statement",
+          "id": "claim:se-019",
+          "origin_record_id": "se-019",
+          "verification": "primary_read",
+          "evidence_locator": "미래로봇추진단 신설… 로봇기술개발 선행 연구 집중",
+          "limitations": [
+            "최근 1년 신규 자료 집계에서 제외하는 배경 자료다.",
+            "당시 발표 계획과 실제 지분 취득·기업결합 완료 시점은 구별해야 한다.",
+            "2026년 RX사업추진실과 명칭·조직 이력을 동일 시점으로 소급하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "source_type": "product",
@@ -2332,7 +3297,22 @@
         "SDS 공통 API와의 통합 호환성을 입증하는 문서가 아니다.",
         "각 API의 실제 지원 범위·버전·라이선스는 연결된 원문을 추가 확인해야 한다."
       ],
-      "evidence_locator": "Docs & GitHub / 제품군별 개발 문서"
+      "evidence_locator": "Docs & GitHub / 제품군별 개발 문서",
+      "claims": [
+        {
+          "text": "레인보우로보틱스는 공식 사이트에서 로봇 제품군별 SDK·API·매뉴얼·GitHub 접근 경로를 제공한다.",
+          "kind": "official_statement",
+          "id": "claim:se-020",
+          "origin_record_id": "se-020",
+          "verification": "primary_read",
+          "evidence_locator": "Docs & GitHub / 제품군별 개발 문서",
+          "limitations": [
+            "게시일이 없어 최근 1년 신규 자료 또는 과거 시점의 공개 사실로 집계하지 않는다.",
+            "SDS 공통 API와의 통합 호환성을 입증하는 문서가 아니다.",
+            "각 API의 실제 지원 범위·버전·라이선스는 연결된 원문을 추가 확인해야 한다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-001",
@@ -2370,7 +3350,22 @@
         "publication_number": "WO2026095403A1",
         "filing_date": "2025-10-09",
         "priority_date": "2024-10-28"
-      }
+      },
+      "claims": [
+        {
+          "text": "WO2026095403A1은 사용자 의도·로봇 기능에 따른 작업 선택과 이기종 로봇용 표준 형식 데이터 전달을 기술한다.",
+          "kind": "research_result",
+          "id": "claim:tech-001",
+          "origin_record_id": "tech-001",
+          "verification": "primary_read",
+          "evidence_locator": "Info: Original Assignee, Publication date; Abstract; Description",
+          "limitations": [
+            "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+            "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+            "우선일 2024-10-28, 출원일 2025-10-09."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-002",
@@ -2408,7 +3403,22 @@
         "filing_date": "2025-07-03",
         "priority_date": "2024-09-03",
         "family_reference": "PCT/KR2025/007710"
-      }
+      },
+      "claims": [
+        {
+          "text": "삼성전자 공개특허 US20260061608A1은 오류 후 수행 가능한 정도에 따라 로봇 기능을 수정하는 제어 방식을 기술한다.",
+          "kind": "research_result",
+          "id": "claim:tech-002",
+          "origin_record_id": "tech-002",
+          "verification": "primary_read",
+          "evidence_locator": "Info; Abstract; Cross-reference to related applications",
+          "limitations": [
+            "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+            "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+            "우선일 2024-09-03, 미국 출원일 2025-07-03. PCT/KR2025/007710 계열의 중복 문헌을 독립 증거로 추가 집계하지 않았다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-003",
@@ -2446,7 +3456,22 @@
         "publication_number": "WO2026101024A1",
         "filing_date": "2025-10-09",
         "priority_date": "2024-11-05"
-      }
+      },
+      "claims": [
+        {
+          "text": "삼성전자 공개특허 WO2026101024A1은 물품 선택과 물품-로봇 매핑을 이용한 로봇 호출 방식을 기술한다.",
+          "kind": "research_result",
+          "id": "claim:tech-003",
+          "origin_record_id": "tech-003",
+          "verification": "primary_read",
+          "evidence_locator": "Info; Abstract; Description",
+          "limitations": [
+            "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+            "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+            "우선일 2024-11-05, 출원일 2025-10-09."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-004",
@@ -2482,7 +3507,22 @@
         "publication_number": "US20260138269A1",
         "filing_date": "2025-04-29",
         "priority_date": "2024-11-20"
-      }
+      },
+      "claims": [
+        {
+          "text": "삼성전자 공개특허 US20260138269A1은 장애물 기반 안전 제약과 신경망을 사용한 다음 경유점 산출을 기술한다.",
+          "kind": "research_result",
+          "id": "claim:tech-004",
+          "origin_record_id": "tech-004",
+          "verification": "primary_read",
+          "evidence_locator": "Info; Abstract; Background",
+          "limitations": [
+            "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+            "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+            "우선일 2024-11-20, 미국 출원일 2025-04-29. 실측 안전성·성능 보증으로 해석할 수 없다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-005",
@@ -2520,7 +3560,23 @@
         "publication_number": "EP4764965A1",
         "filing_date": "2025-09-11",
         "priority_date": "2024-12-20"
-      }
+      },
+      "claims": [
+        {
+          "text": "삼성전자 공개특허 EP4764965A1은 사용자 경험 지식 그래프를 검색·갱신하는 동반 로봇 제어 방법을 기술한다.",
+          "kind": "research_result",
+          "id": "claim:tech-005",
+          "origin_record_id": "tech-005",
+          "verification": "primary_read",
+          "evidence_locator": "Info; Abstract; Description — Background",
+          "limitations": [
+            "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+            "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+            "동반 로봇 대상 기술이며 제조 RX나 SDS 플랫폼과의 연결은 확인되지 않았다.",
+            "우선일 2024-12-20, 출원일 2025-09-11."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-006",
@@ -2551,7 +3607,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2603.00926v1 author affiliations, Abstract, IV Experiments"
+      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2603.00926v1 author affiliations, Abstract, IV Experiments",
+      "claims": [
+        {
+          "text": "삼성 소속 연구진의 DAM-VLA 논문은 팔 이동과 그리퍼 조작을 구분하는 VLA 프레임워크 및 연구 실험 결과를 제시한다.",
+          "kind": "research_result",
+          "id": "claim:tech-006",
+          "origin_record_id": "tech-006",
+          "verification": "primary_read",
+          "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2603.00926v1 author affiliations, Abstract, IV Experiments",
+          "limitations": [
+            "저자 보고 실험 결과이며 독립 재현이나 공장 생산 KPI 검증은 수행하지 않았다.",
+            "arXiv 제출일을 공개일로 기록했다. 논문 페이지는 ICRA2026 accepted로 기재한다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-007",
@@ -2582,7 +3652,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2609.22895v1 author affiliations, Abstract, sections 4 and 6"
+      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2609.22895v1 author affiliations, Abstract, sections 4 and 6",
+      "claims": [
+        {
+          "text": "삼성 소속 연구진의 H-VLA 논문은 키 액션 추론과 동작 생성을 분리하는 로봇 조작 모델 및 평가 결과를 제시한다.",
+          "kind": "research_result",
+          "id": "claim:tech-007",
+          "origin_record_id": "tech-007",
+          "verification": "primary_read",
+          "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2609.22895v1 author affiliations, Abstract, sections 4 and 6",
+          "limitations": [
+            "저자 보고 연구 결과이며 유료 운영·90일 상시 가동·다공장 배포의 증거가 아니다.",
+            "arXiv 최초 제출일을 기록했으며 다른 보도의 수치를 대신 가져오지 않았다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-008",
@@ -2612,7 +3696,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "PDF pages 1–2: date, Context/Overview, Problem Statement, Objectives & Scope"
+      "evidence_locator": "PDF pages 1–2: date, Context/Overview, Problem Statement, Objectives & Scope",
+      "claims": [
+        {
+          "text": "SRA의 2026 START 공모문은 로봇 응용의 3D 이해·기억·예측을 통합하는 연구를 모집한다.",
+          "kind": "official_statement",
+          "id": "claim:tech-008",
+          "origin_record_id": "tech-008",
+          "verification": "primary_read",
+          "evidence_locator": "PDF pages 1–2: date, Context/Overview, Problem Statement, Objectives & Scope",
+          "limitations": [
+            "연구 제안 요청이며 기술 완성·제품 출시·제조 현장 도입의 증거가 아니다.",
+            "PDF 본문 3/3/26을 문서 발행일로 사용했다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-009",
@@ -2642,7 +3740,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "PDF pages 1–2: date, Problem Statement, Objectives & Scope, Specific Topics"
+      "evidence_locator": "PDF pages 1–2: date, Problem Statement, Objectives & Scope, Specific Topics",
+      "claims": [
+        {
+          "text": "SRA의 2026 START 공모문은 사람 가까이에서 활동하는 로봇의 상호작용·행동 예측 모델 연구를 모집한다.",
+          "kind": "official_statement",
+          "id": "claim:tech-009",
+          "origin_record_id": "tech-009",
+          "verification": "primary_read",
+          "evidence_locator": "PDF pages 1–2: date, Problem Statement, Objectives & Scope, Specific Topics",
+          "limitations": [
+            "목표와 요구사항을 제시한 공모문이며 실제 안전성 입증이나 승인된 상용 기능 목록이 아니다.",
+            "PDF 본문 3/3/26을 문서 발행일로 사용했다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-010",
@@ -2672,7 +3784,21 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "Publication date; body paragraphs Selected projects and Professor Ranjay Krishna quote"
+      "evidence_locator": "Publication date; body paragraphs Selected projects and Professor Ranjay Krishna quote",
+      "claims": [
+        {
+          "text": "삼성 공식 발표는 2026 START의 Physical AI 연구와 로봇 에이전트 시각 추론 연구 협력 방향을 설명한다.",
+          "kind": "official_statement",
+          "id": "claim:tech-010",
+          "origin_record_id": "tech-010",
+          "verification": "primary_read",
+          "evidence_locator": "Publication date; body paragraphs Selected projects and Professor Ranjay Krishna quote",
+          "limitations": [
+            "대학 연구 협력 발표이며 RX 전용 예산·현장 계약·반복매출 증거가 아니다.",
+            "공모·선정·논문 결과는 각각 다른 사건이며 선정 발표를 실험 성공으로 대체하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-011",
@@ -2707,6 +3833,21 @@
       "displayed_dates": [
         "2025-11-17",
         "2026-05-30"
+      ],
+      "claims": [
+        {
+          "text": "레인보우로보틱스는 RBQ 시리즈의 동역학·강화학습 보행 전환과 스케줄 기반 자율주행·복귀 충전 기능을 공식 설명했다.",
+          "kind": "official_statement",
+          "id": "claim:tech-011",
+          "origin_record_id": "tech-011",
+          "verification": "primary_read",
+          "evidence_locator": "보도자료 본문: RBQ 기능 설명, 수상은 11월13일 문장; page date",
+          "limitations": [
+            "제조사 설명이며 기능 성능에 대한 독립 검증을 하지 않았다.",
+            "페이지에 2025-11-17과 May 30th, 2026이 함께 표시된다. 전자를 게시일로, 후자를 수정 표시 가능성이 있는 날짜로 보존한다.",
+            "기관 실증 언급은 있지만 본 자료만으로 유료 상시 가동 기간·매출을 확인할 수 없다."
+          ]
+        }
       ]
     },
     {
@@ -2743,7 +3884,23 @@
         "2026-06-04",
         "2026-06-18"
       ],
-      "event_end_date": "2026-06-25"
+      "event_end_date": "2026-06-25",
+      "claims": [
+        {
+          "text": "레인보우로보틱스는 Automate2026 전시에서 RB와 RBY 플랫폼을 소개할 계획을 공식 게시했다.",
+          "kind": "official_statement",
+          "id": "claim:tech-012",
+          "origin_record_id": "tech-012",
+          "verification": "primary_read",
+          "evidence_locator": "Promotional Videos page date; body RB Series/RBY Series; event June22–25",
+          "limitations": [
+            "전시 예고 텍스트를 확인했으며 영상의 실제 작동, 촬영일, 운영 조건은 검증하지 않았다.",
+            "페이지에 2026-06-04와 June 18th, 2026이 함께 표시된다. 전자를 게시일로 기록하고 후자는 수정 표시 가능 날짜로 보존한다.",
+            "홍보자료 수량을 RX 설치대수·유료 고객 수로 합산하지 않는다."
+          ]
+        }
+      ],
+      "scheduled_event_date": "2026-06-22"
     },
     {
       "id": "tech-013",
@@ -2774,7 +3931,22 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "Samsung AI Forum2026 event date; Schedule > Session2 Physical AI"
+      "evidence_locator": "Samsung AI Forum2026 event date; Schedule > Session2 Physical AI",
+      "claims": [
+        {
+          "text": "Samsung AI Forum2026 공식 일정은 Physical AI 세션에 월드 모델과 로봇 파운데이션 모델 강연을 기재한다.",
+          "kind": "official_statement",
+          "id": "claim:tech-013",
+          "origin_record_id": "tech-013",
+          "verification": "primary_read",
+          "evidence_locator": "Samsung AI Forum2026 event date; Schedule > Session2 Physical AI",
+          "limitations": [
+            "행사일은 확인했으나 이 페이지의 최초 게시일은 확인되지 않아 published_at은 비워 두었다.",
+            "프로그램 소개를 읽었으며 전체 발표 영상·발언록은 검증하지 않았다.",
+            "과거 시점 조회에서 최초 공개일이 확정된 근거로 사용하면 안 된다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-015",
@@ -2835,7 +4007,23 @@
       "scope": "in_window",
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "origin_key": "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm"
+      "origin_key": "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm",
+      "claims": [
+        {
+          "text": "레인보우로보틱스는 2025년 연결 매출을 34,123,111천원으로 공시하고 제품·상품·용역 매출을 구분했다.",
+          "kind": "official_statement",
+          "id": "claim:tech-015",
+          "origin_record_id": "tech-015",
+          "verification": "primary_read",
+          "evidence_locator": "표지 제출일; II.4 매출 및 수주상황 (단위 천원); 연결재무제표 주석31 특수관계자 거래, 주석32 정부보조금",
+          "limitations": [
+            "연간 매출이며 2025-10-30 이후 두 달만의 실적이 아니다.",
+            "전체 회사 매출을 삼성 RX SW 매출이나 반복매출로 대체할 수 없다.",
+            "매출 인식과 대금 수령은 다르며 계약별 가동기간·재계약·사람 개입률은 본 수치로 판별할 수 없다.",
+            "이 보고서의 2025 비교수치를 후속 분기·반기 문서에 반복 제시된 수치와 합산하면 안 된다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-016",
@@ -2888,7 +4076,22 @@
       "scope": "in_window",
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "origin_key": "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm"
+      "origin_key": "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm",
+      "claims": [
+        {
+          "text": "레인보우로보틱스는 2026년 1분기 삼성전자 대상 매출 2,415,164천원을 특수관계자 거래로 공시했다.",
+          "kind": "official_statement",
+          "id": "claim:tech-016",
+          "origin_record_id": "tech-016",
+          "verification": "primary_read",
+          "evidence_locator": "표지 제출일; II.4 매출 및 수주상황; 별도재무제표 주석27 특수관계자 거래 표 (단위 천원)",
+          "limitations": [
+            "삼성전자와의 관계사 거래이며 외부 고객의 반복 구매 또는 SDS 오케스트레이션 매출로 볼 수 없다.",
+            "분기 매출 인식은 대금 전액 회수나 90일 상시 가동을 의미하지 않는다.",
+            "반기 누적수치에 1분기 수치를 다시 더하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-017",
@@ -2952,7 +4155,23 @@
       "accessed_at": "2026-10-30",
       "date_basis": "page",
       "origin_key": "https://kind.krx.co.kr/external/2026/08/14/002335/20260814008101/11012.htm",
-      "as_of_date": "2026-06-30"
+      "as_of_date": "2026-06-30",
+      "claims": [
+        {
+          "text": "레인보우로보틱스 2026년 반기보고서는 KAI KF-21 협동로봇 드릴링머신 계약의 장비 납품·기능테스트 완료와 누적 대금수령 3,527,500천원을 공시했다.",
+          "kind": "official_statement",
+          "id": "claim:tech-017",
+          "origin_record_id": "tech-017",
+          "verification": "primary_read",
+          "evidence_locator": "표지 제출일; X.3 대주주와의 영업거래 (2026.01~2026.06); XI.1 단일판매 공급계약 진행현황 및 향후 추진계획 (단위 천원); II.4 AMR 판매경로",
+          "limitations": [
+            "원계약 공시일은 2024-03-15이며 이번 조사기간의 신규 수주로 계산하면 안 된다. 반기 보고기간말은 2026-06-30이나 실제 납품·시험 완료 일자는 이 표에서 확인되지 않아 event_date는 비워 두었다.",
+            "장비 납품·기능테스트 완료와 시스템 검증 완료는 구분된다. 표는 시스템 검증 후 잔금 수령을 예정하고 있다.",
+            "외부 유료 계약의 근거이지만 SDS RX 전용 소프트웨어 계약·반복매출·90일 상시 가동의 근거가 아니다.",
+            "삼성전자 매출은 관계사 거래이고 RaaS 상품은 추진 단계여서 반복매출로 확정하지 않는다."
+          ]
+        }
+      ]
     },
     {
       "id": "tech-018",
@@ -2997,7 +4216,23 @@
       "scope": "in_window",
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "origin_key": "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf"
+      "origin_key": "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf",
+      "claims": [
+        {
+          "text": "삼성전자 2026년 반기보고서는 레인보우로보틱스를 종속기업으로 기재하고 의결권 있는 주식 기준 지분율 35.0%를 표시했다.",
+          "kind": "official_statement",
+          "id": "claim:tech-018",
+          "origin_record_id": "tech-018",
+          "verification": "primary_read",
+          "evidence_locator": "공식 IR 목록 https://www.samsung.com/sec/ir/reports-disclosures/public-disclosure/4045/ 제출일; PDF 물리84쪽(인쇄81쪽) 국내 종속기업 표 및 지분율 주석",
+          "limitations": [
+            "지분율 표의 주석은 종속기업 보유 지분을 포함한 의결권 있는 주식 기준임을 명시한다.",
+            "2026년 6월말 현황이며 새로 35%를 취득한 사건으로 해석하면 안 된다.",
+            "회계상 종속기업 분류를 그룹 RX 내부 결재선·기술 책임 경계의 증거로 확장하지 않는다.",
+            "삼성전자 전체 투자 또는 매출과 RX 전용 SW 예산·매출을 합산하지 않는다."
+          ]
+        }
+      ]
     }
   ],
   "queries": [

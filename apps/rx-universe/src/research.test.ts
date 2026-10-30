@@ -5,7 +5,7 @@ import { tmpdir } from 'node:os';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
-import { researchAt, researchCounts, catalog, type ResearchRecord, type ResearchCatalog } from './research.ts';
+import { researchAt, researchCounts, researchClaims, getRecordClaims, scheduledEventDate, catalog, type ResearchRecord, type ResearchCatalog } from './research.ts';
 
 // Synthetic chronology fixtures: never mixed into the public research catalog.
 const record = (id: string, overrides: Partial<ResearchRecord> = {}): ResearchRecord => ({
@@ -21,7 +21,7 @@ const fixtureCatalog = (records: ResearchRecord[]): ResearchCatalog => ({
   records, queries: [],
 });
 
-test('as-known replay excludes later disclosures, future events and undated discovery pages', () => {
+test('as-known replay includes announced future plans but excludes later disclosures and undated pages', () => {
   const input = fixtureCatalog([
     record('known'),
     record('late-disclosure', { published_at: '2026-10-01', event_date: '2026-07-01' }),
@@ -29,8 +29,22 @@ test('as-known replay excludes later disclosures, future events and undated disc
     record('undated', { published_at: null, event_date: null, date_basis: 'unknown', scope: 'undated' }),
     record('search-result', { verification: 'search_only', date_basis: 'search_index' }),
   ]);
-  assert.deepEqual(researchAt('2026-09-01', 'known', input).map(item => item.id), ['known', 'search-result']);
-  assert.equal(researchAt('2026-09-01', 'known', input)[1].verification, 'search_only');
+  assert.deepEqual(researchAt('2026-09-01', 'known', input).map(item => item.id), ['known', 'future-event', 'search-result']);
+  assert.equal(researchAt('2026-09-01', 'known', input).find(row => row.id === 'search-result')?.verification, 'search_only');
+  assert.deepEqual(researchAt('2026-09-01', 'known', input, { occurredOnly: true }).map(row => row.id), ['known', 'search-result']);
+});
+test('actual March, June and October announcements are known from publication without redating events', () => {
+  for (const [id, published, scheduled] of [['mi-015', '2026-03-09', '2026-03-11'], ['tech-012', '2026-06-04', '2026-06-22'], ['mi-011', '2025-10-31', '2025-11-21']]) {
+    const current = catalog.records.find(row => row.id === id)!;
+    assert.ok(current, `Missing regression record ${id}`);
+    assert.equal(current.published_at, published);
+    assert.equal(current.event_date, scheduled);
+    assert.equal(scheduledEventDate(current), scheduled);
+    assert.ok(researchAt(published).some(row => row.id === id), `${id}: publicly announced plan must be visible`);
+    assert.ok(!researchAt(published, 'known', catalog, { occurredOnly: true }).some(row => row.id === id));
+    const previousDay = new Date(Date.parse(published) - 86400000).toISOString().slice(0, 10);
+    assert.ok(!researchAt(previousDay).some(row => row.id === id), `${id}: announcement must not leak before publication`);
+  }
 });
 test('retrospective replay admits later disclosure only for an explicitly earlier event', () => {
   const input = fixtureCatalog([
@@ -53,6 +67,21 @@ test('ten republications are ten attributed claims but one independent origin', 
   assert.equal(counts.primaryRead, 1);
   assert.equal(counts.searchOnly, 9);
 });
+test('duplicate documents retain distinct claims and entity tags without multiplying source count', () => {
+  assert.equal(catalog.records.length, 81);
+  const merged = catalog.records.find(row => row.id === 'media-001')!;
+  assert.ok(merged.entity_ids.includes('task') && merged.entity_ids.includes('partner'));
+  const claims = getRecordClaims(merged);
+  assert.ok(claims.some(claim => claim.id === 'claim:media-001'));
+  assert.ok(claims.some(claim => claim.id === 'claim:sds-012' && claim.text.includes('인텔리전스와 플릿')));
+  const flattened = researchClaims([merged]);
+  assert.equal(flattened.length, claims.length);
+  assert.ok(flattened.every(claim => claim.source_id === 'media-001' && claim.source_url === merged.url));
+  assert.equal(new Set(researchClaims().map(claim => claim.id)).size, researchClaims().length);
+  assert.ok(researchCounts().claims >= 84);
+  assert.equal(researchCounts([merged]).total, 1);
+  assert.equal(researchCounts([merged]).claims, claims.length);
+});
 test('current catalog retains provenance fields and cannot promote an attribution to verification', () => {
   for (const row of catalog.records) {
     assert.ok(row.origin_key && row.url && row.evidence_locator);
@@ -72,7 +101,12 @@ function runBuilder(data: ResearchCatalog, args: string[] = []) {
 }
 
 test('SQLite export preserves linked attribution, immutable source rows and hash semantics; rebuild is idempotent', () => {
-  const fixture = fixtureCatalog([record('first'), record('second', { origin_key: 'first' })]);
+  const first = record('first');
+  first.claims = [
+    { id: 'claim:first', ...first.claim, origin_record_id: 'first' },
+    { id: 'claim:merged-extraction', text: 'Another distinct attributed statement.', kind: 'media_report', origin_record_id: 'merged-extraction', verification: 'search_only', limitations: ['Original extraction was search-only'], evidence_locator: 'Search result excerpt' },
+  ];
+  const fixture = fixtureCatalog([first, record('second', { origin_key: 'first' })]);
   const { directory, input, result } = runBuilder(fixture);
   try {
     assert.equal(result.status, 0, result.stderr);
@@ -82,8 +116,10 @@ test('SQLite export preserves linked attribution, immutable source rows and hash
 import json, sqlite3, sys
 c=sqlite3.connect(sys.argv[1]);c.execute('PRAGMA foreign_keys=ON')
 assert c.execute('SELECT count(*) FROM Sources').fetchone()[0] == 2
-assert c.execute('SELECT count(*) FROM Claims WHERE editorial_status="source_attributed_not_independently_verified" AND independently_verified=0').fetchone()[0] == 2
+assert c.execute('SELECT count(*) FROM Claims WHERE editorial_status="source_attributed_not_independently_verified" AND independently_verified=0').fetchone()[0] == 3
 assert c.execute('SELECT count(DISTINCT origin_key) FROM Sources').fetchone()[0] == 1
+assert c.execute('SELECT count(*) FROM Claims WHERE source_id="first"').fetchone()[0] == 2
+assert c.execute('SELECT verification FROM Claims WHERE id="claim:merged-extraction"').fetchone()[0] == 'search_only'
 assert c.execute('SELECT count(*) FROM Sources WHERE length(record_sha256)=64 AND captured_source_sha256 IS NULL').fetchone()[0] == 2
 assert c.execute('PRAGMA foreign_key_check').fetchall() == []
 for sql in ['UPDATE Sources SET title="changed"', 'DELETE FROM Sources', 'UPDATE Claims SET claim_text="changed"', 'DELETE FROM Claims']:
@@ -107,10 +143,33 @@ test('builder rejects duplicate IDs, invented dates, future publications and per
     fixtureCatalog([record('future-date', { published_at: '2026-11-01' })]),
     fixtureCatalog([record('a', { excerpt: 'word '.repeat(13), url: 'https://example.test/shared' }), record('b', { excerpt: 'word '.repeat(13), url: 'https://example.test/shared#fragment' })]),
     fixtureCatalog([record('no-date-basis', { date_basis: 'unknown' })]),
+    fixtureCatalog([record('empty-claims', { claims: [] })]),
+    fixtureCatalog([record('first', { claims: [{ id: 'same-claim-id', text: 'Synthetic test statement, not a real Samsung event.', kind: 'official_statement' }] }), record('second', { claims: [{ id: 'same-claim-id', text: 'Synthetic test statement, not a real Samsung event.', kind: 'official_statement' }] })]),
   ];
   for (const fixture of badInputs) {
     const { directory, result } = runBuilder(fixture, ['--validate-only']);
     try { assert.notEqual(result.status, 0, 'Invalid research input should be rejected'); }
     finally { rmSync(directory, { recursive: true, force: true }); }
   }
+});
+
+test('merge algorithm preserves distinct claims and union tags while collapsing repeated extraction text', () => {
+  const first = record('alpha', { entity_ids: ['sds'], url: 'https://example.test/same' });
+  const second = record('beta', { entity_ids: ['task', 'partner'], url: 'https://www.example.test/same', claim: { text: 'A second, distinct platform architecture claim.', kind: 'official_statement' }, verification: 'search_only' });
+  const duplicate = record('gamma', { entity_ids: ['robot'], url: 'https://example.test/same#part' });
+  const fixture = JSON.stringify([['first', { records: [first], queries: [] }], ['second', { records: [second, duplicate], queries: [] }]]);
+  const result = spawnSync('python3', ['-c', `
+import importlib.util, json, sys
+sys.dont_write_bytecode=True
+spec=importlib.util.spec_from_file_location('merge_research', sys.argv[1]); module=importlib.util.module_from_spec(spec); spec.loader.exec_module(module)
+rows, queries, duplicates, gaps=module.merge_inventories(json.loads(sys.argv[2]))
+print(json.dumps(list(rows.values())))
+`, join(projectRoot, 'scripts/merge-research.py'), fixture], { encoding: 'utf8', timeout: 10000 });
+  assert.equal(result.status, 0, result.stderr);
+  const rows = JSON.parse(result.stdout) as ResearchRecord[];
+  assert.equal(rows.length, 1);
+  assert.equal(getRecordClaims(rows[0]).length, 2);
+  assert.deepEqual(new Set(rows[0].entity_ids), new Set(['sds', 'task', 'partner', 'robot']));
+  assert.ok(getRecordClaims(rows[0]).some(claim => claim.id === 'claim:beta' && claim.verification === 'search_only'));
+  assert.equal(rows[0].claim.text, first.claim.text);
 });

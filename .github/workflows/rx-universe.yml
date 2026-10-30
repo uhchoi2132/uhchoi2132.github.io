@@ -82,6 +82,7 @@ jobs:
           assert db.execute('PRAGMA integrity_check').fetchone()[0] == 'ok'
           assert db.execute('SELECT COUNT(*) FROM Sources').fetchone()[0] == len(expected['records'])
           assert db.execute('PRAGMA foreign_key_check').fetchall() == []
+          assert db.execute('SELECT COUNT(*) FROM Claims').fetchone()[0] == sum(len(row.get('claims', [row['claim']])) for row in expected['records'])
           assert 'SAMSUNG RX' in Path('/tmp/rx-page.html').read_text()
           print('Anonymous public JSON and SQLite verified:', len(expected['records']), 'sources')
           PYCODE

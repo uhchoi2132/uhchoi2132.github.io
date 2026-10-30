@@ -84,6 +84,15 @@ def required_text(value: object, field: str) -> str:
     return value
 
 
+def record_claims(record: dict) -> list[dict]:
+    """Compatibility adapter; source dedup is separate from claim preservation."""
+    return record.get('claims') or [{
+        **record['claim'], 'id': f"claim:{record['id']}", 'origin_record_id': record['id'],
+        'verification': record['verification'], 'evidence_locator': record['evidence_locator'],
+        'limitations': record['limitations'],
+    }]
+
+
 def validate(data: dict) -> dict:
     if not isinstance(data, dict) or not isinstance(data.get('meta'), dict):
         raise ValueError('Root must contain meta, records and queries')
@@ -100,6 +109,7 @@ def validate(data: dict) -> dict:
     if type(meta.get('query_count')) is not int or meta['query_count'] != len(queries):
         raise ValueError('meta.query_count must equal the number of recorded queries')
     ids: set[str] = set()
+    claim_ids: set[str] = set()
     excerpts_by_url: dict[str, int] = {}
     query_ids: set[str] = set()
     for index, query in enumerate(queries):
@@ -139,6 +149,11 @@ def validate(data: dict) -> dict:
         published = day(published_value, f'{label}.published_at') if published_value is not None else None
         if event_value is not None:
             day(event_value, f'{label}.event_date')
+        scheduled = record.get('scheduled_event_date')
+        if scheduled is not None:
+            day(scheduled, f'{label}.scheduled_event_date')
+            if not published_value or scheduled != event_value or scheduled <= published_value:
+                raise ValueError(f'{label}: scheduled_event_date must preserve a future event_date after publication')
         accessed = accessed_day(record.get('accessed_at'), f'{label}.accessed_at')
         if accessed > researched:
             raise ValueError(f'{label}: accessed_at cannot be later than researched_at')
@@ -168,6 +183,32 @@ def validate(data: dict) -> dict:
         if not isinstance(claim, dict) or claim.get('kind') not in CLAIM_KINDS:
             raise ValueError(f'{label}.claim: attributed claim text and valid kind required')
         required_text(claim.get('text'), f'{label}.claim.text')
+        if 'claims' in record and (not isinstance(record['claims'], list) or not record['claims']):
+            raise ValueError(f'{label}.claims: nonempty array required when supplied')
+        seen_texts = set()
+        for extracted in record_claims(record):
+            if not isinstance(extracted, dict):
+                raise ValueError(f'{label}.claims: object entries required')
+            claim_id = required_text(extracted.get('id'), f'{label}.claims.id')
+            if claim_id in claim_ids:
+                raise ValueError(f'Duplicate claim id: {claim_id}')
+            claim_ids.add(claim_id)
+            required_text(extracted.get('text'), f'{label}.claims.text')
+            if extracted.get('kind') not in CLAIM_KINDS:
+                raise ValueError(f'{label}.claims.kind: invalid attribution kind')
+            key = (extracted['kind'], ' '.join(extracted['text'].split()))
+            if key in seen_texts:
+                raise ValueError(f'{label}.claims: duplicate extracted claim text/kind')
+            seen_texts.add(key)
+            if extracted.get('verification', record['verification']) not in VERIFICATIONS:
+                raise ValueError(f'{label}.claims.verification: invalid status')
+            limits = extracted.get('limitations', record['limitations'])
+            if not isinstance(limits, list) or any(not isinstance(item, str) or not item.strip() for item in limits):
+                raise ValueError(f'{label}.claims.limitations: array of nonempty strings required')
+            if extracted.get('verification', record['verification']) != 'primary_read' and not limits:
+                raise ValueError(f'{label}.claims: unverified extraction requires limitations')
+        if (claim['kind'], ' '.join(claim['text'].split())) not in seen_texts:
+            raise ValueError(f'{label}: legacy claim must be preserved in claims array')
     return data
 
 
@@ -177,7 +218,7 @@ CREATE TABLE Metadata(key TEXT PRIMARY KEY, value_json TEXT NOT NULL);
 CREATE TABLE Entities(id TEXT PRIMARY KEY, canonical_name TEXT NOT NULL, entity_type TEXT NOT NULL, description TEXT NOT NULL);
 CREATE TABLE Sources(
  id TEXT PRIMARY KEY, title TEXT NOT NULL, url TEXT NOT NULL, publisher TEXT NOT NULL,
- published_at TEXT, event_date TEXT, source_type TEXT NOT NULL,
+ published_at TEXT, event_date TEXT, scheduled_event_date TEXT, source_type TEXT NOT NULL,
  verification TEXT NOT NULL CHECK(verification IN ('primary_read','search_only','access_blocked')),
  scope TEXT NOT NULL CHECK(scope IN ('in_window','undated','out_of_window')),
  origin_key TEXT NOT NULL, summary_ko TEXT NOT NULL, excerpt TEXT NOT NULL,
@@ -192,7 +233,10 @@ CREATE TABLE Claims(
  claim_kind TEXT NOT NULL CHECK(claim_kind IN ('official_statement','media_report','research_result','inference')),
  editorial_status TEXT NOT NULL CHECK(editorial_status='source_attributed_not_independently_verified'),
  event_date TEXT, published_at TEXT, ingested_at TEXT NOT NULL,
- independently_verified INTEGER NOT NULL DEFAULT 0 CHECK(independently_verified=0)
+ independently_verified INTEGER NOT NULL DEFAULT 0 CHECK(independently_verified=0),
+ scheduled_event_date TEXT, origin_record_id TEXT,
+ verification TEXT NOT NULL CHECK(verification IN ('primary_read','search_only','access_blocked')),
+ evidence_locator TEXT NOT NULL, limitations_json TEXT NOT NULL
 );
 CREATE TABLE SourceEntities(
  source_id TEXT NOT NULL REFERENCES Sources(id), entity_id TEXT NOT NULL REFERENCES Entities(id),
@@ -223,7 +267,7 @@ def build(source: Path, out_dir: Path) -> dict:
     try:
         with sqlite3.connect(temporary) as db:
             db.executescript(SCHEMA)
-            metadata = {**data['meta'], 'schema_version': '1.0', 'source_json_sha256': sha256(raw),
+            metadata = {**data['meta'], 'schema_version': '1.1', 'source_json_sha256': sha256(raw),
                         'storage_kind': 'portable_sqlite_snapshot', 'claim_editorial_status': EDITORIAL_STATUS,
                         'record_hash_semantics': 'SHA-256 of canonical record JSON, not original HTML or source bytes',
                         'captured_source_hash_semantics': 'NULL: original source bytes were not captured by this builder',
@@ -235,16 +279,20 @@ def build(source: Path, out_dir: Path) -> dict:
                 db.execute('INSERT INTO Entities VALUES(?,?,?,?)', (entity_id, name, kind, 'Research indexing entity; inclusion does not establish a business relationship'))
             for record in sorted(data['records'], key=lambda item: item['id']):
                 normalized_record = canonical(record)
-                db.execute('''INSERT INTO Sources VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''', (
-                    record['id'], record['title'], record['url'], record['publisher'], record['published_at'], record['event_date'],
+                db.execute('''INSERT INTO Sources VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''', (
+                    record['id'], record['title'], record['url'], record['publisher'], record['published_at'], record['event_date'], record.get('scheduled_event_date'),
                     record['source_type'], record['verification'], record['scope'], record['origin_key'], record['summary_ko'],
                     record['excerpt'], record['commercialization_stage'], canonical(record['limitations']), record['accessed_at'],
                     record['date_basis'], record['evidence_locator'], sha256(normalized_record), None, normalized_record,
                 ))
-                db.execute('INSERT INTO Claims VALUES(?,?,?,?,?,?,?,?,?)', (
-                    f'claim:{record["id"]}', record['id'], record['claim']['text'], record['claim']['kind'], EDITORIAL_STATUS,
-                    record['event_date'], record['published_at'], record['accessed_at'], 0,
-                ))
+                for claim in record_claims(record):
+                    db.execute('INSERT INTO Claims VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+                        claim['id'], record['id'], claim['text'], claim['kind'], EDITORIAL_STATUS,
+                        record['event_date'], record['published_at'], record['accessed_at'], 0,
+                        record.get('scheduled_event_date'), claim.get('origin_record_id'),
+                        claim.get('verification', record['verification']), claim.get('evidence_locator', record['evidence_locator']),
+                        canonical(claim.get('limitations', record['limitations'])),
+                    ))
                 db.executemany('INSERT INTO SourceEntities VALUES(?,?)', [(record['id'], entity_id) for entity_id in sorted(record['entity_ids'])])
             for index, query in enumerate(data['queries']):
                 db.execute('INSERT INTO Queries VALUES(?,?,?,?)', (str(query.get('id', f'query:{index + 1:04d}')), query['query'], query['category'], canonical(query)))
@@ -263,7 +311,7 @@ def build(source: Path, out_dir: Path) -> dict:
     finally:
         temporary.unlink(missing_ok=True)
     return {'database': str(target), 'json': str(out_dir / 'rx-research.json'), 'sources': len(data['records']),
-            'claims': len(data['records']), 'independent_origins': len({record['origin_key'] for record in data['records']}),
+            'claims': sum(len(record_claims(record)) for record in data['records']), 'independent_origins': len({record['origin_key'] for record in data['records']}),
             'queries': len(data['queries']), 'source_json_sha256': sha256(raw)}
 
 

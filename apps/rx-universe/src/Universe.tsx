@@ -1,43 +1,25 @@
 import React, { Component, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Canvas, useThree } from '@react-three/fiber';
 import { Html, Line, OrbitControls } from '@react-three/drei';
-import * as THREE from 'three';
+import type { PerspectiveCamera } from 'three';
+import type { KnowledgeGraph, KnowledgeNode, KnowledgeRelation } from './knowledge';
 
-type Kind = 'organization' | 'technology' | 'hypothesis' | 'evidence';
 type Position = [number, number, number];
 type LabelPortal = React.RefObject<HTMLDivElement | null>;
-interface GraphNode { id: string; title: string; subtitle?: string; kind: Kind; position: Position; size: number }
-export interface UniverseProps { mode: '3d' | '2d'; filter: string; search: string; onSelect: (id: string) => void }
-const colors: Record<Kind, string> = { organization: '#4ce8c4', technology: '#62acff', hypothesis: '#a896f4', evidence: '#d8ab61' };
-const nodes: GraphNode[] = [
-  { id: 'se', title: 'SAMSUNG ELECTRONICS', subtitle: '삼성전자 · 독립 탐색 축', kind: 'organization', position: [-4.9, 1.55, .1], size: .21 },
-  { id: 'sds', title: 'SAMSUNG SDS', subtitle: '삼성SDS · 독립 탐색 축', kind: 'organization', position: [.4, .65, 1], size: .28 },
-  { id: 'miracom', title: 'MIRACOM', subtitle: '미라콤 · 독립 탐색 축', kind: 'organization', position: [4.7, -.8, -.4], size: .19 },
-  { id: 'mes', title: 'MES', kind: 'technology', position: [4.1, 1.3, -.5], size: .10 },
-  { id: 'job', title: 'Job orchestration', kind: 'technology', position: [-.95, 2.2, -.5], size: .10 },
-  { id: 'task', title: 'Task graph', kind: 'technology', position: [2, 1.9, -.7], size: .11 },
-  { id: 'scheduling', title: 'Scheduling', kind: 'technology', position: [-.8, -1.5, 0], size: .10 },
-  { id: 'dispatch', title: 'Dispatch', kind: 'technology', position: [2.4, -2.15, .4], size: .09 },
-  { id: 'rcs', title: 'RCS / API', kind: 'technology', position: [5.6, 1, .7], size: .11 },
-  { id: 'robot', title: 'Robot fleet', kind: 'technology', position: [5.9, -2.15, .6], size: .11 },
-  { id: 'kpi', title: 'Operational KPI', kind: 'evidence', position: [3.7, -3, .1], size: .10 },
-  { id: 'factory', title: 'Manufacturing sites', subtitle: '현장·상용화 검증 필요', kind: 'organization', position: [-3.5, -1.2, .6], size: .12 },
-  { id: 'platform', title: 'Shared platform', kind: 'hypothesis', position: [.3, 3.2, -.4], size: .12 },
-  { id: 'vertical', title: 'Vertical integration', kind: 'hypothesis', position: [-5.7, -1.55, -.2], size: .11 },
-  { id: 'distributed', title: 'Distributed SI', kind: 'hypothesis', position: [6, -3.05, -.2], size: .10 },
-  { id: 'api', title: 'Common API', kind: 'technology', position: [2.5, -.1, .7], size: .11 },
-  { id: 'partner', title: 'External partners', kind: 'organization', position: [-2.8, 3.15, -.7], size: .10 },
-  { id: 'evidence', title: 'Evidence vault', subtitle: '원출처 검증 대기', kind: 'evidence', position: [-2.1, -3, -.5], size: .12 },
-];
-const connections: [string, string][] = [
-  ['se', 'vertical'], ['se', 'factory'], ['se', 'partner'], ['sds', 'platform'], ['sds', 'job'], ['sds', 'task'],
-  ['sds', 'scheduling'], ['sds', 'api'], ['sds', 'partner'], ['sds', 'factory'], ['miracom', 'mes'], ['miracom', 'rcs'],
-  ['miracom', 'robot'], ['miracom', 'distributed'], ['job', 'task'], ['task', 'scheduling'], ['scheduling', 'dispatch'],
-  ['dispatch', 'rcs'], ['rcs', 'robot'], ['robot', 'kpi'], ['factory', 'evidence'], ['platform', 'api'], ['api', 'rcs'],
-  ['evidence', 'sds'], ['evidence', 'kpi'], ['mes', 'job'],
-];
-const byId = Object.fromEntries(nodes.map(n => [n.id, n]));
-function matches(node: GraphNode, filter: string, search: string) {
+export interface UniverseProps {
+  mode: '3d' | '2d';
+  filter: string;
+  search: string;
+  graph: KnowledgeGraph;
+  onSelect: (nodeId: string) => void;
+  onSelectRelation: (relationId: string) => void;
+}
+const colors: Record<KnowledgeNode['kind'], string> = { organization: '#4ce8c4', technology: '#62acff', hypothesis: '#a896f4', evidence: '#d8ab61' };
+const primaryNode = (node: KnowledgeNode) => node.kind === 'organization' && node.size >= .16;
+const relationStatus = (relation: KnowledgeRelation) => relation.inferred ? '분석 연결 · 검토 필요' : '출처 귀속 관계';
+const relationColor = (relation: KnowledgeRelation) => relation.type === 'contradicts' ? '#bd847a' : relation.inferred ? '#8b78bb' : '#547f79';
+const relationName = (relation: KnowledgeRelation, from: KnowledgeNode, to: KnowledgeNode) => `${from.title} → ${to.title} · ${relation.label} · ${relationStatus(relation)} · 연결 근거 보기`;
+function matches(node: KnowledgeNode, filter: string, search: string) {
   const normalized = filter.trim().toLowerCase();
   const category = !normalized || ['all', '전체', 'all types'].includes(normalized) || normalized.includes(node.kind) ||
     (node.kind === 'organization' && /compan|기업|조직/.test(normalized)) ||
@@ -46,56 +28,65 @@ function matches(node: GraphNode, filter: string, search: string) {
     (node.kind === 'evidence' && /source|근거|증거/.test(normalized));
   return category && `${node.id} ${node.title} ${node.subtitle ?? ''}`.toLowerCase().includes(search.trim().toLowerCase());
 }
-function seeded(index: number) { const x = Math.sin(index * 127.1 + 311.7) * 43758.5453; return x - Math.floor(x); }
-const cloud = Array.from({ length: 132 }, (_, i) => {
-  const center = [nodes[0], nodes[1], nodes[2]][i % 3];
-  const angle = seeded(i + 1) * Math.PI * 2, radius = .45 + seeded(i + 72) * 2;
-  return { position: [center.position[0] + Math.cos(angle) * radius, center.position[1] + Math.sin(angle) * radius * .8, center.position[2] + (seeded(i + 50) - .5) * 2.6] as Position, parent: center, size: .012 + seeded(i + 200) * .026 };
-});
-
-function StarCloud() {
-  const geometry = useMemo(() => {
-    const g = new THREE.BufferGeometry();
-    g.setAttribute('position', new THREE.Float32BufferAttribute(cloud.flatMap(p => p.position), 3));
-    return g;
-  }, []);
-  return <group>
-    <points geometry={geometry}><pointsMaterial color="#73c6bc" size={.035} transparent opacity={.5} sizeAttenuation depthWrite={false} /></points>
-    {cloud.filter((_, i) => i % 2 === 0).map((p, i) => <Line key={i} points={[p.parent.position, p.position]} color="#254c49" lineWidth={.6} transparent opacity={.36} />)}
-  </group>;
+interface Boundaries { center: Position; span: Position }
+function graphBounds(nodes: KnowledgeNode[]): Boundaries {
+  if (!nodes.length) return { center: [0, 0, 0], span: [10, 6, 2] };
+  const min: Position = [Infinity, Infinity, Infinity];
+  const max: Position = [-Infinity, -Infinity, -Infinity];
+  for (const node of nodes) for (let axis = 0; axis < 3; axis++) {
+    min[axis] = Math.min(min[axis], node.position[axis] - node.size);
+    max[axis] = Math.max(max[axis], node.position[axis] + node.size);
+  }
+  return { center: min.map((value, axis) => (value + max[axis]) / 2) as Position, span: min.map((value, axis) => Math.max(2, max[axis] - value)) as Position };
 }
-
-function Node({ node, active, onSelect, portal }: { node: GraphNode; active: boolean; onSelect: (id: string) => void; portal: LabelPortal }) {
+function FitCamera({ bounds }: { bounds: Boundaries }) {
+  const { camera, size, invalidate } = useThree();
+  const [x, y, z] = bounds.center;
+  const [width, height, depth] = bounds.span;
+  useEffect(() => {
+    const perspective = camera as PerspectiveCamera;
+    const halfFov = perspective.fov * Math.PI / 360;
+    const aspect = Math.max(.2, size.width / Math.max(1, size.height));
+    const distance = Math.max(height / (2 * Math.tan(halfFov)), (width + 2) / (2 * Math.tan(halfFov) * aspect), 7) * 1.25 + depth / 2;
+    perspective.position.set(x, y, z + distance);
+    perspective.lookAt(x, y, z);
+    perspective.updateProjectionMatrix();
+    invalidate();
+  }, [camera, size.width, size.height, x, y, z, width, height, depth, invalidate]);
+  return null;
+}
+function Node({ node, active, onSelect, portal }: { node: KnowledgeNode; active: boolean; onSelect: (id: string) => void; portal: LabelPortal }) {
   const [hover, setHover] = useState(false);
   useEffect(() => () => { document.body.style.cursor = ''; }, []);
   useEffect(() => { if (!active) { setHover(false); document.body.style.cursor = ''; } }, [active]);
   const color = colors[node.kind];
-  const primary = ['se', 'sds', 'miracom'].includes(node.id);
+  const primary = primaryNode(node);
   return <group position={node.position}>
-    <mesh onClick={e => { if (!active) return; e.stopPropagation(); onSelect(node.id); }} onPointerOver={e => { if (!active) return; e.stopPropagation(); setHover(true); document.body.style.cursor = 'pointer'; }} onPointerOut={() => { setHover(false); document.body.style.cursor = ''; }}>
-      <sphereGeometry args={[node.size * (hover ? 1.16 : 1), 24, 24]} />
-      <meshBasicMaterial color={color} transparent opacity={active ? .94 : .11} />
+    <mesh onClick={event => { if (!active) return; event.stopPropagation(); onSelect(node.id); }} onPointerOver={event => { if (!active) return; event.stopPropagation(); setHover(true); document.body.style.cursor = 'pointer'; }} onPointerOut={() => { setHover(false); document.body.style.cursor = ''; }}>
+      <sphereGeometry args={[node.size * (hover ? 1.16 : 1), 24, 24]}/><meshBasicMaterial color={color} transparent opacity={active ? .94 : .11}/>
     </mesh>
-    <mesh><sphereGeometry args={[node.size * 1.65, 24, 24]} /><meshBasicMaterial color={color} transparent opacity={active ? (hover ? .16 : .065) : .015} depthWrite={false} /></mesh>
-    {primary && <mesh rotation={[Math.PI / 2.8, .2, .3]}><torusGeometry args={[node.size * 2.1, .008, 8, 64]} /><meshBasicMaterial color={color} transparent opacity={active ? .55 : .06} /></mesh>}
+    <mesh><sphereGeometry args={[node.size * 1.65, 24, 24]}/><meshBasicMaterial color={color} transparent opacity={active ? (hover ? .16 : .065) : .015} depthWrite={false}/></mesh>
+    {primary && <mesh rotation={[Math.PI / 2.8, .2, .3]}><torusGeometry args={[node.size * 2.1, .008, 8, 64]}/><meshBasicMaterial color={color} transparent opacity={active ? .55 : .06}/></mesh>}
     {active && <Html portal={portal as React.ComponentProps<typeof Html>['portal']} center position={[0, -node.size - (primary ? .38 : .22), 0]} distanceFactor={15} style={{ pointerEvents: 'none' }}>
-      <button type="button" tabIndex={-1} onClick={() => onSelect(node.id)} style={{ pointerEvents: 'auto', color: primary ? '#deeee9' : color, background: primary ? 'rgba(8,20,22,.72)' : 'rgba(8,18,21,.53)', border: 'none', padding: primary ? '6px 9px' : '3px 6px', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: 'inherit', fontSize: primary ? 11 : 9, letterSpacing: primary ? '1px' : '.15px', fontWeight: primary ? 600 : 400, textAlign: 'center', opacity: primary || hover ? 1 : .78 }}>
-        {node.title}{primary && <span style={{ display: 'block', color: '#78958e', fontSize: 8, letterSpacing: '.2px', marginTop: 5 }}>{node.subtitle}</span>}
+      <button type="button" tabIndex={-1} data-graph-node-id={node.id} data-node-id={node.id} aria-label={`${node.title} 상세 보기`} onClick={() => onSelect(node.id)} style={{ pointerEvents: 'auto', color: primary ? '#deeee9' : color, background: primary ? 'rgba(8,20,22,.84)' : 'rgba(8,18,21,.75)', border: 'none', padding: primary ? '6px 9px' : '3px 6px', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: 'inherit', fontSize: primary ? 11 : 9, letterSpacing: primary ? '1px' : '.15px', fontWeight: primary ? 600 : 400, textAlign: 'center', opacity: primary || hover ? 1 : .86 }}>
+        {node.title}{primary && node.subtitle && <span style={{ display: 'block', color: '#78958e', fontSize: 8, letterSpacing: '.2px', marginTop: 5 }}>{node.subtitle}</span>}
       </button>
     </Html>}
   </group>;
 }
-function GraphLink({ from, to, active, onSelect }: { from: GraphNode; to: GraphNode; active: boolean; onSelect: (id: string) => void }) {
+function GraphLink({ relation, from, to, active, onSelectRelation, portal }: { relation: KnowledgeRelation; from: KnowledgeNode; to: KnowledgeNode; active: boolean; onSelectRelation: (id: string) => void; portal: LabelPortal }) {
   const [hover, setHover] = useState(false);
   useEffect(() => () => { document.body.style.cursor = ''; }, []);
   useEffect(() => { if (!active) { setHover(false); document.body.style.cursor = ''; } }, [active]);
   const points: Position[] = [from.position, to.position];
+  const midpoint = from.position.map((value, axis) => (value + to.position[axis]) / 2) as Position;
   return <group>
-    <Line points={points} color={hover ? '#bce8db' : from.kind === 'hypothesis' || to.kind === 'hypothesis' ? '#7965b2' : '#497476'} lineWidth={hover ? 1.3 : .7} dashed dashSize={.075} gapSize={.065} transparent opacity={active ? (hover ? .9 : .52) : .08} />
+    <Line points={points} color={hover ? '#c4e8dc' : relationColor(relation)} lineWidth={hover ? 1.6 : 1} dashed={relation.inferred} dashSize={.075} gapSize={.065} transparent opacity={active ? (hover ? .95 : .65) : .08}/>
     {active && <Line points={points} lineWidth={10} transparent opacity={0} depthWrite={false}
-      onClick={event => { event.stopPropagation(); onSelect('evidence'); }}
+      onClick={event => { event.stopPropagation(); onSelectRelation(relation.id); }}
       onPointerOver={event => { event.stopPropagation(); setHover(true); document.body.style.cursor = 'pointer'; }}
-      onPointerOut={() => { setHover(false); document.body.style.cursor = ''; }} />}
+      onPointerOut={() => { setHover(false); document.body.style.cursor = ''; }}/>}
+    {active && hover && <Html portal={portal as React.ComponentProps<typeof Html>['portal']} center position={midpoint} style={{ pointerEvents: 'none' }}><span style={{ display: 'block', padding: '5px 8px', border: '1px solid #47665b', background: '#10211ff2', borderRadius: 4, color: '#c7e3da', fontSize: 10, whiteSpace: 'nowrap' }}>{relation.label} · {relationStatus(relation)}</span></Html>}
   </group>;
 }
 function ContextLossFallback({ onLost }: { onLost: () => void }) {
@@ -107,66 +98,92 @@ function ContextLossFallback({ onLost }: { onLost: () => void }) {
   }, [gl, onLost]);
   return null;
 }
-function Scene({ filter, search, onSelect, portal }: Omit<UniverseProps, 'mode'> & { portal: LabelPortal }) {
-  const activeIds = new Set(nodes.filter(n => matches(n, filter, search)).map(n => n.id));
+function Scene({ graph, filter, search, onSelect, onSelectRelation, portal }: Omit<UniverseProps, 'mode'> & { portal: LabelPortal }) {
+  const nodesById = new Map(graph.nodes.map(node => [node.id, node]));
+  const activeIds = new Set(graph.nodes.filter(node => matches(node, filter, search)).map(node => node.id));
+  const bounds = graphBounds(graph.nodes);
+  const radius = Math.max(...bounds.span) / 2;
   return <>
-    <StarCloud />
-    {connections.map(([a, b]) => <GraphLink key={`${a}-${b}`} from={byId[a]} to={byId[b]} active={activeIds.has(a) && activeIds.has(b)} onSelect={onSelect} />)}
-    {nodes.map(node => <Node key={node.id} node={node} active={activeIds.has(node.id)} onSelect={onSelect} portal={portal} />)}
-    <OrbitControls makeDefault enablePan enableZoom minDistance={8} maxDistance={25} maxPolarAngle={Math.PI * .8} minPolarAngle={Math.PI * .2} enableDamping={false} />
+    <FitCamera bounds={bounds}/>
+    {graph.relations.map(relation => { const from = nodesById.get(relation.from), to = nodesById.get(relation.to); return from && to ? <GraphLink key={relation.id} relation={relation} from={from} to={to} active={activeIds.has(from.id) && activeIds.has(to.id)} onSelectRelation={onSelectRelation} portal={portal}/> : null; })}
+    {graph.nodes.map(node => <Node key={node.id} node={node} active={activeIds.has(node.id)} onSelect={onSelect} portal={portal}/>)}
+    <OrbitControls makeDefault target={bounds.center} enablePan enableZoom minDistance={Math.max(3, radius * .5)} maxDistance={Math.max(100, radius * 10)} maxPolarAngle={Math.PI * .8} minPolarAngle={Math.PI * .2} enableDamping={false}/>
   </>;
 }
-function FlatGraph({ filter, search, onSelect }: Omit<UniverseProps, 'mode'>) {
+function FlatGraph({ graph, filter, search, onSelect, onSelectRelation }: Omit<UniverseProps, 'mode'>) {
   const glowId = useId();
-  const pos = (n: GraphNode) => [460 + n.position[0] * 57, 248 - n.position[1] * 52];
-  const activeIds = new Set(nodes.filter(n => matches(n, filter, search)).map(n => n.id));
-  return <svg role="group" aria-label="RX 지식 그래프 2D. 모든 연결은 검증 전 가설입니다." viewBox="0 0 920 500" style={{ width: '100%', height: '100%', overflow: 'visible' }}>
-    <defs><radialGradient id={glowId}><stop offset="0" stopColor="#40d1b6" stopOpacity=".12" /><stop offset="1" stopColor="#40d1b6" stopOpacity="0" /></radialGradient></defs>
-    {nodes.slice(0, 3).map(n => <circle key={`glow-${n.id}`} cx={pos(n)[0]} cy={pos(n)[1]} r="125" fill={`url(#${glowId})`} />)}
-    {cloud.map((p, i) => { const x = 460 + p.position[0] * 57, y = 248 - p.position[1] * 52; return <g key={i}><line x1={pos(p.parent)[0]} y1={pos(p.parent)[1]} x2={x} y2={y} stroke="#284b48" strokeWidth=".5" opacity=".45" /><circle cx={x} cy={y} r={p.size * 37} fill="#82c2b7" opacity=".45" /></g>; })}
-    {connections.map(([a, b]) => { const active = activeIds.has(a) && activeIds.has(b); const line = { x1: pos(byId[a])[0], y1: pos(byId[a])[1], x2: pos(byId[b])[0], y2: pos(byId[b])[1] }; return <g key={`${a}-${b}`} className="rx-link" role="button" aria-disabled={!active} aria-label={`${byId[a].title}와 ${byId[b].title} 연결 근거 보기 — 검증 전 가설`} tabIndex={active ? 0 : -1} onClick={() => { if (active) onSelect('evidence'); }} onKeyDown={e => { if (active && (e.key === 'Enter' || e.key === ' ')) { e.preventDefault(); onSelect('evidence'); } }} style={{ cursor: active ? 'pointer' : 'default', outline: 'none', pointerEvents: active ? 'auto' : 'none' }}>
-      <title>{byId[a].title} ↔ {byId[b].title} · 연결 근거 보기 (검증 전)</title>
-      <line {...line} stroke="transparent" strokeWidth="12" />
-      <line {...line} className="rx-link-line" stroke="#54717b" strokeDasharray="3 5" opacity={active ? .55 : .1} strokeWidth=".9" pointerEvents="none" />
-    </g>; })}
-    {nodes.map(n => { const [x, y] = pos(n), primary = ['se', 'sds', 'miracom'].includes(n.id), active = activeIds.has(n.id); return <g key={n.id} role="button" aria-disabled={!active} aria-label={`${n.title} 상세 보기`} tabIndex={active ? 0 : -1} onClick={() => { if (active) onSelect(n.id); }} onKeyDown={e => { if (!active) return; if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onSelect(n.id); } }} style={{ cursor: active ? 'pointer' : 'default', outline: 'none', opacity: active ? 1 : .1, pointerEvents: active ? 'auto' : 'none' }}>
-      <title>{n.title} — 상세 보기 · 검증 전 설계 노드</title>
-      <circle cx={x} cy={y} r={n.size * 70} fill={colors[n.kind]} opacity=".09" />
-      {primary && <circle cx={x} cy={y} r={n.size * 57} fill="none" stroke={colors[n.kind]} strokeWidth=".6" opacity=".5" />}
-      <circle cx={x} cy={y} r={n.size * 35} fill={colors[n.kind]} />
-      <text x={x} y={y + n.size * 45 + 14} fill={primary ? '#d7e7e4' : colors[n.kind]} textAnchor="middle" fontFamily="inherit" fontSize={primary ? '10' : '8.5'} letterSpacing={primary ? '.8px' : '.1px'}>{n.title}</text>
-      {primary && <text x={x} y={y + n.size * 45 + 28} fill="#7b8e8d" textAnchor="middle" fontFamily="inherit" fontSize="7.5">{n.subtitle}</text>}
+  const position = (node: KnowledgeNode): [number, number] => [node.position[0] * 50, -node.position[1] * 50];
+  const bounds = graphBounds(graph.nodes);
+  const width = Math.max(660, bounds.span[0] * 50 + 180), height = Math.max(370, bounds.span[1] * 50 + 110);
+  const viewBox = `${bounds.center[0] * 50 - width / 2} ${-bounds.center[1] * 50 - height / 2} ${width} ${height}`;
+  const nodesById = new Map(graph.nodes.map(node => [node.id, node]));
+  const activeIds = new Set(graph.nodes.filter(node => matches(node, filter, search)).map(node => node.id));
+  return <svg role="group" aria-label="RX 지식 그래프 2D. 실선은 출처 귀속 관계, 점선은 분석 연결입니다." viewBox={viewBox} style={{ width: '100%', height: '100%', overflow: 'visible' }}>
+    <defs><radialGradient id={glowId}><stop offset="0" stopColor="#40d1b6" stopOpacity=".08"/><stop offset="1" stopColor="#40d1b6" stopOpacity="0"/></radialGradient></defs>
+    {graph.nodes.filter(primaryNode).map(node => <circle key={`glow-${node.id}`} cx={position(node)[0]} cy={position(node)[1]} r="65" fill={`url(#${glowId})`} pointerEvents="none"/>)}
+    {graph.relations.map(relation => {
+      const from = nodesById.get(relation.from), to = nodesById.get(relation.to);
+      if (!from || !to) return null;
+      const active = activeIds.has(from.id) && activeIds.has(to.id);
+      const [x1, y1] = position(from), [x2, y2] = position(to);
+      return <g key={relation.id} className="rx-link" data-relation-id={relation.id} data-edge-id={relation.id} data-inferred={String(relation.inferred)} role="button" aria-disabled={!active} aria-label={relationName(relation, from, to)} tabIndex={active ? 0 : -1}
+        onClick={() => { if (active) onSelectRelation(relation.id); }} onKeyDown={event => { if (active && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onSelectRelation(relation.id); } }} style={{ cursor: active ? 'pointer' : 'default', outline: 'none', pointerEvents: active ? 'auto' : 'none' }}>
+        <title>{relationName(relation, from, to)}{`\n${relation.rationale}`}</title>
+        <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="transparent" strokeWidth="12"/>
+        <line x1={x1} y1={y1} x2={x2} y2={y2} className="rx-link-line" stroke={relationColor(relation)} strokeDasharray={relation.inferred ? '3 5' : undefined} opacity={active ? .7 : .1} strokeWidth="1" pointerEvents="none"/>
+        <text className="rx-link-caption" x={(x1+x2)/2} y={(y1+y2)/2-7} fill="#c7e6db" stroke="#0b171b" strokeWidth="4" paintOrder="stroke" textAnchor="middle" fontFamily="inherit" fontSize="9" pointerEvents="none">{relation.label}</text>
+      </g>;
+    })}
+    {graph.nodes.map(node => { const [x, y] = position(node), primary = primaryNode(node), active = activeIds.has(node.id); return <g key={node.id} data-graph-node-id={node.id} data-node-id={node.id} role="button" aria-disabled={!active} aria-label={`${node.title} 상세 보기`} tabIndex={active ? 0 : -1}
+      onClick={() => { if (active) onSelect(node.id); }} onKeyDown={event => { if (active && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onSelect(node.id); } }} style={{ cursor: active ? 'pointer' : 'default', outline: 'none', opacity: active ? 1 : .1, pointerEvents: active ? 'auto' : 'none' }}>
+      <title>{node.title} — 상세 보기{node.subtitle ? ` · ${node.subtitle}` : ''}</title>
+      <circle cx={x} cy={y} r={node.size * 70} fill={colors[node.kind]} opacity=".09"/>
+      {primary && <circle cx={x} cy={y} r={node.size * 57} fill="none" stroke={colors[node.kind]} strokeWidth=".6" opacity=".5"/>}
+      <circle cx={x} cy={y} r={node.size * 35} fill={colors[node.kind]}/>
+      <text x={x} y={y + node.size * 45 + 14} fill={primary ? '#d7e7e4' : colors[node.kind]} textAnchor="middle" fontFamily="inherit" fontSize={primary ? '10' : '8.5'} letterSpacing={primary ? '.8px' : '.1px'}>{node.title}</text>
+      {primary && node.subtitle && <text x={x} y={y + node.size * 45 + 28} fill="#7b8e8d" textAnchor="middle" fontFamily="inherit" fontSize="7.5">{node.subtitle}</text>}
     </g>; })}
   </svg>;
 }
-class GraphBoundary extends Component<{ children: React.ReactNode; fallback: React.ReactNode }, { failed: boolean }> {
+class GraphBoundary extends Component<{ children: React.ReactNode; fallback: React.ReactNode; onError: () => void }, { failed: boolean }> {
   state = { failed: false };
   static getDerivedStateFromError() { return { failed: true }; }
+  componentDidCatch() { this.props.onError(); }
   render() { return this.state.failed ? this.props.fallback : this.props.children; }
 }
 function supportsWebGL() {
   if (typeof document === 'undefined') return false;
-  try { const c = document.createElement('canvas'); const gl = c.getContext('webgl2'); if (!gl) return false; gl.getExtension('WEBGL_lose_context')?.loseContext(); return true; } catch { return false; }
+  try { const canvas = document.createElement('canvas'); const gl = canvas.getContext('webgl2'); if (!gl) return false; gl.getExtension('WEBGL_lose_context')?.loseContext(); return true; } catch { return false; }
 }
-export default function Universe({ mode, filter, search, onSelect }: UniverseProps) {
+export default function Universe({ mode, filter, search, graph, onSelect, onSelectRelation }: UniverseProps) {
   const [webgl, setWebgl] = useState(supportsWebGL);
   const [keyboard, setKeyboard] = useState(false);
   const listId = useId();
   const listToggle = useRef<HTMLButtonElement>(null);
   const [labelHost, setLabelHost] = useState<HTMLDivElement | null>(null);
   const labelPortal = useMemo<LabelPortal>(() => ({ current: labelHost }), [labelHost]);
-  const flat = <FlatGraph filter={filter} search={search} onSelect={onSelect} />;
-  const activeNodes = nodes.filter(n => matches(n, filter, search));
-  const activeIds = new Set(activeNodes.map(n => n.id));
-  const activeConnections = connections.filter(([a, b]) => activeIds.has(a) && activeIds.has(b));
-  return <div className="universe-visual" style={{ position: 'relative', width: '100%', height: '100%', minHeight: 330, isolation: 'isolate', background: 'radial-gradient(ellipse at 48% 47%, rgba(20,59,58,.1), transparent 70%)' }}>
-    <style>{`.universe-visual [role=button]:focus-visible circle:last-of-type { stroke: #fff; stroke-width: 2px; } .universe-visual button:focus-visible { outline: 2px solid #76d9c1; outline-offset: 3px; } .universe-visual .rx-link:focus-visible .rx-link-line, .universe-visual .rx-link:hover .rx-link-line { stroke: #d6fff2; stroke-width: 2px; opacity: 1; }`}</style>
-    <div aria-hidden="true" style={{ position: 'absolute', inset: 0, zIndex: -1, opacity: .14, backgroundImage: 'radial-gradient(#78a09c .55px, transparent .55px)', backgroundSize: '24px 24px' }} />
-    {/* Drei owns this host's label children; React and Canvas never reconcile them. */}
-    <div ref={setLabelHost} className="universe-label-portal" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', overflow: 'hidden' }} />
-    {mode === '3d' && webgl ? labelHost && <GraphBoundary fallback={flat}><Canvas camera={{ position: [0, .15, 15], fov: 40 }} dpr={[1, 1.5]} frameloop="demand" gl={{ antialias: true, alpha: true }} style={{ background: 'transparent' }}><ContextLossFallback onLost={() => setWebgl(false)} /><Scene filter={filter} search={search} onSelect={onSelect} portal={labelPortal} /></Canvas></GraphBoundary> : flat}
-    <button type="button" ref={listToggle} onClick={() => setKeyboard(v => !v)} aria-expanded={keyboard} aria-controls={listId} style={{ position: 'absolute', right: 14, bottom: 30, zIndex: 2, padding: '5px 8px', border: '1px solid #263a3a', borderRadius: 4, color: '#92aaa4', background: '#0b171b', fontFamily: 'inherit', fontSize: 9, cursor: 'pointer' }}>노드 목록 {keyboard ? '−' : '+'}</button>
-    {keyboard && <div id={listId} aria-label="그래프 노드와 연결 목록" onKeyDown={event => { if (event.key === 'Escape') { setKeyboard(false); listToggle.current?.focus(); } }} style={{ position: 'absolute', right: 14, bottom: 61, zIndex: 2, maxHeight: 280, overflow: 'auto', width: 230, padding: 7, border: '1px solid #2b4140', background: '#0c181deF', borderRadius: 5 }}><div style={{ padding: '6px 7px', fontSize: 10, color: '#849b96' }}>노드 선택</div>{activeNodes.map(n => <button type="button" key={n.id} onClick={() => onSelect(n.id)} style={{ width: '100%', textAlign: 'left', background: 'transparent', border: 'none', color: colors[n.kind], padding: '8px 7px', fontSize: 11, cursor: 'pointer' }}>{n.title}</button>)}{activeConnections.length > 0 && <><div style={{ padding: '12px 7px 6px', fontSize: 10, color: '#849b96', borderTop: '1px solid #263a3a', marginTop: 5 }}>연결 근거 · 검증 전</div>{activeConnections.map(([a, b]) => <button type="button" key={`${a}-${b}`} onClick={() => onSelect('evidence')} aria-label={`${byId[a].title}와 ${byId[b].title} 연결 근거 보기`} style={{ width: '100%', textAlign: 'left', background: 'transparent', border: 'none', color: '#b6c5c0', padding: '8px 7px', fontSize: 10, cursor: 'pointer' }}>{byId[a].title} ↔ {byId[b].title}</button>)}</>}{!activeNodes.length && <span style={{ color: '#93a09f', fontSize: 11 }}>일치하는 노드가 없습니다.</span>}</div>}
-    {!activeNodes.length && <div role="status" style={{ position: 'absolute', inset: '40% 20% auto', textAlign: 'center', color: '#acb9b5', fontSize: 13, padding: 15, background: '#0b171be6', border: '1px solid #273c3a', borderRadius: 6 }}>검색 조건에 맞는 노드가 없습니다.</div>}
+  const graphProps = { graph, filter, search, onSelect, onSelectRelation };
+  const flat = <FlatGraph {...graphProps}/>;
+  const activeNodes = graph.nodes.filter(node => matches(node, filter, search));
+  const activeIds = new Set(activeNodes.map(node => node.id));
+  const activeRelations = graph.relations.filter(relation => activeIds.has(relation.from) && activeIds.has(relation.to));
+  const nodesById = new Map(graph.nodes.map(node => [node.id, node]));
+  return <div className="universe-visual" data-renderer={mode === '3d' && webgl ? '3d' : '2d'} data-node-count={graph.nodes.length} data-edge-count={graph.relations.length} data-relation-count={graph.relations.length} data-node-ids={JSON.stringify(graph.nodes.map(node => node.id))} data-edge-ids={JSON.stringify(graph.relations.map(relation => relation.id))} data-active-node-ids={JSON.stringify(activeNodes.map(node => node.id))} data-active-edge-ids={JSON.stringify(activeRelations.map(relation => relation.id))} style={{ position: 'relative', width: '100%', height: '100%', minHeight: 330, isolation: 'isolate', background: 'radial-gradient(ellipse at 48% 47%, rgba(20,59,58,.1), transparent 70%)' }}>
+    <style>{`.universe-visual [role=button]:focus-visible circle:last-of-type{stroke:#fff;stroke-width:2px}.universe-visual button:focus-visible{outline:2px solid #76d9c1;outline-offset:3px}.universe-visual .rx-link:focus-visible .rx-link-line,.universe-visual .rx-link:hover .rx-link-line{stroke:#d6fff2;stroke-width:2px;opacity:1}.universe-visual .rx-link-caption{opacity:0}.universe-visual .rx-link:focus-visible .rx-link-caption,.universe-visual .rx-link:hover .rx-link-caption{opacity:1}`}</style>
+    <div aria-hidden="true" style={{ position: 'absolute', inset: 0, zIndex: -1, opacity: .08, backgroundImage: 'linear-gradient(#78a09c .5px, transparent .5px),linear-gradient(90deg,#78a09c .5px,transparent .5px)', backgroundSize: '28px 28px' }}/>
+    {/* Html exclusively owns this stable sibling host's children. Mount Canvas only after the host exists. */}
+    <div ref={setLabelHost} className="universe-label-portal" style={{ position: 'absolute', inset: 0, zIndex: 1, pointerEvents: 'none', overflow: 'hidden' }}/>
+    {mode === '3d' && webgl ? labelHost && <GraphBoundary fallback={flat} onError={() => setWebgl(false)}><Canvas camera={{ position: [0, .15, 15], fov: 40 }} dpr={[1, 1.5]} frameloop="demand" gl={{ antialias: true, alpha: true }} style={{ background: 'transparent' }}><ContextLossFallback onLost={() => setWebgl(false)}/><Scene {...graphProps} portal={labelPortal}/></Canvas></GraphBoundary> : flat}
+    <button type="button" ref={listToggle} onClick={() => setKeyboard(value => !value)} aria-expanded={keyboard} aria-controls={listId} style={{ position: 'absolute', right: 14, bottom: 30, zIndex: 2, padding: '5px 8px', border: '1px solid #263a3a', borderRadius: 4, color: '#92aaa4', background: '#0b171b', fontFamily: 'inherit', fontSize: 9, cursor: 'pointer' }}>노드 목록 {keyboard ? '−' : '+'}</button>
+    {keyboard && <div id={listId} aria-label="그래프 노드와 연결 목록" onKeyDown={event => { if (event.key === 'Escape') { setKeyboard(false); listToggle.current?.focus(); } }} style={{ position: 'absolute', right: 14, bottom: 61, zIndex: 2, maxHeight: 280, overflow: 'auto', width: 260, maxWidth: 'calc(100% - 28px)', padding: 7, border: '1px solid #2b4140', background: '#0c181df5', borderRadius: 5 }}>
+      <div style={{ padding: '6px 7px', fontSize: 10, color: '#849b96' }}>노드 선택 · {activeNodes.length}</div>
+      {activeNodes.map(node => <button type="button" key={node.id} onClick={() => onSelect(node.id)} style={{ width: '100%', textAlign: 'left', background: 'transparent', border: 'none', color: colors[node.kind], padding: '8px 7px', fontSize: 11, cursor: 'pointer' }}>{node.title}</button>)}
+      {activeRelations.length > 0 && <><div style={{ padding: '12px 7px 6px', fontSize: 10, color: '#849b96', borderTop: '1px solid #263a3a', marginTop: 5 }}>관계별 근거 · {activeRelations.length}</div>{activeRelations.map(relation => {
+        const from = nodesById.get(relation.from)!, to = nodesById.get(relation.to)!;
+        return <button type="button" key={relation.id} data-relation-id={relation.id} data-edge-id={relation.id} onClick={() => onSelectRelation(relation.id)} aria-label={relationName(relation, from, to)} style={{ width: '100%', textAlign: 'left', background: 'transparent', border: 'none', color: '#b6c5c0', padding: '9px 7px', fontSize: 10, lineHeight: 1.7, cursor: 'pointer' }}><span style={{ display: 'block', color: '#a2cdbf' }}>{relation.label}</span>{from.title} → {to.title}<small style={{ display: 'block', color: '#7b9490', fontSize: 9 }}>{relationStatus(relation)} · 출처 {relation.source_ids.length}건</small></button>;
+      })}</>}
+      {!activeNodes.length && <span style={{ color: '#93a09f', fontSize: 11 }}>일치하는 노드가 없습니다.</span>}
+    </div>}
+    {!activeNodes.length && <div role="status" style={{ position: 'absolute', inset: '40% 20% auto', textAlign: 'center', color: '#acb9b5', fontSize: 13, padding: 15, background: '#0b171be6', border: '1px solid #273c3a', borderRadius: 6 }}>{graph.nodes.length ? '검색 조건에 맞는 노드가 없습니다.' : '선택 시점에 표시할 관계가 없습니다.'}</div>}
   </div>;
 }

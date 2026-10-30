@@ -15,26 +15,62 @@ def canonical_url(url):
 def quality(row):
     return (row['verification'] == 'primary_read', row['published_at'] is not None, row['date_basis'] == 'page')
 
-records, queries, duplicates, raw_gaps = {}, [], [], []
-for name in FILES:
-    data = json.loads((ROOT / 'research' / f'{name}.json').read_text())
-    raw_gaps.extend({'category': name, 'gap': gap} for gap in data.get('coverage_gaps', []))
-    for query in data['queries']:
-        if isinstance(query, str):
-            query = {'query': query, 'category': name}
-        queries.append({**query, 'category': query.get('category') or name, 'id': f'query:{len(queries)+1:04d}', 'research_category': name})
-    for row in data['records']:
-        key = canonical_url(row['url'])
-        if key in records:
-            previous = records[key]
-            chosen, other = (row, previous) if quality(row) > quality(previous) else (previous, row)
-            chosen['duplicate_record_ids'] = sorted(set(chosen.get('duplicate_record_ids', []) + [other['id']] + other.get('duplicate_record_ids', [])))
-            if chosen['published_at'] == other['published_at']:
-                chosen['limitations'] = list(dict.fromkeys(chosen['limitations'] + other['limitations']))
-            records[key] = chosen
-            duplicates.append({'kept': chosen['id'], 'merged': other['id'], 'reason': 'Same source URL; www and query order normalized'})
-        else:
-            records[key] = row
+def record_claims(row):
+    candidates = row.get('claims') or [{
+        **row['claim'], 'id': f"claim:{row['id']}", 'origin_record_id': row['id'],
+        'verification': row['verification'], 'evidence_locator': row['evidence_locator'],
+        'limitations': list(row['limitations']),
+    }]
+    return [dict(claim) for claim in candidates]
+
+def distinct_claims(*groups):
+    result, seen = [], set()
+    for group in groups:
+        for claim in group:
+            key = (claim['kind'], ' '.join(claim['text'].split()))
+            if key not in seen:
+                seen.add(key)
+                result.append(claim)
+    return result
+
+def normalized_record(row):
+    row = dict(row)
+    row['claims'] = distinct_claims(record_claims(row))
+    published, event = row.get('published_at'), row.get('event_date')
+    if published and event and event > published:
+        row['scheduled_event_date'] = event
+    return row
+
+def merge_record(previous, incoming):
+    chosen, other = (incoming, previous) if quality(incoming) > quality(previous) else (previous, incoming)
+    merged = dict(chosen)
+    merged['claims'] = distinct_claims(record_claims(chosen), record_claims(other))
+    merged['entity_ids'] = list(dict.fromkeys(chosen['entity_ids'] + other['entity_ids']))
+    merged['duplicate_record_ids'] = sorted(set(chosen.get('duplicate_record_ids', []) + [other['id']] + other.get('duplicate_record_ids', [])))
+    # Preserve claim-specific limitations even when source-date interpretations differ.
+    merged['limitations'] = list(dict.fromkeys(chosen['limitations'] + other['limitations']))
+    return normalized_record(merged)
+
+def merge_inventories(inventories):
+    records, queries, duplicates, raw_gaps = {}, [], [], []
+    for name, data in inventories:
+        raw_gaps.extend({'category': name, 'gap': gap} for gap in data.get('coverage_gaps', []))
+        for query in data['queries']:
+            if isinstance(query, str):
+                query = {'query': query, 'category': name}
+            queries.append({**query, 'category': query.get('category') or name, 'id': f'query:{len(queries)+1:04d}', 'research_category': name})
+        for raw_row in data['records']:
+            row = normalized_record(raw_row)
+            key = canonical_url(row['url'])
+            if key in records:
+                previous = records[key]
+                merged = merge_record(previous, row)
+                other = row if merged['id'] == previous['id'] else previous
+                records[key] = merged
+                duplicates.append({'kept': merged['id'], 'merged': other['id'], 'reason': 'Same source URL; distinct claims and entity tags preserved'})
+            else:
+                records[key] = row
+    return records, queries, duplicates, raw_gaps
 
 gaps = [
     '공식 뉴스룸·IR, 제조 관계사·파트너, 제품 문서, 특허·논문, 현장 보도를 교차 조사했습니다. 검색 색인 누락·삭제·접근 제한이 있어 모든 공개자료의 완전한 전수 확보를 입증하지 못합니다.',
@@ -46,19 +82,26 @@ gaps = [
     '출처의 주장을 문서별 핵심 항목으로 선별했습니다. 원문 열람은 독립 검증이나 상용화 확정을 의미하지 않으며, 원출처 그룹 수 역시 주장의 독립 증거 수와 같지 않습니다.',
     '원문 전체 파일·영상은 재배포하지 않습니다. 원문 바이트 해시는 미수집(null)이며 DB의 record_sha256은 메타데이터 해시입니다. 원문 이용은 각 출처의 이용약관·저작권을 따릅니다.',
 ]
-catalog = {
-    'meta': {
-        'window_start': '2025-10-30', 'window_end': '2026-10-30', 'researched_at': '2026-10-30',
-        'snapshot_id': 'rx-research-20261030-v1',
-        'coverage_note': '2025-10-30~2026-10-30의 삼성 RX 관련 공개자료를 여러 출처군에서 조사한 수동 스냅샷입니다. 검색·원문 확인·출처 계보·상업화 단계와 미확인 영역을 기록했으며, 누락률이나 전수성은 실측하지 않았습니다.',
-        'query_count': len(queries), 'coverage_gaps': gaps, 'detailed_coverage_gaps': raw_gaps,
-        'deduplicated_inputs': duplicates,
-        'automatic_collection_status': 'not_connected', 'last_successful_automated_update': None,
-        'publication_policy': 'Source-attributed research; no automatic promotion to independently verified fact',
-        'license_status': 'Original source rights retained; short excerpts, metadata and links only',
-        'raw_source_capture': 'Not captured; record hashes are not original source hashes',
-    },
-    'records': sorted(records.values(), key=lambda row: row['id']), 'queries': queries,
-}
-(ROOT / 'src/research-data.json').write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n')
-print(json.dumps({'sources': len(records), 'queries': len(queries), 'duplicates': duplicates}, ensure_ascii=False))
+
+def build_catalog(input_dir=ROOT / 'research'):
+    inventories = [(name, json.loads((input_dir / f'{name}.json').read_text())) for name in FILES]
+    records, queries, duplicates, raw_gaps = merge_inventories(inventories)
+    return {
+        'meta': {
+            'window_start': '2025-10-30', 'window_end': '2026-10-30', 'researched_at': '2026-10-30',
+            'snapshot_id': 'rx-research-20261030-v2',
+            'coverage_note': '2025-10-30~2026-10-30의 삼성 RX 관련 공개자료를 여러 출처군에서 조사한 수동 스냅샷입니다. 검색·원문 확인·출처 계보·상업화 단계와 미확인 영역을 기록했으며, 누락률이나 전수성은 실측하지 않았습니다.',
+            'query_count': len(queries), 'coverage_gaps': gaps, 'detailed_coverage_gaps': raw_gaps,
+            'deduplicated_inputs': duplicates,
+            'automatic_collection_status': 'not_connected', 'last_successful_automated_update': None,
+            'publication_policy': 'Source-attributed research; no automatic promotion to independently verified fact',
+            'license_status': 'Original source rights retained; short excerpts, metadata and links only',
+            'raw_source_capture': 'Not captured; record hashes are not original source hashes',
+        },
+        'records': sorted(records.values(), key=lambda row: row['id']), 'queries': queries,
+    }
+
+if __name__ == '__main__':
+    catalog = build_catalog()
+    (ROOT / 'src/research-data.json').write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + '\n')
+    print(json.dumps({'sources': len(catalog['records']), 'claims': sum(len(row['claims']) for row in catalog['records']), 'queries': len(catalog['queries']), 'duplicates': catalog['meta']['deduplicated_inputs']}, ensure_ascii=False))
