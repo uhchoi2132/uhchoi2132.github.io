@@ -1,0 +1,863 @@
+{
+  "records": [
+    {
+      "id": "tech-001",
+      "title": "WO2026095403A1 — Electronic device and control method therefor",
+      "url": "https://patents.google.com/patent/WO2026095403A1/en",
+      "publisher": "WIPO 공개특허 / Samsung Electronics (Google Patents 재현)",
+      "published_at": "2026-05-07",
+      "event_date": "2026-05-07",
+      "source_type": "patent",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "task",
+        "api"
+      ],
+      "origin_key": "https://patents.google.com/patent/WO2026095403A1/en",
+      "summary_ko": "삼성전자를 원출원인으로 기재한 공개특허는 사용자 의도와 로봇 기능을 연결하고, 서로 다른 형식을 쓰는 로봇에 표준 형식 작업 데이터를 전달하는 방식을 설명한다. 공개일은 발명일이나 상용 서비스 개시일과 다르다.",
+      "excerpt": "standard format data including information about a task",
+      "claim": {
+        "text": "WO2026095403A1은 사용자 의도·로봇 기능에 따른 작업 선택과 이기종 로봇용 표준 형식 데이터 전달을 기술한다.",
+        "kind": "research_result"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+        "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+        "우선일 2024-10-28, 출원일 2025-10-09."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "Info: Original Assignee, Publication date; Abstract; Description",
+      "patent": {
+        "publication_number": "WO2026095403A1",
+        "filing_date": "2025-10-09",
+        "priority_date": "2024-10-28"
+      }
+    },
+    {
+      "id": "tech-002",
+      "title": "US20260061608A1 — Robot and control method thereof",
+      "url": "https://patents.google.com/patent/US20260061608A1/en",
+      "publisher": "USPTO 공개특허 / Samsung Electronics (Google Patents 재현)",
+      "published_at": "2026-03-05",
+      "event_date": "2026-03-05",
+      "source_type": "patent",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "kpi"
+      ],
+      "origin_key": "https://patents.google.com/patent/US20260061608A1/en",
+      "summary_ko": "특허는 작업 중 오류 유형을 식별한 뒤 로봇이 수행 가능한 범위를 판단하고 기능을 조정하는 방식을 기술한다. 실제 현장 복구시간이나 사람 개입률 측정은 제시한 주장에 포함하지 않는다.",
+      "excerpt": "identify a degree to which the robot is able to perform the predetermined task",
+      "claim": {
+        "text": "삼성전자 공개특허 US20260061608A1은 오류 후 수행 가능한 정도에 따라 로봇 기능을 수정하는 제어 방식을 기술한다.",
+        "kind": "research_result"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+        "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+        "우선일 2024-09-03, 미국 출원일 2025-07-03. PCT/KR2025/007710 계열의 중복 문헌을 독립 증거로 추가 집계하지 않았다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "Info; Abstract; Cross-reference to related applications",
+      "patent": {
+        "publication_number": "US20260061608A1",
+        "filing_date": "2025-07-03",
+        "priority_date": "2024-09-03",
+        "family_reference": "PCT/KR2025/007710"
+      }
+    },
+    {
+      "id": "tech-003",
+      "title": "WO2026101024A1 — Electronic device and control method therefor",
+      "url": "https://patents.google.com/patent/WO2026101024A1/en",
+      "publisher": "WIPO 공개특허 / Samsung Electronics (Google Patents 재현)",
+      "published_at": "2026-05-15",
+      "event_date": "2026-05-15",
+      "source_type": "patent",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "task",
+        "factory"
+      ],
+      "origin_key": "https://patents.google.com/patent/WO2026101024A1/en",
+      "summary_ko": "문헌은 물품 유형별로 적합한 로봇을 매핑하는 서버 정보를 이용해 사용자가 선택한 물품에 대응하는 로봇을 식별하고 호출 신호를 전달하는 방법을 설명한다.",
+      "excerpt": "identify at least one robot corresponding to the selected item among the plurality of robots",
+      "claim": {
+        "text": "삼성전자 공개특허 WO2026101024A1은 물품 선택과 물품-로봇 매핑을 이용한 로봇 호출 방식을 기술한다.",
+        "kind": "research_result"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+        "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+        "우선일 2024-11-05, 출원일 2025-10-09."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "Info; Abstract; Description",
+      "patent": {
+        "publication_number": "WO2026101024A1",
+        "filing_date": "2025-10-09",
+        "priority_date": "2024-11-05"
+      }
+    },
+    {
+      "id": "tech-004",
+      "title": "US20260138269A1 — Apparatus and method with robot driving",
+      "url": "https://patents.google.com/patent/US20260138269A1/en",
+      "publisher": "USPTO 공개특허 / Samsung Electronics (Google Patents 재현)",
+      "published_at": "2026-05-21",
+      "event_date": "2026-05-21",
+      "source_type": "patent",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot"
+      ],
+      "origin_key": "https://patents.google.com/patent/US20260138269A1/en",
+      "summary_ko": "장애물 정보에서 안전 제약을 만들고 학습된 신경망과 공간 변환을 이용해 다음 경유점을 산출하는 로봇 이동 제어 문헌이다.",
+      "excerpt": "generating safety constraint information based on obstacle information",
+      "claim": {
+        "text": "삼성전자 공개특허 US20260138269A1은 장애물 기반 안전 제약과 신경망을 사용한 다음 경유점 산출을 기술한다.",
+        "kind": "research_result"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+        "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+        "우선일 2024-11-20, 미국 출원일 2025-04-29. 실측 안전성·성능 보증으로 해석할 수 없다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "Info; Abstract; Background",
+      "patent": {
+        "publication_number": "US20260138269A1",
+        "filing_date": "2025-04-29",
+        "priority_date": "2024-11-20"
+      }
+    },
+    {
+      "id": "tech-005",
+      "title": "EP4764965A1 — Method and device with robot control",
+      "url": "https://patents.google.com/patent/EP4764965A1/en",
+      "publisher": "EPO 공개특허 / Samsung Electronics (Google Patents 재현)",
+      "published_at": "2026-06-24",
+      "event_date": "2026-06-24",
+      "source_type": "patent",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "task"
+      ],
+      "origin_key": "https://patents.google.com/patent/EP4764965A1/en",
+      "summary_ko": "사용자 멀티모달 입력과 경험 지식 그래프를 검색하고 인과 벡터 및 부분 그래프를 생성·갱신하는 동반 로봇 제어 방식을 기술한다. 제조 RX 제품에 채택되었다는 주장은 하지 않는다.",
+      "excerpt": "retrieving a knowledge database, DB, including a plurality of knowledge graphs",
+      "claim": {
+        "text": "삼성전자 공개특허 EP4764965A1은 사용자 경험 지식 그래프를 검색·갱신하는 동반 로봇 제어 방법을 기술한다.",
+        "kind": "research_result"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "공개특허 문헌의 기술 내용이며 제품 출시·그룹 공통 API 확정·현장 가동·상업화의 증거가 아니다.",
+        "Google Patents에 재현된 특허문헌을 확인했으며 권리 유효성·현재 권리자에 관한 법률판단은 하지 않았다.",
+        "동반 로봇 대상 기술이며 제조 RX나 SDS 플랫폼과의 연결은 확인되지 않았다.",
+        "우선일 2024-12-20, 출원일 2025-09-11."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "Info; Abstract; Description — Background",
+      "patent": {
+        "publication_number": "EP4764965A1",
+        "filing_date": "2025-09-11",
+        "priority_date": "2024-12-20"
+      }
+    },
+    {
+      "id": "tech-006",
+      "title": "DAM-VLA: A Dynamic Action Model-Based Vision-Language-Action Framework for Robot Manipulation",
+      "url": "https://arxiv.org/abs/2603.00926",
+      "publisher": "저자 제출 논문 / arXiv",
+      "published_at": "2026-03-01",
+      "event_date": "2026-03-01",
+      "source_type": "paper",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "task"
+      ],
+      "origin_key": "https://arxiv.org/abs/2603.00926",
+      "summary_ko": "삼성 중국 베이징 연구소와 DS AI Center 등이 저자 소속으로 기재되어 있다. VLM 추론으로 팔 이동·그리퍼 조작 행동 모델을 선택하고 가중 조합하는 DAM-VLA를 제안하며 시뮬레이션 및 실제 로봇 실험을 보고한다.",
+      "excerpt": "DAM-VLA integrates VLM reasoning with diffusion-based action models specialized for arm and gripper control.",
+      "claim": {
+        "text": "삼성 소속 연구진의 DAM-VLA 논문은 팔 이동과 그리퍼 조작을 구분하는 VLA 프레임워크 및 연구 실험 결과를 제시한다.",
+        "kind": "research_result"
+      },
+      "commercialization_stage": "demo",
+      "limitations": [
+        "저자 보고 실험 결과이며 독립 재현이나 공장 생산 KPI 검증은 수행하지 않았다.",
+        "arXiv 제출일을 공개일로 기록했다. 논문 페이지는 ICRA2026 accepted로 기재한다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2603.00926v1 author affiliations, Abstract, IV Experiments"
+    },
+    {
+      "id": "tech-007",
+      "title": "H-VLA: Hierarchical Vision-Language-Action Model with Key-Action Reasoning and Motion Planning in a Unified Action Space",
+      "url": "https://arxiv.org/abs/2609.22895",
+      "publisher": "저자 제출 논문 / arXiv",
+      "published_at": "2026-09-19",
+      "event_date": "2026-09-19",
+      "source_type": "paper",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "task"
+      ],
+      "origin_key": "https://arxiv.org/abs/2609.22895",
+      "summary_ko": "삼성 SRC-Beijing과 DS AI Center 저자들은 상위 수준 키 액션 추론과 하위 수준 동작 생성을 분리하고 카메라 중심 행동 공간을 사용하는 H-VLA를 제안했다. SimplerEnv 및 Agilex 로봇에서 실험을 보고한다.",
+      "excerpt": "a hierarchical VLA framework that decouples high-level key-action reasoning from low-level motion generation",
+      "claim": {
+        "text": "삼성 소속 연구진의 H-VLA 논문은 키 액션 추론과 동작 생성을 분리하는 로봇 조작 모델 및 평가 결과를 제시한다.",
+        "kind": "research_result"
+      },
+      "commercialization_stage": "demo",
+      "limitations": [
+        "저자 보고 연구 결과이며 유료 운영·90일 상시 가동·다공장 배포의 증거가 아니다.",
+        "arXiv 최초 제출일을 기록했으며 다른 보도의 수치를 대신 가져오지 않았다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2609.22895v1 author affiliations, Abstract, sections 4 and 6"
+    },
+    {
+      "id": "tech-008",
+      "title": "2026 START CFP 1.1 — Unifying 3D understanding, memory, and prediction",
+      "url": "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+      "publisher": "Samsung Research America",
+      "published_at": "2026-03-03",
+      "event_date": "2026-03-03",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot"
+      ],
+      "origin_key": "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+      "summary_ko": "공식 공모문은 휴머노이드·서비스 로봇을 위한 공간 이해, 기억, 예측을 통합한 지각 연구를 모집한다. 이동 카메라 영상 입력과 과거·미래 공간 질의를 다룬다.",
+      "excerpt": "Samsung is interested in advancing the perceptual capabilities of future robotics applications",
+      "claim": {
+        "text": "SRA의 2026 START 공모문은 로봇 응용의 3D 이해·기억·예측을 통합하는 연구를 모집한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "연구 제안 요청이며 기술 완성·제품 출시·제조 현장 도입의 증거가 아니다.",
+        "PDF 본문 3/3/26을 문서 발행일로 사용했다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "PDF pages 1–2: date, Context/Overview, Problem Statement, Objectives & Scope"
+    },
+    {
+      "id": "tech-009",
+      "title": "2026 START CFP 1.2 — Foundation models for close human-robot interaction",
+      "url": "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf",
+      "publisher": "Samsung Research America",
+      "published_at": "2026-03-03",
+      "event_date": "2026-03-03",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot"
+      ],
+      "origin_key": "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf",
+      "summary_ko": "근거리 사람-로봇 상호작용을 위한 파운데이션 모델 연구 공모다. 발화·제스처 의도, 신체 움직임, 로봇 행동에 대한 인간 반응 예측 등을 연구 방향으로 제시한다.",
+      "excerpt": "Foundation models for close human-robot interaction",
+      "claim": {
+        "text": "SRA의 2026 START 공모문은 사람 가까이에서 활동하는 로봇의 상호작용·행동 예측 모델 연구를 모집한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "목표와 요구사항을 제시한 공모문이며 실제 안전성 입증이나 승인된 상용 기능 목록이 아니다.",
+        "PDF 본문 3/3/26을 문서 발행일로 사용했다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "PDF pages 1–2: date, Problem Statement, Objectives & Scope, Specific Topics"
+    },
+    {
+      "id": "tech-010",
+      "title": "Samsung Research America Expands Academic Collaboration Through the 2026 START Program",
+      "url": "https://news.samsung.com/us/samsung-research-america-expands-academic-collaboration-2026-start-program/",
+      "publisher": "Samsung U.S. Newsroom",
+      "published_at": "2026-08-21",
+      "event_date": "2026-08-21",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot"
+      ],
+      "origin_key": "https://news.samsung.com/us/samsung-research-america-expands-academic-collaboration-2026-start-program/",
+      "summary_ko": "SRA는 2026 START 선정 연구의 분야에 Physical AI가 포함된다고 발표했다. 워싱턴대 Ranjay Krishna는 삼성 AI Center와의 협력을 로봇 에이전트의 시각적 추론으로 확장할 계획을 설명했다.",
+      "excerpt": "advance toward robotic agents that visually reason to act",
+      "claim": {
+        "text": "삼성 공식 발표는 2026 START의 Physical AI 연구와 로봇 에이전트 시각 추론 연구 협력 방향을 설명한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "대학 연구 협력 발표이며 RX 전용 예산·현장 계약·반복매출 증거가 아니다.",
+        "공모·선정·논문 결과는 각각 다른 사건이며 선정 발표를 실험 성공으로 대체하지 않는다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "Publication date; body paragraphs Selected projects and Professor Ranjay Krishna quote"
+    },
+    {
+      "id": "tech-011",
+      "title": "레인보우로보틱스, AI 4족 보행 로봇 시리즈가 올해의 10대 기계기술로 선정돼",
+      "url": "https://rainbow-robotics.com/레인보우로보틱스-ai-4족-보행-로봇-시리즈가-올해의-10/",
+      "publisher": "레인보우로보틱스",
+      "published_at": "2025-11-17",
+      "event_date": "2025-11-13",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "robot",
+        "rainbow"
+      ],
+      "origin_key": "https://rainbow-robotics.com/레인보우로보틱스-ai-4족-보행-로봇-시리즈가-올해의-10/",
+      "summary_ko": "레인보우로보틱스는 RBQ의 기계기술 선정과 보행·센서·자율 복귀 충전 기능을 설명했다. 수여식 날짜는 11월13일이며 게시 표시는 11월17일이다.",
+      "excerpt": "동역학 기반 보행과 강화학습 기반 AI 보행을 유연하게 전환할 수 있는",
+      "claim": {
+        "text": "레인보우로보틱스는 RBQ 시리즈의 동역학·강화학습 보행 전환과 스케줄 기반 자율주행·복귀 충전 기능을 공식 설명했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "pilot",
+      "limitations": [
+        "제조사 설명이며 기능 성능에 대한 독립 검증을 하지 않았다.",
+        "페이지에 2025-11-17과 May 30th, 2026이 함께 표시된다. 전자를 게시일로, 후자를 수정 표시 가능성이 있는 날짜로 보존한다.",
+        "기관 실증 언급은 있지만 본 자료만으로 유료 상시 가동 기간·매출을 확인할 수 없다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "보도자료 본문: RBQ 기능 설명, 수상은 11월13일 문장; page date",
+      "displayed_dates": [
+        "2025-11-17",
+        "2026-05-30"
+      ]
+    },
+    {
+      "id": "tech-012",
+      "title": "Rainbow Robotics at Automate 2026",
+      "url": "https://rainbow-robotics.com/rainbow-robotics-at-automate-2026/",
+      "publisher": "Rainbow Robotics",
+      "published_at": "2026-06-04",
+      "event_date": "2026-06-22",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "robot",
+        "rainbow"
+      ],
+      "origin_key": "https://rainbow-robotics.com/rainbow-robotics-at-automate-2026/",
+      "summary_ko": "공식 전시 예고는 6월22–25일 시카고 Automate2026에서 RB 협동로봇과 RBY 양팔 모바일 매니퓰레이터 플랫폼을 소개한다고 안내한다.",
+      "excerpt": "RBY Series — Dual-Arm Mobile Manipulator",
+      "claim": {
+        "text": "레인보우로보틱스는 Automate2026 전시에서 RB와 RBY 플랫폼을 소개할 계획을 공식 게시했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "전시 예고 텍스트를 확인했으며 영상의 실제 작동, 촬영일, 운영 조건은 검증하지 않았다.",
+        "페이지에 2026-06-04와 June 18th, 2026이 함께 표시된다. 전자를 게시일로 기록하고 후자는 수정 표시 가능 날짜로 보존한다.",
+        "홍보자료 수량을 RX 설치대수·유료 고객 수로 합산하지 않는다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "Promotional Videos page date; body RB Series/RBY Series; event June22–25",
+      "displayed_dates": [
+        "2026-06-04",
+        "2026-06-18"
+      ],
+      "event_end_date": "2026-06-25"
+    },
+    {
+      "id": "tech-013",
+      "title": "Samsung AI Forum 2026 — Physical AI programme",
+      "url": "https://research.samsung.com/saif",
+      "publisher": "Samsung Research",
+      "published_at": null,
+      "event_date": "2026-09-30",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "undated",
+      "entity_ids": [
+        "se",
+        "robot"
+      ],
+      "origin_key": "https://research.samsung.com/saif",
+      "summary_ko": "공식 행사 일정은 2026년9월30일 Physical AI 세션에 월드 모델과 로봇 파운데이션 모델의 대규모 확장 가능성·한계 강연을 편성하고 있다. 일정 확인은 해당 기술의 현장 상용화 확인과 다르다.",
+      "excerpt": "The Promise and Limitations of Robot Foundation Models for Massive Robot Scaling",
+      "claim": {
+        "text": "Samsung AI Forum2026 공식 일정은 Physical AI 세션에 월드 모델과 로봇 파운데이션 모델 강연을 기재한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "행사일은 확인했으나 이 페이지의 최초 게시일은 확인되지 않아 published_at은 비워 두었다.",
+        "프로그램 소개를 읽었으며 전체 발표 영상·발언록은 검증하지 않았다.",
+        "과거 시점 조회에서 최초 공개일이 확정된 근거로 사용하면 안 된다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "unknown",
+      "evidence_locator": "Samsung AI Forum2026 event date; Schedule > Session2 Physical AI"
+    },
+    {
+      "id": "tech-014",
+      "title": "삼성SDS 2026년 2분기 잠정실적 발표 — 피지컬 AI 투자 및 로봇 오케스트레이션",
+      "url": "https://www.samsungsds.com/kr/news/ss-260730.html",
+      "publisher": "삼성SDS",
+      "published_at": "2026-07-30",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "robot",
+        "factory",
+        "task",
+        "api"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/news/ss-260730.html",
+      "summary_ko": "삼성SDS는 6월 삼성벤처투자를 통해 Walden Robotics에 투자했다고 밝히고, 다양한 로봇을 통합·제어하여 MES와 연결하는 로봇 오케스트레이션 사업 추진 방침을 설명했다. 투자일은 월 단위로만 공개되어 일자를 만들지 않았다.",
+      "excerpt": "다양한 로봇을 통합∙제어해 제조실행시스템과 연계하는 ‘로봇 오케스트레이션’ 사업을 추진할 방침이다.",
+      "claim": {
+        "text": "삼성SDS는 Walden Robotics 전략적 투자와 MES 연계 로봇 오케스트레이션 사업 추진 방침을 2분기 실적 발표에서 설명했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "실적 보도자료이며 DART 공시 원문 자체는 아니다.",
+        "전사 매출·클라우드 매출·AI 인프라 투자 규모를 RX 매출 또는 RX SW 예산으로 간주하지 않는다.",
+        "외부 유료 계약, API 명세, 실제 생산 가동 기간은 본 자료에서 확인하지 못했다."
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "2026-07-30; 디지털 자산·피지컬 AI 분야 전략적 투자 확대 문단",
+      "event_month": "2026-06"
+    },
+    {
+      "id": "tech-015",
+      "title": "레인보우로보틱스 2025 사업보고서 — 매출 및 연구과제",
+      "url": "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm",
+      "publisher": "레인보우로보틱스 / 한국거래소 KIND",
+      "published_at": "2026-03-20",
+      "event_date": "2025-12-31",
+      "entity_ids": [
+        "rainbow",
+        "robot",
+        "se",
+        "factory"
+      ],
+      "summary_ko": "2025년 연결 판매실적은 총 34,123,111천원이며 제품 24,890,836천원, 상품 144,667천원, 용역 9,087,608천원으로 구분되어 있다. 삼성전자 매출은 지배기업 기간 10,051,195천원과 콜옵션 행사 전 기간 348,833천원으로 구분된다. 진행률 인식 및 미청구 계약자산 주석이 있다. 국책과제 목록에는 자율제조 운영기술과 디스플레이 공정 특화 휴머노이드 개발 등이 포함된다.",
+      "excerpt": "상기 매출실적은 연결재무정보 기준으로 작성 되었습니다.",
+      "claim": {
+        "text": "레인보우로보틱스는 2025년 연결 매출을 34,123,111천원으로 공시하고 제품·상품·용역 매출을 구분했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "paid",
+      "limitations": [
+        "연간 매출이며 2025-10-30 이후 두 달만의 실적이 아니다.",
+        "전체 회사 매출을 삼성 RX SW 매출이나 반복매출로 대체할 수 없다.",
+        "매출 인식과 대금 수령은 다르며 계약별 가동기간·재계약·사람 개입률은 본 수치로 판별할 수 없다.",
+        "이 보고서의 2025 비교수치를 후속 분기·반기 문서에 반복 제시된 수치와 합산하면 안 된다."
+      ],
+      "evidence_locator": "표지 제출일; II.4 매출 및 수주상황 (단위 천원); 연결재무제표 주석31 특수관계자 거래, 주석32 정부보조금",
+      "reporting_period": {
+        "start": "2025-01-01",
+        "end": "2025-12-31"
+      },
+      "metrics": [
+        {
+          "name": "Rainbow 연결 매출",
+          "value": 34123111,
+          "unit": "KRW_thousand",
+          "period": "2025FY",
+          "rx_software_specific": false
+        },
+        {
+          "name": "삼성전자 대상 매출 — 지배기업 기간",
+          "value": 10051195,
+          "unit": "KRW_thousand",
+          "period": "2025FY",
+          "rx_software_specific": false
+        },
+        {
+          "name": "삼성전자 대상 매출 — 2025-03-12 이전기간",
+          "value": 348833,
+          "unit": "KRW_thousand",
+          "period": "2025FY",
+          "rx_software_specific": false
+        }
+      ],
+      "source_type": "filing",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "origin_key": "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm"
+    },
+    {
+      "id": "tech-016",
+      "title": "레인보우로보틱스 2026년 1분기 보고서 — 삼성전자 거래와 판매경로",
+      "url": "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm",
+      "publisher": "레인보우로보틱스 / 한국거래소 KIND",
+      "published_at": "2026-05-15",
+      "event_date": "2026-03-31",
+      "entity_ids": [
+        "rainbow",
+        "robot",
+        "se",
+        "factory"
+      ],
+      "summary_ko": "2026년 1분기 삼성전자 대상 매출 2,415,164천원을 특수관계자 거래로 공시한다. 연결 전체 판매실적은 9,062,504천원이다. 협동로봇은 전문 SI 파트너사를 통해 공급하고 사족보행 플랫폼은 프로젝트·실증시범 방식으로 공급한다고 설명한다.",
+      "excerpt": "당분기와 전분기 중 특수관계자와의 거래내역은 다음과 같습니다.",
+      "claim": {
+        "text": "레인보우로보틱스는 2026년 1분기 삼성전자 대상 매출 2,415,164천원을 특수관계자 거래로 공시했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "paid",
+      "limitations": [
+        "삼성전자와의 관계사 거래이며 외부 고객의 반복 구매 또는 SDS 오케스트레이션 매출로 볼 수 없다.",
+        "분기 매출 인식은 대금 전액 회수나 90일 상시 가동을 의미하지 않는다.",
+        "반기 누적수치에 1분기 수치를 다시 더하지 않는다."
+      ],
+      "evidence_locator": "표지 제출일; II.4 매출 및 수주상황; 별도재무제표 주석27 특수관계자 거래 표 (단위 천원)",
+      "reporting_period": {
+        "start": "2026-01-01",
+        "end": "2026-03-31"
+      },
+      "metrics": [
+        {
+          "name": "삼성전자 대상 매출",
+          "value": 2415164,
+          "unit": "KRW_thousand",
+          "period": "2026Q1",
+          "rx_software_specific": false
+        },
+        {
+          "name": "Rainbow 연결 매출",
+          "value": 9062504,
+          "unit": "KRW_thousand",
+          "period": "2026Q1",
+          "rx_software_specific": false
+        }
+      ],
+      "source_type": "filing",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "origin_key": "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm"
+    },
+    {
+      "id": "tech-017",
+      "title": "레인보우로보틱스 2026년 반기보고서 — KAI 로봇 계약 진행 및 삼성전자 거래",
+      "url": "https://kind.krx.co.kr/external/2026/08/14/002335/20260814008101/11012.htm",
+      "publisher": "레인보우로보틱스 / 한국거래소 KIND",
+      "published_at": "2026-08-14",
+      "event_date": null,
+      "entity_ids": [
+        "rainbow",
+        "robot",
+        "se",
+        "factory",
+        "contract"
+      ],
+      "summary_ko": "반기보고서는 KAI의 KF-21 공정자동화 협동로봇 드릴링머신 계약에 대해 장비 납품·기능테스트 완료, 계약액 4,250,000천원, 누적 대금수령 3,527,500천원, 시스템 검증 후 잔금 수령 예정이라고 공시한다. 이는 2024년 원계약의 진행현황이다. 별도로 2026년 1~6월 삼성전자 대상 제품 판매 등 매출은 5,678,365천원이다. AMR RaaS는 상품 구성을 추진 중이라고 설명한다.",
+      "excerpt": "장비 시스템 검증 완료 후 잔금 수령 예정",
+      "claim": {
+        "text": "레인보우로보틱스 2026년 반기보고서는 KAI KF-21 협동로봇 드릴링머신 계약의 장비 납품·기능테스트 완료와 누적 대금수령 3,527,500천원을 공시했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "paid",
+      "limitations": [
+        "원계약 공시일은 2024-03-15이며 이번 조사기간의 신규 수주로 계산하면 안 된다. 반기 보고기간말은 2026-06-30이나 실제 납품·시험 완료 일자는 이 표에서 확인되지 않아 event_date는 비워 두었다.",
+        "장비 납품·기능테스트 완료와 시스템 검증 완료는 구분된다. 표는 시스템 검증 후 잔금 수령을 예정하고 있다.",
+        "외부 유료 계약의 근거이지만 SDS RX 전용 소프트웨어 계약·반복매출·90일 상시 가동의 근거가 아니다.",
+        "삼성전자 매출은 관계사 거래이고 RaaS 상품은 추진 단계여서 반복매출로 확정하지 않는다."
+      ],
+      "evidence_locator": "표지 제출일; X.3 대주주와의 영업거래 (2026.01~2026.06); XI.1 단일판매 공급계약 진행현황 및 향후 추진계획 (단위 천원); II.4 AMR 판매경로",
+      "reporting_period": {
+        "start": "2026-01-01",
+        "end": "2026-06-30"
+      },
+      "metrics": [
+        {
+          "name": "KAI KF-21 로봇 드릴링 솔루션 계약총액",
+          "value": 4250000,
+          "unit": "KRW_thousand",
+          "period": "contract_total",
+          "rx_software_specific": false
+        },
+        {
+          "name": "KAI KF-21 계약 누적 대금수령",
+          "value": 3527500,
+          "unit": "KRW_thousand",
+          "period": "through_2026H1",
+          "rx_software_specific": false
+        },
+        {
+          "name": "삼성전자 대상 매출",
+          "value": 5678365,
+          "unit": "KRW_thousand",
+          "period": "2026H1",
+          "rx_software_specific": false
+        }
+      ],
+      "original_contract_disclosed_at": "2024-03-15",
+      "source_type": "filing",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "origin_key": "https://kind.krx.co.kr/external/2026/08/14/002335/20260814008101/11012.htm",
+      "as_of_date": "2026-06-30"
+    },
+    {
+      "id": "tech-018",
+      "title": "삼성전자 2026년 반기보고서 — 레인보우로보틱스 종속기업 분류",
+      "url": "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf",
+      "publisher": "삼성전자 IR / 반기보고서",
+      "published_at": "2026-08-14",
+      "event_date": "2026-06-30",
+      "entity_ids": [
+        "se",
+        "rainbow",
+        "robot"
+      ],
+      "summary_ko": "삼성전자 반기보고서의 종속기업 표는 레인보우로보틱스를 로봇·로봇 부품 생산 및 판매 기업으로 기재하고 지분율 35.0%를 표시한다. RAINBOW ROBOTICS USA도 로봇 판매 기업으로 기재된다.",
+      "excerpt": "㈜레인보우로보틱스 로봇ㆍ로봇 부품 생산, 판매 35.0",
+      "claim": {
+        "text": "삼성전자 2026년 반기보고서는 레인보우로보틱스를 종속기업으로 기재하고 의결권 있는 주식 기준 지분율 35.0%를 표시했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "지분율 표의 주석은 종속기업 보유 지분을 포함한 의결권 있는 주식 기준임을 명시한다.",
+        "2026년 6월말 현황이며 새로 35%를 취득한 사건으로 해석하면 안 된다.",
+        "회계상 종속기업 분류를 그룹 RX 내부 결재선·기술 책임 경계의 증거로 확장하지 않는다.",
+        "삼성전자 전체 투자 또는 매출과 RX 전용 SW 예산·매출을 합산하지 않는다."
+      ],
+      "evidence_locator": "공식 IR 목록 https://www.samsung.com/sec/ir/reports-disclosures/public-disclosure/4045/ 제출일; PDF 물리84쪽(인쇄81쪽) 국내 종속기업 표 및 지분율 주석",
+      "reporting_period": {
+        "start": "2026-01-01",
+        "end": "2026-06-30"
+      },
+      "metrics": [
+        {
+          "name": "레인보우로보틱스 의결권 지분율",
+          "value": 35.0,
+          "unit": "percent",
+          "period": "2026-06-30"
+        }
+      ],
+      "source_type": "filing",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "origin_key": "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf"
+    }
+  ],
+  "queries": [
+    {
+      "query": "site:research.samsung.com 2026 robot embodied AI",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:patents.google.com Samsung robot orchestration 2026",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:dart.fss.or.kr 삼성에스디에스 2026 로봇 RX",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:research.samsung.com/blog \"2026\" \"robot\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:research.samsung.com/blog \"2025\" \"robot\" \"November\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:patents.google.com/patent \"Samsung Sds\" \"2026\" \"robot\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:patents.google.com/patent \"Samsung Electronics\" \"2026\" \"plurality of robots\" task",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "\"DAM-VLA\" Samsung 2026",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:research.samsung.com \"2026\" \"robot\" \"Blog\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:research.samsung.com \"2025\" \"robot\" \"December\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:sra.samsung.com \"2026\" \"robotics\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:sra.samsung.com \"August\" \"2026\" \"START\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "\"H-VLA\" \"Samsung\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:samsungsds.com \"2026\" \"IR\" \"RX\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:dart.fss.or.kr \"삼성전자\" \"로봇\" \"2026\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:sra.samsung.com \"Expands Academic Collaboration\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:rainbow-robotics.com 2026 뉴스",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"2025\" \"11\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:patents.google.com \"Samsung Sds Co\" \"robot\" \"2026\" -RPA -work -personalized -retrieval",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:dart.fss.or.kr \"삼성에스디에스\" \"로봇\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:dart.fss.or.kr \"RX\" \"2026\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:samsungsds.com \"2026\" \"로봇\" \"실적\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:samsung.com \"2026\" \"robotics\" \"earnings\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"Automate 2026\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:research.samsung.com \"2025\" \"Robotics\" November December",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:arxiv.org \"Samsung\" \"robot\" \"2026\" -DAM-VLA -H-VLA -survey -privacy",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:samsungcareers.com \"로봇\" \"2026\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"2026\" \"SDK\"",
+      "searched_at": "2026-10-30",
+      "method": "web_search_and_primary_open"
+    }
+  ],
+  "coverage_gaps": [
+    "본 기술 조사 범위는 2025-10-30~2026-10-30의 로봇·조작·오케스트레이션 관련 공개문헌이다. 검색 색인 기반 발견과 개별 원문 열람이므로 모든 공개자료를 완전 수집했다는 의미가 아니다.",
+    "DART 검색에서 삼성SDS 정기공시 탐색 페이지와 2025-10-30 잠정실적 목록은 확인했으나 RX 직접 기재 사업보고서·분기보고서 전체 첨부 원문을 일괄 확보하지 못했다. 공시 미발견은 RX 투자·매출 부재의 증거가 아니다.",
+    "특허는 Google Patents에서 출원인·공개일·초록·설명을 확인한 표본이다. KIPRIS/WIPO/EPO/USPTO 전체 출원인 변형·CPC 분류·전세계 특허족을 완전 대조하지 못했으며 미공개 출원은 수집 불가하다.",
+    "특허의 공개일, 출원일, 우선일은 분리했다. 이미 공개된 동일 특허족의 다른 국가 문헌이나 등록본을 신규 기술의 독립 증거로 중복 계산하면 안 된다.",
+    "Samsung SDS 검색에서 발견된 RPA/화면 객체 복구·업무정보 검색 특허는 물리 로봇 RX와 관련성이 직접 확인되지 않아 제외했다. SDS 물리 로봇 오케스트레이션 특허 부재로 단정할 수 없다.",
+    "EP4631678A1(삼성전자 다중 로봇 협업 제어, 공개2025-10-15)과 EP4471683B1(삼성SDS 물류센터 레이아웃, 공개2025-06-18)은 조회 기간 밖이므로 이번 기간 내 레코드에 추가하지 않았다.",
+    "논문은 arXiv 원문 소속·제출일·주장을 확인했다. 모든 학회·저널·한국어 논문 데이터베이스의 일괄 색인은 확보하지 못했으며 저자 보고 성능을 독립 재현하지 않았다.",
+    "Samsung Research robotics 주제 페이지는 원문 열람 시 System error occurred를 반환했다. 개별 DAM-VLA 원문과 논문은 읽을 수 있었고 오류 페이지를 정상 수집으로 집계하지 않았다.",
+    "공식 채용 공고 https://www.samsungcareers.com/hr/?no=21755 검색 색인에는 미래로봇추진단 로봇SW플랫폼·매니퓰레이션·전신제어와 2026-03-09 마감이 보였으나 직접 열람에서는 동적 상세 본문이 비어 있었다. 원문 검증 완료 레코드로 넣지 않았다. 채용 공고는 인원수·채용완료·조직 규모 증거가 아니다.",
+    "공식 채용 공고 https://www.samsungcareers.com/hr/?no=22880 검색 색인에는 자율 반송 로봇 시스템 및 2026-09-02 마감이 보였으나 직접 열람 상세를 확보하지 못했다. 이 역시 미확인 탐색 후보로 남긴다.",
+    "Rainbow 사이트의 언론 재게시(Edaily, News1, ChosunBiz 등)는 공식 도메인이라는 이유로 공식 기술 발표로 바꾸지 않았다. 보도자료와 자체 행사 소개만 이 파일에 포함했다.",
+    "공식 영상의 게시일·촬영일·실제 동작·홍보 시연 구분과 자막 전수 추출은 완료하지 못했다. Automate 항목은 페이지 텍스트의 전시 예고만 확인했다.",
+    "Samsung AI Forum 공식 프로그램은 행사일만 있고 페이지 최초 게시일이 없어 날짜 미상으로 보존했다. 과거 as-known-at 조회의 공개시점 근거로 사용할 수 없다.",
+    "공개 SDK/API의 버전별 과거 변경 이력, 지원 로봇 매트릭스, 공장별 90일 상시가동·사람 개입률·복구시간·RX 반복매출 원자료는 이번 기술 문헌에서 확인하지 못했다.",
+    "추가 확인: KIND의 레인보우로보틱스 2025 사업보고서·2026년 1분기/반기보고서와 삼성전자 2026년 반기보고서 PDF를 읽어 공시 4건을 보완했다. 이는 전 관계사의 모든 공시 전수검증을 뜻하지 않는다. 매출 인식, 대금수령, 계약총액, 잔여 검증, 원계약일을 분리해 기록했다."
+  ]
+}

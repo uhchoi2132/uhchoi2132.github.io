@@ -1,0 +1,762 @@
+{
+  "records": [
+    {
+      "id": "mi-001",
+      "title": "미라콤아이앤씨, REAL SUMMIT 2026서 제조 AX·RX 사업 방향 제시",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+      "publisher": "미라콤아이앤씨",
+      "published_at": "2026-09-10",
+      "event_date": "2026-09-08",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "sds",
+        "mes",
+        "robot",
+        "partner",
+        "platform"
+      ],
+      "origin_key": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+      "summary_ko": "미라콤은 MES와 제조 로봇의 연결을 중심으로 제조 RX 방향을 소개했다. 레인보우로보틱스·에이로봇과 협력을 설명하고, 향후 MES와 Robot Orchestration Platform 연계를 추진한다고 밝혔다.",
+      "excerpt": "MES와 Robot Orchestration Platform을 연계해",
+      "claim": {
+        "text": "미라콤은 REAL SUMMIT 2026에서 MES와 Robot Orchestration Platform을 연계할 계획을 발표했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "향후 계획이며 범용 API 출시나 모든 관계사 적용 완료를 뜻하지 않음",
+        "앨리스 M1은 행사 전시이며 장기 생산 운영 증거가 아님"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "본문 75–118행(게시일·행사), 218–259행(로봇 협력·향후 플랫폼 계획)"
+    },
+    {
+      "id": "mi-002",
+      "title": "AI가 자재 부족을 미리 판단한다면…제조 AX가 바꾸는 현장 업무",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ai-success-factors",
+      "publisher": "미라콤아이앤씨",
+      "published_at": "2026-10-27",
+      "event_date": "2026-10-21",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "task",
+        "robot",
+        "factory"
+      ],
+      "origin_key": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ai-success-factors",
+      "summary_ko": "AMXPO 발표 사례에서는 ERP·MES·PDM 데이터를 사용하는 AI Agent가 자재 공급 계획과 피킹 작업목록을 생성한다. 실제 피킹·이송은 사람이 수행하며 로봇 연결은 다음 단계라고 명시했다.",
+      "excerpt": "실제 피킹과 이송은 작업자가 수행합니다.",
+      "claim": {
+        "text": "미라콤이 공개한 자동차 안전부품 자재 공급 사례의 실제 피킹·이송은 작업자가 수행한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "고객 실명·계약금액·유료 운영기간 미공개",
+        "AI 구축 사례를 로봇 무인화 완료 사례로 승격할 수 없음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "게시일 77행; AMXPO 행사 99–123행; 다음 단계 설명 510–528행"
+    },
+    {
+      "id": "mi-003",
+      "title": "제조 로보틱스(RX)",
+      "url": "https://miracom-inc.com/kr/service/smart-factory/manufacturing-robotics",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "primary_read",
+      "scope": "undated",
+      "entity_ids": [
+        "miracom",
+        "rcs",
+        "robot",
+        "factory"
+      ],
+      "origin_key": "https://miracom-inc.com/kr/service/smart-factory/manufacturing-robotics",
+      "summary_ko": "제조·물류 로봇 도입을 위한 컨설팅, 설계, 시스템 구축·운영과 RCS 기능을 소개하는 제품·서비스 설명이다.",
+      "excerpt": "다양한 제조·물류 로봇의 작업, 상태를 통합 제어·관리하는 로봇 관제 시스템",
+      "claim": {
+        "text": "미라콤은 RCS를 제조·물류 로봇의 작업과 상태를 통합 제어·관리하는 시스템으로 설명한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미표시로 최근 1년 신규 발표 집계에서 제외",
+        "SDS Job/Task 계층과의 정식 인터페이스 규격·지원 모델 목록은 이 문서로 확인되지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "unknown",
+      "evidence_locator": "제조 로보틱스 본문, RCS(Robot Control System) 설명 107–109행"
+    },
+    {
+      "id": "mi-004",
+      "title": "Nexplant MCS",
+      "url": "https://miracom-inc.com/kr/solution/smart-factory/mcs",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "primary_read",
+      "scope": "undated",
+      "entity_ids": [
+        "miracom",
+        "sds",
+        "mes",
+        "scheduling",
+        "dispatch",
+        "robot"
+      ],
+      "origin_key": "https://miracom-inc.com/kr/solution/smart-factory/mcs",
+      "summary_ko": "MCS는 MES 상위 인터페이스와 ACS/SCS/CCS/BCS 하위 설비제어를 제공한다. 페이지는 Nexplant MCS가 삼성SDS 솔루션이라고 명시한다.",
+      "excerpt": "Nexplant MCS는 삼성SDS 솔루션입니다.",
+      "claim": {
+        "text": "미라콤 제품문서는 Nexplant MCS를 삼성SDS 솔루션으로 명시한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미표시",
+        "기존 물류제어 기능이 신규 RX 공통 API 또는 SDS 로봇 오케스트레이션 출시를 증명하지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "unknown",
+      "evidence_locator": "94행 소유·제품 표기; 107–127행 MCS/ACS 주요 기능"
+    },
+    {
+      "id": "mi-005",
+      "title": "Nexplant MESplus",
+      "url": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mes",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "primary_read",
+      "scope": "undated",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "api",
+        "factory"
+      ],
+      "origin_key": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mes",
+      "summary_ko": "통합생산관리 솔루션의 플랫폼과 생산·자재·설비·품질관리 기능을 설명하며 Open API를 기능 확장 수단으로 제시한다.",
+      "excerpt": "오픈 API로 기능 추가, 기술 확장 용이",
+      "claim": {
+        "text": "미라콤은 Nexplant MESplus 플랫폼의 기능 확장 수단으로 Open API를 안내한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미표시",
+        "MES Open API 표시는 그룹 공통 로봇 API 공식화와 동일하지 않음",
+        "API 엔드포인트·계약·지원 로봇 명세 미확인"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "unknown",
+      "evidence_locator": "플랫폼 설명 122–175행"
+    },
+    {
+      "id": "mi-006",
+      "title": "미라콤아이앤씨 등 4자, 협약 체결",
+      "url": "https://m.bikorea.net/news/articleView.html?idxno=47393",
+      "publisher": "BI KOREA",
+      "published_at": "2026-10-02",
+      "event_date": "2026-10-02",
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "robot",
+        "factory",
+        "partner"
+      ],
+      "origin_key": "miracom-release:2026-10-02-ax-rx-six-manufacturers",
+      "summary_ko": "2026 상생형 AX 선도모델 사업을 통해 6개 제조기업의 모델 구축·현장 실증을 추진한다는 발표다. 솔브레인·하나마이크론·매그나칩반도체·삼송·금호타이어 5개사부터 착수하고 1개사는 협약 예정으로 구분한다.",
+      "excerpt": "총 6개 제조기업을 대상으로 제조 AI 적용 모델 구축과 현장 실증을 추진한다.",
+      "claim": {
+        "text": "BI KOREA는 미라콤이 6개 제조기업 대상 AX·RX 현장 실증을 추진한다고 발표했다고 보도했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "pilot",
+      "limitations": [
+        "사업 착수·추진 발표이며 6개사 모두의 구축 완료가 아님",
+        "생산량·불량률 개선은 목표이며 실측 아님",
+        "휴머노이드 적용의 고객별 배치·유료 상시 가동 여부 미공개",
+        "동일 2026-10-02 보도자료 재인용은 독립 근거가 아님"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "기사승인 39행; 65–98행"
+    },
+    {
+      "id": "mi-007",
+      "title": "미라콤아이앤씨, 그린코스에 디지털팩토리 구축…화장품 제조 품질관리 고도화",
+      "url": "https://www.hankyung.com/article/202607130604P",
+      "publisher": "한국경제 기업 보도자료",
+      "published_at": "2026-07-13",
+      "event_date": "2026-07-13",
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "factory"
+      ],
+      "origin_key": "miracom-release:2026-07-13-greencos-mes",
+      "summary_ko": "그린코스 김포 3공장 대상 MES 구축 프로젝트 착수 발표다. 전자 제조기록·LOT 추적 등 품질관리 고도화와 향후 기존 공장 확장을 고려한 표준화 방향을 설명한다.",
+      "excerpt": "디지털팩토리 구축 프로젝트에 착수한다고 13일 밝혔다.",
+      "claim": {
+        "text": "한국경제 게재 보도자료에 따르면 미라콤은 그린코스 3공장 MES 구축 프로젝트 착수를 발표했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "MES 구축 사업이며 로봇 상시 운영 계약으로 분류하지 않음",
+        "향후 일정·확산 계획은 완료 사실이 아님"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "입력일 41행; 프로젝트 대상·일정 70–72행"
+    },
+    {
+      "id": "mi-008",
+      "title": "미라콤아앤씨, 한국철강·환영철강 사례 발표",
+      "url": "https://www.bikorea.net/news/quickViewArticleView.html?idxno=46200",
+      "publisher": "BI KOREA",
+      "published_at": "2026-05-26",
+      "event_date": "2026-05-26",
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "factory",
+        "kpi"
+      ],
+      "origin_key": "miracom-release:2026-05-26-steel-mes",
+      "summary_ko": "한국철강 창원공장과 환영철강 당진공장에 데이터 수집·SCADA·MES·KPI 모니터링 등을 구축하는 프로젝트의 착수 발표다.",
+      "excerpt": "MES 기반 제조 AX 가속…디지털팩토리 구축 착수",
+      "claim": {
+        "text": "BI KOREA는 미라콤이 한국철강·환영철강 디지털팩토리 구축 프로젝트에 착수한다고 발표했다고 보도했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "로봇 도입 또는 자율운영 완료를 뜻하지 않음",
+        "기사 제목의 회사명 오탈자는 원문 제목을 보존",
+        "공식 신·구 언론목록에 날짜 차이가 있어 기사 본문의 2026-05-26을 채택"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "5행 기사 일시; 6–8행 사업 범위"
+    },
+    {
+      "id": "mi-009",
+      "title": "미라콤아이앤씨, 삼성SDS 안대중 부사장 신임 대표이사 내정",
+      "url": "https://www.hankyung.com/article/202512015286P",
+      "publisher": "한국경제 / 삼성SDS 제공 보도자료",
+      "published_at": "2025-12-01",
+      "event_date": "2025-12-01",
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "sds"
+      ],
+      "origin_key": "miracom-release:2025-12-01-ceo-designate",
+      "summary_ko": "삼성SDS 디지털팩토리담당 안대중 부사장의 미라콤 대표이사 내정을 알리는 기업 보도자료다. 페이지는 삼성SDS가 제공한 보도자료임을 명시한다.",
+      "excerpt": "신임 대표이사로 내정했다고 1일 밝혔다.",
+      "claim": {
+        "text": "삼성SDS 제공 보도자료는 안대중 디지털팩토리담당 부사장의 미라콤 대표이사 내정을 발표했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "내정 발표일과 법적 취임일은 다를 수 있음",
+        "내부 결재선·예산권한·비공개 보고라인을 추정하지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "41행 날짜; 70행 내정; 78행 기업 작성·배포 고지"
+    },
+    {
+      "id": "mi-010",
+      "title": "미라콤, 스마트팩토리 및 탄소중립 사업 위해 켐토피아와 협력하기로",
+      "url": "https://www.elec4.co.kr/contents/article_detail?article_idx=34872",
+      "publisher": "전자과학",
+      "published_at": "2025-11-28",
+      "event_date": "2025-11-25",
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "kpi",
+        "partner"
+      ],
+      "origin_key": "miracom-release:2025-11-28-chemtopia-mou",
+      "summary_ko": "미라콤의 MES·FEMS 제조 데이터와 켐토피아 환경·탄소관리 솔루션을 결합하는 MOU 발표다.",
+      "excerpt": "11월 25일 스마트팩토리 및 탄소중립 솔루션 사업 협력",
+      "claim": {
+        "text": "전자과학은 미라콤과 켐토피아가 2025년 11월 25일 스마트팩토리·탄소중립 사업 MOU를 체결했다고 보도했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "RX 로봇 계약이 아니라 제조 데이터·환경관리 인접 협력",
+        "MOU를 유료 고객 수주 또는 반복매출로 계산하지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "26–33행"
+    },
+    {
+      "id": "mi-011",
+      "title": "유진로봇·미라콤아이앤씨·스토브리, 스마트팩토리 물류 자동화 전략 공개",
+      "url": "https://www.hellot.net/news/article.html?no=106716",
+      "publisher": "헬로티",
+      "published_at": "2025-10-31",
+      "event_date": "2025-11-21",
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "robot",
+        "partner"
+      ],
+      "origin_key": "https://dubiz.co.kr/Event/407",
+      "summary_ko": "AW 2026 베스트 솔루션 데이 웨비나의 발표 예고다. 미라콤의 세션은 MES와 물류 자동화 연계 및 소프트웨어 중심 제조 물류 최적화를 다룬다.",
+      "excerpt": "MES와 물류 자동화 시스템의 연계를 통한 공정 최적화",
+      "claim": {
+        "text": "헬로티는 2025년 11월 21일 웨비나에서 미라콤의 MES·물류 자동화 연계 세션을 예고했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "공동 세미나 출연만으로 세 회사 간 사업 계약을 추정하지 않음",
+        "미라콤 언론목록에는 2025-11-06이나 실제 기사 등록일 2025-10-31을 채택"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "115행 등록일; 130–148행 행사·세션"
+    },
+    {
+      "id": "mi-012",
+      "title": "AW 2026 베스트 솔루션 데이 7탄 : 스마트물류 #2",
+      "url": "https://dubiz.co.kr/Event/407",
+      "publisher": "두비즈 / 첨단 AW 웨비나",
+      "published_at": null,
+      "event_date": "2025-11-21",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "undated",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "robot",
+        "partner"
+      ],
+      "origin_key": "https://dubiz.co.kr/Event/407",
+      "summary_ko": "행사 운영 페이지가 2025년 11월 21일 일정과 유진로봇·미라콤·스토브리의 세션을 명시한다. 게시 시점은 표시되지 않았다.",
+      "excerpt": "MES와 물류 자동화 시스템 연계를 통한 공정 최적화",
+      "claim": {
+        "text": "AW 웨비나 운영 페이지는 미라콤의 MES·물류 자동화 연계 세션을 2025년 11월 21일 일정에 포함한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "행사일과 게시일을 구분하며 게시일은 미상",
+        "발표 영상 자체와 실제 현장 운영은 검증하지 않음",
+        "mi-011과 같은 행사 계보"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "unknown",
+      "evidence_locator": "10행 행사일; 42–52행 세션표"
+    },
+    {
+      "id": "mi-013",
+      "title": "배터리·반도체·식음료... 미라콤 로봇, 어딜 가도 바로 척척[AW2026]",
+      "url": "https://www.meconomynews.com/news/articleView.html?idxno=128549",
+      "publisher": "시장경제",
+      "published_at": "2026-03-04",
+      "event_date": "2026-03-04",
+      "source_type": "media",
+      "verification": "access_blocked",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "robot",
+        "factory"
+      ],
+      "origin_key": "https://www.meconomynews.com/news/articleView.html?idxno=128549",
+      "summary_ko": "AW 2026 미라콤 부스 보도 후보를 수집했다. 검색 색인과 미라콤 공식 언론목록에서 제목과 날짜를 확인했으나 원문은 403으로 열리지 않았다.",
+      "excerpt": "",
+      "claim": {
+        "text": "미라콤 공식 언론목록은 시장경제의 2026-03-04 AW 2026 미라콤 부스 보도를 등록한다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "demo",
+      "limitations": [
+        "원문 접근 차단으로 기술 세부 내용·운영 성과는 미확인",
+        "전시를 생산현장 상시 가동으로 간주하지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "미라콤 공식 구 언론목록 /user/Board/comm_notice.do?BD_NO=2 93–95행; 검색 색인; 원문 403"
+    },
+    {
+      "id": "mi-014",
+      "title": "미라콤아이앤씨, AX 판단과 RX 실행 연결… 자율운영 공장 로드맵 제시",
+      "url": "https://www.industrynews.co.kr/news/articleView.html?idxno=88051",
+      "publisher": "인더스트리뉴스",
+      "published_at": "2026-10-23",
+      "event_date": null,
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "robot",
+        "platform"
+      ],
+      "origin_key": "industrynews-interview:2026-10-23-miracom-ax-rx",
+      "summary_ko": "고해준 사업부장 인터뷰는 제조 데이터 표준화, 재사용 가능한 업무 스킬, 로봇·설비 오케스트레이션 전략을 설명한다. 다른 공장에 PoC를 확산할 때 신뢰성이 달라질 수 있다는 제약도 제시한다.",
+      "excerpt": "AX와 RX는 아직 초기 단계에 머물러 있다고 짚었다.",
+      "claim": {
+        "text": "인더스트리뉴스 인터뷰에서 미라콤 사업부장은 AX·RX의 현장 확산이 아직 초기 단계라고 설명했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "전략·인터뷰이며 다공장 반복배포 실적 증거가 아님",
+        "기사 본문 날짜 미표시: 미라콤 공식 언론목록의 2026-10-23 채택",
+        "FA저널 동명 기사는 같은 계보로 처리"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "본문 51행 초기 단계; 97–103행 확산 한계; 미라콤 /kr/customer-support/news/dn2 80행 날짜"
+    },
+    {
+      "id": "mi-015",
+      "title": "삼성SDI, 피지컬 AI용 전고체 배터리 최초 공개…고품질 배터리로 AI 시대 이끈다",
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+      "publisher": "삼성SDI",
+      "published_at": "2026-03-09",
+      "event_date": "2026-03-11",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "sdi",
+        "robot",
+        "partner"
+      ],
+      "origin_key": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+      "summary_ko": "인터배터리 2026에서 휴머노이드 등 피지컬 AI용 개발 중 파우치형 전고체 배터리 샘플을 공개하겠다는 발표다.",
+      "excerpt": "로봇용 파우치형 전고체 샘플 공개",
+      "claim": {
+        "text": "삼성SDI는 인터배터리 2026에서 로봇용 파우치형 전고체 배터리 샘플 공개 계획을 발표했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "demo",
+      "limitations": [
+        "샘플·개발 단계이며 로봇용 배터리 양산 실적이 아님",
+        "하드웨어 개발을 RX 소프트웨어 예산·매출과 합산하지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "게시일 309행; 311–339행"
+    },
+    {
+      "id": "mi-016",
+      "title": "휴머노이드용 전고체 배터리 성능 검증 중…내년 하반기 상용화-삼성SDI 컨콜",
+      "url": "https://ir.edaily.co.kr/News/Read?k=03995046645617840",
+      "publisher": "이데일리",
+      "published_at": "2026-10-29",
+      "event_date": "2026-10-29",
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "sdi",
+        "robot",
+        "partner"
+      ],
+      "origin_key": "samsung-sdi:2026-q3-earnings-call",
+      "summary_ko": "3분기 실적 컨콜 보도는 9월부터 휴머노이드용 전고체 셀·팩 샘플을 공급해 고객 성능평가를 진행하며 2027년 하반기 상용화를 목표로 한다는 발언을 전한다.",
+      "excerpt": "고객사에서 성능평가 진행 중이다.",
+      "claim": {
+        "text": "이데일리 컨콜 보도에 따르면 삼성SDI는 휴머노이드용 전고체 배터리가 고객 성능평가 단계라고 밝혔다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "pilot",
+      "limitations": [
+        "9월 샘플 공급의 정확한 시작일·고객 실명 미공개",
+        "2027년 상용화는 목표이며 완료 사실이 아님",
+        "관련 컨콜 전재 기사들은 같은 회사 발언 계보"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "26행 기사 일시; 27–28행 컨콜 인용"
+    },
+    {
+      "id": "mi-017",
+      "title": "삼성D, 차세대 폼팩터부터 미래차∙AI∙게이밍 아우르는 OLED 혁신 선보인다",
+      "url": "https://news.samsungdisplay.com/34500",
+      "publisher": "삼성디스플레이",
+      "published_at": null,
+      "event_date": "2026-07-22",
+      "source_type": "official",
+      "verification": "primary_read",
+      "scope": "undated",
+      "entity_ids": [
+        "display",
+        "robot",
+        "partner"
+      ],
+      "origin_key": "https://news.samsungdisplay.com/34500",
+      "summary_ko": "K-디스플레이 2026에서 휴머노이드용 디스플레이와 OLED 컴패니언 AI 토이 등의 콘셉트 제품을 전시한다고 설명한다. 행사일은 동시기 언론 기사와 대조했다.",
+      "excerpt": "휴머노이드용 디스플레이",
+      "claim": {
+        "text": "삼성디스플레이는 K-디스플레이 2026에서 휴머노이드용 OLED 디스플레이를 소개했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "demo",
+      "limitations": [
+        "읽힌 공식 페이지에 게시일 미표시",
+        "행사일은 2026-07-22 동시기 보도와 대조; 게시일 대입 금지",
+        "로봇 인터페이스 부품 전시가 제조 RX 플랫폼 책임을 뜻하지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "unknown",
+      "evidence_locator": "공식 본문 92–104행; 행사 날짜 보조 출처 https://zdnet.co.kr/view/?no=20260722082924"
+    },
+    {
+      "id": "mi-018",
+      "title": "장덕현 삼성전기 사장: 멕시코 공장 하반기 재가동…휴머노이드용 카메라 모듈부터 생산",
+      "url": "https://v.daum.net/v/20260107083444394",
+      "publisher": "아시아경제 / 다음뉴스",
+      "published_at": "2026-01-07",
+      "event_date": "2026-01-06",
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "semco",
+        "robot",
+        "factory"
+      ],
+      "origin_key": "asiae-ces-interview:2026-01-06-samsung-electromechanics",
+      "summary_ko": "CES 현장 취재는 삼성전기 사장이 멕시코 공장에서 휴머노이드 카메라 모듈을 시작으로 하반기 양산을 추진하고 액추에이터 진출을 검토한다고 발언했다고 전한다.",
+      "excerpt": "휴머노이드 카메라 모듈부터 (생산을) 시작한다",
+      "claim": {
+        "text": "아시아경제는 삼성전기 사장이 2026년 하반기 휴머노이드 카메라 모듈 생산 계획을 밝혔다고 보도했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "양산 계획 발표이며 실제 양산 개시 여부는 별도 확인 필요",
+        "로봇 부품 사업과 제조현장 RX SW 매출을 분리"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "5행 게시일; 83–86행 CES 발언"
+    },
+    {
+      "id": "mi-019",
+      "title": "NC AI, 'Sim2Real' 한계 넘은 K-월드모델 연구 앞장",
+      "url": "https://nc-ai.com/ko/newsroom/press/nc-ai-sim2real-k",
+      "publisher": "NC AI",
+      "published_at": "2026-03-16",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "access_blocked",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "partner",
+        "robot"
+      ],
+      "origin_key": "https://nc-ai.com/ko/newsroom/press/nc-ai-sim2real-k",
+      "summary_ko": "검색 색인은 NC AI가 K-피지컬AI 얼라이언스 참여 기업으로 삼성SDS 등을 열거했다고 보여준다. 본문 접근은 도구에서 실패했다.",
+      "excerpt": "",
+      "claim": {
+        "text": "NC AI 공식 검색 색인에는 삼성SDS가 K-피지컬AI 얼라이언스 참여 기업으로 제시돼 있다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "검색 색인 기반 후보이며 원문 정독 미완료",
+        "논문 원문과 수치 성능은 확인하지 않아 연구 결과로 확정하지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "search_index",
+      "evidence_locator": "공식 검색 색인 게시일 2026년 3월 16일; 도구 원문 접근 실패"
+    },
+    {
+      "id": "mi-020",
+      "title": "[현장+] 삼성SDS, 레인보우 로봇에 미라콤 SW 탑재…'팀 RX' 역할분담 구체화",
+      "url": "https://www.greened.kr/news/articleView.html?idxno=351622",
+      "publisher": "녹색경제신문",
+      "published_at": "2026-10-07",
+      "event_date": "2026-10-07",
+      "source_type": "media",
+      "verification": "access_blocked",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "sds",
+        "robot",
+        "partner"
+      ],
+      "origin_key": "https://www.greened.kr/news/articleView.html?idxno=351622",
+      "summary_ko": "인공지능 페스타 2026 현장 기사 후보다. 검색 색인은 레인보우 하드웨어와 미라콤 제조현장 소프트웨어의 역할을 설명하지만 원문은 403으로 접근하지 못했다.",
+      "excerpt": "",
+      "claim": {
+        "text": "녹색경제신문 검색 색인은 인공지능 페스타 2026에서 레인보우 로봇과 미라콤 SW의 역할을 다룬 현장 보도를 제시한다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "demo",
+      "limitations": [
+        "원문 미검증: 계약·제품 지원 범위·배포 여부 확정 금지",
+        "검색 색인 목록의 2026-10-07 날짜를 사용"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "search_index",
+      "evidence_locator": "기사 및 발행사 검색 색인; 원문 403"
+    },
+    {
+      "id": "mi-021",
+      "title": "제조 AX를 통한 SDF : 레이스에서 승리하는 법",
+      "url": "https://procon.co.kr/bbs/board.php?bo_table=magazine_new&wr_id=3460",
+      "publisher": "계장기술(PROCON) / 미라콤 기고",
+      "published_at": "2026-01-15",
+      "event_date": null,
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "platform"
+      ],
+      "origin_key": "https://procon.co.kr/bbs/board.php?bo_table=magazine_new&wr_id=3460",
+      "summary_ko": "미라콤 기고는 Nexphere Platform 위에서 Analytics와 Chat을 제공하고 MESplus에 내장된 Chat을 통해 제조 데이터 질의를 지원하는 구성을 소개한다.",
+      "excerpt": "넥스피어 플랫폼(Nexphere Platform) 위에서 넥스피어 애널리틱스(Nexphere Analytics)와 넥스피어 챗(Nexphere Chat)을 제공한다.",
+      "claim": {
+        "text": "미라콤 기고는 Nexphere AI를 Platform·Analytics·Chat으로 구성된 제조 AI로 설명한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "제품 설명·기고이며 독립 성능 검증이 아님",
+        "2025년 9월 최초 공개 사건을 2026년 신규 출시로 중복 집계하지 않음"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "23행 작성일; 60–69행 제품 구성; 86행 미라콤 기고 연락처"
+    },
+    {
+      "id": "mi-022",
+      "title": "미라콤아이앤씨, 비츠로이엠에 스마트 물류시스템 구축…자동창고 절반 비용",
+      "url": "https://zdnet.co.kr/view/?no=20250630112430",
+      "publisher": "ZDNet Korea",
+      "published_at": "2025-06-30",
+      "event_date": null,
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "out_of_window",
+      "entity_ids": [
+        "miracom",
+        "robot",
+        "factory",
+        "partner"
+      ],
+      "origin_key": "https://zdnet.co.kr/view/?no=20250630112430",
+      "summary_ko": "기간 밖 배경 자료다. 비츠로이엠 안산공장의 선반형 창고관리시스템과 AGV 구축·안정화, HIK Robot과의 공급 협력을 설명한다.",
+      "excerpt": "비츠로이엠의 안산 공장에 선반형 창고관리시스템(SMS)을 구축했다고 30일 밝혔다.",
+      "claim": {
+        "text": "ZDNet은 미라콤이 비츠로이엠 안산공장에 AGV 기반 SMS를 구축했다고 2025년 6월 30일 보도했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "production",
+      "limitations": [
+        "2025-10-30 이전 자료이므로 최근 1년 조사 실적에서 제외",
+        "계약금액·재계약·유료 반복매출·90일 가동 로그는 미공개",
+        "회사 발표 기반 구축 보도이며 독립 현장 감사가 아님"
+      ],
+      "accessed_at": "2026-10-30",
+      "date_basis": "page",
+      "evidence_locator": "40행 게시일; 53–64행 구축·안정화 및 HIK Robot 협력"
+    }
+  ],
+  "queries": [
+    "site.miracom.co.kr 미라콤 2026 RCS 로봇",
+    "미라콤아이앤씨 2026 스마트공장 로봇 AI",
+    "site.miracom.co.kr 2025 11 12 로봇 MES",
+    "삼성SDI 2026 로봇 스마트팩토리 자동화",
+    "site:miracom-inc.com \"2026\" \"상생형\"",
+    "site:miracom-inc.com \"2026\" \"AW\"",
+    "site:miracom-inc.com \"2025\" \"11\" 제조",
+    "site:miracom-inc.com \"2026\" \"그린코스\"",
+    "미라콤아이앤씨 \"2026\" \"로봇\" \"3월\"",
+    "미라콤아이앤씨 \"2026\" \"한국철강\" \"환영철강\"",
+    "site:news.samsungdisplay.com 2026 로봇",
+    "site:samsungsem.com 2026 로봇 피지컬",
+    "삼성전기 \"2026\" \"로봇\" \"공장\"",
+    "삼성디스플레이 \"2026\" \"휴머노이드\"",
+    "삼성중공업 \"2026\" \"로봇\" \"로보포스\"",
+    "\"미라콤\" \"AW 2026\"",
+    "\"미라콤\" \"2026\" \"오토메이션월드\" 로봇",
+    "\"미라콤\" \"2025\" \"11\" 로봇",
+    "\"미라콤\" \"2026\" \"RCS\"",
+    "\"미라콤\" \"2026\" \"상생형\" \"smart-factory\"",
+    "\"미라콤아이앤씨\" \"오토메이션월드 2026 성료\"",
+    "\"미라콤아이앤씨\" \"AW2026\"",
+    "\"미라콤아이앤씨\" \"안대중\" \"2025.12.01\"",
+    "\"미라콤아이앤씨·스토브리·유진로봇\" \"2025\"",
+    "\"미라콤\" \"2026\" \"휴머노이드\" \"hellot\"",
+    "\"삼성SDI\" \"2026-10-29\" \"전고체\"",
+    "site:news.samsungsdi.com/ko \"삼성SDI, 2026년 3분기 실적 발표\"",
+    "site:news.samsungsdi.com/ko \"미래를 움직이는 심장\"",
+    "\"유진로봇·미라콤아이앤씨·스토브리\"",
+    "\"삼성SDI, 2026년 3분기 실적 발표\" \"articleView\"",
+    "\"미래를 움직이는 심장, 삼성SDI 차세대 배터리\"",
+    "\"미라콤\" \"2026\" 특허 로봇",
+    "\"Miracom\" \"2026\" robot MES paper"
+  ],
+  "coverage_gaps": [
+    "조사 창은 2025-10-30~2026-10-30이다. 전체 공개자료의 완전성이나 공식자료 누락률을 측정한 모집단은 확보하지 못했다.",
+    "미라콤 신·구 사이트 언론목록·공지사항·인사이트·제품문서, 삼성SDI·삼성디스플레이 공식 자료와 관련 보도를 탐색했다. 이전 사이트 400건 목록 전체 페이지와 모든 영상·IR·채용·특허·논문의 전수 추출은 미완료다.",
+    "삼성중공업·삼성E&A·삼성전기·삼성디스플레이의 RX ART 사례는 삼성SDS 공식 2026-09-03 발표에 통합돼 있으므로 SDS 조사 묶음과 중복 저장하지 않았다.",
+    "SDS Job/Task Graph와 미라콤 RCS의 공식 책임 경계·API 스키마·지원 로봇 버전 매트릭스는 확인하지 못했다. MES Open API와 RX 그룹 공통 API를 구분해야 한다.",
+    "6개 제조기업 AX·RX 사업은 협약·착수/실증 추진 발표다. 로봇 유료 운영 전환·재계약·90일 이상 가동·사람 개입률·복구시간·RX 반복매출 수치는 확인하지 못했다.",
+    "시장경제 AW2026 기사, 녹색경제 현장 기사, NC AI 공식 글 등은 검색 색인만 확보하거나 원문 접근이 차단됐다. access_blocked 레코드의 기술 상세 주장은 검증 완료로 표시하면 안 된다.",
+    "삼성SDI 2026년 3분기 공식 뉴스룸 원문 링크는 홈페이지에서 확인했지만 상세 페이지 도구 접근에 실패하여 이데일리 컨콜 보도를 사용했다.",
+    "제조 로보틱스/MCS/MES 제품문서와 일부 공식 행사 페이지는 게시일 미상이다. 관측일을 게시일로 바꾸거나 as-known-at 과거 스냅샷에 소급 노출하면 안 된다.",
+    "삼성디스플레이 K-디스플레이 공식 글은 원문을 읽었지만 게시일 미표시다. 행사 날짜는 동시기 보도와 대조했으며 부품 전시를 RX 운영 플랫폼 출시로 분류하지 않았다.",
+    "기사 재인용·번역 및 같은 회사 보도자료는 origin_key를 공유하도록 설정했다. 기사 수를 독립 증거 수로 합산하지 않는다.",
+    "mi-022는 2025-06-30 배경 사례이므로 최근 1년 문서 수와 신규 사건 수에서 제외한다.",
+    "논문·특허 검색에서 해당 기간 미라콤의 RX 제품 구현을 직접 입증하는 원문은 확보하지 못했다. 발표 행사 위원 명단만으로 논문 저자·제품 기여를 추정하지 않았다."
+  ]
+}

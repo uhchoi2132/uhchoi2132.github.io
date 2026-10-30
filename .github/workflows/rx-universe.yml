@@ -25,7 +25,7 @@ jobs:
           node-version: '22'
       - name: Install dependencies
         run: npm install --no-audit --no-fund
-      - name: Verify temporal model
+      - name: Verify temporal model, source provenance and SQLite integrity
         run: npm test
       - name: Typecheck and production build
         run: npm run build
@@ -55,6 +55,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}rx-universe/
     steps:
+      - uses: actions/checkout@v4
       - name: Deploy public website
         id: deployment
         uses: actions/deploy-pages@v4
@@ -65,8 +66,22 @@ jobs:
           for attempt in 1 2 3 4 5 6; do
             if curl --fail --location --max-time 20 "$SITE_URL" -o /tmp/rx-page.html && grep -q 'SAMSUNG RX' /tmp/rx-page.html; then
               echo "Public website verified: $SITE_URL"
-              exit 0
+              break
             fi
             sleep 10
           done
-          exit 1
+          curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}data/rx-research.json" -o /tmp/rx-research.json
+          curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}data/rx-research.sqlite" -o /tmp/rx-research.sqlite
+          python3 - <<'PYCODE'
+          import json, sqlite3
+          from pathlib import Path
+          expected = json.loads(Path('apps/rx-universe/src/research-data.json').read_text())
+          actual = json.loads(Path('/tmp/rx-research.json').read_text())
+          assert actual == expected, 'Published research JSON differs from this commit'
+          db = sqlite3.connect('/tmp/rx-research.sqlite')
+          assert db.execute('PRAGMA integrity_check').fetchone()[0] == 'ok'
+          assert db.execute('SELECT COUNT(*) FROM Sources').fetchone()[0] == len(expected['records'])
+          assert db.execute('PRAGMA foreign_key_check').fetchall() == []
+          assert 'SAMSUNG RX' in Path('/tmp/rx-page.html').read_text()
+          print('Anonymous public JSON and SQLite verified:', len(expected['records']), 'sources')
+          PYCODE

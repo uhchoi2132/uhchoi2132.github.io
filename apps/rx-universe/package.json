@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 0.0.0.0",
-    "build": "tsc -b && vite build",
-    "test": "tsx --test src/data.test.ts",
+    "build": "python3 scripts/build-db.py && tsc -b && vite build",
+    "test": "tsx --test src/*.test.ts",
     "preview": "vite preview --host 127.0.0.1 --port 4173",
     "test:browser": "node scripts/browser-check.mjs"
   },

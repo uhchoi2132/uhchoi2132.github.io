@@ -1,0 +1,253 @@
+{
+  "records": [
+    {
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-30",
+      "id": "media-001",
+      "title": "삼성SDS, 제각각인 로봇 한데 묶는다…RX 플랫폼·생태계 구축 가속",
+      "url": "https://zdnet.co.kr/view/?no=20260908143333",
+      "publisher": "ZDNet Korea",
+      "published_at": "2026-09-08",
+      "event_date": "2026-09-08",
+      "entity_ids": [
+        "sds",
+        "mes",
+        "robot",
+        "api",
+        "platform"
+      ],
+      "summary_ko": "리얼 서밋 현장 보도는 로봇 학습·데이터 관리와 다기종 운영을 연결하는 플랫폼 구상을 설명한다. 삼성SDS 발표자는 여러 로봇의 연속 운용이 어렵고 제조용 피지컬 AI가 아직 완성 단계가 아니라고 밝혔다.",
+      "excerpt": "제조 현장에서 실제로 여러 로봇을 운영하는 피지컬 AI는 아직 완성 단계가 아니다",
+      "claim": {
+        "text": "ZDNet은 삼성SDS 발표자가 제조 현장의 다중 로봇 운용용 피지컬 AI를 아직 완성 단계가 아니라고 설명했다고 보도했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "demo",
+      "limitations": [
+        "행사 시연 및 발표 내용이며 90일 상시 운영·복구시간·사람 개입률 실측 근거가 아니다.",
+        "플랫폼 구상과 인터페이스 표준화 계획을 공개 API 출시로 해석하지 않는다."
+      ],
+      "evidence_locator": "2026-09-08 기사 본문, 배순민 발표·플랫폼 구성·현장 시연",
+      "origin_key": "https://zdnet.co.kr/view/?no=20260908143333",
+      "event_key": "real-summit-2026-09-08"
+    },
+    {
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-30",
+      "id": "media-002",
+      "title": "삼성SDS, 제조 자동화 넘어 '로봇 통합운영' 사업 본격화",
+      "url": "https://www.newspim.com/news/view/20260908000734",
+      "publisher": "뉴스핌",
+      "published_at": "2026-09-08",
+      "event_date": "2026-09-08",
+      "entity_ids": [
+        "sds",
+        "miracom",
+        "mes",
+        "factory",
+        "platform"
+      ],
+      "summary_ko": "기자간담회에서 소개된 관계사 생산라인 및 기존 MES 고객 기반은 향후 로봇 전환 사업의 대상이다. 보도는 관계사 실증 후 기존 고객과 해외로 확대하고 2027년 플랫폼을 출시한다는 계획을 담았다.",
+      "excerpt": "삼성 제조 관계사에 그동안 구축한 생산라인이 1000여개를 넘는다",
+      "claim": {
+        "text": "뉴스핌 보도의 생산라인 1,000여 개와 MES 고객 430곳은 기존 사업 기반이며 로봇 플랫폼 유료 배포 실적으로 제시된 수치가 아니다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "언론의 현장 질의응답 보도이며 계약 원문을 확인한 자료가 아니다.",
+        "기존 MES 고객 수를 RX 고객 수·RX 반복매출로 합산하지 않는다."
+      ],
+      "evidence_locator": "기사 본문 안대정 부사장 질의응답·2027년 출시 계획; AI 자동요약 제외",
+      "origin_key": "https://www.newspim.com/news/view/20260908000734",
+      "event_key": "real-summit-2026-09-08"
+    },
+    {
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-30",
+      "id": "media-003",
+      "title": "[영상] 삼성SDS, 2031년까지 10조 투입…AI·로봇·물류 전방위 미래 동력 확보",
+      "url": "https://zdnet.co.kr/view/?no=20260908122517",
+      "publisher": "ZDNet Korea",
+      "published_at": "2026-09-08",
+      "event_date": "2026-09-08",
+      "entity_ids": [
+        "sds",
+        "robot",
+        "factory",
+        "platform"
+      ],
+      "summary_ko": "삼성SDS 기자간담회 보도는 2031년까지의 10조 원 투자 계획이 데이터센터·GPU·DBO·전략적 M&A 등 여러 사업을 포괄한다고 설명했다. RX 소프트웨어에 할당된 예산이나 해당 매출은 분리 공개되지 않았다.",
+      "excerpt": "데이터센터, GPU, DBO 사업, 전략적 M&A 등 여러 사업을 포함한 지속적인 투자 프로세스",
+      "claim": {
+        "text": "ZDNet은 삼성SDS의 10조 원 계획이 여러 사업을 포괄한다고 보도했으며 이를 RX 소프트웨어 전용 예산으로 식별할 근거는 이 자료에 없다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "전사 투자 계획을 RX 소프트웨어 예산·매출로 변환하지 않는다.",
+        "기사 본문을 직접 읽었으며 삽입 영상 전체를 시청한 기록은 아니다."
+      ],
+      "evidence_locator": "기사 본문 10조 원 투자 질문에 대한 대표이사 답변",
+      "origin_key": "https://zdnet.co.kr/view/?no=20260908122517",
+      "event_key": "real-summit-2026-09-08"
+    },
+    {
+      "source_type": "media",
+      "verification": "primary_read",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-30",
+      "id": "media-004",
+      "title": "[K-피지컬AI] ①삼성 품에 안긴 레인보우로보틱스…로봇 사업 역할 어디까지",
+      "url": "https://www.smarttoday.co.kr/ko-kr/articles/112188",
+      "publisher": "스마트투데이",
+      "published_at": "2026-10-01",
+      "event_date": "2026-10-01",
+      "entity_ids": [
+        "se",
+        "robot",
+        "partner",
+        "vertical"
+      ],
+      "summary_ko": "레인보우로보틱스 관계자를 인용한 보도는 고객별 제품 구성·공급 용도·적용 사업장 등이 공개되지 않았다고 설명한다. 삼성전자와 레인보우의 협력 및 자체 개발 영역이 소개되지만 최종 역할 분담이나 양산 범위가 확정된 증거는 아니다.",
+      "excerpt": "고객사별 매출의 제품 구성이나 특정 제품 포함 여부는 고객사와의 관계상 별도로 공개하기 어렵다",
+      "claim": {
+        "text": "스마트투데이는 레인보우로보틱스가 고객별 제품 구성과 공급 용도·사업장 정보를 공개하기 어렵다고 답했다고 보도했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "미공개 역할 분담을 지분 관계만으로 추정하지 않는다.",
+        "보도에 언급된 거래액은 이 기록에서 공시 원문으로 재검증하지 않았으므로 RX 매출 지표로 등록하지 않는다."
+      ],
+      "evidence_locator": "기사의 '양사 역할 분담, 아직 비공개' 단락·회사 관계자 답변",
+      "origin_key": "https://www.smarttoday.co.kr/ko-kr/articles/112188"
+    },
+    {
+      "source_type": "media",
+      "verification": "access_blocked",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-30",
+      "id": "media-005",
+      "title": "[현장+] 삼성SDS, 레인보우 로봇에 미라콤 SW 탑재…'팀 RX’ 역할분담 구체화",
+      "url": "https://greened.kr/news/articleView.html?idxno=351622",
+      "publisher": "녹색경제신문",
+      "published_at": null,
+      "event_date": null,
+      "entity_ids": [
+        "sds",
+        "miracom",
+        "robot",
+        "rcs",
+        "partner"
+      ],
+      "summary_ko": "검색 색인에서 AI FESTA 2026 현장과 레인보우 로봇·미라콤 소프트웨어의 연결을 다룬 기사를 발견했다. 원문 서버가 403을 반환하여 게시일과 세부 역할 분담은 재검증 대기 상태로 보관한다.",
+      "excerpt": "",
+      "claim": {
+        "text": "검색 색인은 AI FESTA 현장에서 레인보우 로봇과 미라콤 소프트웨어의 연계를 다룬 기사가 존재함을 보여주지만 상세 내용은 원문 접근 실패로 검증하지 못했다.",
+        "kind": "media_report"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "원문 HTTP 403; 검색 색인으로만 발견했다.",
+        "정확한 게시일 미확인으로 시점 재생에서 제외한다.",
+        "2026-10-07 행사 취재일은 검색 요약에서 식별한 값이며 재확인이 필요하다."
+      ],
+      "evidence_locator": "검색 결과 제목·요약; 원문 접근 차단",
+      "origin_key": "https://greened.kr/news/articleView.html?idxno=351622"
+    }
+  ],
+  "queries": [
+    {
+      "query": "삼성 RX 로봇 전환 삼성SDS 삼성전자 2026 10월",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "삼성SDS RX 오케스트레이션 미라콤 역할 플랫폼 2026",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "Samsung robotics transformation RX 2026 orchestration paid factory",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "삼성 RX 로봇 2025 11월 12월 SDS",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "\"삼성\" \"RX\" \"Job\" \"Task\" 2026",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "\"삼성SDS\" \"미라콤\" \"RCS\" \"2026\"",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "\"삼성SDS\" \"RX\" \"유료\" \"수주\" 2026",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "\"삼성전자\" \"RX사업\" \"2026\" \"공식\"",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "site.greened.kr \"351622\" \"2026.10\"",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "삼성SDS 로봇 오케스트레이션 API SDK 공식 문서 2026",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "삼성 RX 90일 가동 사람 개입률 복구시간 유료 계약 2026",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "site.greened.kr \"351622\" \"2026\"",
+      "category": "media_crosscheck",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "site.dart.fss.or.kr 삼성SDS 2026 로봇 오케스트레이션",
+      "category": "filings_discovery",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "site.samsung.com 2026 반기보고서 로봇 RX pdf",
+      "category": "filings_discovery",
+      "searched_at": "2026-10-30"
+    },
+    {
+      "query": "site.rainbow-robotics.com 2026 반기보고서 삼성전자",
+      "category": "filings_discovery",
+      "searched_at": "2026-10-30"
+    }
+  ],
+  "coverage_gaps": [
+    "SDS 공개 RX API/SDK 명세와 그룹 공통 API 확정 원문을 이번 조사에서 확보하지 못했다. 일반 클라우드 API Gateway 문서는 RX 근거로 제외했다.",
+    "90일 이상 상시 운영·사람 개입률·복구시간·RX 전용 반복매출을 함께 확인하는 계약 또는 운영 원문을 확보하지 못했다.",
+    "검색 색인 누락·접근 차단·삭제 자료로 인해 공개자료의 완전한 전수성은 입증하지 못한다."
+  ]
+}

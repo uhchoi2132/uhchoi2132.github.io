@@ -8,6 +8,8 @@ const expect = playwrightExpect.configure({ timeout: 15_000 });
 // Run after the production build. Set PREVIEW_URL to reuse an existing server.
 const previewUrl = process.env.PREVIEW_URL || 'http://127.0.0.1:4173/rx-universe/';
 const output = path.resolve(process.env.BROWSER_ARTIFACT_DIR || 'test-results');
+const researchCatalog = JSON.parse(await readFile(new URL('../src/research-data.json', import.meta.url), 'utf8'));
+const researchAtDate = date => researchCatalog.records.filter(row => row.scope === 'in_window' && row.published_at && row.published_at <= date && (row.event_date ?? row.published_at) <= date);
 const titles = ['Command Center', '3D Universe', 'Time Machine', 'Evidence Vault', 'Hypothesis War Room', 'Factory Twin', 'Briefing Studio'];
 const report = { url: previewUrl, started_at: new Date().toISOString(), checks: [], console_errors: [], page_errors: [], failed_requests: [], screenshots: [], status: 'running' };
 let server;
@@ -48,8 +50,8 @@ async function noHorizontalOverflow(page, title) {
   const sizes = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, page: document.documentElement.scrollWidth, body: document.body.scrollWidth }));
   assert.ok(sizes.page <= sizes.viewport + 1 && sizes.body <= sizes.viewport + 1, `${title}: horizontal overflow ${JSON.stringify(sizes)}`);
 }
-async function screenshot(page, filename) {
-  await page.screenshot({ path: path.join(output, filename), fullPage: true, animations: 'disabled' });
+async function screenshot(page, filename, fullPage = true) {
+  await page.screenshot({ path: path.join(output, filename), fullPage, animations: 'disabled' });
   report.screenshots.push(filename);
 }
 async function ready() {
@@ -95,7 +97,8 @@ try {
   await page.getByRole('button', { name: 'SAMSUNG SDS 상세 보기', exact: true }).click();
   const drawer = page.locator('.detail-drawer');
   await expect(drawer.getByRole('heading', { name: '삼성SDS', exact: true })).toBeVisible();
-  await expect(drawer.getByText('연결된 검증 원문 0건', { exact: true })).toBeVisible();
+  await expect(drawer.locator('.research-countline')).toBeVisible();
+  assert.ok(await drawer.locator('.research-source-link').count() > 0, 'Samsung SDS drawer must link actual sources');
   await drawer.getByRole('button', { name: 'Evidence Vault 열기', exact: true }).click();
   await expect(page.locator('main h1')).toContainText('Evidence Vault');
   report.checks.push('2D node opens the correct drawer, evidence status and Evidence Vault');
@@ -112,7 +115,7 @@ try {
   await navigate(page, 'Time Machine');
   await page.getByRole('button', { name: 'As-known-at', exact: true }).click();
   await page.getByLabel('정보 기준일', { exact: true }).fill('2026-09-01');
-  await expect(page.locator('.graph-stage')).toContainText('이 시점에 등록된 정보가 없습니다');
+  await expect(page.locator('.graph-stage')).toContainText('이 시점에 등록된 설계 seed가 없습니다');
   await expect(page.locator('.universe-visual')).toHaveCount(0);
   await page.getByRole('button', { name: 'Retrospective', exact: true }).click();
   await expect(page.locator('.universe-visual')).toHaveCount(0);
@@ -121,7 +124,7 @@ try {
     await navigate(page, title);
     await expect(page.getByLabel('정보 기준일', { exact: true })).toHaveValue('2026-09-01');
     await expect(page.locator('.universe-visual, .signal-item, .hypothesis-card, .factory-flow, .question-list button')).toHaveCount(0);
-    if (title === 'Evidence Vault') await expect(page.locator('.source-table .table-row:not(.table-head)')).toHaveCount(0);
+    if (title === 'Evidence Vault') await expect(page.locator('.research-card')).toHaveCount(researchAtDate('2026-09-01').length);
   }
   report.checks.push('2026-09-01 hides future seeds on all screens and in both temporal perspectives');
 
@@ -134,15 +137,50 @@ try {
   const snapshot = JSON.parse(await readFile(downloadPath, 'utf8'));
   assert.equal(snapshot.as_of, '2026-09-01');
   assert.equal(snapshot.known_at, '2026-09-01');
-  assert.equal(snapshot.collection_status, 'not_connected');
+  assert.equal(snapshot.collection_status, 'manual_research_snapshot');
+  assert.equal(snapshot.automatic_collection_status, 'not_connected');
+  assert.deepEqual(snapshot.research_records.map(row => row.id).sort(), researchAtDate('2026-09-01').map(row => row.id).sort(), 'Historical sources leaked or disappeared');
+  assert.ok(snapshot.research_records.length > 0, 'Research predating seed registration must remain visible');
   assert.equal(snapshot.last_successful_update, null);
   for (const key of ['entities', 'relations', 'hypotheses', 'signals', 'questions', 'claims', 'evidence', 'watched']) assert.deepEqual(snapshot[key], [], `Historical export leaked ${key}`);
-  report.checks.push('Downloaded historical JSON is empty and accurately marks collection as disconnected');
+  report.checks.push('Historical JSON contains only eligible sources, no future seeds, and reports automatic collection as disconnected');
 
-  await page.getByLabel('정보 기준일', { exact: true }).fill('2026-10-28');
+  await page.getByLabel('정보 기준일', { exact: true }).fill('2026-10-30');
   await navigate(page, 'Command Center');
   await expect(page.locator('.graph-stage svg[role="group"]')).toBeVisible();
   await screenshot(page, 'desktop-command-center.png');
+
+  await navigate(page, 'Evidence Vault');
+  const currentRows = researchAtDate('2026-10-30');
+  const undatedRows = researchCatalog.records.filter(row => row.scope === 'undated');
+  const backgroundRows = researchCatalog.records.filter(row => row.scope === 'out_of_window');
+  await expect(page.locator('.research-card')).toHaveCount(researchCatalog.records.length);
+  for (const scope of ['in_window', 'undated', 'out_of_window']) {
+    await expect(page.locator(`.research-card[data-source-scope="${scope}"]`)).toHaveCount(researchCatalog.records.filter(row => row.scope === scope).length);
+  }
+  await expect(page.locator('.research-catalog-summary')).toContainText('81');
+  await page.getByLabel('법인 필터', { exact: true }).selectOption('sds');
+  await page.getByLabel('자료 유형 필터', { exact: true }).selectOption('official');
+  await page.getByLabel('검증 상태 필터', { exact: true }).selectOption('primary_read');
+  const filteredRows = [...currentRows, ...undatedRows, ...backgroundRows].filter(row => row.entity_ids.includes('sds') && row.source_type === 'official' && row.verification === 'primary_read');
+  assert.ok(filteredRows.length > 0);
+  await expect(page.locator('.research-card')).toHaveCount(filteredRows.length);
+  await page.getByRole('button', { name: '초기화', exact: true }).click();
+  await page.getByLabel('자료 검색', { exact: true }).fill('2031년까지 10조');
+  await expect(page.locator('.research-card[data-source-id="media-003"]')).toBeVisible();
+  await page.getByLabel('자료 검색', { exact: true }).fill('');
+  const jsonResponse = await page.request.get(new URL('data/rx-research.json', previewUrl).href);
+  assert.ok(jsonResponse.ok());
+  assert.equal((await jsonResponse.json()).records.length, researchCatalog.records.length);
+  const databaseResponse = await page.request.get(new URL('data/rx-research.sqlite', previewUrl).href);
+  assert.ok(databaseResponse.ok());
+  assert.equal((await databaseResponse.body()).subarray(0,16).toString(), 'SQLite format 3\0');
+  await page.reload({ waitUntil: 'networkidle' });
+  await expect(page.locator('main h1')).toContainText('Evidence Vault');
+  await expect(page.locator('.research-card')).toHaveCount(researchCatalog.records.length);
+  assert.equal(new URL(page.url()).hash, '#evidence');
+  await screenshot(page, 'desktop-evidence-vault.png', false);
+  report.checks.push('All 81 evidence records, scope separation, filters/search, deep links and public JSON/SQLite downloads work');
 
   const mobileContext = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
   const mobile = currentPage = await mobileContext.newPage();
@@ -155,6 +193,8 @@ try {
     await navigate(mobile, title, true);
     await noHorizontalOverflow(mobile, `Mobile ${title}`);
   }
+  await navigate(mobile, 'Evidence Vault', true);
+  await screenshot(mobile, 'mobile-evidence-vault.png', false);
   await navigate(mobile, 'Command Center', true);
   await expect(mobile.locator('.graph-stage svg[role="group"]')).toBeVisible();
   await screenshot(mobile, 'mobile-command-center.png');
