@@ -1,4 +1,4 @@
-import { catalog, getRecordClaims, RESEARCH_MAX_DATE, researchAt, type ResearchMode, type ResearchRecord, type ResearchVerification } from './research';
+import { catalog, getRecordClaims, RESEARCH_MAX_DATE, researchAt, type ResearchMode, type ResearchRecord, type ResearchVerification, type ResearchTimeOptions } from './research';
 
 /** Every factual-looking edge is a source-attributed statement, not an independent audit. */
 export type KnowledgeKind = 'organization' | 'technology' | 'hypothesis' | 'evidence';
@@ -103,21 +103,25 @@ const edgeDefinitions: EdgeDefinition[] = [
 ];
 
 const currentProductIds = new Set(['mi-003', 'mi-004', 'mi-005']);
+/** A manual reading report permits attribution, never an archived or independently verified fact. */
+function permitsAttribution(verification: ResearchVerification) {
+  return verification === 'primary_read' || verification === 'manual_report';
+}
 function validDate(date: string) {
   return /^\d{4}-\d{2}-\d{2}$/.test(date) && Number.isFinite(Date.parse(date)) && new Date(date).toISOString().slice(0, 10) === date;
 }
 /** Undated product descriptions are current observations, never historical disclosures. */
-export function knowledgeRecordsAt(date: string, mode: ResearchMode = 'known'): ResearchRecord[] {
+export function knowledgeRecordsAt(date: string, mode: ResearchMode = 'known', options: ResearchTimeOptions = {}): ResearchRecord[] {
   if (!validDate(date) || !['known', 'retro', 'as-known-at', 'retrospective'].includes(mode)) return [];
-  const dated = researchAt(date, mode).filter(record => record.verification === 'primary_read');
-  if (date < RESEARCH_MAX_DATE) return dated;
-  const current = catalog.records.filter(record => currentProductIds.has(record.id) && record.scope === 'undated' && record.verification === 'primary_read' && record.accessed_at <= date);
+  const dated = researchAt(date, mode, catalog, options).filter(record => permitsAttribution(record.verification));
+  if (date < RESEARCH_MAX_DATE || options.eventAsOf !== undefined) return dated;
+  const current = catalog.records.filter(record => currentProductIds.has(record.id) && record.scope === 'undated' && permitsAttribution(record.verification) && record.accessed_at <= date);
   return [...dated, ...current];
 }
 function findClaim(records: readonly ResearchRecord[], claimId: string) {
   for (const source of records) {
     const claim = getRecordClaims(source).find(item => item.id === claimId);
-    if (claim && (!claim.verification || claim.verification === 'primary_read')) return { source, claim };
+    if (claim && (!claim.verification || permitsAttribution(claim.verification))) return { source, claim };
   }
   return undefined;
 }
@@ -173,8 +177,8 @@ const hypothesisDefinitions: HypothesisDefinition[] = [
   },
 ];
 
-export function hypothesisAssessments(date: string, mode: ResearchMode = 'known'): HypothesisAssessment[] {
-  const records = knowledgeRecordsAt(date, mode);
+export function hypothesisAssessments(date: string, mode: ResearchMode = 'known', options: ResearchTimeOptions = {}): HypothesisAssessment[] {
+  const records = knowledgeRecordsAt(date, mode, options);
   return hypothesisDefinitions.map(({ mappings, anchor: _anchor, ...definition }) => {
     const result: HypothesisAssessment = { ...definition, support: [], challenge: [], context: [] };
     for (const mapping of mappings) {
@@ -191,8 +195,8 @@ export function hypothesisAssessments(date: string, mode: ResearchMode = 'known'
   });
 }
 
-export function graphAt(date: string, mode: ResearchMode = 'known'): KnowledgeGraph {
-  const records = knowledgeRecordsAt(date, mode);
+export function graphAt(date: string, mode: ResearchMode = 'known', options: ResearchTimeOptions = {}): KnowledgeGraph {
+  const records = knowledgeRecordsAt(date, mode, options);
   const relations: KnowledgeRelation[] = [];
   for (const definition of edgeDefinitions) {
     const found = findClaim(records, definition.claim_id);
@@ -208,7 +212,7 @@ export function graphAt(date: string, mode: ResearchMode = 'known'): KnowledgeGr
   // Graph hypothesis links use only the listed supporting claims; the War Room
   // separately exposes challenge and context, without a score or probability.
   const connected = new Set(relations.flatMap(relation => [relation.from, relation.to]));
-  for (const assessment of hypothesisAssessments(date, mode)) {
+  for (const assessment of hypothesisAssessments(date, mode, options)) {
     const definition = hypothesisDefinitions.find(item => item.id === assessment.id)!;
     if (!assessment.support.length || !connected.has(definition.anchor)) continue;
     const sources = [...new Set(assessment.support.map(item => item.source_id))];

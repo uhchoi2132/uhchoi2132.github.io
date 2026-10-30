@@ -2,7 +2,7 @@
   "records": [
     {
       "source_type": "media",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "date_basis": "page",
       "accessed_at": "2026-10-30",
@@ -31,12 +31,46 @@
         "플랫폼 구상과 인터페이스 표준화 계획을 공개 API 출시로 해석하지 않는다."
       ],
       "evidence_locator": "2026-09-08 기사 본문, 배순민 발표·플랫폼 구성·현장 시연",
-      "origin_key": "https://zdnet.co.kr/view/?no=20260908143333",
-      "event_key": "real-summit-2026-09-08"
+      "origin_key": "samsung-sds:2026-09-08-real-summit-rx",
+      "event_key": "real-summit-2026-09-08",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "media-002",
+          "media-003",
+          "sds-004",
+          "sds-010",
+          "sds-012",
+          "sds-014",
+          "mi-001"
+        ],
+        "source_urls": [
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy"
+        ],
+        "document_origin_url": "https://zdnet.co.kr/view/?no=20260908143333",
+        "rationale": "배순민의 REAL Summit 기술 세션과 Walden 공동 시연을 보도했다. 기자의 현장 관찰은 유지하지만 동일 SDS 공개 행사를 별도 독립 검증으로 가산하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      },
+      "utterance_key": "real-summit-2026-09-08:sds-bae-robot-platform-session",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "source_type": "media",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "date_basis": "page",
       "accessed_at": "2026-10-30",
@@ -65,12 +99,46 @@
         "기존 MES 고객 수를 RX 고객 수·RX 반복매출로 합산하지 않는다."
       ],
       "evidence_locator": "기사 본문 안대정 부사장 질의응답·2027년 출시 계획; AI 자동요약 제외",
-      "origin_key": "https://www.newspim.com/news/view/20260908000734",
-      "event_key": "real-summit-2026-09-08"
+      "origin_key": "samsung-sds:2026-09-08-real-summit-rx",
+      "event_key": "real-summit-2026-09-08",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "media-001",
+          "media-003",
+          "sds-004",
+          "sds-010",
+          "sds-012",
+          "sds-014",
+          "mi-001"
+        ],
+        "source_urls": [
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy"
+        ],
+        "document_origin_url": "https://www.newspim.com/news/view/20260908000734",
+        "rationale": "REAL Summit 기조연설 및 기자 Q&A에서 제시한 기존 제조 기반·플랫폼 계획을 보도했다. 현장 질의응답의 추가 내용은 별도 주장으로 보존하되 SDS 행사 출처군에 포함한다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      },
+      "utterance_key": "real-summit-2026-09-08:sds-executive-press-qa-manufacturing",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "source_type": "media",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "date_basis": "page",
       "accessed_at": "2026-10-30",
@@ -98,12 +166,46 @@
         "기사 본문을 직접 읽었으며 삽입 영상 전체를 시청한 기록은 아니다."
       ],
       "evidence_locator": "기사 본문 10조 원 투자 질문에 대한 대표이사 답변",
-      "origin_key": "https://zdnet.co.kr/view/?no=20260908122517",
-      "event_key": "real-summit-2026-09-08"
+      "origin_key": "samsung-sds:2026-09-08-real-summit-rx",
+      "event_key": "real-summit-2026-09-08",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "media-001",
+          "media-002",
+          "sds-004",
+          "sds-010",
+          "sds-012",
+          "sds-014",
+          "mi-001"
+        ],
+        "source_urls": [
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy"
+        ],
+        "document_origin_url": "https://zdnet.co.kr/view/?no=20260908122517",
+        "rationale": "REAL Summit 기자간담회의 이준희 대표 투자 답변이 발화 지점이다. 다른 기자의 별도 기사는 보존하지만 같은 회사 간담회를 독립 사업실적 근거로 중복 계산하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      },
+      "utterance_key": "real-summit-2026-09-08:sds-ceo-press-qa-investment",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "source_type": "media",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "date_basis": "page",
       "accessed_at": "2026-10-30",
@@ -131,7 +233,42 @@
         "보도에 언급된 거래액은 이 기록에서 공시 원문으로 재검증하지 않았으므로 RX 매출 지표로 등록하지 않는다."
       ],
       "evidence_locator": "기사의 '양사 역할 분담, 아직 비공개' 단락·회사 관계자 답변",
-      "origin_key": "https://www.smarttoday.co.kr/ko-kr/articles/112188"
+      "origin_key": "https://www.smarttoday.co.kr/ko-kr/articles/112188",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_report",
+        "related_record_ids": [
+          "tech-017",
+          "se-015"
+        ],
+        "source_urls": [
+          "https://www.smarttoday.co.kr/ko-kr/articles/112188",
+          "https://kind.krx.co.kr/external/2026/08/14/002335/20260814008101/11012.htm",
+          "https://www.edaily.co.kr/News/Read?newsId=04618246645585368&mediaCodeNo=257"
+        ],
+        "document_origin_url": "https://www.smarttoday.co.kr/ko-kr/articles/112188",
+        "rationale": "선택 주장은 레인보우 관계자의 고객별 제품·현장 정보 비공개 답변이다. 기사 배경에 공시 수치가 있어도 이 직접 답변은 AI Forum 강연이나 반기보고서의 재전재가 아니다.",
+        "review_method": "source_text_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-017",
+            "reason": "기사 배경 재무수치는 같은 공시에서 유래하지만 현재 추출 주장은 10월1일 회사 관계자의 공개 제한 답변이다. 그 직접 답변만 별도 취재 원천으로 보존한다."
+          },
+          {
+            "with_record_id": "se-015",
+            "reason": "레인보우 관계자의 고객 정보 비공개 답변은 전날 삼성전자 AI Forum 강연을 전재한 주장이 아니다."
+          }
+        ]
+      },
+      "event_key": null,
+      "utterance_key": "rainbow:smarttoday-nondisclosure-response-2026-10-01",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "source_type": "media",
@@ -165,7 +302,36 @@
         "2026-10-07 행사 취재일은 검색 요약에서 식별한 값이며 재확인이 필요하다."
       ],
       "evidence_locator": "검색 결과 제목·요약; 원문 접근 차단",
-      "origin_key": "https://greened.kr/news/articleView.html?idxno=351622"
+      "origin_key": "https://www.greened.kr/news/articleView.html?idxno=351622",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_document",
+        "related_record_ids": [
+          "mi-020",
+          "sds-009"
+        ],
+        "source_urls": [
+          "https://greened.kr/news/articleView.html?idxno=351622",
+          "https://www.greened.kr/news/articleView.html?idxno=351622",
+          "https://www.samsungsds.com/kr/event/ai-festa-2026.html"
+        ],
+        "document_origin_url": "https://greened.kr/news/articleView.html?idxno=351622",
+        "rationale": "mi-020과 기사 식별자 351622가 같은 www 유무 별칭이다. 본문 접근 차단 상태에서 같은 문서임만 판정하며 행사 세부 주장이나 취재일은 확정하지 않는다.",
+        "review_method": "metadata_only",
+        "exceptions": [
+          {
+            "with_record_id": "sds-009",
+            "reason": "같은 AI FESTA 행사 후보이나 차단된 기사 본문을 읽지 못해 공식 안내의 전재라고 판단할 수 없다. 문서 독립성을 입증한 것은 아니다."
+          }
+        ]
+      },
+      "event_key": "ai-festa-2026",
+      "audit_status": "blocked",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "원문 접근 차단으로 본문 검증·보관본·본문 해시를 확보하지 못함"
     }
   ],
   "queries": [

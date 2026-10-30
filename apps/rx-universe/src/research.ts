@@ -1,7 +1,7 @@
 import sourceData from './research-data.json' with { type: 'json' };
 
 export type ResearchSourceType = 'official' | 'media' | 'paper' | 'patent' | 'filing' | 'video' | 'product';
-export type ResearchVerification = 'primary_read' | 'search_only' | 'access_blocked';
+export type ResearchVerification = 'primary_read' | 'manual_report' | 'search_only' | 'access_blocked';
 export type ResearchMode = 'known' | 'retro' | 'as-known-at' | 'retrospective';
 export type ResearchClaimKind = 'official_statement' | 'media_report' | 'research_result' | 'inference';
 export interface ResearchClaim {
@@ -20,6 +20,17 @@ export interface ResearchClaimWithSource extends ResearchClaim {
   event_date: string | null;
   scheduled_event_date: string | null;
 }
+export interface SourceLineageReview {
+  reviewed_at: string;
+  decision: 'shared_origin' | 'distinct_origin' | 'unresolved';
+  basis: 'same_document' | 'same_company_event' | 'republication' | 'distinct_original_work' | 'distinct_report' | 'unresolved';
+  related_record_ids: string[];
+  source_urls: string[];
+  rationale: string;
+  exceptions: { with_record_id: string; reason: string }[];
+  document_origin_url?: string;
+  review_method?: 'source_text_review' | 'inventory_evidence_review' | 'metadata_only';
+}
 export interface ResearchRecord {
   id: string;
   title: string;
@@ -30,6 +41,16 @@ export interface ResearchRecord {
   scheduled_event_date?: string | null;
   source_type: ResearchSourceType;
   verification: ResearchVerification;
+  audit_status?: 'unarchived' | 'archived' | 'blocked';
+  archive_url?: string | null;
+  content_sha256?: string | null;
+  verification_note?: string;
+  previous_verification?: ResearchVerification;
+  event_key?: string | null;
+  utterance_key?: string | null;
+  lineage_review?: SourceLineageReview;
+  lineage_reviews?: (SourceLineageReview & { source_record_id: string })[];
+  merge_conflicts?: { field: string; inputs: { record_id: string; value: string | null }[]; resolved_value: string | null; resolution: Record<string, unknown> }[];
   scope: 'in_window' | 'undated' | 'out_of_window';
   entity_ids: string[];
   origin_key: string;
@@ -63,7 +84,9 @@ export interface ResearchCatalog {
 }
 export interface ResearchCounts {
   total: number; claims: number; dated: number; inWindow: number; undated: number; outOfWindow: number;
-  independentOrigins: number; primaryRead: number; searchOnly: number; accessBlocked: number;
+  sourceGroups: number; manualReports: number; archivedOriginals: number;
+  /** Compatibility alias for archivedOriginals; never includes manual reports. */
+  primaryRead: number; searchOnly: number; accessBlocked: number;
   official: number; media: number; papers: number; patents: number; filings: number; videos: number; products: number;
 }
 /** Records are source-attributed statements, not independently verified facts. */
@@ -106,28 +129,37 @@ export function researchClaims(records: readonly ResearchRecord[] = catalog.reco
     event_date: record.event_date, scheduled_event_date: scheduledEventDate(record),
   })));
 }
-export interface ResearchTimeOptions { occurredOnly?: boolean }
+export interface ResearchAtOptions { occurredOnly?: boolean; eventAsOf?: string }
+export type ResearchTimeOptions = ResearchAtOptions;
 /**
  * Known-at answers what had been published, including announced future plans.
  * Retrospective uses the current publication horizon to examine events by date.
- * occurredOnly is a separate filter and does not certify an event's completion.
+ * Explicit eventAsOf/occurredOnly require a known event date and never certify completion.
+ * Legacy retrospective falls back to publication when occurrence is unknown; that is not proof of occurrence.
  * Undated discovery pages remain outside either historical reconstruction.
  */
 export function researchAt(date: string, mode: ResearchMode = 'known', source: ResearchCatalog = catalog, options: ResearchTimeOptions = {}): ResearchRecord[] {
-  if (!validDay(date)) return [];
+  if (!validDay(date) || (options.eventAsOf !== undefined && !validDay(options.eventAsOf))) return [];
   if (!['known', 'retro', 'as-known-at', 'retrospective'].includes(mode)) return [];
   const cutoff = date > source.meta.window_end ? source.meta.window_end : date;
   const retrospective = mode === 'retro' || mode === 'retrospective';
   const knownCutoff = retrospective ? source.meta.window_end : cutoff;
+  const eventCutoff = options.eventAsOf ?? cutoff;
   return source.records.filter(record => {
     if (record.scope !== 'in_window' || !hasReliablePublicationDate(record)) return false;
     const published = record.published_at!;
     if (published < source.meta.window_start || published > knownCutoff || published > source.meta.window_end) return false;
     if (record.event_date !== null && !validDay(record.event_date)) return false;
-    return !(retrospective || options.occurredOnly) || (record.event_date ?? published) <= cutoff;
+    if (options.eventAsOf !== undefined || options.occurredOnly) return record.event_date !== null && record.event_date <= eventCutoff;
+    return !retrospective || (record.event_date ?? published) <= eventCutoff;
   });
 }
-/** Independent origins, not article count: republications share origin_key. */
+/** An archive reference is separate from a researcher report and from factual verification. */
+export function isArchivedOriginal(record: ResearchRecord): boolean {
+  if (record.verification !== 'primary_read' || record.audit_status !== 'archived' || !record.archive_url || !/^[a-f0-9]{64}$/i.test(record.content_sha256 ?? '')) return false;
+  try { const url = new URL(record.archive_url); return ['http:', 'https:'].includes(url.protocol) && !!url.hostname && !url.username && !url.password; } catch { return false; }
+}
+/** Shared source/event groups are not counts of independently corroborating evidence. */
 export function researchCounts(records: readonly ResearchRecord[] = catalog.records): ResearchCounts {
   const typeCount = (type: ResearchSourceType) => records.filter(record => record.source_type === type).length;
   return {
@@ -137,8 +169,10 @@ export function researchCounts(records: readonly ResearchRecord[] = catalog.reco
     inWindow: records.filter(record => record.scope === 'in_window').length,
     undated: records.filter(record => record.scope === 'undated').length,
     outOfWindow: records.filter(record => record.scope === 'out_of_window').length,
-    independentOrigins: new Set(records.map(record => record.origin_key).filter(key => key.trim().length > 0)).size,
-    primaryRead: records.filter(record => record.verification === 'primary_read').length,
+    sourceGroups: new Set(records.map(record => record.origin_key).filter(key => key.trim().length > 0)).size,
+    manualReports: records.filter(record => record.verification === 'manual_report').length,
+    archivedOriginals: records.filter(isArchivedOriginal).length,
+    primaryRead: records.filter(isArchivedOriginal).length,
     searchOnly: records.filter(record => record.verification === 'search_only').length,
     accessBlocked: records.filter(record => record.verification === 'access_blocked').length,
     official: typeCount('official'), media: typeCount('media'), papers: typeCount('paper'),

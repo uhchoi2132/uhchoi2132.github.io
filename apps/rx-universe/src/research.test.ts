@@ -5,12 +5,13 @@ import { tmpdir } from 'node:os';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawnSync } from 'node:child_process';
-import { researchAt, researchCounts, researchClaims, getRecordClaims, scheduledEventDate, catalog, type ResearchRecord, type ResearchCatalog } from './research.ts';
+import { researchAt, researchCounts, researchClaims, getRecordClaims, scheduledEventDate, isArchivedOriginal, catalog, type ResearchRecord, type ResearchCatalog } from './research.ts';
 
 // Synthetic chronology fixtures: never mixed into the public research catalog.
 const record = (id: string, overrides: Partial<ResearchRecord> = {}): ResearchRecord => ({
   id, title: `Synthetic fixture ${id}`, url: `https://example.test/${id}`, publisher: 'Synthetic publisher',
-  published_at: '2026-08-01', event_date: '2026-07-15', source_type: 'official', verification: 'primary_read',
+  published_at: '2026-08-01', event_date: '2026-07-15', source_type: 'official', verification: 'manual_report',
+  audit_status: 'unarchived', archive_url: null, content_sha256: null, verification_note: 'Synthetic manual-reading report without archived source bytes',
   scope: 'in_window', entity_ids: ['sds'], origin_key: id, summary_ko: '시간 재현 테스트용 합성 자료', excerpt: 'Synthetic excerpt.',
   claim: { text: 'Synthetic test statement, not a real Samsung event.', kind: 'official_statement' },
   commercialization_stage: 'unassessed', limitations: ['Synthetic test data'], accessed_at: '2026-10-30',
@@ -46,6 +47,21 @@ test('actual March, June and October announcements are known from publication wi
     assert.ok(!researchAt(previousDay).some(row => row.id === id), `${id}: announcement must not leak before publication`);
   }
 });
+test('mi-011 remains known on November 10 before its announced webinar date', () => {
+  assert.ok(researchAt('2025-11-10').some(row => row.id === 'mi-011'));
+  assert.ok(!researchAt('2025-11-10', 'known', catalog, { eventAsOf: '2025-11-10' }).some(row => row.id === 'mi-011'));
+});
+test('publication cutoff and optional strict event cutoff are independent', () => {
+  const input = fixtureCatalog([
+    record('announced', { published_at: '2026-03-09', event_date: '2026-03-11' }),
+    record('unknown-event', { published_at: '2026-03-09', event_date: null }),
+    record('later-publication', { published_at: '2026-03-12', event_date: '2026-03-01' }),
+  ]);
+  assert.deepEqual(researchAt('2026-03-10', 'known', input).map(row => row.id), ['announced', 'unknown-event']);
+  assert.deepEqual(researchAt('2026-03-10', 'known', input, { eventAsOf: '2026-03-11' }).map(row => row.id), ['announced']);
+  assert.deepEqual(researchAt('2026-03-10', 'known', input, { eventAsOf: '2026-03-10' }), []);
+  for (const invalid of ['', '2026-02-30', 'invalid']) assert.deepEqual(researchAt('2026-03-10', 'known', input, { eventAsOf: invalid }), []);
+});
 test('retrospective replay admits later disclosure only for an explicitly earlier event', () => {
   const input = fixtureCatalog([
     record('late-disclosure', { published_at: '2026-10-01', event_date: '2026-07-01' }),
@@ -58,13 +74,15 @@ test('invalid calendar dates fail closed and future selection cannot move the re
   for (const invalid of ['not-a-date', '2026-02-30', '2026-9-1', '']) assert.deepEqual(researchAt(invalid, 'known', input), []);
   assert.deepEqual(researchAt('2027-01-01', 'known', input).map(item => item.id), ['known']);
 });
-test('ten republications are ten attributed claims but one independent origin', () => {
-  const rows = Array.from({ length: 10 }, (_, i) => record(`copy-${i}`, { origin_key: 'same-original', verification: i === 0 ? 'primary_read' : 'search_only' }));
+test('ten republications retain ten attributions but form one shared source group', () => {
+  const rows = Array.from({ length: 10 }, (_, i) => record(`copy-${i}`, { origin_key: 'same-original', verification: i === 0 ? 'manual_report' : 'search_only' }));
   const counts = researchCounts(rows);
   assert.equal(counts.total, 10);
   assert.equal(counts.claims, 10);
-  assert.equal(counts.independentOrigins, 1);
-  assert.equal(counts.primaryRead, 1);
+  assert.equal(counts.sourceGroups, 1);
+  assert.equal(counts.manualReports, 1);
+  assert.equal(counts.archivedOriginals, 0);
+  assert.equal(counts.primaryRead, 0);
   assert.equal(counts.searchOnly, 9);
 });
 test('duplicate documents retain distinct claims and entity tags without multiplying source count', () => {
@@ -85,7 +103,7 @@ test('duplicate documents retain distinct claims and entity tags without multipl
 test('current catalog retains provenance fields and cannot promote an attribution to verification', () => {
   for (const row of catalog.records) {
     assert.ok(row.origin_key && row.url && row.evidence_locator);
-    assert.ok(['primary_read', 'search_only', 'access_blocked'].includes(row.verification));
+    assert.ok(['primary_read', 'manual_report', 'search_only', 'access_blocked'].includes(row.verification));
     if (row.verification !== 'primary_read') assert.ok(row.limitations.length > 0);
   }
 });
@@ -172,4 +190,73 @@ print(json.dumps(list(rows.values())))
   assert.deepEqual(new Set(rows[0].entity_ids), new Set(['sds', 'task', 'partner', 'robot']));
   assert.ok(getRecordClaims(rows[0]).some(claim => claim.id === 'claim:beta' && claim.verification === 'search_only'));
   assert.equal(rows[0].claim.text, first.claim.text);
+});
+
+test('archive evidence is mandatory for primary_read and never inferred from a manual report', () => {
+  const manual = record('manual', { previous_verification: 'primary_read' });
+  assert.equal(isArchivedOriginal(manual), false);
+  assert.equal(researchCounts([manual]).manualReports, 1);
+  const archived = record('archived', { verification: 'primary_read', audit_status: 'archived', archive_url: 'https://example.test/archive.bin', content_sha256: 'a'.repeat(64), verification_note: 'Synthetic archive metadata fixture; no live original verified' });
+  assert.equal(isArchivedOriginal(archived), true);
+  assert.equal(researchCounts([manual, archived]).archivedOriginals, 1);
+  const valid = runBuilder(fixtureCatalog([manual, archived]));
+  try { assert.equal(valid.result.status, 0, valid.result.stderr); }
+  finally { rmSync(valid.directory, { recursive: true, force: true }); }
+  for (const invalid of [record('false-primary', { verification: 'primary_read' }), { ...archived, content_sha256: 'not-a-hash' }, { ...archived, archive_url: 'javascript:alert(1)' }, { ...manual, claims: [{ id: 'claim:manual', ...manual.claim, verification: 'primary_read' as const }] }]) {
+    const result = runBuilder(fixtureCatalog([invalid]), ['--validate-only']);
+    try { assert.notEqual(result.result.status, 0, 'Unarchived or malformed archive must not be classified primary_read'); }
+    finally { rmSync(result.directory, { recursive: true, force: true }); }
+  }
+});
+
+function review(otherId: string, decision: 'shared_origin' | 'distinct_origin', reason?: string) {
+  return { reviewed_at: '2026-10-30', decision, basis: decision === 'shared_origin' ? 'same_company_event' as const : 'distinct_report' as const, related_record_ids: decision === 'shared_origin' ? [otherId] : [], source_urls: ['https://example.test/original'], rationale: 'Synthetic review of the specific announcement and source relationship', exceptions: reason ? [{ with_record_id: otherId, reason }] : [] };
+}
+test('same-day media/official overlap requires reviewed shared grouping or a distinct-report exception', () => {
+  const official = record('official');
+  const media = record('media', { source_type: 'media' });
+  const unreviewed = runBuilder(fixtureCatalog([official, media]), ['--validate-only']);
+  try { assert.notEqual(unreviewed.result.status, 0); assert.match(unreviewed.result.stderr, /unreviewed_lineage_collision/); }
+  finally { rmSync(unreviewed.directory, { recursive: true, force: true }); }
+  for (const rows of [
+    [{ ...official, origin_key: 'same-event', lineage_review: review('media', 'shared_origin') }, { ...media, origin_key: 'same-event', lineage_review: review('official', 'shared_origin') }],
+    [{ ...official, lineage_review: review('media', 'distinct_origin', 'Same date and robot tag, but one concerns an exhibition and the other a quarterly result') }, media],
+  ]) {
+    const result = runBuilder(fixtureCatalog(rows));
+    try { assert.equal(result.result.status, 0, result.result.stderr); }
+    finally { rmSync(result.directory, { recursive: true, force: true }); }
+  }
+});
+test('same-URL date disagreements fail closed, including null, unless an explicit reviewed resolution is retained', () => {
+  const source = record('left');
+  const inputs = [
+    { ...record('right'), published_at: '2026-08-02' },
+    { ...record('right'), published_at: null, date_basis: 'unknown', scope: 'undated' },
+    { ...record('right'), event_date: '2026-07-16' },
+    { ...record('right'), event_date: null },
+  ];
+  for (const incoming of inputs) {
+    const result = spawnSync('python3', ['-c', `
+import importlib.util,json,sys
+sys.dont_write_bytecode=True
+spec=importlib.util.spec_from_file_location('rx_merge',sys.argv[1]);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+a,b=json.loads(sys.argv[2]);m.merge_record(a,b)
+`, join(projectRoot, 'scripts/merge-research.py'), JSON.stringify([source, incoming])], { encoding: 'utf8', timeout: 10000 });
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /merge_date_conflict/);
+  }
+  const incoming = { ...record('right'), published_at: null, date_basis: 'unknown', scope: 'undated' };
+  const resolved = { ...source, merge_date_resolutions: [{ with_record_id: 'right', field: 'published_at', resolved_value: source.published_at, date_basis: 'page', reviewed_at: '2026-10-30', reason: 'Explicit fixture resolution based on an identified original publication date' }] };
+  const result = spawnSync('python3', ['-c', `
+import importlib.util,json,sys
+sys.dont_write_bytecode=True
+spec=importlib.util.spec_from_file_location('rx_merge',sys.argv[1]);m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
+a,b=json.loads(sys.argv[2]);print(json.dumps(m.merge_record(a,b)))
+`, join(projectRoot, 'scripts/merge-research.py'), JSON.stringify([resolved, incoming])], { encoding: 'utf8', timeout: 10000 });
+  assert.equal(result.status, 0, result.stderr);
+  const merged = JSON.parse(result.stdout);
+  assert.equal(merged.published_at, source.published_at);
+  assert.equal(merged.merge_conflicts.length, 1);
+  assert.equal(merged.merge_conflicts[0].inputs[1].value, null);
+  assert.ok(merged.merge_conflicts[0].resolution.reason);
 });

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { catalog, getRecordClaims, RESEARCH_MAX_DATE } from './research';
 import { graphAt, hypothesisAssessments, knowledgeRecordsAt } from './knowledge';
+import { graphView } from './graph-view';
 
 test('every graph relation resolves to an eligible source and its actual extracted claim', () => {
   const graph = graphAt(RESEARCH_MAX_DATE);
@@ -24,6 +25,50 @@ test('every graph relation resolves to an eligible source and its actual extract
   }
 });
 
+test('manual reading reports preserve attribution while blocked sources and unreviewed claims cannot create edges', () => {
+  const source = catalog.records.find(record => record.id === 'se-001')!;
+  const originalVerification = source.verification;
+  const originalClaims = source.claims;
+  try {
+    source.verification = 'manual_report';
+    source.claims = getRecordClaims(source).map(claim => ({ ...claim, verification: 'manual_report' }));
+    const attributed = graphAt(RESEARCH_MAX_DATE).relations.find(relation => relation.id === 'se-nvidia');
+    assert.ok(attributed);
+    assert.equal(attributed.provenance, 'source_attributed');
+    assert.equal(attributed.status, 'reported');
+    assert.equal('verified' in attributed, false);
+    assert.equal(knowledgeRecordsAt(RESEARCH_MAX_DATE).find(record => record.id === source.id)?.verification, 'manual_report');
+    for (const unavailable of ['search_only', 'access_blocked'] as const) {
+      source.verification = unavailable;
+      assert.ok(!graphAt(RESEARCH_MAX_DATE).relations.some(relation => relation.id === 'se-nvidia'), `${unavailable} source`);
+      source.verification = 'manual_report';
+      source.claims = source.claims.map(claim => ({ ...claim, verification: unavailable }));
+      assert.ok(!graphAt(RESEARCH_MAX_DATE).relations.some(relation => relation.id === 'se-nvidia'), `${unavailable} claim`);
+      source.claims = source.claims.map(claim => ({ ...claim, verification: 'manual_report' }));
+    }
+  } finally {
+    source.verification = originalVerification;
+    source.claims = originalClaims;
+  }
+});
+
+test('renderer and export projection shares description search and removes edges to filtered nodes', () => {
+  for (const date of ['2026-09-01', RESEARCH_MAX_DATE]) {
+    const graph = graphAt(date);
+    assert.deepEqual(graphView(graph), graph);
+    const companies = graphView(graph, 'company');
+    assert.ok(companies.nodes.length > 0);
+    assert.ok(companies.nodes.every(node => node.kind === 'organization'));
+    const ids = new Set(companies.nodes.map(node => node.id));
+    assert.ok(companies.relations.length > 0);
+    assert.ok(companies.relations.every(relation => ids.has(relation.from) && ids.has(relation.to)));
+    const descriptionMatch = graphView(graph, 'all', 'KF-21 공정 자동화');
+    assert.deepEqual(descriptionMatch.nodes.map(node => node.id), ['kai']);
+    assert.deepEqual(descriptionMatch.relations, []);
+    assert.deepEqual(graphView(graph, 'all', 'no-such-rx-entity'), { nodes: [], relations: [] });
+  }
+});
+
 test('September 1 replay does not leak later platform plans, partnerships or undated products', () => {
   const graph = graphAt('2026-09-01', 'known');
   for (const id of ['sds-orchestrator', 'rainbow-etech', 'rainbow-sfa', 'miracom-orchestrator', 'miracom-rcs', 'sds-mcs']) {
@@ -31,6 +76,48 @@ test('September 1 replay does not leak later platform plans, partnerships or und
   }
   assert.ok(graph.relations.some(edge => edge.id === 'se-rainbow-ownership'));
   assert.ok(!graph.nodes.some(node => node.id === 'rcs'));
+});
+
+test('publication and event cutoffs independently constrain ownership without rewriting source dates', () => {
+  const ownership = (knownAt: string, eventAsOf: string) => graphAt(knownAt, 'known', { eventAsOf }).relations.find(relation => relation.id === 'se-rainbow-ownership');
+  assert.equal(ownership('2026-07-01', '2026-06-30'), undefined, 'an event date does not reveal an unpublished filing');
+  assert.equal(ownership('2026-08-14', '2026-06-29'), undefined, 'an available filing does not move its event before the cutoff');
+  const eligible = ownership('2026-08-14', '2026-06-30');
+  assert.ok(eligible);
+  assert.equal(eligible.published_at, '2026-08-14');
+  assert.equal(eligible.event_date, '2026-06-30');
+  assert.deepEqual(eligible.claim_ids, ['claim:tech-018']);
+  assert.deepEqual(eligible.source_ids, graphAt('2026-08-14').relations.find(relation => relation.id === eligible.id)!.source_ids);
+});
+
+test('explicit event cutoff reaches graph and hypothesis evidence and excludes unknown event dates', () => {
+  const options = { eventAsOf: '2026-09-01' };
+  for (const mode of ['known', 'retro'] as const) {
+    const records = knowledgeRecordsAt(RESEARCH_MAX_DATE, mode, options);
+    const sources = new Map(records.map(source => [source.id, source]));
+    assert.ok(records.length > 0);
+    assert.ok(records.every(source => source.event_date !== null && source.event_date <= options.eventAsOf));
+    const graph = graphAt(RESEARCH_MAX_DATE, mode, options);
+    assert.ok(graph.relations.some(relation => relation.id === 'se-rainbow-ownership'));
+    for (const id of ['sds-orchestrator', 'rainbow-kai-contract', 'miracom-rcs', 'sds-mcs', 'miracom-mesplus']) {
+      assert.ok(!graph.relations.some(relation => relation.id === id), id);
+    }
+    for (const relation of graph.relations) {
+      const eligibleClaims = new Set(relation.source_ids.flatMap(id => getRecordClaims(sources.get(id)!).map(claim => claim.id)));
+      assert.ok(relation.claim_ids.every(id => eligibleClaims.has(id)));
+    }
+    for (const hypothesis of hypothesisAssessments(RESEARCH_MAX_DATE, mode, options)) {
+      for (const evidence of [...hypothesis.support, ...hypothesis.challenge, ...hypothesis.context]) {
+        const source = sources.get(evidence.source_id);
+        assert.ok(source);
+        assert.equal(evidence.text, getRecordClaims(source).find(claim => claim.id === evidence.claim_id)?.text);
+      }
+    }
+    for (const eventAsOf of ['', '2026-02-30']) {
+      assert.deepEqual(graphAt(RESEARCH_MAX_DATE, mode, { eventAsOf }), { nodes: [], relations: [] });
+      assert.ok(hypothesisAssessments(RESEARCH_MAX_DATE, mode, { eventAsOf }).every(h => [...h.support, ...h.challenge, ...h.context].length === 0));
+    }
+  }
 });
 
 test('retrospective ownership uses the disclosed June status but unknown KAI delivery date stays unknown', () => {

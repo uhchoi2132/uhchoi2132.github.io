@@ -24,13 +24,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Generate initial lockfile for review
-        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
-      - name: Store initial lockfile
-        uses: actions/upload-artifact@v4
-        with:
-          name: rx-dependency-lock
-          path: apps/rx-universe/package-lock.json
       - name: Install locked dependencies
         run: npm ci --no-audit --no-fund
       - name: Verify temporal model, source provenance and SQLite integrity
@@ -46,7 +39,7 @@ jobs:
           python3 - <<'PYRELEASE'
           import json, os
           from pathlib import Path
-          Path('dist/release.json').write_text(json.dumps({'commit': os.environ['GITHUB_SHA'], 'version': '2.3.0', 'validation_run': os.environ['GITHUB_RUN_ID']}))
+          Path('dist/release.json').write_text(json.dumps({'commit': os.environ['GITHUB_SHA'], 'version': json.loads(Path('package.json').read_text())['version'], 'validation_run': os.environ['GITHUB_RUN_ID']}))
           PYRELEASE
       - name: Preserve existing homepage and prepare RX path
         run: |

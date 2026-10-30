@@ -3,6 +3,7 @@ import { Canvas, useThree } from '@react-three/fiber';
 import { Html, Line, OrbitControls } from '@react-three/drei';
 import type { PerspectiveCamera } from 'three';
 import type { KnowledgeGraph, KnowledgeNode, KnowledgeRelation } from './knowledge';
+import { graphView } from './graph-view';
 
 type Position = [number, number, number];
 type LabelPortal = React.RefObject<HTMLDivElement | null>;
@@ -14,20 +15,12 @@ export interface UniverseProps {
   onSelect: (nodeId: string) => void;
   onSelectRelation: (relationId: string) => void;
 }
+type GraphRendererProps = Pick<UniverseProps, 'graph' | 'onSelect' | 'onSelectRelation'>;
 const colors: Record<KnowledgeNode['kind'], string> = { organization: '#4ce8c4', technology: '#62acff', hypothesis: '#a896f4', evidence: '#d8ab61' };
 const primaryNode = (node: KnowledgeNode) => node.kind === 'organization' && node.size >= .16;
 const relationStatus = (relation: KnowledgeRelation) => relation.inferred ? '분석 연결 · 검토 필요' : '출처 귀속 관계';
 const relationColor = (relation: KnowledgeRelation) => relation.type === 'contradicts' ? '#bd847a' : relation.inferred ? '#8b78bb' : '#547f79';
 const relationName = (relation: KnowledgeRelation, from: KnowledgeNode, to: KnowledgeNode) => `${from.title} → ${to.title} · ${relation.label} · ${relationStatus(relation)} · 연결 근거 보기`;
-function matches(node: KnowledgeNode, filter: string, search: string) {
-  const normalized = filter.trim().toLowerCase();
-  const category = !normalized || ['all', '전체', 'all types'].includes(normalized) || normalized.includes(node.kind) ||
-    (node.kind === 'organization' && /compan|기업|조직/.test(normalized)) ||
-    (node.kind === 'technology' && /tech|기술/.test(normalized)) ||
-    (node.kind === 'hypothesis' && /hypothes|가설/.test(normalized)) ||
-    (node.kind === 'evidence' && /source|근거|증거/.test(normalized));
-  return category && `${node.id} ${node.title} ${node.subtitle ?? ''}`.toLowerCase().includes(search.trim().toLowerCase());
-}
 interface Boundaries { center: Position; span: Position }
 function graphBounds(nodes: KnowledgeNode[]): Boundaries {
   if (!nodes.length) return { center: [0, 0, 0], span: [10, 6, 2] };
@@ -100,33 +93,31 @@ function ContextLossFallback({ onLost }: { onLost: () => void }) {
   }, [gl, onLost]);
   return null;
 }
-function Scene({ graph, filter, search, onSelect, onSelectRelation, portal }: Omit<UniverseProps, 'mode'> & { portal: LabelPortal }) {
+function Scene({ graph, onSelect, onSelectRelation, portal }: GraphRendererProps & { portal: LabelPortal }) {
   const nodesById = new Map(graph.nodes.map(node => [node.id, node]));
-  const activeIds = new Set(graph.nodes.filter(node => matches(node, filter, search)).map(node => node.id));
   const bounds = graphBounds(graph.nodes);
   const radius = Math.max(...bounds.span) / 2;
   return <>
     <FitCamera bounds={bounds}/>
-    {graph.relations.map(relation => { const from = nodesById.get(relation.from), to = nodesById.get(relation.to); return from && to ? <GraphLink key={relation.id} relation={relation} from={from} to={to} active={activeIds.has(from.id) && activeIds.has(to.id)} onSelectRelation={onSelectRelation} portal={portal}/> : null; })}
-    {graph.nodes.map(node => <Node key={node.id} node={node} active={activeIds.has(node.id)} onSelect={onSelect} portal={portal} showMinorLabels={activeIds.size <= 10}/>)}
+    {graph.relations.map(relation => { const from = nodesById.get(relation.from), to = nodesById.get(relation.to); return from && to ? <GraphLink key={relation.id} relation={relation} from={from} to={to} active onSelectRelation={onSelectRelation} portal={portal}/> : null; })}
+    {graph.nodes.map(node => <Node key={node.id} node={node} active onSelect={onSelect} portal={portal} showMinorLabels={graph.nodes.length <= 10}/>)}
     <OrbitControls makeDefault target={bounds.center} enablePan enableZoom minDistance={Math.max(3, radius * .5)} maxDistance={Math.max(100, radius * 10)} maxPolarAngle={Math.PI * .8} minPolarAngle={Math.PI * .2} enableDamping={false}/>
   </>;
 }
-function FlatGraph({ graph, filter, search, onSelect, onSelectRelation }: Omit<UniverseProps, 'mode'>) {
+function FlatGraph({ graph, onSelect, onSelectRelation }: GraphRendererProps) {
   const glowId = useId();
   const position = (node: KnowledgeNode): [number, number] => [node.position[0] * 50, -node.position[1] * 50];
   const bounds = graphBounds(graph.nodes);
   const width = Math.max(660, bounds.span[0] * 50 + 180), height = Math.max(370, bounds.span[1] * 50 + 110);
   const viewBox = `${bounds.center[0] * 50 - width / 2} ${-bounds.center[1] * 50 - height / 2} ${width} ${height}`;
   const nodesById = new Map(graph.nodes.map(node => [node.id, node]));
-  const activeIds = new Set(graph.nodes.filter(node => matches(node, filter, search)).map(node => node.id));
   return <svg role="group" aria-label="RX 지식 그래프 2D. 실선은 출처 귀속 관계, 점선은 분석 연결입니다." viewBox={viewBox} style={{ width: '100%', height: '100%', overflow: 'visible' }}>
     <defs><radialGradient id={glowId}><stop offset="0" stopColor="#40d1b6" stopOpacity=".08"/><stop offset="1" stopColor="#40d1b6" stopOpacity="0"/></radialGradient></defs>
     {graph.nodes.filter(primaryNode).map(node => <circle key={`glow-${node.id}`} cx={position(node)[0]} cy={position(node)[1]} r="65" fill={`url(#${glowId})`} pointerEvents="none"/>)}
     {graph.relations.map(relation => {
       const from = nodesById.get(relation.from), to = nodesById.get(relation.to);
       if (!from || !to) return null;
-      const active = activeIds.has(from.id) && activeIds.has(to.id);
+      const active = true;
       const [x1, y1] = position(from), [x2, y2] = position(to);
       return <g key={relation.id} className="rx-link" data-relation-id={relation.id} data-edge-id={relation.id} data-inferred={String(relation.inferred)} role="button" aria-disabled={!active} aria-label={relationName(relation, from, to)} tabIndex={active ? 0 : -1}
         onClick={() => { if (active) onSelectRelation(relation.id); }} onKeyDown={event => { if (active && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onSelectRelation(relation.id); } }} style={{ cursor: active ? 'pointer' : 'default', outline: 'none', pointerEvents: active ? 'auto' : 'none' }}>
@@ -136,7 +127,7 @@ function FlatGraph({ graph, filter, search, onSelect, onSelectRelation }: Omit<U
         <text className="rx-link-caption" x={(x1+x2)/2} y={(y1+y2)/2-7} fill="#c7e6db" stroke="#0b171b" strokeWidth="4" paintOrder="stroke" textAnchor="middle" fontFamily="inherit" fontSize="9" pointerEvents="none">{relation.label}</text>
       </g>;
     })}
-    {graph.nodes.map(node => { const [x, y] = position(node), primary = primaryNode(node), active = activeIds.has(node.id); return <g key={node.id} data-graph-node-id={node.id} data-node-id={node.id} role="button" aria-disabled={!active} aria-label={`${node.title} 상세 보기`} tabIndex={active ? 0 : -1}
+    {graph.nodes.map(node => { const [x, y] = position(node), primary = primaryNode(node), active = true; return <g key={node.id} data-graph-node-id={node.id} data-node-id={node.id} role="button" aria-disabled={!active} aria-label={`${node.title} 상세 보기`} tabIndex={active ? 0 : -1}
       onClick={() => { if (active) onSelect(node.id); }} onKeyDown={event => { if (active && (event.key === 'Enter' || event.key === ' ')) { event.preventDefault(); onSelect(node.id); } }} style={{ cursor: active ? 'pointer' : 'default', outline: 'none', opacity: active ? 1 : .1, pointerEvents: active ? 'auto' : 'none' }}>
       <title>{node.title} — 상세 보기{node.subtitle ? ` · ${node.subtitle}` : ''}</title>
       <circle cx={x} cy={y} r={node.size * 70} fill={colors[node.kind]} opacity=".09"/>
@@ -155,20 +146,22 @@ class GraphBoundary extends Component<{ children: React.ReactNode; fallback: Rea
 }
 function supportsWebGL() {
   if (typeof document === 'undefined') return false;
+  // Three r163+ requires WebGL2; WebGL1 devices use the same graph's SVG renderer.
+  // https://threejs.org/docs/pages/WebGLRenderer.html
   try { const canvas = document.createElement('canvas'); const gl = canvas.getContext('webgl2'); if (!gl) return false; gl.getExtension('WEBGL_lose_context')?.loseContext(); return true; } catch { return false; }
 }
-export default function Universe({ mode, filter, search, graph, onSelect, onSelectRelation }: UniverseProps) {
+export default function Universe({ mode, filter, search, graph: inputGraph, onSelect, onSelectRelation }: UniverseProps) {
+  const graph = useMemo(() => graphView(inputGraph, filter, search), [inputGraph, filter, search]);
   const [webgl, setWebgl] = useState(supportsWebGL);
   const [keyboard, setKeyboard] = useState(false);
   const listId = useId();
   const listToggle = useRef<HTMLButtonElement>(null);
   const [labelHost, setLabelHost] = useState<HTMLDivElement | null>(null);
   const labelPortal = useMemo<LabelPortal>(() => ({ current: labelHost }), [labelHost]);
-  const graphProps = { graph, filter, search, onSelect, onSelectRelation };
+  const graphProps = { graph, onSelect, onSelectRelation };
   const flat = <FlatGraph {...graphProps}/>;
-  const activeNodes = graph.nodes.filter(node => matches(node, filter, search));
-  const activeIds = new Set(activeNodes.map(node => node.id));
-  const activeRelations = graph.relations.filter(relation => activeIds.has(relation.from) && activeIds.has(relation.to));
+  const activeNodes = graph.nodes;
+  const activeRelations = graph.relations;
   const nodesById = new Map(graph.nodes.map(node => [node.id, node]));
   return <div className="universe-visual" data-renderer={mode === '3d' && webgl ? '3d' : '2d'} data-node-count={graph.nodes.length} data-edge-count={graph.relations.length} data-relation-count={graph.relations.length} data-node-ids={JSON.stringify(graph.nodes.map(node => node.id))} data-edge-ids={JSON.stringify(graph.relations.map(relation => relation.id))} data-active-node-ids={JSON.stringify(activeNodes.map(node => node.id))} data-active-edge-ids={JSON.stringify(activeRelations.map(relation => relation.id))} style={{ position: 'relative', width: '100%', height: '100%', minHeight: 330, isolation: 'isolate', background: 'radial-gradient(ellipse at 48% 47%, rgba(20,59,58,.1), transparent 70%)' }}>
     <style>{`.universe-visual [role=button]:focus-visible circle:last-of-type{stroke:#fff;stroke-width:2px}.universe-visual button:focus-visible{outline:2px solid #76d9c1;outline-offset:3px}.universe-visual .rx-link:focus-visible .rx-link-line,.universe-visual .rx-link:hover .rx-link-line{stroke:#d6fff2;stroke-width:2px;opacity:1}.universe-visual .rx-link-caption{opacity:0}.universe-visual .rx-link:focus-visible .rx-link-caption,.universe-visual .rx-link:hover .rx-link-caption{opacity:1}`}</style>

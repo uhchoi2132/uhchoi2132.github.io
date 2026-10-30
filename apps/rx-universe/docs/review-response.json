@@ -1,0 +1,111 @@
+{
+  "reviewed_commit": "89cf315",
+  "implementation_version": "2.4.0",
+  "items": [
+    {
+      "id": "B1",
+      "severity": "Blocker",
+      "title": "출처 계보 과대 집계",
+      "status": "implemented",
+      "response": "발표·행사·원작별 검토로 출처군을 73개에서 63개로 교정했습니다. 공유 행사와 개별 발화를 분리하고, 같은 날짜·엔터티 후보쌍은 검토 근거나 분리 예외 없이는 빌드가 실패합니다. 출처군 수를 독립 검증 수로 표시하지 않습니다."
+    },
+    {
+      "id": "B2",
+      "severity": "Blocker",
+      "title": "미래 계획과 두 시간 축",
+      "status": "implemented",
+      "response": "공개일 필터는 이미 발표된 미래 계획을 포함합니다. mi-011은 2025-11-10에 예고로 표시합니다. Time Machine에서 별도 사건 기준일을 선택할 수 있고 사건일 미상 자료는 이 추가 필터에서 제외합니다."
+    },
+    {
+      "id": "B3",
+      "severity": "Blocker",
+      "title": "렌더링과 내보내기 관계 불일치",
+      "status": "implemented",
+      "response": "knowledge.ts와 graphView의 동일 노드·관계를 2D·3D·내보내기에 사용합니다. 날짜·검색·유형 필터별 ID 일치를 브라우저에서 검사합니다."
+    },
+    {
+      "id": "B4",
+      "severity": "Blocker",
+      "title": "중복 엔터티 정의",
+      "status": "implemented",
+      "response": "미사용 seed 모델 data.ts와 관련 테스트를 제거했습니다. 연구 목록은 research.ts, 그래프 엔터티·관계는 knowledge.ts가 단일 원천이며 drawer는 이 모델을 참조합니다."
+    },
+    {
+      "id": "M1",
+      "severity": "Major",
+      "title": "신호와 엔터티 선택 충돌",
+      "status": "implemented",
+      "response": "Selection을 entity/relation/source/signal로 구분했습니다. 검토 후보 전용 상세에 원문·주장·사업화 단계·한계·다음 확인 지표를 표시합니다."
+    },
+    {
+      "id": "M2",
+      "severity": "Major",
+      "title": "Signal Radar 개수 불일치",
+      "status": "implemented",
+      "response": "표시 수·전체 수를 실제 후보 배열에서 계산하고 접기/펼치기 뒤 실제 카드 개수와 대조합니다."
+    },
+    {
+      "id": "M3",
+      "severity": "Major",
+      "title": "관계별 근거 탐색",
+      "status": "implemented",
+      "response": "관계 ID별 rationale, 해당 주장 ID, 원문 링크만 엽니다. 모든 관계를 동일 자료 목록으로 연결하던 동작은 제거했습니다."
+    },
+    {
+      "id": "M4",
+      "severity": "Major",
+      "title": "가설 근거 0 하드코딩",
+      "status": "implemented",
+      "response": "실제 주장에 대한 분석가의 지지·도전·맥락 매핑을 사용합니다. 단순 엔터티 태그 수를 지지 증거로 승격하지 않으며 독립 검증이나 AI 확률이 아님을 표시합니다."
+    },
+    {
+      "id": "M5",
+      "severity": "Major",
+      "title": "과거 그래프 공백",
+      "status": "implemented",
+      "response": "자료의 공개·사건 날짜를 따라 그래프를 구성합니다. 2026-09-01에도 당시 공개자료의 관계를 탐색할 수 있습니다."
+    },
+    {
+      "id": "M6",
+      "severity": "Major",
+      "title": "의존성 및 CI 권한",
+      "status": "implemented",
+      "response": "package-lock.json에 168개 패키지의 버전·무결성을 고정하고 npm ci를 사용합니다. build는 contents:read만 가지며 pages:write와 id-token:write는 deploy에만 부여합니다."
+    },
+    {
+      "id": "m1",
+      "severity": "Minor",
+      "title": "병합 시 태그·날짜 소실",
+      "status": "implemented",
+      "response": "엔터티 태그와 모든 주장을 보존합니다. 게시일·사건일 충돌(null 포함)은 근거와 입력별 값을 기록한 명시적 해결 없이는 실패합니다."
+    },
+    {
+      "id": "m2",
+      "severity": "Minor",
+      "title": "원문 확인의 감사 가능성",
+      "status": "mitigated_pending_archives",
+      "response": "보관본 없는 78건을 수동 열람 보고로 낮추고, 보관 원문 확인 0건을 표시합니다. 높은 확인 등급에는 실제 archive_url와 본문 SHA-256을 요구합니다. 78건의 보관본 확보는 아직 미완료입니다. se-006의 본문 열람 보고와 검색 색인 기반 게시일은 별도 축입니다."
+    },
+    {
+      "id": "m3",
+      "severity": "Minor",
+      "title": "근거 없는 장식·계정·브리핑 UI",
+      "status": "implemented",
+      "response": "추세처럼 보이는 장식 막대, 상시 알림 점, 가짜 사용자 SA/Strategy Analyst를 제거했습니다. 읽기 시간 실측값을 표시하지 않으며 일·주·월은 실제 공개 기간을 계산합니다."
+    },
+    {
+      "id": "m4",
+      "severity": "Minor",
+      "title": "저장되지 않는 검토 체크리스트",
+      "status": "implemented",
+      "response": "무저장 체크박스를 제거하고 사유 필수 개인 검토와 변경 이력으로 대체했습니다. 브라우저 저장·재로딩·날짜/모드 분리를 검증합니다."
+    },
+    {
+      "id": "m5",
+      "severity": "Minor",
+      "title": "WebGL1 지원 주장",
+      "status": "clarified",
+      "response": "사용 중인 Three.js 0.180.0은 r163 이후 버전이며 WebGL1을 지원하지 않습니다. WebGL2 확인과 동등한 2D 폴백을 유지합니다. 공식 문서: https://threejs.org/docs/pages/WebGLRenderer.html"
+    }
+  ]
+}

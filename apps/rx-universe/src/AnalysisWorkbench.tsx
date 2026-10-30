@@ -43,7 +43,7 @@ function ReviewEvidenceCard({ evidence, target, latest, onSave }: {
     setSaved(!failure);
   }
   return <article className={`aw-evidence aw-role-${evidence.evidence_role}`} data-review-evidence={evidence.id}>
-    <div className="aw-evidence-heading"><span className={`aw-role-badge ${evidence.evidence_role}`}>{roleNames[evidence.evidence_role]}</span><span className="aw-source-state">{evidence.verification === 'primary_read' ? '원문 직접 확인' : '원문 추가 확인 필요'}</span></div>
+    <div className="aw-evidence-heading"><span className={`aw-role-badge ${evidence.evidence_role}`}>{roleNames[evidence.evidence_role]}</span><span className="aw-source-state">{evidence.verification === 'primary_read' ? '보관 원문 확인' : evidence.verification === 'manual_report' ? '수동 열람 보고 · 보관본 미확보' : '원문 추가 확인 필요'}</span></div>
     <p className="aw-claim">{evidence.text}</p>
     <a className="aw-source" href={evidence.url} target="_blank" rel="noreferrer"><BookOpen size={14}/><span>{evidence.publisher} · {evidence.published_at || '게시일 미확인'} · 원문</span><ArrowUpRight size={14}/></a>
     <div className="aw-rationale"><span>분석가의 연결 이유</span><p>{evidence.rationale}</p></div>

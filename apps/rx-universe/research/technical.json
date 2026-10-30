@@ -8,7 +8,7 @@
       "published_at": "2026-05-07",
       "event_date": "2026-05-07",
       "source_type": "patent",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -36,7 +36,27 @@
         "publication_number": "WO2026095403A1",
         "filing_date": "2025-10-09",
         "priority_date": "2024-10-28"
-      }
+      },
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://patents.google.com/patent/WO2026095403A1/en"
+        ],
+        "document_origin_url": "https://patents.google.com/patent/WO2026095403A1/en",
+        "rationale": "WO2026095403A1의 작업 선택·이기종 로봇 데이터 전달에 관한 공개 명세서이다. 다른 특허의 유사 키워드만으로 동일 발명·출원 계보라고 합치지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-002",
@@ -46,7 +66,7 @@
       "published_at": "2026-03-05",
       "event_date": "2026-03-05",
       "source_type": "patent",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -74,7 +94,27 @@
         "filing_date": "2025-07-03",
         "priority_date": "2024-09-03",
         "family_reference": "PCT/KR2025/007710"
-      }
+      },
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://patents.google.com/patent/US20260061608A1/en"
+        ],
+        "document_origin_url": "https://patents.google.com/patent/US20260061608A1/en",
+        "rationale": "US20260061608A1의 오류 대응 기능 수정에 관한 공개 명세서이다. 다른 수록 특허와 청구 기술 내용이 다르며 회사명이 같다는 이유로 병합하지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-003",
@@ -84,7 +124,7 @@
       "published_at": "2026-05-15",
       "event_date": "2026-05-15",
       "source_type": "patent",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -112,7 +152,35 @@
         "publication_number": "WO2026101024A1",
         "filing_date": "2025-10-09",
         "priority_date": "2024-11-05"
-      }
+      },
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [
+          "tech-016"
+        ],
+        "source_urls": [
+          "https://patents.google.com/patent/WO2026101024A1/en",
+          "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm"
+        ],
+        "document_origin_url": "https://patents.google.com/patent/WO2026101024A1/en",
+        "rationale": "WO2026101024A1의 물품-로봇 매핑·호출에 관한 공개 명세서이다. 같은 날 제출된 레인보우 분기보고서와 문서 유형·발행 기관·기술 내용이 다르다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-016",
+            "reason": "같은5월15일 공개지만 삼성전자 특허와 레인보우 1분기 공시는 법인·문서 유형·주제가 다르다."
+          }
+        ]
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-004",
@@ -122,7 +190,7 @@
       "published_at": "2026-05-21",
       "event_date": "2026-05-21",
       "source_type": "patent",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -148,7 +216,27 @@
         "publication_number": "US20260138269A1",
         "filing_date": "2025-04-29",
         "priority_date": "2024-11-20"
-      }
+      },
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://patents.google.com/patent/US20260138269A1/en"
+        ],
+        "document_origin_url": "https://patents.google.com/patent/US20260138269A1/en",
+        "rationale": "US20260138269A1의 장애물·안전 제약 기반 경유점 산출 공개 명세서이다. 오류 제어·물품 매핑 특허와 별도 발명 문서로 유지한다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-005",
@@ -158,7 +246,7 @@
       "published_at": "2026-06-24",
       "event_date": "2026-06-24",
       "source_type": "patent",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -186,7 +274,27 @@
         "publication_number": "EP4764965A1",
         "filing_date": "2025-09-11",
         "priority_date": "2024-12-20"
-      }
+      },
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://patents.google.com/patent/EP4764965A1/en"
+        ],
+        "document_origin_url": "https://patents.google.com/patent/EP4764965A1/en",
+        "rationale": "EP4764965A1의 사용자 경험 지식 그래프 기반 동반 로봇 제어 명세서이다. 회사·로봇 키워드 일치만으로 다른 특허군과 합치지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-006",
@@ -196,7 +304,7 @@
       "published_at": "2026-03-01",
       "event_date": "2026-03-01",
       "source_type": "paper",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -217,7 +325,43 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2603.00926v1 author affiliations, Abstract, IV Experiments"
+      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2603.00926v1 author affiliations, Abstract, IV Experiments",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "shared_origin",
+        "basis": "republication",
+        "related_record_ids": [
+          "se-006",
+          "tech-007",
+          "se-004"
+        ],
+        "source_urls": [
+          "https://arxiv.org/abs/2603.00926",
+          "https://research.samsung.com/blog/DAM-VLA-A-Dynamic-Action-Model-Based-Vision-Language-Action-Framework-for-Robot-Manipulation",
+          "https://arxiv.org/abs/2609.22895",
+          "https://news.samsung.com/kr/삼성전자-2030년까지-ai-자율공장-전환-추진"
+        ],
+        "document_origin_url": "https://arxiv.org/abs/2603.00926",
+        "rationale": "arXiv 2603.00926은 DAM-VLA 연구의 원작이다. 삼성 블로그 se-006은 이 결과를 소개하므로 같은 연구 출처군이며 다른 arXiv 식별자의 H-VLA와는 분리한다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-007",
+            "reason": "arXiv 식별자·논문 제목·모델 방법이 다른 원작이다. 공통 소속이나 VLA 키워드만으로 병합하지 않는다."
+          },
+          {
+            "with_record_id": "se-004",
+            "reason": "같은3월1일 공개지만 기업의 자율공장 전략 발표와 DAM-VLA 원논문은 별도 저작·발화이며 해당 발표가 논문을 재전재한 근거가 없다."
+          }
+        ]
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-007",
@@ -227,7 +371,7 @@
       "published_at": "2026-09-19",
       "event_date": "2026-09-19",
       "source_type": "paper",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -248,7 +392,35 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2609.22895v1 author affiliations, Abstract, sections 4 and 6"
+      "evidence_locator": "arXiv abstract/submission history; https://arxiv.org/html/2609.22895v1 author affiliations, Abstract, sections 4 and 6",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [
+          "tech-006"
+        ],
+        "source_urls": [
+          "https://arxiv.org/abs/2609.22895",
+          "https://arxiv.org/abs/2603.00926"
+        ],
+        "document_origin_url": "https://arxiv.org/abs/2609.22895",
+        "rationale": "arXiv 2609.22895 H-VLA는 키 액션 추론·생성 모델의 별도 원작이다. DAM-VLA와 소속·VLA 용어가 겹쳐도 다른 논문을 같은 연구결과로 합치지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-006",
+            "reason": "arXiv 식별자·논문 제목·모델 방법이 다른 원작이다. 공통 소속이나 VLA 키워드만으로 병합하지 않는다."
+          }
+        ]
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-008",
@@ -258,7 +430,7 @@
       "published_at": "2026-03-03",
       "event_date": "2026-03-03",
       "source_type": "official",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -278,7 +450,41 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "PDF pages 1–2: date, Context/Overview, Problem Statement, Objectives & Scope"
+      "evidence_locator": "PDF pages 1–2: date, Context/Overview, Problem Statement, Objectives & Scope",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_report",
+        "related_record_ids": [
+          "tech-009",
+          "tech-010"
+        ],
+        "source_urls": [
+          "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+          "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf",
+          "https://news.samsung.com/us/samsung-research-america-expands-academic-collaboration-2026-start-program/"
+        ],
+        "document_origin_url": "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+        "rationale": "START 공모 주제 1.1은 3D 이해·기억·예측 연구를 요구하는 독립 과제 명세다. 같은 날 공개된 주제 1.2와 공모행사는 공유하지만 연구 질문·원문 파일이 달라 별도 원작으로 보존한다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-009",
+            "reason": "같은 START 공모·게시일을 공유하지만 1.1의 3D 기억·예측과 1.2의 사람-로봇 상호작용은 별도 저작된 과제 명세다. 동일 연구 결과의 재전재가 아니다."
+          },
+          {
+            "with_record_id": "tech-010",
+            "reason": "같은 프로그램의 3월 공모 명세와 8월 협력 진행 발표는 서로 다른 공개 단계다."
+          }
+        ]
+      },
+      "event_key": "samsung-research-america-start-2026",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-009",
@@ -288,7 +494,7 @@
       "published_at": "2026-03-03",
       "event_date": "2026-03-03",
       "source_type": "official",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -308,7 +514,41 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "PDF pages 1–2: date, Problem Statement, Objectives & Scope, Specific Topics"
+      "evidence_locator": "PDF pages 1–2: date, Problem Statement, Objectives & Scope, Specific Topics",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_report",
+        "related_record_ids": [
+          "tech-008",
+          "tech-010"
+        ],
+        "source_urls": [
+          "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf",
+          "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+          "https://news.samsung.com/us/samsung-research-america-expands-academic-collaboration-2026-start-program/"
+        ],
+        "document_origin_url": "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf",
+        "rationale": "START 공모 주제 1.2는 가까운 사람-로봇 상호작용 연구의 독립 과제 명세다. 주제 1.1과 같은 공모행사는 공유하되 단순 번역·전재가 아니므로 별도 원작으로 보존한다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-008",
+            "reason": "같은 START 공모·게시일을 공유하지만 1.1의 3D 기억·예측과 1.2의 사람-로봇 상호작용은 별도 저작된 과제 명세다. 동일 연구 결과의 재전재가 아니다."
+          },
+          {
+            "with_record_id": "tech-010",
+            "reason": "같은 프로그램의 3월 공모 명세와 8월 협력 진행 발표는 서로 다른 공개 단계다."
+          }
+        ]
+      },
+      "event_key": "samsung-research-america-start-2026",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-010",
@@ -318,7 +558,7 @@
       "published_at": "2026-08-21",
       "event_date": "2026-08-21",
       "source_type": "official",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "se",
@@ -338,7 +578,41 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "evidence_locator": "Publication date; body paragraphs Selected projects and Professor Ranjay Krishna quote"
+      "evidence_locator": "Publication date; body paragraphs Selected projects and Professor Ranjay Krishna quote",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_report",
+        "related_record_ids": [
+          "tech-008",
+          "tech-009"
+        ],
+        "source_urls": [
+          "https://news.samsung.com/us/samsung-research-america-expands-academic-collaboration-2026-start-program/",
+          "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+          "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf"
+        ],
+        "document_origin_url": "https://news.samsung.com/us/samsung-research-america-expands-academic-collaboration-2026-start-program/",
+        "rationale": "8월 START 협력 진행 발표는 3월 과제 공모 이후의 별도 프로그램 진행 설명이다. 같은 프로그램임은 연결하지만 서로 다른 시점의 공모 원문과 진행 발표를 동일 문서로 간주하지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-008",
+            "reason": "같은 프로그램의 3월 공모 명세와 8월 협력 진행 발표는 서로 다른 공개 단계다."
+          },
+          {
+            "with_record_id": "tech-009",
+            "reason": "같은 프로그램의 3월 공모 명세와 8월 협력 진행 발표는 서로 다른 공개 단계다."
+          }
+        ]
+      },
+      "event_key": "samsung-research-america-start-2026",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-011",
@@ -348,7 +622,7 @@
       "published_at": "2025-11-17",
       "event_date": "2025-11-13",
       "source_type": "official",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "robot",
@@ -373,7 +647,27 @@
       "displayed_dates": [
         "2025-11-17",
         "2026-05-30"
-      ]
+      ],
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_report",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://rainbow-robotics.com/레인보우로보틱스-ai-4족-보행-로봇-시리즈가-올해의-10/"
+        ],
+        "document_origin_url": "https://rainbow-robotics.com/레인보우로보틱스-ai-4족-보행-로봇-시리즈가-올해의-10/",
+        "rationale": "레인보우의 RBQ 수상·기능 설명 회사 발표이다. Automate 전시 계획과 제품군·공개 사건이 다르며 수상이 운용 성능 독립 측정을 뜻하지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-012",
@@ -383,7 +677,7 @@
       "published_at": "2026-06-04",
       "event_date": "2026-06-22",
       "source_type": "official",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "robot",
@@ -409,7 +703,27 @@
         "2026-06-04",
         "2026-06-18"
       ],
-      "event_end_date": "2026-06-25"
+      "event_end_date": "2026-06-25",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_report",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://rainbow-robotics.com/rainbow-robotics-at-automate-2026/"
+        ],
+        "document_origin_url": "https://rainbow-robotics.com/rainbow-robotics-at-automate-2026/",
+        "rationale": "레인보우의 Automate2026 RB·RBY 전시 예고이다. 수상 기사나 미국 파트너 계약 발표와는 다른 공개 행사이며 실제 전시 이행일을 게시일로 대체하지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-013",
@@ -419,13 +733,13 @@
       "published_at": null,
       "event_date": "2026-09-30",
       "source_type": "official",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "undated",
       "entity_ids": [
         "se",
         "robot"
       ],
-      "origin_key": "https://research.samsung.com/saif",
+      "origin_key": "samsung-electronics:2026-09-30-ai-forum-physical-ai",
       "summary_ko": "공식 행사 일정은 2026년9월30일 Physical AI 세션에 월드 모델과 로봇 파운데이션 모델의 대규모 확장 가능성·한계 강연을 편성하고 있다. 일정 확인은 해당 기술의 현장 상용화 확인과 다르다.",
       "excerpt": "The Promise and Limitations of Robot Foundation Models for Massive Robot Scaling",
       "claim": {
@@ -440,7 +754,33 @@
       ],
       "accessed_at": "2026-10-30",
       "date_basis": "unknown",
-      "evidence_locator": "Samsung AI Forum2026 event date; Schedule > Session2 Physical AI"
+      "evidence_locator": "Samsung AI Forum2026 event date; Schedule > Session2 Physical AI",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "se-014",
+          "se-015"
+        ],
+        "source_urls": [
+          "https://research.samsung.com/saif",
+          "https://news.samsung.com/kr/삼성전자-에이전틱-시프트-주제로-삼성-ai-포럼-2026-개최",
+          "https://www.edaily.co.kr/News/Read?newsId=04618246645585368&mediaCodeNo=257"
+        ],
+        "document_origin_url": "https://research.samsung.com/saif",
+        "rationale": "Samsung AI Forum2026 공식 프로그램의 Physical AI 세션에 같은 발표자·강연이 명시돼 있다. se-014와 se-015의 공개 발화군에 포함하며 최초 게시일은 여전히 미확인이다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      },
+      "event_key": "samsung-ai-forum-2026-09-30",
+      "utterance_key": "samsung-ai-forum-2026-09-30:physical-ai-programme",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-014",
@@ -450,7 +790,7 @@
       "published_at": "2026-07-30",
       "event_date": null,
       "source_type": "official",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "entity_ids": [
         "sds",
@@ -475,7 +815,31 @@
       "accessed_at": "2026-10-30",
       "date_basis": "page",
       "evidence_locator": "2026-07-30; 디지털 자산·피지컬 AI 분야 전략적 투자 확대 문단",
-      "event_month": "2026-06"
+      "event_month": "2026-06",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "sds-002",
+          "sds-006"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/ss-260730.html",
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/Samsung_SDS_2Q26_Script_Eng_260730_1.pdf"
+        ],
+        "document_origin_url": "https://www.samsungsds.com/kr/news/ss-260730.html",
+        "rationale": "sds-002와 URL이 완전히 같은 Q2 회사 발표에서 Walden 관련 별도 주장을 추출했다. 문서 하나에 두 주장을 보존하며 출처 수를 늘리지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      },
+      "event_key": "samsung-sds-2026-q2-earnings",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-015",
@@ -532,11 +896,31 @@
         }
       ],
       "source_type": "filing",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "origin_key": "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm"
+      "origin_key": "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm"
+        ],
+        "document_origin_url": "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm",
+        "rationale": "레인보우 2025 사업보고서라는 별도 법정 공시이다. 2026 분기·반기 보고서와 발행 시점·대상 기간이 다르며 반복 항목을 독립 실적 확인으로 가산하지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-016",
@@ -585,11 +969,39 @@
         }
       ],
       "source_type": "filing",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "origin_key": "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm"
+      "origin_key": "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [
+          "tech-003"
+        ],
+        "source_urls": [
+          "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm",
+          "https://patents.google.com/patent/WO2026101024A1/en"
+        ],
+        "document_origin_url": "https://kind.krx.co.kr/external/2026/05/15/002622/20260515005944/11013.htm",
+        "rationale": "레인보우 2026 1분기 특수관계자 거래 공시이다. 2025 연간 및 2026 반기와 보고 기간이 다른 원작이며 같은날 삼성전자 특허와도 별개다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-003",
+            "reason": "같은5월15일 공개지만 삼성전자 특허와 레인보우 1분기 공시는 법인·문서 유형·주제가 다르다."
+          }
+        ]
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-017",
@@ -648,12 +1060,54 @@
       ],
       "original_contract_disclosed_at": "2024-03-15",
       "source_type": "filing",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "accessed_at": "2026-10-30",
       "date_basis": "page",
       "origin_key": "https://kind.krx.co.kr/external/2026/08/14/002335/20260814008101/11012.htm",
-      "as_of_date": "2026-06-30"
+      "as_of_date": "2026-06-30",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "shared_origin",
+        "basis": "republication",
+        "related_record_ids": [
+          "se-011",
+          "tech-018",
+          "sds-015",
+          "media-004"
+        ],
+        "source_urls": [
+          "https://kind.krx.co.kr/external/2026/08/14/002335/20260814008101/11012.htm",
+          "https://zdnet.co.kr/view/?no=20260828150538",
+          "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf",
+          "https://www.samsungsds.com/kr/insights/limitations-and-challenges-in-physical-ai.html",
+          "https://www.smarttoday.co.kr/ko-kr/articles/112188"
+        ],
+        "document_origin_url": "https://kind.krx.co.kr/external/2026/08/14/002335/20260814008101/11012.htm",
+        "rationale": "레인보우 2026 반기보고서가 원작이다. se-011이 재인용한 미국법인 손익의 원천도 이 보고서이며 KAI 장비대금 주장은 같은 보고서의 다른 절로 보존한다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-018",
+            "reason": "같은 반기·게시일이지만 레인보우와 삼성전자가 각각 발행한 다른 연결 범위의 법정 보고서이다. 출처군 분리는 두 사실의 통계적 독립성을 보증하지 않는다."
+          },
+          {
+            "with_record_id": "sds-015",
+            "reason": "같은8월14일이지만 SDS 필자 기고와 레인보우 법정 반기 공시는 저자·내용·발화 사건이 다르다."
+          },
+          {
+            "with_record_id": "media-004",
+            "reason": "기사 배경 재무수치는 같은 공시에서 유래하지만 현재 추출 주장은 10월1일 회사 관계자의 공개 제한 답변이다. 그 직접 답변만 별도 취재 원천으로 보존한다."
+          }
+        ]
+      },
+      "event_key": "rainbow-2026-h1-report",
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     },
     {
       "id": "tech-018",
@@ -694,11 +1148,45 @@
         }
       ],
       "source_type": "filing",
-      "verification": "primary_read",
+      "verification": "manual_report",
       "scope": "in_window",
       "accessed_at": "2026-10-30",
       "date_basis": "page",
-      "origin_key": "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf"
+      "origin_key": "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf",
+      "lineage_review": {
+        "reviewed_at": "2026-10-30",
+        "reviewer": "research_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [
+          "tech-017",
+          "sds-015"
+        ],
+        "source_urls": [
+          "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf",
+          "https://kind.krx.co.kr/external/2026/08/14/002335/20260814008101/11012.htm",
+          "https://www.samsungsds.com/kr/insights/limitations-and-challenges-in-physical-ai.html"
+        ],
+        "document_origin_url": "https://images.samsung.com/kdp/ir/business-report/2026_2Q_Interim_Business_Report_vF_kr.pdf",
+        "rationale": "삼성전자 2026 반기보고서는 삼성전자 발행 법정 공시이다. 같은 날 레인보우 보고서와 발행 법인·연결 범위가 다른 원작이며 지분 사실의 독립 현장검증 횟수로 해석하지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": [
+          {
+            "with_record_id": "tech-017",
+            "reason": "같은 반기·게시일이지만 레인보우와 삼성전자가 각각 발행한 다른 연결 범위의 법정 보고서이다. 출처군 분리는 두 사실의 통계적 독립성을 보증하지 않는다."
+          },
+          {
+            "with_record_id": "sds-015",
+            "reason": "같은8월14일이지만 SDS 피지컬 AI 기고와 삼성전자 법정 반기 공시는 기관·문서 목적이 다르다."
+          }
+        ]
+      },
+      "event_key": null,
+      "previous_verification": "primary_read",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "수동 열람 보고만 보존되어 원문 보관본·본문 해시를 재현 검증할 수 없음"
     }
   ],
   "queries": [

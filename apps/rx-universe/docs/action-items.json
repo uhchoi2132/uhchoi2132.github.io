@@ -1,5 +1,5 @@
 {
-  "version": "1.1",
+  "version": "2.0",
   "updated_at": "2026-10-30",
   "items": [
     {
@@ -10,7 +10,7 @@
       "acceptance": [
         "동일 URL의 조사 레코드를 병합해도 서로 다른 출처 귀속 주장을 모두 보존한다.",
         "병합된 레코드의 엔티티 태그는 모든 입력의 합집합이며 누락되지 않는다.",
-        "문서 수·주장 수·독립 원출처 수를 별도로 계산하고 JSON과 SQLite에서 일치시킨다.",
+        "문서 수·주장 수·검토된 출처군 수를 별도로 계산하고 JSON과 SQLite에서 일치시킨다.",
         "재인용 자료는 동일 origin_key로 묶으며 독립 증거 수를 부풀리지 않는다."
       ],
       "dependencies": [],
@@ -156,6 +156,90 @@
       "dependencies": [
         "AI-007",
         "AI-008"
+      ]
+    },
+    {
+      "id": "AI-010",
+      "priority": "P0",
+      "title": "원작·공유 발표·발화 지점의 계보 검토",
+      "status": "completed",
+      "acceptance": [
+        "동일 발표 출처군을 재산정하고 독립 검증 수와 구분한다.",
+        "같은 날 공식자료·언론 후보쌍의 검토 근거 또는 분리 예외를 요구한다."
+      ],
+      "dependencies": [
+        "AI-001"
+      ]
+    },
+    {
+      "id": "AI-011",
+      "priority": "P0",
+      "title": "날짜 충돌 실패와 독립 사건 기준일",
+      "status": "completed",
+      "acceptance": [
+        "중복 URL 날짜 충돌은 명시적 근거 없이 병합하지 않는다.",
+        "공개 기준일과 별도의 사건 기준일을 적용하고 예고된 미래 계획을 표시한다."
+      ],
+      "dependencies": [
+        "AI-002"
+      ]
+    },
+    {
+      "id": "AI-012",
+      "priority": "P1",
+      "title": "기존 자료의 원문 보관본 확보",
+      "status": "planned",
+      "acceptance": [
+        "수동 열람 보고 78건에 대해 적법하게 확인 가능한 보관 원문 URL과 실제 바이트 해시를 확보한다.",
+        "보관본 미확보 자료를 보관 원문 확인 등급으로 승격하지 않는다.",
+        "원문 열람 보고·게시일 검증·보관본 감사 상태를 따로 기록한다."
+      ],
+      "dependencies": [
+        "AI-008"
+      ]
+    },
+    {
+      "id": "AI-013",
+      "priority": "P0",
+      "title": "재현 가능한 의존성과 배포 권한 분리",
+      "status": "completed",
+      "acceptance": [
+        "package-lock.json을 저장하고 npm ci로 설치한다.",
+        "build에는 contents:read만 부여하고 Pages/OIDC 쓰기는 deploy로 제한한다."
+      ],
+      "dependencies": []
+    },
+    {
+      "id": "AI-014",
+      "priority": "P1",
+      "title": "후보별 상세와 UI 상태의 정합성",
+      "status": "completed",
+      "acceptance": [
+        "entity/relation/source/signal 선택을 타입으로 분리한다.",
+        "후보 카드 개수·상세 주장·원문·한계·다음 확인 지표를 검증한다.",
+        "가짜 사용자와 항상 켜진 알림 점을 제거한다."
+      ],
+      "dependencies": [
+        "AI-003",
+        "AI-005"
+      ]
+    },
+    {
+      "id": "AI-015",
+      "priority": "P1",
+      "title": "리뷰 항목별 대응과 미완료 범위 공개",
+      "status": "completed",
+      "acceptance": [
+        "Blocker·Major·Minor 15개 항목의 대응을 공개 화면에 기록한다.",
+        "보관본 확보 미완료와 WebGL2 요구사항 정정을 명시한다.",
+        "모바일·WebGL 폴백·출처 계보·개인 검토 회귀 검증을 통과한 빌드만 공개한다."
+      ],
+      "dependencies": [
+        "AI-006",
+        "AI-010",
+        "AI-011",
+        "AI-013",
+        "AI-014"
       ]
     }
   ],

@@ -1,11 +1,11 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { briefingFor, periodBounds } from './briefing.ts';
+import { briefingFor, periodBounds, signalCandidatesFor } from './briefing.ts';
 import { catalog, type ResearchCatalog, type ResearchRecord } from './research.ts';
 
 const fixture = (id: string, fields: Partial<ResearchRecord> = {}): ResearchRecord => ({
   id, title: `Synthetic ${id}`, url: `https://example.test/${id}`, publisher: 'Synthetic publisher',
-  published_at: '2026-10-29', event_date: null, source_type: 'official', verification: 'primary_read',
+  published_at: '2026-10-29', event_date: null, source_type: 'official', verification: 'manual_report',
   scope: 'in_window', entity_ids: ['sds'], origin_key: `origin:${id}`, summary_ko: 'Synthetic chronology fixture',
   excerpt: 'Synthetic', claim: { text: 'Synthetic attributed statement.', kind: 'official_statement' },
   commercialization_stage: 'unknown', limitations: ['Synthetic source limitation'], accessed_at: '2026-10-30',
@@ -113,4 +113,22 @@ test('invalid dates fail closed and missing date fields do not generate events o
   const early = briefingFor(catalog.meta.window_start, 'known', 'weekly', source);
   assert.equal(early.completePreviousPeriodCoverage, false);
   assert.equal(early.completePeriodCoverage, false);
+});
+
+test('candidate detail identities cannot collide with entity ids and source grouping does not multiply candidates', () => {
+  const records = [
+    fixture('sds', { origin_key: 'shared-origin' }),
+    fixture('sds-reprint', { origin_key: 'shared-origin', source_type: 'media' }),
+    fixture('job'),
+  ];
+  const candidates = signalCandidatesFor(records);
+  assert.equal(candidates.length, 2);
+  assert.equal(new Set(candidates.map(candidate => candidate.id)).size, 2);
+  assert.ok(candidates.every(candidate => candidate.id !== candidate.source.id && candidate.id.startsWith('candidate:')));
+  const sds = candidates.find(candidate => candidate.id === 'candidate:sds')!;
+  assert.equal(sds.source, records[0], 'selection retains the source object used by the card');
+  assert.equal(sds.claim.verification, 'manual_report', 'a candidate retains the source audit status without promoting it');
+  assert.deepEqual(sds.relatedSources.map(source => source.id), ['sds', 'sds-reprint']);
+  assert.deepEqual(signalCandidatesFor([...records].reverse()).map(candidate => candidate.id), candidates.map(candidate => candidate.id));
+  assert.ok(candidates.every(candidate => candidate.highImpactVerified === false && candidate.counterevidenceStatus === 'source_limitations_only'));
 });

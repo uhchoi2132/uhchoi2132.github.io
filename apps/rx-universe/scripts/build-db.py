@@ -13,14 +13,16 @@ import json
 import os
 from pathlib import Path
 import re
+import runpy
 import sqlite3
 import tempfile
 from datetime import date, datetime
 from urllib.parse import urlsplit, urlunsplit
 
 ROOT = Path(__file__).resolve().parents[1]
+validate_lineage = runpy.run_path(str(ROOT / 'scripts/merge-research.py'), run_name='rx_merge_validation')['validate_lineage']
 SOURCE_TYPES = {'official', 'media', 'paper', 'patent', 'filing', 'video', 'product'}
-VERIFICATIONS = {'primary_read', 'search_only', 'access_blocked'}
+VERIFICATIONS = {'primary_read', 'manual_report', 'search_only', 'access_blocked'}
 CLAIM_KINDS = {'official_statement', 'media_report', 'research_result', 'inference'}
 DATE_BASES = {'page', 'search_index', 'unknown'}
 EDITORIAL_STATUS = 'source_attributed_not_independently_verified'
@@ -84,6 +86,29 @@ def required_text(value: object, field: str) -> str:
     return value
 
 
+def validate_audit(record: dict, label: str) -> None:
+    verification = record.get('verification')
+    audit_status = record.get('audit_status')
+    required_text(record.get('verification_note'), f'{label}.verification_note')
+    if record.get('previous_verification') is not None and record['previous_verification'] not in VERIFICATIONS:
+        raise ValueError(f'{label}.previous_verification: invalid status')
+    if 'archive_url' not in record or 'content_sha256' not in record:
+        raise ValueError(f'{label}: explicitly record archive_url/content_sha256, null when unavailable')
+    archive_url, content_hash = record['archive_url'], record['content_sha256']
+    if verification == 'primary_read':
+        if audit_status != 'archived' or not isinstance(archive_url, str):
+            raise ValueError(f'{label}: primary_read requires an archived original URL and content hash')
+        parsed = urlsplit(archive_url)
+        if parsed.scheme not in {'http', 'https'} or not parsed.netloc or parsed.username or parsed.password:
+            raise ValueError(f'{label}.archive_url: public HTTP(S) archive URL required')
+        if not isinstance(content_hash, str) or not re.fullmatch(r'[a-fA-F0-9]{64}', content_hash):
+            raise ValueError(f'{label}.content_sha256: SHA-256 of archived source bytes required')
+    else:
+        expected_status = 'blocked' if verification == 'access_blocked' else 'unarchived'
+        if audit_status != expected_status or archive_url is not None or content_hash is not None:
+            raise ValueError(f'{label}: {verification} requires audit_status={expected_status}, archive_url=null and content_sha256=null')
+
+
 def record_claims(record: dict) -> list[dict]:
     """Compatibility adapter; source dedup is separate from claim preservation."""
     return record.get('claims') or [{
@@ -143,6 +168,7 @@ def validate(data: dict) -> dict:
             raise ValueError(f'Excerpt budget exceeds 25 whitespace-delimited words for source URL: {record["url"]}')
         if record.get('source_type') not in SOURCE_TYPES or record.get('verification') not in VERIFICATIONS:
             raise ValueError(f'{label}: invalid source_type or verification')
+        validate_audit(record, label)
         if record.get('date_basis') not in DATE_BASES:
             raise ValueError(f'{label}.date_basis: expected page|search_index|unknown')
         published_value, event_value = record.get('published_at'), record.get('event_date')
@@ -200,6 +226,8 @@ def validate(data: dict) -> dict:
             if key in seen_texts:
                 raise ValueError(f'{label}.claims: duplicate extracted claim text/kind')
             seen_texts.add(key)
+            if extracted.get('verification', record['verification']) == 'primary_read' and record['verification'] != 'primary_read':
+                raise ValueError(f'{label}.claims: primary_read extraction requires archived parent source')
             if extracted.get('verification', record['verification']) not in VERIFICATIONS:
                 raise ValueError(f'{label}.claims.verification: invalid status')
             limits = extracted.get('limitations', record['limitations'])
@@ -209,6 +237,7 @@ def validate(data: dict) -> dict:
                 raise ValueError(f'{label}.claims: unverified extraction requires limitations')
         if (claim['kind'], ' '.join(claim['text'].split())) not in seen_texts:
             raise ValueError(f'{label}: legacy claim must be preserved in claims array')
+    validate_lineage(records)
     return data
 
 
@@ -219,14 +248,18 @@ CREATE TABLE Entities(id TEXT PRIMARY KEY, canonical_name TEXT NOT NULL, entity_
 CREATE TABLE Sources(
  id TEXT PRIMARY KEY, title TEXT NOT NULL, url TEXT NOT NULL, publisher TEXT NOT NULL,
  published_at TEXT, event_date TEXT, scheduled_event_date TEXT, source_type TEXT NOT NULL,
- verification TEXT NOT NULL CHECK(verification IN ('primary_read','search_only','access_blocked')),
+ verification TEXT NOT NULL CHECK(verification IN ('primary_read','manual_report','search_only','access_blocked')),
  scope TEXT NOT NULL CHECK(scope IN ('in_window','undated','out_of_window')),
  origin_key TEXT NOT NULL, summary_ko TEXT NOT NULL, excerpt TEXT NOT NULL,
  commercialization_stage TEXT NOT NULL, limitations_json TEXT NOT NULL,
  accessed_at TEXT NOT NULL, source_date_basis TEXT NOT NULL CHECK(source_date_basis IN ('page','search_index','unknown')),
  evidence_locator TEXT NOT NULL, record_sha256 TEXT NOT NULL CHECK(length(record_sha256)=64),
  captured_source_sha256 TEXT CHECK(captured_source_sha256 IS NULL),
- raw_record_json TEXT NOT NULL
+ raw_record_json TEXT NOT NULL,
+ audit_status TEXT NOT NULL CHECK(audit_status IN ('unarchived','archived','blocked')),
+ archive_url TEXT, content_sha256 TEXT, verification_note TEXT NOT NULL, previous_verification TEXT,
+ event_key TEXT, utterance_key TEXT, lineage_review_json TEXT, lineage_reviews_json TEXT NOT NULL,
+ merge_conflicts_json TEXT NOT NULL, merge_date_resolutions_json TEXT NOT NULL
 );
 CREATE TABLE Claims(
  id TEXT PRIMARY KEY, source_id TEXT NOT NULL REFERENCES Sources(id), claim_text TEXT NOT NULL,
@@ -235,7 +268,7 @@ CREATE TABLE Claims(
  event_date TEXT, published_at TEXT, ingested_at TEXT NOT NULL,
  independently_verified INTEGER NOT NULL DEFAULT 0 CHECK(independently_verified=0),
  scheduled_event_date TEXT, origin_record_id TEXT,
- verification TEXT NOT NULL CHECK(verification IN ('primary_read','search_only','access_blocked')),
+ verification TEXT NOT NULL CHECK(verification IN ('primary_read','manual_report','search_only','access_blocked')),
  evidence_locator TEXT NOT NULL, limitations_json TEXT NOT NULL
 );
 CREATE TABLE SourceEntities(
@@ -267,10 +300,12 @@ def build(source: Path, out_dir: Path) -> dict:
     try:
         with sqlite3.connect(temporary) as db:
             db.executescript(SCHEMA)
-            metadata = {**data['meta'], 'schema_version': '1.1', 'source_json_sha256': sha256(raw),
+            metadata = {**data['meta'], 'schema_version': '1.2', 'source_json_sha256': sha256(raw),
                         'storage_kind': 'portable_sqlite_snapshot', 'claim_editorial_status': EDITORIAL_STATUS,
                         'record_hash_semantics': 'SHA-256 of canonical record JSON, not original HTML or source bytes',
-                        'captured_source_hash_semantics': 'NULL: original source bytes were not captured by this builder',
+                        'captured_source_hash_semantics': 'NULL: this builder does not fetch original source bytes',
+                        'archive_hash_semantics': 'content_sha256 is the supplied archive-byte SHA-256; record_sha256 hashes JSON metadata. Builder checks archive metadata format, not remote bytes.',
+                        'source_group_semantics': 'Reviewed shared-source/event groups, not independently corroborating evidence',
                         'history_policy': 'Immutable imported rows in each exported snapshot; input JSON versions tracked in Git'}
             db.executemany('INSERT INTO Metadata VALUES(?,?)', [(key, canonical(value)) for key, value in sorted(metadata.items())])
             all_entities = sorted({entity_id for record in data['records'] for entity_id in record['entity_ids']})
@@ -279,12 +314,16 @@ def build(source: Path, out_dir: Path) -> dict:
                 db.execute('INSERT INTO Entities VALUES(?,?,?,?)', (entity_id, name, kind, 'Research indexing entity; inclusion does not establish a business relationship'))
             for record in sorted(data['records'], key=lambda item: item['id']):
                 normalized_record = canonical(record)
-                db.execute('''INSERT INTO Sources VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)''', (
+                source_values = (
                     record['id'], record['title'], record['url'], record['publisher'], record['published_at'], record['event_date'], record.get('scheduled_event_date'),
                     record['source_type'], record['verification'], record['scope'], record['origin_key'], record['summary_ko'],
                     record['excerpt'], record['commercialization_stage'], canonical(record['limitations']), record['accessed_at'],
                     record['date_basis'], record['evidence_locator'], sha256(normalized_record), None, normalized_record,
-                ))
+                    record['audit_status'], record['archive_url'], record['content_sha256'], record['verification_note'], record.get('previous_verification'),
+                    record.get('event_key'), record.get('utterance_key'), canonical(record['lineage_review']) if record.get('lineage_review') else None,
+                    canonical(record.get('lineage_reviews', [])), canonical(record.get('merge_conflicts', [])), canonical(record.get('merge_date_resolutions', [])),
+                )
+                db.execute(f'INSERT INTO Sources VALUES({",".join("?" for _ in source_values)})', source_values)
                 for claim in record_claims(record):
                     db.execute('INSERT INTO Claims VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
                         claim['id'], record['id'], claim['text'], claim['kind'], EDITORIAL_STATUS,
@@ -311,7 +350,7 @@ def build(source: Path, out_dir: Path) -> dict:
     finally:
         temporary.unlink(missing_ok=True)
     return {'database': str(target), 'json': str(out_dir / 'rx-research.json'), 'sources': len(data['records']),
-            'claims': sum(len(record_claims(record)) for record in data['records']), 'independent_origins': len({record['origin_key'] for record in data['records']}),
+            'claims': sum(len(record_claims(record)) for record in data['records']), 'source_groups': len({record['origin_key'] for record in data['records']}),
             'queries': len(data['queries']), 'source_json_sha256': sha256(raw)}
 
 
