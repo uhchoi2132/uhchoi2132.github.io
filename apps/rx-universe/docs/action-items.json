@@ -1,25 +1,26 @@
 {
-  "version": "1.0",
+  "version": "1.1",
   "updated_at": "2026-10-30",
   "items": [
     {
       "id": "AI-001",
       "priority": "P0",
       "title": "동일 원출처 병합 시 주장과 엔티티 태그 보존",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "동일 URL의 조사 레코드를 병합해도 서로 다른 출처 귀속 주장을 모두 보존한다.",
         "병합된 레코드의 엔티티 태그는 모든 입력의 합집합이며 누락되지 않는다.",
         "문서 수·주장 수·독립 원출처 수를 별도로 계산하고 JSON과 SQLite에서 일치시킨다.",
         "재인용 자료는 동일 origin_key로 묶으며 독립 증거 수를 부풀리지 않는다."
       ],
-      "dependencies": []
+      "dependencies": [],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41143106380"
     },
     {
       "id": "AI-002",
       "priority": "P0",
       "title": "당시 알려진 미래 계획과 사건 시점 분리",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "As-known-at은 기준일까지 발표된 미래 행사·계획을 숨기지 않는다.",
         "미래 계획은 계획/예정으로 표시하며 완료 사건이나 운영 성과로 승격하지 않는다.",
@@ -28,13 +29,14 @@
       ],
       "dependencies": [
         "AI-001"
-      ]
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41143106380"
     },
     {
       "id": "AI-003",
       "priority": "P0",
       "title": "2D·3D·내보내기가 공유하는 출처 기반 그래프",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "하나의 그래프 모델에서 2D·3D 렌더링과 JSON 내보내기를 생성한다.",
         "선택 날짜·검색·필터에 따른 노드와 관계 ID가 렌더러와 내보내기에서 일치한다.",
@@ -46,13 +48,14 @@
       "dependencies": [
         "AI-001",
         "AI-002"
-      ]
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41143106380"
     },
     {
       "id": "AI-004",
       "priority": "P1",
       "title": "War Room 근거 평가와 개인 검토 이력",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "가설 평가에 지지 자료·반증 또는 확인 공백·다음 확인 지표를 표시한다.",
         "출처 기반 평가를 AI 모델의 자동 추론이나 독립 검증으로 오인시키지 않는다.",
@@ -63,13 +66,14 @@
       "dependencies": [
         "AI-001",
         "AI-002"
-      ]
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41143106380"
     },
     {
       "id": "AI-005",
       "priority": "P1",
       "title": "실제 일·주·월 범위에 따른 브리핑",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "Daily·Weekly·Monthly 선택에 따라 해당 기간의 공개자료를 계산한다.",
         "브리핑에 기간 시작·종료와 자료 수·원출처 링크를 표시한다.",
@@ -80,13 +84,14 @@
       "dependencies": [
         "AI-001",
         "AI-002"
-      ]
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41143106380"
     },
     {
       "id": "AI-006",
       "priority": "P1",
       "title": "개선 Action Item과 인수 검증 결과 관리",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "Action Item별 우선순위·상태·인수 기준·의존성을 구조화해 저장한다.",
         "현재 개선 작업과 향후 인프라 과제를 구분해 웹 화면에서 확인할 수 있다.",
@@ -100,7 +105,8 @@
         "AI-003",
         "AI-004",
         "AI-005"
-      ]
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41143106380"
     },
     {
       "id": "AI-007",
@@ -152,5 +158,14 @@
         "AI-008"
       ]
     }
-  ]
+  ],
+  "validation": {
+    "commit": "64ba684da5b8424e92152f7b463a990a772bd31e",
+    "run_url": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41143106380",
+    "unit_tests_passed": 37,
+    "browser_scenarios_passed": 15,
+    "build": "passed",
+    "public_json_sqlite": "passed",
+    "scope": "첫 개선 차수의 기능 인수 검증. 이후 공개 빌드도 같은 검증을 통과해야 게시됩니다."
+  }
 }

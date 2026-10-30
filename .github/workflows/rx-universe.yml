@@ -33,6 +33,13 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Verify desktop, mobile and temporal behavior
         run: npm run test:browser
+      - name: Record verified release identity
+        run: |
+          python3 - <<'PYRELEASE'
+          import json, os
+          from pathlib import Path
+          Path('dist/release.json').write_text(json.dumps({'commit': os.environ['GITHUB_SHA'], 'version': '2.3.0', 'validation_run': os.environ['GITHUB_RUN_ID']}))
+          PYRELEASE
       - name: Preserve existing homepage and prepare RX path
         run: |
           mkdir -p ../../_site/rx-universe
@@ -72,11 +79,13 @@ jobs:
           done
           curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}data/rx-research.json" -o /tmp/rx-research.json
           curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}data/rx-research.sqlite" -o /tmp/rx-research.sqlite
+          curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}release.json" -o /tmp/rx-release.json
           python3 - <<'PYCODE'
-          import json, sqlite3
+          import json, sqlite3, os
           from pathlib import Path
           expected = json.loads(Path('apps/rx-universe/src/research-data.json').read_text())
           actual = json.loads(Path('/tmp/rx-research.json').read_text())
+          assert json.loads(Path('/tmp/rx-release.json').read_text())['commit'] == os.environ['GITHUB_SHA'], 'Public release does not match this commit'
           assert actual == expected, 'Published research JSON differs from this commit'
           db = sqlite3.connect('/tmp/rx-research.sqlite')
           assert db.execute('PRAGMA integrity_check').fetchone()[0] == 'ok'

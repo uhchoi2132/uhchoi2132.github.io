@@ -55,21 +55,23 @@ function FitCamera({ bounds }: { bounds: Boundaries }) {
   }, [camera, size.width, size.height, x, y, z, width, height, depth, invalidate]);
   return null;
 }
-function Node({ node, active, onSelect, portal }: { node: KnowledgeNode; active: boolean; onSelect: (id: string) => void; portal: LabelPortal }) {
+function Node({ node, active, onSelect, portal, showMinorLabels }: { node: KnowledgeNode; active: boolean; onSelect: (id: string) => void; portal: LabelPortal; showMinorLabels: boolean }) {
   const [hover, setHover] = useState(false);
   useEffect(() => () => { document.body.style.cursor = ''; }, []);
   useEffect(() => { if (!active) { setHover(false); document.body.style.cursor = ''; } }, [active]);
   const color = colors[node.kind];
   const primary = primaryNode(node);
+  const labelVisible = primary || node.kind === 'hypothesis' || showMinorLabels || hover;
+  const displayTitle = primary ? node.subtitle?.split('·')[0].trim() || node.title : node.title;
   return <group position={node.position}>
     <mesh onClick={event => { if (!active) return; event.stopPropagation(); onSelect(node.id); }} onPointerOver={event => { if (!active) return; event.stopPropagation(); setHover(true); document.body.style.cursor = 'pointer'; }} onPointerOut={() => { setHover(false); document.body.style.cursor = ''; }}>
       <sphereGeometry args={[node.size * (hover ? 1.16 : 1), 24, 24]}/><meshBasicMaterial color={color} transparent opacity={active ? .94 : .11}/>
     </mesh>
     <mesh><sphereGeometry args={[node.size * 1.65, 24, 24]}/><meshBasicMaterial color={color} transparent opacity={active ? (hover ? .16 : .065) : .015} depthWrite={false}/></mesh>
     {primary && <mesh rotation={[Math.PI / 2.8, .2, .3]}><torusGeometry args={[node.size * 2.1, .008, 8, 64]}/><meshBasicMaterial color={color} transparent opacity={active ? .55 : .06}/></mesh>}
-    {active && <Html portal={portal as React.ComponentProps<typeof Html>['portal']} center position={[0, -node.size - (primary ? .38 : .22), 0]} distanceFactor={15} style={{ pointerEvents: 'none' }}>
-      <button type="button" tabIndex={-1} data-graph-node-id={node.id} data-node-id={node.id} aria-label={`${node.title} 상세 보기`} onClick={() => onSelect(node.id)} style={{ pointerEvents: 'auto', color: primary ? '#deeee9' : color, background: primary ? 'rgba(8,20,22,.84)' : 'rgba(8,18,21,.75)', border: 'none', padding: primary ? '6px 9px' : '3px 6px', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: 'inherit', fontSize: primary ? 11 : 9, letterSpacing: primary ? '1px' : '.15px', fontWeight: primary ? 600 : 400, textAlign: 'center', opacity: primary || hover ? 1 : .86 }}>
-        {node.title}{primary && node.subtitle && <span style={{ display: 'block', color: '#78958e', fontSize: 8, letterSpacing: '.2px', marginTop: 5 }}>{node.subtitle}</span>}
+    {active && <Html portal={portal as React.ComponentProps<typeof Html>['portal']} center position={[0, -node.size - (primary ? .28 : .22), 0]} distanceFactor={15} style={{ pointerEvents: 'none' }}>
+      <button type="button" tabIndex={-1} data-graph-node-id={node.id} data-node-id={node.id} aria-label={`${node.title} 상세 보기`} aria-hidden={!labelVisible} title={node.subtitle ? `${node.title} · ${node.subtitle}` : node.title} onClick={() => onSelect(node.id)} style={{ visibility: labelVisible ? 'visible' : 'hidden', pointerEvents: labelVisible ? 'auto' : 'none', color: primary ? '#deeee9' : color, background: hover ? 'rgba(12,33,31,.97)' : 'rgba(8,20,22,.88)', border: 'none', padding: primary ? '5px 8px' : '4px 7px', borderRadius: 3, cursor: 'pointer', whiteSpace: 'nowrap', fontFamily: 'inherit', fontSize: primary || hover ? 11 : 9, letterSpacing: '.15px', fontWeight: primary ? 600 : 400, textAlign: 'center', opacity: primary || hover ? 1 : .9 }}>
+        {displayTitle}
       </button>
     </Html>}
   </group>;
@@ -106,7 +108,7 @@ function Scene({ graph, filter, search, onSelect, onSelectRelation, portal }: Om
   return <>
     <FitCamera bounds={bounds}/>
     {graph.relations.map(relation => { const from = nodesById.get(relation.from), to = nodesById.get(relation.to); return from && to ? <GraphLink key={relation.id} relation={relation} from={from} to={to} active={activeIds.has(from.id) && activeIds.has(to.id)} onSelectRelation={onSelectRelation} portal={portal}/> : null; })}
-    {graph.nodes.map(node => <Node key={node.id} node={node} active={activeIds.has(node.id)} onSelect={onSelect} portal={portal}/>)}
+    {graph.nodes.map(node => <Node key={node.id} node={node} active={activeIds.has(node.id)} onSelect={onSelect} portal={portal} showMinorLabels={activeIds.size <= 10}/>)}
     <OrbitControls makeDefault target={bounds.center} enablePan enableZoom minDistance={Math.max(3, radius * .5)} maxDistance={Math.max(100, radius * 10)} maxPolarAngle={Math.PI * .8} minPolarAngle={Math.PI * .2} enableDamping={false}/>
   </>;
 }

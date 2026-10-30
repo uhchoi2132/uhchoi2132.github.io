@@ -17,6 +17,6 @@ export default function ActionPlan() {
       <div className="action-meta"><span>{item.id} · {item.priority}</span><span className={String(item.status) === 'completed' ? 'action-done' : 'action-pending'}>{String(item.status) === 'completed' ? <CheckCircle2 size={14}/> : <Circle size={14}/>} {String(item.status) === 'completed' ? '완료' : item.status === 'in_progress' ? '진행 중' : '후속 계획'}</span></div>
       <h3>{item.title}</h3><ul>{item.acceptance.map(criterion => <li key={criterion}>{criterion}</li>)}</ul><p className="action-dependencies">선행 작업: {item.dependencies.join(', ') || '없음'}</p>
     </article>)}</div>
-    <section className="panel improvement-intro"><div><h2>검증 기록</h2><p>배포 전 데이터·시간·관계·브리핑 테스트와 데스크톱·모바일 브라우저 검증을 실행합니다. 서버 공동 검토, 자동 수집과 AI 모델은 후속 계획 항목입니다.</p><a href="https://github.com/uhchoi2132/uhchoi2132.github.io/actions/workflows/rx-universe.yml" target="_blank" rel="noreferrer">공개 빌드·브라우저 검증 이력 ↗</a></div></section>
+    <section className="panel improvement-intro"><div><h2>검증 기록</h2><p>단위 테스트 {plan.validation.unit_tests_passed}개 · 브라우저 시나리오 {plan.validation.browser_scenarios_passed}개 통과. <a href={plan.validation.run_url} target="_blank" rel="noreferrer">기능 인수 검증 결과 ↗</a></p><p>배포 전 데이터·시간·관계·브리핑 테스트와 데스크톱·모바일 브라우저 검증을 실행합니다. 서버 공동 검토, 자동 수집과 AI 모델은 후속 계획 항목입니다.</p><a href="https://github.com/uhchoi2132/uhchoi2132.github.io/actions/workflows/rx-universe.yml" target="_blank" rel="noreferrer">공개 빌드·브라우저 검증 이력 ↗</a></div></section>
   </div>;
 }

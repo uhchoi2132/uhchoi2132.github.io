@@ -57,7 +57,7 @@ async function noHorizontalOverflow(page, title) {
   assert.ok(sizes.page <= sizes.viewport + 1 && sizes.body <= sizes.viewport + 1, `${title}: horizontal overflow ${JSON.stringify(sizes)}`);
 }
 async function screenshot(page, filename, fullPage = true) {
-  await page.screenshot({ path: path.join(output, filename), fullPage, animations: 'disabled' });
+  await page.screenshot({ path: path.join(output, filename), fullPage, animations: 'disabled', style: '.toast { visibility: hidden !important; }' });
   report.screenshots.push(filename);
 }
 async function exportSnapshot(page, label, date) {
@@ -386,6 +386,7 @@ try {
     await expect(card).toContainText(item.title);
     for (const criterion of item.acceptance) await expect(card).toContainText(criterion);
   }
+  await screenshot(page, 'desktop-action-items.png', false);
   const pendingActions = page.waitForEvent('download');
   await page.getByRole('button', { name: '실행 항목 JSON', exact: true }).click();
   const actionDownload = await pendingActions;
