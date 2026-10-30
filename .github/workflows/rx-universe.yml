@@ -4,15 +4,14 @@ on:
     branches: [main]
     paths: ['apps/rx-universe/**', '.github/workflows/rx-universe.yml', 'index.html']
   workflow_dispatch:
-permissions:
-  contents: read
-  pages: write
-  id-token: write
+permissions: {}
 concurrency:
   group: github-pages
   cancel-in-progress: false
 jobs:
   build:
+    permissions:
+      contents: read
     runs-on: ubuntu-latest
     timeout-minutes: 15
     defaults:
@@ -20,11 +19,20 @@ jobs:
         working-directory: apps/rx-universe
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
+      - name: Generate initial lockfile for review
+        run: npm install --package-lock-only --ignore-scripts --no-audit --no-fund
+      - name: Store initial lockfile
+        uses: actions/upload-artifact@v4
+        with:
+          name: rx-dependency-lock
+          path: apps/rx-universe/package-lock.json
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
       - name: Verify temporal model, source provenance and SQLite integrity
         run: npm test
       - name: Typecheck and production build
@@ -56,6 +64,10 @@ jobs:
         with:
           path: _site
   deploy:
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     needs: build
     runs-on: ubuntu-latest
     environment:
@@ -63,6 +75,8 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}rx-universe/
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: Deploy public website
         id: deployment
         uses: actions/deploy-pages@v4
