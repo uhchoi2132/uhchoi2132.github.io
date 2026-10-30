@@ -497,6 +497,23 @@ try {
 
   await navigate(page, 'Action Items');
   const actionPlan = JSON.parse(await readFile(new URL('../docs/action-items.json', import.meta.url), 'utf8'));
+  const reviewLedger = JSON.parse(await readFile(new URL('../docs/review-response.json', import.meta.url), 'utf8'));
+  assert.equal(reviewLedger.items.length, 15, 'The response ledger must preserve all 15 reviewed issues');
+  await expect(page.locator('[data-review-id]')).toHaveCount(reviewLedger.items.length);
+  for (const item of reviewLedger.items) {
+    const entry = page.locator(`[data-review-id="${item.id}"]`);
+    await expect(entry.locator('summary')).toContainText(`${item.id} · ${item.severity}`);
+    await expect(entry.locator('summary b')).toHaveText(item.title);
+    await expect(entry.locator('p')).toHaveText(item.response);
+    const status = item.status === 'mitigated_pending_archives' ? '등급 조정 · 보관본 미확보' : item.status === 'clarified' ? '전제 정정' : '반영';
+    await expect(entry.locator('summary em')).toHaveText(status);
+  }
+  const pendingArchiveReview = reviewLedger.items.find(item => item.status === 'mitigated_pending_archives');
+  assert.ok(pendingArchiveReview, 'Unresolved original archives must remain visible in the review ledger');
+  const pendingArchiveEntry = page.locator(`[data-review-id="${pendingArchiveReview.id}"]`);
+  await pendingArchiveEntry.locator('summary').click();
+  await expect(pendingArchiveEntry.locator('p')).toBeVisible();
+  await pendingArchiveEntry.locator('summary').click();
   await expect(page.locator('[data-action-id]')).toHaveCount(actionPlan.items.length);
   for (const item of actionPlan.items) {
     const card = page.locator(`[data-action-id="${item.id}"]`);
@@ -510,7 +527,7 @@ try {
   const actionPath = path.join(output, actionDownload.suggestedFilename());
   await actionDownload.saveAs(actionPath);
   assert.deepEqual(JSON.parse(await readFile(actionPath, 'utf8')), actionPlan);
-  report.checks.push('Action Items displays the reviewable tasks, acceptance criteria and matching JSON artifact');
+  report.checks.push('Action Items preserves all 15 review responses and their unresolved archive status, task acceptance criteria and matching JSON artifact');
 
   const fallbackContext = await browser.newContext({ viewport: { width: 1280, height: 900 }, reducedMotion: 'reduce' });
   await fallbackContext.addInitScript(() => {

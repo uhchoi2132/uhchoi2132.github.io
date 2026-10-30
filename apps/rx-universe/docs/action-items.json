@@ -241,6 +241,20 @@
         "AI-013",
         "AI-014"
       ]
+    },
+    {
+      "id": "AI-016",
+      "priority": "P1",
+      "title": "GitHub Pages의 중복 게시 경로 정리",
+      "status": "planned",
+      "acceptance": [
+        "저장소 Settings → Pages → Build and deployment → Source를 GitHub Actions로 설정한다.",
+        "브랜치 기반 pages build and deployment와 커스텀 배포가 경쟁하지 않도록 한다.",
+        "검증 실패 시 마지막 성공 산출물이 유지되는지 확인한다."
+      ],
+      "dependencies": [
+        "AI-013"
+      ]
     }
   ],
   "validation": {

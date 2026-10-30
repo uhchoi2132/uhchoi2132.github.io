@@ -1,6 +1,6 @@
 # SAMSUNG RX Intelligence Universe
 
-설계서 v2.2를 바탕으로 개선한 **v2.4 공개 리서치 웹서비스**입니다. 공개 주소는 [https://uhchoi2132.github.io/rx-universe/](https://uhchoi2132.github.io/rx-universe/)입니다. GitHub Actions는 테스트·빌드·브라우저 검증을 통과한 산출물을 게시하고 비인증 접근 및 공개 데이터 일치를 확인합니다. 코드의 현재 변경과 실제 배포 완료 여부는 해당 워크플로 실행 결과로 구분합니다.
+설계서 v2.2를 바탕으로 개선한 **v2.4 공개 리서치 웹서비스**입니다. 공개 주소는 [https://uhchoi2132.github.io/rx-universe/](https://uhchoi2132.github.io/rx-universe/)입니다. 커스텀 GitHub Actions 워크플로는 테스트·빌드·브라우저 검증을 통과한 산출물을 게시하고 비인증 접근 및 공개 데이터 일치를 확인합니다. 코드의 현재 변경과 실제 배포 완료 여부는 해당 워크플로 실행 결과로 구분합니다.
 
 ## 화면과 기능
 
@@ -64,6 +64,8 @@ War Room의 검토 사유와 판정 변경은 **현재 브라우저의 localStor
 ## CI 권한과 재현성
 
 168개 패키지의 정확한 버전·무결성을 `package-lock.json`에 저장하고 `npm ci`로 설치합니다. workflow 기본 권한은 비어 있고, build에는 `contents: read`만 부여합니다. `pages: write`, `id-token: write`는 deploy 작업에만 있습니다. checkout은 자격 증명을 저장하지 않습니다. 공개 `release.json`의 커밋 ID, JSON, SQLite를 해당 배포 커밋과 비교합니다.
+
+별도의 브랜치 기반 `pages build and deployment` 실행도 관측되어 커스텀 게시와 경쟁할 수 있습니다. 저장소의 Settings → Pages → Source를 **GitHub Actions**로 전환해야 배포 경로가 하나가 됩니다. 현재 연결 도구에는 Pages 관리 설정 변경 기능이 없고, 공식 설정 변경 API는 Administration 쓰기 권한도 요구하므로 CI 토큰의 권한을 확대하지 않았습니다. AI-016으로 남겨두었으며 각 배포에서는 커스텀 작업의 마지막 완료와 공개 산출물 커밋 일치를 확인합니다.
 
 ## 개발 및 검증
 
