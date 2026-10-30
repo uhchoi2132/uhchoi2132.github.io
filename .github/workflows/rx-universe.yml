@@ -1,0 +1,72 @@
+name: Build, verify and publish RX Universe
+on:
+  push:
+    branches: [main]
+    paths: ['apps/rx-universe/**', '.github/workflows/rx-universe.yml', 'index.html']
+  workflow_dispatch:
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: apps/rx-universe
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+      - name: Verify temporal model
+        run: npm test
+      - name: Typecheck and production build
+        run: npm run build
+      - name: Install Chromium
+        run: npx playwright install --with-deps chromium
+      - name: Verify desktop, mobile and temporal behavior
+        run: npm run test:browser
+      - name: Preserve existing homepage and prepare RX path
+        run: |
+          mkdir -p ../../_site/rx-universe
+          cp ../../index.html ../../_site/index.html
+          cp -R dist/. ../../_site/rx-universe/
+          touch ../../_site/.nojekyll
+      - name: Store browser verification evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rx-browser-evidence
+          path: apps/rx-universe/test-results
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}rx-universe/
+    steps:
+      - name: Deploy public website
+        id: deployment
+        uses: actions/deploy-pages@v4
+      - name: Verify anonymous public access
+        env:
+          SITE_URL: ${{ steps.deployment.outputs.page_url }}rx-universe/
+        run: |
+          for attempt in 1 2 3 4 5 6; do
+            if curl --fail --location --max-time 20 "$SITE_URL" -o /tmp/rx-page.html && grep -q 'SAMSUNG RX' /tmp/rx-page.html; then
+              echo "Public website verified: $SITE_URL"
+              exit 0
+            fi
+            sleep 10
+          done
+          exit 1
