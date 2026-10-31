@@ -94,9 +94,11 @@ test('shortest connection path is deterministic and does not reinterpret edge di
 });
 
 test('missing paths and incompatible constraints fail closed; a zero-length path creates no edge', () => {
-  for (const options of [{ pathFrom: 'z', pathTo: 'a' }, { pathFrom: 'a' }, { pathFrom: 'a', pathTo: 'absent' }, { pathFrom: 'a', pathTo: 'd', layer: 'entities' as const }]) {
+  for (const options of [{ pathFrom: 'z', pathTo: 'a' }, { pathFrom: 'a', pathTo: 'absent' }, { pathFrom: 'a', pathTo: 'd', layer: 'entities' as const }]) {
     assert.deepEqual(graphView(fixture, 'all', '', options), { nodes: [], relations: [] });
   }
+  assert.deepEqual(graphView(fixture, 'all', '', { pathFrom: 'a' }), fixture, 'a pending starting endpoint keeps potential destinations visible');
+  assert.deepEqual(graphView(fixture, 'all', '', { pathTo: 'a' }), fixture, 'a pending destination keeps potential starting points visible');
   assert.deepEqual(graphPath(fixture, 'b', 'b'), { nodeIds: ['b'], relationIds: [] });
   assert.deepEqual(edgeIds(graphView(fixture, 'all', '', { pathFrom: 'b', pathTo: 'b' })), []);
   assert.deepEqual(ids(graphView(fixture, 'all', 'Synthetic e description', { pathFrom: 'd', pathTo: 'a' })), []);

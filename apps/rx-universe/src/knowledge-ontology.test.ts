@@ -177,3 +177,25 @@ test('every static entity description is identity-only and dated facts stay on e
   assert.doesNotMatch(ontologyDefinitions.find(item => item.id === 'walden')!.description, /투자/);
   assert.doesNotMatch(ontologyDefinitions.find(item => item.id === 'kai')!.description, /KF-21|납품|계약의 상대방/);
 });
+
+test('one KUKA installation concept receives business and text links; robot family and named model remain distinct', () => {
+  const graph = graphAt(RESEARCH_MAX_DATE);
+  const installations = graph.nodes.filter(node => node.ontology_type === 'Project' && /KUKA/.test(node.title));
+  assert.deepEqual(installations.map(node => node.id), ['kuka-showroom-installation']);
+  const installation = installations[0];
+  assert.ok(installation.aliases.includes('KUKA 쇼룸'));
+  assert.ok(installation.aliases.includes('KUKA 아우크스부르크'));
+  for (const type of ['exhibited_in', 'mentions', 'about']) {
+    assert.ok(graph.relations.some(edge => edge.to === installation.id && edge.type === type), type);
+  }
+  assert.ok(!graph.nodes.some(node => node.id === 'kuka-showroom'));
+  assert.ok(!graph.relations.some(edge => edge.to === 'kuka-showroom' || edge.from === 'kuka-showroom'));
+  const family = graph.nodes.find(node => node.id === 'rby')!;
+  const model = graph.nodes.find(node => node.id === 'rb-y1')!;
+  assert.equal(family.title, 'RBY 제품군');
+  assert.deepEqual(family.aliases, ['RBY']);
+  assert.deepEqual(model.aliases, ['RB-Y1']);
+  assert.ok(family.source_ids.includes('tech-012') && family.source_ids.includes('se-020'));
+  assert.deepEqual(model.source_ids, ['se-011']);
+  assert.ok(!graph.relations.some(edge => [family.id, model.id].includes(edge.from) && [family.id, model.id].includes(edge.to)), 'do not invent a series-membership predicate from product names');
+});

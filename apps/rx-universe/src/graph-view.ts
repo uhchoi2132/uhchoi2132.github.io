@@ -119,7 +119,7 @@ export function graphView(graph: KnowledgeGraph, filter = 'all', search = '', op
     } else intersect(matchIds);
   }
   if (options.focusNodeId) intersect(graphNeighborhood(eligible, options.focusNodeId, options.hops ?? 1).nodeIds);
-  if (options.pathFrom || options.pathTo) {
+  if (options.pathFrom && options.pathTo) {
     const path = graphPath(eligible, options.pathFrom ?? '', options.pathTo ?? '');
     intersect(path.nodeIds);
     const pathRelations = new Set(path.relationIds);

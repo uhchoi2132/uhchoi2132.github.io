@@ -33,6 +33,7 @@ const shortTitle = (node: KnowledgeNode) => primaryNode(node) ? node.subtitle?.s
 const trimTitle = (title: string, limit = 30) => title.length > limit ? `${title.slice(0, limit - 1)}…` : title;
 const relationStatus = (relation: KnowledgeRelation) => relation.inferred ? '분석 연결 · 검토 필요' : '출처 귀속 관계';
 const relationColor = (relation: KnowledgeRelation) => relation.type === 'contradicts' ? '#ce8b83' : relation.inferred ? '#a38dcd' : ['documented_by', 'sourced_from', 'has_source'].includes(relation.type) ? '#aa9365' : '#568f9b';
+const documentaryRelation = (relation: KnowledgeRelation) => ['mentions', 'about', 'documented_by'].includes(relation.type);
 const relationName = (relation: KnowledgeRelation, from: KnowledgeNode, to: KnowledgeNode) => `${from.title} → ${to.title} · ${relation.label} · ${relationStatus(relation)} · 연결 근거 보기`;
 interface Boundaries { center: Position; span: Position }
 function graphBounds(nodes: KnowledgeNode[]): Boundaries {
@@ -127,7 +128,8 @@ function GraphEdges({ graph, highlighted, onSelectRelation, portal }: { graph: K
       const direction = end.clone().sub(start).normalize();
       start.addScaledVector(direction, Math.max(.05, from.size)); end.addScaledVector(direction, -Math.max(.08, to.size * 1.35));
       const focus = !highlighted || edge.from === highlighted || edge.to === highlighted;
-      const color = new Color(relationColor(edge)).multiplyScalar(focus ? (highlighted ? 1.5 : 1) : .19);
+      const documentaryDim = documentaryRelation(edge) && (!highlighted || !focus) ? .48 : 1;
+      const color = new Color(relationColor(edge)).multiplyScalar((focus ? (highlighted ? 1.5 : 1) : .19) * documentaryDim);
       points.push(...start.toArray(), ...end.toArray()); colors.push(color.r, color.g, color.b, color.r, color.g, color.b);
       distances.push(0, start.distanceTo(end));
       const side = direction.clone().cross(new Vector3(0, 0, 1)).normalize();
@@ -183,11 +185,22 @@ function Scene({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, highl
 function FlatGraph({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, highlighted, emphasized, onHover, action }: GraphRendererProps) {
   const markerId = useId().replace(/:/g, ''), svgRef = useRef<SVGSVGElement>(null);
   const [viewport, setViewport] = useState({ zoom: 1, x: 0, y: 0 });
+  const [clientSize, setClientSize] = useState({ width: 800, height: 500 });
   const drag = useRef<{ x: number; y: number; panX: number; panY: number } | null>(null);
   const position = (node: KnowledgeNode): [number, number] => [node.position[0] * 50, -node.position[1] * 50];
   const bounds = graphBounds(graph.nodes), width = Math.max(660, bounds.span[0] * 50 + 150), height = Math.max(370, bounds.span[1] * 50 + 110);
   const cx = bounds.center[0] * 50, cy = -bounds.center[1] * 50;
+  // SVG preserveAspectRatio="xMidYMid meet" scales by the limiting dimension.
+  // Convert screen pixels back to viewBox units so labels remain readable at fit and after zoom.
+  const labelScale = Math.max(width / Math.max(1, clientSize.width), height / Math.max(1, clientSize.height)) / viewport.zoom;
   const zoom = useCallback((factor: number) => setViewport(value => ({ ...value, zoom: Math.max(.45, Math.min(6, value.zoom * factor)) })), []);
+  useEffect(() => {
+    const svg = svgRef.current; if (!svg) return;
+    const measure = () => { const rect = svg.getBoundingClientRect(); if (rect.width && rect.height) setClientSize({ width: rect.width, height: rect.height }); };
+    measure();
+    const observer = new ResizeObserver(measure); observer.observe(svg);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => setViewport({ zoom: 1, x: 0, y: 0 }), [cx, cy, width, height]);
   useEffect(() => { if (!action.nonce) return; if (action.type === 'in') zoom(1.25); else if (action.type === 'out') zoom(.8); else setViewport({ zoom: 1, x: 0, y: 0 }); }, [action, zoom]);
   useEffect(() => {
@@ -214,7 +227,7 @@ function FlatGraph({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, h
         <title>{relationName(relation, from, to)}{`\n${relation.rationale}`}</title>
         <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="transparent" strokeWidth="10"/>
         <line x1={x1} y1={y1} x2={x2} y2={y2} className="rx-link-line" stroke={color} strokeDasharray={relation.inferred ? '3 5' : undefined} strokeWidth={active && highlighted ? 1.35 : .8} markerEnd={`url(#${markerId}-${Math.max(0, marker)})`} pointerEvents="none"/>
-        <text className="rx-link-caption" x={(x1+x2)/2} y={(y1+y2)/2-7} textAnchor="middle" pointerEvents="none">{relation.label}</text>
+        <text className="rx-link-caption" x={(x1+x2)/2} y={(y1+y2)/2-7*labelScale} style={{ fontSize: 10 * labelScale, strokeWidth: 3 * labelScale }} textAnchor="middle" pointerEvents="none">{relation.label}</text>
       </g>;
     })}
     {graph.nodes.map(node => { const [x, y] = position(node), primary = primaryNode(node), active = !highlighted || emphasized.has(node.id), selected = node.id === highlighted;
@@ -224,7 +237,7 @@ function FlatGraph({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, h
         <title>{node.title} — 상세 보기{onFocusNode ? ' · 더블클릭: 주변 집중' : ''}</title>
         {(primary || selected) && <><circle cx={x} cy={y} r={node.size * 80} fill={nodeColor(node)} opacity=".06"/><circle cx={x} cy={y} r={node.size * 55} fill="none" stroke={nodeColor(node)} strokeWidth=".6" opacity=".5"/></>}
         {node.kind === 'claim' ? <path d={`M ${x} ${y-3.5} l 3.5 3.5 l -3.5 3.5 l -3.5 -3.5 Z`} fill={nodeColor(node)}/> : <circle cx={x} cy={y} r={Math.max(2.3, node.size * 35)} fill={nodeColor(node)}/>}
-        <text className="rx-node-label" x={x} y={y + Math.max(5, node.size * 45) + 12} fill={nodeColor(node)} textAnchor="middle" fontSize={primary ? 11 : 9}>{trimTitle(shortTitle(node), 28)}</text>
+        <text className="rx-node-label" x={x} y={y + Math.max(5, node.size * 45) + 12 * labelScale} fill={nodeColor(node)} textAnchor="middle" fontSize={(primary ? 11 : 9.5) * labelScale} style={{ strokeWidth: 3 * labelScale }}>{trimTitle(shortTitle(node), 28)}</text>
       </g>;
     })}
   </svg>;

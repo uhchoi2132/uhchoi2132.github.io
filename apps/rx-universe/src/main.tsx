@@ -140,7 +140,7 @@ function App() {
   }
   const graph = <div className="graph-stage" data-graph-node-count={visibleGraph.nodes.length} data-graph-relation-count={visibleGraph.relations.length}>
     <div className="graph-topline"><span className="micro">RX KNOWLEDGE GRAPH · EVIDENCE-LINKED</span></div>
-    <Suspense fallback={<div className="empty">Universe 불러오는 중…</div>}><Universe graph={visibleGraph} mode={mode} filter="all" search="" selectedNodeId={selectedNode?.id || exploration.focusNodeId} onFocusNode={focusGraph} onSelect={id => setSelected({ kind: 'entity', id })} onSelectRelation={id => setSelected({ kind: 'relation', id })}/></Suspense>
+    <Suspense fallback={<div className="empty">Universe 불러오는 중…</div>}><Universe graph={visibleGraph} mode={mode} filter="all" search="" selectedNodeId={selectedNode?.id || (exploration.hops === 1 ? exploration.focusNodeId : undefined)} onFocusNode={focusGraph} onSelect={id => setSelected({ kind: 'entity', id })} onSelectRelation={id => setSelected({ kind: 'relation', id })}/></Suspense>
   </div>;
   const modeControls = <div className="segmented"><button className={mode === '3d' ? 'selected' : ''} onClick={() => setMode('3d')}>3D</button><button className={mode === '2d' ? 'selected' : ''} onClick={() => setMode('2d')}>2D</button></div>;
   return <div className="app">
