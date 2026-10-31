@@ -13,9 +13,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+      - name: Check bounded parsing and collection traversal
+        working-directory: apps/rx-universe
+        run: python3 -m unittest discover -s scripts -p test_collect_official_inventory.py
       - name: Enumerate public official collections and record access gaps
         working-directory: apps/rx-universe
-        run: python3 scripts/collect-official-inventory.py
+        run: python3 scripts/collect-official-inventory.py --output research/survey/crawl-20261031-expanded.json
       - name: Preserve inventory for relevance and evidence review
         if: always()
         uses: actions/upload-artifact@v4

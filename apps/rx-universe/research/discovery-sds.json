@@ -39,6 +39,11 @@
       "url": "https://www.samsungsds.com/kr/notice/notice_list.html",
       "publisher": "Samsung SDS",
       "label": "공식 공지사항 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/en/news/state.html",
+      "publisher": "Samsung SDS",
+      "label": "영문 공식 뉴스 전체 현황판(기간 내44개 제목·날짜)"
     }
   ],
   "urls": [
@@ -86,6 +91,8 @@
     "https://www.samsungsds.com/kr/news/openai-251223.html",
     "https://www.samsungsds.com/kr/news/c-251125.html",
     "https://www.samsungsds.com/kr/news/s-oil-251117.html",
-    "https://www.samsungsds.com/kr/news/251030-3q.html"
+    "https://www.samsungsds.com/kr/news/251030-3q.html",
+    "https://www.samsungsds.com/en/news/fr-261030.html",
+    "https://www.samsungsds.com/us/news/1295356_5933.html"
   ]
 }
