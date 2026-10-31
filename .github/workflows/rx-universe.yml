@@ -1,12 +1,12 @@
 name: Build, verify and publish RX Universe
 on:
   push:
-    branches: [main]
+    branches: [main, 'codex/rx-universe-*']
     paths: ['apps/rx-universe/**', '.github/workflows/rx-universe.yml', 'index.html']
   workflow_dispatch:
 permissions: {}
 concurrency:
-  group: github-pages
+  group: ${{ github.ref == 'refs/heads/main' && 'github-pages' || github.ref }}
   cancel-in-progress: false
 jobs:
   build:
@@ -57,6 +57,7 @@ jobs:
         with:
           path: _site
   deploy:
+    if: github.ref == 'refs/heads/main'
     permissions:
       contents: read
       pages: write

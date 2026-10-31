@@ -52,17 +52,17 @@ test('manual reading reports preserve attribution while blocked sources and unre
   }
 });
 
-test('renderer and export projection shares description search and removes edges to filtered nodes', () => {
+test('renderer and export projection shares alias search and removes edges to filtered nodes', () => {
   for (const date of ['2026-09-01', RESEARCH_MAX_DATE]) {
     const graph = graphAt(date);
     assert.deepEqual(graphView(graph), graph);
     const companies = graphView(graph, 'company');
     assert.ok(companies.nodes.length > 0);
-    assert.ok(companies.nodes.every(node => node.kind === 'organization'));
+    assert.ok(companies.nodes.every(node => node.kind === 'company' || node.kind === 'organization'));
     const ids = new Set(companies.nodes.map(node => node.id));
     assert.ok(companies.relations.length > 0);
     assert.ok(companies.relations.every(relation => ids.has(relation.from) && ids.has(relation.to)));
-    const descriptionMatch = graphView(graph, 'all', 'KF-21 공정 자동화');
+    const descriptionMatch = graphView(graph, 'all', '한국항공우주산업');
     assert.deepEqual(descriptionMatch.nodes.map(node => node.id), ['kai']);
     assert.deepEqual(descriptionMatch.relations, []);
     assert.deepEqual(graphView(graph, 'all', 'no-such-rx-entity'), { nodes: [], relations: [] });
@@ -132,12 +132,15 @@ test('retrospective ownership uses the disclosed June status but unknown KAI del
   assert.match(edge.rationale, /잔금/);
 });
 
-test('undated official product documents enter only at the current observation date', () => {
+test('all undated reading reports enter only at the current observation date', () => {
   for (const mode of ['known', 'retro'] as const) {
     const old = graphAt('2026-10-29', mode);
     assert.ok(!old.relations.some(edge => edge.status === 'undated_current'));
     const current = graphAt(RESEARCH_MAX_DATE, mode).relations.filter(edge => edge.status === 'undated_current');
-    assert.equal(current.length, 3);
+    const expected = catalog.records.filter(record => record.scope === 'undated' && ['manual_report', 'primary_read'].includes(record.verification));
+    const represented = new Set(current.flatMap(edge => edge.source_ids));
+    assert.equal(expected.length, 14);
+    for (const record of expected) assert.ok(represented.has(record.id), record.id);
     for (const edge of current) {
       assert.equal(edge.published_at, null);
       assert.equal(edge.observed_at, '2026-10-30');

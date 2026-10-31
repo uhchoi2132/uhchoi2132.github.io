@@ -16,6 +16,41 @@ const researchAtDate = (date, mode = 'known') => researchCatalog.records.filter(
   && (mode === 'known' || (row.event_date ?? row.published_at) <= date));
 const claimRows = records => records.flatMap(record => record.claims?.length ? record.claims : [{ ...record.claim, id: `claim:${record.id}` }]);
 const sorted = ids => [...ids].sort();
+const isEvidenceNode = node => ['Claim', 'Source'].includes(node.ontology_type);
+const usableVerification = value => ['manual_report', 'primary_read'].includes(value);
+function graphInventory(records) {
+  const sources = records.filter(record => record.scope !== 'out_of_window' && usableVerification(record.verification));
+  const claims = sources.flatMap(record => claimRows([record]).filter(claim => usableVerification(claim.verification ?? record.verification)));
+  return { sources, claims };
+}
+function assertCompleteGraphInventory(snapshot, records) {
+  const expected = graphInventory(records);
+  assert.deepEqual(sorted(snapshot.graph.nodes.filter(node => node.ontology_type === 'Source').map(node => node.id)), sorted(expected.sources.map(source => `source:${source.id}`)), 'Every eligible source must have its own graph node; background and blocked sources must stay excluded');
+  assert.deepEqual(sorted(snapshot.graph.nodes.filter(node => node.ontology_type === 'Claim').map(node => node.id)), sorted(expected.claims.map(claim => claim.id)), 'All eligible merged claims must have distinct graph nodes');
+  for (const claim of expected.claims) {
+    const node = snapshot.graph.nodes.find(item => item.id === claim.id);
+    assert.ok(node.claim_ids.includes(claim.id), `${claim.id}: claim node must retain its exact provenance`);
+    assert.ok(snapshot.graph.relations.some(relation => relation.from === node.id && relation.type === 'documented_by' && relation.to.startsWith('source:')), `${claim.id}: claim must link to its source node`);
+  }
+}
+function graphDistances(graph, start) {
+  const distance = new Map([[start, 0]]);
+  const queue = [start];
+  for (let index = 0; index < queue.length; index++) {
+    const current = queue[index];
+    for (const relation of graph.relations) {
+      const neighbor = relation.from === current ? relation.to : relation.to === current ? relation.from : null;
+      if (neighbor !== null && !distance.has(neighbor)) { distance.set(neighbor, distance.get(current) + 1); queue.push(neighbor); }
+    }
+  }
+  return distance;
+}
+function assertNeighborhood(snapshot, fullGraph, focus, hops) {
+  const distances = graphDistances(fullGraph, focus);
+  const ids = new Set([...distances].filter(([, distance]) => distance <= hops).map(([id]) => id));
+  assert.deepEqual(sorted(snapshot.graph.nodes.map(node => node.id)), sorted(ids), `${hops}-hop neighborhood must include exactly the reachable nodes`);
+  assert.deepEqual(sorted(snapshot.graph.relations.map(relation => relation.id)), sorted(fullGraph.relations.filter(relation => ids.has(relation.from) && ids.has(relation.to)).map(relation => relation.id)), 'Neighborhood export must preserve actual edges and their direction');
+}
 const originKey = record => record.origin_key.trim() || record.url;
 function groupedSourceIds(records) {
   const groups = new Map();
@@ -104,12 +139,23 @@ function assertResearchSnapshot(snapshot, records, date, mode = 'known', eventAs
   assert.deepEqual(snapshot.entities, snapshot.graph.nodes);
   assert.deepEqual(snapshot.relations, snapshot.graph.relations);
   const nodeIds = new Set(snapshot.graph.nodes.map(node => node.id));
+  assert.equal(nodeIds.size, snapshot.graph.nodes.length, 'Graph node IDs must be unique');
+  assert.equal(new Set(snapshot.graph.relations.map(relation => relation.id)).size, snapshot.graph.relations.length, 'Graph relation IDs must be unique');
   const sourceIds = new Set(records.map(row => row.id));
   const claimIds = new Set(snapshot.research_claims.map(row => row.id));
+  const readable = graphInventory(records);
+  const readableSourceIds = new Set(readable.sources.map(source => source.id));
+  const readableClaimIds = new Set(readable.claims.map(claim => claim.id));
+  for (const node of snapshot.graph.nodes) {
+    for (const id of node.source_ids) assert.ok(readableSourceIds.has(id), `Node ${node.id} leaked excluded source ${id}`);
+    for (const id of node.claim_ids) assert.ok(readableClaimIds.has(id), `Node ${node.id} leaked excluded claim ${id}`);
+  }
   for (const relation of snapshot.graph.relations) {
     assert.ok(nodeIds.has(relation.from) && nodeIds.has(relation.to), `Dangling relation ${relation.id}`);
     for (const id of relation.source_ids) assert.ok(sourceIds.has(id), `Relation ${relation.id} leaked source ${id}`);
     for (const id of relation.claim_ids) assert.ok(claimIds.has(id), `Relation ${relation.id} leaked claim ${id}`);
+    for (const id of relation.source_ids) assert.ok(readableSourceIds.has(id), `Relation ${relation.id} used unread source ${id}`);
+    for (const id of relation.claim_ids) assert.ok(readableClaimIds.has(id), `Relation ${relation.id} used unread claim ${id}`);
   }
 }
 async function assertGraphParity(page, snapshot, { flat = false } = {}) {
@@ -168,6 +214,14 @@ try {
   assert.equal(researchCatalog.records.length, 81, 'Reviewed inventory must preserve all 81 sources');
   assert.equal(claimRows(researchCatalog.records).length, 84, 'Merged source inventory must retain all 84 claims');
   assertResearchSnapshot(currentSnapshot, researchCatalog.records, '2026-10-30');
+  assertCompleteGraphInventory(currentSnapshot, researchCatalog.records);
+  assert.ok(currentSnapshot.graph.nodes.length > 150, 'The expanded graph must expose source and claim nodes, not just a small curated overview');
+  report.graph_metrics = {
+    nodes: currentSnapshot.graph.nodes.length, relations: currentSnapshot.graph.relations.length,
+    sources: currentSnapshot.graph.nodes.filter(node => node.ontology_type === 'Source').length,
+    claims: currentSnapshot.graph.nodes.filter(node => node.ontology_type === 'Claim').length,
+    entities: currentSnapshot.graph.nodes.filter(node => !isEvidenceNode(node)).length,
+  };
   await assertGraphParity(page, currentSnapshot);
   await expect(page.locator('.profile, .top-avatar, .notification i')).toHaveCount(0);
   const radar = page.locator('.signal-panel .brief-candidates');
@@ -196,12 +250,15 @@ try {
   assertResearchSnapshot(companySnapshot, researchCatalog.records, '2026-10-30');
   assert.equal(companySnapshot.view.filter, 'company');
   assert.ok(companySnapshot.graph.nodes.length > 0 && companySnapshot.graph.nodes.length < currentSnapshot.graph.nodes.length);
-  assert.deepEqual(sorted(companySnapshot.graph.nodes.map(node => node.id)), sorted(currentSnapshot.graph.nodes.filter(node => node.kind === 'organization').map(node => node.id)));
+  assert.deepEqual(sorted(companySnapshot.graph.nodes.map(node => node.id)), sorted(currentSnapshot.graph.nodes.filter(node => ['organization', 'company'].includes(node.kind)).map(node => node.id)));
   await assertGraphParity(page, companySnapshot, { flat: true });
+  await page.getByLabel('검색 주변 연결 포함', { exact: true }).uncheck();
   await page.getByLabel('엔티티 검색', { exact: true }).fill('SAMSUNG');
   const searchedSnapshot = await exportSnapshot(page, 'filtered-search', '2026-10-30');
   assert.equal(searchedSnapshot.view.search, 'SAMSUNG');
-  assert.deepEqual(sorted(searchedSnapshot.graph.nodes.map(node => node.id)), ['sds', 'se']);
+  assert.equal(searchedSnapshot.view.exploration.searchContext, false);
+  assert.ok(['sds', 'se'].every(id => searchedSnapshot.graph.nodes.some(node => node.id === id)), 'Samsung Electronics and Samsung SDS remain separate searchable nodes');
+  assert.ok(searchedSnapshot.graph.nodes.every(node => [node.id, node.title, node.subtitle, node.description, ...(node.aliases ?? [])].join(' ').toLowerCase().includes('samsung')), 'Disabling search context must not leave unrelated neighbors');
   await assertGraphParity(page, searchedSnapshot, { flat: true });
   await page.getByRole('button', { name: '3D', exact: true }).click();
   await expect(page.locator('.universe-visual')).toHaveAttribute('data-renderer', '3d');
@@ -210,10 +267,133 @@ try {
   const searched3dSnapshot = await exportSnapshot(page, 'filtered-search-3d', '2026-10-30');
   assert.deepEqual(searched3dSnapshot.graph, searchedSnapshot.graph, 'Renderer selection must not change the searched graph');
   await page.getByRole('button', { name: '필터 초기화', exact: true }).click();
+  await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
   await page.getByRole('button', { name: '2D', exact: true }).click();
   await assertGraphParity(page, currentSnapshot, { flat: true });
+  await screenshot(page, 'desktop-expanded-universe-2d.png');
   report.checks.push('Organization filtering and entity search affect the actual 2D/3D graph and exported graph identically; reset restores every node and relation');
-  await page.locator('.graph-stage svg[role="group"] [data-node-id="sds"]').click();
+
+  const entityNodeIds = new Set(currentSnapshot.graph.nodes.filter(node => !isEvidenceNode(node)).map(node => node.id));
+  await expect(page.getByLabel('그래프 라벨 표시', { exact: true })).toHaveValue('smart');
+  const visibleEntityLabelIds = () => page.locator('.graph-stage svg[role="group"] .rx-node.label-visible').evaluateAll(elements => elements.map(element => element.getAttribute('data-node-id'))).then(ids => sorted(ids.filter(id => entityNodeIds.has(id))));
+  const smartLabels = await visibleEntityLabelIds();
+  assert.ok(smartLabels.length > 0 && smartLabels.length < entityNodeIds.size, 'Default label LOD should keep a dense graph readable without removing objects');
+  await page.getByLabel('그래프 라벨 표시', { exact: true }).selectOption('entities');
+  await expect.poll(visibleEntityLabelIds).toEqual(sorted(entityNodeIds));
+  const fullLabels = await exportSnapshot(page, 'all-entity-labels', '2026-10-30');
+  assert.deepEqual(fullLabels.graph, currentSnapshot.graph, 'Displaying all entity labels must not change the graph projection or exported provenance');
+  await assertGraphParity(page, fullLabels, { flat: true });
+  await page.getByLabel('그래프 라벨 표시', { exact: true }).selectOption('smart');
+  await expect.poll(visibleEntityLabelIds).toEqual(smartLabels);
+  report.checks.push('Smart/all-entity label modes change visible labels while preserving every graph node, relation and exported provenance');
+
+  for (const layer of ['entities', 'evidence']) {
+    await page.getByLabel('그래프 레이어', { exact: true }).selectOption(layer);
+    const layerSnapshot = await exportSnapshot(page, `layer-${layer}`, '2026-10-30');
+    assertResearchSnapshot(layerSnapshot, researchCatalog.records, '2026-10-30');
+    assert.equal(layerSnapshot.view.exploration.layer, layer);
+    const eligible = currentSnapshot.graph.nodes.filter(node => layer === 'evidence' ? isEvidenceNode(node) : !isEvidenceNode(node));
+    assert.ok(eligible.length > 0);
+    assert.deepEqual(sorted(layerSnapshot.graph.nodes.map(node => node.id)), sorted(eligible.map(node => node.id)), 'Layer selection must expose exactly the chosen object kinds');
+    const ids = new Set(eligible.map(node => node.id));
+    assert.deepEqual(sorted(layerSnapshot.graph.relations.map(relation => relation.id)), sorted(currentSnapshot.graph.relations.filter(relation => ids.has(relation.from) && ids.has(relation.to)).map(relation => relation.id)));
+    await assertGraphParity(page, layerSnapshot, { flat: true });
+  }
+  await page.getByLabel('그래프 레이어', { exact: true }).selectOption('all');
+  await page.getByLabel('관계 유형', { exact: true }).selectOption('documented_by');
+  const documented = await exportSnapshot(page, 'documented-by-only', '2026-10-30');
+  assertResearchSnapshot(documented, researchCatalog.records, '2026-10-30');
+  assert.ok(documented.graph.relations.length > 0);
+  assert.deepEqual(sorted(documented.graph.relations.map(relation => relation.id)), sorted(currentSnapshot.graph.relations.filter(relation => relation.type === 'documented_by').map(relation => relation.id)));
+  await assertGraphParity(page, documented, { flat: true });
+  await page.getByLabel('관계 유형', { exact: true }).selectOption('all');
+  await page.getByLabel('연결 분류', { exact: true }).selectOption('analyst_mapping');
+  const inferred = await exportSnapshot(page, 'analyst-connections-only', '2026-10-30');
+  assertResearchSnapshot(inferred, researchCatalog.records, '2026-10-30');
+  assert.ok(inferred.graph.relations.length > 0 && inferred.graph.relations.every(relation => relation.inferred));
+  assert.deepEqual(sorted(inferred.graph.relations.map(relation => relation.id)), sorted(currentSnapshot.graph.relations.filter(relation => relation.provenance === 'analyst_mapping').map(relation => relation.id)));
+  await assertGraphParity(page, inferred, { flat: true });
+  await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+  report.checks.push('Entity/evidence layers, documented-by relationships and analyst-only connections filter the canonical graph and exported provenance without creating dangling edges');
+
+  await page.getByLabel('검색 주변 연결 포함', { exact: true }).uncheck();
+  await page.getByLabel('엔티티 검색', { exact: true }).fill('source:sds-004');
+  const exactSourceSearch = await exportSnapshot(page, 'source-search-exact', '2026-10-30');
+  assert.deepEqual(exactSourceSearch.graph.nodes.map(node => node.id), ['source:sds-004']);
+  await assertGraphParity(page, exactSourceSearch, { flat: true });
+  await page.getByLabel('검색 주변 연결 포함', { exact: true }).check();
+  const contextSearch = await exportSnapshot(page, 'source-search-context', '2026-10-30');
+  assertResearchSnapshot(contextSearch, researchCatalog.records, '2026-10-30');
+  assertNeighborhood(contextSearch, currentSnapshot.graph, 'source:sds-004', 1);
+  assert.ok(contextSearch.graph.nodes.length > exactSourceSearch.graph.nodes.length, 'Search context must restore actual connected evidence around a precise source match');
+  await assertGraphParity(page, contextSearch, { flat: true });
+  await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+  await page.getByLabel('중심 노드', { exact: true }).selectOption('sds');
+  await page.getByLabel('탐색 깊이', { exact: true }).selectOption('1');
+  const firstHop = await exportSnapshot(page, 'sds-one-hop', '2026-10-30');
+  assertNeighborhood(firstHop, currentSnapshot.graph, 'sds', 1);
+  assert.equal(firstHop.view.exploration.focusNodeId, 'sds');
+  assert.equal(firstHop.view.exploration.hops, 1);
+  await assertGraphParity(page, firstHop, { flat: true });
+  await page.getByLabel('탐색 깊이', { exact: true }).selectOption('2');
+  const secondHop = await exportSnapshot(page, 'sds-two-hops', '2026-10-30');
+  assertNeighborhood(secondHop, currentSnapshot.graph, 'sds', 2);
+  assert.equal(secondHop.view.exploration.hops, 2);
+  assert.ok(secondHop.graph.nodes.length > firstHop.graph.nodes.length, 'Two-hop exploration must reveal additional linked objects, not merely relabel the same view');
+  await assertGraphParity(page, secondHop, { flat: true });
+  await screenshot(page, 'desktop-universe-two-hop.png');
+  await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+  report.checks.push('Exact source search restores only one-hop context when enabled; one/two-hop focus follows real adjacency and preserves the visible/exported graph');
+
+  const distances = graphDistances(currentSnapshot.graph, 'sds');
+  const destination = currentSnapshot.graph.nodes.find(node => node.id === 'se' && distances.get(node.id) >= 2)
+    ?? currentSnapshot.graph.nodes.find(node => !isEvidenceNode(node) && distances.get(node.id) >= 2);
+  assert.ok(destination, 'The expanded graph must offer a multi-step connected entity path');
+  await page.locator('.path-disclosure summary').click();
+  await page.getByLabel('경로 시작', { exact: true }).selectOption('sds');
+  await page.getByLabel('경로 도착', { exact: true }).selectOption(destination.id);
+  await page.getByRole('button', { name: '경로 찾기', exact: true }).click();
+  const pathSnapshot = await exportSnapshot(page, 'entity-shortest-path', '2026-10-30');
+  assertResearchSnapshot(pathSnapshot, researchCatalog.records, '2026-10-30');
+  assert.equal(pathSnapshot.view.exploration.pathFrom, 'sds');
+  assert.equal(pathSnapshot.view.exploration.pathTo, destination.id);
+  assert.equal(pathSnapshot.graph.nodes.length, distances.get(destination.id) + 1, 'Path view must contain a shortest connection, not the full graph');
+  assert.equal(graphDistances(pathSnapshot.graph, 'sds').get(destination.id), distances.get(destination.id), 'Visible path must remain connected using real relations');
+  await expect(page.locator('.path-controls')).toContainText('인과관계·실행 순서를 뜻하지 않습니다');
+  await assertGraphParity(page, pathSnapshot, { flat: true });
+  const pathSvg = page.locator('.graph-stage svg[role="group"]');
+  const originalViewBox = await pathSvg.getAttribute('viewBox');
+  await page.getByRole('button', { name: '그래프 확대', exact: true }).click();
+  await expect(pathSvg).not.toHaveAttribute('viewBox', originalViewBox);
+  await page.getByRole('button', { name: '그래프 축소', exact: true }).click();
+  await page.getByRole('button', { name: '그래프 화면 맞춤', exact: true }).click();
+  await expect(pathSvg).toHaveAttribute('viewBox', originalViewBox);
+  await pathSvg.focus();
+  await page.keyboard.press('ArrowRight');
+  await expect(pathSvg).not.toHaveAttribute('viewBox', originalViewBox);
+  await page.keyboard.press('0');
+  await expect(pathSvg).toHaveAttribute('viewBox', originalViewBox);
+  await assertGraphParity(page, pathSnapshot, { flat: true });
+  await screenshot(page, 'desktop-universe-path.png');
+  await page.locator(`.graph-stage svg[role="group"] [data-node-id="${destination.id}"]`).focus();
+  await page.keyboard.press('Enter');
+  await page.locator('.detail-drawer').getByRole('button', { name: '경로 시작으로 지정', exact: true }).click();
+  await expect(page.getByLabel('경로 시작', { exact: true })).toHaveValue(destination.id);
+  await expect(page.getByLabel('경로 도착', { exact: true })).toHaveValue(destination.id);
+  await page.getByRole('button', { name: '경로 찾기', exact: true }).click();
+  const synchronizedPath = await exportSnapshot(page, 'drawer-path-dropdown-sync', '2026-10-30');
+  assert.equal(synchronizedPath.view.exploration.pathFrom, destination.id, 'Find path must use the endpoint selected in the drawer, not an older dropdown draft');
+  assert.equal(synchronizedPath.view.exploration.pathTo, destination.id);
+  assert.deepEqual(synchronizedPath.graph.nodes.map(node => node.id), [destination.id]);
+  assert.deepEqual(synchronizedPath.graph.relations, []);
+  await assertGraphParity(page, synchronizedPath, { flat: true });
+  await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+  await assertGraphParity(page, currentSnapshot, { flat: true });
+  report.checks.push('Entity path search displays a shortest real connection with its causal-limit notice; zoom/fit change the camera without changing graph or export data');
+  report.checks.push('Changing a path endpoint in the node drawer synchronizes the dropdown draft and survives a subsequent Find path action');
+
+  await page.locator('.graph-stage svg[role="group"] [data-node-id="sds"]').focus();
+  await page.keyboard.press('Enter');
   const drawer = page.locator('.detail-drawer');
   await expect(drawer.getByRole('heading', { level: 2 })).toContainText(/삼성SDS|SAMSUNG SDS/);
   await expect(drawer.locator('.research-countline')).toBeVisible();
@@ -239,11 +419,71 @@ try {
   await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
   report.checks.push('2D graph matches 3D/export and keyboard relation selection shows exact source and claim provenance');
 
+  for (const nodeId of ['source:media-001', 'claim:sds-012']) {
+    const node = currentSnapshot.graph.nodes.find(item => item.id === nodeId);
+    assert.ok(node, `Merged source provenance needs the ${nodeId} graph node`);
+    await page.locator(`.graph-stage svg[role="group"] [data-node-id="${nodeId}"]`).focus();
+    await page.keyboard.press('Enter');
+    await expect(drawer).toBeVisible();
+    assert.deepEqual(sorted(await drawer.locator('.research-source-link[data-source-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-source-id')))), sorted(node.source_ids), `${nodeId}: drawer must identify the canonical source, including merged claim origins`);
+    assert.deepEqual(sorted(await drawer.locator('[data-claim-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-claim-id')))), sorted(node.claim_ids), `${nodeId}: drawer must expose exactly the selected source or claim's provenance`);
+    for (const sourceId of node.source_ids) {
+      await expect(drawer.locator(`.research-source-link[data-source-id="${sourceId}"]`)).toHaveAttribute('href', researchCatalog.records.find(record => record.id === sourceId).url);
+    }
+    if (nodeId.startsWith('claim:')) {
+      const claim = claimRows(researchCatalog.records).find(item => item.id === nodeId);
+      await expect(drawer.locator(`[data-claim-id="${nodeId}"]`)).toContainText(claim.text);
+      await drawer.getByRole('button', { name: '주변 1단계 탐색', exact: true }).click();
+      await expect(drawer).toHaveCount(0);
+      await expect(page.getByLabel('중심 노드', { exact: true })).toHaveValue(nodeId);
+      const claimNeighborhood = await exportSnapshot(page, 'claim-drawer-neighborhood', '2026-10-30');
+      assertNeighborhood(claimNeighborhood, currentSnapshot.graph, nodeId, 1);
+      await assertGraphParity(page, claimNeighborhood, { flat: true });
+      await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+    } else await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
+  }
+  await page.locator('.graph-stage svg[role="group"] [data-node-id="sds"]').focus();
+  await page.keyboard.press('Enter');
+  await drawer.getByRole('button', { name: '경로 시작으로 지정', exact: true }).click();
+  await expect(drawer).toHaveCount(0);
+  const pathStartOnly = await exportSnapshot(page, 'drawer-path-start-only', '2026-10-30');
+  assert.equal(pathStartOnly.view.exploration.pathFrom, 'sds');
+  assert.ok(!pathStartOnly.view.exploration.pathTo);
+  assert.deepEqual(pathStartOnly.graph, currentSnapshot.graph, 'Choosing only a path start must leave destination nodes available for selection');
+  await assertGraphParity(page, pathStartOnly, { flat: true });
+  await page.locator(`.graph-stage svg[role="group"] [data-node-id="${destination.id}"]`).focus();
+  await page.keyboard.press('Enter');
+  await drawer.getByRole('button', { name: '경로 도착으로 지정', exact: true }).click();
+  const drawerPath = await exportSnapshot(page, 'drawer-selected-path', '2026-10-30');
+  assert.equal(drawerPath.view.exploration.pathTo, destination.id);
+  assert.equal(drawerPath.graph.nodes.length, distances.get(destination.id) + 1);
+  assert.equal(graphDistances(drawerPath.graph, 'sds').get(destination.id), distances.get(destination.id));
+  await assertGraphParity(page, drawerPath, { flat: true });
+  await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+  report.checks.push('Drawer path actions keep the full graph available after the first endpoint, then show a connected shortest path after the destination is selected');
+  await page.getByRole('button', { name: '3D', exact: true }).click();
+  await expect(page.locator('.universe-visual')).toHaveAttribute('data-renderer', '3d');
+  await expect(page.locator('.graph-stage canvas')).toBeVisible();
+  await assertGraphParity(page, currentSnapshot);
+  await page.getByRole('button', { name: /노드 목록/ }).click();
+  const keyboardList = page.getByLabel('그래프 노드와 연결 목록', { exact: true });
+  await expect(keyboardList).toBeVisible();
+  await keyboardList.locator('[data-list-node-id="claim:sds-012"]').click();
+  await expect(drawer.locator('[data-claim-id="claim:sds-012"]')).toBeVisible();
+  await expect(drawer.locator('.research-source-link[data-source-id="media-001"]')).toBeVisible();
+  await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
+  await page.getByRole('button', { name: /노드 목록/ }).click();
+  await screenshot(page, 'desktop-expanded-universe-3d.png');
+  await page.getByRole('button', { name: '2D', exact: true }).click();
+  await assertGraphParity(page, currentSnapshot, { flat: true });
+  report.checks.push('Source and merged-claim graph nodes open exact claim text and canonical URLs; drawer neighborhood focus and the 3D keyboard list preserve the same evidence navigation');
+
   await navigate(page, 'Time Machine');
   await page.getByRole('button', { name: 'As-known-at', exact: true }).click();
   await page.getByLabel('정보 기준일', { exact: true }).fill('2026-09-01');
   const historical = await exportSnapshot(page, 'historical-known', '2026-09-01');
   assertResearchSnapshot(historical, researchAtDate('2026-09-01'), '2026-09-01');
+  assertCompleteGraphInventory(historical, researchAtDate('2026-09-01'));
   assert.ok(historical.graph.nodes.length > 0 && historical.graph.relations.length > 0, 'Earlier public evidence must produce an explorable graph');
   assert.ok(!historical.graph.relations.some(relation => ['sds-orchestrator', 'miracom-rcs'].includes(relation.id)), 'Later-published or undated relations must not leak into September replay');
   await assertGraphParity(page, historical, { flat: true });
@@ -548,8 +788,13 @@ try {
   await fallback.keyboard.press('Enter');
   await expect(fallback.locator('.detail-drawer')).toHaveAttribute('data-relation-id', relation.id);
   await expect(fallback.locator('.detail-drawer .research-source-link[data-source-id="sds-004"]')).toBeVisible();
+  await fallback.getByRole('button', { name: '상세 닫기', exact: true }).click();
+  await fallback.locator('.graph-stage svg[role="group"] [data-node-id="claim:sds-012"]').focus();
+  await fallback.keyboard.press('Enter');
+  await expect(fallback.locator('.detail-drawer [data-claim-id="claim:sds-012"]')).toBeVisible();
+  await expect(fallback.locator('.detail-drawer .research-source-link[data-source-id="media-001"]')).toBeVisible();
   await screenshot(fallback, 'desktop-webgl-unavailable-2d.png', false);
-  report.checks.push('Disabling all WebGL contexts on desktop automatically preserves the same 2D graph and relation evidence action');
+  report.checks.push('Disabling all WebGL contexts on desktop automatically preserves the expanded 2D graph, exact relation evidence and merged-claim source navigation');
 
   const mobileContext = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
   const mobile = currentPage = await mobileContext.newPage();
@@ -562,6 +807,30 @@ try {
     await navigate(mobile, title, true);
     await noHorizontalOverflow(mobile, `Mobile ${title}`);
   }
+  await navigate(mobile, '3D Universe', true);
+  await mobile.getByLabel('그래프 레이어', { exact: true }).selectOption('evidence');
+  const mobileEvidence = await exportSnapshot(mobile, 'mobile-evidence-layer', '2026-10-30');
+  assertResearchSnapshot(mobileEvidence, researchCatalog.records, '2026-10-30');
+  assert.deepEqual(sorted(mobileEvidence.graph.nodes.map(node => node.id)), sorted(currentSnapshot.graph.nodes.filter(isEvidenceNode).map(node => node.id)));
+  await assertGraphParity(mobile, mobileEvidence, { flat: true });
+  await noHorizontalOverflow(mobile, 'Mobile evidence-layer controls');
+  await screenshot(mobile, 'mobile-universe-evidence-layer.png');
+  await mobile.getByRole('button', { name: /노드 목록/ }).click();
+  await mobile.getByLabel('그래프 노드와 연결 목록', { exact: true }).locator('[data-list-node-id="source:media-001"]').click();
+  await expect(mobile.locator('.detail-drawer .research-source-link[data-source-id="media-001"]')).toBeVisible();
+  assert.deepEqual(sorted(await mobile.locator('.detail-drawer [data-claim-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-claim-id')))), sorted(claimRows([researchCatalog.records.find(record => record.id === 'media-001')]).map(claim => claim.id)));
+  await mobile.getByRole('button', { name: '상세 닫기', exact: true }).click();
+  await mobile.getByRole('button', { name: /노드 목록/ }).click();
+  await mobile.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+  await mobile.getByLabel('중심 노드', { exact: true }).selectOption('sds');
+  await mobile.getByLabel('탐색 깊이', { exact: true }).selectOption('2');
+  const mobileNeighbors = await exportSnapshot(mobile, 'mobile-sds-two-hops', '2026-10-30');
+  assertNeighborhood(mobileNeighbors, currentSnapshot.graph, 'sds', 2);
+  await assertGraphParity(mobile, mobileNeighbors, { flat: true });
+  await noHorizontalOverflow(mobile, 'Mobile two-hop exploration');
+  await screenshot(mobile, 'mobile-universe-two-hop.png');
+  await mobile.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+  report.checks.push('Mobile can switch evidence layers, open a merged source with both claims, and explore two-hop neighborhoods with the same exported graph and no overflow');
   await navigate(mobile, 'Evidence Vault', true);
   await screenshot(mobile, 'mobile-evidence-vault.png', false);
   await navigate(mobile, 'Command Center', true);
