@@ -1,0 +1,91 @@
+{
+  "collections": [
+    {
+      "url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 보도자료 전체 현황판 · 2025-10-30~2026-10-31 구간 45건, 링크 0~44"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/insights/state.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 인사이트 전체 현황판"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/investor/ir_events/earnings-release.html",
+      "publisher": "Samsung SDS",
+      "label": "국문 실적발표 PDF 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/manufacturing/manufacturing.html",
+      "publisher": "Samsung SDS",
+      "label": "팩토리 솔루션 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/event/index.html",
+      "publisher": "Samsung SDS",
+      "label": "이벤트 및 웨비나 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/vod/index.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 동영상 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/etc/license/index.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 라이선스 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/notice/notice_list.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 공지사항 목록"
+    }
+  ],
+  "urls": [
+    "https://www.samsungsds.com/kr/news/ss-261029.html",
+    "https://www.samsungsds.com/kr/news/sds20260930.html",
+    "https://www.samsungsds.com/kr/news/sds20260915.html",
+    "https://www.samsungsds.com/kr/news/sds20260908.html",
+    "https://www.samsungsds.com/kr/news/sds-260903.html",
+    "https://www.samsungsds.com/kr/news/sds-260901.html",
+    "https://www.samsungsds.com/kr/news/sds-260824.html",
+    "https://www.samsungsds.com/kr/news/sds-2608013.html",
+    "https://www.samsungsds.com/kr/news/sds-2608011.html",
+    "https://www.samsungsds.com/kr/news/sds-260803.html",
+    "https://www.samsungsds.com/kr/news/ss-260730.html",
+    "https://www.samsungsds.com/kr/news/anthropic-partnership-260724.html",
+    "https://www.samsungsds.com/kr/news/npu-260720.html",
+    "https://www.samsungsds.com/kr/news/aiex-260623.html",
+    "https://www.samsungsds.com/kr/news/xb-260610.html",
+    "https://www.samsungsds.com/kr/news/axs-260609.html",
+    "https://www.samsungsds.com/kr/news/id-260609.html",
+    "https://www.samsungsds.com/kr/news/dn-260609.html",
+    "https://www.samsungsds.com/kr/news/to-260609.html",
+    "https://www.samsungsds.com/kr/news/bw-260430.html",
+    "https://www.samsungsds.com/kr/news/cgpt-260427.html",
+    "https://www.samsungsds.com/kr/news/ss-260423.html",
+    "https://www.samsungsds.com/kr/news/gc-260423.html",
+    "https://www.samsungsds.com/kr/news/id-260422.html",
+    "https://www.samsungsds.com/kr/news/se-260420.html",
+    "https://www.samsungsds.com/kr/news/kkr-260415.html",
+    "https://www.samsungsds.com/kr/news/cai-260414.html",
+    "https://www.samsungsds.com/kr/news/wr-260407.html",
+    "https://www.samsungsds.com/kr/news/cs-260402.html",
+    "https://www.samsungsds.com/kr/news/gpu-260323.html",
+    "https://www.samsungsds.com/kr/news/id-260319.html",
+    "https://www.samsungsds.com/kr/news/sds-260318.html",
+    "https://www.samsungsds.com/kr/news/soil-260317.html",
+    "https://www.samsungsds.com/kr/news/ce-260305.html",
+    "https://www.samsungsds.com/kr/news/cs-260223.html",
+    "https://www.samsungsds.com/kr/news/manifest-260211.html",
+    "https://www.samsungsds.com/kr/news/enterpriseai-260128.html",
+    "https://www.samsungsds.com/kr/news/results-260122.html",
+    "https://www.samsungsds.com/kr/news/gumi-260108.html",
+    "https://www.samsungsds.com/kr/news/ces-260108.html",
+    "https://www.samsungsds.com/kr/news/aicom-260107.html",
+    "https://www.samsungsds.com/kr/news/openai-251223.html",
+    "https://www.samsungsds.com/kr/news/c-251125.html",
+    "https://www.samsungsds.com/kr/news/s-oil-251117.html",
+    "https://www.samsungsds.com/kr/news/251030-3q.html"
+  ]
+}

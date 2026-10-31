@@ -1,0 +1,24 @@
+name: Enumerate official RX source collections
+on:
+  push:
+    branches: ['codex/rx-source-survey-*']
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Enumerate public official collections and record access gaps
+        working-directory: apps/rx-universe
+        run: python3 scripts/collect-official-inventory.py
+      - name: Preserve inventory for relevance and evidence review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rx-official-source-survey
+          path: apps/rx-universe/research/survey/*.json
