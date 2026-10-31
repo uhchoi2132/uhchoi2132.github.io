@@ -7,7 +7,7 @@ import { graphNeighborhood, graphPath, graphView } from './graph-view';
 function node(id: string, kind: string, layer: 'entities' | 'claims' | 'sources' = 'entities', aliases: string[] = []): KnowledgeNode {
   return {
     id, title: `Fixture ${id}`, description: `Synthetic ${id} description`, kind: kind as KnowledgeNode['kind'],
-    layer, aliases, cluster: 'synthetic', position: [0, 0, 0], size: .1,
+    layer, aliases, cluster: 'research', position: [0, 0, 0], size: .1,
     ontology_type: 'Technology', source_ids: ['fixture-source'], claim_ids: ['fixture-claim'],
   } as KnowledgeNode;
 }
