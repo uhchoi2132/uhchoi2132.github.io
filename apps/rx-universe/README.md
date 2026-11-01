@@ -1,6 +1,6 @@
 # SAMSUNG RX Intelligence Universe
 
-설계서 v2.2를 바탕으로 개선한 **v2.6 공개 리서치 웹서비스**입니다. 공개 주소는 [https://uhchoi2132.github.io/rx-universe/](https://uhchoi2132.github.io/rx-universe/)입니다. 커스텀 GitHub Actions 워크플로는 테스트·빌드·브라우저 검증을 통과한 산출물을 게시하고 비인증 접근 및 공개 데이터 일치를 확인합니다. 코드의 현재 변경과 실제 배포 완료 여부는 해당 워크플로 실행 결과로 구분합니다.
+설계서 v2.2를 바탕으로 개선한 **v2.7 공개 리서치 웹서비스**입니다. 공개 주소는 [https://uhchoi2132.github.io/rx-universe/](https://uhchoi2132.github.io/rx-universe/)입니다. 커스텀 GitHub Actions 워크플로는 테스트·빌드·브라우저 검증을 통과한 산출물을 게시하고 비인증 접근 및 공개 데이터 일치를 확인합니다. 코드의 현재 변경과 실제 배포 완료 여부는 해당 워크플로 실행 결과로 구분합니다.
 
 ## 화면과 기능
 
@@ -27,6 +27,12 @@
 `research/*.json`에 분야별 조사와 검색 기록을 보존합니다. `python3 scripts/merge-research.py`는 통합 목록을 재생성하며 `python3 scripts/build-db.py`는 외래키·변경 방지 트리거가 있는 다운로드용 SQLite 스냅샷을 만듭니다. 공개 파일은 `/rx-universe/data/rx-research.sqlite`와 `/rx-universe/data/rx-research.json`입니다. 이는 서버에서 운영되는 데이터베이스가 아닙니다.
 
 원문 바이트를 보관하지 않았으므로 **원문 해시는 null로 유지**합니다. `record_sha256`은 정규화한 조사 레코드의 해시이며 원문 파일의 해시가 아닙니다.
+
+## 지식 지형과 두 시점 비교: v2.7
+
+기존 단일 그래프 위에 고정 5개 주제 구역 요약과 단계별 탐색을 추가했습니다. 같은 ID·좌표·출처를 사용하는 구역 지도, 객체·주장·원문 목록, 내보내기가 공통 필터를 사용합니다. Time Machine에서 두 날짜의 공개 문서·날짜 미상 관측·노출 연결 차이를 비교할 수 있습니다. 주장 수정·철회·반박 이력은 저장돼 있지 않아 미지원으로 표시합니다.
+
+Qoyra 제작자의 공간 기억·탐색 단계 설명을 참고했지만 공유 WebGL 화면의 실제 동작은 검증하지 못했습니다. 기존 2D·시간 필터·1~2단계 탐색은 유지한 기능입니다. [적용 UX·확인 범위·검증 정책](docs/knowledge-terrain.md)을 참고하세요.
 
 ## 공식 출처 확장과 조사 대장: v2.6
 

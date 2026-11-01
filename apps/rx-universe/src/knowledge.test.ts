@@ -206,3 +206,10 @@ test('unknown and pre-window dates do not manufacture graph evidence; mode alias
   assert.deepEqual(graphAt('2026-09-01', 'known'), graphAt('2026-09-01', 'as-known-at'));
   assert.deepEqual(graphAt('2026-09-01', 'retro'), graphAt('2026-09-01', 'retrospective'));
 });
+
+
+test('every rendered relation uses a valid relationship status, separate from claim editorial kind', () => {
+  const allowed = new Set(['reported', 'planned', 'research', 'hypothesis', 'undated_current']);
+  const graph = graphAt(catalog.meta.window_end);
+  for (const relation of graph.relations) assert.ok(allowed.has(relation.status), `${relation.id}: ${relation.status}`);
+});

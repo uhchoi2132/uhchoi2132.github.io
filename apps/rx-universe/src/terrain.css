@@ -1,0 +1,103 @@
+.knowledge-terrain {
+  --terrain-border: #273943;
+  --terrain-muted: #8ea1ad;
+  container-type: inline-size;
+  color: #e0e9ee;
+  background: #0e1720;
+  border: 1px solid var(--terrain-border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+.knowledge-terrain .terrain-heading { display: flex; align-items: center; justify-content: space-between; gap: 26px; padding: 27px 28px 23px; }
+.knowledge-terrain .terrain-eyebrow { display: flex; align-items: center; gap: 8px; margin: 0 0 13px; color: #9ac7bc; font: 9px/1.3 'IBM Plex Mono', monospace; letter-spacing: 1.8px; }
+.knowledge-terrain .terrain-eyebrow > span:first-child { width: 5px; height: 5px; background: #8bbcaf; border-radius: 50%; }
+.knowledge-terrain .terrain-eyebrow .terrain-edition { margin-left: 3px; color: #5f7a87; }
+.knowledge-terrain .terrain-heading h2 { margin: 0; color: #e6eef2; font-size: 24px; font-weight: 500; letter-spacing: -.7px; }
+.knowledge-terrain .terrain-intro { margin: 10px 0 0; color: var(--terrain-muted); font-size: 11px; line-height: 1.9; }
+.knowledge-terrain .terrain-graph-button { display: inline-flex; flex: 0 0 auto; align-items: center; gap: 10px; min-height: 39px; padding: 10px 13px; border: 1px solid #39505b; border-radius: 4px; background: #15232d; color: #c4d9df; font-size: 11px; }
+.knowledge-terrain .terrain-graph-button:hover { background: #1c303b; border-color: #6b9a9d; }
+.knowledge-terrain .terrain-summary { display: flex; align-items: center; gap: 25px; min-height: 46px; padding: 11px 28px; border-top: 1px solid #21313c; border-bottom: 1px solid #21313c; background: #101c25; font-size: 10px; color: #8ea3af; }
+.knowledge-terrain .terrain-summary > span { white-space: nowrap; }
+.knowledge-terrain .terrain-summary b { font: 13px/1.3 'IBM Plex Mono', monospace; font-weight: 500; color: #d4e2e8; margin-right: 4px; }
+.knowledge-terrain .terrain-scope { display: flex; align-items: center; gap: 7px; padding-right: 23px; border-right: 1px solid #30424d; color: #a8bebd; }
+.knowledge-terrain .terrain-scope-dot { width: 4px; height: 4px; border: 1px solid #99bfb3; border-radius: 50%; }
+.knowledge-terrain .terrain-summary-end { margin-left: auto; font-size: 9px; color: #728a98; }
+.knowledge-terrain .terrain-map-shell { position: relative; background: #0b151f; }
+.knowledge-terrain .terrain-map-caption { position: absolute; z-index: 1; top: 17px; left: 27px; right: 27px; display: flex; justify-content: space-between; color: #67808f; font: 8px/1.4 'IBM Plex Mono', monospace; letter-spacing: 1.3px; pointer-events: none; }
+.knowledge-terrain .terrain-map-caption span:last-child { font-family: inherit; font-size: 9px; letter-spacing: .1px; }
+.knowledge-terrain .terrain-map { display: block; width: 100%; max-height: 580px; }
+.knowledge-terrain .terrain-map-frame { fill: none; stroke: #3f5867; stroke-width: .8; opacity: .5; }
+.knowledge-terrain .terrain-map-crosshair { fill: none; stroke: #56717f; stroke-width: .8; opacity: .35; }
+.knowledge-terrain .terrain-map-region { cursor: pointer; color: var(--region-color); }
+.knowledge-terrain .terrain-contour { fill: currentColor; fill-opacity: .018; stroke: currentColor; stroke-opacity: .38; stroke-width: .9; vector-effect: non-scaling-stroke; }
+.knowledge-terrain .terrain-contour-2 { fill-opacity: .025; stroke-opacity: .48; }
+.knowledge-terrain .terrain-contour-3 { fill-opacity: .035; stroke-opacity: .58; }
+.knowledge-terrain .terrain-map-region:hover .terrain-contour, .knowledge-terrain .terrain-map-region.is-selected .terrain-contour { fill-opacity: .055; stroke-opacity: .85; }
+.knowledge-terrain .terrain-map-region.is-selected .terrain-contour-1 { stroke-width: 1.6; stroke-opacity: 1; }
+.knowledge-terrain .terrain-map-region.is-empty { color: #7d8c99; }
+.knowledge-terrain .terrain-region-dot { fill: currentColor; }
+.knowledge-terrain .terrain-map-title { fill: #e3ecf0; font-size: 17px; font-weight: 500; letter-spacing: -.4px; }
+.knowledge-terrain .terrain-map-subtitle { fill: #91a6b3; font-size: 10px; letter-spacing: .3px; }
+.knowledge-terrain .terrain-map-count { fill: currentColor; font: 10px 'IBM Plex Mono', sans-serif; }
+.knowledge-terrain .terrain-count-separator { fill: #5f7989; }
+.knowledge-terrain .terrain-map-index { fill: currentColor; opacity: .7; font: 9px 'IBM Plex Mono', monospace; letter-spacing: 1px; }
+.knowledge-terrain .terrain-region-arrow { fill: none; stroke: currentColor; stroke-width: 1; opacity: .6; }
+.knowledge-terrain .terrain-map-key { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 0 25px 22px; color: #829aa9; }
+.knowledge-terrain .terrain-map-key p { display: flex; align-items: baseline; flex-wrap: wrap; justify-content: center; column-gap: 12px; row-gap: 5px; margin: 0; font-size: 9px; line-height: 1.7; }
+.knowledge-terrain .terrain-map-key b { color: #adc3cd; font-size: 10px; font-weight: 500; }
+.knowledge-terrain .terrain-key-rings { position: relative; flex: 0 0 33px; height: 25px; }
+.knowledge-terrain .terrain-key-rings i { position: absolute; top: 0; left: 0; width: 33px; height: 25px; border: 1px solid #526f7d; border-radius: 48% 56% 50% 45%; }
+.knowledge-terrain .terrain-key-rings i:nth-child(2) { inset: 4px 5px; width: 23px; height: 17px; }
+.knowledge-terrain .terrain-key-rings i:nth-child(3) { inset: 8px 10px; width: 13px; height: 9px; }
+.knowledge-terrain .terrain-region-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; border-top: 1px solid #293c48; border-bottom: 1px solid #293c48; background: #293c48; }
+.knowledge-terrain .terrain-region-button { position: relative; display: flex; flex-direction: column; align-items: stretch; min-width: 0; padding: 17px 17px 13px; text-align: left; border: 0; border-radius: 0; background: #111d27; color: #d2e0e6; font-family: inherit; }
+.knowledge-terrain .terrain-region-button:hover { background: #172632; }
+.knowledge-terrain .terrain-region-button.is-selected { background: #1a2b35; box-shadow: inset 0 2px var(--region-color); }
+.knowledge-terrain .terrain-card-top { display: flex; align-items: center; justify-content: space-between; color: var(--region-color); }
+.knowledge-terrain .terrain-card-top svg { opacity: .7; }
+.knowledge-terrain .terrain-card-index { font: 9px 'IBM Plex Mono', monospace; letter-spacing: 1px; }
+.knowledge-terrain .terrain-card-title { display: block; margin-top: 17px; color: #e0e9ed; font-size: 14px; font-weight: 500; line-height: 1.5; }
+.knowledge-terrain .terrain-card-title small { display: block; margin-top: 3px; color: var(--region-color); font-size: 10px; font-weight: 400; }
+.knowledge-terrain .terrain-card-description { display: block; margin: 9px 0 14px; color: #8299a7; font-size: 9px; line-height: 1.7; }
+.knowledge-terrain .terrain-card-counts { display: flex; flex-wrap: wrap; column-gap: 10px; row-gap: 5px; margin-top: auto; color: #8ea4b2; font-size: 9px; line-height: 1.7; }
+.knowledge-terrain .terrain-card-counts b { font: 11px 'IBM Plex Mono', monospace; color: #c7d9e1; }
+.knowledge-terrain .terrain-card-action { display: flex; align-items: center; justify-content: space-between; gap: 7px; padding-top: 12px; margin-top: 12px; border-top: 1px solid #293b47; color: #92b1ba; font-size: 9px; line-height: 1.5; }
+.knowledge-terrain .terrain-footnote { padding: 14px 27px 16px; color: #849ba9; font-size: 9px; line-height: 1.85; }
+.knowledge-terrain .terrain-footnote p { margin: 0; }
+.knowledge-terrain button:focus-visible { outline: 2px solid #a4dfd2; outline-offset: -4px; }
+@container (max-width: 880px) {
+  .knowledge-terrain .terrain-heading { gap: 18px; padding: 24px 22px 21px; }
+  .knowledge-terrain .terrain-heading h2 { font-size: 22px; }
+  .knowledge-terrain .terrain-intro { max-width: 420px; font-size: 10px; }
+  .knowledge-terrain .terrain-summary { padding-left: 22px; padding-right: 22px; gap: 18px; }
+  .knowledge-terrain .terrain-region-list { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .knowledge-terrain .terrain-region-button { padding: 16px 18px 13px; }
+  .knowledge-terrain .terrain-card-title { margin-top: 12px; }
+}
+@container (max-width: 680px) {
+  .knowledge-terrain .terrain-heading { align-items: flex-start; flex-direction: column; gap: 18px; padding: 23px 20px 20px; }
+  .knowledge-terrain .terrain-heading h2 { font-size: 23px; }
+  .knowledge-terrain .terrain-intro { max-width: none; font-size: 11px; }
+  .knowledge-terrain .terrain-graph-button { min-height: 40px; }
+  .knowledge-terrain .terrain-summary { flex-wrap: wrap; gap: 13px 19px; padding: 14px 20px; }
+  .knowledge-terrain .terrain-scope { flex-basis: 100%; border: 0; padding: 0; }
+  .knowledge-terrain .terrain-summary-end { display: none; }
+  .knowledge-terrain .terrain-map-shell { display: none; }
+  .knowledge-terrain .terrain-region-list { grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 0; }
+  .knowledge-terrain .terrain-region-button { min-height: 190px; padding: 18px 20px 15px; }
+  .knowledge-terrain .terrain-region-button:last-child { grid-column: 1 / -1; }
+  .knowledge-terrain .terrain-card-description { font-size: 10px; }
+  .knowledge-terrain .terrain-card-counts, .knowledge-terrain .terrain-card-action { font-size: 10px; }
+  .knowledge-terrain .terrain-footnote { padding: 15px 20px; font-size: 10px; }
+}
+@container (max-width: 400px) {
+  .knowledge-terrain .terrain-region-list { grid-template-columns: minmax(0, 1fr); }
+  .knowledge-terrain .terrain-region-button { min-height: 0; padding: 15px 20px 13px; }
+  .knowledge-terrain .terrain-card-title { margin-top: 8px; }
+  .knowledge-terrain .terrain-card-title small { display: inline; margin-left: 9px; }
+  .knowledge-terrain .terrain-card-description { margin: 7px 0 9px; }
+  .knowledge-terrain .terrain-card-action { padding-top: 10px; margin-top: 9px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .knowledge-terrain *, .knowledge-terrain *::before, .knowledge-terrain *::after { animation: none !important; transition: none !important; }
+}

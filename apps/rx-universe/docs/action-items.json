@@ -1,6 +1,6 @@
 {
-  "version": "2.6",
-  "updated_at": "2026-10-31",
+  "version": "2.7",
+  "updated_at": "2026-11-01",
   "items": [
     {
       "id": "AI-001",
@@ -278,7 +278,7 @@
       "id": "AI-018",
       "priority": "P1",
       "title": "공식 출처 조사 범위 확장과 발견·검토 대장 공개",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "공식 뉴스룸·IR·제품·연구·행사·관계사·파트너의 조사 경로와 접근 공백을 기록한다.",
         "발견 URL은 실행별 관측을 보존하고 canonical URL로 합치며 자동으로 주장이나 사실을 생성하지 않는다.",
@@ -291,6 +291,25 @@
         "AI-003",
         "AI-013",
         "AI-017"
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41263472001"
+    },
+    {
+      "id": "AI-019",
+      "priority": "P1",
+      "title": "주제 지형·일관된 목록 탐색·공개정보 두 시점 비교",
+      "status": "in_progress",
+      "acceptance": [
+        "기존 그래프를 고정 주제 구역으로 요약하고 구역에서 객체·주장·원문으로 이동한다.",
+        "구역·검색·레이어·관계 필터의 가시 ID 집합을 지도·목록·내보내기에 공통 적용한다.",
+        "공개일 기준 증가와 게시일 미상 관측, 그래프 노출 차이를 구분하고 수정·철회 이력은 미지원으로 표시한다.",
+        "좌표 안정성·미래정보 배제·키보드·모바일·WebGL 실패 흐름을 검증하고 실제 측정 규모만 보고한다."
+      ],
+      "dependencies": [
+        "AI-002",
+        "AI-003",
+        "AI-017",
+        "AI-018"
       ]
     }
   ],
@@ -310,5 +329,12 @@
     "browser_scenarios_passed": 23,
     "build": "passed",
     "scope": "v2.5 상세 그래프와 탐색 기능의 검증 브랜치 인수 결과. 공개 main 배포도 같은 검증을 거친다."
+  },
+  "source_survey_validation": {
+    "commit": "2c4fed17f08b5e1515a57da8d424a98e19d6c640",
+    "run_url": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41263472001",
+    "unit_tests_passed": 62,
+    "browser_scenarios_passed": 26,
+    "scope": "v2.6 확장 DB·조사 대장 1차 인수 기록. 추가 수집 기록과 v2.7 UX는 최종 CI에서 재검증한다."
   }
 }

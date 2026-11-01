@@ -98,7 +98,7 @@ function monitor(page, label) {
 function navButton(page, title) {
   return page.locator('.sidebar nav button').filter({ hasText: title });
 }
-async function navigate(page, title, mobile = false) {
+async function navigate(page, title, mobile = false, { overview = false } = {}) {
   if (mobile) {
     await page.getByRole('button', { name: '메뉴', exact: true }).click();
     await expect(page.locator('.sidebar')).toHaveClass(/\bopen\b/);
@@ -106,6 +106,10 @@ async function navigate(page, title, mobile = false) {
   await navButton(page, title).click();
   await expect(page.locator('main h1')).toContainText(title);
   if (mobile) await expect(page.locator('.sidebar')).not.toHaveClass(/\bopen\b/);
+  if (title === '3D Universe' && !overview && await page.getByTestId('terrain-overview').isVisible()) {
+    await page.getByRole('button', { name: '전체 관계 지도', exact: true }).click();
+    await expect(page.getByTestId('terrain-overview')).toHaveCount(0);
+  }
 }
 async function noHorizontalOverflow(page, title) {
   const sizes = await page.evaluate(() => ({ viewport: document.documentElement.clientWidth, page: document.documentElement.scrollWidth, body: document.body.scrollWidth }));
@@ -172,6 +176,111 @@ function assertResearchSnapshot(snapshot, records, date, mode = 'known', eventAs
     for (const id of relation.claim_ids) assert.ok(readableClaimIds.has(id), `Relation ${relation.id} used unread claim ${id}`);
   }
 }
+function assertStableLayout(referenceGraph, candidateGraph, message) {
+  const reference = new Map(referenceGraph.nodes.map(node => [node.id, node.position]));
+  const common = candidateGraph.nodes.filter(node => reference.has(node.id));
+  assert.ok(common.length > 0, 'Stable-layout comparisons require shared graph objects');
+  for (const node of common) assert.deepEqual(node.position, reference.get(node.id), `${message}: ${node.id} changed its canonical map position`);
+}
+async function assertGraphIndexParity(page, snapshot) {
+  const expected = sorted(snapshot.graph.nodes.map(node => node.id));
+  const actual = await page.locator('.graph-index [data-index-node-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-index-node-id')));
+  assert.deepEqual(sorted(actual), expected, 'Object Explorer must list every entity, claim and source in the displayed/exported projection');
+}
+function clusterProjection(graph, cluster) {
+  const nodes = graph.nodes.filter(node => node.cluster === cluster);
+  const ids = new Set(nodes.map(node => node.id));
+  return { ...graph, nodes, relations: graph.relations.filter(relation => ids.has(relation.from) && ids.has(relation.to)) };
+}
+function assertTemporalComparison(comparison, beforeGraph, afterGraph, beforeDate, afterDate, constrained = false) {
+  assert.equal(comparison.valid, true);
+  assert.equal(comparison.mode, 'known');
+  assert.equal(comparison.before.date, beforeDate);
+  assert.equal(comparison.after.date, afterDate);
+  assert.deepEqual(comparison.before.graph, beforeGraph, 'Comparison must use the independently exported earlier snapshot with the same projection');
+  assert.deepEqual(comparison.after.graph, afterGraph, 'Comparison must use the independently exported later snapshot with the same projection');
+  const subtractIds = (after, before) => {
+    const prior = new Set(before);
+    return sorted(after.filter(id => !prior.has(id)));
+  };
+  const beforeNodes = beforeGraph.nodes.map(node => node.id);
+  const afterNodes = afterGraph.nodes.map(node => node.id);
+  const beforeRelations = beforeGraph.relations.map(relation => relation.id);
+  const afterRelations = afterGraph.relations.map(relation => relation.id);
+  const beforeClaims = beforeGraph.nodes.filter(node => node.ontology_type === 'Claim').map(node => node.id);
+  const afterClaims = afterGraph.nodes.filter(node => node.ontology_type === 'Claim').map(node => node.id);
+  assert.deepEqual(sorted(comparison.newlyVisibleNodes.map(node => node.id)), subtractIds(afterNodes, beforeNodes));
+  assert.deepEqual(sorted(comparison.noLongerVisibleNodes.map(node => node.id)), subtractIds(beforeNodes, afterNodes));
+  assert.deepEqual(sorted(comparison.newlyVisibleRelations.map(relation => relation.id)), subtractIds(afterRelations, beforeRelations));
+  assert.deepEqual(sorted(comparison.noLongerVisibleRelations.map(relation => relation.id)), subtractIds(beforeRelations, afterRelations));
+  assert.deepEqual(sorted(comparison.newlyVisibleClaimIds), subtractIds(afterClaims, beforeClaims));
+  assert.deepEqual(sorted(comparison.noLongerVisibleClaimIds), subtractIds(beforeClaims, afterClaims));
+  const sourcesFor = (date, graph) => {
+    const provenance = new Set([...graph.nodes, ...graph.relations].flatMap(item => item.source_ids));
+    return [...researchAtDate(date), ...researchCatalog.records.filter(row => row.scope === 'undated' && row.accessed_at.slice(0, 10) <= date)]
+      .filter(row => !constrained || provenance.has(row.id));
+  };
+  const beforeSources = sourcesFor(beforeDate, beforeGraph);
+  const afterSources = sourcesFor(afterDate, afterGraph);
+  assert.deepEqual(sorted(comparison.before.sourceIds), sorted(beforeSources.map(row => row.id)));
+  assert.deepEqual(sorted(comparison.after.sourceIds), sorted(afterSources.map(row => row.id)));
+  assert.deepEqual(sorted(comparison.newlyVisibleSources.map(row => row.id)), subtractIds(afterSources.map(row => row.id), beforeSources.map(row => row.id)));
+  assert.deepEqual(sorted(comparison.noLongerVisibleSources.map(row => row.id)), subtractIds(beforeSources.map(row => row.id), afterSources.map(row => row.id)));
+  assert.deepEqual(sorted(comparison.newPublishedSources.map(row => row.id)), sorted(afterSources.filter(row => row.published_at && row.published_at > beforeDate && row.published_at <= afterDate).map(row => row.id)), 'New publication must use publication dates, not ingestion dates or graph additions');
+  assert.deepEqual(sorted(comparison.undatedObservedSources.map(row => row.id)), sorted(afterSources.filter(row => row.scope === 'undated' && row.accessed_at.slice(0, 10) > beforeDate && row.accessed_at.slice(0, 10) <= afterDate).map(row => row.id)), 'Undated discoveries must remain separate from newly published documents');
+  assert.deepEqual(sorted(comparison.unsupportedHistory), sorted(['claim_versions', 'corrections', 'withdrawals', 'claim_refutations']));
+  assert.equal(comparison.history.supported, false);
+  for (const key of ['claimVersions', 'corrections', 'withdrawals', 'claimRefutations']) assert.equal(comparison.history[key], null);
+  assert.equal(comparison.semantics.sourceScope, constrained ? 'visible_graph_provenance' : 'temporal_catalog');
+  assertStableLayout(beforeGraph, afterGraph, 'Two-date comparison');
+}
+async function assertComparisonPanel(page, comparison, { expandRelations = false } = {}) {
+  const panel = page.getByTestId('temporal-comparison');
+  await expect(panel).toBeVisible();
+  for (const [testId, total] of [
+    ['comparison-published-count', comparison.newPublishedSources.length],
+    ['comparison-observed-count', comparison.undatedObservedSources.length],
+    ['comparison-relations-count', comparison.newlyVisibleRelations.length],
+    ['comparison-claims-count', comparison.newlyVisibleClaimIds.length],
+  ]) await expect(panel.getByTestId(testId).locator('b')).toHaveText(String(total));
+  assert.deepEqual(sorted(await panel.getByTestId('comparison-source').evaluateAll(elements => elements.map(element => element.getAttribute('data-source-id')))), sorted(comparison.newPublishedSources.map(source => source.id)), 'Comparison document cards must match the publication interval');
+  assert.deepEqual(sorted(await panel.getByTestId('comparison-observed-source').evaluateAll(elements => elements.map(element => element.getAttribute('data-source-id')))), sorted(comparison.undatedObservedSources.map(source => source.id)), 'Observed undated documents must have their own list');
+  const relationRows = panel.getByTestId('comparison-relation');
+  const initialCount = Math.min(40, comparison.newlyVisibleRelations.length);
+  await expect(relationRows).toHaveCount(initialCount);
+  assert.deepEqual(await relationRows.evaluateAll(elements => elements.map(element => element.getAttribute('data-relation-id'))), comparison.newlyVisibleRelations.slice(0, initialCount).map(relation => relation.id));
+  if (expandRelations && comparison.newlyVisibleRelations.length > 40) {
+    await panel.getByRole('button', { name: '연결 더 보기', exact: true }).click();
+    const expandedCount = Math.min(80, comparison.newlyVisibleRelations.length);
+    await expect(relationRows).toHaveCount(expandedCount);
+    assert.deepEqual(await relationRows.evaluateAll(elements => elements.map(element => element.getAttribute('data-relation-id'))), comparison.newlyVisibleRelations.slice(0, expandedCount).map(relation => relation.id), 'More relations must reveal the next actual comparison IDs');
+  }
+  await expect(panel.locator('.comparison-limits > summary')).toHaveText('주장 수정·철회·반박 이력 비교는 지원하지 않습니다');
+}
+async function assertTerrainParity(page, snapshot) {
+  const terrain = page.getByTestId('terrain-overview');
+  await expect(terrain).toBeVisible();
+  assert.deepEqual(sorted(JSON.parse(await terrain.getAttribute('data-terrain-node-ids'))), sorted(snapshot.graph.nodes.map(node => node.id)), 'The topic overview must summarize exactly the currently visible graph nodes');
+  assert.deepEqual(sorted(JSON.parse(await terrain.getAttribute('data-terrain-relation-ids'))), sorted(snapshot.graph.relations.map(relation => relation.id)), 'The topic overview must summarize exactly the currently visible graph relations');
+  const regionButtons = terrain.locator('button[data-region-id]');
+  const expectedClusters = [...new Set(snapshot.graph.nodes.map(node => node.cluster))];
+  assert.ok(await regionButtons.count() >= expectedClusters.length, 'Every visible cluster must remain reachable by a keyboard-operable region control');
+  const allRegionNodeIds = [];
+  for (const button of await regionButtons.all()) {
+    const id = await button.getAttribute('data-region-id');
+    const nodes = snapshot.graph.nodes.filter(node => node.cluster === id);
+    const sources = nodes.filter(node => node.ontology_type === 'Source');
+    const claims = nodes.filter(node => node.ontology_type === 'Claim');
+    const sourceGroups = new Set(sources.map(node => node.origin_key?.trim()).filter(Boolean));
+    const representedIds = JSON.parse(await button.getAttribute('data-region-node-ids'));
+    assert.deepEqual(sorted(representedIds), sorted(nodes.map(node => node.id)), `${id}: topic region membership must use the graph cluster, not a separate display dataset`);
+    await expect(button).toHaveAttribute('data-region-document-count', String(sources.length));
+    await expect(button).toHaveAttribute('data-region-claim-count', String(claims.length));
+    await expect(button).toHaveAttribute('data-region-source-group-count', String(sourceGroups.size));
+    allRegionNodeIds.push(...representedIds);
+  }
+  assert.deepEqual(sorted(allRegionNodeIds), sorted(snapshot.graph.nodes.map(node => node.id)), 'Topic regions must partition visible graph objects without dropping or duplicating nodes');
+}
 async function assertGraphParity(page, snapshot, { flat = false } = {}) {
   const graph = page.locator('.graph-stage .universe-visual');
   const nodeIds = sorted(snapshot.graph.nodes.map(node => node.id));
@@ -179,6 +288,8 @@ async function assertGraphParity(page, snapshot, { flat = false } = {}) {
   await expect(graph).toHaveCount(1);
   await expect(page.locator('.graph-stage')).toHaveAttribute('data-graph-node-count', String(nodeIds.length));
   await expect(page.locator('.graph-stage')).toHaveAttribute('data-graph-relation-count', String(edgeIds.length));
+  const displayedPositions = JSON.parse(await page.locator('.graph-stage').getAttribute('data-graph-node-positions'));
+  assert.deepEqual(displayedPositions, Object.fromEntries(snapshot.graph.nodes.map(node => [node.id, node.position])), 'Map coordinates must match the exported canonical positions');
   await expect(graph).toHaveAttribute('data-node-count', String(nodeIds.length));
   await expect(graph).toHaveAttribute('data-edge-count', String(edgeIds.length));
   assert.deepEqual(sorted(JSON.parse(await graph.getAttribute('data-node-ids'))), nodeIds, 'Renderer and export node IDs differ');
@@ -187,6 +298,8 @@ async function assertGraphParity(page, snapshot, { flat = false } = {}) {
     const svg = graph.locator('svg[role="group"]');
     await expect(svg).toBeVisible();
     assert.deepEqual(sorted(await svg.locator('[data-node-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-node-id')))), nodeIds);
+    const svgPositions = await svg.locator('[data-node-id]').evaluateAll(elements => Object.fromEntries(elements.map(element => [element.getAttribute('data-node-id'), ['x', 'y', 'z'].map(axis => Number(element.getAttribute(`data-layout-${axis}`)))])));
+    assert.deepEqual(svgPositions, displayedPositions, '2D node layout coordinates must match the stable graph/export positions');
     assert.deepEqual(sorted(await svg.locator('.rx-link[data-edge-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-edge-id')))), edgeIds);
   }
 }
@@ -285,6 +398,71 @@ try {
   await screenshot(page, 'desktop-3d-command-center.png');
   report.checks.push('Desktop graph/export share one model; current catalog documents retain every extracted claim, candidate counts match rendered cards, and no fake account or unread badge is shown');
 
+  await page.getByRole('button', { name: '2D', exact: true }).click();
+  await navigate(page, '3D Universe', false, { overview: true });
+  await assertTerrainParity(page, currentSnapshot);
+  await noHorizontalOverflow(page, 'Desktop topic overview');
+  await screenshot(page, 'desktop-topic-overview.png', false);
+  const selectedCluster = 'sds';
+  const topicButton = page.getByTestId('terrain-overview').locator(`button[data-region-id="${selectedCluster}"]`);
+  await expect(topicButton).toHaveAccessibleName(/구역 탐색/);
+  await topicButton.focus();
+  const regionRenderStarted = performance.now();
+  await page.keyboard.press('Enter');
+  await expect(page.getByTestId('terrain-overview')).toHaveCount(0);
+  await expect(page.locator('.universe-visual')).toHaveAttribute('data-renderer', '2d');
+  await expect(page.locator('.graph-stage svg[role="group"] [data-node-id]')).toHaveCount(currentSnapshot.graph.nodes.filter(node => node.cluster === selectedCluster).length);
+  const regionRenderMilliseconds = Math.round(performance.now() - regionRenderStarted);
+  const clusterSnapshot = await exportSnapshot(page, 'topic-region-sds', currentDate);
+  assert.equal(clusterSnapshot.view.exploration.cluster, selectedCluster);
+  const clusterNodeIds = new Set(currentSnapshot.graph.nodes.filter(node => node.cluster === selectedCluster).map(node => node.id));
+  assert.deepEqual(sorted(clusterSnapshot.graph.nodes.map(node => node.id)), sorted(clusterNodeIds));
+  assert.deepEqual(sorted(clusterSnapshot.graph.relations.map(relation => relation.id)), sorted(currentSnapshot.graph.relations.filter(relation => clusterNodeIds.has(relation.from) && clusterNodeIds.has(relation.to)).map(relation => relation.id)));
+  assertStableLayout(currentSnapshot.graph, clusterSnapshot.graph, 'Topic region exploration');
+  await assertGraphParity(page, clusterSnapshot, { flat: true });
+  await assertGraphIndexParity(page, clusterSnapshot);
+  const clusterClaim = clusterSnapshot.graph.nodes.find(node => node.ontology_type === 'Claim');
+  assert.ok(clusterClaim);
+  await page.getByLabel('검색 주변 연결 포함', { exact: true }).uncheck();
+  await page.getByLabel('노드 목록 검색', { exact: true }).fill(clusterClaim.id);
+  await expect(page.getByLabel('엔티티 검색', { exact: true })).toHaveValue(clusterClaim.id);
+  const listSearched = await exportSnapshot(page, 'object-list-shared-search', currentDate);
+  const expectedListSearch = clusterSnapshot.graph.nodes.filter(node => [node.id, node.title, node.subtitle, node.description, ...(node.aliases ?? [])].join(' ').toLowerCase().includes(clusterClaim.id.toLowerCase()));
+  assert.deepEqual(sorted(listSearched.graph.nodes.map(node => node.id)), sorted(expectedListSearch.map(node => node.id)), 'Object-list search must filter the shared graph projection');
+  await assertGraphParity(page, listSearched, { flat: true });
+  await assertGraphIndexParity(page, listSearched);
+  await page.getByLabel('노드 목록 검색', { exact: true }).fill('');
+  await page.getByLabel('검색 주변 연결 포함', { exact: true }).check();
+  await assertGraphParity(page, clusterSnapshot, { flat: true });
+  await screenshot(page, 'desktop-topic-region-sds.png', false);
+  await page.getByRole('button', { name: '3D', exact: true }).click();
+  await page.getByRole('button', { name: '주제 지형 전체 보기', exact: true }).click();
+  await assertTerrainParity(page, currentSnapshot);
+  const overviewSnapshot = await exportSnapshot(page, 'topic-overview-export', currentDate);
+  assert.deepEqual(overviewSnapshot.graph, currentSnapshot.graph, 'Returning to the topic overview must reset the region restriction and preserve all source/claim objects');
+  const fullGraphRenderStarted = performance.now();
+  await page.getByRole('button', { name: '전체 관계 지도', exact: true }).click();
+  await expect(page.getByTestId('terrain-overview')).toHaveCount(0);
+  await expect(page.locator('.universe-visual')).toHaveAttribute('data-renderer', '3d');
+  await expect(page.locator('.graph-stage canvas')).toBeVisible();
+  await expect(page.locator('.universe-visual')).toHaveAttribute('data-node-count', String(currentSnapshot.graph.nodes.length));
+  const fullGraphRenderMilliseconds = Math.round(performance.now() - fullGraphRenderStarted);
+  await assertGraphParity(page, currentSnapshot);
+  await assertGraphIndexParity(page, currentSnapshot);
+  report.terrain_metrics = {
+    environment: 'headless Chromium, 1440x1000, reduced motion, SwiftShader',
+    preview: process.env.PREVIEW_URL ? 'provided PREVIEW_URL' : 'local production build via Vite preview',
+    preview_url: previewUrl,
+    measurement: 'Action to visible renderer/DOM readiness; not FPS, GPU completion, or production load testing',
+    overview_to_full_graph_3d_ms: fullGraphRenderMilliseconds,
+    overview_to_sds_region_2d_ms: regionRenderMilliseconds,
+    full_graph_nodes: currentSnapshot.graph.nodes.length, full_graph_relations: currentSnapshot.graph.relations.length,
+    region_nodes: clusterSnapshot.graph.nodes.length, region_relations: clusterSnapshot.graph.relations.length,
+  };
+  await page.getByRole('button', { name: '2D', exact: true }).click();
+  await assertGraphParity(page, currentSnapshot, { flat: true });
+  report.checks.push('Topic regions use real graph document/claim/source-group counts; keyboard selection produces the same filtered map, object list and export, and overview/full-map navigation restores all objects');
+
   for (const title of titles) {
     await navigate(page, title);
     await noHorizontalOverflow(page, `Desktop ${title}`);
@@ -301,6 +479,8 @@ try {
   assert.ok(companySnapshot.graph.nodes.length > 0 && companySnapshot.graph.nodes.length < currentSnapshot.graph.nodes.length);
   assert.deepEqual(sorted(companySnapshot.graph.nodes.map(node => node.id)), sorted(currentSnapshot.graph.nodes.filter(node => ['organization', 'company'].includes(node.kind)).map(node => node.id)));
   await assertGraphParity(page, companySnapshot, { flat: true });
+  assertStableLayout(currentSnapshot.graph, companySnapshot.graph, 'Company filter');
+  await assertGraphIndexParity(page, companySnapshot);
   await page.getByLabel('검색 주변 연결 포함', { exact: true }).uncheck();
   await page.getByLabel('엔티티 검색', { exact: true }).fill('SAMSUNG');
   const searchedSnapshot = await exportSnapshot(page, 'filtered-search', currentDate);
@@ -336,17 +516,19 @@ try {
   await expect.poll(visibleEntityLabelIds).toEqual(smartLabels);
   report.checks.push('Smart/all-entity label modes change visible labels while preserving every graph node, relation and exported provenance');
 
-  for (const layer of ['entities', 'evidence']) {
+  for (const layer of ['entities', 'evidence', 'claims', 'sources']) {
     await page.getByLabel('그래프 레이어', { exact: true }).selectOption(layer);
     const layerSnapshot = await exportSnapshot(page, `layer-${layer}`, currentDate);
     assertResearchSnapshot(layerSnapshot, researchCatalog.records, currentDate);
     assert.equal(layerSnapshot.view.exploration.layer, layer);
-    const eligible = currentSnapshot.graph.nodes.filter(node => layer === 'evidence' ? isEvidenceNode(node) : !isEvidenceNode(node));
+    const eligible = currentSnapshot.graph.nodes.filter(node => layer === 'claims' ? node.ontology_type === 'Claim' : layer === 'sources' ? node.ontology_type === 'Source' : layer === 'evidence' ? isEvidenceNode(node) : !isEvidenceNode(node));
     assert.ok(eligible.length > 0);
     assert.deepEqual(sorted(layerSnapshot.graph.nodes.map(node => node.id)), sorted(eligible.map(node => node.id)), 'Layer selection must expose exactly the chosen object kinds');
     const ids = new Set(eligible.map(node => node.id));
     assert.deepEqual(sorted(layerSnapshot.graph.relations.map(relation => relation.id)), sorted(currentSnapshot.graph.relations.filter(relation => ids.has(relation.from) && ids.has(relation.to)).map(relation => relation.id)));
     await assertGraphParity(page, layerSnapshot, { flat: true });
+    await assertGraphIndexParity(page, layerSnapshot);
+    assertStableLayout(currentSnapshot.graph, layerSnapshot.graph, `${layer} layer`);
   }
   await page.getByLabel('그래프 레이어', { exact: true }).selectOption('all');
   await page.getByLabel('관계 유형', { exact: true }).selectOption('documented_by');
@@ -363,7 +545,7 @@ try {
   assert.deepEqual(sorted(inferred.graph.relations.map(relation => relation.id)), sorted(currentSnapshot.graph.relations.filter(relation => relation.provenance === 'analyst_mapping').map(relation => relation.id)));
   await assertGraphParity(page, inferred, { flat: true });
   await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
-  report.checks.push('Entity/evidence layers, documented-by relationships and analyst-only connections filter the canonical graph and exported provenance without creating dangling edges');
+  report.checks.push('Entity/evidence/claim-only/source-only layers, documented-by relationships and analyst-only connections filter the canonical graph and exported provenance without creating dangling edges');
 
   await page.getByLabel('검색 주변 연결 포함', { exact: true }).uncheck();
   await page.getByLabel('엔티티 검색', { exact: true }).fill('source:sds-004');
@@ -536,6 +718,62 @@ try {
   assert.ok(historical.graph.nodes.length > 0 && historical.graph.relations.length > 0, 'Earlier public evidence must produce an explorable graph');
   assert.ok(!historical.graph.relations.some(relation => ['sds-orchestrator', 'miracom-rcs'].includes(relation.id)), 'Later-published or undated relations must not leak into September replay');
   await assertGraphParity(page, historical, { flat: true });
+  assertStableLayout(currentSnapshot.graph, historical.graph, 'Historical replay');
+  const comparisonPanel = page.getByTestId('temporal-comparison');
+  await page.getByLabel('비교 시작일', { exact: true }).fill('2026-09-01');
+  await page.getByLabel('비교 종료일', { exact: true }).fill(currentDate);
+  await comparisonPanel.getByRole('button', { name: '두 시점 비교', exact: true }).click();
+  await expect(page.getByLabel('정보 기준일', { exact: true })).toHaveValue(currentDate);
+  const comparisonSnapshot = await exportSnapshot(page, 'two-date-comparison', currentDate);
+  assertResearchSnapshot(comparisonSnapshot, researchCatalog.records, currentDate);
+  assertTemporalComparison(comparisonSnapshot.comparison, historical.graph, currentSnapshot.graph, '2026-09-01', currentDate);
+  report.time_comparison_metrics = { before: '2026-09-01', after: currentDate, before_nodes: historical.graph.nodes.length, after_nodes: currentSnapshot.graph.nodes.length, new_publications: comparisonSnapshot.comparison.newPublishedSources.length, undated_observations: comparisonSnapshot.comparison.undatedObservedSources.length, newly_visible_relations: comparisonSnapshot.comparison.newlyVisibleRelations.length, newly_visible_claims: comparisonSnapshot.comparison.newlyVisibleClaimIds.length };
+  await assertGraphParity(page, currentSnapshot, { flat: true });
+  await assertComparisonPanel(page, comparisonSnapshot.comparison, { expandRelations: true });
+  const comparisonSource = comparisonSnapshot.comparison.newPublishedSources[0];
+  assert.ok(comparisonSource, 'The two-date scenario must contain a published source to trace');
+  const comparisonSourceCard = comparisonPanel.locator(`[data-testid="comparison-source"][data-source-id="${comparisonSource.id}"]`);
+  await expect(comparisonSourceCard.getByRole('link')).toHaveAttribute('href', comparisonSource.url);
+  await comparisonSourceCard.getByRole('button').click();
+  await expect(drawer.locator(`.research-source-link[data-source-id="${comparisonSource.id}"]`)).toHaveAttribute('href', comparisonSource.url);
+  await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
+  const comparisonRelation = comparisonSnapshot.comparison.newlyVisibleRelations[0];
+  assert.ok(comparisonRelation, 'The two-date scenario must contain an attributable changed connection');
+  await comparisonPanel.locator(`[data-testid="comparison-relation"][data-relation-id="${comparisonRelation.id}"]`).click();
+  await expect(drawer).toHaveAttribute('data-relation-id', comparisonRelation.id);
+  assert.deepEqual(sorted(await drawer.locator('.research-source-link[data-source-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-source-id')))), sorted(comparisonRelation.source_ids));
+  await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
+  const pendingComparison = page.waitForEvent('download');
+  await comparisonPanel.getByRole('button', { name: '시점 비교 JSON', exact: true }).click();
+  const comparisonDownload = await pendingComparison;
+  assert.equal(comparisonDownload.suggestedFilename(), `rx-comparison-2026-09-01-${currentDate}.json`);
+  const comparisonPath = path.join(output, comparisonDownload.suggestedFilename());
+  await comparisonDownload.saveAs(comparisonPath);
+  assert.deepEqual(JSON.parse(await readFile(comparisonPath, 'utf8')).comparison, comparisonSnapshot.comparison, 'Comparison download and main snapshot must carry the same two-date result');
+  await screenshot(page, 'desktop-time-comparison.png', false);
+  await page.getByLabel('주제 구역', { exact: true }).selectOption('sds');
+  const regionComparison = await exportSnapshot(page, 'two-date-comparison-sds-region', currentDate);
+  assertTemporalComparison(regionComparison.comparison, clusterProjection(historical.graph, 'sds'), clusterProjection(currentSnapshot.graph, 'sds'), '2026-09-01', currentDate, true);
+  await assertGraphParity(page, regionComparison, { flat: true });
+  // Applying new dates resets the card pagination and retains the region filter on both sides.
+  await comparisonPanel.getByRole('button', { name: '두 시점 비교', exact: true }).click();
+  await assertComparisonPanel(page, regionComparison.comparison);
+  await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
+  await page.getByLabel('비교 시작일', { exact: true }).fill(currentDate);
+  await comparisonPanel.getByRole('button', { name: '두 시점 비교', exact: true }).click();
+  const sameDateComparison = await exportSnapshot(page, 'same-date-comparison', currentDate);
+  assertTemporalComparison(sameDateComparison.comparison, currentSnapshot.graph, currentSnapshot.graph, currentDate, currentDate);
+  await assertComparisonPanel(page, sameDateComparison.comparison);
+  await page.getByLabel('비교 종료일', { exact: true }).fill('2026-09-01');
+  await expect(comparisonPanel.getByRole('button', { name: '두 시점 비교', exact: true })).toBeDisabled();
+  await expect(comparisonPanel.locator('.comparison-error')).toContainText('시작일 ≤ 종료일');
+  await comparisonPanel.getByRole('button', { name: '비교 닫기', exact: true }).click();
+  await page.getByLabel('정보 기준일', { exact: true }).fill('2026-09-01');
+  const closedComparison = await exportSnapshot(page, 'comparison-closed-restored-history', '2026-09-01');
+  assert.equal(closedComparison.comparison, null);
+  assert.deepEqual(closedComparison.graph, historical.graph);
+  report.checks.push('Two-date comparison matches independent graph ID differences and publication/observation windows, traces source/relation evidence, preserves region filters, exports identical JSON and refuses reversed dates');
+  report.checks.push('Same-date comparison reports zero additions and explicitly leaves claim correction, withdrawal and refutation history unsupported');
   await expect(page.getByLabel('사건 기준일 제한', { exact: true })).not.toBeChecked();
   await page.getByLabel('사건 기준일 제한', { exact: true }).check();
   await expect(page.getByLabel('사건 기준일', { exact: true })).toHaveValue(currentDate);
@@ -934,7 +1172,21 @@ try {
     await navigate(mobile, title, true);
     await noHorizontalOverflow(mobile, `Mobile ${title}`);
   }
-  await navigate(mobile, '3D Universe', true);
+  await navigate(mobile, '3D Universe', true, { overview: true });
+  await assertTerrainParity(mobile, currentSnapshot);
+  await noHorizontalOverflow(mobile, 'Mobile topic overview');
+  await screenshot(mobile, 'mobile-topic-overview.png', false);
+  await mobile.getByTestId('terrain-overview').locator('button[data-region-id="miracom"]').click();
+  const mobileRegion = await exportSnapshot(mobile, 'mobile-topic-region', currentDate);
+  assert.deepEqual(mobileRegion.graph, clusterProjection(currentSnapshot.graph, 'miracom'));
+  await assertGraphParity(mobile, mobileRegion, { flat: true });
+  await assertGraphIndexParity(mobile, mobileRegion);
+  await mobile.getByRole('button', { name: '주제 지형 전체 보기', exact: true }).click();
+  await assertTerrainParity(mobile, currentSnapshot);
+  await mobile.getByRole('button', { name: '전체 관계 지도', exact: true }).click();
+  await assertGraphParity(mobile, currentSnapshot, { flat: true });
+  await assertGraphIndexParity(mobile, currentSnapshot);
+  report.checks.push('Mobile topic navigation has the same region membership and source/claim counts, opens the equivalent 2D region and returns to every graph object');
   await mobile.getByLabel('그래프 레이어', { exact: true }).selectOption('evidence');
   const mobileEvidence = await exportSnapshot(mobile, 'mobile-evidence-layer', currentDate);
   assertResearchSnapshot(mobileEvidence, researchCatalog.records, currentDate);
@@ -958,6 +1210,18 @@ try {
   await screenshot(mobile, 'mobile-universe-two-hop.png');
   await mobile.getByRole('button', { name: '탐색 초기화', exact: true }).click();
   report.checks.push('Mobile can switch evidence layers, open a merged source with both claims, and explore two-hop neighborhoods with the same exported graph and no overflow');
+  await navigate(mobile, 'Time Machine', true);
+  await mobile.getByLabel('비교 시작일', { exact: true }).fill('2026-09-01');
+  await mobile.getByLabel('비교 종료일', { exact: true }).fill(currentDate);
+  await mobile.getByTestId('temporal-comparison').getByRole('button', { name: '두 시점 비교', exact: true }).click();
+  const mobileComparison = await exportSnapshot(mobile, 'mobile-time-comparison', currentDate);
+  assertTemporalComparison(mobileComparison.comparison, historical.graph, currentSnapshot.graph, '2026-09-01', currentDate);
+  await assertComparisonPanel(mobile, mobileComparison.comparison);
+  await assertGraphParity(mobile, currentSnapshot, { flat: true });
+  await noHorizontalOverflow(mobile, 'Mobile two-date comparison');
+  await screenshot(mobile, 'mobile-time-comparison.png', false);
+  await mobile.getByTestId('temporal-comparison').getByRole('button', { name: '비교 닫기', exact: true }).click();
+  report.checks.push('Mobile compares the same two snapshots with publication/observation separation and retains all sources in its equivalent 2D graph');
   await navigate(mobile, 'Source Survey', true);
   const mobileSurvey = mobile.getByTestId('source-survey');
   await assertSurveyCandidatePage(mobileSurvey, publicSurvey.candidates);

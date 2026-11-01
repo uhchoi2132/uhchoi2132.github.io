@@ -105,7 +105,7 @@ function GraphNode({ node, label, emphasized, selected, onSelect, onFocusNode, o
       <mesh rotation={[.35, .12, 0]}><torusGeometry args={[node.size * 1.8, .009, 5, 40]}/><meshBasicMaterial color={color} transparent opacity={emphasized ? .6 : .12}/></mesh>
     </>}
     <Html portal={portal as React.ComponentProps<typeof Html>['portal']} center position={[0, -node.size - (primary ? .18 : .13), 0]} style={{ pointerEvents: 'none' }}>
-      <button type="button" tabIndex={-1} data-graph-node-id={node.id} data-node-id={node.id} aria-label={`${node.title} 상세 보기`} aria-hidden={!visible}
+      <button type="button" tabIndex={-1} data-graph-node-id={node.id} data-node-id={node.id} data-layout-x={node.position[0]} data-layout-y={node.position[1]} data-layout-z={node.position[2]} aria-label={`${node.title} 상세 보기`} aria-hidden={!visible}
         className={`universe-node-label ${primary ? 'primary' : ''} ${hover || selected ? 'is-active' : ''} ${emphasized ? '' : 'muted'}`}
         title={`${node.title}${onFocusNode ? ' · 더블클릭: 주변 집중' : ''}`} onClick={() => onSelect(node.id)} onDoubleClick={() => onFocusNode?.(node.id)}
         style={{ '--node-color': color, visibility: visible ? 'visible' : 'hidden', pointerEvents: visible ? 'auto' : 'none' } as React.CSSProperties}>
@@ -231,7 +231,7 @@ function FlatGraph({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, h
       </g>;
     })}
     {graph.nodes.map(node => { const [x, y] = position(node), primary = primaryNode(node), active = !highlighted || emphasized.has(node.id), selected = node.id === highlighted;
-      return <g key={node.id} className={`rx-node ${labelIds.has(node.id) || selected ? 'label-visible' : ''} ${active ? '' : 'muted'}`} data-graph-node-id={node.id} data-node-id={node.id} role="button" aria-label={`${node.title} 상세 보기`} tabIndex={0}
+      return <g key={node.id} className={`rx-node ${labelIds.has(node.id) || selected ? 'label-visible' : ''} ${active ? '' : 'muted'}`} data-graph-node-id={node.id} data-node-id={node.id} data-layout-x={node.position[0]} data-layout-y={node.position[1]} data-layout-z={node.position[2]} role="button" aria-label={`${node.title} 상세 보기`} tabIndex={0}
         onClick={() => onSelect(node.id)} onDoubleClick={() => onFocusNode?.(node.id)} onPointerEnter={() => onHover(node.id)} onPointerLeave={() => onHover(undefined)}
         onKeyDown={event => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); onSelect(node.id); } }}>
         <title>{node.title} — 상세 보기{onFocusNode ? ' · 더블클릭: 주변 집중' : ''}</title>

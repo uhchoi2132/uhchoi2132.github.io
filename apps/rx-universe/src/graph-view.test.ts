@@ -103,3 +103,30 @@ test('missing paths and incompatible constraints fail closed; a zero-length path
   assert.deepEqual(edgeIds(graphView(fixture, 'all', '', { pathFrom: 'b', pathTo: 'b' })), []);
   assert.deepEqual(ids(graphView(fixture, 'all', 'Synthetic e description', { pathFrom: 'd', pathTo: 'a' })), []);
 });
+
+test('cluster constraints precede search context, neighborhoods and paths without traversing outside nodes', () => {
+  const mixed: KnowledgeGraph = {
+    nodes: fixture.nodes.map(item => ({ ...item, cluster: item.id === 'b' ? 'electronics' : item.id === 'e' ? 'sds' : 'research' })),
+    relations: fixture.relations,
+  };
+  const projected = graphView(mixed, 'all', '', { cluster: 'research' });
+  assert.deepEqual(ids(projected), ['a', 'c', 'd', 'f', 'z']);
+  assert.deepEqual(edgeIds(projected), ['cd']);
+  assert.deepEqual(ids(graphView(mixed, 'all', 'anchor alias', { cluster: 'research', searchContext: true })), ['a']);
+  assert.deepEqual(ids(graphView(mixed, 'all', '', { cluster: 'research', focusNodeId: 'a', hops: 2 })), ['a']);
+  assert.deepEqual(graphView(mixed, 'all', '', { cluster: 'research', pathFrom: 'a', pathTo: 'c' }), { nodes: [], relations: [] });
+  assert.deepEqual(graphView(mixed, 'all', '', { cluster: 'research', focusNodeId: 'b' }), { nodes: [], relations: [] });
+  assert.deepEqual(ids(graphView(mixed, 'company', '', { cluster: 'sds' })), ['e']);
+  assert.deepEqual(edgeIds(graphView(mixed, 'all', '', { cluster: 'research', relationType: 'documented_by' })), ['cd']);
+  assert.equal(projected.nodes[0], mixed.nodes[0]);
+  assert.equal(projected.relations[0], fixture.relations.find(item => item.id === 'cd'));
+});
+
+test('claim and source layers preserve the same projection rules as combined evidence', () => {
+  assert.deepEqual(ids(graphView(fixture, 'all', '', { layer: 'claims' })), ['c']);
+  assert.deepEqual(ids(graphView(fixture, 'all', '', { layer: 'sources' })), ['d', 'z']);
+  for (const layer of ['claims', 'sources'] as const) {
+    assert.deepEqual(edgeIds(graphView(fixture, 'all', '', { layer })), []);
+    assert.deepEqual(graphView(fixture, 'all', '', { layer, pathFrom: 'c', pathTo: 'd' }), { nodes: [], relations: [] });
+  }
+});

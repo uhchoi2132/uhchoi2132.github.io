@@ -1,0 +1,674 @@
+{
+  "runs": [
+    {
+      "id": "targeted-public-list-2026-11-01T020949286995Z",
+      "started_at": "2026-11-01T02:09:49.286995Z",
+      "finished_at": "2026-11-01T02:09:59.891772Z",
+      "status": "completed_with_limits",
+      "window_start": "2025-10-30",
+      "window_end": "2026-10-31",
+      "requested_collections": 4,
+      "collection_pages_processed": 5,
+      "collection_pages_fetched": 5,
+      "candidates_discovered": 6,
+      "detail_pages_fetched": 0,
+      "request_budget": {
+        "total_content_requests": 40,
+        "pages_per_collection": 12
+      },
+      "content_fetch_calls": 6,
+      "network_requests": {
+        "robots_requests": 2,
+        "content_requests": 6
+      },
+      "elapsed_seconds": 10.6,
+      "time_budget_seconds": 300,
+      "truncated": true,
+      "limitations": [
+        "Only observed official list forms/ajax methods are replayed; POST is restricted to explicit read-only list routes and public form fields.",
+        "No authentication, JavaScript execution, robots bypass, document archive or automatic claims.",
+        "Repeated/empty pages stop traversal; unresolved routes remain explicit gaps.",
+        "List titles are capped at 120 characters/20 words. No article full text is persisted."
+      ]
+    }
+  ],
+  "collections": [
+    {
+      "id": "collection:3567a97f5210880e2693",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6",
+      "label": "Miracom insights",
+      "publisher": "Miracom insights",
+      "accessed_at": "2026-11-01T02:09:51.940432Z",
+      "status": "fetched",
+      "http_status": 200,
+      "request_attempted": true,
+      "pages_visited": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6"
+      ],
+      "discovered_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/food-beverage-smartfactory-guide",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ai-success-factors",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case"
+      ],
+      "next_urls": [],
+      "notes": [
+        "No observed read-only pagination route with a page field was established. Unknown endpoints were not requested."
+      ],
+      "parent_collection": null,
+      "request_method": "GET",
+      "request_fields": {},
+      "content_sha256": "76751364018f86783aa5e68eac461f79af3c9efb95d76ffbc45cb97659a91d4c",
+      "observed_bytes_sha256": "76751364018f86783aa5e68eac461f79af3c9efb95d76ffbc45cb97659a91d4c",
+      "hash_scope": "complete_response",
+      "observed_bytes": 121081,
+      "archive_status": "not_archived",
+      "content_type": "text/html;charset=utf-8",
+      "observed_list_forms": [
+        {
+          "id": "frm",
+          "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6",
+          "method": "POST",
+          "fields": {
+            "BD_NO": "6",
+            "BBS_NO": "",
+            "DATA_FLAG": "",
+            "SCH_PAGE": "",
+            "CURR_PAGE": "1",
+            "PAGE_SIZE": "10",
+            "TOTAL_CNT": "54",
+            "total": "54",
+            "SCH_TYPE": "T",
+            "SCH_WORD": ""
+          }
+        },
+        {
+          "id": "fileDownFrmFooter",
+          "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6",
+          "method": "POST",
+          "fields": {
+            "F_FILENM": "",
+            "F_FILEPATH": "",
+            "F_TRANSFILENM": ""
+          }
+        }
+      ],
+      "ajax_configuration_hints": [],
+      "script_urls": [
+        "https://miracom-inc.com/assets/js/import/import.js?cb=v1",
+        "https://miracom-inc.com/static_root/js/jqueryPaging_tobe.js",
+        "https://miracom-inc.com/static_root/js/common_tobe.js"
+      ],
+      "sdi_detail_template_verified": false,
+      "unlinked_card_samples": [],
+      "dated_card_links": 0,
+      "window_boundary_reached": false,
+      "pagination_gap": true,
+      "verified_list_routes": []
+    },
+    {
+      "id": "collection:89a782b1fb691e6da0b5",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/miracom-focus/dn14",
+      "label": "Miracom M-FOCUS",
+      "publisher": "Miracom M-FOCUS",
+      "accessed_at": "2026-11-01T02:09:54.636148Z",
+      "status": "fetched",
+      "http_status": 200,
+      "request_attempted": true,
+      "pages_visited": [
+        "https://miracom-inc.com/kr/customer-support/miracom-focus/dn14"
+      ],
+      "discovered_urls": [],
+      "next_urls": [],
+      "notes": [
+        "No observed read-only pagination route with a page field was established. Unknown endpoints were not requested."
+      ],
+      "parent_collection": null,
+      "request_method": "GET",
+      "request_fields": {},
+      "content_sha256": "7ca772b61a7c3684c45b5515a9a50828066d4453cb073ae0de0d45e25d0f6c19",
+      "observed_bytes_sha256": "7ca772b61a7c3684c45b5515a9a50828066d4453cb073ae0de0d45e25d0f6c19",
+      "hash_scope": "complete_response",
+      "observed_bytes": 68224,
+      "archive_status": "not_archived",
+      "content_type": "text/html;charset=utf-8",
+      "observed_list_forms": [
+        {
+          "id": "frm",
+          "url": "https://miracom-inc.com/user/Board/comm_notice.do",
+          "method": "POST",
+          "fields": {
+            "BD_NO": "14",
+            "BBS_NO": "",
+            "DATA_FLAG": "",
+            "SCH_PAGE": "",
+            "CURR_PAGE": "1",
+            "PAGE_SIZE": "10",
+            "TOTAL_CNT": "16",
+            "total": "16",
+            "CLUB_MNG_SEQ": "",
+            "SCH_TYPE": "T",
+            "LANG_CH": "KO",
+            "SCH_WORD": ""
+          }
+        },
+        {
+          "id": "fileDownFrmFooter",
+          "url": "https://miracom-inc.com/kr/customer-support/miracom-focus/dn14",
+          "method": "POST",
+          "fields": {
+            "F_FILENM": "",
+            "F_FILEPATH": "",
+            "F_TRANSFILENM": ""
+          }
+        }
+      ],
+      "ajax_configuration_hints": [],
+      "script_urls": [
+        "https://miracom-inc.com/assets/js/import/import.js?cb=v1",
+        "https://miracom-inc.com/static_root/js/jqueryPaging_tobe.js",
+        "https://miracom-inc.com/static_root/js/common_tobe.js"
+      ],
+      "sdi_detail_template_verified": false,
+      "unlinked_card_samples": [
+        {
+          "text": "2026.03.11 거세지는 탄소규제, 한숨쉬는 산업계",
+          "date": "2026-03-11",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.12.23 2025년 한 해 동안 감사드리며, 2026년을 준비합니다",
+          "date": "2025-12-23",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.09.02 대한민국 MES, 미라콤과 함께 걸어온 길",
+          "date": "2025-09-02",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.09.02 제조 AX를 위한 설비 인터페이스, 미라콤과 함께해야 하는 이유",
+          "date": "2025-09-02",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.07.25 코 앞으로 다가온 탄소중립 시대! 미라콤 탄소관리 솔루션으로 지금 바로 대응하세요.",
+          "date": "2025-07-25",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.07.21 불확실한 감에 의존하는 시대는 끝! Nexplant MESplus RMS로 누구나 숙련자처럼 정확하고 일관되게",
+          "date": "2025-07-21",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.06.30 설비 이상, 불량의 조짐을 놓치고 있지 않으십니까?...Nexplant MESplus FDC로 안정적인 제조 환경 구축하기",
+          "date": "2025-06-30",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.06.24 설비 효율, 이제 ‘감’ 말고 ‘데이터’로! Nexplant MESplus EPT로 설비 성능과 운용 효율을 정확하게",
+          "date": "2025-06-24",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.05.30 성과로 이어지는 스마트팩토리 성공 전략, 컨설팅으로 시작하세요!",
+          "date": "2025-05-30",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        },
+        {
+          "text": "2025.05.23 중소기업도 SAP를 쓸 수 있는 시대(feat.퍼블릭클라우드)",
+          "date": "2025-05-23",
+          "url": null,
+          "review_status": "unlinked_card_only"
+        }
+      ],
+      "dated_card_links": 0,
+      "window_boundary_reached": false,
+      "pagination_gap": true,
+      "verified_list_routes": []
+    },
+    {
+      "id": "collection:030225fc1d2f7d12d197",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/library/dn5",
+      "label": "Miracom library",
+      "publisher": "Miracom library",
+      "accessed_at": "2026-11-01T02:09:56.107816Z",
+      "status": "fetched",
+      "http_status": 200,
+      "request_attempted": true,
+      "pages_visited": [
+        "https://miracom-inc.com/kr/customer-support/library/dn5"
+      ],
+      "discovered_urls": [],
+      "next_urls": [],
+      "notes": [
+        "No observed read-only pagination route with a page field was established. Unknown endpoints were not requested."
+      ],
+      "parent_collection": null,
+      "request_method": "GET",
+      "request_fields": {},
+      "content_sha256": "3b258debaee4ffca54c01cc908893f1af2b7b187d40c07211a685e12f1d8cfb8",
+      "observed_bytes_sha256": "3b258debaee4ffca54c01cc908893f1af2b7b187d40c07211a685e12f1d8cfb8",
+      "hash_scope": "complete_response",
+      "observed_bytes": 90145,
+      "archive_status": "not_archived",
+      "content_type": "text/html;charset=utf-8",
+      "observed_list_forms": [
+        {
+          "id": "frm",
+          "url": "https://miracom-inc.com/user/Board/comm_notice.do",
+          "method": "POST",
+          "fields": {
+            "BD_NO": "5",
+            "BBS_NO": "",
+            "DATA_FLAG": "",
+            "SCH_PAGE": "",
+            "CURR_PAGE": "1",
+            "PAGE_SIZE": "10",
+            "TOTAL_CNT": "66",
+            "total": "66",
+            "CLUB_MNG_SEQ": "",
+            "SCH_TYPE": "T",
+            "CONTENTS_FILTER": "",
+            "OFFERING_FILTER": "",
+            "SCH_WORD": ""
+          }
+        },
+        {
+          "id": "fileDownFrmFooter",
+          "url": "https://miracom-inc.com/kr/customer-support/library/dn5",
+          "method": "POST",
+          "fields": {
+            "F_FILENM": "",
+            "F_FILEPATH": "",
+            "F_TRANSFILENM": ""
+          }
+        }
+      ],
+      "ajax_configuration_hints": [],
+      "script_urls": [
+        "https://miracom-inc.com/assets/js/import/import.js?cb=v1",
+        "https://miracom-inc.com/static_root/js/jqueryPaging_tobe.js",
+        "https://miracom-inc.com/static_root/js/common_tobe.js"
+      ],
+      "sdi_detail_template_verified": false,
+      "unlinked_card_samples": [],
+      "dated_card_links": 0,
+      "window_boundary_reached": false,
+      "pagination_gap": true,
+      "verified_list_routes": []
+    },
+    {
+      "id": "collection:cd37c8f4f0dc4eb3dfc3",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html",
+      "label": "Samsung SDI news",
+      "publisher": "Samsung SDI news",
+      "accessed_at": "2026-11-01T02:09:58.425022Z",
+      "status": "fetched",
+      "http_status": 200,
+      "request_attempted": true,
+      "pages_visited": [
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html"
+      ],
+      "discovered_urls": [],
+      "next_urls": [],
+      "notes": [],
+      "parent_collection": null,
+      "request_method": "GET",
+      "request_fields": {},
+      "content_sha256": "d2296632b89bd7d75e3d530658330a6890392d187f3f252a8465adf534d913e1",
+      "observed_bytes_sha256": "d2296632b89bd7d75e3d530658330a6890392d187f3f252a8465adf534d913e1",
+      "hash_scope": "complete_response",
+      "observed_bytes": 75140,
+      "archive_status": "not_archived",
+      "content_type": "text/html; charset=UTF-8",
+      "observed_list_forms": [
+        {
+          "id": "gnbSearchForm",
+          "url": "https://www.samsungsdi.co.kr/search.html",
+          "method": "GET",
+          "fields": {
+            "searchCondition": "0",
+            "searchKeyword": ""
+          }
+        },
+        {
+          "id": "searchForm",
+          "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html",
+          "method": "GET",
+          "fields": {
+            "pageIndex": "1",
+            "pagesize": "15",
+            "idx": ""
+          }
+        }
+      ],
+      "ajax_configuration_hints": [
+        {
+          "url": "https://www.samsungsdi.co.kr/search/keyword/ajax.html",
+          "method": "GET",
+          "serialized_form_id": null,
+          "basis": "observed jQuery.ajax configuration; absent method uses documented GET default",
+          "requested": false
+        },
+        {
+          "url": "https://www.samsungsdi.co.kr/keyinfo/ajax.html",
+          "method": "GET",
+          "serialized_form_id": null,
+          "basis": "observed jQuery.ajax configuration; absent method uses documented GET default",
+          "requested": false
+        },
+        {
+          "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list/ajax.html",
+          "method": "GET",
+          "serialized_form_id": null,
+          "basis": "observed jQuery.ajax configuration; absent method uses documented GET default",
+          "requested": false
+        }
+      ],
+      "script_urls": [
+        "https://www.samsungsdi.co.kr/resources/js/jquery-3.7.1.min.js",
+        "https://www.samsungsdi.co.kr/resources/js/gsap.min.js",
+        "https://www.samsungsdi.co.kr/resources/js/ScrollTrigger.min.js",
+        "https://www.samsungsdi.co.kr/resources/js/ScrollToPlugin.min.js",
+        "https://www.samsungsdi.co.kr/resources/js/common.js"
+      ],
+      "sdi_detail_template_verified": true,
+      "unlinked_card_samples": [],
+      "dated_card_links": 0,
+      "window_boundary_reached": false,
+      "pagination_gap": true,
+      "verified_list_routes": [
+        {
+          "id": "searchForm",
+          "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html",
+          "method": "GET",
+          "fields": {
+            "pageIndex": "1",
+            "pagesize": "15",
+            "idx": ""
+          },
+          "page_field": "pageIndex",
+          "basis": "observed read-only list form, its HTTP method and page input"
+        }
+      ]
+    },
+    {
+      "id": "collection:8c1005792c6bf025e200",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html?pageIndex=2&pagesize=15&idx=",
+      "label": "Samsung SDI news",
+      "publisher": "Samsung SDI news",
+      "accessed_at": "2026-11-01T02:09:59.876332Z",
+      "status": "fetched",
+      "http_status": 200,
+      "request_attempted": true,
+      "pages_visited": [
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html?pageIndex=2&pagesize=15&idx="
+      ],
+      "discovered_urls": [],
+      "next_urls": [],
+      "notes": [
+        "No resolvable article URLs on this response; pagination coverage remains unproven."
+      ],
+      "parent_collection": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html",
+      "request_method": "GET",
+      "request_fields": {},
+      "content_sha256": "e045b0f55ade76c29763108f3489cc3b84919a1c0140f315a3ba0883b14a83e8",
+      "observed_bytes_sha256": "e045b0f55ade76c29763108f3489cc3b84919a1c0140f315a3ba0883b14a83e8",
+      "hash_scope": "complete_response",
+      "observed_bytes": 75142,
+      "archive_status": "not_archived",
+      "content_type": "text/html; charset=UTF-8",
+      "observed_list_forms": [
+        {
+          "id": "gnbSearchForm",
+          "url": "https://www.samsungsdi.co.kr/search.html",
+          "method": "GET",
+          "fields": {
+            "searchCondition": "0",
+            "searchKeyword": ""
+          }
+        },
+        {
+          "id": "searchForm",
+          "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html?pageIndex=2&pagesize=15",
+          "method": "GET",
+          "fields": {
+            "pageIndex": "2",
+            "pagesize": "15",
+            "idx": ""
+          }
+        }
+      ],
+      "ajax_configuration_hints": [
+        {
+          "url": "https://www.samsungsdi.co.kr/search/keyword/ajax.html",
+          "method": "GET",
+          "serialized_form_id": null,
+          "basis": "observed jQuery.ajax configuration; absent method uses documented GET default",
+          "requested": false
+        },
+        {
+          "url": "https://www.samsungsdi.co.kr/keyinfo/ajax.html",
+          "method": "GET",
+          "serialized_form_id": null,
+          "basis": "observed jQuery.ajax configuration; absent method uses documented GET default",
+          "requested": false
+        },
+        {
+          "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list/ajax.html",
+          "method": "GET",
+          "serialized_form_id": null,
+          "basis": "observed jQuery.ajax configuration; absent method uses documented GET default",
+          "requested": false
+        }
+      ],
+      "script_urls": [
+        "https://www.samsungsdi.co.kr/resources/js/jquery-3.7.1.min.js",
+        "https://www.samsungsdi.co.kr/resources/js/gsap.min.js",
+        "https://www.samsungsdi.co.kr/resources/js/ScrollTrigger.min.js",
+        "https://www.samsungsdi.co.kr/resources/js/ScrollToPlugin.min.js",
+        "https://www.samsungsdi.co.kr/resources/js/common.js"
+      ],
+      "sdi_detail_template_verified": true,
+      "unlinked_card_samples": [],
+      "dated_card_links": 0,
+      "window_boundary_reached": false,
+      "pagination_gap": true,
+      "route_basis": "observed read-only list form, its HTTP method and page input",
+      "requested_page_number": 2
+    }
+  ],
+  "candidates": [
+    {
+      "id": "discovery:20675e04f15a1884ea40",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ai-success-factors",
+      "canonical_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ai-success-factors",
+      "title": "인사이트 AI가 자재 부족을 미리 판단한다면…제조 AX가 바꾸는 현장 업무 제조업에서 AI 활용은 빠르게 늘고 있습니다. &nbsp; 하지만 AI의 도입이",
+      "publisher": "Miracom insights",
+      "collection_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6"
+      ],
+      "discovered_at": "2026-11-01T02:09:49.286995Z",
+      "published_at": null,
+      "date_basis": "unknown",
+      "fetch_status": "discovered",
+      "http_status": null,
+      "content_sha256": null,
+      "matched_keywords": [
+        "제조 AX"
+      ],
+      "relevance": "unreviewed",
+      "source_ids": [],
+      "archive_status": "not_archived",
+      "notes": [
+        "Official list metadata only; article bodies and claims have not been verified."
+      ]
+    },
+    {
+      "id": "discovery:8195f5f6808155fbbeab",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+      "canonical_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+      "title": "인사이트 미라콤아이앤씨, REAL SUMMIT 2026서 제조 AX·RX 사업 방향 제시 미라콤아이앤씨가 삼성SDS ‘REAL SUMMIT 2026’에 참가해 제조 현장에 AI와 로봇을",
+      "publisher": "Miracom insights",
+      "collection_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6"
+      ],
+      "discovered_at": "2026-11-01T02:09:49.286995Z",
+      "published_at": null,
+      "date_basis": "unknown",
+      "fetch_status": "discovered",
+      "http_status": null,
+      "content_sha256": null,
+      "matched_keywords": [
+        "RX",
+        "로봇",
+        "제조 AX"
+      ],
+      "relevance": "unreviewed",
+      "source_ids": [],
+      "archive_status": "not_archived",
+      "notes": [
+        "Official list metadata only; article bodies and claims have not been verified."
+      ]
+    },
+    {
+      "id": "discovery:78d0fce00da1aeabe1a5",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/food-beverage-smartfactory-guide",
+      "canonical_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/food-beverage-smartfactory-guide",
+      "title": "인사이트 AI 컨택센터로 완성한 프리미엄 리조트 고객 경험 혁신 고객들에게 편안한 휴식과 특별한 경험을 제공하는 프리미엄 리조트. 하지만 성수기 예약",
+      "publisher": "Miracom insights",
+      "collection_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6"
+      ],
+      "discovered_at": "2026-11-01T02:09:49.286995Z",
+      "published_at": null,
+      "date_basis": "unknown",
+      "fetch_status": "discovered",
+      "http_status": null,
+      "content_sha256": null,
+      "matched_keywords": [],
+      "relevance": "unreviewed",
+      "source_ids": [],
+      "archive_status": "not_archived",
+      "notes": [
+        "Official list metadata only; article bodies and claims have not been verified."
+      ]
+    },
+    {
+      "id": "discovery:a42802f9be1a044852b2",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+      "canonical_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+      "title": "인사이트 준비를 넘어 실행으로…탄소규제 대응, 제조데이터에서 해법을 찾다 ESG 공시와 제품환경규제가 본격화하면서 제조기업은 이제 '공장 전체의 탄소 배출량'이 아닌 ‘제품",
+      "publisher": "Miracom insights",
+      "collection_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6"
+      ],
+      "discovered_at": "2026-11-01T02:09:49.286995Z",
+      "published_at": null,
+      "date_basis": "unknown",
+      "fetch_status": "discovered",
+      "http_status": null,
+      "content_sha256": null,
+      "matched_keywords": [],
+      "relevance": "unreviewed",
+      "source_ids": [],
+      "archive_status": "not_archived",
+      "notes": [
+        "Official list metadata only; article bodies and claims have not been verified."
+      ]
+    },
+    {
+      "id": "discovery:6361b39286e6655ccb11",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case",
+      "canonical_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case",
+      "title": "인사이트 라면 제조로 알아본 국내 선진 식음료 기업 A사의 스마트팩토리 구축 전략 여러분 라면 좋아하시죠? 시원한 국물에 쫄깃한 면발까지, 남녀노소",
+      "publisher": "Miracom insights",
+      "collection_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6"
+      ],
+      "discovered_at": "2026-11-01T02:09:49.286995Z",
+      "published_at": null,
+      "date_basis": "unknown",
+      "fetch_status": "discovered",
+      "http_status": null,
+      "content_sha256": null,
+      "matched_keywords": [
+        "스마트팩토리"
+      ],
+      "relevance": "unreviewed",
+      "source_ids": [],
+      "archive_status": "not_archived",
+      "notes": [
+        "Official list metadata only; article bodies and claims have not been verified."
+      ]
+    },
+    {
+      "id": "discovery:7173c397e164f1d8051d",
+      "run_id": "targeted-public-list-2026-11-01T020949286995Z",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+      "canonical_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+      "title": "인사이트 거세지는 탄소규제, 한숨 쉬는 산업계 탄소중립 시대로의 이행이 본격화하고 있습니다. &nbsp; 이에 따라 제조 산업을 둘러싼 긴장감도 빠르게 고조되고",
+      "publisher": "Miracom insights",
+      "collection_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6"
+      ],
+      "discovered_at": "2026-11-01T02:09:49.286995Z",
+      "published_at": null,
+      "date_basis": "unknown",
+      "fetch_status": "discovered",
+      "http_status": null,
+      "content_sha256": null,
+      "matched_keywords": [],
+      "relevance": "unreviewed",
+      "source_ids": [],
+      "archive_status": "not_archived",
+      "notes": [
+        "Official list metadata only; article bodies and claims have not been verified."
+      ]
+    }
+  ],
+  "script_diagnostics": [
+    {
+      "url": "https://miracom-inc.com/static_root/js/jqueryPaging_tobe.js",
+      "status": "fetched",
+      "http_status": 200,
+      "notes": [
+        "Public JavaScript inspected as text only, never executed."
+      ],
+      "content_sha256": "4c5de15ea0b28a2664d34b76dd2c0fec7c52ea7d721099ef43dd1e219f19bc49",
+      "observed_bytes_sha256": "4c5de15ea0b28a2664d34b76dd2c0fec7c52ea7d721099ef43dd1e219f19bc49",
+      "hash_scope": "complete_response",
+      "observed_bytes": 3831,
+      "archive_status": "not_archived",
+      "content_type": "application/javascript",
+      "ajax_configuration_hints": [],
+      "pagination_code_hints": [
+        "var currentPage = parseInt(opts.pageNo); // 현재 페이지 번호",
+        "pageNo : 1, // current page No"
+      ]
+    }
+  ]
+}

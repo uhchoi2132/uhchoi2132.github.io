@@ -1,7 +1,8 @@
-import type { KnowledgeGraph, KnowledgeNode } from './knowledge';
+import type { KnowledgeCluster, KnowledgeGraph, KnowledgeNode } from './knowledge';
 
 export interface GraphViewOptions {
-  layer?: 'all' | 'entities' | 'evidence';
+  layer?: 'all' | 'entities' | 'evidence' | 'claims' | 'sources';
+  cluster?: KnowledgeCluster;
   relationType?: string;
   provenance?: 'all' | 'source_attributed' | 'analyst_mapping';
   focusNodeId?: string;
@@ -80,15 +81,15 @@ export function graphPath(graph: KnowledgeGraph, from: string, to: string): Grap
 }
 
 /**
- * The visible graph and export use this one projection. Type/layer/relationship
+ * The visible graph and export use this one projection. Cluster/type/layer/relationship
  * constraints apply before traversal. Search, focus and path constraints intersect;
  * none may cross an excluded relationship or manufacture a connecting edge.
  */
 export function graphView(graph: KnowledgeGraph, filter = 'all', search = '', options: GraphViewOptions = {}): KnowledgeGraph {
   const query = search.trim().toLowerCase();
   const layer = options.layer ?? 'all';
-  let nodes = graph.nodes.filter(node => matchesType(node, filter) &&
-    (layer === 'all' || (layer === 'evidence' ? evidenceNode(node) : !evidenceNode(node))));
+  let nodes = graph.nodes.filter(node => (!options.cluster || node.cluster === options.cluster) && matchesType(node, filter) &&
+    (layer === 'all' || (layer === 'evidence' ? evidenceNode(node) : layer === 'entities' ? !evidenceNode(node) : node.layer === layer)));
   const allowedIds = new Set(nodes.map(node => node.id));
   const relationFilter = options.relationType && options.relationType !== 'all';
   const provenanceFilter = options.provenance && options.provenance !== 'all';

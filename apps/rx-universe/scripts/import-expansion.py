@@ -230,6 +230,8 @@ def import_expansions(root=ROOT, paths=None, observed_at='2026-10-31', survey_pa
     valid_types = {'Company','Organization','Product','Robot','Technology','Factory','Project','Contract','Event','Paper','Patent','Keyword','Hypothesis','Question'}
     for raw in raw_relations.values():
         row = dict(raw)
+        if row.get('status') not in {'reported', 'planned', 'research', 'hypothesis', 'undated_current'}:
+            raise ValueError(f"Invalid graph relation status: {row['id']} {row.get('status')}")
         row['from'] = ENTITY_ID_ALIASES.get(row['from'], row['from'])
         row['to'] = ENTITY_ID_ALIASES.get(row['to'], row['to'])
         claim_id = claim_remap.get(row['claim_id'], row['claim_id'])
