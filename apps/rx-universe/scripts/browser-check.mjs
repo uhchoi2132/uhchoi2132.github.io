@@ -275,6 +275,103 @@ async function assertComparisonPanel(page, comparison, { expandRelations = false
   }
   await expect(panel.locator('.comparison-limits > summary')).toHaveText('주장 수정·철회·반박 이력 비교는 지원하지 않습니다');
 }
+function expectedEvolutionCounts(graph, knownAt, { topic, month, cumulative = false, undated = false } = {}) {
+  const sourceById = new Map(researchCatalog.records.map(record => [record.id, record]));
+  const claimOwner = new Map(researchCatalog.records.flatMap(record => claimRows([record]).map(claim => [claim.id, record])));
+  const documents = new Set(), claims = new Set(), origins = new Set(), contributors = new Set();
+  for (const node of graph.nodes) {
+    if (topic && node.cluster !== topic) continue;
+    const isDocument = node.ontology_type === 'Source';
+    const isClaim = node.ontology_type === 'Claim';
+    if (!isDocument && !isClaim) continue;
+    const source = isDocument ? sourceById.get(node.id.replace(/^source:/, '')) : claimOwner.get(node.id);
+    assert.ok(source, `Timeline graph object ${node.id} must resolve to its catalog source`);
+    if (undated) {
+      if (source.scope !== 'undated' || source.accessed_at.slice(0, 10) > knownAt) continue;
+    } else {
+      if (source.scope !== 'in_window' || !source.published_at || !['page', 'search_index'].includes(source.date_basis)
+        || source.published_at < researchCatalog.meta.window_start || source.published_at > knownAt) continue;
+      const publishedMonth = source.published_at.slice(0, 7);
+      if (month && (cumulative ? publishedMonth > month : publishedMonth !== month)) continue;
+    }
+    contributors.add(source.id);
+    if (isDocument) { documents.add(source.id); origins.add(originKey(source)); }
+    else claims.add(node.id);
+  }
+  return {
+    documentCount: documents.size, claimCount: claims.size, sourceGroupCount: origins.size,
+    documentIds: sorted(documents), claimIds: sorted(claims), sourceGroupKeys: sorted(origins), contributingSourceIds: sorted(contributors),
+  };
+}
+function assertEvolutionCounts(actual, expected, context) {
+  for (const key of ['documentCount', 'claimCount', 'sourceGroupCount']) assert.equal(actual[key], expected[key], `${context}: ${key} must reflect actual visible objects`);
+  for (const key of ['documentIds', 'claimIds', 'sourceGroupKeys', 'contributingSourceIds']) assert.deepEqual(sorted(actual[key]), expected[key], `${context}: ${key} must preserve exact provenance`);
+}
+function assertEvolutionModel(model, graph, knownAt) {
+  assert.equal(model.valid, true);
+  assert.equal(model.knownAt, knownAt);
+  assert.deepEqual(model.window, { from: researchCatalog.meta.window_start, to: knownAt });
+  const expectedMonths = [];
+  const monthCursor = new Date(`${researchCatalog.meta.window_start.slice(0, 7)}-01T00:00:00Z`);
+  while (monthCursor.toISOString().slice(0, 7) <= knownAt.slice(0, 7)) {
+    expectedMonths.push(monthCursor.toISOString().slice(0, 7));
+    monthCursor.setUTCMonth(monthCursor.getUTCMonth() + 1);
+  }
+  assert.deepEqual(model.months, expectedMonths, 'The publication matrix must include every month and no future month');
+  assert.deepEqual(sorted(model.topics.map(topic => topic.id)), sorted(['electronics', 'sds', 'miracom', 'robotics', 'research']));
+  assert.deepEqual(sorted(model.scope.nodeIds), sorted(graph.nodes.map(node => node.id)), 'Timeline scope must retain the selected graph projection');
+  for (const key of ['historicalGraphSnapshots', 'claimVersionHistory', 'coverageCompletenessMeasured', 'personalInterestMeasured', 'confidenceMeasured']) assert.equal(model.semantics[key], false, `Timeline must not claim ${key}`);
+  const topics = new Set(model.topics.map(topic => topic.id));
+  for (const node of graph.nodes) assert.ok(topics.has(node.cluster), 'Every graph topic must have a timeline row');
+  for (const topic of model.topics) {
+    assert.deepEqual(topic.months.map(bucket => bucket.month), expectedMonths);
+    assertEvolutionCounts(topic.published, expectedEvolutionCounts(graph, knownAt, { topic: topic.id }), `${topic.id} published`);
+    assertEvolutionCounts(topic.undated, expectedEvolutionCounts(graph, knownAt, { topic: topic.id, undated: true }), `${topic.id} undated`);
+    for (const bucket of topic.months) {
+      assert.ok(bucket.to <= knownAt && bucket.from >= researchCatalog.meta.window_start, 'Monthly cutoffs must stay within the observed publication horizon');
+      assertEvolutionCounts(bucket, expectedEvolutionCounts(graph, knownAt, { topic: topic.id, month: bucket.month }), `${topic.id} ${bucket.month} monthly`);
+      assertEvolutionCounts(bucket.cumulative, expectedEvolutionCounts(graph, knownAt, { topic: topic.id, month: bucket.month, cumulative: true }), `${topic.id} ${bucket.month} cumulative`);
+    }
+  }
+  assertEvolutionCounts(model.totals.published, expectedEvolutionCounts(graph, knownAt), 'All published topics');
+  assertEvolutionCounts(model.totals.undated, expectedEvolutionCounts(graph, knownAt, { undated: true }), 'All undated topics');
+  const publishedIds = new Set(model.topics.flatMap(topic => topic.months.flatMap(bucket => bucket.contributingSourceIds)));
+  for (const id of model.totals.undated.contributingSourceIds) assert.ok(!publishedIds.has(id), 'Undated observations must never become monthly publication events');
+}
+async function assertEvolutionElement(element, expected, context) {
+  for (const [attribute, key] of [['data-document-ids', 'documentIds'], ['data-claim-ids', 'claimIds'], ['data-source-group-keys', 'sourceGroupKeys'], ['data-contributing-source-ids', 'contributingSourceIds']]) {
+    assert.deepEqual(sorted(JSON.parse(await element.getAttribute(attribute))), expected[key], `${context}: displayed ${key} differs from the publication inventory`);
+  }
+}
+async function assertEvolutionDisplay(page, graph, knownAt, metric, cumulative, { mobile = false, month } = {}) {
+  const panel = page.getByTestId('knowledge-evolution');
+  await expect(panel).toHaveAttribute('data-known-at', knownAt);
+  await expect(panel).toHaveAttribute('data-evolution-metric', metric);
+  await expect(panel).toHaveAttribute('data-evolution-mode', cumulative ? 'cumulative' : 'monthly');
+  const rows = await panel.locator(mobile ? 'button[data-evolution-mobile-topic]' : 'button[data-evolution-topic]').evaluateAll(elements => elements.map(element => ({
+    topic: element.getAttribute('data-evolution-mobile-topic') ?? element.getAttribute('data-evolution-topic'),
+    month: element.getAttribute('data-evolution-month'), count: Number(element.getAttribute('data-evolution-count')),
+    documentIds: JSON.parse(element.getAttribute('data-document-ids')), claimIds: JSON.parse(element.getAttribute('data-claim-ids')),
+    sourceGroupKeys: JSON.parse(element.getAttribute('data-source-group-keys')), contributingSourceIds: JSON.parse(element.getAttribute('data-contributing-source-ids')),
+  })));
+  const months = [];
+  for (let cursor = new Date(`${researchCatalog.meta.window_start.slice(0, 7)}-01T00:00:00Z`); cursor.toISOString().slice(0, 7) <= knownAt.slice(0, 7); cursor.setUTCMonth(cursor.getUTCMonth() + 1)) months.push(cursor.toISOString().slice(0, 7));
+  assert.equal(rows.length, 5 * (mobile ? 1 : months.length), 'All five topic rows must survive empty and filtered publication periods');
+  assert.equal(new Set(rows.map(row => `${row.topic}:${row.month}`)).size, rows.length, 'Topic/month cells must be unique');
+  for (const row of rows) {
+    assert.ok(months.includes(row.month), 'Visible month must lie within the current knowledge cutoff');
+    if (mobile) assert.equal(row.month, month);
+    const expected = expectedEvolutionCounts(graph, knownAt, { topic: row.topic, month: row.month, cumulative });
+    assert.equal(row.count, expected[{ documents: 'documentCount', claims: 'claimCount', sourceGroups: 'sourceGroupCount' }[metric]], `${row.topic}/${row.month}: the selected metric must match the actual publication inventory`);
+    for (const key of ['documentIds', 'claimIds', 'sourceGroupKeys', 'contributingSourceIds']) assert.deepEqual(sorted(row[key]), expected[key], `${row.topic}/${row.month}: displayed ${key} must agree with visible graph objects`);
+  }
+}
+async function assertEvolutionDetail(page, expected, context) {
+  const detail = page.getByTestId('evolution-detail');
+  await expect(detail).toBeVisible();
+  await assertEvolutionElement(detail, expected, context);
+  assert.deepEqual(sorted(await detail.locator('[data-evolution-source-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-evolution-source-id')))), expected.contributingSourceIds, `${context}: every contributing source must remain reachable`);
+}
 async function assertTerrainParity(page, snapshot) {
   const terrain = page.getByTestId('terrain-overview');
   await expect(terrain).toBeVisible();
@@ -421,6 +518,104 @@ try {
   await assertTerrainParity(page, currentSnapshot);
   await noHorizontalOverflow(page, 'Desktop topic overview');
   await screenshot(page, 'desktop-topic-overview.png', false);
+  {
+    await page.getByRole('button', { name: '근거의 시간축', exact: true }).click();
+    await expect(page.getByTestId('knowledge-evolution')).toBeVisible();
+    await expect(page.locator('button[data-region-id]')).toHaveCount(0);
+    const evolutionSnapshot = await exportSnapshot(page, 'knowledge-evolution-current', currentDate);
+    assert.deepEqual(evolutionSnapshot.graph, currentSnapshot.graph, 'Opening the time distribution must not change graph membership');
+    assertEvolutionModel(evolutionSnapshot.knowledge_evolution, evolutionSnapshot.graph, currentDate);
+    for (const cumulative of [false, true]) {
+      await page.getByRole('button', { name: cumulative ? '누적 공개 수' : '월별 공개 수', exact: true }).click();
+      await expect(page.getByRole('button', { name: cumulative ? '누적 공개 수' : '월별 공개 수', exact: true })).toHaveAttribute('aria-pressed', 'true');
+      for (const metric of ['documents', 'claims', 'sourceGroups']) {
+        await page.getByLabel('시간 분포 지표', { exact: true }).selectOption(metric);
+        await assertEvolutionDisplay(page, evolutionSnapshot.graph, currentDate, metric, cumulative);
+      }
+    }
+    const cumulativeExport = await exportSnapshot(page, 'knowledge-evolution-cumulative', currentDate);
+    assert.deepEqual(cumulativeExport.knowledge_evolution, evolutionSnapshot.knowledge_evolution, 'Metric and aggregation controls must not mutate exported evidence');
+    await noHorizontalOverflow(page, 'Desktop publication timeline');
+    await screenshot(page, 'desktop-knowledge-evolution.png', false);
+    report.knowledge_evolution_metrics = {
+      known_at: currentDate, months: evolutionSnapshot.knowledge_evolution.months.length,
+      topics: evolutionSnapshot.knowledge_evolution.topics.length,
+      published: evolutionSnapshot.knowledge_evolution.totals.published,
+      undated: evolutionSnapshot.knowledge_evolution.totals.undated,
+    };
+    report.checks.push('Knowledge timeline independently matches every monthly and cumulative document, claim and source-group ID set; all three metric controls preserve evidence and cumulative groups are distinct unions');
+
+    const undatedTopic = evolutionSnapshot.knowledge_evolution.topics.find(topic => topic.undated.contributingSourceIds.length > 0);
+    assert.ok(undatedTopic, 'The catalog must exercise the separate undated observation lane');
+    await page.locator(`button[data-evolution-undated="${undatedTopic.id}"]`).click();
+    await assertEvolutionDetail(page, expectedEvolutionCounts(evolutionSnapshot.graph, currentDate, { topic: undatedTopic.id, undated: true }), 'Undated observations');
+    await expect(page.getByTestId('evolution-open-date')).toHaveCount(0);
+    const undatedSourceId = undatedTopic.undated.contributingSourceIds[0];
+    const undatedSource = researchCatalog.records.find(record => record.id === undatedSourceId);
+    assert.equal(undatedSource.published_at, null);
+    await page.locator(`button[data-evolution-source-id="${undatedSourceId}"]`).click();
+    await expect(page.locator(`.detail-drawer .research-source-link[data-source-id="${undatedSourceId}"]`)).toHaveAttribute('href', undatedSource.url);
+    await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
+
+    await page.getByLabel('엔티티 검색', { exact: true }).fill('source:sds-004');
+    const filteredEvolution = await exportSnapshot(page, 'knowledge-evolution-filtered', currentDate);
+    assert.ok(filteredEvolution.graph.nodes.length < currentSnapshot.graph.nodes.length);
+    assert.ok(filteredEvolution.graph.nodes.some(node => node.id === 'source:sds-004'));
+    assertEvolutionModel(filteredEvolution.knowledge_evolution, filteredEvolution.graph, currentDate);
+    await assertEvolutionDisplay(page, filteredEvolution.graph, currentDate, 'sourceGroups', true);
+    await page.getByRole('button', { name: '필터 초기화', exact: true }).click();
+    await page.locator('.filter-tabs').getByRole('button', { name: '조직 · 기업', exact: true }).click();
+    const entityEvolution = await exportSnapshot(page, 'knowledge-evolution-entity-only', currentDate);
+    assert.ok(entityEvolution.graph.nodes.length > 0);
+    assert.ok(entityEvolution.graph.nodes.every(node => !isEvidenceNode(node)));
+    assertEvolutionModel(entityEvolution.knowledge_evolution, entityEvolution.graph, currentDate);
+    assert.equal(entityEvolution.knowledge_evolution.totals.published.documentCount, 0);
+    assert.equal(entityEvolution.knowledge_evolution.totals.published.claimCount, 0);
+    await expect(page.getByTestId('evolution-layer-empty')).toBeVisible();
+    await assertEvolutionDisplay(page, entityEvolution.graph, currentDate, 'sourceGroups', true);
+    await page.getByRole('button', { name: '필터 초기화', exact: true }).click();
+    report.checks.push('Timeline undated observations stay outside publication months and open their exact original URL; search and entity-only filters count only visible graph objects, never hidden provenance');
+
+    await page.locator('.filter-tabs').getByRole('button', { name: '주장 · 원문', exact: true }).click();
+    await page.getByRole('button', { name: '월별 공개 수', exact: true }).click();
+    await page.getByLabel('시간 분포 지표', { exact: true }).selectOption('documents');
+    const datedProjection = await exportSnapshot(page, 'knowledge-evolution-evidence-filter', currentDate);
+    const announcedPlan = researchCatalog.records.find(record => record.id === 'mi-011');
+    assert.equal(announcedPlan.published_at, '2025-10-31');
+    assert.equal(announcedPlan.event_date, '2025-11-21');
+    const sourceNode = datedProjection.graph.nodes.find(node => node.id === 'source:mi-011');
+    assert.ok(sourceNode, 'The future-event fixture must be available by its publication date');
+    const publicationMonth = announcedPlan.published_at.slice(0, 7);
+    const publicationCell = page.locator(`button[data-evolution-topic="${sourceNode.cluster}"][data-evolution-month="${publicationMonth}"]`);
+    await publicationCell.focus();
+    await page.keyboard.press('Enter');
+    const planMonthExpected = expectedEvolutionCounts(datedProjection.graph, currentDate, { topic: sourceNode.cluster, month: publicationMonth });
+    assert.ok(planMonthExpected.documentIds.includes('mi-011'));
+    await assertEvolutionDetail(page, planMonthExpected, 'Published future event');
+    await page.locator('button[data-evolution-source-id="mi-011"]').click();
+    await expect(page.locator('.detail-drawer .research-source-link[data-source-id="mi-011"]')).toHaveAttribute('href', announcedPlan.url);
+    await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
+    const monthCutoff = await page.getByTestId('evolution-open-date').getAttribute('data-cutoff-date');
+    assert.equal(monthCutoff, announcedPlan.published_at, 'Monthly navigation must use the publication month, not the future event date');
+    await page.getByTestId('evolution-open-date').click();
+    await expect(page.getByLabel('정보 기준일', { exact: true })).toHaveValue(monthCutoff);
+    await expect(page.getByTestId('knowledge-evolution')).toHaveCount(0);
+    const priorEvolution = await exportSnapshot(page, 'knowledge-evolution-prior-month', monthCutoff);
+    assert.equal(priorEvolution.view.filter, 'evidence', 'Opening a historical month must preserve the selected evidence filter');
+    assertResearchSnapshot(priorEvolution, researchAtDate(monthCutoff), monthCutoff);
+    assert.ok(priorEvolution.research_records.every(record => record.published_at <= monthCutoff));
+    assert.equal(priorEvolution.research_records.find(record => record.id === 'mi-011').event_date, '2025-11-21');
+    await assertTerrainParity(page, priorEvolution);
+    await page.getByRole('button', { name: '근거의 시간축', exact: true }).click();
+    assertEvolutionModel(priorEvolution.knowledge_evolution, priorEvolution.graph, monthCutoff);
+    await assertEvolutionDisplay(page, priorEvolution.graph, monthCutoff, 'documents', false);
+    await expect(page.getByTestId('evolution-open-date')).toHaveAttribute('data-cutoff-date', monthCutoff);
+    report.checks.push('Keyboard selection groups a future event by its announcement month; opening that month preserves filters, restores the dated topic map and excludes all later publications and timeline months');
+    await page.getByLabel('정보 기준일', { exact: true }).fill(currentDate);
+    await page.getByRole('button', { name: '필터 초기화', exact: true }).click();
+    await page.getByRole('button', { name: '주제 지도', exact: true }).click();
+    await assertTerrainParity(page, currentSnapshot);
+  }
   const selectedCluster = 'sds';
   const topicButton = page.getByTestId('terrain-overview').locator(`button[data-region-id="${selectedCluster}"]`);
   await expect(topicButton).toHaveAccessibleName(/구역 탐색/);
@@ -1219,6 +1414,40 @@ try {
   await assertTerrainParity(mobile, currentSnapshot);
   await noHorizontalOverflow(mobile, 'Mobile topic overview');
   await screenshot(mobile, 'mobile-topic-overview.png', false);
+  {
+    await mobile.getByRole('button', { name: '근거의 시간축', exact: true }).click();
+    const mobileEvolution = await exportSnapshot(mobile, 'mobile-knowledge-evolution', currentDate);
+    assert.deepEqual(mobileEvolution.graph, currentSnapshot.graph);
+    assertEvolutionModel(mobileEvolution.knowledge_evolution, mobileEvolution.graph, currentDate);
+    await expect(mobile.getByLabel('분포 월', { exact: true })).toBeVisible();
+    await expect(mobile.locator('.evolution-desktop')).toBeHidden();
+    const sampleMonth = mobileEvolution.knowledge_evolution.months.at(-2) ?? currentDate.slice(0, 7);
+    await mobile.getByLabel('분포 월', { exact: true }).selectOption(sampleMonth);
+    for (const cumulative of [false, true]) {
+      await mobile.getByRole('button', { name: cumulative ? '누적 공개 수' : '월별 공개 수', exact: true }).click();
+      for (const metric of ['documents', 'claims', 'sourceGroups']) {
+        await mobile.getByLabel('시간 분포 지표', { exact: true }).selectOption(metric);
+        await assertEvolutionDisplay(mobile, mobileEvolution.graph, currentDate, metric, cumulative, { mobile: true, month: sampleMonth });
+      }
+    }
+    const mobileTopic = mobileEvolution.knowledge_evolution.topics.find(topic => expectedEvolutionCounts(mobileEvolution.graph, currentDate, { topic: topic.id, month: sampleMonth, cumulative: true }).contributingSourceIds.length > 0);
+    assert.ok(mobileTopic);
+    await mobile.locator(`button[data-evolution-mobile-topic="${mobileTopic.id}"]`).click();
+    const mobileExpected = expectedEvolutionCounts(mobileEvolution.graph, currentDate, { topic: mobileTopic.id, month: sampleMonth, cumulative: true });
+    await assertEvolutionDetail(mobile, mobileExpected, 'Mobile cumulative topic');
+    const mobileSourceId = mobileExpected.contributingSourceIds[0];
+    await mobile.locator(`button[data-evolution-source-id="${mobileSourceId}"]`).click();
+    await expect(mobile.locator(`.detail-drawer .research-source-link[data-source-id="${mobileSourceId}"]`)).toHaveAttribute('href', researchCatalog.records.find(record => record.id === mobileSourceId).url);
+    await mobile.getByRole('button', { name: '상세 닫기', exact: true }).click();
+    const mobileMonthExport = await exportSnapshot(mobile, 'mobile-knowledge-evolution-selected-month', currentDate);
+    assert.deepEqual(mobileMonthExport.graph, currentSnapshot.graph, 'Selecting a timeline cell only changes its detail, not the global date or graph');
+    await expect(mobile.getByLabel('정보 기준일', { exact: true })).toHaveValue(currentDate);
+    await noHorizontalOverflow(mobile, 'Mobile publication timeline');
+    await screenshot(mobile, 'mobile-knowledge-evolution.png', true);
+    await mobile.getByRole('button', { name: '주제 지도', exact: true }).click();
+    await assertTerrainParity(mobile, currentSnapshot);
+    report.checks.push('Mobile publication timeline preserves every topic/source ID and all three monthly/cumulative metrics, opens exact source drawers and changes only local month selection without horizontal overflow');
+  }
   await mobile.getByTestId('terrain-overview').locator('button[data-region-id="miracom"]').click();
   const mobileRegion = await exportSnapshot(mobile, 'mobile-topic-region', currentDate);
   assert.deepEqual(mobileRegion.graph, clusterProjection(currentSnapshot.graph, 'miracom'));

@@ -101,3 +101,9 @@
 @media (prefers-reduced-motion: reduce) {
   .knowledge-terrain *, .knowledge-terrain *::before, .knowledge-terrain *::after { animation: none !important; transition: none !important; }
 }
+
+.terrain-presentation { display: flex; align-items: center; gap: 8px; padding: 12px 22px; border-bottom: 1px solid #273943; flex-wrap: wrap; }
+.terrain-presentation button { min-height: 38px; padding: 8px 13px; border: 1px solid #354b58; border-radius: 4px; background: #101b25; color: #9fb3c1; font-size: 11px; }
+.terrain-presentation button[aria-pressed="true"] { background: #203b3b; border-color: #5b9b91; color: #b2e4d6; }
+.terrain-presentation span { margin-left: auto; color: #8fa5b3; font-size: 10px; }
+@container (max-width: 680px) { .terrain-presentation { padding: 12px 20px; }.terrain-presentation span { flex-basis: 100%; margin: 3px 0 0; line-height: 1.7; } }

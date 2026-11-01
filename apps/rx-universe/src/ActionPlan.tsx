@@ -12,7 +12,7 @@ export default function ActionPlan() {
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
   return <div className="action-plan">
-    <section className="panel improvement-intro"><div><span className="micro">CONTINUOUS IMPROVEMENT / ITERATION 05</span><h2>검증 가능한 작업으로 개선합니다</h2><p>발견한 결함, 인수 기준, 후속 작업을 기록합니다. 공식 출처 조사와 상세 그래프를 보존하고, 주제 구역에서 근거로 이어지는 탐색과 두 시점 비교를 통합했습니다.</p></div><button className="button" onClick={download}><ArrowDownToLine size={14}/>실행 항목 JSON</button></section>
+    <section className="panel improvement-intro"><div><span className="micro">CONTINUOUS IMPROVEMENT / ITERATION 06</span><h2>검증 가능한 작업으로 개선합니다</h2><p>발견한 결함, 인수 기준, 후속 작업을 기록합니다. 공식 출처 조사와 상세 그래프를 보존하고, 주제 지형·두 시점 비교에 월별 공개근거 흐름과 원문 탐색을 이어 붙였습니다.</p></div><button className="button" onClick={download}><ArrowDownToLine size={14}/>실행 항목 JSON</button></section>
     <section className="panel review-response"><div className="review-response-heading"><h2>코드 리뷰 대응 · {review.reviewed_commit} → v{review.implementation_version}</h2><p>13개 반영 · 1개 기술 전제 정정 · 1개 원문 보관본 확보 미완료</p></div>{review.items.map(item => <details key={item.id} data-review-id={item.id}><summary><span>{item.id} · {item.severity}</span><b>{item.title}</b><em>{item.status === 'mitigated_pending_archives' ? '등급 조정 · 보관본 미확보' : item.status === 'clarified' ? '전제 정정' : '반영'}</em></summary><p>{item.response}</p></details>)}</section>
     <div className="action-summary"><ListChecks size={18}/><span>전체 {plan.items.length}개 · 완료 {completed}개 · 진행·계획 {plan.items.length - completed}개</span><small>기준: {plan.updated_at} · v{plan.version}</small></div>
     <div className="action-grid">{plan.items.map(item => <article className="panel action-card" key={item.id} data-action-id={item.id}>

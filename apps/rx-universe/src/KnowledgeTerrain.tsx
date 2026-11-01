@@ -1,11 +1,15 @@
-import { useId, useMemo, type CSSProperties } from 'react';
+import { useId, useMemo, useState, type CSSProperties } from 'react';
 import { ArrowRight, ArrowUpRight, Network } from 'lucide-react';
 import type { KnowledgeCluster, KnowledgeGraph } from './knowledge';
 import { terrainRegions } from './terrain';
+import KnowledgeEvolution from './KnowledgeEvolution';
 import './terrain.css';
 
 export interface KnowledgeTerrainProps {
   graph: KnowledgeGraph;
+  knownAt: string;
+  onSource: (id: string) => void;
+  onOpenDate: (date: string) => void;
   selectedCluster?: KnowledgeCluster;
   onSelectRegion: (cluster: KnowledgeCluster) => void;
   onShowGraph: () => void;
@@ -28,7 +32,8 @@ const contour = 'M -145 -8 C -155 -65 -109 -99 -54 -106 C -5 -122 55 -112 102 -8
 const levels = [1, .77, .54];
 const formatCount = (value: number) => value.toLocaleString('ko-KR');
 
-export function KnowledgeTerrain({ graph, selectedCluster, onSelectRegion, onShowGraph }: KnowledgeTerrainProps) {
+export function KnowledgeTerrain({ graph, knownAt, onSource, onOpenDate, selectedCluster, onSelectRegion, onShowGraph }: KnowledgeTerrainProps) {
+  const [presentation, setPresentation] = useState<'map' | 'evolution'>('map');
   const regions = useMemo(() => terrainRegions(graph), [graph]);
   const id = useId().replace(/:/g, '');
   const summary = useMemo(() => ({
@@ -60,6 +65,12 @@ export function KnowledgeTerrain({ graph, selectedCluster, onSelectRegion, onSho
       <span className="terrain-summary-end">5개 주제 구역</span>
     </div>
 
+    <div className="terrain-presentation" aria-label="지식 지형 보기 선택">
+      <button aria-pressed={presentation === 'map'} onClick={() => setPresentation('map')}>주제 지도</button>
+      <button aria-pressed={presentation === 'evolution'} onClick={() => setPresentation('evolution')}>근거의 시간축</button>
+      <span>위치는 유지하고, 축적된 자료를 시간으로 살펴보세요.</span>
+    </div>
+    {presentation === 'evolution' ? <KnowledgeEvolution graph={graph} knownAt={knownAt} onSource={onSource} onOpenDate={value => { onOpenDate(value); setPresentation('map'); }}/> : <>
     <div className="terrain-map-shell">
       <div className="terrain-map-caption"><span>TOPIC OVERVIEW</span><span>구역 선택 → 관계 탐색</span></div>
       {/* Equivalent HTML buttons below provide the full keyboard and mobile path. */}
@@ -121,6 +132,7 @@ export function KnowledgeTerrain({ graph, selectedCluster, onSelectRegion, onSho
       })}
     </div>
 
+    </>}
     <footer className="terrain-footnote">
       <p>숫자는 등록 자료의 밀도를 살펴보는 단서이며, 근거의 신뢰도나 사업 성공 확률을 뜻하지 않습니다.</p>
       <p>출처군은 같은 발표·원작을 묶은 수입니다. 독립 검증 횟수가 아닙니다.</p>
