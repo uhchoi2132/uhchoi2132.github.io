@@ -317,7 +317,7 @@
       "id": "AI-020",
       "priority": "P1",
       "title": "제텔카스텐 관점의 주제별 공개근거 흐름과 원문 탐색",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "현재 가시 그래프의 문서·주장·출처군을 공개월별 및 누적 집합으로 구분한다.",
         "같은 출처군의 월별 합계를 누적 독립 근거로 계산하지 않는다.",
@@ -327,7 +327,8 @@
       ],
       "dependencies": [
         "AI-019"
-      ]
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41268346607"
     }
   ],
   "validation": {
@@ -363,5 +364,17 @@
     "graph_nodes": 661,
     "graph_relations": 1620,
     "scope": "v2.7 주제 지형·두 시점 비교와 확장 DB의 검증 브랜치 인수 결과. 공개 main 배포도 동일 검증을 통과한 산출물만 게시한다."
+  },
+  "evolution_validation": {
+    "commit": "67692e4985d801cd94e37abc57529e4d7fbaa9d5",
+    "run_url": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41268346607",
+    "unit_tests_passed": 86,
+    "browser_scenarios_passed": 36,
+    "build": "passed",
+    "graph_nodes": 661,
+    "graph_relations": 1620,
+    "months": 13,
+    "topics": 5,
+    "scope": "v2.8 주제별 공개근거의 월간·누적 분포, 원문 및 과거 지형 탐색의 검증 브랜치 인수 결과. 공개 main 배포도 같은 검사와 공개 데이터 대조를 통과해야 한다."
   }
 }
