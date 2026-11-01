@@ -169,6 +169,8 @@ def validate(data: dict) -> dict:
         if record.get('source_type') not in SOURCE_TYPES or record.get('verification') not in VERIFICATIONS:
             raise ValueError(f'{label}: invalid source_type or verification')
         validate_audit(record, label)
+        if record.get('relevance') is not None and record['relevance'] not in {'direct_rx', 'manufacturing_adjacent', 'component_ecosystem'}:
+            raise ValueError(f'{label}.relevance: invalid reviewed-source scope')
         if record.get('date_basis') not in DATE_BASES:
             raise ValueError(f'{label}.date_basis: expected page|search_index|unknown')
         published_value, event_value = record.get('published_at'), record.get('event_date')
@@ -178,8 +180,8 @@ def validate(data: dict) -> dict:
         scheduled = record.get('scheduled_event_date')
         if scheduled is not None:
             day(scheduled, f'{label}.scheduled_event_date')
-            if not published_value or scheduled != event_value or scheduled <= published_value:
-                raise ValueError(f'{label}: scheduled_event_date must preserve a future event_date after publication')
+            # An explicitly announced schedule is not an actual occurrence date.
+            # Undated event notices may preserve a schedule with event_date=NULL.
         accessed = accessed_day(record.get('accessed_at'), f'{label}.accessed_at')
         if accessed > researched:
             raise ValueError(f'{label}: accessed_at cannot be later than researched_at')
@@ -259,7 +261,9 @@ CREATE TABLE Sources(
  audit_status TEXT NOT NULL CHECK(audit_status IN ('unarchived','archived','blocked')),
  archive_url TEXT, content_sha256 TEXT, verification_note TEXT NOT NULL, previous_verification TEXT,
  event_key TEXT, utterance_key TEXT, lineage_review_json TEXT, lineage_reviews_json TEXT NOT NULL,
- merge_conflicts_json TEXT NOT NULL, merge_date_resolutions_json TEXT NOT NULL
+ merge_conflicts_json TEXT NOT NULL, merge_date_resolutions_json TEXT NOT NULL,
+ relevance TEXT CHECK(relevance IS NULL OR relevance IN ('direct_rx','manufacturing_adjacent','component_ecosystem')),
+ origin_history_json TEXT NOT NULL
 );
 CREATE TABLE Claims(
  id TEXT PRIMARY KEY, source_id TEXT NOT NULL REFERENCES Sources(id), claim_text TEXT NOT NULL,
@@ -276,6 +280,26 @@ CREATE TABLE SourceEntities(
  PRIMARY KEY(source_id,entity_id)
 );
 CREATE TABLE Queries(id TEXT PRIMARY KEY, query_text TEXT NOT NULL, category TEXT NOT NULL, raw_query_json TEXT NOT NULL);
+CREATE TABLE CrawlRuns(
+ id TEXT PRIMARY KEY, started_at TEXT, finished_at TEXT, status TEXT NOT NULL,
+ raw_run_json TEXT NOT NULL, record_sha256 TEXT NOT NULL
+);
+CREATE TABLE CoverageCollections(
+ id TEXT PRIMARY KEY, run_id TEXT REFERENCES CrawlRuns(id), url TEXT NOT NULL, publisher TEXT NOT NULL,
+ status TEXT NOT NULL, accessed_at TEXT, discovered_urls_json TEXT NOT NULL, reviewed_urls_json TEXT NOT NULL,
+ raw_collection_json TEXT NOT NULL, record_sha256 TEXT NOT NULL
+);
+CREATE TABLE DiscoveryInventory(
+ id TEXT PRIMARY KEY, run_id TEXT REFERENCES CrawlRuns(id), url TEXT NOT NULL, canonical_url TEXT NOT NULL,
+ title TEXT, publisher TEXT, discovered_at TEXT, published_at TEXT, source_date_basis TEXT,
+ fetch_status TEXT NOT NULL, relevance TEXT NOT NULL, source_ids_json TEXT NOT NULL,
+ content_sha256 TEXT, raw_candidate_json TEXT NOT NULL, record_sha256 TEXT NOT NULL,
+ automatically_verified INTEGER NOT NULL DEFAULT 0 CHECK(automatically_verified=0),
+ run_ids_json TEXT NOT NULL, collection_urls_json TEXT NOT NULL, observations_json TEXT NOT NULL, observation_count INTEGER NOT NULL
+);
+CREATE INDEX discovery_url_idx ON DiscoveryInventory(canonical_url);
+CREATE INDEX discovery_status_idx ON DiscoveryInventory(fetch_status,relevance);
+CREATE INDEX collections_run_idx ON CoverageCollections(run_id);
 CREATE INDEX sources_publication_idx ON Sources(published_at);
 CREATE INDEX sources_event_idx ON Sources(event_date);
 CREATE INDEX sources_origin_idx ON Sources(origin_key);
@@ -289,9 +313,57 @@ CREATE TRIGGER immutable_claims_delete BEFORE DELETE ON Claims BEGIN SELECT RAIS
 '''
 
 
-def build(source: Path, out_dir: Path) -> dict:
+def validate_survey(data: dict, source_ids: set[str]) -> dict:
+    if not isinstance(data, dict):
+        raise ValueError('survey must be an object')
+    ids = {}
+    for group in ('runs', 'collections', 'candidates'):
+        rows = data.get(group, [])
+        if not isinstance(rows, list):
+            raise ValueError(f'survey.{group} must be an array')
+        ids[group] = set()
+        for row in rows:
+            if not isinstance(row, dict):
+                raise ValueError(f'survey.{group}: object required')
+            row_id = required_text(row.get('id'), f'survey.{group}.id')
+            if row_id in ids[group]:
+                raise ValueError(f'survey.{group}: duplicate id {row_id}')
+            ids[group].add(row_id)
+    for group in ('collections', 'candidates'):
+        for row in data.get(group, []):
+            if row.get('run_id') and row['run_id'] not in ids['runs']:
+                raise ValueError(f"survey.{group}: unknown run {row['run_id']}")
+            url = row.get('url') or row.get('collection_url')
+            parts = urlsplit(required_text(url, f'survey.{group}.url'))
+            if parts.scheme not in {'https', 'http'} or not parts.netloc or parts.username or parts.password:
+                raise ValueError(f'survey.{group}: public URL required')
+    for row in data.get('runs', []):
+        required_text(row.get('status'), 'survey.runs.status')
+    for row in data.get('collections', []):
+        required_text(row.get('publisher'), 'survey.collections.publisher')
+        required_text(row.get('status'), 'survey.collections.status')
+    for row in data.get('candidates', []):
+        if any(run_id not in ids['runs'] for run_id in row.get('run_ids', [])):
+            raise ValueError('discovery candidate run_ids must resolve to retained CrawlRuns')
+        if 'claim' in row or 'claims' in row:
+            raise ValueError('discovery candidates cannot contain claims; review into Sources explicitly')
+        source_links = row.get('source_ids', [])
+        if not isinstance(source_links, list) or any(source_id not in source_ids for source_id in source_links):
+            raise ValueError('discovery candidate source_ids must resolve to reviewed Sources')
+        if row.get('published_at') is not None:
+            day(row['published_at'], 'survey.candidates.published_at')
+        if row.get('content_sha256') is not None and not re.fullmatch(r'[a-fA-F0-9]{64}', row['content_sha256']):
+            raise ValueError('discovery content_sha256 must be a response-byte hash or null')
+    return {**data, **{key: data.get(key, []) for key in ('collections', 'candidates', 'runs')}}
+
+
+def build(source: Path, out_dir: Path, survey_path: Path | None = None) -> dict:
     raw = source.read_bytes()
     data = validate(json.loads(raw))
+    if survey_path is None and source.resolve() == (ROOT / 'src/research-data.json').resolve():
+        survey_path = ROOT / 'research/survey-data.json'
+    survey = validate_survey(json.loads(survey_path.read_bytes()) if survey_path and survey_path.exists() else {}, {row['id'] for row in data['records']})
+    survey_raw = (json.dumps(survey, ensure_ascii=False, indent=2) + '\n').encode()
     out_dir.mkdir(parents=True, exist_ok=True)
     target = out_dir / 'rx-research.sqlite'
     fd, temporary_name = tempfile.mkstemp(prefix='.rx-research-', suffix='.sqlite', dir=out_dir)
@@ -300,17 +372,23 @@ def build(source: Path, out_dir: Path) -> dict:
     try:
         with sqlite3.connect(temporary) as db:
             db.executescript(SCHEMA)
-            metadata = {**data['meta'], 'schema_version': '1.2', 'source_json_sha256': sha256(raw),
+            metadata = {**data['meta'], 'schema_version': '1.3', 'source_json_sha256': sha256(raw),
                         'storage_kind': 'portable_sqlite_snapshot', 'claim_editorial_status': EDITORIAL_STATUS,
                         'record_hash_semantics': 'SHA-256 of canonical record JSON, not original HTML or source bytes',
                         'captured_source_hash_semantics': 'NULL: this builder does not fetch original source bytes',
                         'archive_hash_semantics': 'content_sha256 is the supplied archive-byte SHA-256; record_sha256 hashes JSON metadata. Builder checks archive metadata format, not remote bytes.',
                         'source_group_semantics': 'Reviewed shared-source/event groups, not independently corroborating evidence',
-                        'history_policy': 'Immutable imported rows in each exported snapshot; input JSON versions tracked in Git'}
+                        'history_policy': 'Immutable imported rows in each exported snapshot; input JSON versions tracked in Git',
+                        'survey_json_sha256': sha256(survey_raw), 'survey_counts': {key: len(survey[key]) for key in ('runs','collections','candidates')},
+                        'discovery_policy': 'Discovered/fetched URLs are unreviewed inventory; never create Claims or factual verification automatically'}
             db.executemany('INSERT INTO Metadata VALUES(?,?)', [(key, canonical(value)) for key, value in sorted(metadata.items())])
+            entity_names = dict(ENTITY_NAMES)
+            graph_inventory = ROOT / 'src/knowledge-expansion.json'
+            if graph_inventory.exists():
+                entity_names.update({row['id']: (row['title'], row['ontology_type']) for row in json.loads(graph_inventory.read_bytes()).get('entities', [])})
             all_entities = sorted({entity_id for record in data['records'] for entity_id in record['entity_ids']})
             for entity_id in all_entities:
-                name, kind = ENTITY_NAMES.get(entity_id, (entity_id, 'Unresolved'))
+                name, kind = entity_names.get(entity_id, (entity_id, 'Unresolved'))
                 db.execute('INSERT INTO Entities VALUES(?,?,?,?)', (entity_id, name, kind, 'Research indexing entity; inclusion does not establish a business relationship'))
             for record in sorted(data['records'], key=lambda item: item['id']):
                 normalized_record = canonical(record)
@@ -321,7 +399,7 @@ def build(source: Path, out_dir: Path) -> dict:
                     record['date_basis'], record['evidence_locator'], sha256(normalized_record), None, normalized_record,
                     record['audit_status'], record['archive_url'], record['content_sha256'], record['verification_note'], record.get('previous_verification'),
                     record.get('event_key'), record.get('utterance_key'), canonical(record['lineage_review']) if record.get('lineage_review') else None,
-                    canonical(record.get('lineage_reviews', [])), canonical(record.get('merge_conflicts', [])), canonical(record.get('merge_date_resolutions', [])),
+                    canonical(record.get('lineage_reviews', [])), canonical(record.get('merge_conflicts', [])), canonical(record.get('merge_date_resolutions', [])), record.get('relevance'), canonical(record.get('origin_history', [])),
                 )
                 db.execute(f'INSERT INTO Sources VALUES({",".join("?" for _ in source_values)})', source_values)
                 for claim in record_claims(record):
@@ -335,6 +413,19 @@ def build(source: Path, out_dir: Path) -> dict:
                 db.executemany('INSERT INTO SourceEntities VALUES(?,?)', [(record['id'], entity_id) for entity_id in sorted(record['entity_ids'])])
             for index, query in enumerate(data['queries']):
                 db.execute('INSERT INTO Queries VALUES(?,?,?,?)', (str(query.get('id', f'query:{index + 1:04d}')), query['query'], query['category'], canonical(query)))
+            for row in survey['runs']:
+                db.execute('INSERT INTO CrawlRuns VALUES(?,?,?,?,?,?)', (row['id'], row.get('started_at'), row.get('finished_at'), row['status'], canonical(row), sha256(canonical(row))))
+            for row in survey['collections']:
+                db.execute('INSERT INTO CoverageCollections VALUES(?,?,?,?,?,?,?,?,?,?)', (
+                    row['id'], row.get('run_id'), row.get('url') or row['collection_url'], row['publisher'], row['status'], row.get('accessed_at'),
+                    canonical(row.get('discovered_urls', [])), canonical(row.get('reviewed_urls', [])), canonical(row), sha256(canonical(row))))
+            for row in survey['candidates']:
+                db.execute('INSERT INTO DiscoveryInventory VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)', (
+                    row['id'], row.get('run_id'), row['url'], row.get('canonical_url') or row['url'], row.get('title'), row.get('publisher'),
+                    row.get('discovered_at'), row.get('published_at'), row.get('date_basis'), row.get('fetch_status', 'discovered'), row.get('relevance', 'unreviewed'),
+                    canonical(row.get('source_ids', [])), row.get('content_sha256'), canonical(row), sha256(canonical(row)), 0,
+                    canonical(row.get('run_ids', [row['run_id']] if row.get('run_id') else [])), canonical(row.get('collection_urls', [])),
+                    canonical(row.get('observations', [row])), row.get('observation_count', len(row.get('observations', [row])))))
             problems = db.execute('PRAGMA foreign_key_check').fetchall()
             if problems:
                 raise ValueError(f'Foreign key validation failed: {problems}')
@@ -347,21 +438,25 @@ def build(source: Path, out_dir: Path) -> dict:
         json_temporary.write_bytes(raw)
         os.replace(temporary, target)
         os.replace(json_temporary, json_target)
+        survey_temporary = out_dir / '.rx-survey.json.tmp'
+        survey_temporary.write_bytes(survey_raw)
+        os.replace(survey_temporary, out_dir / 'rx-survey.json')
     finally:
         temporary.unlink(missing_ok=True)
     return {'database': str(target), 'json': str(out_dir / 'rx-research.json'), 'sources': len(data['records']),
             'claims': sum(len(record_claims(record)) for record in data['records']), 'source_groups': len({record['origin_key'] for record in data['records']}),
-            'queries': len(data['queries']), 'source_json_sha256': sha256(raw)}
+            'queries': len(data['queries']), 'source_json_sha256': sha256(raw), 'survey': {key: len(survey[key]) for key in ('runs','collections','candidates')}}
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--input', type=Path, default=ROOT / 'src/research-data.json')
     parser.add_argument('--out-dir', type=Path, default=ROOT / 'public/data')
+    parser.add_argument('--survey', type=Path)
     parser.add_argument('--validate-only', action='store_true')
     args = parser.parse_args()
     if args.validate_only:
         loaded = validate(json.loads(args.input.read_bytes()))
         print(json.dumps({'valid': True, 'sources': len(loaded['records']), 'queries': len(loaded['queries'])}))
     else:
-        print(json.dumps(build(args.input, args.out_dir), ensure_ascii=False))
+        print(json.dumps(build(args.input, args.out_dir, args.survey), ensure_ascii=False))

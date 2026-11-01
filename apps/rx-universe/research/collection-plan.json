@@ -1,0 +1,162 @@
+{
+  "window_start": "2025-10-30",
+  "window_end": "2026-10-31",
+  "max_collection_pages": 180,
+  "max_detail_pages": 600,
+  "max_seconds": 600,
+  "collections": [
+    {
+      "url": "https://news.samsung.com/kr/tag/%EB%A1%9C%EB%B4%87",
+      "publisher": "Samsung Electronics",
+      "label": "Korean robotics tag"
+    },
+    {
+      "url": "https://news.samsung.com/kr/tag/%EC%8A%A4%EB%A7%88%ED%8A%B8%EA%B3%B5%EC%9E%A5",
+      "publisher": "Samsung Electronics",
+      "label": "Korean smart factory tag"
+    },
+    {
+      "url": "https://news.samsung.com/global/tag/robotics",
+      "publisher": "Samsung Electronics",
+      "label": "Global robotics tag"
+    },
+    {
+      "url": "https://research.samsung.com/publications",
+      "publisher": "Samsung Research",
+      "label": "Research publications"
+    },
+    {
+      "url": "https://research.samsung.com/hashsearch?q=Robot",
+      "publisher": "Samsung Research",
+      "label": "Official robot search"
+    },
+    {
+      "url": "https://research.samsung.com/hashsearch?q=Robotics",
+      "publisher": "Samsung Research",
+      "label": "Official robotics search"
+    },
+    {
+      "url": "https://sra.samsung.com/2026-start/",
+      "publisher": "Samsung Research America",
+      "label": "START 2026 research calls"
+    },
+    {
+      "url": "https://www.rainbow-robotics.com/",
+      "publisher": "Rainbow Robotics",
+      "label": "Official product and news navigation"
+    },
+    {
+      "url": "https://nvidianews.nvidia.com/",
+      "publisher": "NVIDIA",
+      "label": "Official newsroom"
+    },
+    {
+      "url": "https://blogs.nvidia.com/blog/category/robotics/",
+      "publisher": "NVIDIA",
+      "label": "Official robotics blog"
+    },
+    {
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6",
+      "publisher": "미라콤아이앤씨",
+      "label": "인사이트 리포트 총54개·더 보기형"
+    },
+    {
+      "url": "https://miracom-inc.com/kr/customer-support/news/dn2",
+      "publisher": "미라콤아이앤씨",
+      "label": "언론보도 총7개·더 보기형"
+    },
+    {
+      "url": "https://miracom-inc.com/kr/customer-support/miracom-focus/dn14",
+      "publisher": "미라콤아이앤씨",
+      "label": "M-FOCUS 총16개·더 보기형"
+    },
+    {
+      "url": "https://www.miracom-inc.com/user/Board/comm_notice.do?BD_NO=1&LANG_CH=KO",
+      "publisher": "미라콤아이앤씨",
+      "label": "레거시 공지사항·행사"
+    },
+    {
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html",
+      "publisher": "삼성SDI",
+      "label": "공식 뉴스 목록"
+    },
+    {
+      "url": "https://www.samsungsem.com/kr/newsroom/news/list.do",
+      "publisher": "삼성전기",
+      "label": "뉴스 최신기사·현재 추출에 검색 결과 없음"
+    },
+    {
+      "url": "https://www.samsungshi.com/Ko/Notice_news.aspx",
+      "publisher": "삼성중공업",
+      "label": "공식 뉴스 목록·웹 열람 도구 접근 실패"
+    },
+    {
+      "url": "https://blog.samsungshi.com/category/SHI%EB%8A%94%20%EC%A7%80%EA%B8%88?page=1",
+      "publisher": "삼성중공업",
+      "label": "공식 블로그 SHI는 지금"
+    },
+    {
+      "url": "https://semes.com/ko/media/newsroom/view",
+      "publisher": "세메스",
+      "label": "뉴스룸·최신 페이지에 2026 7개 및 2025년8월 이전 목록"
+    },
+    {
+      "url": "https://news.samsungdisplay.com/",
+      "publisher": "삼성디스플레이",
+      "label": "공식 뉴스룸"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 보도자료 전체 현황판 · 2025-10-30~2026-10-31 구간 45건, 링크 0~44"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/insights/state.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 인사이트 전체 현황판"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/investor/ir_events/earnings-release.html",
+      "publisher": "Samsung SDS",
+      "label": "국문 실적발표 PDF 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/manufacturing/manufacturing.html",
+      "publisher": "Samsung SDS",
+      "label": "팩토리 솔루션 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/event/index.html",
+      "publisher": "Samsung SDS",
+      "label": "이벤트 및 웨비나 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/vod/index.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 동영상 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/etc/license/index.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 라이선스 목록"
+    },
+    {
+      "url": "https://www.samsungsds.com/kr/notice/notice_list.html",
+      "publisher": "Samsung SDS",
+      "label": "공식 공지사항 목록"
+    }
+  ],
+  "max_collection_seconds": 240,
+  "max_pages_per_collection": 6,
+  "max_collection_pages_per_host": 30,
+  "max_detail_pages_per_host": 120,
+  "max_next_links_per_page": 4,
+  "max_response_bytes": 5000000,
+  "workers": 6,
+  "per_host_delay_seconds": 0.2,
+  "previous_inventory_globs": [
+    "research/survey/crawl-*.json"
+  ],
+  "pagination_policy": "Follow observed same-collection links only; never calendar archives, comments or unrelated feeds. Script endpoints are recorded as unexecuted hints.",
+  "archive_policy": "Response hashes are byte observations, never retained-original archive quality. No automatic claims."
+}

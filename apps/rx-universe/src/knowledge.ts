@@ -1,3 +1,4 @@
+import expansionData from './knowledge-expansion.json' with { type: 'json' };
 import { catalog, getRecordClaims, RESEARCH_MAX_DATE, researchAt, type ResearchMode, type ResearchRecord, type ResearchVerification, type ResearchTimeOptions, type ResearchClaim, scheduledEventDate } from './research';
 
 import { ontologyDefinitions, matchedAlias, layerPosition, type KnowledgeKind, type OntologyType, type KnowledgeLayer, type KnowledgeCluster, type Position } from './knowledge-ontology';
@@ -38,7 +39,7 @@ export interface HypothesisAssessment {
 }
 
 
-interface EdgeDefinition { id: string; from: string; to: string; type: string; label: string; claim_id: string; status: KnowledgeStatus; rationale: string }
+export interface EdgeDefinition { id: string; from: string; to: string; type: string; label: string; claim_id: string; status: KnowledgeStatus; rationale: string }
 const edge = (id: string, from: string, to: string, type: string, label: string, record: string, status: KnowledgeStatus, rationale: string): EdgeDefinition => ({
   id, from, to, type, label, claim_id: record.startsWith('claim:') ? record : `claim:${record}`, status, rationale,
 });
@@ -108,8 +109,8 @@ function validDate(date: string) {
 export function knowledgeRecordsAt(date: string, mode: ResearchMode = 'known', options: ResearchTimeOptions = {}): ResearchRecord[] {
   if (!validDate(date) || !['known', 'retro', 'as-known-at', 'retrospective'].includes(mode)) return [];
   const dated = researchAt(date, mode, catalog, options).filter(record => permitsAttribution(record.verification));
-  if (date < RESEARCH_MAX_DATE || options.eventAsOf !== undefined || options.occurredOnly) return dated;
-  const current = catalog.records.filter(record => record.scope === 'undated' && permitsAttribution(record.verification) && record.accessed_at <= date);
+  if (options.eventAsOf !== undefined || options.occurredOnly) return dated;
+  const current = catalog.records.filter(record => record.scope === 'undated' && permitsAttribution(record.verification) && record.accessed_at.slice(0, 10) <= (date > RESEARCH_MAX_DATE ? RESEARCH_MAX_DATE : date));
   return [...dated, ...current];
 }
 function findClaim(records: readonly ResearchRecord[], claimId: string) {
@@ -193,9 +194,11 @@ export function hypothesisAssessments(date: string, mode: ResearchMode = 'known'
 /** Grouping only controls the fixed layout; it never creates an ownership or dependency edge. */
 export function sourceCluster(record: ResearchRecord): KnowledgeCluster {
   if (record.source_type === 'paper' || record.source_type === 'patent' || ['se-006', 'tech-008', 'tech-009', 'tech-010'].includes(record.id)) return 'research';
+  if (record.id.startsWith('x-eco-')) return 'robotics';
+  if (record.id.startsWith('x-mf-') && record.entity_ids.includes('miracom')) return 'miracom';
   if (['media-004', 'se-011', 'se-012', 'se-016', 'se-020', 'tech-011', 'tech-012', 'tech-015', 'tech-016', 'tech-017'].includes(record.id)) return 'robotics';
-  if (record.id.startsWith('sds-') || record.id.startsWith('media-')) return 'sds';
-  if (record.id.startsWith('mi-') && !['mi-015', 'mi-016', 'mi-017', 'mi-018'].includes(record.id)) return 'miracom';
+  if (record.id.startsWith('sds-') || record.id.startsWith('x-sds-') || record.id.startsWith('media-')) return 'sds';
+  if ((record.id.startsWith('mi-') || record.id.startsWith('x-mi-')) && !['mi-015', 'mi-016', 'mi-017', 'mi-018'].includes(record.id)) return 'miracom';
   return 'electronics';
 }
 const layoutSlots = new Map<string, { cluster: KnowledgeCluster; index: number; count: number }>();
@@ -236,7 +239,7 @@ export function graphAt(date: string, mode: ResearchMode = 'known', options: Res
   };
 
   // Curated predicate edges require the exact extracted assertion, not keyword co-occurrence.
-  for (const definition of edgeDefinitions) {
+  for (const definition of [...edgeDefinitions, ...(expansionData.relations as EdgeDefinition[])]) {
     const found = findClaim(records, definition.claim_id);
     if (!found) continue;
     const { claim_id, ...edgeData } = definition;

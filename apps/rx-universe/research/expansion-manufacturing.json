@@ -1,0 +1,3310 @@
+{
+  "records": [
+    {
+      "title": "다크팩토리, AX로 판단하고 RX로 실행하다",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/darkfactory-ax-rx-manufacturing",
+      "publisher": "미라콤아이앤씨",
+      "published_at": "2026-03-30",
+      "event_date": null,
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "rcs",
+        "robot",
+        "api",
+        "platform"
+      ],
+      "excerpt": "이기종로봇 통합 제어를 통한 제조 공정 및 물류 자동화를 수행합니다.",
+      "claims": [
+        {
+          "id": "claim:x-mf-001",
+          "text": "미라콤은 Nexplant MESplus MC와 Highway101을 설비 데이터 수집 및 이기종 시스템 연계 기반으로 소개했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-001",
+          "verification": "manual_report",
+          "evidence_locator": "본문 ‘다크팩토리 실현의 선결 조건 AX·RX’ 및 ‘막막하기만 했던 제조 AX’ 절",
+          "limitations": [
+            "제품·전략 소개이며 특정 고객의 유료 상시 운영이나 사람 개입률 실측을 입증하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-mf-001:2",
+          "text": "미라콤은 AMMR·AMR을 통합 제어하는 로봇 제어시스템으로 제조 공정과 물류 자동화를 지원한다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-001",
+          "verification": "manual_report",
+          "evidence_locator": "본문 ‘다크팩토리 실현의 선결 조건 AX·RX’ 및 ‘막막하기만 했던 제조 AX’ 절",
+          "limitations": [
+            "제품·전략 소개이며 특정 고객의 유료 상시 운영이나 사람 개입률 실측을 입증하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "본문 ‘다크팩토리 실현의 선결 조건 AX·RX’ 및 ‘막막하기만 했던 제조 AX’ 절",
+      "limitations": [
+        "제품·전략 소개이며 특정 고객의 유료 상시 운영이나 사람 개입률 실측을 입증하지 않는다."
+      ],
+      "id": "x-mf-001",
+      "claim": {
+        "text": "미라콤은 Nexplant MESplus MC와 Highway101을 설비 데이터 수집 및 이기종 시스템 연계 기반으로 소개했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/darkfactory-ax-rx-manufacturing",
+      "summary_ko": "미라콤은 Nexplant MESplus MC와 Highway101을 설비 데이터 수집 및 이기종 시스템 연계 기반으로 소개했다. 미라콤은 AMMR·AMR을 통합 제어하는 로봇 제어시스템으로 제조 공정과 물류 자동화를 지원한다고 설명했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/darkfactory-ax-rx-manufacturing"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/darkfactory-ax-rx-manufacturing",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성SDI, 2026년 3분기 실적 발표",
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html",
+      "publisher": "삼성SDI",
+      "published_at": "2026-10-29",
+      "event_date": "2026-10-29",
+      "entity_ids": [
+        "sdi",
+        "robot",
+        "battery"
+      ],
+      "origin_key": "samsung-sdi:2026-q3-earnings-call",
+      "excerpt": "휴머노이드용 샘플 출하를 진행하며 고객 평가와 상용화 준비를 이어갔으며",
+      "claims": [
+        {
+          "id": "claim:x-mf-002",
+          "text": "삼성SDI는 휴머노이드용 전고체 배터리 샘플을 출하하고 고객 평가와 상용화 준비를 이어갔다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-002",
+          "verification": "manual_report",
+          "evidence_locator": "3분기 주요 성과 마지막 문단",
+          "limitations": [
+            "샘플 출하는 전고체 배터리 양산·유료 상용 공급 완료가 아니다.",
+            "그룹 전체 또는 배터리 부문 매출을 로봇 배터리 매출로 배분하지 않는다.",
+            "고객명·계약액·RX 소프트웨어 반복매출은 확인되지 않았다."
+          ]
+        },
+        {
+          "id": "claim:x-mf-002:2",
+          "text": "삼성SDI는 원통형 배터리 사업에서 휴머노이드 분야 신규 거래선을 확보했다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-002",
+          "verification": "manual_report",
+          "evidence_locator": "3분기 주요 성과 마지막 문단",
+          "limitations": [
+            "샘플 출하는 전고체 배터리 양산·유료 상용 공급 완료가 아니다.",
+            "그룹 전체 또는 배터리 부문 매출을 로봇 배터리 매출로 배분하지 않는다.",
+            "고객명·계약액·RX 소프트웨어 반복매출은 확인되지 않았다."
+          ]
+        }
+      ],
+      "commercialization_stage": "pilot",
+      "evidence_locator": "3분기 주요 성과 마지막 문단",
+      "limitations": [
+        "샘플 출하는 전고체 배터리 양산·유료 상용 공급 완료가 아니다.",
+        "그룹 전체 또는 배터리 부문 매출을 로봇 배터리 매출로 배분하지 않는다.",
+        "고객명·계약액·RX 소프트웨어 반복매출은 확인되지 않았다."
+      ],
+      "id": "x-mf-002",
+      "claim": {
+        "text": "삼성SDI는 휴머노이드용 전고체 배터리 샘플을 출하하고 고객 평가와 상용화 준비를 이어갔다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "summary_ko": "삼성SDI는 휴머노이드용 전고체 배터리 샘플을 출하하고 고객 평가와 상용화 준비를 이어갔다고 발표했다. 삼성SDI는 원통형 배터리 사업에서 휴머노이드 분야 신규 거래선을 확보했다고 발표했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "source_urls": [
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html",
+          "https://ir.edaily.co.kr/News/Read?k=03995046645617840"
+        ],
+        "related_record_ids": [
+          "mi-016"
+        ],
+        "document_origin_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html",
+        "rationale": "기존 등록 문서와 같은 기업 발표·전시 사건의 공식 원문·회고다. 독립 검증 증거로 중복 계산하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": [
+          {
+            "with_record_id": "sds-013",
+            "reason": "같은 2026-10-29이지만 삼성SDI의 배터리 사업 3분기 공식 발표와 삼성SDS의 로봇 플랫폼 출시 컨퍼런스콜 보도는 발표 법인·사업·주장이 다르다. 공통 robot 태그만으로 두 발표를 같은 원출처로 합치지 않는다."
+          }
+        ]
+      }
+    },
+    {
+      "title": "‘AI의 상상, 배터리가 현실로’… 삼성SDI, 인터배터리 2026서 AI시대 비전 제시",
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html",
+      "publisher": "삼성SDI",
+      "published_at": "2026-03-02",
+      "event_date": "2026-03-11",
+      "scheduled_event_date": "2026-03-11",
+      "entity_ids": [
+        "sdi",
+        "robot",
+        "battery"
+      ],
+      "origin_key": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+      "excerpt": "휴머노이드, 이동형 로봇, 산업용 로봇 등 다양한 피지컬 AI로 확대해",
+      "claims": [
+        {
+          "id": "claim:x-mf-003",
+          "text": "삼성SDI는 인터배터리 2026에서 전고체 배터리의 휴머노이드·이동형·산업용 로봇 적용 방향을 소개할 계획이라고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-003",
+          "verification": "manual_report",
+          "evidence_locator": "발표일 및 ‘피지컬 AI의 심장 삼성SDI 전고체 배터리’ 절",
+          "limitations": [
+            "전시 예고이며 2027년 하반기 양산 목표는 전망이다.",
+            "같은 전시 관련 기존 mi-015와 독립 근거로 중복 계산하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "발표일 및 ‘피지컬 AI의 심장 삼성SDI 전고체 배터리’ 절",
+      "limitations": [
+        "전시 예고이며 2027년 하반기 양산 목표는 전망이다.",
+        "같은 전시 관련 기존 mi-015와 독립 근거로 중복 계산하지 않는다."
+      ],
+      "id": "x-mf-003",
+      "claim": {
+        "text": "삼성SDI는 인터배터리 2026에서 전고체 배터리의 휴머노이드·이동형·산업용 로봇 적용 방향을 소개할 계획이라고 발표했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "summary_ko": "삼성SDI는 인터배터리 2026에서 전고체 배터리의 휴머노이드·이동형·산업용 로봇 적용 방향을 소개할 계획이라고 발표했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "source_urls": [
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html",
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html"
+        ],
+        "related_record_ids": [
+          "mi-015",
+          "x-mf-030"
+        ],
+        "document_origin_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html",
+        "rationale": "기존 등록 문서와 같은 기업 발표·전시 사건의 공식 원문·회고다. 독립 검증 증거로 중복 계산하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성SDI, 제56기 정기 주주총회 개최",
+      "url": "https://samsungsdi.co.kr/sdi-now/sdi-news/4803.html",
+      "publisher": "삼성SDI",
+      "published_at": "2026-03-18",
+      "event_date": "2026-03-18",
+      "entity_ids": [
+        "sdi",
+        "robot",
+        "battery"
+      ],
+      "excerpt": "휴머노이드, 전기차 등에 공급을 추진하고 있다",
+      "claims": [
+        {
+          "id": "claim:x-mf-004",
+          "text": "삼성SDI는 2026년 주주총회에서 전고체 배터리의 2027년 양산을 목표로 휴머노이드 공급을 추진한다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-004",
+          "verification": "manual_report",
+          "evidence_locator": "본문 최주선 대표의 차세대 핵심 기술 발언",
+          "limitations": [
+            "공급 추진·양산 목표는 공급 계약이나 양산 완료와 구분한다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "본문 최주선 대표의 차세대 핵심 기술 발언",
+      "limitations": [
+        "공급 추진·양산 목표는 공급 계약이나 양산 완료와 구분한다."
+      ],
+      "id": "x-mf-004",
+      "claim": {
+        "text": "삼성SDI는 2026년 주주총회에서 전고체 배터리의 2027년 양산을 목표로 휴머노이드 공급을 추진한다고 설명했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://samsungsdi.co.kr/sdi-now/sdi-news/4803.html",
+      "summary_ko": "삼성SDI는 2026년 주주총회에서 전고체 배터리의 2027년 양산을 목표로 휴머노이드 공급을 추진한다고 설명했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://samsungsdi.co.kr/sdi-now/sdi-news/4803.html"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://samsungsdi.co.kr/sdi-now/sdi-news/4803.html",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성SDI, 2026년 2분기 실적 발표",
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4941.html",
+      "publisher": "삼성SDI",
+      "published_at": "2026-07-30",
+      "event_date": "2026-07-30",
+      "entity_ids": [
+        "sdi",
+        "robot",
+        "battery"
+      ],
+      "excerpt": "휴머노이드 및 우주항공 분야의 주요 고객들과 협력을 확대하고",
+      "claims": [
+        {
+          "id": "claim:x-mf-005",
+          "text": "삼성SDI는 2026년 상반기에 휴머노이드 분야 주요 고객과 협력을 확대했다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-005",
+          "verification": "manual_report",
+          "evidence_locator": "‘2026년 상반기 주요 성과’ 마지막 문단",
+          "limitations": [
+            "협력 고객명·납품 수량·로봇 배터리 매출은 공개하지 않았다.",
+            "전체 실적을 RX 매출이나 로봇용 배터리 실적으로 환산하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "‘2026년 상반기 주요 성과’ 마지막 문단",
+      "limitations": [
+        "협력 고객명·납품 수량·로봇 배터리 매출은 공개하지 않았다.",
+        "전체 실적을 RX 매출이나 로봇용 배터리 실적으로 환산하지 않는다."
+      ],
+      "id": "x-mf-005",
+      "claim": {
+        "text": "삼성SDI는 2026년 상반기에 휴머노이드 분야 주요 고객과 협력을 확대했다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4941.html",
+      "summary_ko": "삼성SDI는 2026년 상반기에 휴머노이드 분야 주요 고객과 협력을 확대했다고 발표했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4941.html"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4941.html",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성重-KAIST, 차세대 선박연구센터 출범",
+      "url": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=248",
+      "publisher": "삼성중공업",
+      "published_at": "2026-08-13",
+      "event_date": "2026-08-13",
+      "entity_ids": [
+        "shi",
+        "kaist",
+        "robot",
+        "factory",
+        "digital-twin"
+      ],
+      "excerpt": "용접, 도장, 검사 등 현장 공정 자동화를 위한 로봇 기술 연구",
+      "claims": [
+        {
+          "id": "claim:x-mf-006",
+          "text": "삼성중공업과 KAIST는 용접·도장·검사 로봇 및 스마트 조선소 디지털트윈 공동 연구를 포함하는 차세대 선박연구센터를 개소했다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-006",
+          "verification": "manual_report",
+          "evidence_locator": "본문 개소식 일자와 4대 연구 분야 항목",
+          "limitations": [
+            "연구센터 출범과 연구 의제이며 로봇 현장 상시 가동이나 상용 API 출시 증거가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "본문 개소식 일자와 4대 연구 분야 항목",
+      "limitations": [
+        "연구센터 출범과 연구 의제이며 로봇 현장 상시 가동이나 상용 API 출시 증거가 아니다."
+      ],
+      "id": "x-mf-006",
+      "claim": {
+        "text": "삼성중공업과 KAIST는 용접·도장·검사 로봇 및 스마트 조선소 디지털트윈 공동 연구를 포함하는 차세대 선박연구센터를 개소했다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=248",
+      "summary_ko": "삼성중공업과 KAIST는 용접·도장·검사 로봇 및 스마트 조선소 디지털트윈 공동 연구를 포함하는 차세대 선박연구센터를 개소했다고 발표했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=248"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=248",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성重, 업계 최초 로봇 배관 공장 가동",
+      "url": "https://blog.samsungshi.com/906",
+      "publisher": "삼성중공업 공식 블로그",
+      "published_at": "2026-03-19",
+      "event_date": "2026-03-16",
+      "entity_ids": [
+        "shi",
+        "factory",
+        "robot",
+        "logistics",
+        "vision-ai"
+      ],
+      "excerpt": "설계부터 자동 물류, 고정밀 가공 및 계측, 정렬, 용접",
+      "claims": [
+        {
+          "id": "claim:x-mf-007",
+          "text": "삼성중공업은 2026년 3월 16일 경남 함안의 배관 스풀 자동화 공장 ‘파이프 로보팹’을 준공하고 가동에 들어간다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-007",
+          "verification": "manual_report",
+          "evidence_locator": "본문 2026.03.16 표기 및 파이프 로보팹 통합 생산 체계 문단",
+          "limitations": [
+            "공식 블로그 게시일은 3월19일, 본문 발표·준공일은 3월16일이다.",
+            "연간 생산능력은 실생산량이나 90일 연속 가동 실적과 다르다.",
+            "SDS 오케스트레이션 플랫폼과의 연동이나 RX 소프트웨어 매출은 확인되지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-mf-007:2",
+          "text": "삼성중공업은 배관 설계·자동 물류·계측·정렬·용접을 통합하는 관리 시스템을 비전 AI와 결합했다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-007",
+          "verification": "manual_report",
+          "evidence_locator": "본문 2026.03.16 표기 및 파이프 로보팹 통합 생산 체계 문단",
+          "limitations": [
+            "공식 블로그 게시일은 3월19일, 본문 발표·준공일은 3월16일이다.",
+            "연간 생산능력은 실생산량이나 90일 연속 가동 실적과 다르다.",
+            "SDS 오케스트레이션 플랫폼과의 연동이나 RX 소프트웨어 매출은 확인되지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "production",
+      "evidence_locator": "본문 2026.03.16 표기 및 파이프 로보팹 통합 생산 체계 문단",
+      "limitations": [
+        "공식 블로그 게시일은 3월19일, 본문 발표·준공일은 3월16일이다.",
+        "연간 생산능력은 실생산량이나 90일 연속 가동 실적과 다르다.",
+        "SDS 오케스트레이션 플랫폼과의 연동이나 RX 소프트웨어 매출은 확인되지 않는다."
+      ],
+      "id": "x-mf-007",
+      "claim": {
+        "text": "삼성중공업은 2026년 3월 16일 경남 함안의 배관 스풀 자동화 공장 ‘파이프 로보팹’을 준공하고 가동에 들어간다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://blog.samsungshi.com/906",
+      "summary_ko": "삼성중공업은 2026년 3월 16일 경남 함안의 배관 스풀 자동화 공장 ‘파이프 로보팹’을 준공하고 가동에 들어간다고 발표했다. 삼성중공업은 배관 설계·자동 물류·계측·정렬·용접을 통합하는 관리 시스템을 비전 AI와 결합했다고 설명했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://blog.samsungshi.com/906"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://blog.samsungshi.com/906",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성전기, 제53기 정기 주주총회 개최",
+      "url": "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10161",
+      "publisher": "삼성전기",
+      "published_at": "2026-03-18",
+      "event_date": "2026-03-18",
+      "entity_ids": [
+        "semco",
+        "robot",
+        "camera-module"
+      ],
+      "excerpt": "휴머노이드용 카메라 모듈 등 차별화된 제품으로 사업 기회를 창출하고",
+      "claims": [
+        {
+          "id": "claim:x-mf-008",
+          "text": "삼성전기는 정기 주주총회에서 휴머노이드용 카메라 모듈을 사업 기회 확대를 위한 제품으로 제시했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-008",
+          "verification": "manual_report",
+          "evidence_locator": "장덕현 대표의 중점 추진 방향 마지막 발언",
+          "limitations": [
+            "시장 대응 전략이며 고객별 수주·양산·로봇 부품 매출을 공개한 자료는 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "장덕현 대표의 중점 추진 방향 마지막 발언",
+      "limitations": [
+        "시장 대응 전략이며 고객별 수주·양산·로봇 부품 매출을 공개한 자료는 아니다."
+      ],
+      "id": "x-mf-008",
+      "claim": {
+        "text": "삼성전기는 정기 주주총회에서 휴머노이드용 카메라 모듈을 사업 기회 확대를 위한 제품으로 제시했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10161",
+      "summary_ko": "삼성전기는 정기 주주총회에서 휴머노이드용 카메라 모듈을 사업 기회 확대를 위한 제품으로 제시했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10161"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10161",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성전기, 2025년 4분기 경영실적",
+      "url": "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10041",
+      "publisher": "삼성전기",
+      "published_at": "2026-01-23",
+      "event_date": "2026-01-23",
+      "entity_ids": [
+        "semco",
+        "robot",
+        "camera-module",
+        "actuator"
+      ],
+      "excerpt": "휴머노이드 로봇용 부품등 중장기 성장 기반을 구축할 계획입니다.",
+      "claims": [
+        {
+          "id": "claim:x-mf-009",
+          "text": "삼성전기는 2025년 4분기 실적 발표에서 휴머노이드 로봇용 부품의 중장기 성장 기반을 구축할 계획이라고 밝혔다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-009",
+          "verification": "manual_report",
+          "evidence_locator": "2026년 사업 전략 문단 및 광학솔루션 전망",
+          "limitations": [
+            "전사·광학솔루션 매출을 로봇 부품 매출로 환산하지 않는다.",
+            "연결 매출보다 향후 휴머노이드 부품 전략만 추출했다."
+          ]
+        },
+        {
+          "id": "claim:x-mf-009:2",
+          "text": "삼성전기는 피지컬 AI 시장 대응을 위한 고신뢰성 액츄에이터 등 차세대 기술 확보를 추진할 계획이라고 밝혔다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-009",
+          "verification": "manual_report",
+          "evidence_locator": "2026년 사업 전략 문단 및 광학솔루션 전망",
+          "limitations": [
+            "전사·광학솔루션 매출을 로봇 부품 매출로 환산하지 않는다.",
+            "연결 매출보다 향후 휴머노이드 부품 전략만 추출했다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "2026년 사업 전략 문단 및 광학솔루션 전망",
+      "limitations": [
+        "전사·광학솔루션 매출을 로봇 부품 매출로 환산하지 않는다.",
+        "연결 매출보다 향후 휴머노이드 부품 전략만 추출했다."
+      ],
+      "id": "x-mf-009",
+      "claim": {
+        "text": "삼성전기는 2025년 4분기 실적 발표에서 휴머노이드 로봇용 부품의 중장기 성장 기반을 구축할 계획이라고 밝혔다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10041",
+      "summary_ko": "삼성전기는 2025년 4분기 실적 발표에서 휴머노이드 로봇용 부품의 중장기 성장 기반을 구축할 계획이라고 밝혔다. 삼성전기는 피지컬 AI 시장 대응을 위한 고신뢰성 액츄에이터 등 차세대 기술 확보를 추진할 계획이라고 밝혔다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10041"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10041",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성전기, 2026년 3분기 경영실적",
+      "url": "https://samsungsem.com/kr/newsroom/news/view.do?id=10627",
+      "publisher": "삼성전기",
+      "published_at": "2026-10-28",
+      "event_date": "2026-10-28",
+      "entity_ids": [
+        "semco",
+        "robot",
+        "camera-module"
+      ],
+      "excerpt": "휴머노이드 상용화 등 수요 확대로",
+      "claims": [
+        {
+          "id": "claim:x-mf-010",
+          "text": "삼성전기는 2026년 3분기 실적 발표의 광학솔루션 전망에서 휴머노이드 상용화를 향후 수요 요인으로 언급했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-010",
+          "verification": "manual_report",
+          "evidence_locator": "‘사업 부문별 실적 및 전망’ 광학솔루션 마지막 문단",
+          "limitations": [
+            "휴머노이드 고객 공급 완료를 발표한 문장이 아니다.",
+            "공개된 전장·EV 카메라 공급액을 휴머노이드 실적으로 합산하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "‘사업 부문별 실적 및 전망’ 광학솔루션 마지막 문단",
+      "limitations": [
+        "휴머노이드 고객 공급 완료를 발표한 문장이 아니다.",
+        "공개된 전장·EV 카메라 공급액을 휴머노이드 실적으로 합산하지 않는다."
+      ],
+      "id": "x-mf-010",
+      "claim": {
+        "text": "삼성전기는 2026년 3분기 실적 발표의 광학솔루션 전망에서 휴머노이드 상용화를 향후 수요 요인으로 언급했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://samsungsem.com/kr/newsroom/news/view.do?id=10627",
+      "summary_ko": "삼성전기는 2026년 3분기 실적 발표의 광학솔루션 전망에서 휴머노이드 상용화를 향후 수요 요인으로 언급했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://samsungsem.com/kr/newsroom/news/view.do?id=10627"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://samsungsem.com/kr/newsroom/news/view.do?id=10627",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성E&A 안전: Smart Patrol Robot",
+      "url": "https://sea.samsungena.com/kr/sustainability/social/safety",
+      "publisher": "삼성E&A",
+      "published_at": null,
+      "event_date": null,
+      "entity_ids": [
+        "samsungena",
+        "robot",
+        "safety",
+        "factory"
+      ],
+      "source_type": "product",
+      "excerpt": "자동경로 및 원격조종 기능을 탑재하여",
+      "claims": [
+        {
+          "id": "claim:x-mf-011",
+          "text": "삼성E&A는 현장에서 사족보행 스마트 패트롤 로봇을 운영하여 위험구역 순찰과 유해가스·미세먼지 측정을 수행한다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-011",
+          "verification": "manual_report",
+          "evidence_locator": "SMART SITE SAFETY SOLUTION의 ‘위험 작업을 대신하는 AI 로봇’ 절",
+          "limitations": [
+            "페이지의 2026년1월5일은 안전보건 경영방침 일자여서 로봇 배치일·게시일로 사용하지 않는다.",
+            "현장별 운영 기간·로봇 제조사·계약액·SDS 연동은 확인되지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "production",
+      "evidence_locator": "SMART SITE SAFETY SOLUTION의 ‘위험 작업을 대신하는 AI 로봇’ 절",
+      "limitations": [
+        "페이지의 2026년1월5일은 안전보건 경영방침 일자여서 로봇 배치일·게시일로 사용하지 않는다.",
+        "현장별 운영 기간·로봇 제조사·계약액·SDS 연동은 확인되지 않는다."
+      ],
+      "id": "x-mf-011",
+      "claim": {
+        "text": "삼성E&A는 현장에서 사족보행 스마트 패트롤 로봇을 운영하여 위험구역 순찰과 유해가스·미세먼지 측정을 수행한다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://sea.samsungena.com/kr/sustainability/social/safety",
+      "summary_ko": "삼성E&A는 현장에서 사족보행 스마트 패트롤 로봇을 운영하여 위험구역 순찰과 유해가스·미세먼지 측정을 수행한다고 설명한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://sea.samsungena.com/kr/sustainability/social/safety"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://sea.samsungena.com/kr/sustainability/social/safety",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "AI 엔지니어",
+      "url": "https://miracom-inc.com/kr/service/smart-factory/ax/ai-engineer",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "ai-agent",
+        "platform"
+      ],
+      "source_type": "product",
+      "excerpt": "제조 특화 AI 엔지니어가 생산계획/품질/설비/물류를 최적화하고",
+      "claims": [
+        {
+          "id": "claim:x-mf-012",
+          "text": "미라콤은 Nexplant MESplus 기반 AI-Ready Data와 제조 특화 AI 엔지니어를 연계해 생산계획·품질·설비·물류 의사결정을 지원하는 서비스를 소개한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-012",
+          "verification": "manual_report",
+          "evidence_locator": "서비스 개요·AI 엔지니어·서비스 구성도·MES 기반 AI Ready Data",
+          "limitations": [
+            "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+            "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "서비스 개요·AI 엔지니어·서비스 구성도·MES 기반 AI Ready Data",
+      "limitations": [
+        "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+        "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+      ],
+      "id": "x-mf-012",
+      "claim": {
+        "text": "미라콤은 Nexplant MESplus 기반 AI-Ready Data와 제조 특화 AI 엔지니어를 연계해 생산계획·품질·설비·물류 의사결정을 지원하는 서비스를 소개한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/service/smart-factory/ax/ai-engineer",
+      "summary_ko": "미라콤은 Nexplant MESplus 기반 AI-Ready Data와 제조 특화 AI 엔지니어를 연계해 생산계획·품질·설비·물류 의사결정을 지원하는 서비스를 소개한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/service/smart-factory/ax/ai-engineer"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/service/smart-factory/ax/ai-engineer",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "Nexplant MESplus MC",
+      "url": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mc",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "mc",
+        "api"
+      ],
+      "source_type": "product",
+      "excerpt": "SEMI에서 제정한 SECS/GEM 및 OPC Foundation 표준 준수",
+      "claims": [
+        {
+          "id": "claim:x-mf-013",
+          "text": "미라콤은 Nexplant MESplus MC가 설비와 MES·QMS 간 양방향 통신과 제어를 지원하며 SECS/GEM·OPC 표준을 준수한다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-013",
+          "verification": "manual_report",
+          "evidence_locator": "솔루션 개요·표준화 항목",
+          "limitations": [
+            "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+            "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "솔루션 개요·표준화 항목",
+      "limitations": [
+        "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+        "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+      ],
+      "id": "x-mf-013",
+      "claim": {
+        "text": "미라콤은 Nexplant MESplus MC가 설비와 MES·QMS 간 양방향 통신과 제어를 지원하며 SECS/GEM·OPC 표준을 준수한다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mc",
+      "summary_ko": "미라콤은 Nexplant MESplus MC가 설비와 MES·QMS 간 양방향 통신과 제어를 지원하며 SECS/GEM·OPC 표준을 준수한다고 설명한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mc"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mc",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "Nexplant MESplus QMS",
+      "url": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/qms",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "qms",
+        "kpi"
+      ],
+      "source_type": "product",
+      "excerpt": "품질, 설비, 공정 데이터의 손쉬운 연계 분석",
+      "claims": [
+        {
+          "id": "claim:x-mf-014",
+          "text": "미라콤은 Nexplant MESplus QMS를 품질·설비·공정 데이터를 연계 분석하는 통합 품질관리 솔루션으로 소개한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-014",
+          "verification": "manual_report",
+          "evidence_locator": "솔루션 및 모듈 구성 절",
+          "limitations": [
+            "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+            "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "솔루션 및 모듈 구성 절",
+      "limitations": [
+        "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+        "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+      ],
+      "id": "x-mf-014",
+      "claim": {
+        "text": "미라콤은 Nexplant MESplus QMS를 품질·설비·공정 데이터를 연계 분석하는 통합 품질관리 솔루션으로 소개한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/qms",
+      "summary_ko": "미라콤은 Nexplant MESplus QMS를 품질·설비·공정 데이터를 연계 분석하는 통합 품질관리 솔루션으로 소개한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/qms"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/qms",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "설비 온라인 서비스",
+      "url": "https://miracom-inc.com/kr/service/smart-factory/equipment-connectivity",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "entity_ids": [
+        "miracom",
+        "mc",
+        "mes",
+        "api",
+        "logistics"
+      ],
+      "source_type": "product",
+      "excerpt": "생산/물류 설비와 상위 시스템간 데이터 인터페이스",
+      "claims": [
+        {
+          "id": "claim:x-mf-015",
+          "text": "미라콤은 설비 온라인 서비스가 OPC·SECS 등 통신 프로토콜을 사용해 생산·물류 설비 데이터를 상위 시스템과 교환하도록 지원한다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-015",
+          "verification": "manual_report",
+          "evidence_locator": "서비스 개요·설비 IoT 개조·생산/물류 인터페이스 절",
+          "limitations": [
+            "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+            "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "서비스 개요·설비 IoT 개조·생산/물류 인터페이스 절",
+      "limitations": [
+        "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+        "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+      ],
+      "id": "x-mf-015",
+      "claim": {
+        "text": "미라콤은 설비 온라인 서비스가 OPC·SECS 등 통신 프로토콜을 사용해 생산·물류 설비 데이터를 상위 시스템과 교환하도록 지원한다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/service/smart-factory/equipment-connectivity",
+      "summary_ko": "미라콤은 설비 온라인 서비스가 OPC·SECS 등 통신 프로토콜을 사용해 생산·물류 설비 데이터를 상위 시스템과 교환하도록 지원한다고 설명한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/service/smart-factory/equipment-connectivity"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/service/smart-factory/equipment-connectivity",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "세메스 기업개요: OHT 물류자동화 공급",
+      "url": "https://www.semes.com/ko/company/corporate-overview",
+      "publisher": "세메스",
+      "published_at": null,
+      "event_date": null,
+      "entity_ids": [
+        "semes",
+        "se",
+        "oht",
+        "logistics",
+        "factory"
+      ],
+      "source_type": "product",
+      "excerpt": "OHT(OverHead Transport)를 삼성전자 양산라인에 공급하였습니다.",
+      "claims": [
+        {
+          "id": "claim:x-mf-016",
+          "text": "세메스는 반도체 웨이퍼 용기를 자동 운반하는 OHT 시스템을 삼성전자 양산라인에 공급했다고 공식 기업개요에서 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-016",
+          "verification": "manual_report",
+          "evidence_locator": "‘연구개발 투자를 더욱 강화’ 절",
+          "limitations": [
+            "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+            "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "production",
+      "evidence_locator": "‘연구개발 투자를 더욱 강화’ 절",
+      "limitations": [
+        "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+        "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+      ],
+      "id": "x-mf-016",
+      "claim": {
+        "text": "세메스는 반도체 웨이퍼 용기를 자동 운반하는 OHT 시스템을 삼성전자 양산라인에 공급했다고 공식 기업개요에서 설명한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://www.semes.com/ko/company/corporate-overview",
+      "summary_ko": "세메스는 반도체 웨이퍼 용기를 자동 운반하는 OHT 시스템을 삼성전자 양산라인에 공급했다고 공식 기업개요에서 설명한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://www.semes.com/ko/company/corporate-overview"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://www.semes.com/ko/company/corporate-overview",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "미라콤 스마트팩토리 역량",
+      "url": "https://miracom-inc.com/kr/company/capability/smart-factory",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "factory"
+      ],
+      "source_type": "product",
+      "excerpt": "표준화된 플랫폼에서 제조 현장 데이터를 수집",
+      "claims": [
+        {
+          "id": "claim:x-mf-017",
+          "text": "미라콤은 표준화된 플랫폼에서 제조 데이터를 수집·분석하고 실시간으로 공유하는 스마트팩토리 통합 서비스를 소개한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-017",
+          "verification": "manual_report",
+          "evidence_locator": "차별점 및 가치제안 ‘하나의 플랫폼으로 연결된 공장’",
+          "limitations": [
+            "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+            "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "차별점 및 가치제안 ‘하나의 플랫폼으로 연결된 공장’",
+      "limitations": [
+        "게시일·최초 도입일이 확인되지 않는 현재 제품/서비스 소개이며 기간 내 신규 출시로 계산하지 않는다.",
+        "공급사의 기능·사업 설명이며 독립 검증된 성능·고객 운영 KPI나 RX SW 매출을 의미하지 않는다."
+      ],
+      "id": "x-mf-017",
+      "claim": {
+        "text": "미라콤은 표준화된 플랫폼에서 제조 데이터를 수집·분석하고 실시간으로 공유하는 스마트팩토리 통합 서비스를 소개한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/company/capability/smart-factory",
+      "summary_ko": "미라콤은 표준화된 플랫폼에서 제조 데이터를 수집·분석하고 실시간으로 공유하는 스마트팩토리 통합 서비스를 소개한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/company/capability/smart-factory"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/company/capability/smart-factory",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성 EPC 3사 '2026 콘테크 공모전' 개최",
+      "url": "https://sea.samsungena.com/kr/newsroom/news/view?idx=15836",
+      "publisher": "삼성E&A",
+      "published_at": "2026-07-09",
+      "event_date": null,
+      "entity_ids": [
+        "samsungena",
+        "samsungct",
+        "shi",
+        "robot",
+        "factory",
+        "logistics",
+        "digital-twin",
+        "partner"
+      ],
+      "excerpt": "스마트 제조·로보틱스 자동화",
+      "claims": [
+        {
+          "id": "claim:x-mf-018",
+          "text": "삼성E&A·삼성물산 건설부문·삼성중공업은 스마트 제조·로보틱스 자동화를 포함한 EPC 기술 분야의 2026 콘테크 공모전을 공동 개최한다고 안내했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-018",
+          "verification": "manual_report",
+          "evidence_locator": "본문 공모 분야 및 접수 기간 안내",
+          "limitations": [
+            "페이지 게시일은 2026-07-09이지만 본문 발표일은 '16일'로 표현되어 사건일을 확정하지 않았다.",
+            "공모전 모집은 유료 계약·현장 배포·수상 확정을 의미하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "본문 공모 분야 및 접수 기간 안내",
+      "limitations": [
+        "페이지 게시일은 2026-07-09이지만 본문 발표일은 '16일'로 표현되어 사건일을 확정하지 않았다.",
+        "공모전 모집은 유료 계약·현장 배포·수상 확정을 의미하지 않는다."
+      ],
+      "id": "x-mf-018",
+      "claim": {
+        "text": "삼성E&A·삼성물산 건설부문·삼성중공업은 스마트 제조·로보틱스 자동화를 포함한 EPC 기술 분야의 2026 콘테크 공모전을 공동 개최한다고 안내했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://sea.samsungena.com/kr/newsroom/news/view?idx=15836",
+      "summary_ko": "삼성E&A·삼성물산 건설부문·삼성중공업은 스마트 제조·로보틱스 자동화를 포함한 EPC 기술 분야의 2026 콘테크 공모전을 공동 개최한다고 안내했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://sea.samsungena.com/kr/newsroom/news/view?idx=15836"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://sea.samsungena.com/kr/newsroom/news/view?idx=15836",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성E&A, 2분기 영업이익 2,731억원…전년비 51.0%↑",
+      "url": "https://samsungena.com/kr/newsroom/news/view?idx=15838",
+      "publisher": "삼성E&A",
+      "published_at": "2026-07-23",
+      "event_date": "2026-07-23",
+      "entity_ids": [
+        "samsungena",
+        "factory",
+        "ai-agent"
+      ],
+      "excerpt": "AI와 자동화, 모듈 등 혁신기술 기반의 수행 차별화로 원가 개선이 지속",
+      "claims": [
+        {
+          "id": "claim:x-mf-019",
+          "text": "삼성E&A는 2026년 2분기 실적 설명에서 AI·자동화·모듈 등 기술을 활용한 수행 방식이 원가 개선에 기여했다고 밝혔다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-019",
+          "verification": "manual_report",
+          "evidence_locator": "실적 개선 요인을 설명한 본문 문단",
+          "limitations": [
+            "전체 영업이익을 RX·로봇 소프트웨어의 성과로 환산하지 않는다.",
+            "자동화별 현장, 효과, 로봇 공급사와 운영 기간은 공개되지 않았다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "실적 개선 요인을 설명한 본문 문단",
+      "limitations": [
+        "전체 영업이익을 RX·로봇 소프트웨어의 성과로 환산하지 않는다.",
+        "자동화별 현장, 효과, 로봇 공급사와 운영 기간은 공개되지 않았다."
+      ],
+      "id": "x-mf-019",
+      "claim": {
+        "text": "삼성E&A는 2026년 2분기 실적 설명에서 AI·자동화·모듈 등 기술을 활용한 수행 방식이 원가 개선에 기여했다고 밝혔다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://samsungena.com/kr/newsroom/news/view?idx=15838",
+      "summary_ko": "삼성E&A는 2026년 2분기 실적 설명에서 AI·자동화·모듈 등 기술을 활용한 수행 방식이 원가 개선에 기여했다고 밝혔다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://samsungena.com/kr/newsroom/news/view?idx=15838"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://samsungena.com/kr/newsroom/news/view?idx=15838",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "Highway101: Enterprise Application Integration",
+      "url": "https://miracom-inc.com/kr/solution/smart-factory/highway101",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "entity_ids": [
+        "miracom",
+        "api",
+        "platform",
+        "mes"
+      ],
+      "excerpt": "MOM - SDK 메시지 통신 관련 API 제공",
+      "claims": [
+        {
+          "id": "claim:x-mf-020",
+          "text": "미라콤은 Highway101을 이기종 애플리케이션 연계와 실시간 메시지 통신을 지원하는 EAI·MOM 통합 솔루션으로 소개한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-020",
+          "verification": "manual_report",
+          "evidence_locator": "솔루션 구성의 EAI·MOM 및 SDK 설명",
+          "limitations": [
+            "게시일 미상인 현재 제품 설명이며 최근 1년의 출시 사건으로 간주하지 않는다.",
+            "기업 시스템 통합 API가 로봇 공통 API 표준임을 입증하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "솔루션 구성의 EAI·MOM 및 SDK 설명",
+      "limitations": [
+        "게시일 미상인 현재 제품 설명이며 최근 1년의 출시 사건으로 간주하지 않는다.",
+        "기업 시스템 통합 API가 로봇 공통 API 표준임을 입증하지 않는다."
+      ],
+      "id": "x-mf-020",
+      "claim": {
+        "text": "미라콤은 Highway101을 이기종 애플리케이션 연계와 실시간 메시지 통신을 지원하는 EAI·MOM 통합 솔루션으로 소개한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/solution/smart-factory/highway101",
+      "summary_ko": "미라콤은 Highway101을 이기종 애플리케이션 연계와 실시간 메시지 통신을 지원하는 EAI·MOM 통합 솔루션으로 소개한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/solution/smart-factory/highway101"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/solution/smart-factory/highway101",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "에너지(FEMS) 관리 / 탄소 관리",
+      "url": "https://miracom-inc.com/kr/service/smart-factory/fems-carbon-management",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "entity_ids": [
+        "miracom",
+        "fems",
+        "mes",
+        "factory",
+        "kpi"
+      ],
+      "excerpt": "LOT 단위 실시간 탄소 사용량 분석 및 이력 추적",
+      "claims": [
+        {
+          "id": "claim:x-mf-021",
+          "text": "미라콤은 FEMS·탄소 관리 서비스에서 설비의 에너지 데이터 수집·스케줄링 및 LOT 단위 탄소 사용량 추적을 제공한다고 소개한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-021",
+          "verification": "manual_report",
+          "evidence_locator": "서비스 개요의 에너지 관리·탄소관리 기능 목록",
+          "limitations": [
+            "게시일과 신규 도입일은 확인되지 않았다.",
+            "설비 연동 경험 전체를 RX 로봇 배포 수로 계산하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "서비스 개요의 에너지 관리·탄소관리 기능 목록",
+      "limitations": [
+        "게시일과 신규 도입일은 확인되지 않았다.",
+        "설비 연동 경험 전체를 RX 로봇 배포 수로 계산하지 않는다."
+      ],
+      "id": "x-mf-021",
+      "claim": {
+        "text": "미라콤은 FEMS·탄소 관리 서비스에서 설비의 에너지 데이터 수집·스케줄링 및 LOT 단위 탄소 사용량 추적을 제공한다고 소개한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/service/smart-factory/fems-carbon-management",
+      "summary_ko": "미라콤은 FEMS·탄소 관리 서비스에서 설비의 에너지 데이터 수집·스케줄링 및 LOT 단위 탄소 사용량 추적을 제공한다고 소개한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/service/smart-factory/fems-carbon-management"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/service/smart-factory/fems-carbon-management",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "Nexplant MESplus EES",
+      "url": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/ees",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "ees",
+        "factory"
+      ],
+      "excerpt": "실시간 설비 센서 데이터 이상 감지 및 분류",
+      "claims": [
+        {
+          "id": "claim:x-mf-022",
+          "text": "미라콤은 Nexplant MESplus EES에 실시간 설비 이상 감지 FDC, 성능 추적 EPT, 레시피 관리 RMS 등의 모듈을 제공한다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-022",
+          "verification": "manual_report",
+          "evidence_locator": "솔루션 및 EES 모듈 구성",
+          "limitations": [
+            "현재 제품 기능 설명으로 출시일·도입일·고객별 실측 성능은 확인되지 않았다.",
+            "공정 불량률 0은 목표 표현이며 달성된 실측값으로 사용하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "솔루션 및 EES 모듈 구성",
+      "limitations": [
+        "현재 제품 기능 설명으로 출시일·도입일·고객별 실측 성능은 확인되지 않았다.",
+        "공정 불량률 0은 목표 표현이며 달성된 실측값으로 사용하지 않는다."
+      ],
+      "id": "x-mf-022",
+      "claim": {
+        "text": "미라콤은 Nexplant MESplus EES에 실시간 설비 이상 감지 FDC, 성능 추적 EPT, 레시피 관리 RMS 등의 모듈을 제공한다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/ees",
+      "summary_ko": "미라콤은 Nexplant MESplus EES에 실시간 설비 이상 감지 FDC, 성능 추적 EPT, 레시피 관리 RMS 등의 모듈을 제공한다고 설명한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/ees"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/ees",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "준비를 넘어 실행으로…탄소규제 대응, 제조데이터에서 해법을 찾다",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+      "publisher": "미라콤아이앤씨",
+      "published_at": "2026-08-24",
+      "event_date": "2026-08-20",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "fems",
+        "chemtopia",
+        "partner"
+      ],
+      "excerpt": "제품 단위의 탄소데이터를 정확하게 산정하고 추적하기 위한 핵심 기반",
+      "claims": [
+        {
+          "id": "claim:x-mf-023",
+          "text": "미라콤은 켐토피아의 2026년 8월 20일 컨퍼런스에서 제품별 탄소 추적을 위한 MES·에너지 데이터 연결 방안을 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-023",
+          "verification": "manual_report",
+          "evidence_locator": "컨퍼런스 개최일 및 미라콤 발표 내용 문단",
+          "limitations": [
+            "발표·협업 방향을 다룬 자료로 신규 유료 수주나 로봇 현장 가동 자료가 아니다.",
+            "2025년 11월 MOU는 이전 사건의 회고이며 별도 신규 계약으로 집계하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "컨퍼런스 개최일 및 미라콤 발표 내용 문단",
+      "limitations": [
+        "발표·협업 방향을 다룬 자료로 신규 유료 수주나 로봇 현장 가동 자료가 아니다.",
+        "2025년 11월 MOU는 이전 사건의 회고이며 별도 신규 계약으로 집계하지 않는다."
+      ],
+      "id": "x-mf-023",
+      "claim": {
+        "text": "미라콤은 켐토피아의 2026년 8월 20일 컨퍼런스에서 제품별 탄소 추적을 위한 MES·에너지 데이터 연결 방안을 발표했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+      "summary_ko": "미라콤은 켐토피아의 2026년 8월 20일 컨퍼런스에서 제품별 탄소 추적을 위한 MES·에너지 데이터 연결 방안을 발표했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "거세지는 탄소규제, 한숨 쉬는 산업계",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+      "publisher": "미라콤아이앤씨",
+      "published_at": "2026-05-08",
+      "event_date": null,
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "fems",
+        "factory"
+      ],
+      "excerpt": "LOT단위로 탄소 배출량을 산출",
+      "claims": [
+        {
+          "id": "claim:x-mf-024",
+          "text": "미라콤은 MES 생산 데이터와 에너지 데이터를 연결해 LOT 단위 탄소 배출량과 제품별 리포트를 산출하는 기능을 소개했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-024",
+          "verification": "manual_report",
+          "evidence_locator": "‘미라콤이 제안하는 탄소 관리 솔루션’ 절",
+          "limitations": [
+            "탄소규제 일반 해설 중 미라콤 제품 기능만 추출했다.",
+            "규제 수치·절감 성과·고객 도입 실적을 독립적으로 검증한 자료가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "‘미라콤이 제안하는 탄소 관리 솔루션’ 절",
+      "limitations": [
+        "탄소규제 일반 해설 중 미라콤 제품 기능만 추출했다.",
+        "규제 수치·절감 성과·고객 도입 실적을 독립적으로 검증한 자료가 아니다."
+      ],
+      "id": "x-mf-024",
+      "claim": {
+        "text": "미라콤은 MES 생산 데이터와 에너지 데이터를 연결해 LOT 단위 탄소 배출량과 제품별 리포트를 산출하는 기능을 소개했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+      "summary_ko": "미라콤은 MES 생산 데이터와 에너지 데이터를 연결해 LOT 단위 탄소 배출량과 제품별 리포트를 산출하는 기능을 소개했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "라면 제조로 알아본 국내 선진 식음료 기업 A사의 스마트팩토리 구축 전략",
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case",
+      "publisher": "미라콤아이앤씨",
+      "published_at": "2026-07-08",
+      "event_date": null,
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "factory",
+        "mc",
+        "qms"
+      ],
+      "excerpt": "MES를 통해 작업 지시별 날인 정보를 전송하여 입력 오류를 최소화했습니다.",
+      "claims": [
+        {
+          "id": "claim:x-mf-025",
+          "text": "미라콤은 익명 식음료 고객의 스마트팩토리 구축에서 MES 작업 지시와 설비·전자저울을 연동해 레시피와 날인 정보를 자동 전달하도록 했다고 소개했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-025",
+          "verification": "manual_report",
+          "evidence_locator": "‘Pain point&Solution: 배합·날인·생산 품질 관리’ 절",
+          "limitations": [
+            "고객은 A사로 익명 처리되어 실제 기업명을 추정하지 않는다.",
+            "게시일은 확인되지만 도입·가동 시작일은 미공개다.",
+            "벤더 자체 사례로 운영 기간·유료 계약·RX 로봇 적용 여부를 입증하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-mf-025:2",
+          "text": "미라콤은 같은 고객 사례에서 설비 실적의 MES·ERP 연계와 박스 단위 원료 역추적을 구현했다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-025",
+          "verification": "manual_report",
+          "evidence_locator": "‘Pain point&Solution: 배합·날인·생산 품질 관리’ 절",
+          "limitations": [
+            "고객은 A사로 익명 처리되어 실제 기업명을 추정하지 않는다.",
+            "게시일은 확인되지만 도입·가동 시작일은 미공개다.",
+            "벤더 자체 사례로 운영 기간·유료 계약·RX 로봇 적용 여부를 입증하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "production",
+      "evidence_locator": "‘Pain point&Solution: 배합·날인·생산 품질 관리’ 절",
+      "limitations": [
+        "고객은 A사로 익명 처리되어 실제 기업명을 추정하지 않는다.",
+        "게시일은 확인되지만 도입·가동 시작일은 미공개다.",
+        "벤더 자체 사례로 운영 기간·유료 계약·RX 로봇 적용 여부를 입증하지 않는다."
+      ],
+      "id": "x-mf-025",
+      "claim": {
+        "text": "미라콤은 익명 식음료 고객의 스마트팩토리 구축에서 MES 작업 지시와 설비·전자저울을 연동해 레시피와 날인 정보를 자동 전달하도록 했다고 소개했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case",
+      "summary_ko": "미라콤은 익명 식음료 고객의 스마트팩토리 구축에서 MES 작업 지시와 설비·전자저울을 연동해 레시피와 날인 정보를 자동 전달하도록 했다고 소개했다. 미라콤은 같은 고객 사례에서 설비 실적의 MES·ERP 연계와 박스 단위 원료 역추적을 구현했다고 설명했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "Nexplant MESplus MES 영문 브로슈어",
+      "url": "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "entity_ids": [
+        "miracom",
+        "mes",
+        "qms",
+        "ees",
+        "ai-agent",
+        "platform"
+      ],
+      "excerpt": "AI Engineer Services support intelligent decision-making",
+      "claims": [
+        {
+          "id": "claim:x-mf-026",
+          "text": "미라콤의 MES 영문 브로슈어는 MDP 기반 MES·QMS·EES 등의 통합 제조 관리 구조와 AI Engineer의 의사결정 지원을 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-026",
+          "verification": "manual_report",
+          "evidence_locator": "PDF 2쪽 Platform Architecture 및 AI Engineer Services 소개",
+          "limitations": [
+            "PDF 제목에 2026이 포함되지만 정확한 발행일은 확인되지 않았다.",
+            "브로슈어 기능 설명과 실제 고객 운영·성과는 구분한다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "PDF 2쪽 Platform Architecture 및 AI Engineer Services 소개",
+      "limitations": [
+        "PDF 제목에 2026이 포함되지만 정확한 발행일은 확인되지 않았다.",
+        "브로슈어 기능 설명과 실제 고객 운영·성과는 구분한다."
+      ],
+      "id": "x-mf-026",
+      "claim": {
+        "text": "미라콤의 MES 영문 브로슈어는 MDP 기반 MES·QMS·EES 등의 통합 제조 관리 구조와 AI Engineer의 의사결정 지원을 설명한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf",
+      "summary_ko": "미라콤의 MES 영문 브로슈어는 MDP 기반 MES·QMS·EES 등의 통합 제조 관리 구조와 AI Engineer의 의사결정 지원을 설명한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "Nexplant MESplus QMS 영문 브로슈어",
+      "url": "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "entity_ids": [
+        "miracom",
+        "qms",
+        "mes",
+        "factory"
+      ],
+      "excerpt": "Track accurately process and equipment where abnormal yield occurs",
+      "claims": [
+        {
+          "id": "claim:x-mf-027",
+          "text": "미라콤 QMS 영문 브로슈어는 YMS·SPC·DMS를 통한 생산·품질 데이터 상관 분석과 이상 수율 발생 설비 추적을 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-027",
+          "verification": "manual_report",
+          "evidence_locator": "PDF 1쪽 Overview 및 2쪽 Features",
+          "limitations": [
+            "PDF 제목의 2026과 저작권 연도만으로 정확한 발행일을 생성하지 않았다.",
+            "현재 제품 문서로 신규 현장 배포·독립 성과 검증은 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "PDF 1쪽 Overview 및 2쪽 Features",
+      "limitations": [
+        "PDF 제목의 2026과 저작권 연도만으로 정확한 발행일을 생성하지 않았다.",
+        "현재 제품 문서로 신규 현장 배포·독립 성과 검증은 아니다."
+      ],
+      "id": "x-mf-027",
+      "claim": {
+        "text": "미라콤 QMS 영문 브로슈어는 YMS·SPC·DMS를 통한 생산·품질 데이터 상관 분석과 이상 수율 발생 설비 추적을 설명한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf",
+      "summary_ko": "미라콤 QMS 영문 브로슈어는 YMS·SPC·DMS를 통한 생산·품질 데이터 상관 분석과 이상 수율 발생 설비 추적을 설명한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성重, ‘전기 하이브리드 셔틀탱커’ 기본 인증",
+      "url": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=251",
+      "publisher": "삼성중공업",
+      "published_at": "2026-10-14",
+      "event_date": "2026-10-14",
+      "entity_ids": [
+        "shi",
+        "robot",
+        "factory",
+        "api"
+      ],
+      "excerpt": "설계 자동화 플랫폼 `S-EDH`를 비롯해 배관 용접 자동화",
+      "claims": [
+        {
+          "id": "claim:x-mf-028",
+          "text": "삼성중공업은 오프쇼어 코리아 2026에서 S-EDH 설계 자동화 플랫폼과 배관 용접 자동화 등 DX·AX·RX 전환 사례를 소개한다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-028",
+          "verification": "manual_report",
+          "evidence_locator": "오프쇼어 코리아 2026 전시 내용 문단",
+          "limitations": [
+            "전시 소개와 선박 인증 내용을 구분했으며 선박 하이브리드 인증을 로봇 기술 인증으로 연결하지 않는다.",
+            "현장 자동화 성능·SDS 연동·운영 기간은 확인되지 않았다."
+          ]
+        }
+      ],
+      "commercialization_stage": "demo",
+      "evidence_locator": "오프쇼어 코리아 2026 전시 내용 문단",
+      "limitations": [
+        "전시 소개와 선박 인증 내용을 구분했으며 선박 하이브리드 인증을 로봇 기술 인증으로 연결하지 않는다.",
+        "현장 자동화 성능·SDS 연동·운영 기간은 확인되지 않았다."
+      ],
+      "id": "x-mf-028",
+      "claim": {
+        "text": "삼성중공업은 오프쇼어 코리아 2026에서 S-EDH 설계 자동화 플랫폼과 배관 용접 자동화 등 DX·AX·RX 전환 사례를 소개한다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=251",
+      "summary_ko": "삼성중공업은 오프쇼어 코리아 2026에서 S-EDH 설계 자동화 플랫폼과 배관 용접 자동화 등 DX·AX·RX 전환 사례를 소개한다고 발표했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=251"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=251",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성重-서울대, ‘미래선박기술 글로벌협력센터’ 연다",
+      "url": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=249",
+      "publisher": "삼성중공업",
+      "published_at": "2026-09-03",
+      "event_date": "2026-09-02",
+      "entity_ids": [
+        "shi",
+        "snu",
+        "kaist",
+        "robot",
+        "factory",
+        "digital-twin"
+      ],
+      "excerpt": "KAIST 센터는 제조 경쟁력을 좌우하는 피지컬 AI 시대에 대응하기 위해",
+      "claims": [
+        {
+          "id": "claim:x-mf-029",
+          "text": "삼성중공업은 서울대와 미래선박기술 연구센터 협약을 체결했다고 발표하면서 KAIST 센터는 AI·로보틱스 과제, 서울대 센터는 원천·에너지 기술에 주력한다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-029",
+          "verification": "manual_report",
+          "evidence_locator": "연구센터 협약 체결 및 두 센터의 상호 보완적 기능 문단",
+          "limitations": [
+            "산학협력 계획과 연구 역할 설명이며 로봇 기술의 상용 현장 배포나 미공개 투자액을 입증하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "evidence_locator": "연구센터 협약 체결 및 두 센터의 상호 보완적 기능 문단",
+      "limitations": [
+        "산학협력 계획과 연구 역할 설명이며 로봇 기술의 상용 현장 배포나 미공개 투자액을 입증하지 않는다."
+      ],
+      "id": "x-mf-029",
+      "claim": {
+        "text": "삼성중공업은 서울대와 미래선박기술 연구센터 협약을 체결했다고 발표하면서 KAIST 센터는 AI·로보틱스 과제, 서울대 센터는 원천·에너지 기술에 주력한다고 설명했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=249",
+      "summary_ko": "삼성중공업은 서울대와 미래선박기술 연구센터 협약을 체결했다고 발표하면서 KAIST 센터는 AI·로보틱스 과제, 서울대 센터는 원천·에너지 기술에 주력한다고 설명했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=249"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=249",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "삼성SDI, 2026년 1분기 실적 발표",
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html",
+      "publisher": "삼성SDI",
+      "published_at": "2026-04-28",
+      "event_date": "2026-03-11",
+      "entity_ids": [
+        "sdi",
+        "robot",
+        "battery"
+      ],
+      "origin_key": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+      "excerpt": "피지컬 AI용으로 개발 중인 파우치형 전고체 배터리 샘플을 최초로 공개",
+      "claims": [
+        {
+          "id": "claim:x-mf-030",
+          "text": "삼성SDI는 2026년 1분기 실적 발표에서 인터배터리 2026에서 피지컬 AI용 파우치형 전고체 배터리 샘플을 공개했다고 보고했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-030",
+          "verification": "manual_report",
+          "evidence_locator": "‘2026년 1분기 주요 성과’의 마지막 문단",
+          "limitations": [
+            "3월 전시를 4월 실적 자료에서 회고한 것으로 새로운 샘플 공개 사건으로 중복 계산하지 않는다.",
+            "전고체 배터리 양산·유료 공급·로봇 소프트웨어 매출을 입증하지 않는다.",
+            "사건일 2026-03-11은 같은 전시 원문 mi-015의 개최일에 연결했으며 4월 실적 발표일과 구분했다."
+          ]
+        }
+      ],
+      "commercialization_stage": "demo",
+      "evidence_locator": "‘2026년 1분기 주요 성과’의 마지막 문단",
+      "limitations": [
+        "3월 전시를 4월 실적 자료에서 회고한 것으로 새로운 샘플 공개 사건으로 중복 계산하지 않는다.",
+        "전고체 배터리 양산·유료 공급·로봇 소프트웨어 매출을 입증하지 않는다.",
+        "사건일 2026-03-11은 같은 전시 원문 mi-015의 개최일에 연결했으며 4월 실적 발표일과 구분했다."
+      ],
+      "id": "x-mf-030",
+      "claim": {
+        "text": "삼성SDI는 2026년 1분기 실적 발표에서 인터배터리 2026에서 피지컬 AI용 파우치형 전고체 배터리 샘플을 공개했다고 보고했다.",
+        "kind": "official_statement"
+      },
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "date_basis": "page",
+      "accessed_at": "2026-10-31",
+      "summary_ko": "삼성SDI는 2026년 1분기 실적 발표에서 인터배터리 2026에서 피지컬 AI용 파우치형 전고체 배터리 샘플을 공개했다고 보고했다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "source_urls": [
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html",
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html"
+        ],
+        "related_record_ids": [
+          "mi-015",
+          "x-mf-003"
+        ],
+        "document_origin_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html",
+        "rationale": "기존 등록 문서와 같은 기업 발표·전시 사건의 공식 원문·회고다. 독립 검증 증거로 중복 계산하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "세메스 공정 소개: Line Automation",
+      "url": "https://semes.com/ko/product/process",
+      "publisher": "세메스",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "entity_ids": [
+        "semes",
+        "oht",
+        "logistics",
+        "factory"
+      ],
+      "excerpt": "Stocker, OHT",
+      "claims": [
+        {
+          "id": "claim:x-mf-031",
+          "text": "세메스는 반도체 공정의 Line Automation을 웨이퍼·반도체 보관 용기의 무인 반송·보관 시스템으로 설명하고 Stocker와 OHT를 제시한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-031",
+          "verification": "manual_report",
+          "evidence_locator": "Line Automation 절과 반도체 공정의 물류 자동화 시스템 목록",
+          "limitations": [
+            "현재 제품 분야 설명으로 발행일·신규 출하일·운영 실적은 확인되지 않았다.",
+            "SDS·미라콤 오케스트레이션과의 제품 연계를 확인한 자료가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "Line Automation 절과 반도체 공정의 물류 자동화 시스템 목록",
+      "limitations": [
+        "현재 제품 분야 설명으로 발행일·신규 출하일·운영 실적은 확인되지 않았다.",
+        "SDS·미라콤 오케스트레이션과의 제품 연계를 확인한 자료가 아니다."
+      ],
+      "id": "x-mf-031",
+      "claim": {
+        "text": "세메스는 반도체 공정의 Line Automation을 웨이퍼·반도체 보관 용기의 무인 반송·보관 시스템으로 설명하고 Stocker와 OHT를 제시한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://semes.com/ko/product/process",
+      "summary_ko": "세메스는 반도체 공정의 Line Automation을 웨이퍼·반도체 보관 용기의 무인 반송·보관 시스템으로 설명하고 Stocker와 OHT를 제시한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://semes.com/ko/product/process"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://semes.com/ko/product/process",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "title": "미라콤 디지털 팩토리 수준 진단 및 RX 전문가 문의",
+      "url": "https://miracom-inc.com/kr/diagnosis/digital-factory",
+      "publisher": "미라콤아이앤씨",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "entity_ids": [
+        "miracom",
+        "robot",
+        "factory",
+        "ai-agent"
+      ],
+      "excerpt": "로보틱스 전환(RX) 전문가 문의",
+      "claims": [
+        {
+          "id": "claim:x-mf-032",
+          "text": "미라콤의 디지털 팩토리 진단 안내는 DX·AX 수준 진단과 별도로 제조 현장 로보틱스 적용 가능성을 검토하는 RX 전문가 문의를 제공한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-032",
+          "verification": "manual_report",
+          "evidence_locator": "서비스 목록의 DX·AX 수준진단 및 RX 전문가 문의",
+          "limitations": [
+            "진단·상담 안내이며 자동 RX 평가 시스템 운영이나 유료 계약 성립을 뜻하지 않는다.",
+            "서비스 개설일과 이용 실적은 미공개다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "evidence_locator": "서비스 목록의 DX·AX 수준진단 및 RX 전문가 문의",
+      "limitations": [
+        "진단·상담 안내이며 자동 RX 평가 시스템 운영이나 유료 계약 성립을 뜻하지 않는다.",
+        "서비스 개설일과 이용 실적은 미공개다."
+      ],
+      "id": "x-mf-032",
+      "claim": {
+        "text": "미라콤의 디지털 팩토리 진단 안내는 DX·AX 수준 진단과 별도로 제조 현장 로보틱스 적용 가능성을 검토하는 RX 전문가 문의를 제공한다.",
+        "kind": "official_statement"
+      },
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 제3자 재현 검증은 미완료다.",
+      "scope": "undated",
+      "date_basis": "unknown",
+      "accessed_at": "2026-10-31",
+      "origin_key": "https://miracom-inc.com/kr/diagnosis/digital-factory",
+      "summary_ko": "미라콤의 디지털 팩토리 진단 안내는 DX·AX 수준 진단과 별도로 제조 현장 로보틱스 적용 가능성을 검토하는 RX 전문가 문의를 제공한다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://miracom-inc.com/kr/diagnosis/digital-factory"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://miracom-inc.com/kr/diagnosis/digital-factory",
+        "rationale": "별도 제품 문서 또는 공식 발표로 등록한다. 공급사 자체 설명이며 독립 검증 수를 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-mf-033",
+      "title": "2025 AI 해커톤 개최",
+      "url": "https://samsungshi.com/ESG/Kor/sub1_3_view.aspx?no=77",
+      "publisher": "삼성중공업",
+      "published_at": null,
+      "event_date": "2025-12-04",
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "undated",
+      "entity_ids": [
+        "shi",
+        "dataiku",
+        "factory",
+        "ai-agent",
+        "platform"
+      ],
+      "origin_key": "https://samsungshi.com/ESG/Kor/sub1_3_view.aspx?no=77",
+      "summary_ko": "삼성중공업은 2025년 12월 4~5일 거제조선소에서 데이터이쿠와 제조 현장 AI 해커톤을 개최했다고 소개했다. 삼성중공업은 해커톤을 데이터 AI 플랫폼 도입 파일럿의 한 단계로 설명하며 실제 공정·운영 데이터를 이용한 모델 개발·검증을 진행했다고 밝혔다.",
+      "excerpt": "글로벌 데이터 AI 플랫폼 도입을 위한 파일럿 프로그램",
+      "claim": {
+        "text": "삼성중공업은 2025년 12월 4~5일 거제조선소에서 데이터이쿠와 제조 현장 AI 해커톤을 개최했다고 소개했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-mf-033",
+          "text": "삼성중공업은 2025년 12월 4~5일 거제조선소에서 데이터이쿠와 제조 현장 AI 해커톤을 개최했다고 소개했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-033",
+          "verification": "manual_report",
+          "evidence_locator": "ESG 스토리 제목의 2025-12 및 해커톤 개최·파일럿 설명 문단",
+          "limitations": [
+            "페이지는 2025-12 월 단위만 표시하므로 일 단위 게시일을 생성하지 않았다.",
+            "해커톤·파일럿의 모델 개발·검증을 생산라인 상시 가동이나 유료 RX 계약으로 보지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-mf-033:2",
+          "text": "삼성중공업은 해커톤을 데이터 AI 플랫폼 도입 파일럿의 한 단계로 설명하며 실제 공정·운영 데이터를 이용한 모델 개발·검증을 진행했다고 밝혔다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-mf-033",
+          "verification": "manual_report",
+          "evidence_locator": "ESG 스토리 제목의 2025-12 및 해커톤 개최·파일럿 설명 문단",
+          "limitations": [
+            "페이지는 2025-12 월 단위만 표시하므로 일 단위 게시일을 생성하지 않았다.",
+            "해커톤·파일럿의 모델 개발·검증을 생산라인 상시 가동이나 유료 RX 계약으로 보지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "pilot",
+      "limitations": [
+        "페이지는 2025-12 월 단위만 표시하므로 일 단위 게시일을 생성하지 않았다.",
+        "해커톤·파일럿의 모델 개발·검증을 생산라인 상시 가동이나 유료 RX 계약으로 보지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "ESG 스토리 제목의 2025-12 및 해커톤 개최·파일럿 설명 문단",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공식 본문을 온라인 열람했다. 원문 보관본·해시는 확보하지 않았으며 정확한 일 단위 게시일은 미공개다.",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "source_urls": [
+          "https://samsungshi.com/ESG/Kor/sub1_3_view.aspx?no=77"
+        ],
+        "related_record_ids": [],
+        "document_origin_url": "https://samsungshi.com/ESG/Kor/sub1_3_view.aspx?no=77",
+        "rationale": "삼성중공업이 직접 설명한 데이터이쿠 협력 해커톤·파일럿 사례다. 제3자의 독립 검증으로 해석하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    }
+  ],
+  "queries": [
+    {
+      "id": "mf-query-1",
+      "query": "site:miracom-inc.com/kr/customer-support 2026 미라콤 제조 로봇",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-2",
+      "query": "site:miracom-inc.com/kr/customer-support 2025 2026 물류 MES AX",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-3",
+      "query": "site:samsungsdi.co.kr 2026 로봇 배터리 휴머노이드",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-4",
+      "query": "site:news.samsungdisplay.com 2026 로봇 공장 AI",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-5",
+      "query": "site:samsungsem.com \"2026\" \"로봇\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-6",
+      "query": "site:samsungshi.com \"2026\" \"로봇\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-7",
+      "query": "site:samsungena.com \"2026\" \"로봇\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-8",
+      "query": "site:semes.com \"2026\" \"물류\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-9",
+      "query": "site:miracom-inc.com/kr/customer-support/insight-reports/dn6/ \"2026\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-10",
+      "query": "site:miracom-inc.com/kr/customer-support \"2025.11\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-11",
+      "query": "site:samsungsem.com/kr/newsroom/news \"2026\" \"휴머노이드\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-12",
+      "query": "site:semes.com \"2025\" \"OHT\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-13",
+      "query": "site:miracom-inc.com/kr \"AI 엔지니어\" \"제조\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-14",
+      "query": "site:miracom-inc.com/kr/solution \"MC\" \"QMS\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-15",
+      "query": "site:miracom-inc.com/kr/customer-support/insight-reports/dn6 \"2026.04\" OR \"2026.05\" OR \"2026.06\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-16",
+      "query": "site:semes.com/ko \"OHT\" \"제품\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-17",
+      "query": "site:samsungshi.com \"2026\" \"스마트\" \"로봇\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-18",
+      "query": "site:samsungshi.com \"2025\" \"자동화\" \"11\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-19",
+      "query": "site:samsungena.com \"2026\" \"로봇\" \"뉴스\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-20",
+      "query": "site:news.samsungdisplay.com \"2026\" \"자동화\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-21",
+      "query": "삼성E&A 2026 스마트 로봇 자동화 배관 삼성 공식",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-22",
+      "query": "삼성디스플레이 2026 로봇 자동화 뉴스룸",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-23",
+      "query": "삼성중공업 2025 2026 용접 로봇 삼성 공식",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-24",
+      "query": "미라콤 2026 제조 AI 2025 솔루션 페어 공식",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-25",
+      "query": "site:samsungena.com/kr/newsroom/news \"2026\" \"자동화\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-26",
+      "query": "site:samsungena.com/kr/newsroom/news \"2026\" \"스마트\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-27",
+      "query": "site:samsungsem.com/kr/newsroom/news \"2026\" \"피지컬\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-28",
+      "query": "site:miracom-inc.com \"2026\" \"Highway\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-29",
+      "query": "site:miracom-inc.com 2026 웨비나 행사 로봇",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-30",
+      "query": "site:miracom-inc.com/kr/customer-support/insight-reports/dn6 2026 MES",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-31",
+      "query": "site:youtube.com 미라콤 2026 스마트팩토리 로봇",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-32",
+      "query": "site:event-us.kr 미라콤 2026",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-33",
+      "query": "site:miracom-inc.com/kr/customer-support/insight-reports/dn6 \"2025.11\" OR \"2025.12\" OR \"2026.01\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-34",
+      "query": "site:miracom-inc.com/kr/customer-support/insight-reports/dn6 \"2026.02\" OR \"2026.04\" OR \"2026.06\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-35",
+      "query": "site:miracom-inc.com \"미라콤아이앤씨, 오토메이션월드 2026 성료\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-36",
+      "query": "site:youtube.com/@miracom OR site:youtube.com/watch \"미라콤\" \"2026\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-37",
+      "query": "미라콤 웨비나 2026",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-38",
+      "query": "미라콤 유튜브 AMHS RCS 2026",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-39",
+      "query": "site:samsungsdi.co.kr/sdi-now/sdi-news \"2026\" \"로봇\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-40",
+      "query": "site:samsungshi.com \"2026\" \"자동화\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-41",
+      "query": "site:samsungshi.com \"2026\" \"지속가능경영보고서\" 로봇",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-42",
+      "query": "site:samsungsdi.co.kr \"2026\" \"지속가능경영보고서\" \"자동화\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-43",
+      "query": "site:samsungsem.com \"2026\" \"지속가능경영보고서\" 로봇",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-44",
+      "query": "site:news.samsungdisplay.com \"2026\" \"스마트팩토리\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-45",
+      "query": "site:miracom-inc.com/kr/customer-support/insight-reports/dn6 -manufacturing-ai-success-factors -manufacturing-ax-rx-strategy -darkfactory-ax-rx-manufacturing -food-beverage-smartfactory-guide -carbon-regulation-manufacturing-data -carbon-regulation-manufacturing-response -ramen-food-smartfactory-case",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-46",
+      "query": "site:miracom-inc.com/kr/customer-support/miracom-focus/dn14/",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-47",
+      "query": "site:miracom-inc.com/kr/customer-support/library/dn5/",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-48",
+      "query": "site:samsungsem.com/kr/newsroom/news \"2026\" \"액츄에이터\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-49",
+      "query": "site:samsungsdi.co.kr/sdi-now/sdi-news \"2026년 1분기\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-50",
+      "query": "site:samsungsdi.co.kr/sdi-now/sdi-news \"2025\" \"휴머노이드\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-51",
+      "query": "site:news.samsungdisplay.com \"2026\" \"로봇\" \"공장\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-52",
+      "query": "site:semes.com/ko \"2026\" \"로봇\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-53",
+      "query": "site:samsungsdi.co.kr \"2025.3Q\" \"휴머노이드\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-54",
+      "query": "site:samsungsdi.co.kr \"2025.4Q\" \"휴머노이드\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-55",
+      "query": "site:samsungsdi.co.kr \"2026.2Q\" \"휴머노이드\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-56",
+      "query": "site:samsungsdi.co.kr \"2026.3Q\" \"휴머노이드\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-57",
+      "query": "삼성중공업 2026 지속가능경영보고서 filetype:pdf",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-58",
+      "query": "삼성디스플레이 2026 지속가능경영보고서 filetype:pdf 로봇",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-59",
+      "query": "site:samsungshi.com/Ko/Notice_news_view.aspx \"2025-11\" \"로봇\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-60",
+      "query": "site:samsungshi.com/Ko/Notice_news_view.aspx \"2025-12\" \"자동화\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-61",
+      "query": "site:samsungsem.com/kr/newsroom/news \"2025\" \"11\" \"휴머노이드\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-62",
+      "query": "site:news.samsungdisplay.com \"2025\" \"11\" \"자동화\"",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-63",
+      "query": "site:samsungshi.com/ESG/Kor/sub1_3_view.aspx 로봇",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-64",
+      "query": "site:samsungshi.com/ESG/Kor/sub1_3_view.aspx 2026 자동화",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-65",
+      "query": "site:samsungshi.com/ESG/Kor/sub1_3_view.aspx 2026 스마트",
+      "category": "official_manufacturing_expansion"
+    },
+    {
+      "id": "mf-query-66",
+      "query": "site:samsungshi.com/ESG/Kor \"ESG 스토리\"",
+      "category": "official_manufacturing_expansion"
+    }
+  ],
+  "coverage": [
+    {
+      "collection_url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6",
+      "publisher": "미라콤아이앤씨",
+      "method": "official_collection_and_search",
+      "query_or_page": "첫 페이지 총 54개 표시; 사이트 제한 검색 12회 이상과 개별 본문 대조",
+      "status": "partial",
+      "discovered_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/darkfactory-ax-rx-manufacturing",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ai-success-factors",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/food-beverage-smartfactory-guide"
+      ],
+      "reviewed_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/darkfactory-ax-rx-manufacturing",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case"
+      ],
+      "notes": "첫 화면 및 검색으로 노출된 기간 내 자료를 검토했다. 더보기의 링크가 텍스트에 노출되지 않고 ?page=2 접근도 실패하여 54개 전체의 페이지 순회를 완료하지 못했다. food-beverage-smartfactory-guide 경로의 실제 본문은 리조트 AI 컨택센터 사례여서 제조 RX 범위에서 제외했다. 기존 두 원문은 중복 등록하지 않았다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://miracom-inc.com/kr/customer-support/miracom-focus/dn14",
+      "publisher": "미라콤아이앤씨",
+      "method": "official_collection_date_boundary",
+      "query_or_page": "총 16개 중 첫 10개 제목·날짜 검토",
+      "status": "partial",
+      "discovered_urls": [],
+      "reviewed_urls": [
+        "https://miracom-inc.com/kr/customer-support/miracom-focus/dn14"
+      ],
+      "notes": "기간 내 제목은 2026-03-11 ‘거세지는 탄소규제, 한숨쉬는 산업계’와 2025-12-23 연말 감사 안내. 다음 항목은 2025-09-02로 기간 경계를 통과했다. 제목별 상세 URL과 더보기 6개는 JS에서 추출되지 않아 전체 순회 완료로 표시하지 않는다. 탄소규제 뉴스레터의 3/11과 동일 제목 인사이트의 5/8은 임의로 합치거나 발행일을 덮어쓰지 않았다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://www.miracom-inc.com/user/Board/comm_notice.do?BD_NO=1&LANG_CH=KO",
+      "publisher": "미라콤아이앤씨",
+      "method": "official_collection_date_boundary",
+      "query_or_page": "공지 총 44개, 첫 10개 날짜·제목 확인",
+      "status": "partial",
+      "discovered_urls": [],
+      "reviewed_urls": [
+        "https://www.miracom-inc.com/user/Board/comm_notice.do?BD_NO=1&LANG_CH=KO"
+      ],
+      "notes": "기간 내 2026-03-11 AW2026 성료, 2025-11-13 파트너 입찰 Pool 모집 공고를 발견했다. 다음 항목 2025-08-11 행사부터 기간 밖. 개별 상세 URL은 JS 목록이라 추출되지 않았다. 모집 공고를 체결된 파트너 계약으로 등록하지 않았다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://miracom-inc.com/kr/customer-support/news/dn2",
+      "publisher": "미라콤아이앤씨",
+      "method": "official_curated_media_listing",
+      "query_or_page": "언론보도 총 7개 중 첫 6개 제목·날짜 확인",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.industrynews.co.kr/news/articleView.html?idxno=88051"
+      ],
+      "reviewed_urls": [
+        "https://miracom-inc.com/kr/customer-support/news/dn2"
+      ],
+      "notes": "기간 내 2026-10-23 AX/RX, 10/2 6개 제조기업, 7/13 그린코스, 5/26 철강 MES, 3/6 MBN AW, 2025-12-1 대표 선임 제목 확인. 공식 사이트가 큐레이션한 언론 기사이며 독립 공식 보도자료로 승격하지 않았다. 기존 인벤토리 원문과 중복·재인용 여부를 대조했다. 남은 1개는 전체목록 순회 미완료.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://miracom-inc.com/kr/customer-support/library/dn5",
+      "publisher": "미라콤아이앤씨",
+      "method": "official_library_and_product_navigation",
+      "query_or_page": "총 66개, 첫 5개 브로슈어 및 제품 문서/색인 PDF 확인",
+      "status": "partial",
+      "discovered_urls": [
+        "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf",
+        "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf",
+        "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MC_EN.pdf"
+      ],
+      "reviewed_urls": [
+        "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf",
+        "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf"
+      ],
+      "notes": "AI Engineer, AMHS, 선반형 창고관리, Highway101, MC 브로슈어 목록 확인. PDF MES 6쪽 및 QMS 2쪽의 본문을 읽었다. MC PDF 4쪽은 이미지 기반으로 텍스트 미추출, screenshot도 실제 이미지 없이 참조만 반환하여 검증 완료로 등록하지 않았다. 자료별 발행일과 전체 66개 상세 URL은 미확인.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mes",
+      "publisher": "미라콤아이앤씨",
+      "method": "official_product_navigation",
+      "query_or_page": "제조 실행·제어 핵심 제품 MES/QMS/MC/EES/Highway101/MCS 및 RX/FEMS/설비 온라인/AI Engineer",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://miracom-inc.com/kr/service/smart-factory/ax/ai-engineer",
+        "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mc",
+        "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/qms",
+        "https://miracom-inc.com/kr/service/smart-factory/equipment-connectivity",
+        "https://miracom-inc.com/kr/company/capability/smart-factory",
+        "https://miracom-inc.com/kr/solution/smart-factory/highway101",
+        "https://miracom-inc.com/kr/service/smart-factory/fems-carbon-management",
+        "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/ees",
+        "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf",
+        "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf",
+        "https://miracom-inc.com/kr/diagnosis/digital-factory",
+        "https://miracom-inc.com/kr/solution/smart-factory/mcs",
+        "https://miracom-inc.com/kr/service/smart-factory/manufacturing-robotics"
+      ],
+      "reviewed_urls": [
+        "https://miracom-inc.com/kr/service/smart-factory/ax/ai-engineer",
+        "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mc",
+        "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/qms",
+        "https://miracom-inc.com/kr/service/smart-factory/equipment-connectivity",
+        "https://miracom-inc.com/kr/company/capability/smart-factory",
+        "https://miracom-inc.com/kr/solution/smart-factory/highway101",
+        "https://miracom-inc.com/kr/service/smart-factory/fems-carbon-management",
+        "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/ees",
+        "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf",
+        "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf",
+        "https://miracom-inc.com/kr/diagnosis/digital-factory",
+        "https://miracom-inc.com/kr/solution/smart-factory/mcs"
+      ],
+      "notes": "현재 공개 제품 기능을 날짜 미상 자료로 분리했다. 기존 MES/RX/MCS URL은 중복 등록하지 않았다. MCS 페이지의 삼성SDS 솔루션 귀속·MES-ACS/SCS 구조를 확인했다. 고객 익명 사례의 실명을 추정하거나 제품 페이지의 경험 규모를 RX 배포 수로 환산하지 않았다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://event-us.kr/miracom/event/108159",
+      "publisher": "미라콤아이앤씨 / 이벤터스",
+      "method": "event_and_video_search",
+      "query_or_page": "미라콤 2026 webinar/event-us/공식 YouTube 검색, 제품·인사이트의 영상 링크 확인",
+      "status": "partial",
+      "discovered_urls": [
+        "https://event-us.kr/miracom/event/108159"
+      ],
+      "reviewed_urls": [],
+      "notes": "검색에서 확인된 Solution Fair는 2025-09-25로 범위 밖이므로 제외했다. 공식 홈페이지에 REAL SUMMIT2026 스케치·2026 브랜딩·식음료 구축 사례 영상이 노출되나 YouTube ID와 게시일을 모두 확인하지 못했다. 영상 실제 재생·촬영일·실가동 증거를 확인한 것으로 표시하지 않는다. 기간 내 모든 영상/웨비나 목록을 순회한 상태가 아니다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html",
+      "publisher": "삼성SDI",
+      "method": "official_collection_and_search",
+      "query_or_page": "총 189개 중 첫 페이지 15개, 2026-10-29~03-02; 휴머노이드·로봇·실적 검색",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html",
+        "https://samsungsdi.co.kr/sdi-now/sdi-news/4803.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4941.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html",
+        "https://samsungsdi.co.kr/sdi-now/sdi-news/4803.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4941.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html"
+      ],
+      "notes": "피지컬 AI 관련 1Q/2Q/3Q, 주총, Interbattery 자료 본문을 읽었다. 전기차·ESS·BBU 일반 자료는 RX 범위 밖으로 제외했다. 2페이지 파라미터 접근이 실패하여 2025-10-30~2026-03-01 목록 완전성은 확인하지 못했다. 전시 샘플 공개·고객 평가·양산 계획을 구분하며 전체 매출을 RX 매출로 전환하지 않았다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://www.samsungsem.com/kr/newsroom/news/list.do",
+      "publisher": "삼성전기",
+      "method": "official_collection_and_search",
+      "query_or_page": "뉴스 목록 렌더링 및 2026 로봇·휴머노이드·액츄에이터 검색",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10161",
+        "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10041",
+        "https://samsungsem.com/kr/newsroom/news/view.do?id=10627"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10161",
+        "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10041",
+        "https://samsungsem.com/kr/newsroom/news/view.do?id=10627"
+      ],
+      "notes": "목록 페이지는 검색 결과가 없습니다 상태로 추출되어 날짜별 전체 순회에 실패했다. 검색으로 찾은 2026-01-23,03-18,10-28 공식 기사 본문을 읽었다. 2025-01 CES 프레스미팅은 기간 밖이라 제외했다. 전장/MLCC/전체 부품 매출 기사를 로봇 수주로 부풀리지 않았다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://samsungsem.com/kr/sustainability/library.do",
+      "publisher": "삼성전기",
+      "method": "official_report_listing",
+      "query_or_page": "2025-2026 지속가능경영보고서 다운로드",
+      "status": "access_blocked",
+      "discovered_urls": [
+        "https://samsungsem.com/files/fileDown.do?key=f00a309b-ce27-4c55-9943-e52b7553f76a"
+      ],
+      "reviewed_urls": [
+        "https://samsungsem.com/kr/sustainability/library.do"
+      ],
+      "notes": "목록과 다운로드 URL을 확인했으나 웹 도구가 application/download 형식을 지원하지 않아 본문 검색 미완료. 로봇·공장 관련 내용을 읽었다고 주장하지 않는다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://www.samsungshi.com/Ko/Notice_news.aspx",
+      "publisher": "삼성중공업",
+      "method": "official_search_and_article_read",
+      "query_or_page": "2026 로봇·자동화·AI 연구센터 검색",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=248",
+        "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=251",
+        "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=249"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=248",
+        "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=251",
+        "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=249"
+      ],
+      "notes": "공식 뉴스 목록 접근 오류로 페이지 전체 순회는 미완료. KAIST·서울대 협력, 오프쇼어코리아 RX 소개와 공식 블로그 파이프 로보팹 가동 발표를 읽었다. 2025-10-24 레인보우 MOU는 조사 시작일 이전으로 제외했다. 블로그 게시일 3/19와 사건·발표일 3/16을 분리했다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://blog.samsungshi.com/category/SHI%EB%8A%94%20%EC%A7%80%EA%B8%88?page=1",
+      "publisher": "삼성중공업 공식 블로그",
+      "method": "official_blog_search",
+      "query_or_page": "파이프 로보팹 및 2026 로봇 자동화 검색",
+      "status": "partial",
+      "discovered_urls": [
+        "https://blog.samsungshi.com/906"
+      ],
+      "reviewed_urls": [
+        "https://blog.samsungshi.com/906"
+      ],
+      "notes": "로봇 배관 공장 공식 본문을 읽었으나 블로그 카테고리 전체 페이지 순회는 미완료. 가동 발표를 등록했고 발표된 생산능력을 실생산량·90일 가동률로 간주하지 않았다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://samsungshi.com/ESG/Kor/sub5.aspx",
+      "publisher": "삼성중공업",
+      "method": "official_report_listing",
+      "query_or_page": "2026 지속가능경영·안전보건환경 보고서 목록 확인",
+      "status": "partial",
+      "discovered_urls": [
+        "https://kind.krx.co.kr/common/disclsviewer.do?acptno=20260626000634&docno=&method=search&viewerhost="
+      ],
+      "reviewed_urls": [
+        "https://samsungshi.com/ESG/Kor/sub5.aspx"
+      ],
+      "notes": "2026 보고서 목록은 확인했으나 다운로드 링크가 텍스트에 노출되지 않아 본문 미열람. 전사 인력·연구개발 규모를 RX 조직 규모로 전환하지 않았다. KIND 관련 공시 URL은 검색에서만 발견했다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://samsungena.com/kr/newsroom/news/list",
+      "publisher": "삼성E&A",
+      "method": "official_collection_and_search",
+      "query_or_page": "페이지당 6개·총99페이지; 자동화·로봇·스마트 공모전 검색",
+      "status": "partial",
+      "discovered_urls": [
+        "https://sea.samsungena.com/kr/sustainability/social/safety",
+        "https://sea.samsungena.com/kr/newsroom/news/view?idx=15836",
+        "https://samsungena.com/kr/newsroom/news/view?idx=15838",
+        "https://sea.samsungena.com/kr/newsroom/news/view?idx=15813"
+      ],
+      "reviewed_urls": [
+        "https://sea.samsungena.com/kr/sustainability/social/safety",
+        "https://sea.samsungena.com/kr/newsroom/news/view?idx=15836",
+        "https://samsungena.com/kr/newsroom/news/view?idx=15838",
+        "https://sea.samsungena.com/kr/newsroom/news/view?idx=15813"
+      ],
+      "notes": "공식 콘테크 공모전, 2분기 AI·자동화 운영 설명, 안전 순찰 로봇 현재 페이지를 읽었다. 1Q 실적의 비슷한 포괄적 자동화 설명은 추가 RX 사건으로 세지 않았다. 목록 페이지 번호가 JS여서 전체순회 미완료. 콘테크 게시일 7/9와 본문 ‘16일’ 충돌로 사건일을 미확정 처리했다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://semes.com/ko/media/newsroom/view",
+      "publisher": "세메스",
+      "method": "official_collection_date_boundary_and_article_read",
+      "query_or_page": "첫 화면 2026-08-24,06-10,04-29,03-13,03-04,04-08,02-03 다음2025-08-21",
+      "status": "partial",
+      "discovered_urls": [
+        "https://semes.com/ko/media/newsroom/detail/159",
+        "https://semes.com/ko/media/newsroom/detail/154",
+        "https://semes.com/ko/media/newsroom/detail/149"
+      ],
+      "reviewed_urls": [
+        "https://semes.com/ko/media/newsroom/detail/159",
+        "https://semes.com/ko/media/newsroom/detail/154",
+        "https://semes.com/ko/media/newsroom/detail/149"
+      ],
+      "notes": "2026 최신 공지 이후 2025-08-21로 기간 경계를 통과하나 일부 날짜 순서가 뒤섞여 전체 순회 확정 불가. AI Forum·SEMICON Taiwan·Korea 공지 본문은 읽었지만 로봇/물류 제품 세부가 없어서 사건 수를 늘리기 위해 등록하지 않았다. Taiwan 날짜 서술의 오기 가능성·Korea 행사일 본문/표 불일치도 관측했다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://www.semes.com/ko/company/corporate-overview",
+      "publisher": "세메스",
+      "method": "official_current_product_read",
+      "query_or_page": "기업개요 OHT 공급, 공정 Line Automation",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://www.semes.com/ko/company/corporate-overview",
+        "https://semes.com/ko/product/process"
+      ],
+      "reviewed_urls": [
+        "https://www.semes.com/ko/company/corporate-overview",
+        "https://semes.com/ko/product/process"
+      ],
+      "notes": "삼성전자 양산라인 OHT 공급 설명과 무인 물류 시스템 분야를 읽었다. 신규 계약일·납품량·미라콤/SDS API 연동은 추정하지 않았다. 2025년 4월 OHT 수상 기사는 기간 밖으로 제외했다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://news.samsungdisplay.com/",
+      "publisher": "삼성디스플레이",
+      "method": "official_domain_search_and_article_screening",
+      "query_or_page": "2026 로봇/자동화/스마트팩토리 검색; 34317 본문 확인",
+      "status": "partial",
+      "discovered_urls": [
+        "https://news.samsungdisplay.com/34317"
+      ],
+      "reviewed_urls": [
+        "https://news.samsungdisplay.com/34317"
+      ],
+      "notes": "34317 인터뷰는 CES2025·2025 목표를 회고하며 추출 본문에서 정확한 게시일을 확인하지 못해 최근 1년 신규 사건으로 넣지 않았다. 기존 mi-017과 별도로 기간 내 신규 공장 로봇 자료를 확정하지 못했다. 검색 결과 없음은 공개 자료 부재나 전체 뉴스룸 완전 탐색을 뜻하지 않는다.",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "collection_url": "https://www.samsungshi.com/ESG/Kor/sub1.aspx?sub=sub1_3",
+      "publisher": "삼성중공업",
+      "method": "official_esg_story_search_and_read",
+      "query_or_page": "2025-11~12 및 2026 로봇/자동화·스마트 검색",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://samsungshi.com/ESG/Kor/sub1_3_view.aspx?no=77",
+        "https://www.samsungshi.com/ESG/Kor/sub1_3_view.aspx?no=79"
+      ],
+      "reviewed_urls": [
+        "https://samsungshi.com/ESG/Kor/sub1_3_view.aspx?no=77"
+      ],
+      "notes": "2025-12 해커톤은 공정 데이터를 이용한 AI 플랫폼 파일럿 사례로 읽고 등록했다. 게시일은 월 단위라 일 단위 시점 재현에는 포함하지 않는다. 안전보건정책은 검색에서 발견했으나 일반 정책으로 RX 사건 수를 늘리지 않았다. 전체 ESG 스토리 페이지네이션 미완료."
+    }
+  ],
+  "relations": [
+    {
+      "id": "x-mf-edge-sdi-sample",
+      "from": "sdi",
+      "to": "solid-state-battery",
+      "type": "develops",
+      "label": "휴머노이드 샘플 출하·고객 평가",
+      "claim_id": "claim:x-mf-002",
+      "status": "reported",
+      "rationale": "공식 3분기 발표의 샘플 출하 단계이며 양산·유료 공급 완료로 바꾸지 않습니다.",
+      "from_title": "삼성SDI",
+      "to_title": "로봇용 전고체 배터리",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-sdi-target",
+      "from": "sdi",
+      "to": "solid-state-battery",
+      "type": "plans_supply",
+      "label": "2027년 양산·휴머노이드 공급 추진",
+      "claim_id": "claim:x-mf-004",
+      "status": "planned",
+      "rationale": "정기 주총이 설명한 계획입니다. 미래 목표 시점의 경과만으로 양산을 확정하지 않습니다.",
+      "from_title": "삼성SDI",
+      "to_title": "로봇용 전고체 배터리",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-sdi-demo",
+      "from": "sdi",
+      "to": "solid-state-battery",
+      "type": "showcases",
+      "label": "인터배터리 샘플 공개 회고",
+      "claim_id": "claim:x-mf-030",
+      "status": "reported",
+      "rationale": "4월 실적 발표가 3월 전시 공개를 회고합니다. 미리 발표한 mi-015와 같은 출처 그룹으로 중복을 제한합니다.",
+      "from_title": "삼성SDI",
+      "to_title": "로봇용 전고체 배터리",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-shi-kaist",
+      "from": "shi",
+      "to": "kaist",
+      "type": "partners_with",
+      "label": "공정 로봇·스마트조선소 공동 연구",
+      "claim_id": "claim:x-mf-006",
+      "status": "reported",
+      "rationale": "연구센터 출범 및 연구 분야 발표입니다. 결과 기술의 현장 상용화를 뜻하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "KAIST",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "x-mf-edge-shi-pipe",
+      "from": "shi",
+      "to": "shi-pipe-robofab",
+      "type": "operates",
+      "label": "로봇 배관 공장 가동 발표",
+      "claim_id": "claim:x-mf-007",
+      "status": "reported",
+      "rationale": "2026년 3월 16일 준공·가동 발표이며 3월 19일 블로그 게시와 분리합니다. 90일 가동률이나 실제 생산량을 확인하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "파이프 로보팹",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Factory"
+    },
+    {
+      "id": "x-mf-edge-pipe-vision",
+      "from": "shi-pipe-robofab",
+      "to": "shi-pipe-vision-ai",
+      "type": "uses",
+      "label": "설계·물류·정렬·용접 통합",
+      "claim_id": "claim:x-mf-007:2",
+      "status": "reported",
+      "rationale": "공식 공장 소개가 명시한 자동화 구성입니다. SDS 또는 미라콤 연계를 추가하지 않습니다.",
+      "from_title": "파이프 로보팹",
+      "to_title": "배관 제작 비전 AI·통합 관리",
+      "from_ontology_type": "Factory",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-mf-edge-semco-camera",
+      "from": "semco",
+      "to": "humanoid-camera-module",
+      "type": "develops",
+      "label": "휴머노이드 카메라 사업 기회 추진",
+      "claim_id": "claim:x-mf-008",
+      "status": "planned",
+      "rationale": "주총의 성장 제품 전략입니다. 생산·납품 완료를 확정하지 않습니다.",
+      "from_title": "삼성전기",
+      "to_title": "휴머노이드 카메라 모듈",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-semco-actuator",
+      "from": "semco",
+      "to": "semco-actuator",
+      "type": "researches",
+      "label": "피지컬 AI 차세대 기술 확보 계획",
+      "claim_id": "claim:x-mf-009:2",
+      "status": "planned",
+      "rationale": "2025년 4분기 실적 발표의 2026년 전략이며 로봇 부품 실매출 수치는 아닙니다.",
+      "from_title": "삼성전기",
+      "to_title": "고신뢰성 액츄에이터",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-ena-patrol",
+      "from": "samsungena",
+      "to": "ena-smart-patrol-robot",
+      "type": "operates",
+      "label": "현장 안전 순찰 로봇 운영 소개",
+      "claim_id": "claim:x-mf-011",
+      "status": "undated_current",
+      "rationale": "현재 안전 페이지 설명만으로 연결합니다. 도입일·현장명·로봇 공급사·운영 기간을 생성하지 않습니다.",
+      "from_title": "삼성E&A",
+      "to_title": "Smart Patrol Robot",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-mf-edge-miracom-ai",
+      "from": "miracom",
+      "to": "miracom-ai-engineer",
+      "type": "provides",
+      "label": "제조 AI 의사결정 지원 안내",
+      "claim_id": "claim:x-mf-012",
+      "status": "undated_current",
+      "rationale": "현재 서비스 기능 설명입니다. 로봇 공통 플랫폼 출시나 자율 생산 달성 근거가 아닙니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "AI 엔지니어 서비스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-mc",
+      "from": "miracom",
+      "to": "mesplus-mc",
+      "type": "provides",
+      "label": "SECS/GEM·OPC 설비 연계 안내",
+      "claim_id": "claim:x-mf-013",
+      "status": "undated_current",
+      "rationale": "설비 데이터·제어 제품의 현재 설명이며 모든 로봇 기종 지원을 의미하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "Nexplant MESplus MC",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-qms",
+      "from": "miracom",
+      "to": "mesplus-qms",
+      "type": "provides",
+      "label": "품질·설비·공정 연계 분석",
+      "claim_id": "claim:x-mf-014",
+      "status": "undated_current",
+      "rationale": "QMS 제품 기능을 해당 회사에 귀속합니다. 고객별 실측 품질 성과는 미확인입니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "Nexplant MESplus QMS",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-semes-oht",
+      "from": "semes",
+      "to": "semes-oht",
+      "type": "supplies",
+      "label": "삼성전자 양산라인 공급 소개",
+      "claim_id": "claim:x-mf-016",
+      "status": "undated_current",
+      "rationale": "기업개요의 과거 공급 설명으로 최초 납품일·규모를 특정하지 않습니다.",
+      "from_title": "세메스",
+      "to_title": "OHT 물류자동화",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-oht-se",
+      "from": "semes-oht",
+      "to": "se",
+      "type": "supplied_to",
+      "label": "양산라인 물류자동화",
+      "claim_id": "claim:x-mf-016",
+      "status": "undated_current",
+      "rationale": "공식 기업개요에 명시된 고객 연결입니다. 삼성전자 RX 조직의 구매 권한이나 SDS API 연계를 뜻하지 않습니다.",
+      "from_title": "OHT 물류자동화",
+      "to_title": "삼성전자",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-mf-edge-ena-contech",
+      "from": "samsungena",
+      "to": "samsung-epc-contech-2026",
+      "type": "organizes",
+      "label": "스마트 제조·로보틱스 기술 모집",
+      "claim_id": "claim:x-mf-018",
+      "status": "planned",
+      "rationale": "공모전 모집 발표입니다. 게시일·본문 일자 충돌로 사건일을 미확정 유지합니다.",
+      "from_title": "삼성E&A",
+      "to_title": "2026 콘테크 공모전",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Event"
+    },
+    {
+      "id": "x-mf-edge-shi-contech",
+      "from": "shi",
+      "to": "samsung-epc-contech-2026",
+      "type": "organizes",
+      "label": "EPC 3사 공동 공모전",
+      "claim_id": "claim:x-mf-018",
+      "status": "planned",
+      "rationale": "같은 모집 발표의 공동 주최 범위이며 3건의 독립 근거로 세지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "2026 콘테크 공모전",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Event"
+    },
+    {
+      "id": "x-mf-edge-miracom-h101",
+      "from": "miracom",
+      "to": "highway101",
+      "type": "provides",
+      "label": "이기종 애플리케이션·메시지 통합",
+      "claim_id": "claim:x-mf-020",
+      "status": "undated_current",
+      "rationale": "공식 EAI/MOM 제품 설명으로 범위를 제한합니다. 그룹 공통 RX API를 추정하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "Highway101",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-fems",
+      "from": "miracom",
+      "to": "miracom-fems",
+      "type": "provides",
+      "label": "설비 에너지·LOT 탄소 추적",
+      "claim_id": "claim:x-mf-021",
+      "status": "undated_current",
+      "rationale": "현재 서비스 기능 안내로 정확한 발표·도입 날짜는 알려져 있지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "FEMS·탄소 관리",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-ees",
+      "from": "miracom",
+      "to": "mesplus-ees",
+      "type": "provides",
+      "label": "FDC·EPT·RMS 설비 엔지니어링",
+      "claim_id": "claim:x-mf-022",
+      "status": "undated_current",
+      "rationale": "설비 분석 제품의 모듈 구성 설명으로 로봇 운영 KPI나 불량률 목표 달성을 확정하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "Nexplant MESplus EES",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-carbon-event",
+      "from": "miracom",
+      "to": "chemtopia-mes-conference-2026",
+      "type": "presents_at",
+      "label": "MES와 제품별 탄소 추적 발표",
+      "claim_id": "claim:x-mf-023",
+      "status": "reported",
+      "rationale": "발표 행사에 한정합니다. 전년도 MOU의 신규 체결이나 유료 사업 수주로 중복 집계하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "켐토피아 MES·탄소 데이터 컨퍼런스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Event"
+    },
+    {
+      "id": "x-mf-edge-miracom-food-case",
+      "from": "miracom",
+      "to": "miracom-anonymous-food-case",
+      "type": "implements",
+      "label": "설비·전자저울·작업 지시 연결",
+      "claim_id": "claim:x-mf-025",
+      "status": "reported",
+      "rationale": "미라콤이 소개한 익명 구축 사례입니다. 고객 실명·계약액·로봇 적용 여부를 추정하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "익명 식음료 A사 MES 구축 사례",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-mf-edge-food-mes",
+      "from": "miracom-anonymous-food-case",
+      "to": "mes",
+      "type": "uses",
+      "label": "MES·ERP 실적 연계와 원료 역추적",
+      "claim_id": "claim:x-mf-025:2",
+      "status": "reported",
+      "rationale": "원문은 미라콤 MES를 언급하며 브랜드·배포 버전·운영 시작일은 확인되지 않았습니다.",
+      "from_title": "익명 식음료 A사 MES 구축 사례",
+      "to_title": "MES",
+      "from_ontology_type": "Project",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-mf-edge-shi-sedh",
+      "from": "shi",
+      "to": "shi-sedh",
+      "type": "showcases",
+      "label": "오프쇼어 코리아 자동화 기술 소개",
+      "claim_id": "claim:x-mf-028",
+      "status": "reported",
+      "rationale": "2026 전시 소개에 한정하며 선박 하이브리드 인증을 로봇 인증으로 전용하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "S-EDH 설계 자동화 플랫폼",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-shi-snu",
+      "from": "shi",
+      "to": "snu",
+      "type": "partners_with",
+      "label": "미래선박기술 연구센터 협약",
+      "claim_id": "claim:x-mf-029",
+      "status": "reported",
+      "rationale": "산학협력 역할 설명입니다. KAIST AI·로보틱스 분야와 서울대 원천·에너지 분야를 분리합니다.",
+      "from_title": "삼성중공업",
+      "to_title": "서울대학교",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "x-mf-edge-semes-line",
+      "from": "semes",
+      "to": "semes-line-automation",
+      "type": "describes",
+      "label": "Stocker·OHT 무인 반송·보관",
+      "claim_id": "claim:x-mf-031",
+      "status": "undated_current",
+      "rationale": "현재 제품 분야 설명이며 별도 신규 납품 사건을 만들지 않습니다.",
+      "from_title": "세메스",
+      "to_title": "SEMES Line Automation",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-mf-edge-shi-dataiku",
+      "from": "shi",
+      "to": "dataiku",
+      "type": "partners_with",
+      "label": "제조 현장 AI 해커톤 협력",
+      "claim_id": "claim:x-mf-033",
+      "status": "undated_current",
+      "rationale": "일 단위 게시일을 모르는 공식 2025-12 자료의 협력 설명입니다. 계약액·유료 고객 관계를 추정하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "데이터이쿠",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-mf-edge-shi-ai-pilot",
+      "from": "shi",
+      "to": "shi-data-ai-pilot",
+      "type": "conducts",
+      "label": "공정 데이터 AI 플랫폼 도입 파일럿",
+      "claim_id": "claim:x-mf-033:2",
+      "status": "undated_current",
+      "rationale": "파일럿에서 공정·운영 데이터로 모델을 검증했다는 회사 설명이며 상시 운영 완료로 승격하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "삼성중공업 데이터 AI 플랫폼 파일럿",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    }
+  ],
+  "lineage_updates": [
+    {
+      "record_id": "mi-015",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "source_urls": [
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html",
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html"
+        ],
+        "related_record_ids": [
+          "x-mf-003",
+          "x-mf-030"
+        ],
+        "document_origin_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+        "rationale": "3월 2일·9일 Interbattery 예고와 4월 28일 실적 자료의 샘플 공개 회고는 같은 전시 사건이다. 새 배포나 독립 검증 사건으로 중복 집계하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "record_id": "mi-016",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "public_source_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "source_urls": [
+          "https://ir.edaily.co.kr/News/Read?k=03995046645617840",
+          "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html"
+        ],
+        "related_record_ids": [
+          "x-mf-002"
+        ],
+        "document_origin_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html",
+        "rationale": "이데일리 Q3 실적 보도와 삼성SDI 공식 Q3 발표가 동일한 실적 설명을 전달하므로 하나의 발표 계보로 묶는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    }
+  ],
+  "coverage_gaps": [
+    "Miracom 인사이트 54개·라이브러리66개 전체 상세 URL과 JS 페이지네이션 미완료.",
+    "공식 영상과 웨비나의 전체 목록·게시일·촬영일·실제 재생 확인 미완료.",
+    "삼성SDI 2페이지 이후, 삼성전기/E&A/중공업 전체 뉴스 목록 순회 미완료.",
+    "삼성중공업·삼성전기 2026 보고서 다운로드 본문 수집 미완료.",
+    "삼성디스플레이의 새 기간 내 로봇/공장 원문을 추가 확정하지 못했으며 공개자료 부재를 뜻하지 않는다."
+  ]
+}

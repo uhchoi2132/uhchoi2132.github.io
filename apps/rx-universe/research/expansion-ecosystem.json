@@ -1,0 +1,2162 @@
+{
+  "records": [
+    {
+      "id": "x-eco-001",
+      "title": "플라잎-레인보우로보틱스, 제조 특화 AI 양팔로봇 V2 공동 개발 추진",
+      "url": "https://rainbow-robotics.com/플라잎-레인보우로보틱스-제조-특화-ai-양팔로봇-v2-공/",
+      "publisher": "레인보우로보틱스",
+      "published_at": "2026-04-02",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "rainbow",
+        "flyp",
+        "manufacturing-dual-arm-v2",
+        "robot"
+      ],
+      "origin_key": "https://rainbow-robotics.com/플라잎-레인보우로보틱스-제조-특화-ai-양팔로봇-v2-공/",
+      "summary_ko": "레인보우로보틱스는 플라잎과 제조 공정용 AI 양팔로봇 V2를 공동 개발한다고 밝혔다. 정밀 하드웨어와 조립·체결 AI를 결합하는 개발 계획이며 양산 현장의 유료 상시 가동 실적은 제시하지 않았다.",
+      "excerpt": "제조 특화 AI 양팔로봇 V2",
+      "claim": {
+        "text": "레인보우로보틱스는 플라잎과 제조 특화 AI 양팔로봇 V2를 공동 개발한다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "공동 개발 발표이며 완제품 출시·유료 계약·90일 상시 운영을 확인한 자료가 아니다.",
+        "기존 헤드램프 조립 공정에서의 적용 가능성 설명을 반복 배포 실적으로 해석하지 않는다.",
+        "원 게시일 2026-04-02와 사이트에 함께 표시되는 2026-05-30 수정일을 분리했다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "게시물 원 게시일과 본문 공동 개발·정밀 하드웨어/조립 AI 설명",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-001",
+          "origin_record_id": "x-eco-001",
+          "text": "레인보우로보틱스는 플라잎과 제조 특화 AI 양팔로봇 V2를 공동 개발한다고 발표했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "게시물 원 게시일과 본문 공동 개발·정밀 하드웨어/조립 AI 설명",
+          "limitations": [
+            "공동 개발 발표이며 완제품 출시·유료 계약·90일 상시 운영을 확인한 자료가 아니다.",
+            "기존 헤드램프 조립 공정에서의 적용 가능성 설명을 반복 배포 실적으로 해석하지 않는다.",
+            "원 게시일 2026-04-02와 사이트에 함께 표시되는 2026-05-30 수정일을 분리했다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-001:2",
+          "origin_record_id": "x-eco-001",
+          "text": "레인보우로보틱스는 자사 정밀 하드웨어와 플라잎의 조립·체결 AI를 결합해 자동차·전자 제조 분야 적용을 추진한다고 설명했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "게시물 원 게시일과 본문 공동 개발·정밀 하드웨어/조립 AI 설명",
+          "limitations": [
+            "공동 개발 발표이며 완제품 출시·유료 계약·90일 상시 운영을 확인한 자료가 아니다.",
+            "기존 헤드램프 조립 공정에서의 적용 가능성 설명을 반복 배포 실적으로 해석하지 않는다.",
+            "원 게시일 2026-04-02와 사이트에 함께 표시되는 2026-05-30 수정일을 분리했다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-002",
+      "title": "와이파워원, 레인보우로보틱스·PHA 자율주행이동로봇 무선 충전 시스템 업무 협약",
+      "url": "https://rainbow-robotics.com/와이파워원-레인보우로보틱스·pha-자율주행이동로/",
+      "publisher": "레인보우로보틱스",
+      "published_at": "2026-02-19",
+      "event_date": "2026-02-13",
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "rainbow",
+        "ypowerone",
+        "pha",
+        "amr-wireless-charging",
+        "robot"
+      ],
+      "origin_key": "rainbow-ypowerone-pha:2026-02-13-amr-wireless-charging-mou",
+      "summary_ko": "회사 게시물은 2월 13일 와이파워원·레인보우로보틱스·PHA가 AMR 무선충전 적용 사업을 위한 업무협약을 체결했다고 설명한다. 과거 공동 실증·전시 언급과 이번 사업 협약을 구분한다.",
+      "excerpt": "자율주행이동로봇 무선충전 시스템 적용 사업",
+      "claim": {
+        "text": "레인보우로보틱스는 와이파워원·PHA와 2026년 2월 13일 자율주행이동로봇 무선충전 시스템 적용 사업 업무협약을 체결했다고 밝혔다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "업무협약은 유료 수주나 상시 가동 계약의 증거가 아니다.",
+        "과거 실증 및 2025년 10월 전시의 정확한 사건일·유료 여부는 이 게시물에서 확정하지 않는다.",
+        "같은 협약을 다룬 PHA 제목 게시물은 동일 사건으로 묶고 신규 독립 근거로 가산하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "게시일 2026-02-19; 본문의 지난 13일 협약 설명",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-002",
+          "origin_record_id": "x-eco-002",
+          "text": "레인보우로보틱스는 와이파워원·PHA와 2026년 2월 13일 자율주행이동로봇 무선충전 시스템 적용 사업 업무협약을 체결했다고 밝혔다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "게시일 2026-02-19; 본문의 지난 13일 협약 설명",
+          "limitations": [
+            "업무협약은 유료 수주나 상시 가동 계약의 증거가 아니다.",
+            "과거 실증 및 2025년 10월 전시의 정확한 사건일·유료 여부는 이 게시물에서 확정하지 않는다.",
+            "같은 협약을 다룬 PHA 제목 게시물은 동일 사건으로 묶고 신규 독립 근거로 가산하지 않는다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-003",
+      "title": "헌인타운개발, 레인보우로보틱스와 인공지능 보안로봇 도입 업무협약 체결",
+      "url": "https://rainbow-robotics.com/헌인타운개발-레인보우로보틱스와-인공지능-보안/",
+      "publisher": "레인보우로보틱스",
+      "published_at": "2026-03-03",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "rainbow",
+        "s1",
+        "heonin-town",
+        "leel-upperhouse-security",
+        "robot"
+      ],
+      "origin_key": "https://rainbow-robotics.com/헌인타운개발-레인보우로보틱스와-인공지능-보안/",
+      "summary_ko": "회사 게시물은 헌인타운개발·에스원·레인보우로보틱스의 인공지능 보안로봇 도입 협약과 에스원의 기존 보안체계에 로봇을 결합하는 계획을 설명한다. 제조 공장 도입이나 완료된 운영 실적으로 분류하지 않는다.",
+      "excerpt": "기존 보안 시스템의 기능을 보완하는 역할",
+      "claim": {
+        "text": "레인보우로보틱스는 헌인타운개발·에스원과 인공지능 보안로봇 도입 업무협약을 체결했다고 설명했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "본문의 최근 협약이라는 표현만으로 정확한 협약일을 생성하지 않는다.",
+        "보안로봇 도입 계획이며 가동 완료·계약액·상시 운용 KPI가 확인되지 않았다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "게시일 2026-03-03; 3사 협약 및 에스원 통합 보안체계 설명",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-003",
+          "origin_record_id": "x-eco-003",
+          "text": "레인보우로보틱스는 헌인타운개발·에스원과 인공지능 보안로봇 도입 업무협약을 체결했다고 설명했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "게시일 2026-03-03; 3사 협약 및 에스원 통합 보안체계 설명",
+          "limitations": [
+            "본문의 최근 협약이라는 표현만으로 정확한 협약일을 생성하지 않는다.",
+            "보안로봇 도입 계획이며 가동 완료·계약액·상시 운용 KPI가 확인되지 않았다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-003:2",
+          "origin_record_id": "x-eco-003",
+          "text": "회사 게시물은 에스원이 르엘 어퍼하우스의 기존 보안 체계와 레인보우로보틱스 로봇을 결합할 계획이라고 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "게시일 2026-03-03; 3사 협약 및 에스원 통합 보안체계 설명",
+          "limitations": [
+            "본문의 최근 협약이라는 표현만으로 정확한 협약일을 생성하지 않는다.",
+            "보안로봇 도입 계획이며 가동 완료·계약액·상시 운용 KPI가 확인되지 않았다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-004",
+      "title": "RB-Y1 — 연구·확장 중심 이동형 양팔로봇 플랫폼",
+      "url": "https://rainbow-robotics.com/products/rb-y1/",
+      "publisher": "레인보우로보틱스",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "scope": "undated",
+      "entity_ids": [
+        "rainbow",
+        "rb-y1",
+        "rby1-sdk",
+        "robot"
+      ],
+      "origin_key": "https://rainbow-robotics.com/products/rb-y1/",
+      "summary_ko": "공식 제품 페이지는 RB-Y1을 조작·이동·인지 연구와 AI 학습·텔레오퍼레이션·전신 제어를 위한 이동형 양팔 플랫폼으로 소개한다. Robot PC와 User PC를 분리하는 구조를 설명한다.",
+      "excerpt": "연구를 위해 설계된 이동형 양팔로봇 플랫폼. 개방된 SDK 기반의 제어 환경을 제공합니다.",
+      "claim": {
+        "text": "레인보우로보틱스는 RB-Y1을 조작·이동·인지 기술을 실험하는 연구용 이동형 양팔로봇 플랫폼으로 소개한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일이 없어 최근 1년 내 신규 출시 사실로 집계하지 않는다.",
+        "제품 기능 설명은 현장 안전 인증·가동률·유료 반복 배포 검증과 다르다.",
+        "SDS 오케스트레이션 API와 호환된다는 근거로 사용하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "제품 소개 및 안정성·안전성·확장성을 동시에 확보한 소프트웨어 아키텍처 절",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-004",
+          "origin_record_id": "x-eco-004",
+          "text": "레인보우로보틱스는 RB-Y1을 조작·이동·인지 기술을 실험하는 연구용 이동형 양팔로봇 플랫폼으로 소개한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "제품 소개 및 안정성·안전성·확장성을 동시에 확보한 소프트웨어 아키텍처 절",
+          "limitations": [
+            "게시일이 없어 최근 1년 내 신규 출시 사실로 집계하지 않는다.",
+            "제품 기능 설명은 현장 안전 인증·가동률·유료 반복 배포 검증과 다르다.",
+            "SDS 오케스트레이션 API와 호환된다는 근거로 사용하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-004:2",
+          "origin_record_id": "x-eco-004",
+          "text": "공식 RB-Y1 페이지는 실시간 제어 Robot PC와 C++·Python·ROS 2 응용을 실행하는 User PC를 분리한다고 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "제품 소개 및 안정성·안전성·확장성을 동시에 확보한 소프트웨어 아키텍처 절",
+          "limitations": [
+            "게시일이 없어 최근 1년 내 신규 출시 사실로 집계하지 않는다.",
+            "제품 기능 설명은 현장 안전 인증·가동률·유료 반복 배포 검증과 다르다.",
+            "SDS 오케스트레이션 API와 호환된다는 근거로 사용하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-004:3",
+          "origin_record_id": "x-eco-004",
+          "text": "공식 RB-Y1 페이지는 연구자가 제어 전략을 설계·검증할 수 있도록 SDK 기반 제어 환경을 제공한다고 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "RB-Y1 공식 제품 페이지의 SDK 기반 제어·활용 안내; 공개자료 조사 재검토 줄229·243. 원문 보관본은 확보하지 못함.",
+          "limitations": [
+            "게시일이 없어 최근 1년 내 신규 출시 사실로 집계하지 않는다.",
+            "제품 기능 설명은 현장 안전 인증·가동률·유료 반복 배포 검증과 다르다.",
+            "SDS 오케스트레이션 API와 호환된다는 근거로 사용하지 않는다.",
+            "SDK 제어 안내가 SDK만 사용해야 하는 필수 의존성을 뜻하지 않는다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-005",
+      "title": "AI for Robotics — Physical AI 구현 전략",
+      "url": "https://rainbow-robotics.com/인사이트/ai-for-robotics/",
+      "publisher": "레인보우로보틱스",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "scope": "undated",
+      "entity_ids": [
+        "rainbow",
+        "robot",
+        "rby-ai-framework",
+        "isaac-sim",
+        "mujoco",
+        "rb-y1c",
+        "rby2"
+      ],
+      "origin_key": "https://rainbow-robotics.com/인사이트/ai-for-robotics/",
+      "summary_ko": "레인보우는 VLA 데이터·학습 인프라와 강화학습·제어 통합을 설명한다. 시뮬레이션 지원과 RB-Y1C·RBY2 산업 안전 인증 추진은 각각 기능 설명과 미래 계획으로 구분한다.",
+      "excerpt": "차세대 모바일 휴머노이드 RB-Y1C · RBY2의 산업 안전 인증 취득 추진",
+      "claim": {
+        "text": "레인보우로보틱스는 멀티모달 데이터 수집·관리, VLA 학습 및 Sim-to-Real 인프라를 구축하고 있다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "게시일·버전이 없어 과거 날짜에 알려진 사실로 역산하지 않는다.",
+        "인증 추진은 인증 취득 완료가 아니다.",
+        "공급사 전략·기능 설명이며 독립 성능 검증이나 SDS 공통 API 선언이 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "VLA Infrastructure Development; Core AI Framework; Industrial-Grade Safe Autonomy",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-005",
+          "origin_record_id": "x-eco-005",
+          "text": "레인보우로보틱스는 멀티모달 데이터 수집·관리, VLA 학습 및 Sim-to-Real 인프라를 구축하고 있다고 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "VLA Infrastructure Development; Core AI Framework; Industrial-Grade Safe Autonomy",
+          "limitations": [
+            "게시일·버전이 없어 과거 날짜에 알려진 사실로 역산하지 않는다.",
+            "인증 추진은 인증 취득 완료가 아니다.",
+            "공급사 전략·기능 설명이며 독립 성능 검증이나 SDS 공통 API 선언이 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-005:2",
+          "origin_record_id": "x-eco-005",
+          "text": "레인보우로보틱스는 VLA 프레임워크에서 텔레오퍼레이션과 Isaac Sim·MuJoCo 시뮬레이션 환경을 지원한다고 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "VLA Infrastructure Development; Core AI Framework; Industrial-Grade Safe Autonomy",
+          "limitations": [
+            "게시일·버전이 없어 과거 날짜에 알려진 사실로 역산하지 않는다.",
+            "인증 추진은 인증 취득 완료가 아니다.",
+            "공급사 전략·기능 설명이며 독립 성능 검증이나 SDS 공통 API 선언이 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-005:3",
+          "origin_record_id": "x-eco-005",
+          "text": "레인보우로보틱스는 차세대 모바일 휴머노이드 RB-Y1C·RBY2의 산업 안전 인증 취득을 추진한다고 밝혔다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "VLA Infrastructure Development; Core AI Framework; Industrial-Grade Safe Autonomy",
+          "limitations": [
+            "게시일·버전이 없어 과거 날짜에 알려진 사실로 역산하지 않는다.",
+            "인증 추진은 인증 취득 완료가 아니다.",
+            "공급사 전략·기능 설명이며 독립 성능 검증이나 SDS 공통 API 선언이 아니다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-006",
+      "title": "RBC 시리즈 로봇 운영 시스템",
+      "url": "https://rainbow-robotics.com/제품솔루션/협동로봇/로봇-운영-시스템/",
+      "publisher": "레인보우로보틱스",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "scope": "undated",
+      "entity_ids": [
+        "rainbow",
+        "rbc-series",
+        "rbc-os",
+        "robot",
+        "api"
+      ],
+      "origin_key": "https://rainbow-robotics.com/제품솔루션/협동로봇/로봇-운영-시스템/",
+      "summary_ko": "공식 문서는 RBC 협동로봇의 Linux 기반 실시간 제어, 병렬 스레드, 프로그램 관리·시뮬레이션 및 소프트웨어 PLC I/O를 설명한다. 개별 로봇 제어 소프트웨어의 범위다.",
+      "excerpt": "독자적인 실시간 로봇 운영 시스템",
+      "claim": {
+        "text": "레인보우로보틱스는 RBC 시리즈에 자체 개발한 Linux 기반 실시간 로봇 운영 시스템을 사용한다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일과 소프트웨어 버전이 확인되지 않았다.",
+        "개별 로봇 운영 시스템 설명을 삼성 그룹 공통 오케스트레이션이나 SDS·미라콤 간 책임 경계로 해석하지 않는다.",
+        "벤더 설명이며 외부 PLC가 필요 없는 모든 공정을 입증한 독립 테스트가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "협동로봇 운영 시스템; Built-in Features; Integration Features",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-006",
+          "origin_record_id": "x-eco-006",
+          "text": "레인보우로보틱스는 RBC 시리즈에 자체 개발한 Linux 기반 실시간 로봇 운영 시스템을 사용한다고 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "협동로봇 운영 시스템; Built-in Features; Integration Features",
+          "limitations": [
+            "게시일과 소프트웨어 버전이 확인되지 않았다.",
+            "개별 로봇 운영 시스템 설명을 삼성 그룹 공통 오케스트레이션이나 SDS·미라콤 간 책임 경계로 해석하지 않는다.",
+            "벤더 설명이며 외부 PLC가 필요 없는 모든 공정을 입증한 독립 테스트가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-006:2",
+          "origin_record_id": "x-eco-006",
+          "text": "공식 RBC 문서는 소프트웨어 PLC 기반 I/O와 그리퍼·센서·용접기·HMI 연동 기능을 제공한다고 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "협동로봇 운영 시스템; Built-in Features; Integration Features",
+          "limitations": [
+            "게시일과 소프트웨어 버전이 확인되지 않았다.",
+            "개별 로봇 운영 시스템 설명을 삼성 그룹 공통 오케스트레이션이나 SDS·미라콤 간 책임 경계로 해석하지 않는다.",
+            "벤더 설명이며 외부 PLC가 필요 없는 모든 공정을 입증한 독립 테스트가 아니다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-007",
+      "title": "RainbowRobotics/rby1-sdk — Official Python and C++ SDK",
+      "url": "https://github.com/RainbowRobotics/rby1-sdk",
+      "publisher": "Rainbow Robotics",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "scope": "undated",
+      "entity_ids": [
+        "rainbow",
+        "rb-y1",
+        "rby1-sdk",
+        "api"
+      ],
+      "origin_key": "https://github.com/RainbowRobotics/rby1-sdk",
+      "summary_ko": "레인보우 공식 GitHub는 RB-Y1의 Python·C++ SDK, 설치·실행 예제 및 Apache-2.0 라이선스를 공개한다. 저장소 현재 상태를 제품 문서로 등록하며 최초 공개일은 생성하지 않는다.",
+      "excerpt": "Official Python and C++ SDK",
+      "claim": {
+        "text": "레인보우로보틱스 공식 GitHub는 RB-Y1용 Python·C++ SDK를 Apache-2.0 라이선스로 공개한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "저장소 본문에 근거한 현재 설명이며 최초 게시일·특정 릴리스 출시일을 확정하지 않았다.",
+        "공개 SDK를 SDS 또는 삼성전자 공통 API와 동일한 제품으로 간주하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "GitHub About, README의 Python/C++ 예제 및 License 항목",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-007",
+          "origin_record_id": "x-eco-007",
+          "text": "레인보우로보틱스 공식 GitHub는 RB-Y1용 Python·C++ SDK를 Apache-2.0 라이선스로 공개한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "GitHub About, README의 Python/C++ 예제 및 License 항목",
+          "limitations": [
+            "저장소 본문에 근거한 현재 설명이며 최초 게시일·특정 릴리스 출시일을 확정하지 않았다.",
+            "공개 SDK를 SDS 또는 삼성전자 공통 API와 동일한 제품으로 간주하지 않는다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-008",
+      "title": "RB-Y1 Documentation — Software Architecture",
+      "url": "https://rainbowrobotics.github.io/rby1-dev/software/architecture.html",
+      "publisher": "Rainbow Robotics",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "scope": "undated",
+      "entity_ids": [
+        "rainbow",
+        "rb-y1",
+        "rby1-sdk",
+        "grpc",
+        "udp",
+        "api"
+      ],
+      "origin_key": "https://github.com/RainbowRobotics/rby1-sdk",
+      "summary_ko": "공식 아키텍처는 고수준 gRPC 비실시간 명령과 저수준 UDP 실시간 제어를 구분한다. 문서의 주파수 사양은 공장 생산성 KPI가 아니며 문서 버전과 ROS 관련 설명 차이는 추가 확인이 필요하다.",
+      "excerpt": "These channels use Google gRPC",
+      "claim": {
+        "text": "RB-Y1 공식 아키텍처 문서는 고수준 명령·설정용 비실시간 채널에 gRPC를 사용하며 최대 100Hz 명령과 Once·Stream 패턴을 설명한다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일과 적용 SDK 버전이 명확하지 않아 역사적 출시 사실로 사용하지 않는다.",
+        "100Hz·500Hz는 공급사 문서의 통신·제어 사양이며 실측 생산성·복구시간·가동률이 아니다.",
+        "본문에는 ROS 통합을 향후 계획으로 설명하지만 같은 문서 탐색 메뉴와 현재 제품 페이지에는 ROS 2 지원 설명이 있어 버전 정합성 검토가 필요하다.",
+        "다중 로봇 스케줄링 또는 SDS 공통 API 공개를 입증하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "Software Architecture > System Overview의 Non-realtime / Realtime communication channels",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-008",
+          "origin_record_id": "x-eco-008",
+          "text": "RB-Y1 공식 아키텍처 문서는 고수준 명령·설정용 비실시간 채널에 gRPC를 사용하며 최대 100Hz 명령과 Once·Stream 패턴을 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "Software Architecture > System Overview의 Non-realtime / Realtime communication channels",
+          "limitations": [
+            "게시일과 적용 SDK 버전이 명확하지 않아 역사적 출시 사실로 사용하지 않는다.",
+            "100Hz·500Hz는 공급사 문서의 통신·제어 사양이며 실측 생산성·복구시간·가동률이 아니다.",
+            "본문에는 ROS 통합을 향후 계획으로 설명하지만 같은 문서 탐색 메뉴와 현재 제품 페이지에는 ROS 2 지원 설명이 있어 버전 정합성 검토가 필요하다.",
+            "다중 로봇 스케줄링 또는 SDS 공통 API 공개를 입증하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-008:2",
+          "origin_record_id": "x-eco-008",
+          "text": "RB-Y1 공식 아키텍처 문서는 저수준 실시간 제어에 고정 500Hz UDP 채널을 설명한다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "Software Architecture > System Overview의 Non-realtime / Realtime communication channels",
+          "limitations": [
+            "게시일과 적용 SDK 버전이 명확하지 않아 역사적 출시 사실로 사용하지 않는다.",
+            "100Hz·500Hz는 공급사 문서의 통신·제어 사양이며 실측 생산성·복구시간·가동률이 아니다.",
+            "본문에는 ROS 통합을 향후 계획으로 설명하지만 같은 문서 탐색 메뉴와 현재 제품 페이지에는 ROS 2 지원 설명이 있어 버전 정합성 검토가 필요하다.",
+            "다중 로봇 스케줄링 또는 SDS 공통 API 공개를 입증하지 않는다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-009",
+      "title": "Newton Adds Contact-Rich Manipulation and Locomotion Capabilities for Industrial Robotics",
+      "url": "https://developer.nvidia.com/blog/newton-adds-contact-rich-manipulation-and-locomotion-capabilities-for-industrial-robotics/",
+      "publisher": "NVIDIA Technical Blog",
+      "published_at": "2026-03-16",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "samsung-unspecified",
+        "nvidia",
+        "rainbow",
+        "lightwheel",
+        "newton",
+        "rb-y1",
+        "robot"
+      ],
+      "origin_key": "https://developer.nvidia.com/blog/newton-adds-contact-rich-manipulation-and-locomotion-capabilities-for-industrial-robotics/",
+      "summary_ko": "NVIDIA는 삼성이 VLA 훈련용 합성데이터 생성에 Newton을 사용할 계획이라고 설명했다. Lightwheel의 삼성 제조 워크플로용 자산 제작과 RB-Y1 냉장고 조립 케이블 삽입 시뮬레이션을 소개한다.",
+      "excerpt": "Samsung will use Newton for physically-grounded synthetic data generation (SDG) used for training their vision-language-action (VLA) models.",
+      "claim": {
+        "text": "NVIDIA는 삼성이 VLA 모델 훈련용 합성데이터 생성에 Newton을 사용할 계획이라고 설명했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "demo",
+      "limitations": [
+        "will use는 계획 표현이며 배포 완료를 의미하지 않는다.",
+        "영상 5는 시뮬레이션이며 공장의 유료 상시 가동이나 90일 운용 실적이 아니다.",
+        "본문의 Samsung은 법인·RX 조직을 특정하지 않아 삼성전자나 SDS로 자동 귀속하지 않았다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "2026-03-16; Cable manipulation for refrigerator assembly; Video 5",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-009",
+          "origin_record_id": "x-eco-009",
+          "text": "NVIDIA는 삼성이 VLA 모델 훈련용 합성데이터 생성에 Newton을 사용할 계획이라고 설명했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-03-16; Cable manipulation for refrigerator assembly; Video 5",
+          "limitations": [
+            "will use는 계획 표현이며 배포 완료를 의미하지 않는다.",
+            "영상 5는 시뮬레이션이며 공장의 유료 상시 가동이나 90일 운용 실적이 아니다.",
+            "본문의 Samsung은 법인·RX 조직을 특정하지 않아 삼성전자나 SDS로 자동 귀속하지 않았다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-009:2",
+          "origin_record_id": "x-eco-009",
+          "text": "NVIDIA는 Lightwheel이 삼성 제조 워크플로의 케이블 조작 등을 위한 Newton용 SimReady 자산을 생성하고 있다고 설명했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-03-16; Cable manipulation for refrigerator assembly; Video 5",
+          "limitations": [
+            "will use는 계획 표현이며 배포 완료를 의미하지 않는다.",
+            "영상 5는 시뮬레이션이며 공장의 유료 상시 가동이나 90일 운용 실적이 아니다.",
+            "본문의 Samsung은 법인·RX 조직을 특정하지 않아 삼성전자나 SDS로 자동 귀속하지 않았다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-009:3",
+          "origin_record_id": "x-eco-009",
+          "text": "NVIDIA 기술 블로그의 영상 5는 RB-Y1의 냉장고 조립용 케이블 삽입 작업을 MuJoCo Warp와 VBD 케이블 솔버로 시뮬레이션한 사례다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-03-16; Cable manipulation for refrigerator assembly; Video 5",
+          "limitations": [
+            "will use는 계획 표현이며 배포 완료를 의미하지 않는다.",
+            "영상 5는 시뮬레이션이며 공장의 유료 상시 가동이나 90일 운용 실적이 아니다.",
+            "본문의 Samsung은 법인·RX 조직을 특정하지 않아 삼성전자나 SDS로 자동 귀속하지 않았다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-010",
+      "title": "NVIDIA Launches Cosmos 3, the Open Frontier Foundation Model for Physical AI",
+      "url": "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai",
+      "publisher": "NVIDIA Newsroom",
+      "published_at": "2026-05-31",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "nvidia",
+        "cosmos",
+        "robot"
+      ],
+      "origin_key": "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai",
+      "summary_ko": "NVIDIA는 삼성전자를 Cosmos 플랫폼을 활용하는 로보틱스 개발 기업 중 하나로 명시했다. 이 목록으로 삼성의 특정 모델 버전·현장 배포 규모·유료 계약을 확정하지 않는다.",
+      "excerpt": "Samsung Electronics",
+      "claim": {
+        "text": "NVIDIA는 삼성전자를 로보틱스 분야에서 Cosmos 플랫폼을 활용해 개발하는 기업 중 하나로 명시했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "삼성전자에 적용된 정확한 Cosmos 버전·공장·제품·배포 규모는 명시하지 않는다.",
+        "삼성전자가 Cosmos Coalition 창립 멤버라는 주장을 만들지 않는다.",
+        "공급사 채택 사례 설명이며 유료 계약이나 운영 KPI 근거는 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "2026-05-31; Developers Build on Cosmos 절",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-010",
+          "origin_record_id": "x-eco-010",
+          "text": "NVIDIA는 삼성전자를 로보틱스 분야에서 Cosmos 플랫폼을 활용해 개발하는 기업 중 하나로 명시했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-05-31; Developers Build on Cosmos 절",
+          "limitations": [
+            "삼성전자에 적용된 정확한 Cosmos 버전·공장·제품·배포 규모는 명시하지 않는다.",
+            "삼성전자가 Cosmos Coalition 창립 멤버라는 주장을 만들지 않는다.",
+            "공급사 채택 사례 설명이며 유료 계약이나 운영 KPI 근거는 아니다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-011",
+      "title": "Into the Omniverse: How Open World Models Push the Frontier of Physical AI",
+      "url": "https://blogs.nvidia.com/blog/open-world-models-physical-ai/",
+      "publisher": "NVIDIA Blog",
+      "published_at": "2026-08-06",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "nvidia",
+        "cosmos",
+        "robot"
+      ],
+      "origin_key": "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai",
+      "summary_ko": "NVIDIA의 8월 공식 블로그도 삼성전자를 Cosmos 기반 로보틱스 개발 기업으로 열거한다. 같은 발행기관의 5월 발표와 공유 출처군으로 처리한다.",
+      "excerpt": "Samsung Electronics and Skild AI in robotics",
+      "claim": {
+        "text": "NVIDIA는 8월 공식 블로그에서도 삼성전자를 Cosmos 기반 로보틱스 개발 기업으로 열거했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "동일 발행기관의 5월 채택 사례 재언급으로 독립 검증을 추가한 것으로 집계하지 않는다.",
+        "삼성의 신규 계약·특정 모델 버전·현장 배포를 확인한 자료가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "2026-08-06; How Developers Are Putting Cosmos 3 to Work",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-011",
+          "origin_record_id": "x-eco-011",
+          "text": "NVIDIA는 8월 공식 블로그에서도 삼성전자를 Cosmos 기반 로보틱스 개발 기업으로 열거했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-08-06; How Developers Are Putting Cosmos 3 to Work",
+          "limitations": [
+            "동일 발행기관의 5월 채택 사례 재언급으로 독립 검증을 추가한 것으로 집계하지 않는다.",
+            "삼성의 신규 계약·특정 모델 버전·현장 배포를 확인한 자료가 아니다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-012",
+      "title": "RoboForce Collaborates with Samsung SDS to Advance Deployment-first Physical AI",
+      "url": "https://www.roboforce.ai/news/roboforce-collaborates-with-samsung-sds-to-advance-deployment-first-physical-ai",
+      "publisher": "RoboForce",
+      "published_at": "2026-09-15",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "roboforce",
+        "sds",
+        "team-rex",
+        "robot",
+        "partner"
+      ],
+      "origin_key": "https://www.roboforce.ai/news/roboforce-collaborates-with-samsung-sds-to-advance-deployment-first-physical-ai",
+      "summary_ko": "RoboForce는 삼성SDS와 삼성 관계사 대상 산업용 로봇 적용 및 잠재적 배치를 검토한다고 밝혔다. 자사를 Team REX 창립 멤버로 소개하며 현장 시험·검증을 향후 단계로 설명했다.",
+      "excerpt": "As a founding member of Team REX",
+      "claim": {
+        "text": "RoboForce는 삼성SDS와 삼성 관계사의 산업용 로봇 적용 및 잠재적 배치를 검토하는 협력을 진행한다고 밝혔다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "현장 시험·검증을 향후 단계로 설명하며 유료 계약·상시 운영·생산 적용 완료를 입증하지 않는다.",
+        "RX ART 사용 사례 평가는 삼성SDS 발표를 인용하므로 기존 sds-003과 독립적인 현장 검증으로 계산하지 않는다.",
+        "당사자의 협력 발표이며 독립 감사 결과가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "2026-09-15 게시일; 본문 첫째·둘째 문단 및 마지막 협력 설명 문단",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-012",
+          "origin_record_id": "x-eco-012",
+          "text": "RoboForce는 삼성SDS와 삼성 관계사의 산업용 로봇 적용 및 잠재적 배치를 검토하는 협력을 진행한다고 밝혔다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-09-15 게시일; 본문 첫째·둘째 문단 및 마지막 협력 설명 문단",
+          "limitations": [
+            "현장 시험·검증을 향후 단계로 설명하며 유료 계약·상시 운영·생산 적용 완료를 입증하지 않는다.",
+            "RX ART 사용 사례 평가는 삼성SDS 발표를 인용하므로 기존 sds-003과 독립적인 현장 검증으로 계산하지 않는다.",
+            "당사자의 협력 발표이며 독립 감사 결과가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-eco-012:2",
+          "origin_record_id": "x-eco-012",
+          "text": "RoboForce는 자사를 Team REX의 창립 멤버로 소개했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-09-15 게시일; 본문 첫째·둘째 문단 및 마지막 협력 설명 문단",
+          "limitations": [
+            "현장 시험·검증을 향후 단계로 설명하며 유료 계약·상시 운영·생산 적용 완료를 입증하지 않는다.",
+            "RX ART 사용 사례 평가는 삼성SDS 발표를 인용하므로 기존 sds-003과 독립적인 현장 검증으로 계산하지 않는다.",
+            "당사자의 협력 발표이며 독립 감사 결과가 아니다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-013",
+      "title": "Samsung Backs Walden's Mission to Put Robots to Work Today",
+      "url": "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+      "publisher": "Walden Robotics",
+      "published_at": "2026-07-28",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "walden",
+        "sds",
+        "walden-sds-poc",
+        "robot",
+        "factory",
+        "partner"
+      ],
+      "origin_key": "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+      "summary_ko": "Walden은 삼성SDS와 핵심 제조 활용사례의 PoC를 진행 중이라고 밝혔다. 삼성SDS의 제조·시스템 통합 역량과 Walden 로봇을 결합하는 초기 작업을 설명한다.",
+      "excerpt": "collaborating on a proof of concept targeting core manufacturing use cases",
+      "claim": {
+        "text": "Walden은 삼성SDS와 핵심 제조 활용사례를 대상으로 PoC를 진행한다고 밝혔다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "pilot",
+      "limitations": [
+        "PoC의 정확한 시작일·현장·유료 계약·지속 가동 KPI는 공개하지 않는다.",
+        "Samsung Ventures와 Samsung NEXT 투자 관계도 설명하지만 개별 투자금액을 공개하지 않는다.",
+        "기존 sds-011의 Walden 공식 LinkedIn PoC 설명과 같은 협력 주장이므로 별도 독립 실증으로 세지 않는다.",
+        "반도체·배터리·디스플레이·제약 등은 적용 전망이며 확인된 고객 목록이 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "2026-07-28; operating side 문단 및 삼성SDS 임원 인용문의 proof of concept",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-013",
+          "origin_record_id": "x-eco-013",
+          "text": "Walden은 삼성SDS와 핵심 제조 활용사례를 대상으로 PoC를 진행한다고 밝혔다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-07-28; operating side 문단 및 삼성SDS 임원 인용문의 proof of concept",
+          "limitations": [
+            "PoC의 정확한 시작일·현장·유료 계약·지속 가동 KPI는 공개하지 않는다.",
+            "Samsung Ventures와 Samsung NEXT 투자 관계도 설명하지만 개별 투자금액을 공개하지 않는다.",
+            "기존 sds-011의 Walden 공식 LinkedIn PoC 설명과 같은 협력 주장이므로 별도 독립 실증으로 세지 않는다.",
+            "반도체·배터리·디스플레이·제약 등은 적용 전망이며 확인된 고객 목록이 아니다."
+          ]
+        }
+      ],
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "ecosystem_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "sds-011"
+        ],
+        "source_urls": [
+          "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+          "https://www.linkedin.com/posts/waldenrobotics_we-spend-a-lot-of-time-talking-about-robots-activity-7487929613239840769-efJo"
+        ],
+        "document_origin_url": "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+        "rationale": "같은 Walden-SDS 제조 PoC 설명을 재현한 공식 게시물로 보수적으로 하나의 협력 출처군으로 처리한다. LinkedIn의 미확인 게시일은 수정하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-eco-014",
+      "title": "Walden Robotics Launches with $300 Million to Put General-Purpose Robots to Work Today",
+      "url": "https://www.waldenrobotics.com/news/walden-robotics-launches-from-stealth",
+      "publisher": "Walden Robotics",
+      "published_at": "2026-07-15",
+      "event_date": "2026-07-15",
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "walden",
+        "samsung-ventures",
+        "partner",
+        "robot"
+      ],
+      "origin_key": "https://www.waldenrobotics.com/news/walden-robotics-launches-from-stealth",
+      "summary_ko": "Walden은 3억 달러 규모 투자 유치를 발표하며 Samsung Ventures를 투자 참여자로 명시했다. 전체 라운드 금액과 삼성 개별 투자액을 구분한다.",
+      "excerpt": "with participation from NVIDIA, Boeing, AE Ventures, Samsung Ventures",
+      "claim": {
+        "text": "Walden은 3억 달러 투자 유치 발표에서 Samsung Ventures를 투자 참여자로 명시했다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "3억 달러는 전체 투자 라운드 규모이며 삼성의 투자액이 아니다.",
+        "Samsung Ventures의 개별 투자액·지분율과 RX 소프트웨어 예산은 공개하지 않는다.",
+        "사건일은 발표일이며 투자금 납입 완료일을 뜻하지 않는다.",
+        "7월 28일 삼성 협력 글이 이 투자 발표를 다시 인용하므로 동일 투자 사실을 독립 근거 두 건으로 세지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "2026-07-15 게시일·dateline; 투자 참여자 목록",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-014",
+          "origin_record_id": "x-eco-014",
+          "text": "Walden은 3억 달러 투자 유치 발표에서 Samsung Ventures를 투자 참여자로 명시했다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "2026-07-15 게시일·dateline; 투자 참여자 목록",
+          "limitations": [
+            "3억 달러는 전체 투자 라운드 규모이며 삼성의 투자액이 아니다.",
+            "Samsung Ventures의 개별 투자액·지분율과 RX 소프트웨어 예산은 공개하지 않는다.",
+            "사건일은 발표일이며 투자금 납입 완료일을 뜻하지 않는다.",
+            "7월 28일 삼성 협력 글이 이 투자 발표를 다시 인용하므로 동일 투자 사실을 독립 근거 두 건으로 세지 않는다."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "x-eco-015",
+      "title": "[PR영상] SFA x 레인보우로보틱스, 제조의 미래를 바꾸다",
+      "url": "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/",
+      "publisher": "SFA",
+      "published_at": "2026-10-02",
+      "event_date": "2026-09-30",
+      "source_type": "official",
+      "verification": "manual_report",
+      "scope": "in_window",
+      "entity_ids": [
+        "sfa",
+        "rainbow",
+        "partner",
+        "robot",
+        "factory"
+      ],
+      "origin_key": "sfa-rainbow:2026-09-30-mou",
+      "summary_ko": "SFA는 2026년 9월 30일 레인보우로보틱스와 MOU를 체결하고 AI 자율제조·로봇 기술의 공동 연구개발을 추진하기로 했다고 공식 게시했다.",
+      "excerpt": "AI 자율제조 및 로봇 관련 기술의 공동 연구 및 개발을 추진하기로",
+      "claim": {
+        "text": "SFA는 2026년 9월 30일 레인보우로보틱스와 AI 자율제조·로봇 기술 공동 연구개발 MOU를 체결했다고 밝혔다.",
+        "kind": "official_statement"
+      },
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "웹 본문을 확인했으며 연결된 PR 동영상은 재생 검증하지 않았다.",
+        "MOU는 유료 수주·제품 통합 완료·상시 운영을 뜻하지 않는다.",
+        "기존 se-016 ZDNet 보도와 같은 MOU 사건이며 독립 실증 사건을 추가한 것으로 세지 않는다.",
+        "SFA 역할을 삼성SDS의 역할로 해석하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "SFA 뉴스 2026.10.02; 본문의 2026년 9월 30일자로 및 MOU 공동 연구개발 설명",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공개 원문을 수동 열람했으나 원문 보관본과 본문 해시를 확보하지 않아 재현 감사는 미완료입니다.",
+      "claims": [
+        {
+          "id": "claim:x-eco-015",
+          "origin_record_id": "x-eco-015",
+          "text": "SFA는 2026년 9월 30일 레인보우로보틱스와 AI 자율제조·로봇 기술 공동 연구개발 MOU를 체결했다고 밝혔다.",
+          "kind": "official_statement",
+          "verification": "manual_report",
+          "evidence_locator": "SFA 뉴스 2026.10.02; 본문의 2026년 9월 30일자로 및 MOU 공동 연구개발 설명",
+          "limitations": [
+            "웹 본문을 확인했으며 연결된 PR 동영상은 재생 검증하지 않았다.",
+            "MOU는 유료 수주·제품 통합 완료·상시 운영을 뜻하지 않는다.",
+            "기존 se-016 ZDNet 보도와 같은 MOU 사건이며 독립 실증 사건을 추가한 것으로 세지 않는다.",
+            "SFA 역할을 삼성SDS의 역할로 해석하지 않는다."
+          ]
+        }
+      ],
+      "event_key": "sfa-rainbow-mou-2026-09-30",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "ecosystem_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "se-016"
+        ],
+        "source_urls": [
+          "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/",
+          "https://zdnet.co.kr/view/?no=20260929183802"
+        ],
+        "document_origin_url": "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/",
+        "rationale": "SFA 공식 본문과 ZDNet 보도는 동일 AI 자율제조·로봇 MOU를 다룬다. 원문의 발표일과 협약일은 별도 보존한다.",
+        "review_method": "source_text_review",
+        "exceptions": [
+          {
+            "with_record_id": "mi-006",
+            "reason": "같은 2026-10-02 게시일이지만 이 문서는 SFA·레인보우의 9월30일 자율제조 협력 MOU 공식 공지다. mi-006은 미라콤 등 4자의 상생형 AX 선도모델 현장 실증 사업 보도로 발표 주체·협약·대상 사업이 다르다. factory/partner/robot은 일반 분류 태그이며 같은 발표를 뜻하지 않는다."
+          }
+        ]
+      }
+    },
+    {
+      "id": "x-eco-016",
+      "title": "제이스텍 2026 IR — 파일럿 라인 설계 역할 표기 확인 후보",
+      "url": "https://kind.krx.co.kr/external/dst/irReference/18213/%EC%A0%9C%EC%9D%B4%EC%8A%A4%ED%85%8D_2026_IR%20_%EA%B3%B5%EC%8B%9C%EC%9A%A9%20v2.pdf",
+      "publisher": "제이스텍 / 한국거래소 KIND",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "filing",
+      "verification": "search_only",
+      "scope": "undated",
+      "entity_ids": [
+        "jastech",
+        "sds",
+        "miracom",
+        "factory",
+        "mes"
+      ],
+      "origin_key": "https://kind.krx.co.kr/external/dst/irReference/18213/%EC%A0%9C%EC%9D%B4%EC%8A%A4%ED%85%8D_2026_IR%20_%EA%B3%B5%EC%8B%9C%EC%9A%A9%20v2.pdf",
+      "summary_ko": "공식 KRX IR PDF의 검색 색인에는 파일럿 라인 설계의 SDS·미라콤·JASTECH 표기가 나타난다. PDF는 직접 열렸지만 현재 추출 본문에 해당 도표 문구가 없어 이 핵심 주장은 검색 확인 후보로 남긴다.",
+      "excerpt": "SDS/미라콤 + JASTECH",
+      "claim": {
+        "text": "KRX에 게시된 제이스텍 2026 IR의 검색 색인은 파일럿 라인 설계에 SDS·미라콤과 JASTECH를 함께 표기한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-eco-016",
+          "origin_record_id": "x-eco-016",
+          "text": "KRX에 게시된 제이스텍 2026 IR의 검색 색인은 파일럿 라인 설계에 SDS·미라콤과 JASTECH를 함께 표기한다.",
+          "kind": "official_statement",
+          "verification": "search_only",
+          "evidence_locator": "공식 PDF 검색 색인의 주요 제품 현황 / Cell 생산을 위한 Pilot Line, 표시 페이지 21; 현재 PDF 텍스트 추출에서는 해당 도표 문구 재현 실패",
+          "limitations": [
+            "공식 PDF 본문은 열렸으나 해당 SDS·미라콤 도표 문구는 검색 색인에서만 확인되어 그래프 귀속 증거로 승격하지 않는다.",
+            "정확한 게시일을 확인하지 못해 검색 결과의 7개월 전 상대 날짜를 날짜로 변환하지 않았다.",
+            "설계 역할 표기를 완료된 공급 계약·유료 상시 가동·개별 책임 권한으로 확장하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "공식 PDF 본문은 열렸으나 해당 SDS·미라콤 도표 문구는 검색 색인에서만 확인되어 그래프 귀속 증거로 승격하지 않는다.",
+        "정확한 게시일을 확인하지 못해 검색 결과의 7개월 전 상대 날짜를 날짜로 변환하지 않았다.",
+        "설계 역할 표기를 완료된 공급 계약·유료 상시 가동·개별 책임 권한으로 확장하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "공식 PDF 검색 색인의 주요 제품 현황 / Cell 생산을 위한 Pilot Line, 표시 페이지 21; 현재 PDF 텍스트 추출에서는 해당 도표 문구 재현 실패",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "공식 PDF는 열렸으나 삼성 접점의 핵심 도표 문구는 검색 색인에서만 확인했다. 해당 주장은 search_only로 보류하며 아카이브·본문 해시가 없다."
+    }
+  ],
+  "queries": [
+    {
+      "query": "site:rainbow-robotics.com 2026 삼성",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbow-robotics.com 2026 RBY RB-Y1 news",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbowrobotics.com 2026 뉴스",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"플라잎\" \"V2\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"와이파워원\" \"2026\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"2026\" \"삼성\" -site:rainbow-robotics.com/en/",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:kind.krx.co.kr \"레인보우로보틱스\" \"2025.11.14\" \"분기보고서\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"2025-11\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"2026-03\" \"AI\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbow-robotics.com \"2026\" \"삼성전자\" \"협력\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"레인보우로보틱스\" \"2025/11/14\" \"11013\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"레인보우로보틱스\" \"분기보고서\" \"2025.09\" kind.krx",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:rainbow-robotics.com 2026 \"보도자료\" -2024 -2023",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:nvidianews.nvidia.com Samsung robotics 2026",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:blogs.nvidia.com Samsung Isaac 2026",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:developer.nvidia.com/blog Samsung 2026 Isaac",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:nvidianews.nvidia.com Samsung 2025 October AI factory",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:blogs.nvidia.com/blog \"Samsung\" \"2026\" robotics",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:developer.nvidia.com/blog \"Samsung\" \"2026\" Newton",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:nvidianews.nvidia.com \"Samsung\" \"2026\" robotics",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:blogs.nvidia.com/blog \"Samsung\" \"2025\" \"October\" factory",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:roboforce.ai Samsung SDS 2026",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:sfa.co.kr 레인보우 2026",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:sfa.co.kr \"레인보우로보틱스\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "Genesis AI Samsung SDS official 2026",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:kuka.com Samsung 2026 showroom",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:kuka.com \"Samsung\" \"2026\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:yujinrobot.com 미라콤 2025 2026",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:yujinrobot.com \"미라콤\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:yujinrobot.com \"삼성\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:staubli.com Samsung Miracom 2025 2026",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:staubli.com \"미라콤\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:staubli.com \"Samsung\" robotics",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:staubli.com \"Miracom\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:etechgroup.com Rainbow Robotics 2026",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"제이스텍_2026_IR\" \"SDS\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"18213\" \"제이스텍\" \"2026\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:kind.krx.co.kr \"제이스텍\" \"2026\" \"기업설명회(IR) 개최\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"SDS/미라콤\" \"JASTECH\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"제이스텍\" \"2026\" \"IR\" \"삼성SDS\"",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:jastech.co.kr IR 2026 AMR 삼성",
+      "category": "ecosystem_official_expansion",
+      "searched_at": "2026-10-31"
+    }
+  ],
+  "coverage": [
+    {
+      "collection_url": "https://rainbow-robotics.com/소식/pr/",
+      "publisher": "레인보우로보틱스",
+      "method": "official_collection_and_domain_search",
+      "query_or_page": "전체 PR, category=cat-01, listing_page=2/3/4",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [
+        "https://rainbow-robotics.com/플라잎-레인보우로보틱스-제조-특화-ai-양팔로봇-v2-공/",
+        "https://rainbow-robotics.com/와이파워원-레인보우로보틱스·pha-자율주행이동로/",
+        "https://rainbow-robotics.com/헌인타운개발-레인보우로보틱스와-인공지능-보안/",
+        "https://rainbow-robotics.com/피에이치에이레인보우로보틱스-등과-amr용-무선충전/"
+      ],
+      "reviewed_urls": [
+        "https://rainbow-robotics.com/플라잎-레인보우로보틱스-제조-특화-ai-양팔로봇-v2-공/",
+        "https://rainbow-robotics.com/와이파워원-레인보우로보틱스·pha-자율주행이동로/",
+        "https://rainbow-robotics.com/헌인타운개발-레인보우로보틱스와-인공지능-보안/",
+        "https://rainbow-robotics.com/피에이치에이레인보우로보틱스-등과-amr용-무선충전/"
+      ],
+      "notes": [
+        "목록은 총 166건을 표시했으나 페이지 2~4 요청이 첫 12개 항목을 반복 반환하여 전체 페이지 열람을 확인하지 못했다.",
+        "기존 E Tech·Automate·수상 자료는 중복 추가하지 않았다.",
+        "PHA 협약 재게시물은 같은 사건으로 묶었다.",
+        "2024년 원 게시물에도 2026-05-30 수정일이 표시되어 수정일을 새 발표일로 사용하지 않았다.",
+        "RX 접점이 없는 의료·천문 등 일반 사업 게시물은 확장 범위에서 제외했다."
+      ]
+    },
+    {
+      "collection_url": "https://rainbow-robotics.com/소식/event/",
+      "publisher": "레인보우로보틱스",
+      "method": "official_collection",
+      "query_or_page": "Event 목록",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": [
+        "컬렉션은 0건을 표시했다. PR에 기존 전시 자료가 존재하므로 행사 자체가 없었다는 뜻으로 해석하지 않는다."
+      ]
+    },
+    {
+      "collection_url": "https://rainbow-robotics.com/company/ir/?category1=사업보고서&mod=list&pageid=1",
+      "publisher": "레인보우로보틱스",
+      "method": "official_collection",
+      "query_or_page": "사업보고서 1페이지 5개 연차 자료",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://kind.krx.co.kr/external/2026/03/20/001000/20260320003808/11011.htm"
+      ],
+      "reviewed_urls": [],
+      "notes": [
+        "2026-03-20 제15기 사업보고서는 기존 tech-015와 중복이다. 나머지 목록은 요청 기간 이전 연차 보고서다.",
+        "이번 증분 조사에서 이미 등록된 보고서 전문을 재열람한 것으로 기록하지 않았다."
+      ]
+    },
+    {
+      "collection_url": "https://rainbow-robotics.com/company/ir/?category1=공시정보&mod=list&pageid=1",
+      "publisher": "레인보우로보틱스 / DART",
+      "method": "official_collection_link_and_filing_open",
+      "query_or_page": "회사 IR의 DART 링크와 2025년 3분기 제출번호 조회",
+      "accessed_at": "2026-10-31",
+      "status": "access_blocked",
+      "discovered_urls": [
+        "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20251114002584"
+      ],
+      "reviewed_urls": [],
+      "notes": [
+        "IR 공시 페이지는 DART 검색으로 연결했으나 해당 링크는 타임아웃, 2025-11-14 분기보고서 직접 링크는 502를 반환했다.",
+        "분기보고서 제출번호는 검색 발견이며 재무 본문·계약 내용은 추출하지 않았다.",
+        "IR의 자동 검색 기간 2025-11-01~2026-11-01은 요청 기간과 달라 완전성 근거로 사용하지 않았다.",
+        "DART 전수 목록·첨부 및 특허 패밀리 전체 비교는 미완료다."
+      ]
+    },
+    {
+      "collection_url": "https://rainbow-robotics.com/인사이트/case-study/",
+      "publisher": "레인보우로보틱스",
+      "method": "official_collection_and_case_open",
+      "query_or_page": "삼성웰스토리 적용 사례",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [
+        "https://rainbow-robotics.com/인사이트/case-study/?mod=document&uid=87"
+      ],
+      "reviewed_urls": [
+        "https://rainbow-robotics.com/인사이트/case-study/?mod=document&uid=87"
+      ],
+      "notes": [
+        "삼성웰스토리 튀김로봇 사례의 원 게시일은 2025-06-23으로 요청 기간 밖이므로 신규 최근 1년 자료에서 제외했다.",
+        "현재 사례 목록의 모든 페이지를 열람한 것으로 주장하지 않는다."
+      ]
+    },
+    {
+      "collection_url": "https://rainbow-robotics.com/고객지원/자료실/docs-github/",
+      "publisher": "레인보우로보틱스",
+      "method": "official_navigation_and_linked_documentation",
+      "query_or_page": "제품 탐색, RB-Y1, AI for Robotics, RBC OS, 공식 SDK, 아키텍처",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [
+        "https://rainbow-robotics.com/products/rb-y1/",
+        "https://rainbow-robotics.com/인사이트/ai-for-robotics/",
+        "https://rainbow-robotics.com/제품솔루션/협동로봇/로봇-운영-시스템/",
+        "https://github.com/RainbowRobotics/rby1-sdk",
+        "https://rainbowrobotics.github.io/rby1-dev/software/architecture.html"
+      ],
+      "reviewed_urls": [
+        "https://rainbow-robotics.com/products/rb-y1/",
+        "https://rainbow-robotics.com/인사이트/ai-for-robotics/",
+        "https://rainbow-robotics.com/제품솔루션/협동로봇/로봇-운영-시스템/",
+        "https://github.com/RainbowRobotics/rby1-sdk",
+        "https://rainbowrobotics.github.io/rby1-dev/software/architecture.html"
+      ],
+      "notes": [
+        "현재 제품·개발 문서를 직접 열람했으며 게시일 미확인은 undated로 보존했다.",
+        "SDK 저장소와 연결 아키텍처는 같은 SDK 원출처 그룹이며 독립 증거 수를 늘리지 않는다.",
+        "ROS 미래 지원 문구와 현재 ROS 2 메뉴/제품 설명 간 버전 차이를 limitations에 남겼다."
+      ]
+    },
+    {
+      "collection_url": "https://nvidianews.nvidia.com/",
+      "publisher": "NVIDIA",
+      "method": "official_collection_and_domain_search",
+      "query_or_page": "뉴스룸 현재 목록 및 Samsung 도메인 검색",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [
+        "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data/",
+        "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai"
+      ],
+      "reviewed_urls": [
+        "https://nvidianews.nvidia.com/news/nvidia-advances-isaac-platform-for-general-purpose-robotics-with-new-reference-humanoid-frameworks-simulation-pipelines-and-data/",
+        "https://nvidianews.nvidia.com/news/nvidia-launches-cosmos-3-the-open-frontier-foundation-model-for-physical-ai"
+      ],
+      "notes": [
+        "2026-10-21 Isaac 일반 발표는 삼성 접점을 확인하지 못해 제외했다.",
+        "기존 2025-10-30 Samsung AI factory 발표 se-002는 중복 추가하지 않았다.",
+        "현재 홈페이지 열람으로 지난 1년 전체 목록을 보장하지 않는다."
+      ]
+    },
+    {
+      "collection_url": "https://blogs.nvidia.com/blog/category/robotics/",
+      "publisher": "NVIDIA",
+      "method": "official_collection",
+      "query_or_page": "Robotics 1페이지 및 /page/2/",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [
+        "https://blogs.nvidia.com/blog/open-world-models-physical-ai/"
+      ],
+      "reviewed_urls": [
+        "https://blogs.nvidia.com/blog/open-world-models-physical-ai/"
+      ],
+      "notes": [
+        "2페이지가 최신 목록을 반복하는 동적 Load More 제한이 있었다.",
+        "삼성 접점 없는 Jetson·의료 로봇 자료는 제외했다."
+      ]
+    },
+    {
+      "collection_url": "https://developer.nvidia.com/blog/tag/isaac-sim/",
+      "publisher": "NVIDIA",
+      "method": "official_collection",
+      "query_or_page": "Isaac Sim 태그 목록과 Newton 기사",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [
+        "https://developer.nvidia.com/blog/newton-adds-contact-rich-manipulation-and-locomotion-capabilities-for-industrial-robotics/"
+      ],
+      "reviewed_urls": [
+        "https://developer.nvidia.com/blog/newton-adds-contact-rich-manipulation-and-locomotion-capabilities-for-industrial-robotics/"
+      ],
+      "notes": [
+        "2026-10-23부터 2025년 10월까지 목록 항목을 확인했으나 전체 로보틱스 기사 커버리지로 간주하지 않는다.",
+        "별도 robotics 태그 조회는 접근에 실패했다."
+      ]
+    },
+    {
+      "collection_url": "https://nvidianews.nvidia.com/news?q=Samsung",
+      "publisher": "NVIDIA",
+      "method": "official_search",
+      "query_or_page": "Samsung 검색 및 helper-search-news?ct=releases&q=Samsung&page=1",
+      "accessed_at": "2026-10-31",
+      "status": "access_blocked",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": [
+        "공식 검색 응답을 확보하지 못해 도메인 검색과 공식 목록으로 보완했다."
+      ]
+    },
+    {
+      "collection_url": "https://blogs.nvidia.com/?s=Samsung",
+      "publisher": "NVIDIA",
+      "method": "official_search",
+      "query_or_page": "Samsung 블로그 검색",
+      "accessed_at": "2026-10-31",
+      "status": "access_blocked",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": [
+        "공식 검색 응답을 확보하지 못했다."
+      ]
+    },
+    {
+      "collection_url": "https://www.waldenrobotics.com/news",
+      "publisher": "Walden Robotics",
+      "method": "official_collection_link_traversal",
+      "query_or_page": "News All 목록에 표시된 5개 항목",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://www.waldenrobotics.com/news/call-for-help-teaching-robots-to-request-assistance",
+        "https://www.waldenrobotics.com/news/autonomy-is-a-ratio",
+        "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+        "https://www.waldenrobotics.com/news/walden-robotics-launches-from-stealth"
+      ],
+      "reviewed_urls": [
+        "https://www.waldenrobotics.com/news/call-for-help-teaching-robots-to-request-assistance",
+        "https://www.waldenrobotics.com/news/autonomy-is-a-ratio",
+        "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+        "https://www.waldenrobotics.com/news/walden-robotics-launches-from-stealth"
+      ],
+      "notes": [
+        "표시 목록에 페이지네이션이 없었으며 비공개·미색인 게시물까지 망라했다는 뜻은 아니다.",
+        "Why Walden 일반 소개는 제외했다.",
+        "8월 6일 원격지원 및 10월 26일 도움 요청 기술 글은 읽었으나 삼성 PoC 적용을 명시하지 않아 이번 삼성 직접 접점 records에는 추가하지 않았다."
+      ]
+    },
+    {
+      "collection_url": "https://www.roboforce.ai/news",
+      "publisher": "RoboForce",
+      "method": "official_collection_review_and_topic_selection",
+      "query_or_page": "News/Events/Insights 표시 목록 26개 항목",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://www.roboforce.ai/news/roboforce-collaborates-with-samsung-sds-to-advance-deployment-first-physical-ai"
+      ],
+      "reviewed_urls": [
+        "https://www.roboforce.ai/news/roboforce-collaborates-with-samsung-sds-to-advance-deployment-first-physical-ai"
+      ],
+      "notes": [
+        "삼성SDS 협력 원문을 직접 읽었다. 기간 내 투자·포럼·CES·다른 파트너 행사 항목은 삼성 RX 접점이 확인되지 않아 수록하지 않았다."
+      ]
+    },
+    {
+      "collection_url": "https://www.sfa.co.kr/prc01/",
+      "publisher": "SFA",
+      "method": "official_collection_link_traversal",
+      "query_or_page": "SFA 뉴스 표시 항목 42~35; 2026년에서 2024년까지",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/",
+        "https://www.youtube.com/watch?v=spL5htzDSCo"
+      ],
+      "reviewed_urls": [
+        "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/"
+      ],
+      "notes": [
+        "2026-10-02 PR 게시물 웹 본문을 확인했다.",
+        "같은 날짜 완전 무인화 소개는 이데일리 원보도 재게시로 별도 독립 공식 기술 발표로 추가하지 않았다.",
+        "YouTube 영상은 가져오기 제한으로 재생 확인하지 못했다."
+      ]
+    },
+    {
+      "collection_url": "https://etechgroup.com/blog/category/news-releases/",
+      "publisher": "E Tech Group",
+      "method": "official_collection_pagination_and_domain_search",
+      "query_or_page": "News releases pages 1, 2, 3, 4, 5",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [
+        "https://etechgroup.com/blog/general/e-tech-group-expands-u-s-collaborative-robotics-portfolio-with-rainbow-robotics/",
+        "https://etechgroup.com/blog/category/news-releases/page/2/",
+        "https://etechgroup.com/blog/category/news-releases/page/3/",
+        "https://etechgroup.com/blog/category/news-releases/page/4/",
+        "https://etechgroup.com/blog/category/news-releases/page/5/"
+      ],
+      "reviewed_urls": [
+        "https://etechgroup.com/blog/category/news-releases/",
+        "https://etechgroup.com/blog/category/news-releases/page/2/",
+        "https://etechgroup.com/blog/category/news-releases/page/4/",
+        "https://etechgroup.com/blog/category/news-releases/page/5/"
+      ],
+      "notes": [
+        "기존 se-012와 같은 E Tech 협력 발표는 중복 추가하지 않았다.",
+        "4페이지는 2025-11-05/11-04에서 10-24로 기간 경계를 통과했으며 5페이지는 기간 밖이다.",
+        "3페이지는 두 차례 timeout, 페이지별 캐시 시점 차이로 연속 목록 완전성을 보장하지 않는다."
+      ]
+    },
+    {
+      "collection_url": "https://www.kuka.com/en-de/company/press/news",
+      "publisher": "KUKA",
+      "method": "official_collection_and_domain_search",
+      "query_or_page": "뉴스 필터 페이지 및 Samsung 도메인 검색",
+      "accessed_at": "2026-10-31",
+      "status": "partial_dynamic_collection",
+      "discovered_urls": [],
+      "reviewed_urls": [
+        "https://www.kuka.com/en-de/company/press/news"
+      ],
+      "notes": [
+        "날짜·검색 필터가 렌더링됐지만 결과는 0 Results로 나타나 목록 조사가 제한됐다.",
+        "삼성 디스플레이 쇼룸은 기존 se-007 공식 원문을 유지한다.",
+        "추가 KUKA 자체 삼성 관련 원문은 확인하지 못했으며 부재로 단정하지 않는다."
+      ]
+    },
+    {
+      "collection_url": "https://www.yujinrobot.com/news",
+      "publisher": "유진로봇",
+      "method": "official_news_and_blog_collections_domain_search",
+      "query_or_page": "News 표시 항목, Projects 목록, 미라콤·삼성 도메인 검색",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed_visible_collection",
+      "discovered_urls": [
+        "https://www.yujinrobot.com/projects"
+      ],
+      "reviewed_urls": [
+        "https://www.yujinrobot.com/",
+        "https://www.yujinrobot.com/news",
+        "https://www.yujinrobot.com/projects"
+      ],
+      "notes": [
+        "표시된 2026년 AW·ISO45001·지역 협약·RoboCup·물류 AX 항목에서 추가 삼성·미라콤 직접 원문을 확인하지 못했다.",
+        "과거 IR 경력상 삼성 언급은 협력 증거가 아니어서 제외했다.",
+        "이전 사이트·이전 게시판 누락 가능성이 남는다."
+      ]
+    },
+    {
+      "collection_url": "https://www.genesis.ai/news",
+      "publisher": "Genesis",
+      "method": "official_collection_and_candidate_article_open",
+      "query_or_page": "News 및 GENE-26.5 후보 기사",
+      "accessed_at": "2026-10-31",
+      "status": "partial_article_body_unavailable",
+      "discovered_urls": [
+        "https://www.genesis.ai/news/press-release-gene-265"
+      ],
+      "reviewed_urls": [
+        "https://www.genesis.ai/",
+        "https://www.genesis.ai/news"
+      ],
+      "notes": [
+        "후보 기사 URL은 대기명단 등 공통 텍스트만 렌더링되어 본문을 확인하지 못했다.",
+        "삼성 직접 협력 문장을 확인하지 못했으며 삼성SDS 자료의 익명 G사를 Genesis로 특정하지 않는다."
+      ]
+    },
+    {
+      "collection_url": "https://www.staubli.com/global/en/about-us/newsroom.html",
+      "publisher": "Stäubli",
+      "method": "official_home_navigation_newsroom_success_stories_events_domain_search",
+      "query_or_page": "News and stories / Robotics success stories / Global Robotics events",
+      "accessed_at": "2026-10-31",
+      "status": "partial_dynamic_collection",
+      "discovered_urls": [
+        "https://www.staubli.com/global/en/robotics/success-story.html",
+        "https://www.staubli.com/global/en/robotics/events.html"
+      ],
+      "reviewed_urls": [
+        "https://www.staubli.com/global/en/home.html",
+        "https://www.staubli.com/global/en/about-us/newsroom.html",
+        "https://www.staubli.com/global/en/robotics/success-story.html",
+        "https://www.staubli.com/global/en/robotics/events.html"
+      ],
+      "notes": [
+        "한국어 홈은 글로벌 영어 홈으로 이동했다.",
+        "뉴스 피드·사례 검색의 동적 목록이 충분히 노출되지 않았다.",
+        "보이는 사례와 삼성·Miracom 도메인 검색에서 추가 공식 접점을 확인하지 못했다."
+      ]
+    },
+    {
+      "collection_url": "https://rainbow-robotics.com/en/pr/",
+      "publisher": "Rainbow Robotics",
+      "method": "official_english_collection_and_translation_comparison",
+      "query_or_page": "영문 PR 표시 20건, 제품 및 AI for Robotics 영문 번역 대조",
+      "accessed_at": "2026-10-31",
+      "status": "partial_review",
+      "discovered_urls": [
+        "https://rainbow-robotics.com/en/products/rb-y1/",
+        "https://rainbow-robotics.com/en/insights/ai-for-robotics/",
+        "https://rainbow-robotics.com/en/pr/?listing_page=2",
+        "https://rainbow-robotics.com/press-release-rainbow-robotics-begins-pre-orders-of-bimanual-mobile-manipulator-rb-y1-the-worlds-first-research-platform-for-ai-experts-for-80000-usd/"
+      ],
+      "reviewed_urls": [
+        "https://rainbow-robotics.com/en/",
+        "https://rainbow-robotics.com/en/pr/",
+        "https://rainbow-robotics.com/en/products/rb-y1/",
+        "https://rainbow-robotics.com/en/insights/ai-for-robotics/",
+        "https://rainbow-robotics.com/press-release-rainbow-robotics-begins-pre-orders-of-bimanual-mobile-manipulator-rb-y1-the-worlds-first-research-platform-for-ai-experts-for-80000-usd/"
+      ],
+      "notes": [
+        "영문 PR은 총 20건을 표시하며 E Tech·SFA·Automate·기존 미디어 재게시를 포함한다.",
+        "RB-Y1 및 AI for Robotics는 국문과 같은 발행기관의 번역 제품 문서로 신규 독립 출처 수를 늘리지 않았다.",
+        "영문 제품 본문과 사양표의 자유도 표기 차이는 제품 버전 검토가 필요하여 단일 수치를 주장에 채택하지 않았다.",
+        "영문 PR 2페이지는 timeout을 반환하여 모든 20건의 본문을 읽었다고 주장하지 않는다.",
+        "영문 RB-Y1 사전예약 보도자료는 원 게시일 2024-05-07, 본문 dateline 2024-05-08로 기간 밖임을 확인하고 제외했다."
+      ]
+    },
+    {
+      "collection_url": "https://www.jastech.co.kr/gnuboard/bbs/board.php?bo_table=ir_materials&page=1&sca=&sfl=&sod=desc&sop=and&sst=wr_datetime&stx=",
+      "publisher": "제이스텍 / 한국거래소 KIND",
+      "method": "official_ir_collection_and_pdf_search_crosscheck",
+      "query_or_page": "제이스텍 IR 자료실 및 2026 IR PDF 29페이지 텍스트; 도표 이미지 조회 시도",
+      "accessed_at": "2026-10-31",
+      "status": "partial_claim_reproduction_gap",
+      "discovered_urls": [
+        "https://kind.krx.co.kr/external/dst/irReference/18213/%EC%A0%9C%EC%9D%B4%EC%8A%A4%ED%85%8D_2026_IR%20_%EA%B3%B5%EC%8B%9C%EC%9A%A9%20v2.pdf"
+      ],
+      "reviewed_urls": [
+        "https://kind.krx.co.kr/external/dst/irReference/18213/%EC%A0%9C%EC%9D%B4%EC%8A%A4%ED%85%8D_2026_IR%20_%EA%B3%B5%EC%8B%9C%EC%9A%A9%20v2.pdf"
+      ],
+      "notes": [
+        "공식 PDF 29페이지 텍스트를 직접 열람했지만 검색 색인에 존재하는 SDS·미라콤 도표 문구는 텍스트 추출에서 재현되지 않았다.",
+        "PDF 스크린샷 도구는 ImageDisplayed 텍스트 참조만 반환하여 실제 이미지 내용을 시각 검증하지 못했다.",
+        "따라서 핵심 삼성 접점 주장은 search_only로 보류하고 관계를 생성하지 않았다.",
+        "IR 제목의 2026만으로 발표 월일을 생성하지 않았다.",
+        "회사 IR 자료실 원문 요청은 502 Bad Gateway로 실패했으며 목록을 직접 읽은 것으로 집계하지 않았다."
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "id": "xe-rel-001",
+      "from": "rainbow",
+      "to": "flyp",
+      "type": "partners_with",
+      "label": "제조용 양팔로봇 공동 개발",
+      "claim_id": "claim:x-eco-001",
+      "status": "reported",
+      "rationale": "양사의 공동 개발 발표에 귀속한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "플라잎",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-002",
+      "from": "rainbow",
+      "to": "manufacturing-dual-arm-v2",
+      "type": "develops",
+      "label": "AI 양팔로봇 V2 개발 추진",
+      "claim_id": "claim:x-eco-001",
+      "status": "planned",
+      "rationale": "공동 개발 계획이며 출시 완료로 표시하지 않는다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "제조 특화 AI 양팔로봇 V2",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-003",
+      "from": "flyp",
+      "to": "manufacturing-dual-arm-v2",
+      "type": "develops",
+      "label": "조립·체결 AI 결합 추진",
+      "claim_id": "claim:x-eco-001:2",
+      "status": "planned",
+      "rationale": "플라잎 AI와 레인보우 하드웨어를 결합하는 개발 계획이다.",
+      "from_title": "플라잎",
+      "to_title": "제조 특화 AI 양팔로봇 V2",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-004",
+      "from": "rainbow",
+      "to": "ypowerone",
+      "type": "partners_with",
+      "label": "AMR 무선충전 MOU",
+      "claim_id": "claim:x-eco-002",
+      "status": "reported",
+      "rationale": "3사 업무협약에 귀속하며 유료 계약으로 승격하지 않는다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "와이파워원",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-005",
+      "from": "rainbow",
+      "to": "pha",
+      "type": "partners_with",
+      "label": "AMR 무선충전 MOU",
+      "claim_id": "claim:x-eco-002",
+      "status": "reported",
+      "rationale": "공식 발표에 명시된 3사 업무협약의 당사자 관계입니다. 업무협약을 유료 수주나 상시 가동 계약으로 승격하지 않습니다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "PHA",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-006",
+      "from": "rainbow",
+      "to": "amr-wireless-charging",
+      "type": "develops",
+      "label": "무선충전 적용 사업 추진",
+      "claim_id": "claim:x-eco-002",
+      "status": "planned",
+      "rationale": "MOU의 적용 사업 범위를 프로젝트로 모델링한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "AMR 무선충전 적용 사업",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "xe-rel-007",
+      "from": "rainbow",
+      "to": "s1",
+      "type": "partners_with",
+      "label": "AI 보안로봇 도입 협약",
+      "claim_id": "claim:x-eco-003",
+      "status": "reported",
+      "rationale": "에스원을 삼성전자나 SDS와 동일 법인으로 합치지 않는다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "에스원",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-008",
+      "from": "s1",
+      "to": "leel-upperhouse-security",
+      "type": "develops",
+      "label": "보안체계·로봇 결합 계획",
+      "claim_id": "claim:x-eco-003:2",
+      "status": "planned",
+      "rationale": "미래 단지 보안체계 통합 계획이다.",
+      "from_title": "에스원",
+      "to_title": "르엘 어퍼하우스 보안로봇 도입",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "xe-rel-009",
+      "from": "rainbow",
+      "to": "leel-upperhouse-security",
+      "type": "deploys_at",
+      "label": "보안로봇 도입 계획",
+      "claim_id": "claim:x-eco-003",
+      "status": "planned",
+      "rationale": "도입 협약을 계획 상태로 명시한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "르엘 어퍼하우스 보안로봇 도입",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "xe-rel-010",
+      "from": "rainbow",
+      "to": "rb-y1",
+      "type": "develops",
+      "label": "RB-Y1 연구 플랫폼",
+      "claim_id": "claim:x-eco-004",
+      "status": "undated_current",
+      "rationale": "현재 공식 제품 설명에 귀속한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RB-Y1",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-011",
+      "from": "rb-y1",
+      "to": "rby1-sdk",
+      "type": "controlled_via",
+      "label": "SDK를 통한 제어 안내",
+      "claim_id": "claim:x-eco-004:3",
+      "status": "undated_current",
+      "rationale": "공식 제품 페이지의 SDK 기반 제어·활용 안내에 귀속합니다. SDK만 사용해야 한다거나 다른 인터페이스가 불가능하다는 필수 의존성을 주장하지 않습니다.",
+      "from_title": "RB-Y1",
+      "to_title": "RB-Y1 SDK",
+      "from_ontology_type": "Robot",
+      "to_ontology_type": "Product",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-004:2",
+        "reviewed_at": "2026-10-31",
+        "reason": "기존 주장은 PC 분리 및 언어 지원만 설명했다. SDK 제어 설명을 별도 최소 주장으로 보존하고 필수 의존성 표현을 제거했다."
+      }
+    },
+    {
+      "id": "xe-rel-012",
+      "from": "rainbow",
+      "to": "rby-ai-framework",
+      "type": "develops",
+      "label": "VLA 인프라 구축",
+      "claim_id": "claim:x-eco-005",
+      "status": "undated_current",
+      "rationale": "공식 전략에 나타난 개발 범위만 연결한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "레인보우 VLA 인프라",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "xe-rel-013",
+      "from": "rby-ai-framework",
+      "to": "isaac-sim",
+      "type": "supports",
+      "label": "시뮬레이션 환경 지원",
+      "claim_id": "claim:x-eco-005:2",
+      "status": "undated_current",
+      "rationale": "공식 페이지의 VLA 프레임워크 기능 설명이다.",
+      "from_title": "레인보우 VLA 인프라",
+      "to_title": "NVIDIA Isaac Sim",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-014",
+      "from": "rby-ai-framework",
+      "to": "mujoco",
+      "type": "supports",
+      "label": "시뮬레이션 환경 지원",
+      "claim_id": "claim:x-eco-005:2",
+      "status": "undated_current",
+      "rationale": "공식 페이지의 VLA 프레임워크 기능 설명이다.",
+      "from_title": "레인보우 VLA 인프라",
+      "to_title": "MuJoCo",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-015",
+      "from": "rainbow",
+      "to": "rb-y1c",
+      "type": "develops",
+      "label": "산업 안전 인증 추진",
+      "claim_id": "claim:x-eco-005:3",
+      "status": "planned",
+      "rationale": "차세대 제품의 인증 추진이며 인증 완료가 아니다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RB-Y1C",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-016",
+      "from": "rainbow",
+      "to": "rby2",
+      "type": "develops",
+      "label": "산업 안전 인증 추진",
+      "claim_id": "claim:x-eco-005:3",
+      "status": "planned",
+      "rationale": "차세대 제품의 인증 추진이며 인증 완료가 아니다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RBY2",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-017",
+      "from": "rainbow",
+      "to": "rbc-os",
+      "type": "develops",
+      "label": "자체 실시간 운영 시스템",
+      "claim_id": "claim:x-eco-006",
+      "status": "undated_current",
+      "rationale": "자체 개발 시스템이라는 공급사 설명이다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RBC 로봇 운영 시스템",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-018",
+      "from": "rbc-series",
+      "to": "rbc-os",
+      "type": "controlled_via",
+      "label": "RBC 실시간 제어",
+      "claim_id": "claim:x-eco-006",
+      "status": "undated_current",
+      "rationale": "공식 제품 설명의 RBC 제어 운영 시스템 사용 관계입니다. 다른 제어 방식의 불가능성이나 제품의 필수 공급 의존성을 추가로 주장하지 않습니다.",
+      "from_title": "RBC 시리즈",
+      "to_title": "RBC 로봇 운영 시스템",
+      "from_ontology_type": "Robot",
+      "to_ontology_type": "Product",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-006",
+        "reviewed_at": "2026-10-31",
+        "reason": "공식 제품 설명의 RBC 제어 운영 시스템 사용 관계입니다. 다른 제어 방식의 불가능성이나 제품의 필수 공급 의존성을 추가로 주장하지 않습니다."
+      }
+    },
+    {
+      "id": "xe-rel-019",
+      "from": "rainbow",
+      "to": "rby1-sdk",
+      "type": "develops",
+      "label": "Python·C++ SDK 공개",
+      "claim_id": "claim:x-eco-007",
+      "status": "undated_current",
+      "rationale": "공식 조직 저장소의 SDK 공개에 귀속한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RB-Y1 SDK",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-020",
+      "from": "rby1-sdk",
+      "to": "grpc",
+      "type": "uses_protocol",
+      "label": "고수준 비실시간 명령 채널",
+      "claim_id": "claim:x-eco-008",
+      "status": "undated_current",
+      "rationale": "공식 문서의 고수준 비실시간 명령·설정 채널이 사용하는 gRPC를 구분합니다. SDK의 모든 기능이 이 프로토콜에 필수 의존한다고 일반화하지 않습니다.",
+      "from_title": "RB-Y1 SDK",
+      "to_title": "gRPC",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-008",
+        "reviewed_at": "2026-10-31",
+        "reason": "공식 문서의 고수준 비실시간 명령·설정 채널이 사용하는 gRPC를 구분합니다. SDK의 모든 기능이 이 프로토콜에 필수 의존한다고 일반화하지 않습니다."
+      }
+    },
+    {
+      "id": "xe-rel-021",
+      "from": "rby1-sdk",
+      "to": "udp",
+      "type": "uses_protocol",
+      "label": "저수준 실시간 제어 채널",
+      "claim_id": "claim:x-eco-008:2",
+      "status": "undated_current",
+      "rationale": "공식 문서의 저수준 실시간 제어 채널이 사용하는 UDP를 구분합니다. 문서상 500Hz 사양을 독립 측정 성능이나 전체 SDK 의존성으로 해석하지 않습니다.",
+      "from_title": "RB-Y1 SDK",
+      "to_title": "UDP",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-008:2",
+        "reviewed_at": "2026-10-31",
+        "reason": "공식 문서의 저수준 실시간 제어 채널이 사용하는 UDP를 구분합니다. 문서상 500Hz 사양을 독립 측정 성능이나 전체 SDK 의존성으로 해석하지 않습니다."
+      }
+    },
+    {
+      "id": "xe-rel-022",
+      "from": "samsung-unspecified",
+      "to": "newton",
+      "type": "plans_use",
+      "label": "VLA 합성데이터 생성에 사용 계획",
+      "claim_id": "claim:x-eco-009",
+      "status": "planned",
+      "rationale": "법인이 특정되지 않은 Samsung의 미래 활용 계획에 귀속합니다. 실제 배포 완료나 플랫폼 필수 의존성을 뜻하지 않습니다.",
+      "from_title": "삼성 (해당 원문 법인 미특정)",
+      "to_title": "Newton",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Product",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-009",
+        "reviewed_at": "2026-10-31",
+        "reason": "법인이 특정되지 않은 Samsung의 미래 활용 계획에 귀속합니다. 실제 배포 완료나 플랫폼 필수 의존성을 뜻하지 않습니다."
+      }
+    },
+    {
+      "id": "xe-rel-023",
+      "from": "lightwheel",
+      "to": "samsung-manufacturing-simready",
+      "type": "develops",
+      "label": "삼성 제조용 시뮬레이션 자산",
+      "claim_id": "claim:x-eco-009:2",
+      "status": "reported",
+      "rationale": "케이블 조작 등 제조 워크플로용 자산 생성이라는 NVIDIA 설명이다.",
+      "from_title": "Lightwheel",
+      "to_title": "삼성 제조 SimReady 자산",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "xe-rel-024",
+      "from": "rb-y1",
+      "to": "refrigerator-cable-simulation",
+      "type": "deploys_at",
+      "label": "냉장고 조립 시뮬레이션",
+      "claim_id": "claim:x-eco-009:3",
+      "status": "research",
+      "rationale": "물리 현장 배포가 아닌 영상 5의 시뮬레이션 사례다.",
+      "from_title": "RB-Y1",
+      "to_title": "냉장고 케이블 삽입 시뮬레이션",
+      "from_ontology_type": "Robot",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "xe-rel-025",
+      "from": "se",
+      "to": "cosmos",
+      "type": "uses",
+      "label": "Cosmos 기반 로보틱스 개발",
+      "claim_id": "claim:x-eco-010",
+      "status": "reported",
+      "rationale": "개발 활용 관계이며 Cosmos 자체 개발 소유권을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "NVIDIA Cosmos",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-026",
+      "from": "roboforce",
+      "to": "sds",
+      "type": "partners_with",
+      "label": "산업용 로봇 적용·잠재 배치 검토",
+      "claim_id": "claim:x-eco-012",
+      "status": "reported",
+      "rationale": "RoboForce가 삼성SDS와 산업용 로봇 적용을 검토하는 협력을 직접 발표했다.",
+      "from_title": "RoboForce",
+      "to_title": "삼성SDS",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-027",
+      "from": "roboforce",
+      "to": "team-rex",
+      "type": "partners_with",
+      "label": "Team REX 창립 멤버라고 발표",
+      "claim_id": "claim:x-eco-012:2",
+      "status": "reported",
+      "rationale": "본문이 창립 멤버라고 명시하며 지배·소유·계약권 관계를 뜻하지 않는다.",
+      "from_title": "RoboForce",
+      "to_title": "Team REX",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "xe-rel-028",
+      "from": "walden",
+      "to": "sds",
+      "type": "partners_with",
+      "label": "핵심 제조 활용사례 PoC 협력",
+      "claim_id": "claim:x-eco-013",
+      "status": "reported",
+      "rationale": "Walden 공식 본문과 삼성SDS 인용문이 공동 PoC를 명시한다.",
+      "from_title": "Walden Robotics",
+      "to_title": "삼성SDS",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-029",
+      "from": "samsung-ventures",
+      "to": "walden",
+      "type": "funds",
+      "label": "투자 참여 발표·개별 금액 미공개",
+      "claim_id": "claim:x-eco-014",
+      "status": "reported",
+      "rationale": "투자 참여자에 Samsung Ventures가 명시된다. 전체 3억 달러를 삼성 투자액으로 합산하지 않는다.",
+      "from_title": "Samsung Ventures",
+      "to_title": "Walden Robotics",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-030",
+      "from": "sfa",
+      "to": "rainbow",
+      "type": "partners_with",
+      "label": "AI 자율제조·로봇 공동 R&D MOU",
+      "claim_id": "claim:x-eco-015",
+      "status": "reported",
+      "rationale": "SFA 공식 웹 본문이 체결일과 협력 범위를 명시한다.",
+      "from_title": "SFA",
+      "to_title": "레인보우로보틱스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    }
+  ],
+  "lineage_updates": [
+    {
+      "record_id": "sds-011",
+      "origin_key": "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "ecosystem_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-eco-013"
+        ],
+        "source_urls": [
+          "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+          "https://www.linkedin.com/posts/waldenrobotics_we-spend-a-lot-of-time-talking-about-robots-activity-7487929613239840769-efJo"
+        ],
+        "document_origin_url": "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+        "rationale": "같은 Walden-SDS 제조 PoC 설명을 재현한 공식 게시물로 보수적으로 하나의 협력 출처군으로 처리한다. LinkedIn의 미확인 게시일은 수정하지 않는다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      }
+    },
+    {
+      "record_id": "se-016",
+      "origin_key": "sfa-rainbow:2026-09-30-mou",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "reviewer": "ecosystem_editorial_review",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-eco-015"
+        ],
+        "source_urls": [
+          "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/",
+          "https://zdnet.co.kr/view/?no=20260929183802"
+        ],
+        "document_origin_url": "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/",
+        "rationale": "SFA 공식 본문과 ZDNet 보도는 동일 AI 자율제조·로봇 MOU를 다룬다. 원문의 발표일과 협약일은 별도 보존한다.",
+        "review_method": "inventory_evidence_review",
+        "exceptions": []
+      }
+    }
+  ]
+}

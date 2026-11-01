@@ -40,6 +40,7 @@ export interface ResearchRecord {
   event_date: string | null;
   scheduled_event_date?: string | null;
   source_type: ResearchSourceType;
+  relevance?: 'direct_rx' | 'manufacturing_adjacent' | 'component_ecosystem';
   verification: ResearchVerification;
   audit_status?: 'unarchived' | 'archived' | 'blocked';
   archive_url?: string | null;
@@ -54,6 +55,7 @@ export interface ResearchRecord {
   scope: 'in_window' | 'undated' | 'out_of_window';
   entity_ids: string[];
   origin_key: string;
+  origin_history?: { origin_key: string; changed_at: string; reason: string }[];
   summary_ko: string;
   excerpt: string;
   /** Legacy selected claim, retained for readers of the first snapshot schema. */

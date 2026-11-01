@@ -1,6 +1,7 @@
+import { surveyCounts } from './survey';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtempSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
+import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -86,7 +87,7 @@ test('ten republications retain ten attributions but form one shared source grou
   assert.equal(counts.searchOnly, 9);
 });
 test('duplicate documents retain distinct claims and entity tags without multiplying source count', () => {
-  assert.equal(catalog.records.length, 81);
+  assert.equal(new Set(catalog.records.map(row => row.id)).size, catalog.records.length);
   const merged = catalog.records.find(row => row.id === 'media-001')!;
   assert.ok(merged.entity_ids.includes('task') && merged.entity_ids.includes('partner'));
   const claims = getRecordClaims(merged);
@@ -96,7 +97,7 @@ test('duplicate documents retain distinct claims and entity tags without multipl
   assert.equal(flattened.length, claims.length);
   assert.ok(flattened.every(claim => claim.source_id === 'media-001' && claim.source_url === merged.url));
   assert.equal(new Set(researchClaims().map(claim => claim.id)).size, researchClaims().length);
-  assert.ok(researchCounts().claims >= 84);
+  assert.equal(researchCounts().claims, researchClaims().length);
   assert.equal(researchCounts([merged]).total, 1);
   assert.equal(researchCounts([merged]).claims, claims.length);
 });
@@ -259,4 +260,133 @@ a,b=json.loads(sys.argv[2]);print(json.dumps(m.merge_record(a,b)))
   assert.equal(merged.merge_conflicts.length, 1);
   assert.equal(merged.merge_conflicts[0].inputs[1].value, null);
   assert.ok(merged.merge_conflicts[0].resolution.reason);
+});
+
+test('discovery status counts remain separate from reviewed sources and extracted claims', () => {
+  const counts = surveyCounts({ runs: [{ id: 'run', status: 'partial' }], collections: [
+    { id: 'ok', publisher: 'Test', status: 'fetched' }, { id: 'blocked', publisher: 'Test', status: 'robots_disallowed' },
+  ], candidates: [
+    { id: 'candidate', url: 'https://example.test/unreviewed', fetch_status: 'fetched', source_ids: [] },
+    { id: 'linked', url: 'https://example.test/reviewed', fetch_status: 'fetched', source_ids: ['first'] },
+    { id: 'blocked', url: 'https://example.test/blocked', fetch_status: 'blocked', source_ids: [] },
+  ] });
+  assert.equal(counts.candidates, 3);
+  assert.equal(counts.fetchedCandidates, 2);
+  assert.equal(counts.reviewedCandidates, 1);
+  assert.equal(counts.unreviewedCandidates, 2);
+  assert.equal(counts.linkedSources, 1);
+  assert.equal(counts.collectionsFailed, 1);
+  assert.equal('claims' in counts, false);
+});
+
+test('SQLite survey inventory preserves raw crawl lineage without automatically creating claims', () => {
+  const { directory, input } = runBuilder(fixtureCatalog([record('first', { relevance: 'direct_rx' })]));
+  try {
+    const surveyPath = join(directory, 'survey.json');
+    const survey = {
+      runs: [{ id: 'run', status: 'partial', request_budget: 10, limits: ['Synthetic budget failure'] }],
+      collections: [{ id: 'collection', run_id: 'run', url: 'https://example.test/news', publisher: 'Test', status: 'fetched', pages_visited: ['https://example.test/news'], discovered_urls: ['https://example.test/candidate'] }],
+      candidates: [{ id: 'candidate', run_id: 'run', url: 'https://example.test/candidate', fetch_status: 'fetched', source_ids: [], content_sha256: 'a'.repeat(64), notes: ['Fetched candidate has not been reviewed'] }],
+    };
+    writeFileSync(surveyPath, JSON.stringify(survey));
+    const built = spawnSync('python3', [builder, '--input', input, '--out-dir', directory, '--survey', surveyPath], { encoding: 'utf8' });
+    assert.equal(built.status, 0, built.stderr);
+    const check = spawnSync('python3', ['-c', `
+import sqlite3,json,sys
+c=sqlite3.connect(sys.argv[1])
+assert c.execute('select count(*) from Sources').fetchone()[0]==1
+assert c.execute('select count(*) from Claims').fetchone()[0]==1
+assert c.execute('select count(*) from CrawlRuns').fetchone()[0]==1
+assert c.execute('select count(*) from CoverageCollections').fetchone()[0]==1
+assert c.execute('select count(*) from DiscoveryInventory where automatically_verified=0').fetchone()[0]==1
+assert c.execute('select relevance from Sources').fetchone()[0]=='direct_rx'
+raw=json.loads(c.execute('select raw_candidate_json from DiscoveryInventory').fetchone()[0])
+assert raw['source_ids']==[] and raw['notes']==['Fetched candidate has not been reviewed']
+assert c.execute('PRAGMA foreign_key_check').fetchall()==[]
+`, join(directory, 'rx-research.sqlite')], { encoding: 'utf8' });
+    assert.equal(check.status, 0, check.stderr);
+    assert.deepEqual(JSON.parse(readFileSync(join(directory, 'rx-survey.json'), 'utf8')), survey);
+    writeFileSync(surveyPath, JSON.stringify({ ...survey, candidates: [{ ...survey.candidates[0], claims: [{ text: 'Invented automatic assertion' }] }] }));
+    const rejected = spawnSync('python3', [builder, '--input', input, '--out-dir', directory, '--survey', surveyPath], { encoding: 'utf8' });
+    assert.notEqual(rejected.status, 0);
+    assert.match(rejected.stderr, /candidates cannot contain claims/);
+  } finally { rmSync(directory, { recursive: true, force: true }); }
+});
+
+test('reviewed expansion import deduplicates URLs and preserves claims, remaps graph bindings, and rejects date conflicts atomically', () => {
+  const directory = mkdtempSync(join(tmpdir(), 'rx-expansion-test-'));
+  try {
+    mkdirSync(join(directory, 'research')); mkdirSync(join(directory, 'src'));
+    for (const name of ['media', 'sds', 'electronics', 'miracom', 'technical']) writeFileSync(join(directory, 'research', `${name}.json`), JSON.stringify({ records: [], queries: [] }));
+    const first = record('first');
+    const second = record('second', { url: first.url, entity_ids: ['sds', 'mes'], claim: { kind: 'official_statement', text: 'Second distinct synthetic statement about MES.' } });
+    const third = record('third', { url: first.url });
+    const expansion = { records: [first, second, third], queries: [], relations: [{ id: 'fixture-edge', from: 'sds', to: 'mes', type: 'mentions', label: 'Synthetic binding', claim_id: 'claim:third', status: 'reported', rationale: 'Explicitly reviewed synthetic source attribution, not real-world knowledge.', from_title: 'Samsung SDS', to_title: 'MES', from_ontology_type: 'Company', to_ontology_type: 'Technology' }], coverage: [] };
+    const path = join(directory, 'research', 'expansion-fixture.json');
+    writeFileSync(path, JSON.stringify(expansion));
+    const importer = join(projectRoot, 'scripts/import-expansion.py');
+    const run = () => spawnSync('python3', [importer, '--root', directory, '--input', path], { encoding: 'utf8' });
+    const initial = run();
+    assert.equal(initial.status, 0, initial.stderr);
+    const imported = JSON.parse(readFileSync(join(directory, 'src/research-data.json'), 'utf8')) as ResearchCatalog;
+    assert.equal(imported.records.length, 1);
+    assert.equal(getRecordClaims(imported.records[0]).length, 2);
+    assert.ok(imported.records[0].entity_ids.includes('mes'));
+    const bindings = JSON.parse(readFileSync(join(directory, 'src/knowledge-expansion.json'), 'utf8'));
+    assert.equal(bindings.relations[0].claim_id, 'claim:first', 'duplicate identical extraction remaps to preserved claim');
+    assert.equal(JSON.parse(initial.stdout).source_id_remap.second, 'first');
+    const bytes = readFileSync(join(directory, 'src/research-data.json'));
+    assert.equal(run().status, 0);
+    assert.deepEqual(readFileSync(join(directory, 'src/research-data.json')), bytes, 'reimport is deterministic');
+    writeFileSync(path, JSON.stringify({ ...expansion, records: [first, { ...second, published_at: null, date_basis: 'unknown', scope: 'undated' }] }));
+    const invalid = run();
+    assert.notEqual(invalid.status, 0);
+    assert.match(invalid.stderr, /merge_date_conflict/);
+    assert.deepEqual(readFileSync(join(directory, 'src/research-data.json')), bytes, 'failed import does not replace reviewed catalog');
+  } finally { rmSync(directory, { recursive: true, force: true }); }
+});
+
+test('survey canonical URLs merge repeated crawl runs while preserving collection observations and bounded anchor text', () => {
+  const importer = join(projectRoot, 'scripts/import-expansion.py');
+  const check = spawnSync('python3', ['-c', `
+import runpy,json,sys
+m=runpy.run_path(sys.argv[1],run_name='survey_test')
+long_title='Headline '+('article body paragraph '*200)
+a={'runs':[{'id':'run1','status':'completed'}],'collections':[{'id':'same-collection-url','run_id':'run1','url':'https://example.test/news','publisher':'Test','status':'fetched'}],'candidates':[{'id':'first','run_id':'run1','url':'https://www.example.test/story?utm_source=one','title':long_title,'discovered_at':'2026-10-30','published_at':'2026-10-01','date_basis':'page','fetch_status':'fetched','collection_urls':['https://example.test/news']}]}
+b={'runs':[{'id':'run2','status':'partial'}],'collections':[{'id':'same-collection-url','run_id':'run2','url':'https://example.test/news','publisher':'Test','status':'blocked'}],'candidates':[{'id':'second','run_id':'run2','url':'https://example.test/story','title':'Short headline','discovered_at':'2026-10-31','published_at':'2026-10-02','date_basis':'collection','fetch_status':'blocked','collection_urls':['https://example.test/archive']}]}
+s=m['merge_survey']([a,b],[])
+assert len(s['collections'])==2 and {r['original_id'] for r in s['collections']}=={'same-collection-url'}
+assert len(s['candidates'])==1
+c=s['candidates'][0]
+assert c['run_ids']==['run1','run2'] and len(c['observations'])==2
+assert c['source_ids']==[] and c['fetch_status']=='fetched'
+assert c['published_at'] is None and c['date_basis']=='unknown' and len(c['date_conflicts'])==2
+assert c['title_truncated'] and len(c['title'])<=120 and len(c['title'].split())<=20
+assert all(len(r.get('title',''))<=120 and len(r.get('title','').split())<=20 for r in c['observations'])
+assert long_title not in json.dumps(s)
+assert m['merge_survey']([s,a,b],[])==s
+print('ok')
+`, importer], { encoding: 'utf8' });
+  assert.equal(check.status, 0, check.stderr);
+});
+
+test('explicit planned dates survive ingestion without becoming actual event dates', () => {
+  const announced = record('scheduled', { event_date: null, scheduled_event_date: '2026-09-08', published_at: '2026-09-01' });
+  const undated = record('undated-schedule', { event_date: null, published_at: null, scheduled_event_date: '2026-05-28', scope: 'undated', date_basis: 'unknown' });
+  const { directory, result } = runBuilder(fixtureCatalog([announced, undated]));
+  try {
+    assert.equal(result.status, 0, result.stderr);
+    const exported = JSON.parse(readFileSync(join(directory, 'rx-research.json'), 'utf8')) as ResearchCatalog;
+    assert.equal(exported.records[0].event_date, null);
+    assert.equal(exported.records[0].scheduled_event_date, '2026-09-08');
+    assert.equal(exported.records[1].scheduled_event_date, '2026-05-28');
+    assert.equal(scheduledEventDate(announced), '2026-09-08');
+    assert.deepEqual(researchAt('2026-09-01', 'known', exported).map(row => row.id), ['scheduled']);
+    assert.deepEqual(researchAt('2026-09-30', 'known', exported, { eventAsOf: '2026-09-30' }), []);
+    const merger = join(projectRoot, 'scripts/merge-research.py');
+    const normalized = spawnSync('python3', ['-c', "import runpy,json,sys;m=runpy.run_path(sys.argv[1]);print(json.dumps(m['normalized_record'](json.load(open(sys.argv[2]))['records'][1])))", merger, join(directory, 'input.json')], { encoding: 'utf8', timeout: 10000 });
+    assert.equal(normalized.status, 0, normalized.stderr);
+    assert.equal(JSON.parse(normalized.stdout).scheduled_event_date, '2026-05-28');
+    assert.equal(JSON.parse(normalized.stdout).event_date, null);
+  } finally { rmSync(directory, { recursive: true, force: true }); }
 });

@@ -87,6 +87,7 @@ jobs:
           done
           curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}data/rx-research.json" -o /tmp/rx-research.json
           curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}data/rx-research.sqlite" -o /tmp/rx-research.sqlite
+          curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}data/rx-survey.json" -o /tmp/rx-survey.json
           curl --fail --location --retry 4 --retry-delay 5 --max-time 30 "${SITE_URL}release.json" -o /tmp/rx-release.json
           python3 - <<'PYCODE'
           import json, sqlite3, os
@@ -95,11 +96,15 @@ jobs:
           actual = json.loads(Path('/tmp/rx-research.json').read_text())
           assert json.loads(Path('/tmp/rx-release.json').read_text())['commit'] == os.environ['GITHUB_SHA'], 'Public release does not match this commit'
           assert actual == expected, 'Published research JSON differs from this commit'
+          survey = json.loads(Path('apps/rx-universe/research/survey-data.json').read_text())
+          assert json.loads(Path('/tmp/rx-survey.json').read_text()) == survey, 'Published survey differs from this commit'
           db = sqlite3.connect('/tmp/rx-research.sqlite')
           assert db.execute('PRAGMA integrity_check').fetchone()[0] == 'ok'
           assert db.execute('SELECT COUNT(*) FROM Sources').fetchone()[0] == len(expected['records'])
           assert db.execute('PRAGMA foreign_key_check').fetchall() == []
           assert db.execute('SELECT COUNT(*) FROM Claims').fetchone()[0] == sum(len(row.get('claims', [row['claim']])) for row in expected['records'])
+          for table, key in [('CoverageCollections','collections'),('DiscoveryInventory','candidates'),('CrawlRuns','runs')]:
+              assert db.execute(f'SELECT COUNT(*) FROM {table}').fetchone()[0] == len(survey[key])
           assert 'SAMSUNG RX' in Path('/tmp/rx-page.html').read_text()
           print('Anonymous public JSON and SQLite verified:', len(expected['records']), 'sources')
           PYCODE

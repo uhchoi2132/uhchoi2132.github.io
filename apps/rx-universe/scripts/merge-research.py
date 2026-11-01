@@ -4,7 +4,8 @@ import json
 from datetime import date
 from itertools import combinations
 from pathlib import Path
-from urllib.parse import urlsplit, parse_qsl, urlencode
+from urllib.parse import urlsplit, parse_qsl, urlencode, quote
+import re
 
 ROOT = Path(__file__).resolve().parents[1]
 FILES = ['media', 'sds', 'electronics', 'miracom', 'technical']
@@ -12,7 +13,10 @@ FILES = ['media', 'sds', 'electronics', 'miracom', 'technical']
 def canonical_url(url):
     parts = urlsplit(url)
     host = parts.netloc.lower().removeprefix('www.')
-    return host + parts.path.rstrip('/') + '?' + urlencode(sorted(parse_qsl(parts.query)))
+    path = quote(parts.path, safe="/%:@!$&'()*+,;=-._~")
+    path = re.sub(r'%[a-fA-F0-9]{2}', lambda match: match.group().upper(), path)
+    query = [(key, value) for key, value in parse_qsl(parts.query) if not key.lower().startswith('utm_') and key.lower() not in {'fbclid', 'gclid'}]
+    return host + path.rstrip('/') + '?' + urlencode(sorted(query))
 
 def quality(row):
     return ({'primary_read': 3, 'manual_report': 2, 'search_only': 1, 'access_blocked': 0}.get(row['verification'], -1), row['published_at'] is not None, row['date_basis'] == 'page')
@@ -120,14 +124,17 @@ def distinct_claims(*groups):
 def normalized_record(row):
     row = dict(row)
     row['claims'] = distinct_claims(record_claims(row))
-    row.pop('scheduled_event_date', None)
+    explicit_schedule = row.get('scheduled_event_date')
     published, event = row.get('published_at'), row.get('event_date')
-    if published and event and event > published:
+    if explicit_schedule is not None:
+        date.fromisoformat(explicit_schedule)
+        row['scheduled_event_date'] = explicit_schedule
+    elif published and event and event > published:
         row['scheduled_event_date'] = event
     return row
 
 def merge_record(previous, incoming):
-    conflicts = [conflict for field in ('published_at', 'event_date') if (conflict := resolve_date_conflict(previous, incoming, field))]
+    conflicts = [conflict for field in ('published_at', 'event_date', 'scheduled_event_date') if (conflict := resolve_date_conflict(previous, incoming, field))]
     chosen, other = (incoming, previous) if quality(incoming) > quality(previous) else (previous, incoming)
     merged = dict(chosen)
     merged['lineage_reviews'] = lineage_reviews(chosen) + lineage_reviews(other)
@@ -177,9 +184,33 @@ gaps = [
     '원문 전체 파일·영상은 재배포하지 않습니다. 원문 바이트 해시는 미수집(null)이며 DB의 record_sha256은 메타데이터 해시입니다. 원문 이용은 각 출처의 이용약관·저작권을 따릅니다.',
 ]
 
+def apply_lineage_updates(rows, updates):
+    by_id = {identifier: row for row in rows for identifier in record_ids(row)}
+    for update in updates:
+        identifier = update.get('record_id')
+        if identifier not in by_id or not isinstance(update.get('review'), dict):
+            raise ValueError(f'Invalid explicit lineage update: {identifier}')
+        row = by_id[identifier]
+        new_origin = update.get('origin_key')
+        if new_origin is not None and new_origin != row['origin_key']:
+            if not isinstance(new_origin, str) or not new_origin.strip() or update['review'].get('decision') != 'shared_origin':
+                raise ValueError(f'Origin group changes require an explicit shared-source review: {identifier}')
+            row.setdefault('origin_history', []).append({'origin_key': row['origin_key'], 'changed_at': update['review'].get('reviewed_at'), 'reason': update['review'].get('rationale')})
+            row['origin_key'] = new_origin
+        review = {'source_record_id': identifier, **update['review']}
+        reviews = row.setdefault('lineage_reviews', [])
+        if review not in reviews:
+            reviews.append(review)
+    return rows
+
 def build_catalog(input_dir=ROOT / 'research'):
-    inventories = [(name, json.loads((input_dir / f'{name}.json').read_text())) for name in FILES]
+    names = FILES + (['expanded'] if (input_dir / 'expanded.json').exists() else [])
+    inventories = [(name, json.loads((input_dir / f'{name}.json').read_text())) for name in names]
+    snapshot_meta = json.loads((input_dir / 'snapshot-meta.json').read_text()) if (input_dir / 'snapshot-meta.json').exists() else {}
     records, queries, duplicates, raw_gaps = merge_inventories(inventories)
+    updates_path = input_dir / 'lineage-updates.json'
+    if updates_path.exists():
+        apply_lineage_updates(list(records.values()), json.loads(updates_path.read_text()))
     lineage_lint = validate_lineage(list(records.values()))
     return {
         'meta': {
@@ -194,6 +225,7 @@ def build_catalog(input_dir=ROOT / 'research'):
             'publication_policy': 'Source-attributed research; no automatic promotion to independently verified fact',
             'license_status': 'Original source rights retained; short excerpts, metadata and links only',
             'raw_source_capture': 'Not captured; record hashes are not original source hashes',
+            **snapshot_meta,
         },
         'records': sorted(records.values(), key=lambda row: row['id']), 'queries': queries,
     }

@@ -1,0 +1,2799 @@
+{
+  "records": [
+    {
+      "id": "x-se-001",
+      "title": "삼성전자 2026년 정기 임원 인사",
+      "url": "https://news.samsung.com/kr/삼성전자-2026년-정기-임원-인사",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2025-11-25",
+      "event_date": "2025-11-25",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "sr-robot-platform-team"
+      ],
+      "origin_key": "https://news.samsung.com/kr/삼성전자-2026년-정기-임원-인사",
+      "summary_ko": "삼성전자는 정기 임원 인사에서 최고은 상무의 공개 직책을 DX부문 Samsung Research Robot Platform팀장으로 명시했다. 삼성전자는 최고은 상무를 자율주행 로봇 개발과 실시간 조작 기술에 기여한 로봇 소프트웨어 전문가로 소개했다.",
+      "excerpt": "Samsung Research Robot Platform팀장",
+      "claim": {
+        "text": "삼성전자는 정기 임원 인사에서 최고은 상무의 공개 직책을 DX부문 Samsung Research Robot Platform팀장으로 명시했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-001",
+          "text": "삼성전자는 정기 임원 인사에서 최고은 상무의 공개 직책을 DX부문 Samsung Research Robot Platform팀장으로 명시했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-001",
+          "verification": "manual_report",
+          "evidence_locator": "주요 승진자 소개: 최고은 상무",
+          "limitations": [
+            "공개 직책 소개만 확인한다. 팀 신설 시점·인원·예산·RX사업추진실 내부 보고선은 확인하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-001-02",
+          "text": "삼성전자는 최고은 상무를 자율주행 로봇 개발과 실시간 조작 기술에 기여한 로봇 소프트웨어 전문가로 소개했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-001",
+          "verification": "manual_report",
+          "evidence_locator": "주요 승진자 소개: 최고은 상무",
+          "limitations": [
+            "공개 직책 소개만 확인한다. 팀 신설 시점·인원·예산·RX사업추진실 내부 보고선은 확인하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "공개 직책 소개만 확인한다. 팀 신설 시점·인원·예산·RX사업추진실 내부 보고선은 확인하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "주요 승진자 소개: 최고은 상무",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://news.samsung.com/kr/삼성전자-2026년-정기-임원-인사"
+        ],
+        "document_origin_url": "https://news.samsung.com/kr/삼성전자-2026년-정기-임원-인사",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-002",
+      "title": "삼성전자 사장단 인사",
+      "url": "https://news.samsung.com/kr/삼성전자-사장단-인사",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2026-05-04",
+      "event_date": "2026-05-04",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "dx-advisory"
+      ],
+      "origin_key": "https://news.samsung.com/kr/삼성전자-사장단-인사",
+      "summary_ko": "삼성전자는 용석우 사장을 DX부문장 보좌역으로 임명했다고 발표했다. 삼성전자는 용석우 사장이 AI·로보틱스 등 미래 기술을 바탕으로 세트 사업의 전략적 자문을 수행할 예정이라고 설명했다.",
+      "excerpt": "DX부문장 보좌역",
+      "claim": {
+        "text": "삼성전자는 용석우 사장을 DX부문장 보좌역으로 임명했다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-002",
+          "text": "삼성전자는 용석우 사장을 DX부문장 보좌역으로 임명했다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-002",
+          "verification": "manual_report",
+          "evidence_locator": "용석우 사장 보직 및 향후 자문 역할",
+          "limitations": [
+            "사업 자문 역할 발표이며 RX 투자권·플랫폼 표준권·계약권이나 내부 보고선을 입증하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-002-02",
+          "text": "삼성전자는 용석우 사장이 AI·로보틱스 등 미래 기술을 바탕으로 세트 사업의 전략적 자문을 수행할 예정이라고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-002",
+          "verification": "manual_report",
+          "evidence_locator": "용석우 사장 보직 및 향후 자문 역할",
+          "limitations": [
+            "사업 자문 역할 발표이며 RX 투자권·플랫폼 표준권·계약권이나 내부 보고선을 입증하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "사업 자문 역할 발표이며 RX 투자권·플랫폼 표준권·계약권이나 내부 보고선을 입증하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "용석우 사장 보직 및 향후 자문 역할",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://news.samsung.com/kr/삼성전자-사장단-인사"
+        ],
+        "document_origin_url": "https://news.samsung.com/kr/삼성전자-사장단-인사",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-003",
+      "title": "삼성, 미래 성장 위해 호남에 425조원 투자",
+      "url": "https://news.samsung.com/kr/삼성-미래-성장-위해-호남에-425조원-투자",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2026-06-30",
+      "event_date": "2026-06-30",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "sds",
+        "factory",
+        "gwangju-factory",
+        "haenam-ai-dc"
+      ],
+      "origin_key": "samsung-domestic-investment-plan-2026",
+      "summary_ko": "삼성은 삼성전자가 광주사업장에 디지털 트윈 기반 혁신 허브 공장과 히트펌프·공조기 생산 시설을 구축할 계획이라고 발표했다. 삼성은 삼성SDS가 해남 솔라시도에 210MW 규모 AI 데이터센터를 추진하며 2026년 하반기 착공과 2028년 첫 가동을 목표로 한다고 설명했다. 삼성은 해남 AI 데이터센터가 산업용 로봇의 학습·추론 등을 지원하는 피지컬 AI 기반 역할을 할 것으로 기대한다고 설명했다.",
+      "excerpt": "디지털 트윈 기반의 혁신 허브 공장",
+      "claim": {
+        "text": "삼성은 삼성전자가 광주사업장에 디지털 트윈 기반 혁신 허브 공장과 히트펌프·공조기 생산 시설을 구축할 계획이라고 발표했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-003",
+          "text": "삼성은 삼성전자가 광주사업장에 디지털 트윈 기반 혁신 허브 공장과 히트펌프·공조기 생산 시설을 구축할 계획이라고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-003",
+          "verification": "manual_report",
+          "evidence_locator": "③ 해남 AI 데이터센터 / ④ 광주·고창 제조·물류 투자",
+          "limitations": [
+            "지역 종합 투자 계획이며 425조원을 RX SW 예산·매출로 귀속하지 않는다.",
+            "착공·가동·공장 구축의 완료를 확인한 자료가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-se-003-02",
+          "text": "삼성은 삼성SDS가 해남 솔라시도에 210MW 규모 AI 데이터센터를 추진하며 2026년 하반기 착공과 2028년 첫 가동을 목표로 한다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-003",
+          "verification": "manual_report",
+          "evidence_locator": "③ 해남 AI 데이터센터 / ④ 광주·고창 제조·물류 투자",
+          "limitations": [
+            "지역 종합 투자 계획이며 425조원을 RX SW 예산·매출로 귀속하지 않는다.",
+            "착공·가동·공장 구축의 완료를 확인한 자료가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-se-003-03",
+          "text": "삼성은 해남 AI 데이터센터가 산업용 로봇의 학습·추론 등을 지원하는 피지컬 AI 기반 역할을 할 것으로 기대한다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-003",
+          "verification": "manual_report",
+          "evidence_locator": "③ 해남 AI 데이터센터 / ④ 광주·고창 제조·물류 투자",
+          "limitations": [
+            "지역 종합 투자 계획이며 425조원을 RX SW 예산·매출로 귀속하지 않는다.",
+            "착공·가동·공장 구축의 완료를 확인한 자료가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "지역 종합 투자 계획이며 425조원을 RX SW 예산·매출로 귀속하지 않는다.",
+        "착공·가동·공장 구축의 완료를 확인한 자료가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "③ 해남 AI 데이터센터 / ④ 광주·고창 제조·물류 투자",
+      "rx_relevance": "adjacent_manufacturing",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "se-008",
+          "se-009"
+        ],
+        "source_urls": [
+          "https://news.samsung.com/kr/삼성-미래-성장-위해-호남에-425조원-투자"
+        ],
+        "document_origin_url": "https://news.samsung.com/kr/삼성-미래-성장-위해-호남에-425조원-투자",
+        "rationale": "기존 발표와 동일한 회사의 후속 지역별 설명으로 출처군을 공유한다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-004",
+      "title": "삼성, 국내에 향후 5년간 450조원 투자",
+      "url": "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2025-11-16",
+      "event_date": "2025-11-16",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "sds",
+        "factory",
+        "gumi-ai-dc"
+      ],
+      "origin_key": "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자",
+      "summary_ko": "삼성은 삼성SDS가 구미1공장을 AI 특화 데이터센터로 리모델링해 삼성전자와 관계사를 중심으로 AI 서비스를 제공할 계획이라고 발표했다. 삼성은 중소기업 스마트공장 구축 지원을 지속하겠다고 설명했다.",
+      "excerpt": "구미1공장",
+      "claim": {
+        "text": "삼성은 삼성SDS가 구미1공장을 AI 특화 데이터센터로 리모델링해 삼성전자와 관계사를 중심으로 AI 서비스를 제공할 계획이라고 발표했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-004",
+          "text": "삼성은 삼성SDS가 구미1공장을 AI 특화 데이터센터로 리모델링해 삼성전자와 관계사를 중심으로 AI 서비스를 제공할 계획이라고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-004",
+          "verification": "manual_report",
+          "evidence_locator": "AI 데이터센터 투자 / 중소기업 동반성장",
+          "limitations": [
+            "450조원은 회사 전반의 투자 계획이며 RX SW 투자 또는 매출이 아니다.",
+            "구미 AI 데이터센터의 당시 2028년 완공 목표를 현재 가동 실적으로 취급하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-004-02",
+          "text": "삼성은 중소기업 스마트공장 구축 지원을 지속하겠다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-004",
+          "verification": "manual_report",
+          "evidence_locator": "AI 데이터센터 투자 / 중소기업 동반성장",
+          "limitations": [
+            "450조원은 회사 전반의 투자 계획이며 RX SW 투자 또는 매출이 아니다.",
+            "구미 AI 데이터센터의 당시 2028년 완공 목표를 현재 가동 실적으로 취급하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "450조원은 회사 전반의 투자 계획이며 RX SW 투자 또는 매출이 아니다.",
+        "구미 AI 데이터센터의 당시 2028년 완공 목표를 현재 가동 실적으로 취급하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "AI 데이터센터 투자 / 중소기업 동반성장",
+      "rx_relevance": "adjacent_manufacturing",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자"
+        ],
+        "document_origin_url": "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-005",
+      "title": "Artificial Intelligence — Embodied & Physical AI",
+      "url": "https://research.samsung.com/artificial-intelligence",
+      "publisher": "Samsung Research",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "undated",
+      "entity_ids": [
+        "se",
+        "robot",
+        "embodied-physical-ai"
+      ],
+      "origin_key": "https://research.samsung.com/artificial-intelligence",
+      "summary_ko": "Samsung Research는 Embodied & Physical AI 연구 분야에서 3차원 환경 인식·공간 관계 이해·안전한 조작과 물리적 상호작용 학습을 연구 방향으로 소개한다.",
+      "excerpt": "Embodied & Physical AI",
+      "claim": {
+        "text": "Samsung Research는 Embodied & Physical AI 연구 분야에서 3차원 환경 인식·공간 관계 이해·안전한 조작과 물리적 상호작용 학습을 연구 방향으로 소개한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-005",
+          "text": "Samsung Research는 Embodied & Physical AI 연구 분야에서 3차원 환경 인식·공간 관계 이해·안전한 조작과 물리적 상호작용 학습을 연구 방향으로 소개한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-005",
+          "verification": "manual_report",
+          "evidence_locator": "Embodied & Physical AI",
+          "limitations": [
+            "게시일을 확인하지 못해 현재 관측한 연구영역 소개로만 등록한다. 과거 시점 그래프에 소급 노출하지 않는다.",
+            "특정 제품 출시나 산업 현장 검증 결과가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일을 확인하지 못해 현재 관측한 연구영역 소개로만 등록한다. 과거 시점 그래프에 소급 노출하지 않는다.",
+        "특정 제품 출시나 산업 현장 검증 결과가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "Embodied & Physical AI",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://research.samsung.com/artificial-intelligence"
+        ],
+        "document_origin_url": "https://research.samsung.com/artificial-intelligence",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-006",
+      "title": "6G Vertical: New Start Point of Vertical Integration",
+      "url": "https://research.samsung.com/blog/6G-Vertical-New-Start-Point-of-Vertical-Integration",
+      "publisher": "Samsung Research",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "undated",
+      "entity_ids": [
+        "se",
+        "robot",
+        "6g-robotics"
+      ],
+      "origin_key": "https://research.samsung.com/blog/6G-Vertical-New-Start-Point-of-Vertical-Integration",
+      "summary_ko": "Samsung Research 연구진은 6G 네트워크와 로봇 통합의 연구 방향으로 예측형 AI 스케줄링, 이동성 지원 및 에너지 인지 제어를 제안한다.",
+      "excerpt": "AI-Powered Robotics: Enabling Physical Autonomy",
+      "claim": {
+        "text": "Samsung Research 연구진은 6G 네트워크와 로봇 통합의 연구 방향으로 예측형 AI 스케줄링, 이동성 지원 및 에너지 인지 제어를 제안한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-006",
+          "text": "Samsung Research 연구진은 6G 네트워크와 로봇 통합의 연구 방향으로 예측형 AI 스케줄링, 이동성 지원 및 에너지 인지 제어를 제안한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-006",
+          "verification": "manual_report",
+          "evidence_locator": "AI-Powered Robotics: Enabling Physical Autonomy",
+          "limitations": [
+            "게시일이 원문에서 확인되지 않아 undated로 분류한다.",
+            "6G 로봇 서비스의 상용 배포나 성능 실측을 입증하지 않는 연구 방향 설명이다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일이 원문에서 확인되지 않아 undated로 분류한다.",
+        "6G 로봇 서비스의 상용 배포나 성능 실측을 입증하지 않는 연구 방향 설명이다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "AI-Powered Robotics: Enabling Physical Autonomy",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://research.samsung.com/blog/6G-Vertical-New-Start-Point-of-Vertical-Integration"
+        ],
+        "document_origin_url": "https://research.samsung.com/blog/6G-Vertical-New-Start-Point-of-Vertical-Integration",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-007",
+      "title": "Attentive Feature Aggregation, or: How Policies Learn to Stop Worrying about Robustness and Attend to Task-Relevant Visual Cues",
+      "url": "https://arxiv.org/html/2511.10762v1",
+      "publisher": "arXiv / Samsung AI Cambridge 공동저자",
+      "published_at": "2025-11-13",
+      "event_date": null,
+      "source_type": "paper",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "afa",
+        "samsung-ai-cambridge"
+      ],
+      "origin_key": "https://arxiv.org/abs/2511.10762",
+      "summary_ko": "Samsung AI Cambridge 소속 공동저자 등이 참여한 AFA 논문은 로봇 정책이 과업 관련 시각 특징에 주의를 기울이도록 학습 가능한 특징 풀링 방식을 제안했다. AFA 저자들은 시뮬레이션과 실제 로봇 실험에서 사전학습 시각 표현의 시각적 분포 변화에 대한 강건성을 평가했다고 보고했다.",
+      "excerpt": "Attentive Feature Aggregation",
+      "claim": {
+        "text": "Samsung AI Cambridge 소속 공동저자 등이 참여한 AFA 논문은 로봇 정책이 과업 관련 시각 특징에 주의를 기울이도록 학습 가능한 특징 풀링 방식을 제안했다.",
+        "kind": "research_result"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-007",
+          "text": "Samsung AI Cambridge 소속 공동저자 등이 참여한 AFA 논문은 로봇 정책이 과업 관련 시각 특징에 주의를 기울이도록 학습 가능한 특징 풀링 방식을 제안했다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-007",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / Introduction",
+          "limitations": [
+            "저자 보고 연구 결과이며 독립 재현 검증이나 공장 상시 운영 실적이 아니다.",
+            "게시일은 arXiv v1 제출일이며 IROS 2026 행사 날짜와 구분한다."
+          ]
+        },
+        {
+          "id": "claim:x-se-007-02",
+          "text": "AFA 저자들은 시뮬레이션과 실제 로봇 실험에서 사전학습 시각 표현의 시각적 분포 변화에 대한 강건성을 평가했다고 보고했다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-007",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / Introduction",
+          "limitations": [
+            "저자 보고 연구 결과이며 독립 재현 검증이나 공장 상시 운영 실적이 아니다.",
+            "게시일은 arXiv v1 제출일이며 IROS 2026 행사 날짜와 구분한다."
+          ]
+        }
+      ],
+      "commercialization_stage": "demo",
+      "limitations": [
+        "저자 보고 연구 결과이며 독립 재현 검증이나 공장 상시 운영 실적이 아니다.",
+        "게시일은 arXiv v1 제출일이며 IROS 2026 행사 날짜와 구분한다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "v1 저자 소속 / Abstract / Introduction",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://arxiv.org/html/2511.10762v1"
+        ],
+        "document_origin_url": "https://arxiv.org/abs/2511.10762",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-008",
+      "title": "Metro-WM: Long-Horizon Latent Planning with Realisable Sub-Goals",
+      "url": "https://arxiv.org/html/2609.31868v1",
+      "publisher": "arXiv / Samsung AI Cambridge 저자",
+      "published_at": "2026-09-25",
+      "event_date": null,
+      "source_type": "paper",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "metro-wm",
+        "samsung-ai-cambridge"
+      ],
+      "origin_key": "https://arxiv.org/abs/2609.31868",
+      "summary_ko": "Samsung AI Cambridge 소속 저자들이 발표한 Metro-WM은 오프라인 관측 프레임을 그래프 노드로 사용하고 경험에서 달성 가능한 하위 목표를 검색하는 장기 계획 방식을 제안한다. Metro-WM 저자들은 하위 제어 실행이 계획에서 벗어나면 재계획하는 방식을 설명하고 PushT·Cube·TwoRoom·Reacher 등 벤치마크에서 평가했다.",
+      "excerpt": "Long-Horizon Latent Planning",
+      "claim": {
+        "text": "Samsung AI Cambridge 소속 저자들이 발표한 Metro-WM은 오프라인 관측 프레임을 그래프 노드로 사용하고 경험에서 달성 가능한 하위 목표를 검색하는 장기 계획 방식을 제안한다.",
+        "kind": "research_result"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-008",
+          "text": "Samsung AI Cambridge 소속 저자들이 발표한 Metro-WM은 오프라인 관측 프레임을 그래프 노드로 사용하고 경험에서 달성 가능한 하위 목표를 검색하는 장기 계획 방식을 제안한다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-008",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / Method / Experiments",
+          "limitations": [
+            "arXiv v1 공개일은 2026-09-25이다. 9월30일 AI 포럼 발표와 독립된 논문 원작이며 같은 연구에 대한 보도를 독립 실험 증거로 더하지 않는다.",
+            "벤치마크 결과이며 제조 현장 생산성·90일 운영·유료 매출 실적이 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-se-008-02",
+          "text": "Metro-WM 저자들은 하위 제어 실행이 계획에서 벗어나면 재계획하는 방식을 설명하고 PushT·Cube·TwoRoom·Reacher 등 벤치마크에서 평가했다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-008",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / Method / Experiments",
+          "limitations": [
+            "arXiv v1 공개일은 2026-09-25이다. 9월30일 AI 포럼 발표와 독립된 논문 원작이며 같은 연구에 대한 보도를 독립 실험 증거로 더하지 않는다.",
+            "벤치마크 결과이며 제조 현장 생산성·90일 운영·유료 매출 실적이 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "demo",
+      "limitations": [
+        "arXiv v1 공개일은 2026-09-25이다. 9월30일 AI 포럼 발표와 독립된 논문 원작이며 같은 연구에 대한 보도를 독립 실험 증거로 더하지 않는다.",
+        "벤치마크 결과이며 제조 현장 생산성·90일 운영·유료 매출 실적이 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "v1 저자 소속 / Abstract / Method / Experiments",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://arxiv.org/html/2609.31868v1"
+        ],
+        "document_origin_url": "https://arxiv.org/abs/2609.31868",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-009",
+      "title": "Samsung and Mistral AI Announce Strategic Partnership for Intelligence-Driven Semiconductor Infrastructure",
+      "url": "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2026-09-09",
+      "event_date": "2026-09-09",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "mistral",
+        "factory",
+        "onprem-chip-ai"
+      ],
+      "origin_key": "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure",
+      "summary_ko": "삼성전자는 반도체 사업 전반의 온프레미스 AI 개발·구현을 위해 Mistral AI와 전략적 파트너십을 체결했다고 발표했다. 삼성전자는 Mistral Large 등 모델을 활용한 맞춤형 온프레미스 AI를 개발하고 결함 탐지·장비 최적화 등 제조 과제에 적용할 계획이라고 설명했다.",
+      "excerpt": "Mistral Large",
+      "claim": {
+        "text": "삼성전자는 반도체 사업 전반의 온프레미스 AI 개발·구현을 위해 Mistral AI와 전략적 파트너십을 체결했다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-009",
+          "text": "삼성전자는 반도체 사업 전반의 온프레미스 AI 개발·구현을 위해 Mistral AI와 전략적 파트너십을 체결했다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-009",
+          "verification": "manual_report",
+          "evidence_locator": "전략적 협력 발표 / 제조 적용 목표",
+          "limitations": [
+            "협력과 개발 계획의 회사 발표이며 수율·생산성 향상을 독립 실측한 자료가 아니다.",
+            "Mistral 지분 투자나 회사 총투자액을 RX SW 예산으로 귀속하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-009-02",
+          "text": "삼성전자는 Mistral Large 등 모델을 활용한 맞춤형 온프레미스 AI를 개발하고 결함 탐지·장비 최적화 등 제조 과제에 적용할 계획이라고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-009",
+          "verification": "manual_report",
+          "evidence_locator": "전략적 협력 발표 / 제조 적용 목표",
+          "limitations": [
+            "협력과 개발 계획의 회사 발표이며 수율·생산성 향상을 독립 실측한 자료가 아니다.",
+            "Mistral 지분 투자나 회사 총투자액을 RX SW 예산으로 귀속하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "협력과 개발 계획의 회사 발표이며 수율·생산성 향상을 독립 실측한 자료가 아니다.",
+        "Mistral 지분 투자나 회사 총투자액을 RX SW 예산으로 귀속하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "전략적 협력 발표 / 제조 적용 목표",
+      "rx_relevance": "adjacent_manufacturing",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure"
+        ],
+        "document_origin_url": "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-010",
+      "title": "Samsung Unveils HBM4E, Showcasing Comprehensive AI Solutions, NVIDIA Partnership and Vision at NVIDIA GTC 2026",
+      "url": "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2026-03-17",
+      "event_date": "2026-03-17",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "nvidia",
+        "factory",
+        "omniverse",
+        "gtc-2026"
+      ],
+      "origin_key": "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026",
+      "summary_ko": "삼성전자는 GTC 2026에서 NVIDIA 가속 컴퓨팅으로 AI Factory를 확장하고 Omniverse 라이브러리를 활용한 디지털 트윈 제조를 추진하는 협력 계획을 소개한다고 밝혔다. 삼성전자는 송용호 AI센터장 부사장이 3월17일 GTC 세션에서 설계·엔지니어링·생산을 연결하는 Agentic AI와 디지털 트윈 제조 활용 사례를 설명할 예정이라고 밝혔다.",
+      "excerpt": "Memory Architecture To Scale Intelligent Manufacturing",
+      "claim": {
+        "text": "삼성전자는 GTC 2026에서 NVIDIA 가속 컴퓨팅으로 AI Factory를 확장하고 Omniverse 라이브러리를 활용한 디지털 트윈 제조를 추진하는 협력 계획을 소개한다고 밝혔다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-010",
+          "text": "삼성전자는 GTC 2026에서 NVIDIA 가속 컴퓨팅으로 AI Factory를 확장하고 Omniverse 라이브러리를 활용한 디지털 트윈 제조를 추진하는 협력 계획을 소개한다고 밝혔다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-010",
+          "verification": "manual_report",
+          "evidence_locator": "Memory Architecture To Scale Intelligent Manufacturing",
+          "limitations": [
+            "행사 전시·세션 소개와 협력 계획이며 모든 공장의 무인 운영 완료를 입증하지 않는다.",
+            "HBM·SSD·가속기 판매를 RX SW 반복매출에 포함하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-010-02",
+          "text": "삼성전자는 송용호 AI센터장 부사장이 3월17일 GTC 세션에서 설계·엔지니어링·생산을 연결하는 Agentic AI와 디지털 트윈 제조 활용 사례를 설명할 예정이라고 밝혔다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-010",
+          "verification": "manual_report",
+          "evidence_locator": "Memory Architecture To Scale Intelligent Manufacturing",
+          "limitations": [
+            "행사 전시·세션 소개와 협력 계획이며 모든 공장의 무인 운영 완료를 입증하지 않는다.",
+            "HBM·SSD·가속기 판매를 RX SW 반복매출에 포함하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "행사 전시·세션 소개와 협력 계획이며 모든 공장의 무인 운영 완료를 입증하지 않는다.",
+        "HBM·SSD·가속기 판매를 RX SW 반복매출에 포함하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Memory Architecture To Scale Intelligent Manufacturing",
+      "rx_relevance": "adjacent_manufacturing",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026"
+        ],
+        "document_origin_url": "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-011",
+      "title": "Samsung Wins Two Red Dot Award: Design Concept Best of the Best Awards",
+      "url": "https://news.samsung.com/global/samsung-wins-two-red-dot-award-design-concept-best-of-the-best-awards",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2026-07-14",
+      "event_date": "2026-07-14",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "dremo-minimo",
+        "ai-kitchen"
+      ],
+      "origin_key": "https://news.samsung.com/global/samsung-wins-two-red-dot-award-design-concept-best-of-the-best-awards",
+      "summary_ko": "삼성전자는 Dremo 본체와 휴대형 Minimo로 구성된 어린이 로봇 콘셉트가 Red Dot Design Concept 최고상을 받았다고 발표했다. 삼성전자는 식재료 관리·조리·설거지 등을 제안하는 AI·로보틱스 기반 AI Kitchen을 디자인 콘셉트 수상작으로 소개했다.",
+      "excerpt": "Samsung Kids Robot Dremo & Minimo",
+      "claim": {
+        "text": "삼성전자는 Dremo 본체와 휴대형 Minimo로 구성된 어린이 로봇 콘셉트가 Red Dot Design Concept 최고상을 받았다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-011",
+          "text": "삼성전자는 Dremo 본체와 휴대형 Minimo로 구성된 어린이 로봇 콘셉트가 Red Dot Design Concept 최고상을 받았다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-011",
+          "verification": "manual_report",
+          "evidence_locator": "Two Best of the Best Winners / Six AI-Powered Concepts",
+          "limitations": [
+            "선행 디자인 콘셉트이다. 제품 출시, 판매, 공장 적용 또는 검증된 동작 성능을 뜻하지 않는다.",
+            "일반 소비자 AI 기능은 제외하고 실제 로봇 콘셉트 설명만 추출했다."
+          ]
+        },
+        {
+          "id": "claim:x-se-011-02",
+          "text": "삼성전자는 식재료 관리·조리·설거지 등을 제안하는 AI·로보틱스 기반 AI Kitchen을 디자인 콘셉트 수상작으로 소개했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-011",
+          "verification": "manual_report",
+          "evidence_locator": "Two Best of the Best Winners / Six AI-Powered Concepts",
+          "limitations": [
+            "선행 디자인 콘셉트이다. 제품 출시, 판매, 공장 적용 또는 검증된 동작 성능을 뜻하지 않는다.",
+            "일반 소비자 AI 기능은 제외하고 실제 로봇 콘셉트 설명만 추출했다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "선행 디자인 콘셉트이다. 제품 출시, 판매, 공장 적용 또는 검증된 동작 성능을 뜻하지 않는다.",
+        "일반 소비자 AI 기능은 제외하고 실제 로봇 콘셉트 설명만 추출했다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Two Best of the Best Winners / Six AI-Powered Concepts",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://news.samsung.com/global/samsung-wins-two-red-dot-award-design-concept-best-of-the-best-awards"
+        ],
+        "document_origin_url": "https://news.samsung.com/global/samsung-wins-two-red-dot-award-design-concept-best-of-the-best-awards",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-012",
+      "title": "Co-VLA: Coordination-Aware Structured Action Modeling for Dual-Arm Vision-Language-Action Systems",
+      "url": "https://arxiv.org/html/2606.20285v1",
+      "publisher": "arXiv / 삼성 연구조직 공동저자",
+      "published_at": "2026-06-18",
+      "event_date": null,
+      "source_type": "paper",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "co-vla",
+        "srcb",
+        "ds-ai-center"
+      ],
+      "origin_key": "https://arxiv.org/abs/2606.20285",
+      "summary_ko": "Samsung R&D Institute China-Beijing·삼성전자 DS AI Center와 대학 공동저자들의 Co-VLA 논문은 양팔 협응을 위한 Structured Action Expert를 제안했다. Co-VLA 논문은 Latent-Aware Controller가 관절 명령 수준에서 양팔 동기화·비대칭 실행·동작 부드러움·안전 제약을 조정하도록 설계됐다고 설명한다. Co-VLA 저자들은 RoboTwin 2.0 시뮬레이션과 실제 양팔 조작 벤치마크에서 방법을 평가했다고 보고했다.",
+      "excerpt": "Structured Action Expert",
+      "claim": {
+        "text": "Samsung R&D Institute China-Beijing·삼성전자 DS AI Center와 대학 공동저자들의 Co-VLA 논문은 양팔 협응을 위한 Structured Action Expert를 제안했다.",
+        "kind": "research_result"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-012",
+          "text": "Samsung R&D Institute China-Beijing·삼성전자 DS AI Center와 대학 공동저자들의 Co-VLA 논문은 양팔 협응을 위한 Structured Action Expert를 제안했다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-012",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / III Method / IV Experiment",
+          "limitations": [
+            "공동 연구 논문이며 삼성 제조 라인 배포·외부 고객 유료 판매·안전 인증을 입증하지 않는다.",
+            "성능 개선은 해당 실험 조건에서 저자가 보고한 결과다."
+          ]
+        },
+        {
+          "id": "claim:x-se-012-02",
+          "text": "Co-VLA 논문은 Latent-Aware Controller가 관절 명령 수준에서 양팔 동기화·비대칭 실행·동작 부드러움·안전 제약을 조정하도록 설계됐다고 설명한다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-012",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / III Method / IV Experiment",
+          "limitations": [
+            "공동 연구 논문이며 삼성 제조 라인 배포·외부 고객 유료 판매·안전 인증을 입증하지 않는다.",
+            "성능 개선은 해당 실험 조건에서 저자가 보고한 결과다."
+          ]
+        },
+        {
+          "id": "claim:x-se-012-03",
+          "text": "Co-VLA 저자들은 RoboTwin 2.0 시뮬레이션과 실제 양팔 조작 벤치마크에서 방법을 평가했다고 보고했다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-012",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / III Method / IV Experiment",
+          "limitations": [
+            "공동 연구 논문이며 삼성 제조 라인 배포·외부 고객 유료 판매·안전 인증을 입증하지 않는다.",
+            "성능 개선은 해당 실험 조건에서 저자가 보고한 결과다."
+          ]
+        }
+      ],
+      "commercialization_stage": "demo",
+      "limitations": [
+        "공동 연구 논문이며 삼성 제조 라인 배포·외부 고객 유료 판매·안전 인증을 입증하지 않는다.",
+        "성능 개선은 해당 실험 조건에서 저자가 보고한 결과다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "v1 저자 소속 / Abstract / III Method / IV Experiment",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://arxiv.org/html/2606.20285v1"
+        ],
+        "document_origin_url": "https://arxiv.org/abs/2606.20285",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-013",
+      "title": "[Interview] Inside SDIC: How Samsung Is Advancing Wearables Through Computational Design",
+      "url": "https://news.samsung.com/us/interview-inside-sdic-samsung-advancing-wearables-computational-design/",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2026-06-09",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "sdic",
+        "design-robot-tests"
+      ],
+      "origin_key": "https://news.samsung.com/us/interview-inside-sdic-samsung-advancing-wearables-computational-design/",
+      "summary_ko": "삼성전자 SDIC는 3D·4D 인체 스캔 기반 디지털 트윈의 AI·물리 시뮬레이션 결과를 물리 로봇 시험으로 교차 확인한다고 설명했다. SDIC는 이 설계·시험 프로세스를 Galaxy Buds4 시리즈에 적용했다고 회사 인터뷰에서 설명했다.",
+      "excerpt": "real people, digital twins and robots",
+      "claim": {
+        "text": "삼성전자 SDIC는 3D·4D 인체 스캔 기반 디지털 트윈의 AI·물리 시뮬레이션 결과를 물리 로봇 시험으로 교차 확인한다고 설명했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-013",
+          "text": "삼성전자 SDIC는 3D·4D 인체 스캔 기반 디지털 트윈의 AI·물리 시뮬레이션 결과를 물리 로봇 시험으로 교차 확인한다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-013",
+          "verification": "manual_report",
+          "evidence_locator": "Q. How does the computational design process work in the lab?",
+          "limitations": [
+            "개발실의 설계·시험 활용 사례이며 제조 공장의 로봇 상시 운영 지표는 아니다.",
+            "고객의 일반 AI 사용 기능은 추출하지 않았다."
+          ]
+        },
+        {
+          "id": "claim:x-se-013-02",
+          "text": "SDIC는 이 설계·시험 프로세스를 Galaxy Buds4 시리즈에 적용했다고 회사 인터뷰에서 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-013",
+          "verification": "manual_report",
+          "evidence_locator": "Q. How does the computational design process work in the lab?",
+          "limitations": [
+            "개발실의 설계·시험 활용 사례이며 제조 공장의 로봇 상시 운영 지표는 아니다.",
+            "고객의 일반 AI 사용 기능은 추출하지 않았다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "개발실의 설계·시험 활용 사례이며 제조 공장의 로봇 상시 운영 지표는 아니다.",
+        "고객의 일반 AI 사용 기능은 추출하지 않았다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Q. How does the computational design process work in the lab?",
+      "rx_relevance": "adjacent_manufacturing",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://news.samsung.com/us/interview-inside-sdic-samsung-advancing-wearables-computational-design/"
+        ],
+        "document_origin_url": "https://news.samsung.com/us/interview-inside-sdic-samsung-advancing-wearables-computational-design/",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-017",
+      "title": "DeMo-Pose: Depth-Monocular Modality Fusion For Object Pose Estimation",
+      "url": "https://arxiv.org/html/2603.27533v1",
+      "publisher": "arXiv / 삼성 연구조직 저자",
+      "published_at": "2026-03-29",
+      "event_date": null,
+      "source_type": "paper",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "robot",
+        "demo-pose",
+        "sri-bangalore"
+      ],
+      "origin_key": "https://arxiv.org/abs/2603.27533",
+      "summary_ko": "삼성 R&D Bangalore와 삼성전자 수원 소속 저자들의 DeMo-Pose 논문은 RGB·깊이 특징을 결합해 추론 시 CAD 모델 없이 범주 수준 9자유도 물체 자세를 추정하는 방법을 제안했다. DeMo-Pose 저자들은 학습 단계의 Mesh-Point Loss를 제안하고 REAL275 데이터셋에서 자세 추정 및 추론 속도를 평가했다.",
+      "excerpt": "Mesh-Point Loss",
+      "claim": {
+        "text": "삼성 R&D Bangalore와 삼성전자 수원 소속 저자들의 DeMo-Pose 논문은 RGB·깊이 특징을 결합해 추론 시 CAD 모델 없이 범주 수준 9자유도 물체 자세를 추정하는 방법을 제안했다.",
+        "kind": "research_result"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-017",
+          "text": "삼성 R&D Bangalore와 삼성전자 수원 소속 저자들의 DeMo-Pose 논문은 RGB·깊이 특징을 결합해 추론 시 CAD 모델 없이 범주 수준 9자유도 물체 자세를 추정하는 방법을 제안했다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-017",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / 2 Proposed Method / 3 Experiments",
+          "limitations": [
+            "로봇 조작에 응용 가능한 3D 비전 연구이며 실제 제조 로봇 배포나 고객 상용화 결과는 아니다.",
+            "수치 성능은 REAL275 벤치마크와 저자 실험 조건에 한정한다."
+          ]
+        },
+        {
+          "id": "claim:x-se-017-02",
+          "text": "DeMo-Pose 저자들은 학습 단계의 Mesh-Point Loss를 제안하고 REAL275 데이터셋에서 자세 추정 및 추론 속도를 평가했다.",
+          "kind": "research_result",
+          "origin_record_id": "x-se-017",
+          "verification": "manual_report",
+          "evidence_locator": "v1 저자 소속 / Abstract / 2 Proposed Method / 3 Experiments",
+          "limitations": [
+            "로봇 조작에 응용 가능한 3D 비전 연구이며 실제 제조 로봇 배포나 고객 상용화 결과는 아니다.",
+            "수치 성능은 REAL275 벤치마크와 저자 실험 조건에 한정한다."
+          ]
+        }
+      ],
+      "commercialization_stage": "demo",
+      "limitations": [
+        "로봇 조작에 응용 가능한 3D 비전 연구이며 실제 제조 로봇 배포나 고객 상용화 결과는 아니다.",
+        "수치 성능은 REAL275 벤치마크와 저자 실험 조건에 한정한다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "v1 저자 소속 / Abstract / 2 Proposed Method / 3 Experiments",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://arxiv.org/html/2603.27533v1"
+        ],
+        "document_origin_url": "https://arxiv.org/abs/2603.27533",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-018",
+      "title": "Robotics Intelligence — Robot Intelligence Lab",
+      "url": "https://sra.samsung.com/research-area/robotics-intelligence/",
+      "publisher": "Samsung Research America",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "undated",
+      "entity_ids": [
+        "se",
+        "sra",
+        "sra-robotlab",
+        "robot",
+        "fluid-reality",
+        "config-intelligence"
+      ],
+      "origin_key": "https://sra.samsung.com/research-area/robotics-intelligence/",
+      "summary_ko": "Samsung Research America는 Mountain View의 Robot Intelligence Lab이 로봇 조작·항법·복합 추론 기술을 연구한다고 소개한다. SRA Robot Intelligence Lab은 로봇 하드웨어·소프트웨어·HMI·AI 공급자 간 통합 마찰을 줄이는 표준화 노력을 연구 주제로 명시한다. SRA Robot Intelligence Lab은 Stanford·CMU·Columbia·Michigan·Georgia Tech·Fluid Reality·Config Intelligence의 프로젝트에 자금을 지원했다고 공식 연구실 소개에서 밝힌다.",
+      "excerpt": "Robot Intelligence Lab",
+      "claim": {
+        "text": "Samsung Research America는 Mountain View의 Robot Intelligence Lab이 로봇 조작·항법·복합 추론 기술을 연구한다고 소개한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-018",
+          "text": "Samsung Research America는 Mountain View의 Robot Intelligence Lab이 로봇 조작·항법·복합 추론 기술을 연구한다고 소개한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-018",
+          "verification": "manual_report",
+          "evidence_locator": "Research Area / Dexterity / Reasoning / Ecosystem / University and Startup Funding",
+          "limitations": [
+            "게시일과 개별 지원 시점·금액을 밝히지 않은 현재 연구실 소개다. 과거 시점에 소급하지 않는다.",
+            "표준화 연구 방향을 삼성 그룹 공통 RX API 제정 완료로 해석하지 않는다.",
+            "연구 지원은 외부 고객 RX 유료 계약·제품 반복매출이 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-se-018-02",
+          "text": "SRA Robot Intelligence Lab은 로봇 하드웨어·소프트웨어·HMI·AI 공급자 간 통합 마찰을 줄이는 표준화 노력을 연구 주제로 명시한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-018",
+          "verification": "manual_report",
+          "evidence_locator": "Research Area / Dexterity / Reasoning / Ecosystem / University and Startup Funding",
+          "limitations": [
+            "게시일과 개별 지원 시점·금액을 밝히지 않은 현재 연구실 소개다. 과거 시점에 소급하지 않는다.",
+            "표준화 연구 방향을 삼성 그룹 공통 RX API 제정 완료로 해석하지 않는다.",
+            "연구 지원은 외부 고객 RX 유료 계약·제품 반복매출이 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-se-018-03",
+          "text": "SRA Robot Intelligence Lab은 Stanford·CMU·Columbia·Michigan·Georgia Tech·Fluid Reality·Config Intelligence의 프로젝트에 자금을 지원했다고 공식 연구실 소개에서 밝힌다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-018",
+          "verification": "manual_report",
+          "evidence_locator": "Research Area / Dexterity / Reasoning / Ecosystem / University and Startup Funding",
+          "limitations": [
+            "게시일과 개별 지원 시점·금액을 밝히지 않은 현재 연구실 소개다. 과거 시점에 소급하지 않는다.",
+            "표준화 연구 방향을 삼성 그룹 공통 RX API 제정 완료로 해석하지 않는다.",
+            "연구 지원은 외부 고객 RX 유료 계약·제품 반복매출이 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일과 개별 지원 시점·금액을 밝히지 않은 현재 연구실 소개다. 과거 시점에 소급하지 않는다.",
+        "표준화 연구 방향을 삼성 그룹 공통 RX API 제정 완료로 해석하지 않는다.",
+        "연구 지원은 외부 고객 RX 유료 계약·제품 반복매출이 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "Research Area / Dexterity / Reasoning / Ecosystem / University and Startup Funding",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://sra.samsung.com/research-area/robotics-intelligence/"
+        ],
+        "document_origin_url": "https://sra.samsung.com/research-area/robotics-intelligence/",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-019",
+      "title": "START Recipients — 2026 Robotics / Physical AI Projects",
+      "url": "https://sra.samsung.com/collaboration/start/recipients/",
+      "publisher": "Samsung Research America",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "undated",
+      "entity_ids": [
+        "se",
+        "sra",
+        "start",
+        "university-michigan",
+        "university-washington",
+        "robomolmo",
+        "latent-world-memory"
+      ],
+      "origin_key": "https://sra.samsung.com/collaboration/start/recipients/",
+      "summary_ko": "SRA START 공식 선정 목록은 Yulun Tian(University of Michigan)의 Real-Time and Information-Efficient Latent World Memory for Physical AI를 2026 Robotics/Physical AI 과제로 명시한다. SRA START 공식 선정 목록은 Ranjay Krishna(University of Washington)의 RoboMolmo: A Foundation Model for Whole-Body Long-Horizon Mobile Manipulation을 2026 과제로 명시한다.",
+      "excerpt": "Real-Time and Information-Efficient Latent World Memory for Physical AI",
+      "claim": {
+        "text": "SRA START 공식 선정 목록은 Yulun Tian(University of Michigan)의 Real-Time and Information-Efficient Latent World Memory for Physical AI를 2026 Robotics/Physical AI 과제로 명시한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-019",
+          "text": "SRA START 공식 선정 목록은 Yulun Tian(University of Michigan)의 Real-Time and Information-Efficient Latent World Memory for Physical AI를 2026 Robotics/Physical AI 과제로 명시한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-019",
+          "verification": "manual_report",
+          "evidence_locator": "Recipients / 2026",
+          "limitations": [
+            "선정 목록 자체의 게시일이 없어 현재 관측 자료로 분류한다. 2026이라는 연도나 예정된 6월 발표 일정을 임의 게시일로 변환하지 않는다.",
+            "선정은 과제 결과·지급 완료·양산 배포를 뜻하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-019-02",
+          "text": "SRA START 공식 선정 목록은 Ranjay Krishna(University of Washington)의 RoboMolmo: A Foundation Model for Whole-Body Long-Horizon Mobile Manipulation을 2026 과제로 명시한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-019",
+          "verification": "manual_report",
+          "evidence_locator": "Recipients / 2026",
+          "limitations": [
+            "선정 목록 자체의 게시일이 없어 현재 관측 자료로 분류한다. 2026이라는 연도나 예정된 6월 발표 일정을 임의 게시일로 변환하지 않는다.",
+            "선정은 과제 결과·지급 완료·양산 배포를 뜻하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "선정 목록 자체의 게시일이 없어 현재 관측 자료로 분류한다. 2026이라는 연도나 예정된 6월 발표 일정을 임의 게시일로 변환하지 않는다.",
+        "선정은 과제 결과·지급 완료·양산 배포를 뜻하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "Recipients / 2026",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://sra.samsung.com/collaboration/start/recipients/"
+        ],
+        "document_origin_url": "https://sra.samsung.com/collaboration/start/recipients/",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-020",
+      "title": "2026 START CFP 2.1 — Multimodal Reasoning Agents for Complex, Long-Horizon Tasks",
+      "url": "https://sra.samsung.com/wp-content/uploads/2026/03/2.1_START-CFP-Brief_Multimodal-Reasoning-Agents-for-Complex-Long-Horizon-Tasks.pdf",
+      "publisher": "Samsung Research America",
+      "published_at": "2026-03-03",
+      "event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "sra",
+        "start",
+        "long-horizon-agent"
+      ],
+      "origin_key": "https://sra.samsung.com/wp-content/uploads/2026/03/2.1_START-CFP-Brief_Multimodal-Reasoning-Agents-for-Complex-Long-Horizon-Tasks.pdf",
+      "summary_ko": "SRA는 2026 START 공모에서 디지털·물리 영역을 넘나들며 인지·추론·계획·실행하는 다중모달 장기 과업 에이전트 연구를 모집했다. 이 공모는 계층적 과업 분해, 지속 상태 추적, 실행 중 오류 복구를 장기 계획의 연구 주제로 명시한다.",
+      "excerpt": "Long-Horizon reasoning and Adaptive Planning",
+      "claim": {
+        "text": "SRA는 2026 START 공모에서 디지털·물리 영역을 넘나들며 인지·추론·계획·실행하는 다중모달 장기 과업 에이전트 연구를 모집했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-020",
+          "text": "SRA는 2026 START 공모에서 디지털·물리 영역을 넘나들며 인지·추론·계획·실행하는 다중모달 장기 과업 에이전트 연구를 모집했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-020",
+          "verification": "manual_report",
+          "evidence_locator": "CFP 2.1 pp.1–2 / Objectives & Scope / Specific Topics",
+          "limitations": [
+            "연구 제안 모집이며 구현 완료나 제조 로봇 운영 시스템을 입증하지 않는다.",
+            "일반 Agentic AI 과제지만 원문이 물리 영역의 실행·복구를 명시한 부분만 채택했다."
+          ]
+        },
+        {
+          "id": "claim:x-se-020-02",
+          "text": "이 공모는 계층적 과업 분해, 지속 상태 추적, 실행 중 오류 복구를 장기 계획의 연구 주제로 명시한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-020",
+          "verification": "manual_report",
+          "evidence_locator": "CFP 2.1 pp.1–2 / Objectives & Scope / Specific Topics",
+          "limitations": [
+            "연구 제안 모집이며 구현 완료나 제조 로봇 운영 시스템을 입증하지 않는다.",
+            "일반 Agentic AI 과제지만 원문이 물리 영역의 실행·복구를 명시한 부분만 채택했다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "연구 제안 모집이며 구현 완료나 제조 로봇 운영 시스템을 입증하지 않는다.",
+        "일반 Agentic AI 과제지만 원문이 물리 영역의 실행·복구를 명시한 부분만 채택했다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "CFP 2.1 pp.1–2 / Objectives & Scope / Specific Topics",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://sra.samsung.com/wp-content/uploads/2026/03/2.1_START-CFP-Brief_Multimodal-Reasoning-Agents-for-Complex-Long-Horizon-Tasks.pdf"
+        ],
+        "document_origin_url": "https://sra.samsung.com/wp-content/uploads/2026/03/2.1_START-CFP-Brief_Multimodal-Reasoning-Agents-for-Complex-Long-Horizon-Tasks.pdf",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-021",
+      "title": "Fab Automation — Samsung Foundry Manufacturing",
+      "url": "https://semiconductor.samsung.com/foundry/manufacturing/fab-automation/",
+      "publisher": "Samsung Semiconductor",
+      "published_at": null,
+      "event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "undated",
+      "entity_ids": [
+        "se",
+        "factory",
+        "foundry-automation",
+        "oht",
+        "foup"
+      ],
+      "origin_key": "https://semiconductor.samsung.com/foundry/manufacturing/fab-automation/",
+      "summary_ko": "Samsung Foundry는 자동화 시스템의 스케줄링이 제조 주문별 가공 장비를 선택한다고 공식 Fab Automation 소개에서 설명한다. Samsung Foundry는 OHT가 FOUP에 담긴 웨이퍼를 제조 장비 사이에 운송하며 자동 복구·우회 시스템과 엔지니어 모니터링으로 운영을 지원한다고 설명한다.",
+      "excerpt": "Auto recovery and rerouting systems",
+      "claim": {
+        "text": "Samsung Foundry는 자동화 시스템의 스케줄링이 제조 주문별 가공 장비를 선택한다고 공식 Fab Automation 소개에서 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-021",
+          "text": "Samsung Foundry는 자동화 시스템의 스케줄링이 제조 주문별 가공 장비를 선택한다고 공식 Fab Automation 소개에서 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-021",
+          "verification": "manual_report",
+          "evidence_locator": "Fab Automation 본문 및 공식 영상 설명",
+          "limitations": [
+            "페이지 게시일·영상 촬영일·특정 팹별 적용 시점이 확인되지 않아 현재 제품·공정 설명으로 등록한다.",
+            "회사 소개 문구이며 운송 신뢰성·사람 개입률·복구시간의 독립 실측이 아니다.",
+            "OHT 제조 물류를 외부 유료 RX SW 계약으로 분류하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-021-02",
+          "text": "Samsung Foundry는 OHT가 FOUP에 담긴 웨이퍼를 제조 장비 사이에 운송하며 자동 복구·우회 시스템과 엔지니어 모니터링으로 운영을 지원한다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-021",
+          "verification": "manual_report",
+          "evidence_locator": "Fab Automation 본문 및 공식 영상 설명",
+          "limitations": [
+            "페이지 게시일·영상 촬영일·특정 팹별 적용 시점이 확인되지 않아 현재 제품·공정 설명으로 등록한다.",
+            "회사 소개 문구이며 운송 신뢰성·사람 개입률·복구시간의 독립 실측이 아니다.",
+            "OHT 제조 물류를 외부 유료 RX SW 계약으로 분류하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "페이지 게시일·영상 촬영일·특정 팹별 적용 시점이 확인되지 않아 현재 제품·공정 설명으로 등록한다.",
+        "회사 소개 문구이며 운송 신뢰성·사람 개입률·복구시간의 독립 실측이 아니다.",
+        "OHT 제조 물류를 외부 유료 RX SW 계약으로 분류하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "Fab Automation 본문 및 공식 영상 설명",
+      "rx_relevance": "adjacent_manufacturing",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://semiconductor.samsung.com/foundry/manufacturing/fab-automation/"
+        ],
+        "document_origin_url": "https://semiconductor.samsung.com/foundry/manufacturing/fab-automation/",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-022",
+      "title": "Samsung Electronics Announces Strategy To Transition Global Manufacturing Into AI-Driven Factories by 2030",
+      "url": "https://news.samsung.com/global/samsung-electronics-announces-strategy-to-transition-global-manufacturing-into-ai-driven-factories-by-2030",
+      "publisher": "삼성전자 뉴스룸",
+      "published_at": "2026-03-01",
+      "event_date": "2026-03-01",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "in_window",
+      "entity_ids": [
+        "se",
+        "factory",
+        "robot",
+        "operating-robot",
+        "logistics-robot",
+        "assembly-robot",
+        "environment-safety-robot"
+      ],
+      "origin_key": "https://news.samsung.com/kr/삼성전자-2030년까지-ai-자율공장-전환-추진",
+      "summary_ko": "삼성전자는 2030년 AI 자율공장 전환을 위해 제조 전 공정의 디지털 트윈 시뮬레이션과 품질·생산·물류 전용 AI 에이전트를 도입할 계획이라고 영문 발표에서 설명했다. 삼성전자는 생산라인에 운영·물류·조립 로봇과 휴머노이드를 점진적으로 도입한다고 설명했다. 삼성전자는 사람이 접근하기 어렵거나 위험한 설비 환경에 디지털 트윈과 결합한 환경안전 로봇을 추가 배치할 계획이라고 설명했다.",
+      "excerpt": "Operating Robots",
+      "claim": {
+        "text": "삼성전자는 2030년 AI 자율공장 전환을 위해 제조 전 공정의 디지털 트윈 시뮬레이션과 품질·생산·물류 전용 AI 에이전트를 도입할 계획이라고 영문 발표에서 설명했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-022",
+          "text": "삼성전자는 2030년 AI 자율공장 전환을 위해 제조 전 공정의 디지털 트윈 시뮬레이션과 품질·생산·물류 전용 AI 에이전트를 도입할 계획이라고 영문 발표에서 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-022",
+          "verification": "manual_report",
+          "evidence_locator": "전략 발표 본문 / 로봇 유형 / Global Industry Engagement",
+          "limitations": [
+            "기존 국문 se-004와 같은 발표의 영문 배포본으로 독립 근거로 중복 계산하지 않는다.",
+            "유형별 로봇의 고객·현장·대수·장기 운영 성능이나 투자 규모는 제시하지 않는다.",
+            "2030년 목표와 점진적 도입 설명을 전 공장의 현재 자율 운영 완료로 바꾸지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-022-02",
+          "text": "삼성전자는 생산라인에 운영·물류·조립 로봇과 휴머노이드를 점진적으로 도입한다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-022",
+          "verification": "manual_report",
+          "evidence_locator": "전략 발표 본문 / 로봇 유형 / Global Industry Engagement",
+          "limitations": [
+            "기존 국문 se-004와 같은 발표의 영문 배포본으로 독립 근거로 중복 계산하지 않는다.",
+            "유형별 로봇의 고객·현장·대수·장기 운영 성능이나 투자 규모는 제시하지 않는다.",
+            "2030년 목표와 점진적 도입 설명을 전 공장의 현재 자율 운영 완료로 바꾸지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-022-03",
+          "text": "삼성전자는 사람이 접근하기 어렵거나 위험한 설비 환경에 디지털 트윈과 결합한 환경안전 로봇을 추가 배치할 계획이라고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-022",
+          "verification": "manual_report",
+          "evidence_locator": "전략 발표 본문 / 로봇 유형 / Global Industry Engagement",
+          "limitations": [
+            "기존 국문 se-004와 같은 발표의 영문 배포본으로 독립 근거로 중복 계산하지 않는다.",
+            "유형별 로봇의 고객·현장·대수·장기 운영 성능이나 투자 규모는 제시하지 않는다.",
+            "2030년 목표와 점진적 도입 설명을 전 공장의 현재 자율 운영 완료로 바꾸지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "기존 국문 se-004와 같은 발표의 영문 배포본으로 독립 근거로 중복 계산하지 않는다.",
+        "유형별 로봇의 고객·현장·대수·장기 운영 성능이나 투자 규모는 제시하지 않는다.",
+        "2030년 목표와 점진적 도입 설명을 전 공장의 현재 자율 운영 완료로 바꾸지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "전략 발표 본문 / 로봇 유형 / Global Industry Engagement",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "republication",
+        "related_record_ids": [
+          "se-004",
+          "se-005"
+        ],
+        "source_urls": [
+          "https://news.samsung.com/global/samsung-electronics-announces-strategy-to-transition-global-manufacturing-into-ai-driven-factories-by-2030"
+        ],
+        "document_origin_url": "https://news.samsung.com/kr/삼성전자-2030년까지-ai-자율공장-전환-추진",
+        "rationale": "기존 국문 AI 자율공장 전환 발표의 공식 영문판이다. 같은 발표를 동일 출처군으로 묶고 문서·추출 주장은 보존한다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      }
+    },
+    {
+      "id": "x-se-023",
+      "title": "Samsung Electronics 4Q 2025 Earnings Conference Call — Official Script",
+      "url": "https://irsvc.teletogether.com/sec/pdf/2025Q4_script_eng.pdf",
+      "publisher": "Samsung Electronics IR",
+      "published_at": null,
+      "event_date": "2026-01-29",
+      "source_type": "filing",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 공개 원문 본문을 온라인 도구로 열람했다. 원문 보관본·본문 해시는 확보하지 않아 재현 검증은 미완료다.",
+      "scope": "undated",
+      "entity_ids": [
+        "se",
+        "robot",
+        "humanoid-business",
+        "digital-twin"
+      ],
+      "origin_key": "https://irsvc.teletogether.com/sec/pdf/2025Q4_script_eng.pdf",
+      "summary_ko": "삼성전자 CFO 박순철은 2025년 4분기 실적 콜의 2026년 전망에서 휴머노이드 로봇 사업의 가시적 진전을 목표로 한다고 발언했다. 삼성전자 CFO는 전사 프로세스와 비용 효율을 개선하기 위해 AI 혁신과 디지털 트윈 기술 도입을 추진하겠다고 설명했다. 삼성전자 CFO는 로보틱스를 포함한 미래 성장 분야 투자를 지속하겠다고 설명했다.",
+      "excerpt": "tangible progress in our humanoid robotics business",
+      "claim": {
+        "text": "삼성전자 CFO 박순철은 2025년 4분기 실적 콜의 2026년 전망에서 휴머노이드 로봇 사업의 가시적 진전을 목표로 한다고 발언했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-se-023",
+          "text": "삼성전자 CFO 박순철은 2025년 4분기 실적 콜의 2026년 전망에서 휴머노이드 로봇 사업의 가시적 진전을 목표로 한다고 발언했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-023",
+          "verification": "manual_report",
+          "evidence_locator": "Official script pp.4–5 (PDF indices 3–4), CFO business outlook",
+          "limitations": [
+            "콜 행사일은 공식 IR 사전 공지의 2026-01-29이며 PDF 파일의 실제 게시일은 확인되지 않아 published_at=null로 보존한다.",
+            "휴머노이드 목표와 디지털 트윈 도입 계획은 달성 실적·상시 가동의 증거가 아니다.",
+            "전사 R&D·설비투자액을 RX 소프트웨어 예산·매출에 귀속하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-023-02",
+          "text": "삼성전자 CFO는 전사 프로세스와 비용 효율을 개선하기 위해 AI 혁신과 디지털 트윈 기술 도입을 추진하겠다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-023",
+          "verification": "manual_report",
+          "evidence_locator": "Official script pp.4–5 (PDF indices 3–4), CFO business outlook",
+          "limitations": [
+            "콜 행사일은 공식 IR 사전 공지의 2026-01-29이며 PDF 파일의 실제 게시일은 확인되지 않아 published_at=null로 보존한다.",
+            "휴머노이드 목표와 디지털 트윈 도입 계획은 달성 실적·상시 가동의 증거가 아니다.",
+            "전사 R&D·설비투자액을 RX 소프트웨어 예산·매출에 귀속하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-se-023-03",
+          "text": "삼성전자 CFO는 로보틱스를 포함한 미래 성장 분야 투자를 지속하겠다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-se-023",
+          "verification": "manual_report",
+          "evidence_locator": "Official script pp.4–5 (PDF indices 3–4), CFO business outlook",
+          "limitations": [
+            "콜 행사일은 공식 IR 사전 공지의 2026-01-29이며 PDF 파일의 실제 게시일은 확인되지 않아 published_at=null로 보존한다.",
+            "휴머노이드 목표와 디지털 트윈 도입 계획은 달성 실적·상시 가동의 증거가 아니다.",
+            "전사 R&D·설비투자액을 RX 소프트웨어 예산·매출에 귀속하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "콜 행사일은 공식 IR 사전 공지의 2026-01-29이며 PDF 파일의 실제 게시일은 확인되지 않아 published_at=null로 보존한다.",
+        "휴머노이드 목표와 디지털 트윈 도입 계획은 달성 실적·상시 가동의 증거가 아니다.",
+        "전사 R&D·설비투자액을 RX 소프트웨어 예산·매출에 귀속하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "Official script pp.4–5 (PDF indices 3–4), CFO business outlook",
+      "rx_relevance": "direct_rx",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "distinct_origin",
+        "basis": "distinct_original_work",
+        "related_record_ids": [],
+        "source_urls": [
+          "https://irsvc.teletogether.com/sec/pdf/2025Q4_script_eng.pdf"
+        ],
+        "document_origin_url": "https://irsvc.teletogether.com/sec/pdf/2025Q4_script_eng.pdf",
+        "rationale": "해당 공식 문서 또는 원작 논문을 개별 발화 원천으로 등록한다. 기업 자료의 독립 검증을 뜻하지 않는다.",
+        "review_method": "source_text_review",
+        "exceptions": []
+      },
+      "event_date_evidence_url": "https://www.samsung.com/global/ir/reports-disclosures/public-disclosure-view.84517/"
+    }
+  ],
+  "queries": [
+    {
+      "query": "site:research.samsung.com \"2026\" \"robot\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"2026\" \"로봇\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/global \"2026\" \"manufacturing\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com \"Metro\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com/blog robot 2026",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com Metro-WM 2026",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"2026\" \"RX\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"2025\" \"스마트공장\" after:2025-10-29",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com/research-papers \"2026\" \"robot\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com/research-papers \"2025-11\" OR \"2025-12\" robot",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"Metro-WM\" Samsung arxiv",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"EHC-MM\" \"2026\" OR \"2025\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com \"RX사업추진실\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com \"2026\" \"robotics\" -ballie -vacuum -cleaner",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com \"2026\" \"robot\" -hashsearch -robotics -RobotGPT -DAM -RAMP",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com \"digital twin\" \"2026\" -galaxy -mwc",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"Samsung\" \"2026\" \"robot\" site:research.samsung.com/research-papers",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"6G Vertical\" \"Samsung\" date",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"Samsung AI\" \"2026\" robotics arxiv -2603.00926 -2609.22895 -2511.10762 -2609.31868",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"디지털 트윈\" \"2026\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"휴머노이드\" \"2026\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com/research-papers \"2026\" \"manipulation\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"Samsung\" \"robotics\" \"2025\" after:2025-10-29 before:2026-01-01 site:arxiv.org",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"DeMo-Pose\" arxiv",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com \"2026\" \"robotic\" -hashsearch -DAM -HVLA -RAMP -RobotGPT -saif",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"로봇\" \"2025/11\" OR \"2025/12\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "Samsung START 2026 robotics call for proposals PDF",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "Samsung Tech Conference 2026 robotics official",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com/publications robotics 2026 IROS ICRA",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:stckorea.com robot AI keynote 2025",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:youtube.com \"Samsung Tech Conference 2025\" robot",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:saif2026.com \"Physical\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com/research-papers \"2026\" \"navigation\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com/research-papers \"2026\" \"world\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com/research-papers \"2025\" \"robotics\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "\"Samsung\" \"2026\" \"manipulation\" site:arxiv.org -2603.00926 -2606.20285 -2609.22895",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com \"2025 Results\" \"robotics\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com \"2026\" \"earnings\" \"humanoid\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:images.samsung.com \"2025\" \"4Q\" \"robot\" \"2026\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "Samsung 2025 fourth quarter earnings call January 2026 humanoid tangible results official",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:irsvc.teletogether.com/sec/pdf/ \"2026\" \"robotics\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:images.samsung.com/is/content/samsung/assets/global/ir/docs/2026 \"robotics\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com \"2026\" \"robotics\" \"Results\" -guidance",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"로봇\" after:2025-10-29 before:2026-11-01 -청소기 -로봇청소기 -볼리 -Jet -청소 -CSR -ssafy -소프트웨어",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com \"IROS 2026\" -hashsearch -Attentive -paper/search",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com \"ICRA 2026\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com \"2025.11\" \"robot\" OR \"2025.12\" \"robot\"",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"2026\" \"로봇\" \"제조\" -청소 -ssafy -16기 -17기 -인재 -sw -아이들",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"2026\" \"물류\" \"AI\" -스마트싱스 -b.iot -공조 -호텔",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:news.samsung.com/kr \"2026\" \"스마트공장\" -ssafy -CSR",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    },
+    {
+      "query": "site:research.samsung.com \"2026\" \"Factory\" -hashsearch -6G -device -semiconductor -SAIF",
+      "category": "electronics-expansion",
+      "searched_at": "2026-10-31"
+    }
+  ],
+  "coverage": [
+    {
+      "collection_url": "https://research.samsung.com/publications",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "collection_open",
+      "query_or_page": "publications landing, filters 2025/2026, robotics / IROS / ICRA",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "연구 출판 목록의 필터 UI는 열렸으나 동적 결과 목록이 본문 추출에 나오지 않았다. 전체 논문을 열람했다고 주장하지 않으며 hashsearch와 원문 링크 추적으로 보완했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/blog",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "collection_open",
+      "query_or_page": "blog landing",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "동적 블로그 목록이 본문에 노출되지 않아 사이트 검색과 hashsearch에서 논문·로봇 제목을 추가 탐색했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/robotics",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "collection_open",
+      "query_or_page": "robotics research area",
+      "accessed_at": "2026-10-31",
+      "status": "error",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "직접 열람은 시스템 오류 페이지였다. 검색 캐시에 DAM-VLA 등 소개가 보이지만 이 페이지를 본문 검증 자료로 등록하지 않았다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/kr/tag/로봇",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "tag_scan",
+      "query_or_page": "first page",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "표시되는 최신 항목이 2019년이었다. 최근 발표가 이 태그에 전부 등록된다고 가정하지 않는다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/global/tag/robotics",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "tag_scan",
+      "query_or_page": "first page",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "태그 목록의 최신 항목은 2022년 ROS2 소개였다. 기간 내 신규 문서를 찾지 못했으며 최근 robotics 자료를 별도 검색했다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/kr/tag/스마트공장",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "tag_scan",
+      "query_or_page": "first page",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자"
+      ],
+      "notes": "2025-11-16 공식 투자 발표를 발견해 열람. 다음 항목들은 2025-10-21 이전이다. 태그 자체는 기간 내 모든 스마트공장 문서의 완전한 목록이 아니다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/kr/스마트공장",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "themed_collection",
+      "query_or_page": "first page",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자"
+      ],
+      "notes": "테마 페이지를 태그 목록과 대조했다. 기존 SmartBiz 2026 기사가 이 목록에 모두 나타나지는 않아 누락 가능성을 기록한다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/global/tag/physical-ai",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "tag_scan",
+      "query_or_page": "first page",
+      "accessed_at": "2026-10-31",
+      "status": "error",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "온라인 열람 도구에서 접근 오류가 발생했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/hashsearch?q=Robot",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "internal_search",
+      "query_or_page": "Robot",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://research.samsung.com/research-papers/Attentive-Feature-Aggregation-or-How-Policies-Learn-to-Stop-Worrying-about-Robustness-and-Attend-to-Task-Relevant-Visual-Cues"
+      ],
+      "reviewed_urls": [
+        "https://research.samsung.com/research-papers/Attentive-Feature-Aggregation-or-How-Policies-Learn-to-Stop-Worrying-about-Robustness-and-Attend-to-Task-Relevant-Visual-Cues",
+        "https://arxiv.org/html/2511.10762v1"
+      ],
+      "notes": "Publications 56건으로 표시되나 텍스트 미리보기는 3건이다. AFA의 IROS 2026 목록에서 arXiv 원작을 추적했다. 56건 전부 열람한 것으로 계산하지 않는다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/hashsearch?q=Manipulation",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "internal_search",
+      "query_or_page": "Manipulation",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://research.samsung.com/blog/EHC-MM-Embodied-Holistic-Control-for-Mobile-Manipulation"
+      ],
+      "reviewed_urls": [
+        "https://research.samsung.com/blog/EHC-MM-Embodied-Holistic-Control-for-Mobile-Manipulation"
+      ],
+      "notes": "논문 15건, 블로그 4건 표시의 미리보기를 점검했다. EHC-MM 본문은 열었으나 최근 1년의 확인된 출판일을 찾지 못해 신규 기간 자료로 채택하지 않았다. RAMP·RobotGPT 등 기간 이전 자료는 제외했다. 추가 검색 인덱스는 EHC-MM 블로그를 2025-03-20로 표시하여 조사 하한 이전 자료임을 확인했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/hashsearch?q=Robotics",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "internal_search",
+      "query_or_page": "Robotics",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "28개 논문 중 미리보기 3건은 2024/2023년 연구였다. 동적 View More 결과는 완전 열람하지 못했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/hashsearch?q=Physical",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "internal_search",
+      "query_or_page": "Physical",
+      "accessed_at": "2026-10-31",
+      "status": "error",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "온라인 열람 도구가 접근 오류를 반환했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/hashsearch?q=VLA",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "internal_search",
+      "query_or_page": "VLA",
+      "accessed_at": "2026-10-31",
+      "status": "error",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "온라인 열람 도구가 접근 오류를 반환했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/artificial-intelligence",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "research_area",
+      "query_or_page": "Embodied & Physical AI section",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://research.samsung.com/artificial-intelligence"
+      ],
+      "reviewed_urls": [
+        "https://research.samsung.com/artificial-intelligence"
+      ],
+      "notes": "게시일 미표시 연구영역을 현재 관측 자료로 등록했다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/global/category/corporate/technology",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "paginated_category",
+      "query_or_page": "pages 1,2,3,4",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://news.samsung.com/global/samsung-hosts-silicon-valley-future-wireless-summit-2026"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/global/samsung-hosts-silicon-valley-future-wireless-summit-2026"
+      ],
+      "notes": "4페이지의 2025-10-29 항목까지 내려가 조사 하한을 넘겼다. 무선통신 행사·일반 소비자 AI·카메라·보안 기사 중 로봇/제조 연관성이 확인되지 않은 항목은 제외했다. 페이지 목록 자체의 완전성은 보장하지 않는다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/global/category/products/semiconductors",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "paginated_category",
+      "query_or_page": "pages 1,2,3",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure",
+        "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026",
+        "https://news.samsung.com/global/samsung-electronics-and-asml-expand-strategic-collaboration-for-next-generation-semiconductor-manufacturing"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure",
+        "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026",
+        "https://news.samsung.com/global/samsung-electronics-and-asml-expand-strategic-collaboration-for-next-generation-semiconductor-manufacturing"
+      ],
+      "notes": "2페이지에서 2025-10-31 이후 바로 2024년 항목이 나오며 3페이지는 기간 이전임을 확인했다. Mistral 제조 AI·GTC 디지털 트윈을 채택했고 ASML 리소그래피/메모리 제품만의 기사는 RX 범위에서 제외했다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/global/tag/samsung-ai-factory",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "tag_scan",
+      "query_or_page": "single page",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026",
+        "https://news.samsung.com/global/samsung-teams-with-nvidia-to-lead-the-transformation-of-global-intelligent-manufacturing-through-new-ai-megafactory"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026"
+      ],
+      "notes": "목록 2건: GTC 2026 신규, 2025-10-31 AI megafactory는 기존 se-001과 동일 URL로 추가하지 않았다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/blog/DeMo-Pose-Depth-Monocular-Modality-Fusion-for-Object-Pose-Estimation",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "research_blog_to_paper",
+      "query_or_page": "ICASSP 2026 series; DeMo-Pose",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://arxiv.org/html/2603.27533v1"
+      ],
+      "reviewed_urls": [
+        "https://arxiv.org/html/2603.27533v1",
+        "https://research.samsung.com/blog/DeMo-Pose-Depth-Monocular-Modality-Fusion-for-Object-Pose-Estimation"
+      ],
+      "notes": "공식 블로그의 날짜가 본문에 없어 원작 arXiv v1 공개일 2026-03-29로 별도 논문을 등록했다. 동시 블로그 목록의 음성·이미지 편집 등 RX와 무관한 주제는 제외했다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/kr/삼성전자-b-iot-적용한-팩토리얼-성수-국내-최초-글로벌",
+      "publisher": "삼성전자 뉴스룸",
+      "method": "candidate_scope_review",
+      "query_or_page": "삼성전자 b.IoT 적용한 팩토리얼 성수, 국내 최초 글로벌 스마트 빌딩 인증 획득",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_adjacent_only",
+      "discovered_urls": [
+        "https://news.samsung.com/kr/삼성전자-b-iot-적용한-팩토리얼-성수-국내-최초-글로벌"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/kr/삼성전자-b-iot-적용한-팩토리얼-성수-국내-최초-글로벌"
+      ],
+      "notes": "일반 빌딩 HVAC·디지털 트윈 사례로 삼성 RX 제조·로봇과 명시적인 접점을 확인하지 못해 데이터베이스의 연구 주장·관계에서 제외했다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/kr/삼성전자-필리핀-복합단지-개발사업에-통합-운영-솔",
+      "publisher": "삼성전자 뉴스룸",
+      "method": "candidate_scope_review",
+      "query_or_page": "삼성전자, 필리핀 복합단지 개발사업에 통합 운영 솔루션 공급 협력",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_adjacent_only",
+      "discovered_urls": [
+        "https://news.samsung.com/kr/삼성전자-필리핀-복합단지-개발사업에-통합-운영-솔"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/kr/삼성전자-필리핀-복합단지-개발사업에-통합-운영-솔"
+      ],
+      "notes": "일반 빌딩 HVAC·디지털 트윈 사례로 삼성 RX 제조·로봇과 명시적인 접점을 확인하지 못해 데이터베이스의 연구 주장·관계에서 제외했다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/kr/삼성전자-인간-중심-디자인-경쟁력-강화idea·레드닷",
+      "publisher": "삼성전자 뉴스룸",
+      "method": "candidate_scope_review",
+      "query_or_page": "삼성전자, 인간 중심 디자인 경쟁력 강화…IDEA·레드닷 어워드에서 잇따라 수상",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_adjacent_only",
+      "discovered_urls": [
+        "https://news.samsung.com/kr/삼성전자-인간-중심-디자인-경쟁력-강화idea·레드닷"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/kr/삼성전자-인간-중심-디자인-경쟁력-강화idea·레드닷"
+      ],
+      "notes": "일반 빌딩 HVAC·디지털 트윈 사례로 삼성 RX 제조·로봇과 명시적인 접점을 확인하지 못해 데이터베이스의 연구 주장·관계에서 제외했다."
+    },
+    {
+      "collection_url": "https://sra.samsung.com/collaboration/start/apply/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "official_cfp_collection",
+      "query_or_page": "2026 START themes 1.1, 1.2, 2.1, 2.2 and guidelines",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+        "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf",
+        "https://sra.samsung.com/wp-content/uploads/2026/03/2.1_START-CFP-Brief_Multimodal-Reasoning-Agents-for-Complex-Long-Horizon-Tasks.pdf",
+        "https://sra.samsung.com/wp-content/uploads/2026/03/2.2_START-CFP-Brief_Next-Generation-Self-Evolving-Artificial-Agents.pdf"
+      ],
+      "reviewed_urls": [
+        "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+        "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf",
+        "https://sra.samsung.com/wp-content/uploads/2026/03/2.1_START-CFP-Brief_Multimodal-Reasoning-Agents-for-Complex-Long-Horizon-Tasks.pdf",
+        "https://sra.samsung.com/wp-content/uploads/2026/03/2.2_START-CFP-Brief_Next-Generation-Self-Evolving-Artificial-Agents.pdf",
+        "https://sra.samsung.com/wp-content/uploads/2026/03/2026-START-CFP-Abstract-Proposal_guidelines.pdf"
+      ],
+      "notes": "공식 페이지의 모든 주제 제목을 스캔했다. Robotics/Physical AI 1.1·1.2는 기존 tech-008/009와 동일 URL이라 중복 추가하지 않았다. 물리 영역 장기 실행을 명시한 2.1은 신규 채택. 2.2 및 보안·영상·건강 센서 등 명시 RX 연관이 없는 공모는 제외했다. 1.1·1.2·2.1의 PDF 본문 날짜는 3/3/26이다."
+    },
+    {
+      "collection_url": "https://sra.samsung.com/collaboration/start/recipients/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "official_recipient_collection",
+      "query_or_page": "2026 and 2025 entries",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://sra.samsung.com/collaboration/start/recipients/"
+      ],
+      "reviewed_urls": [
+        "https://sra.samsung.com/collaboration/start/recipients/"
+      ],
+      "notes": "2026년 7개, 2025년 12개 과제 제목을 점검. 2026의 Physical AI World Memory 및 RoboMolmo를 채택했다. 2025의 로봇 과제는 해당 목록의 게시일이 없고 조사 하한 이후 선정임을 확인하지 못해 신규 기간 주장에서 제외했다."
+    },
+    {
+      "collection_url": "https://sra.samsung.com/publications/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "publication_collection",
+      "query_or_page": "full extracted list, search Robot and 2026",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "652줄 추출본에서 Robot 일치 없음. 표시된 2026 논문은 개인정보 보호 로그 및 웨어러블 시계열 분야였다. 동적 검색·필터를 완전히 재현하지 못했으므로 전체 SRA 논문 전수 검증 완료로 표현하지 않는다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/research-papers/paper/search",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "publication_collection",
+      "query_or_page": "2025/2026, Robotics, IROS/ICRA filters; external search index cross-check",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "직접 열람 본문에는 필터만 있고 결과가 비었다. 검색 인덱스에는 2026-09-28~07-07 10개 결과와 AFA가 노출되어 대조했다. 서버 목록 경로 역시 동적 결과를 완전 수집하지 못했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/events",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "event_collection",
+      "query_or_page": "official current events",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://research.samsung.com/saif",
+        "https://news.samsung.com/global/samsung-hosts-silicon-valley-future-wireless-summit-2026"
+      ],
+      "reviewed_urls": [
+        "https://research.samsung.com/saif",
+        "https://news.samsung.com/global/samsung-hosts-silicon-valley-future-wireless-summit-2026"
+      ],
+      "notes": "현재 공식 연구 행사 목록은 AI Forum 2026(9월30일), Future Wireless Summit(10월15일)과 프로그래밍 대회를 표시했다. 일반 무선통신 행사에서 명시 RX 사례를 찾지 못해 제외했다."
+    },
+    {
+      "collection_url": "https://research.samsung.com/saif",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "official_session_program",
+      "query_or_page": "AI Forum 2026 Physical AI; AX/PI Center sessions",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://saif2026.com/"
+      ],
+      "reviewed_urls": [
+        "https://research.samsung.com/saif"
+      ],
+      "notes": "기존 tech-013 URL. World Modelling: Promise & Perils, Robot Foundation Models의 가능성과 한계, DS AX/PI Center의 Automation and Intelligence 세션을 확인했다. 세션 제목은 확인했지만 실제 발표 영상·Q&A 전체를 시청한 것으로 기록하지 않는다. 행사 원문은 기존 출처군과 동일하다."
+    },
+    {
+      "collection_url": "https://saif2026.com/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "official_event_site",
+      "query_or_page": "event main and session target",
+      "accessed_at": "2026-10-31",
+      "status": "error",
+      "discovered_urls": [],
+      "reviewed_urls": [],
+      "notes": "직접 열람 timeout. 별도 세션 자료·영상의 전체 확보는 남은 범위다."
+    },
+    {
+      "collection_url": "https://stckorea.com/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "official_event_site",
+      "query_or_page": "STC2025 landing; STC2026 follow-up",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.youtube.com/watch?v=N7J4hdrvsZA"
+      ],
+      "reviewed_urls": [],
+      "notes": "직접 열람 timeout. 검색 인덱스에는 2025-11-20 행사 및 AI-Driven Dexterous Robotic Manipulation(권정현) 기조강연, 세션 다시보기가 표시됐다. 원문·영상 전체를 열람하지 못해 검색 후보만 보존한다. STC2026 개최를 추정하지 않는다."
+    },
+    {
+      "collection_url": "https://developer.samsung.com/events/en?year=2026",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "official_event_collection",
+      "query_or_page": "2026 English events",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://research.samsung.com/saif"
+      ],
+      "reviewed_urls": [
+        "https://developer.samsung.com/events/en?year=2026"
+      ],
+      "notes": "현재 추출된 목록에 Samsung AI Forum 2026이 표시된다. 별도 로봇 행사·자료의 전체 목록이라고 주장하지 않는다."
+    },
+    {
+      "collection_url": "https://semiconductor.samsung.com/sait/event/global-research-outreach/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "official_cfp_collection",
+      "query_or_page": "2026 GRO six research themes and linked briefs",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://download.semiconductor.samsung.com/resources/others/3-2-physical-ai-computing-gro-cfp.docx",
+        "https://download.semiconductor.samsung.com/resources/others/1-2-multi-agent-closed-loop-task-planner-for-sdl-gro-cfp.docx",
+        "https://download.semiconductor.samsung.com/resources/others/3-1-human-machine-interface-gro-cfp.docx",
+        "https://download.semiconductor.samsung.com/resources/others/2026-gro-brochure.pdf"
+      ],
+      "reviewed_urls": [
+        "https://semiconductor.samsung.com/sait/event/global-research-outreach/"
+      ],
+      "notes": "Physical AI Computing, Self-driving Laboratory용 Multi-agent Closed-loop Task Planner, Human-Machine Interface 주제와 링크를 확인했다. 개별 DOCX는 웹 도구 unsupported content-type, 브로슈어 PDF는 이미지 위주로 본문 추출 실패. 자동 수집에 DOCX 텍스트 검토 요청; 상세 내용은 미검증이다. 전체 공모의 연구 시작 권장은 2027년1월이며 완료된 상용 기술로 취급하지 않는다."
+    },
+    {
+      "collection_url": "https://www.samsung.com/global/ir/financial-information/earnings-release/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "official_ir_collection",
+      "query_or_page": "2025 Q3/Q4 and 2026 Q1/Q2/Q3 results presentations, webcast links and script",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2025_3Q_conference_eng.pdf",
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2025_4Q_conference_eng.pdf",
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_1Q_conference_eng.pdf",
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_3Q_conference_eng.pdf",
+        "https://irsvc.teletogether.com/sec/2025Q3/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/2025Q4/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/2026Q1/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/2026Q2/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/2026Q3/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/pdf/2025Q4_script_eng.pdf"
+      ],
+      "reviewed_urls": [
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2025_3Q_conference_eng.pdf",
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2025_4Q_conference_eng.pdf",
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_1Q_conference_eng.pdf",
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+        "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_3Q_conference_eng.pdf",
+        "https://irsvc.teletogether.com/sec/2025Q3/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/2025Q4/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/2026Q1/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/2026Q2/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/2026Q3/eng/eng.php",
+        "https://irsvc.teletogether.com/sec/pdf/2025Q4_script_eng.pdf",
+        "https://www.samsung.com/global/ir/reports-disclosures/public-disclosure-view.84517/"
+      ],
+      "notes": "공식 IR 실적 목록에서 5개 분기의 슬라이드와 웹캐스트를 열었다. 슬라이드의 사업부문 설명과 검색에서 신규 RX 주장을 채택하지 않았다. 웹캐스트 URL 본문은 비어 실제 영상·전체 Q&A를 검토하지 못했다. 2025Q4 공식 스크립트의 CFO 전망·Q&A는 읽었고 휴머노이드·디지털 트윈 발언을 신규 채택했다. 다른 분기의 동일 패턴 script URL은 접근 오류로 본문 존재를 확인하지 못했다. 전체 IR 영상 전수 검증 완료로 표현하지 않는다."
+    },
+    {
+      "collection_url": "https://news.samsung.com/kr/videos",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "method": "paginated_video_collection",
+      "query_or_page": "pages 1–6 through 2025-10-21; page 7 inaccessible",
+      "accessed_at": "2026-10-31",
+      "status": "reviewed",
+      "discovered_urls": [
+        "https://news.samsung.com/kr/영상-2026-삼성-명장-3편-cmp-설비-국산화의-꿈-실현-제조-혁"
+      ],
+      "reviewed_urls": [
+        "https://news.samsung.com/kr/videos",
+        "https://news.samsung.com/kr/videos/page/2",
+        "https://news.samsung.com/kr/videos/page/3",
+        "https://news.samsung.com/kr/videos/page/4",
+        "https://news.samsung.com/kr/videos/page/5",
+        "https://news.samsung.com/kr/videos/page/6",
+        "https://news.samsung.com/kr/영상-2026-삼성-명장-3편-cmp-설비-국산화의-꿈-실현-제조-혁"
+      ],
+      "notes": "1–6페이지 목록을 열어 조사 하한 이전 2025-10-21까지 도달했다. 2026-10-14 SmartBiz는 기존 se-017. 4월14일 CMP 설비 국산화 기사는 본문을 읽었지만 로봇·AI·디지털 트윈·산업 SW 직접 접점이 없어 제외했다. 표시 목록과 기사 텍스트를 검토한 범위이며 임베드 영상 전체를 시청했다고 주장하지 않는다. 페이지별 캐시 시점 차이와 일부 항목 중복이 존재하여 목록 완전성은 보장하지 않는다."
+    }
+  ],
+  "relations": [
+    {
+      "id": "x-rel-x-se-001-001",
+      "from": "se",
+      "to": "sr-robot-platform-team",
+      "type": "has_organization",
+      "label": "공개 인사자료에 Robot Platform팀 명시",
+      "claim_id": "claim:x-se-001",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Samsung Research Robot Platform팀",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "x-rel-x-se-002-002",
+      "from": "se",
+      "to": "dx-advisory",
+      "type": "announces_role",
+      "label": "AI·로보틱스 전략 자문 예정",
+      "claim_id": "claim:x-se-002-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "DX 미래기술 자문 역할",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "x-rel-x-se-003-003",
+      "from": "se",
+      "to": "gwangju-factory",
+      "type": "develops",
+      "label": "디지털 트윈 공장 구축 계획",
+      "claim_id": "claim:x-se-003",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "광주 디지털 트윈 혁신 허브 공장",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Factory"
+    },
+    {
+      "id": "x-rel-x-se-003-004",
+      "from": "sds",
+      "to": "haenam-ai-dc",
+      "type": "develops",
+      "label": "210MW AI 데이터센터 추진 계획",
+      "claim_id": "claim:x-se-003-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "해남 솔라시도 AI 데이터센터",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-004-005",
+      "from": "sds",
+      "to": "gumi-ai-dc",
+      "type": "develops",
+      "label": "구미1공장 AI 데이터센터 전환 계획",
+      "claim_id": "claim:x-se-004",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "구미 AI 데이터센터",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-005-006",
+      "from": "se",
+      "to": "embodied-physical-ai",
+      "type": "researches",
+      "label": "물리적 상호작용 연구 분야 소개",
+      "claim_id": "claim:x-se-005",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Embodied & Physical AI",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-006-007",
+      "from": "se",
+      "to": "6g-robotics",
+      "type": "researches",
+      "label": "6G 로봇 네트워크 통합 방향 제안",
+      "claim_id": "claim:x-se-006",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "6G 기반 로봇 통합 연구",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-007-008",
+      "from": "se",
+      "to": "afa",
+      "type": "researches",
+      "label": "공동저자의 AFA 로봇 정책 연구",
+      "claim_id": "claim:x-se-007",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "AFA 로봇 시각 특징 집계",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-008-009",
+      "from": "se",
+      "to": "metro-wm",
+      "type": "researches",
+      "label": "달성 가능한 하위 목표 검색 연구",
+      "claim_id": "claim:x-se-008",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Metro-WM",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-009-010",
+      "from": "se",
+      "to": "mistral",
+      "type": "partners_with",
+      "label": "반도체 온프레미스 AI 전략 협력",
+      "claim_id": "claim:x-se-009",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Mistral AI",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-rel-x-se-009-011",
+      "from": "se",
+      "to": "onprem-chip-ai",
+      "type": "develops",
+      "label": "결함 탐지·장비 최적화 적용 계획",
+      "claim_id": "claim:x-se-009-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "반도체 온프레미스 AI",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-010-012",
+      "from": "se",
+      "to": "omniverse",
+      "type": "plans_to_use",
+      "label": "디지털 트윈 제조 확장 계획",
+      "claim_id": "claim:x-se-010",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "NVIDIA Omniverse",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-010-013",
+      "from": "se",
+      "to": "gtc-2026",
+      "type": "presents_at",
+      "label": "제조 AI·디지털 트윈 세션 발표 계획",
+      "claim_id": "claim:x-se-010-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "NVIDIA GTC 2026 제조 AI 세션",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Event"
+    },
+    {
+      "id": "x-rel-x-se-011-014",
+      "from": "se",
+      "to": "dremo-minimo",
+      "type": "announces",
+      "label": "어린이 로봇 콘셉트 공개",
+      "claim_id": "claim:x-se-011",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Dremo & Minimo 로봇 콘셉트",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-rel-x-se-011-015",
+      "from": "se",
+      "to": "ai-kitchen",
+      "type": "announces",
+      "label": "주방 로봇 선행 콘셉트 소개",
+      "claim_id": "claim:x-se-011-02",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "AI Kitchen 로봇 콘셉트",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-rel-x-se-012-016",
+      "from": "se",
+      "to": "co-vla",
+      "type": "researches",
+      "label": "양팔 협응 구조화 행동 연구",
+      "claim_id": "claim:x-se-012",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Co-VLA 양팔 협응 모델",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-012-017",
+      "from": "co-vla",
+      "to": "latent-aware-controller",
+      "type": "uses_method",
+      "label": "관절 명령 수준 협응 조정",
+      "claim_id": "claim:x-se-012-02",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "Co-VLA 양팔 협응 모델",
+      "to_title": "Latent-Aware Controller",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-013-018",
+      "from": "sdic",
+      "to": "design-robot-tests",
+      "type": "uses",
+      "label": "시뮬레이션과 로봇 시험 교차 검증",
+      "claim_id": "claim:x-se-013",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "Samsung Design Innovation Center",
+      "to_title": "디지털 트윈·물리 로봇 설계 검증",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-017-024",
+      "from": "se",
+      "to": "demo-pose",
+      "type": "researches",
+      "label": "RGB·깊이 융합 물체 자세 추정 연구",
+      "claim_id": "claim:x-se-017",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "DeMo-Pose",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-018-020",
+      "from": "sra-robotlab",
+      "to": "robot-manipulation",
+      "type": "researches",
+      "label": "로봇 지능 연구 주제 공개",
+      "claim_id": "claim:x-se-018",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "SRA Robot Intelligence Lab",
+      "to_title": "로봇 조작·항법·추론",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-018-021",
+      "from": "sra-robotlab",
+      "to": "fluid-reality",
+      "type": "funds",
+      "label": "프로젝트 지원을 연구실이 명시",
+      "claim_id": "claim:x-se-018-03",
+      "status": "undated_current",
+      "rationale": "공식 연구실 페이지에 지원 대상 이름이 기재되어 있다. 시점·금액·지분 투자 방식은 미공개다.",
+      "from_title": "SRA Robot Intelligence Lab",
+      "to_title": "Fluid Reality",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-rel-x-se-018-022",
+      "from": "sra-robotlab",
+      "to": "config-intelligence",
+      "type": "funds",
+      "label": "프로젝트 지원을 연구실이 명시",
+      "claim_id": "claim:x-se-018-03",
+      "status": "undated_current",
+      "rationale": "공식 연구실 페이지에 지원 대상 이름이 기재되어 있다. 시점·금액·지분 투자 방식은 미공개다.",
+      "from_title": "SRA Robot Intelligence Lab",
+      "to_title": "Config Intelligence",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-rel-x-se-019-023",
+      "from": "start",
+      "to": "latent-world-memory",
+      "type": "selects",
+      "label": "2026 로봇 연구 선정 과제",
+      "claim_id": "claim:x-se-019",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "SRA START",
+      "to_title": "Latent World Memory for Physical AI",
+      "from_ontology_type": "Project",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-019-024",
+      "from": "start",
+      "to": "robomolmo",
+      "type": "selects",
+      "label": "2026 전신 모바일 조작 연구 선정",
+      "claim_id": "claim:x-se-019-02",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "SRA START",
+      "to_title": "RoboMolmo",
+      "from_ontology_type": "Project",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-020-025",
+      "from": "start",
+      "to": "long-horizon-agent",
+      "type": "calls_for_research",
+      "label": "물리·디지털 장기 실행 연구 공모",
+      "claim_id": "claim:x-se-020",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "SRA START",
+      "to_title": "물리 영역 장기 과업 에이전트",
+      "from_ontology_type": "Project",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-021-026",
+      "from": "se",
+      "to": "foundry-automation",
+      "type": "develops",
+      "label": "제조 장비 스케줄링 설명",
+      "claim_id": "claim:x-se-021",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Samsung Foundry Fab Automation",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-rel-x-se-021-027",
+      "from": "foundry-automation",
+      "to": "oht",
+      "type": "uses",
+      "label": "FOUP 운송·자동 복구·우회 설명",
+      "claim_id": "claim:x-se-021-02",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "Samsung Foundry Fab Automation",
+      "to_title": "Overhead Hoist Transport",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-022-028",
+      "from": "se",
+      "to": "operating-robot",
+      "type": "plans_to_deploy",
+      "label": "생산라인 점진 도입 설명",
+      "claim_id": "claim:x-se-022-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "운영 로봇",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-rel-x-se-022-029",
+      "from": "se",
+      "to": "logistics-robot",
+      "type": "plans_to_deploy",
+      "label": "생산라인 점진 도입 설명",
+      "claim_id": "claim:x-se-022-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "물류 로봇",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-rel-x-se-022-030",
+      "from": "se",
+      "to": "assembly-robot",
+      "type": "plans_to_deploy",
+      "label": "생산라인 점진 도입 설명",
+      "claim_id": "claim:x-se-022-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "조립 로봇",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-rel-x-se-022-031",
+      "from": "se",
+      "to": "environment-safety-robot",
+      "type": "plans_to_deploy",
+      "label": "위험 설비 환경 추가 도입 계획",
+      "claim_id": "claim:x-se-022-03",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "디지털 트윈 환경안전 로봇",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-rel-x-se-023-032",
+      "from": "se",
+      "to": "humanoid-business",
+      "type": "targets",
+      "label": "2026년 가시적 진전 목표",
+      "claim_id": "claim:x-se-023",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "휴머노이드 로봇 사업",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-023-033",
+      "from": "se",
+      "to": "digital-twin",
+      "type": "plans_to_adopt",
+      "label": "전사 효율 개선을 위한 도입 계획",
+      "claim_id": "claim:x-se-023-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "디지털 트윈",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    }
+  ],
+  "coverage_note": "기간 2025-10-30~2026-10-31의 공식 로봇·제조 AI·디지털 트윈·관련 연구를 추가 조사했다. 사이트의 동적 목록·태그 누락·게시일 불명 자료가 있어 모든 공개자료의 완전 수집을 보장하지 않는다. 기업 발표와 저자 보고는 독립 검증 사실로 승격하지 않는다."
+}

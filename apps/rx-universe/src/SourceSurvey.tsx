@@ -1,0 +1,44 @@
+import React, { useMemo, useState } from 'react';
+import { ArrowDownToLine, Database, ExternalLink, Search } from 'lucide-react';
+import { catalog } from './research';
+import { survey, surveyCounts } from './survey';
+import { sourceText } from './ResearchVault';
+import './survey.css';
+
+const PAGE_SIZE = 40;
+const blocked = new Set(['blocked', 'error', 'robots_disallowed', 'access_blocked', 'failed', 'budget_exhausted']);
+const statusLabels: Record<string, string> = { fetched: '본문 응답 수집', discovered: 'URL 발견', blocked: '접근 제한', error: '요청 실패', robots_disallowed: 'robots 제한', budget_exhausted: '실행 한도 도달', reviewed: '수동 검토 기록', manual_report: '수동 열람 보고', search_only: '검색 확인', excluded: '범위 밖', out_of_window: '조사 기간 밖', no_keyword_match: '키워드 불일치', candidate: '관련성 판정 전', unreviewed: '검토 전' };
+const label = (value: unknown) => statusLabels[sourceText(value)] || sourceText(value) || '미기록';
+
+export default function SourceSurvey({ onSource }: { onSource: (id: string) => void }) {
+  const [query, setQuery] = useState('');
+  const [filter, setFilter] = useState('all');
+  const [period, setPeriod] = useState('all');
+  const [tab, setTab] = useState<'candidates' | 'collections'>('candidates');
+  const [page, setPage] = useState(0);
+  const counts = surveyCounts();
+  const inWindow = (date: string | null | undefined) => !!date && date >= catalog.meta.window_start && date <= catalog.meta.window_end;
+  const matches = (row: unknown) => JSON.stringify(row).toLocaleLowerCase().includes(query.trim().toLocaleLowerCase());
+  const candidates = useMemo(() => survey.candidates.filter(row => matches(row) && (period === 'all' || period === 'in_window' && inWindow(row.published_at) || period === 'undated' && !row.published_at || period === 'outside' && !!row.published_at && !inWindow(row.published_at)) && (filter === 'all' || filter === 'linked' && !!row.source_ids?.length || filter === 'unreviewed' && !row.source_ids?.length || filter === 'fetched' && row.fetch_status === 'fetched' || filter === 'blocked' && blocked.has(row.fetch_status || ''))), [query, filter, period]);
+  const collections = useMemo(() => survey.collections.filter(row => matches(row)), [query]);
+  const rows = tab === 'candidates' ? candidates : collections;
+  const lastPage = Math.max(0, Math.ceil(rows.length / PAGE_SIZE) - 1);
+  const currentPage = Math.min(page, lastPage);
+  const reset = () => setPage(0);
+  return <div className="source-survey" data-testid="source-survey">
+    <section className="panel survey-intro"><div><span className="micro">OFFICIAL SOURCE COVERAGE</span><h2>발견부터 검토까지, 조사 범위를 공개합니다</h2><p>조사 기간 {catalog.meta.window_start} – {catalog.meta.window_end}. 공식 뉴스룸·제품·IR·연구·행사 목록을 순회한 기록입니다. 발견 URL에는 과거 자료와 관련성 미판정 문서도 포함됩니다. <b>URL 수와 검토된 RX 근거 수를 구분하며, 전수조사 완료를 의미하지 않습니다.</b></p><p>이 대장은 현재 수집 상태를 보여줍니다. 상단 정보 기준일로 재현되는 과거 증거 그래프와는 별도입니다.</p></div><a className="button" href={`${import.meta.env.BASE_URL}data/rx-survey.json`} download><ArrowDownToLine size={15}/>조사 대장 JSON</a></section>
+    <div className="survey-metrics">
+      <div data-testid="survey-candidates"><span>발견 URL · 중복 제거</span><strong>{counts.candidates.toLocaleString()}</strong><small>관련성·날짜 판정 전 포함</small></div>
+      <div data-testid="survey-linked"><span>근거 DB와 연결된 URL</span><strong>{counts.reviewedCandidates.toLocaleString()}</strong><small>출처 {counts.linkedSources}건 참조 · 사실 확정 아님</small></div>
+      <div data-testid="survey-unreviewed"><span>근거 DB 미연결 URL</span><strong>{counts.unreviewedCandidates.toLocaleString()}</strong><small>검토 대기 · 제외 · 접근 제한 포함</small></div>
+      <div><span>자동 본문 응답 수집</span><strong>{counts.fetchedCandidates.toLocaleString()}</strong><small>응답 해시는 원문 아카이브와 다릅니다</small></div>
+    </div>
+    <section className="panel survey-runs"><div className="panel-head"><div><Database size={17}/><h2>수집 실행 및 한계</h2></div><span className="tag">{counts.runCount} RUNS · {counts.collections} 조사 기록</span></div>{survey.runs.map(run => <details key={run.id}><summary><b>{run.id}</b><span>{sourceText(run.status)} · {sourceText(run.finished_at || run.started_at)}</span></summary><p>{sourceText(run.limitations || run.notes) || '개별 목록의 접근 상태와 누락 범위를 아래에서 확인하세요.'}</p><p>목록 페이지 {sourceText(run.collection_pages_fetched) || '미기록'} · 발견 URL {sourceText(run.candidates_discovered) || '미기록'} · 상세 응답 {sourceText(run.detail_pages_fetched) || '미기록'} · 한도 도달 {run.truncated ? '예' : '아니오 / 미기록'}</p></details>)}<p className="survey-note">수동 검토 기록과 일회성 수집 실행입니다. 매일 08:00 자동 갱신은 연결되어 있지 않습니다. 날짜·관련성·원문 계보를 검토한 자료만 Evidence Vault와 그래프에 반영합니다.</p></section>
+    <section className="panel survey-browser"><div className="survey-toolbar"><div className="segmented"><button className={tab === 'candidates' ? 'selected' : ''} onClick={() => { setTab('candidates'); reset(); }}>발견 URL {counts.candidates}</button><button className={tab === 'collections' ? 'selected' : ''} onClick={() => { setTab('collections'); reset(); }}>목록·검토 기록 {counts.collections}</button></div><label className="survey-search"><Search size={15}/><input aria-label="조사 대장 검색" placeholder="기관, 문서, URL, 조사 메모 검색" value={query} onChange={event => { setQuery(event.target.value); reset(); }}/></label>{tab === 'candidates' && <><select aria-label="발표 기간" value={period} onChange={event => { setPeriod(event.target.value); reset(); }}><option value="all">모든 발표 기간</option><option value="in_window">조사 기간 내 날짜 확인</option><option value="undated">게시일 미확인</option><option value="outside">조사 기간 밖</option></select><select aria-label="조사 상태" value={filter} onChange={event => { setFilter(event.target.value); reset(); }}><option value="all">모든 상태</option><option value="linked">근거 DB 연결</option><option value="unreviewed">근거 DB 미연결</option><option value="fetched">본문 응답 수집</option><option value="blocked">접근 제한 · 실패 · 한도</option></select></>}</div>
+      <p className="survey-note">발견 URL 중 조사 기간 내 게시일 기록 {survey.candidates.filter(row => inWindow(row.published_at)).length.toLocaleString()}건 · 게시일 미확인 {survey.candidates.filter(row => !row.published_at).length.toLocaleString()}건. 목록·자동 추출 날짜는 근거 DB의 검토된 날짜와 등급이 다릅니다.</p><p className="survey-result" role="status">검색 결과 {rows.length.toLocaleString()}건 · {rows.length ? currentPage * PAGE_SIZE + 1 : 0}–{Math.min((currentPage + 1) * PAGE_SIZE, rows.length)} 표시</p>
+      {tab === 'candidates' ? <div className="survey-list">{candidates.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE).map(row => <article key={row.id} data-testid="survey-candidate" data-candidate-id={row.id}><div className="survey-row-meta"><span>{row.publisher || '기관 미기록'}</span><span>{row.published_at || '게시일 미확인'}</span><span className={row.source_ids?.length ? 'survey-reviewed' : ''}>{row.source_ids?.length ? '근거 DB 연결' : label(row.fetch_status)}</span></div><h3><a href={row.url} target="_blank" rel="noreferrer">{row.title || row.url}<ExternalLink size={13}/></a></h3><p className="survey-url">{row.url}</p><p>{label(row.relevance)} · {sourceText(row.matched_keywords) || '키워드 기록 없음'}</p>{!!row.source_ids?.length && <div className="survey-source-links">{row.source_ids.map(id => <button className="button" key={id} onClick={() => onSource(id)}>{id} 근거 보기</button>)}</div>}<details><summary>수집 경로 · 상태 메모</summary><p>{sourceText(row.notes) || '추가 메모 없음'}</p><p>수집: {sourceText(row.discovered_at)} · HTTP: {sourceText(row.http_status) || '미기록'} · 날짜 근거: {sourceText(row.date_basis) || '미기록'}</p>{Array.isArray(row.collection_urls) && <ul>{row.collection_urls.map((url, index) => <li key={index}><a href={String(url)} target="_blank" rel="noreferrer">{String(url)}</a></li>)}</ul>}{!!row.content_sha256 && <code>수집 응답 SHA-256: {sourceText(row.content_sha256)}</code>}</details></article>)}</div> : <div className="survey-list">{collections.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE).map(row => <article key={row.id}><div className="survey-row-meta"><span>{row.publisher}</span><span>{label(row.status)}</span></div><h3><a href={row.url || row.collection_url} target="_blank" rel="noreferrer">{sourceText(row.label || row.query_or_page) || row.url || row.collection_url}<ExternalLink size={13}/></a></h3><p>{sourceText(row.notes)}</p><details><summary>순회 경로와 발견 범위</summary><p>{sourceText(row.method)} · {sourceText(row.accessed_at)}</p><p>이 기록에 남은 발견 링크 {row.discovered_urls?.length ?? 0}개 · 검토 링크 {row.reviewed_urls?.length ?? 0}개</p><p>{sourceText(row.pages_visited)}</p><p>다음 페이지: {sourceText(row.next_urls) || '미기록'}</p></details></article>)}</div>}
+      {!rows.length && <p className="survey-empty">해당 조건의 조사 기록이 없습니다.</p>}
+      <div className="survey-pagination"><button className="button" disabled={currentPage === 0} onClick={() => setPage(currentPage - 1)}>이전</button><span>{currentPage + 1} / {lastPage + 1}</span><button className="button" disabled={currentPage >= lastPage} onClick={() => setPage(currentPage + 1)}>다음</button></div>
+    </section>
+  </div>;
+}

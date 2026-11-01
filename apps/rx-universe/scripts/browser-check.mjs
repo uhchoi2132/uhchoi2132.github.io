@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
-import { spawn } from 'node:child_process';
+import { execFile, spawn } from 'node:child_process';
+import { promisify } from 'node:util';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { chromium, expect as playwrightExpect } from '@playwright/test';
@@ -9,6 +10,19 @@ const expect = playwrightExpect.configure({ timeout: 15_000 });
 const previewUrl = process.env.PREVIEW_URL || 'http://127.0.0.1:4173/rx-universe/';
 const output = path.resolve(process.env.BROWSER_ARTIFACT_DIR || 'test-results');
 const researchCatalog = JSON.parse(await readFile(new URL('../src/research-data.json', import.meta.url), 'utf8'));
+const surveyCatalog = JSON.parse(await readFile(new URL('../research/survey-data.json', import.meta.url), 'utf8'));
+const currentDate = researchCatalog.meta.window_end;
+assert.match(currentDate, /^\d{4}-\d{2}-\d{2}$/, 'The current horizon must be an explicit ISO date');
+// Test expectations calculate the inclusive publication windows independently of src/briefing.ts.
+const shiftDay = (day, delta) => {
+  const value = new Date(`${day}T00:00:00Z`);
+  value.setUTCDate(value.getUTCDate() + delta);
+  return value.toISOString().slice(0, 10);
+};
+const weeklyStart = shiftDay(currentDate, -6);
+const monthlyStart = `${currentDate.slice(0, 7)}-01`;
+const catalogClaimCount = researchCatalog.records.reduce((count, record) => count + (record.claims?.length || 1), 0);
+const execFileAsync = promisify(execFile);
 const researchAtDate = (date, mode = 'known') => researchCatalog.records.filter(row => row.scope === 'in_window'
   && row.published_at && ['page', 'search_index'].includes(row.date_basis)
   && row.published_at >= researchCatalog.meta.window_start
@@ -57,7 +71,7 @@ function groupedSourceIds(records) {
   for (const record of records) groups.set(originKey(record), [...(groups.get(originKey(record)) ?? []), record.id]);
   return Object.fromEntries([...groups].sort(([a], [b]) => a.localeCompare(b)).map(([key, ids]) => [key, sorted(ids)]));
 }
-const titles = ['Command Center', '3D Universe', 'Time Machine', 'Evidence Vault', 'Hypothesis War Room', 'Factory Twin', 'Briefing Studio', 'Action Items'];
+const titles = ['Command Center', '3D Universe', 'Time Machine', 'Evidence Vault', 'Hypothesis War Room', 'Factory Twin', 'Briefing Studio', 'Source Survey', 'Action Items'];
 const report = { url: previewUrl, started_at: new Date().toISOString(), checks: [], console_errors: [], page_errors: [], failed_requests: [], screenshots: [], status: 'running' };
 let server;
 let browser;
@@ -182,6 +196,40 @@ async function assertCandidateCount(panel, total, visible) {
   await expect(panel.locator('[data-candidate-item]')).toHaveCount(visible);
   await expect(panel.locator('.brief-section-title')).toContainText(`표시 ${visible} / 전체 ${total}개 출처 그룹`);
 }
+async function assertSurveyDatabase(databasePath, surveyInventory) {
+  const script = `import json, sqlite3, sys
+with sqlite3.connect('file:' + sys.argv[1] + '?mode=ro', uri=True) as db:
+    output = {'integrity': db.execute('PRAGMA integrity_check').fetchone()[0], 'foreign_keys': db.execute('PRAGMA foreign_key_check').fetchall()}
+    output['ids'] = {table: [row[0] for row in db.execute('SELECT id FROM ' + table + ' ORDER BY id')] for table in ['Sources', 'Claims', 'CrawlRuns', 'CoverageCollections', 'DiscoveryInventory']}
+    output['candidates'] = [{'id': row[0], 'source_ids': json.loads(row[1]), 'automatically_verified': row[2], 'raw': json.loads(row[3])} for row in db.execute('SELECT id, source_ids_json, automatically_verified, raw_candidate_json FROM DiscoveryInventory ORDER BY id')]
+    output['verified_claims'] = db.execute('SELECT count(*) FROM Claims WHERE independently_verified != 0').fetchone()[0]
+    output['survey_counts'] = json.loads(db.execute("SELECT value_json FROM Metadata WHERE key='survey_counts'").fetchone()[0])
+    print(json.dumps(output, ensure_ascii=False))`;
+  const { stdout } = await execFileAsync('python3', ['-c', script, databasePath], { maxBuffer: 32 * 1024 * 1024 });
+  const database = JSON.parse(stdout);
+  assert.equal(database.integrity, 'ok');
+  assert.deepEqual(database.foreign_keys, []);
+  assert.deepEqual(database.ids.Sources, sorted(researchCatalog.records.map(record => record.id)), 'Discovery inventory must not silently add reviewed sources');
+  assert.deepEqual(database.ids.Claims, sorted(claimRows(researchCatalog.records).map(claim => claim.id)), 'Discovered URLs must not automatically create claims');
+  assert.equal(database.verified_claims, 0, 'Source-attributed statements must not be promoted to independently verified facts');
+  for (const [table, key] of [['CrawlRuns', 'runs'], ['CoverageCollections', 'collections'], ['DiscoveryInventory', 'candidates']]) {
+    assert.deepEqual(database.ids[table], sorted(surveyInventory[key].map(row => row.id)), `${table} must preserve every survey record`);
+    assert.equal(database.survey_counts[key], surveyInventory[key].length);
+  }
+  for (const candidate of database.candidates) {
+    assert.equal(candidate.automatically_verified, 0);
+    const original = surveyInventory.candidates.find(row => row.id === candidate.id);
+    assert.deepEqual(candidate.source_ids, original.source_ids ?? []);
+    assert.deepEqual(candidate.raw, original, 'SQLite must preserve the original discovery status and collection path');
+    assert.ok(!Object.hasOwn(candidate.raw, 'claim') && !Object.hasOwn(candidate.raw, 'claims'), 'Discovery rows must remain separate from extracted claims');
+  }
+}
+async function assertSurveyCandidatePage(panel, records, offset = 0) {
+  const visible = records.slice(offset, offset + 40);
+  await expect(panel.getByTestId('survey-candidate')).toHaveCount(visible.length);
+  assert.deepEqual(await panel.getByTestId('survey-candidate').evaluateAll(elements => elements.map(element => element.getAttribute('data-candidate-id'))), visible.map(row => row.id), 'Survey pagination must expose exactly the matching records, without hidden or duplicated rows');
+  await expect(panel.locator('.survey-result')).toContainText(records.length.toLocaleString());
+}
 async function ready() {
   const deadline = Date.now() + 60_000;
   while (Date.now() < deadline) {
@@ -210,10 +258,11 @@ try {
   await page.goto(previewUrl, { waitUntil: 'networkidle' });
   await expect(page.locator('main h1')).toContainText('Command Center');
   await expect(page.locator('.graph-stage canvas, .graph-stage svg[role="group"]')).toHaveCount(1);
-  const currentSnapshot = await exportSnapshot(page, 'current', '2026-10-30');
-  assert.equal(researchCatalog.records.length, 81, 'Reviewed inventory must preserve all 81 sources');
-  assert.equal(claimRows(researchCatalog.records).length, 84, 'Merged source inventory must retain all 84 claims');
-  assertResearchSnapshot(currentSnapshot, researchCatalog.records, '2026-10-30');
+  const currentSnapshot = await exportSnapshot(page, 'current', currentDate);
+  assert.ok(researchCatalog.records.length > 0, 'The research catalog must contain reviewed sources');
+  assert.equal(claimRows(researchCatalog.records).length, catalogClaimCount, 'Every catalog claim must survive the browser-facing inventory');
+  await expect(page.getByLabel('정보 기준일', { exact: true })).toHaveValue(currentDate);
+  assertResearchSnapshot(currentSnapshot, researchCatalog.records, currentDate);
   assertCompleteGraphInventory(currentSnapshot, researchCatalog.records);
   assert.ok(currentSnapshot.graph.nodes.length > 150, 'The expanded graph must expose source and claim nodes, not just a small curated overview');
   report.graph_metrics = {
@@ -225,7 +274,7 @@ try {
   await assertGraphParity(page, currentSnapshot);
   await expect(page.locator('.profile, .top-avatar, .notification i')).toHaveCount(0);
   const radar = page.locator('.signal-panel .brief-candidates');
-  const weeklySourceGroups = Object.keys(groupedSourceIds(researchAtDate('2026-10-30').filter(row => row.published_at >= '2026-10-24'))).length;
+  const weeklySourceGroups = Object.keys(groupedSourceIds(researchAtDate(currentDate).filter(row => row.published_at >= weeklyStart))).length;
   await assertCandidateCount(radar, weeklySourceGroups, Math.min(3, weeklySourceGroups));
   if (weeklySourceGroups > 3) {
     await radar.getByRole('button', { name: `후보 ${weeklySourceGroups}개 모두 보기`, exact: true }).click();
@@ -234,27 +283,27 @@ try {
     await assertCandidateCount(radar, weeklySourceGroups, 3);
   }
   await screenshot(page, 'desktop-3d-command-center.png');
-  report.checks.push('Desktop graph/export share one model; 81 documents retain 84 claims, candidate counts match rendered cards, and no fake account or unread badge is shown');
+  report.checks.push('Desktop graph/export share one model; current catalog documents retain every extracted claim, candidate counts match rendered cards, and no fake account or unread badge is shown');
 
   for (const title of titles) {
     await navigate(page, title);
     await noHorizontalOverflow(page, `Desktop ${title}`);
   }
-  report.checks.push('All eight desktop navigation screens render without horizontal overflow');
+  report.checks.push('All desktop navigation screens render without horizontal overflow');
 
   await navigate(page, '3D Universe');
   await page.getByRole('button', { name: '2D', exact: true }).click();
   await assertGraphParity(page, currentSnapshot, { flat: true });
   await page.locator('.filter-tabs').getByRole('button', { name: '조직 · 기업', exact: true }).click();
-  const companySnapshot = await exportSnapshot(page, 'filtered-companies', '2026-10-30');
-  assertResearchSnapshot(companySnapshot, researchCatalog.records, '2026-10-30');
+  const companySnapshot = await exportSnapshot(page, 'filtered-companies', currentDate);
+  assertResearchSnapshot(companySnapshot, researchCatalog.records, currentDate);
   assert.equal(companySnapshot.view.filter, 'company');
   assert.ok(companySnapshot.graph.nodes.length > 0 && companySnapshot.graph.nodes.length < currentSnapshot.graph.nodes.length);
   assert.deepEqual(sorted(companySnapshot.graph.nodes.map(node => node.id)), sorted(currentSnapshot.graph.nodes.filter(node => ['organization', 'company'].includes(node.kind)).map(node => node.id)));
   await assertGraphParity(page, companySnapshot, { flat: true });
   await page.getByLabel('검색 주변 연결 포함', { exact: true }).uncheck();
   await page.getByLabel('엔티티 검색', { exact: true }).fill('SAMSUNG');
-  const searchedSnapshot = await exportSnapshot(page, 'filtered-search', '2026-10-30');
+  const searchedSnapshot = await exportSnapshot(page, 'filtered-search', currentDate);
   assert.equal(searchedSnapshot.view.search, 'SAMSUNG');
   assert.equal(searchedSnapshot.view.exploration.searchContext, false);
   assert.ok(['sds', 'se'].every(id => searchedSnapshot.graph.nodes.some(node => node.id === id)), 'Samsung Electronics and Samsung SDS remain separate searchable nodes');
@@ -264,7 +313,7 @@ try {
   await expect(page.locator('.universe-visual')).toHaveAttribute('data-renderer', '3d');
   await expect(page.locator('.graph-stage canvas')).toBeVisible();
   await assertGraphParity(page, searchedSnapshot);
-  const searched3dSnapshot = await exportSnapshot(page, 'filtered-search-3d', '2026-10-30');
+  const searched3dSnapshot = await exportSnapshot(page, 'filtered-search-3d', currentDate);
   assert.deepEqual(searched3dSnapshot.graph, searchedSnapshot.graph, 'Renderer selection must not change the searched graph');
   await page.getByRole('button', { name: '필터 초기화', exact: true }).click();
   await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
@@ -280,7 +329,7 @@ try {
   assert.ok(smartLabels.length > 0 && smartLabels.length < entityNodeIds.size, 'Default label LOD should keep a dense graph readable without removing objects');
   await page.getByLabel('그래프 라벨 표시', { exact: true }).selectOption('entities');
   await expect.poll(visibleEntityLabelIds).toEqual(sorted(entityNodeIds));
-  const fullLabels = await exportSnapshot(page, 'all-entity-labels', '2026-10-30');
+  const fullLabels = await exportSnapshot(page, 'all-entity-labels', currentDate);
   assert.deepEqual(fullLabels.graph, currentSnapshot.graph, 'Displaying all entity labels must not change the graph projection or exported provenance');
   await assertGraphParity(page, fullLabels, { flat: true });
   await page.getByLabel('그래프 라벨 표시', { exact: true }).selectOption('smart');
@@ -289,8 +338,8 @@ try {
 
   for (const layer of ['entities', 'evidence']) {
     await page.getByLabel('그래프 레이어', { exact: true }).selectOption(layer);
-    const layerSnapshot = await exportSnapshot(page, `layer-${layer}`, '2026-10-30');
-    assertResearchSnapshot(layerSnapshot, researchCatalog.records, '2026-10-30');
+    const layerSnapshot = await exportSnapshot(page, `layer-${layer}`, currentDate);
+    assertResearchSnapshot(layerSnapshot, researchCatalog.records, currentDate);
     assert.equal(layerSnapshot.view.exploration.layer, layer);
     const eligible = currentSnapshot.graph.nodes.filter(node => layer === 'evidence' ? isEvidenceNode(node) : !isEvidenceNode(node));
     assert.ok(eligible.length > 0);
@@ -301,15 +350,15 @@ try {
   }
   await page.getByLabel('그래프 레이어', { exact: true }).selectOption('all');
   await page.getByLabel('관계 유형', { exact: true }).selectOption('documented_by');
-  const documented = await exportSnapshot(page, 'documented-by-only', '2026-10-30');
-  assertResearchSnapshot(documented, researchCatalog.records, '2026-10-30');
+  const documented = await exportSnapshot(page, 'documented-by-only', currentDate);
+  assertResearchSnapshot(documented, researchCatalog.records, currentDate);
   assert.ok(documented.graph.relations.length > 0);
   assert.deepEqual(sorted(documented.graph.relations.map(relation => relation.id)), sorted(currentSnapshot.graph.relations.filter(relation => relation.type === 'documented_by').map(relation => relation.id)));
   await assertGraphParity(page, documented, { flat: true });
   await page.getByLabel('관계 유형', { exact: true }).selectOption('all');
   await page.getByLabel('연결 분류', { exact: true }).selectOption('analyst_mapping');
-  const inferred = await exportSnapshot(page, 'analyst-connections-only', '2026-10-30');
-  assertResearchSnapshot(inferred, researchCatalog.records, '2026-10-30');
+  const inferred = await exportSnapshot(page, 'analyst-connections-only', currentDate);
+  assertResearchSnapshot(inferred, researchCatalog.records, currentDate);
   assert.ok(inferred.graph.relations.length > 0 && inferred.graph.relations.every(relation => relation.inferred));
   assert.deepEqual(sorted(inferred.graph.relations.map(relation => relation.id)), sorted(currentSnapshot.graph.relations.filter(relation => relation.provenance === 'analyst_mapping').map(relation => relation.id)));
   await assertGraphParity(page, inferred, { flat: true });
@@ -318,25 +367,25 @@ try {
 
   await page.getByLabel('검색 주변 연결 포함', { exact: true }).uncheck();
   await page.getByLabel('엔티티 검색', { exact: true }).fill('source:sds-004');
-  const exactSourceSearch = await exportSnapshot(page, 'source-search-exact', '2026-10-30');
+  const exactSourceSearch = await exportSnapshot(page, 'source-search-exact', currentDate);
   assert.deepEqual(exactSourceSearch.graph.nodes.map(node => node.id), ['source:sds-004']);
   await assertGraphParity(page, exactSourceSearch, { flat: true });
   await page.getByLabel('검색 주변 연결 포함', { exact: true }).check();
-  const contextSearch = await exportSnapshot(page, 'source-search-context', '2026-10-30');
-  assertResearchSnapshot(contextSearch, researchCatalog.records, '2026-10-30');
+  const contextSearch = await exportSnapshot(page, 'source-search-context', currentDate);
+  assertResearchSnapshot(contextSearch, researchCatalog.records, currentDate);
   assertNeighborhood(contextSearch, currentSnapshot.graph, 'source:sds-004', 1);
   assert.ok(contextSearch.graph.nodes.length > exactSourceSearch.graph.nodes.length, 'Search context must restore actual connected evidence around a precise source match');
   await assertGraphParity(page, contextSearch, { flat: true });
   await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
   await page.getByLabel('중심 노드', { exact: true }).selectOption('sds');
   await page.getByLabel('탐색 깊이', { exact: true }).selectOption('1');
-  const firstHop = await exportSnapshot(page, 'sds-one-hop', '2026-10-30');
+  const firstHop = await exportSnapshot(page, 'sds-one-hop', currentDate);
   assertNeighborhood(firstHop, currentSnapshot.graph, 'sds', 1);
   assert.equal(firstHop.view.exploration.focusNodeId, 'sds');
   assert.equal(firstHop.view.exploration.hops, 1);
   await assertGraphParity(page, firstHop, { flat: true });
   await page.getByLabel('탐색 깊이', { exact: true }).selectOption('2');
-  const secondHop = await exportSnapshot(page, 'sds-two-hops', '2026-10-30');
+  const secondHop = await exportSnapshot(page, 'sds-two-hops', currentDate);
   assertNeighborhood(secondHop, currentSnapshot.graph, 'sds', 2);
   assert.equal(secondHop.view.exploration.hops, 2);
   assert.ok(secondHop.graph.nodes.length > firstHop.graph.nodes.length, 'Two-hop exploration must reveal additional linked objects, not merely relabel the same view');
@@ -353,8 +402,8 @@ try {
   await page.getByLabel('경로 시작', { exact: true }).selectOption('sds');
   await page.getByLabel('경로 도착', { exact: true }).selectOption(destination.id);
   await page.getByRole('button', { name: '경로 찾기', exact: true }).click();
-  const pathSnapshot = await exportSnapshot(page, 'entity-shortest-path', '2026-10-30');
-  assertResearchSnapshot(pathSnapshot, researchCatalog.records, '2026-10-30');
+  const pathSnapshot = await exportSnapshot(page, 'entity-shortest-path', currentDate);
+  assertResearchSnapshot(pathSnapshot, researchCatalog.records, currentDate);
   assert.equal(pathSnapshot.view.exploration.pathFrom, 'sds');
   assert.equal(pathSnapshot.view.exploration.pathTo, destination.id);
   assert.equal(pathSnapshot.graph.nodes.length, distances.get(destination.id) + 1, 'Path view must contain a shortest connection, not the full graph');
@@ -381,7 +430,7 @@ try {
   await expect(page.getByLabel('경로 시작', { exact: true })).toHaveValue(destination.id);
   await expect(page.getByLabel('경로 도착', { exact: true })).toHaveValue(destination.id);
   await page.getByRole('button', { name: '경로 찾기', exact: true }).click();
-  const synchronizedPath = await exportSnapshot(page, 'drawer-path-dropdown-sync', '2026-10-30');
+  const synchronizedPath = await exportSnapshot(page, 'drawer-path-dropdown-sync', currentDate);
   assert.equal(synchronizedPath.view.exploration.pathFrom, destination.id, 'Find path must use the endpoint selected in the drawer, not an older dropdown draft');
   assert.equal(synchronizedPath.view.exploration.pathTo, destination.id);
   assert.deepEqual(synchronizedPath.graph.nodes.map(node => node.id), [destination.id]);
@@ -436,7 +485,7 @@ try {
       await drawer.getByRole('button', { name: '주변 1단계 탐색', exact: true }).click();
       await expect(drawer).toHaveCount(0);
       await expect(page.getByLabel('중심 노드', { exact: true })).toHaveValue(nodeId);
-      const claimNeighborhood = await exportSnapshot(page, 'claim-drawer-neighborhood', '2026-10-30');
+      const claimNeighborhood = await exportSnapshot(page, 'claim-drawer-neighborhood', currentDate);
       assertNeighborhood(claimNeighborhood, currentSnapshot.graph, nodeId, 1);
       await assertGraphParity(page, claimNeighborhood, { flat: true });
       await page.getByRole('button', { name: '탐색 초기화', exact: true }).click();
@@ -446,7 +495,7 @@ try {
   await page.keyboard.press('Enter');
   await drawer.getByRole('button', { name: '경로 시작으로 지정', exact: true }).click();
   await expect(drawer).toHaveCount(0);
-  const pathStartOnly = await exportSnapshot(page, 'drawer-path-start-only', '2026-10-30');
+  const pathStartOnly = await exportSnapshot(page, 'drawer-path-start-only', currentDate);
   assert.equal(pathStartOnly.view.exploration.pathFrom, 'sds');
   assert.ok(!pathStartOnly.view.exploration.pathTo);
   assert.deepEqual(pathStartOnly.graph, currentSnapshot.graph, 'Choosing only a path start must leave destination nodes available for selection');
@@ -454,7 +503,7 @@ try {
   await page.locator(`.graph-stage svg[role="group"] [data-node-id="${destination.id}"]`).focus();
   await page.keyboard.press('Enter');
   await drawer.getByRole('button', { name: '경로 도착으로 지정', exact: true }).click();
-  const drawerPath = await exportSnapshot(page, 'drawer-selected-path', '2026-10-30');
+  const drawerPath = await exportSnapshot(page, 'drawer-selected-path', currentDate);
   assert.equal(drawerPath.view.exploration.pathTo, destination.id);
   assert.equal(drawerPath.graph.nodes.length, distances.get(destination.id) + 1);
   assert.equal(graphDistances(drawerPath.graph, 'sds').get(destination.id), distances.get(destination.id));
@@ -489,7 +538,7 @@ try {
   await assertGraphParity(page, historical, { flat: true });
   await expect(page.getByLabel('사건 기준일 제한', { exact: true })).not.toBeChecked();
   await page.getByLabel('사건 기준일 제한', { exact: true }).check();
-  await expect(page.getByLabel('사건 기준일', { exact: true })).toHaveValue('2026-10-30');
+  await expect(page.getByLabel('사건 기준일', { exact: true })).toHaveValue(currentDate);
   await page.getByLabel('사건 기준일', { exact: true }).fill('2026-06-30');
   await expect(page.getByLabel('정보 기준일', { exact: true })).toHaveValue('2026-09-01');
   const boundedRows = researchAtDate('2026-09-01').filter(row => row.event_date !== null && row.event_date <= '2026-06-30');
@@ -536,13 +585,13 @@ try {
   assert.equal(novemberSnapshot.research_records.find(row => row.id === 'mi-011').event_date, '2025-11-21');
   report.checks.push('Published future plans retain their event dates; mi-011 appears on 2025-11-10 with an explicit announcement badge for its November 21 plan');
 
-  await page.getByLabel('정보 기준일', { exact: true }).fill('2026-10-30');
+  await page.getByLabel('정보 기준일', { exact: true }).fill(currentDate);
   await navigate(page, 'Command Center');
   await expect(page.locator('.graph-stage svg[role="group"]')).toBeVisible();
   await screenshot(page, 'desktop-command-center.png');
 
   await navigate(page, 'Evidence Vault');
-  const currentRows = researchAtDate('2026-10-30');
+  const currentRows = researchAtDate(currentDate);
   const undatedRows = researchCatalog.records.filter(row => row.scope === 'undated');
   const backgroundRows = researchCatalog.records.filter(row => row.scope === 'out_of_window');
   await expect(page.locator('.research-card')).toHaveCount(researchCatalog.records.length);
@@ -592,8 +641,9 @@ try {
   const jsonResponse = await page.request.get(new URL('data/rx-research.json', previewUrl).href);
   assert.ok(jsonResponse.ok());
   const publicCatalog = await jsonResponse.json();
+  assert.deepEqual(publicCatalog.meta, researchCatalog.meta, 'The published catalog must expose the same collection horizon and inventory metadata');
   assert.equal(publicCatalog.records.length, researchCatalog.records.length);
-  assert.equal(claimRows(publicCatalog.records).length, 84);
+  assert.equal(claimRows(publicCatalog.records).length, catalogClaimCount);
   assert.deepEqual(publicCatalog.records, researchCatalog.records, 'Public download must preserve the current audited source metadata and lineage');
   const databaseResponse = await page.request.get(new URL('data/rx-research.sqlite', previewUrl).href);
   assert.ok(databaseResponse.ok());
@@ -603,21 +653,98 @@ try {
   await expect(page.locator('.research-card')).toHaveCount(researchCatalog.records.length);
   assert.equal(new URL(page.url()).hash, '#evidence');
   await screenshot(page, 'desktop-evidence-vault.png', false);
-  report.checks.push('All 81 documents and 84 merged claims preserve scope, lineage and audit status; manual reports stay unarchived and public downloads match the catalog');
+  report.checks.push('All catalog documents and merged claims preserve scope, lineage and audit status; manual reports stay unarchived and public downloads match the catalog');
+
+  await navigate(page, 'Source Survey');
+  const surveyPanel = page.getByTestId('source-survey');
+  await expect(surveyPanel).toBeVisible();
+  assert.equal(new URL(page.url()).hash, '#survey');
+  const surveyResponse = await page.request.get(new URL('data/rx-survey.json', previewUrl).href);
+  assert.ok(surveyResponse.ok(), 'The public survey JSON must be downloadable');
+  const publicSurvey = await surveyResponse.json();
+  assert.deepEqual(publicSurvey, surveyCatalog, 'Public survey download must preserve collection, discovery and execution records');
+  const linkedCandidates = publicSurvey.candidates.filter(row => row.source_ids?.length);
+  const unlinkedCandidates = publicSurvey.candidates.filter(row => !row.source_ids?.length);
+  const sourceIds = new Set(researchCatalog.records.map(record => record.id));
+  for (const candidate of publicSurvey.candidates) {
+    assert.ok(!Object.hasOwn(candidate, 'claim') && !Object.hasOwn(candidate, 'claims'), 'Discovered URLs are metadata, not extracted claims');
+    for (const id of candidate.source_ids ?? []) assert.ok(sourceIds.has(id), `Discovery source link ${id} must resolve to a reviewed catalog record`);
+  }
+  for (const [testId, count] of [['survey-candidates', publicSurvey.candidates.length], ['survey-linked', linkedCandidates.length], ['survey-unreviewed', unlinkedCandidates.length]]) {
+    await expect(surveyPanel.getByTestId(testId).locator('strong')).toHaveText(count.toLocaleString());
+  }
+  assert.equal(linkedCandidates.length + unlinkedCandidates.length, publicSurvey.candidates.length);
+  await expect(surveyPanel).toContainText('전수조사 완료를 의미하지 않습니다');
+  await expect(surveyPanel).toContainText('자동 갱신은 연결되어 있지 않습니다');
+  await assertSurveyCandidatePage(surveyPanel, publicSurvey.candidates);
+  if (publicSurvey.candidates.length > 40) {
+    await surveyPanel.locator('.survey-pagination').getByRole('button', { name: '다음', exact: true }).click();
+    await assertSurveyCandidatePage(surveyPanel, publicSurvey.candidates, 40);
+    await surveyPanel.locator('.survey-pagination').getByRole('button', { name: '이전', exact: true }).click();
+    await assertSurveyCandidatePage(surveyPanel, publicSurvey.candidates);
+  }
+  const failedStatuses = new Set(['blocked', 'error', 'robots_disallowed', 'access_blocked', 'failed', 'budget_exhausted']);
+  for (const [status, records] of [
+    ['linked', linkedCandidates], ['unreviewed', unlinkedCandidates],
+    ['fetched', publicSurvey.candidates.filter(row => row.fetch_status === 'fetched')],
+    ['blocked', publicSurvey.candidates.filter(row => failedStatuses.has(row.fetch_status))],
+  ]) {
+    await page.getByLabel('조사 상태', { exact: true }).selectOption(status);
+    await assertSurveyCandidatePage(surveyPanel, records);
+    if (!records.length) await expect(surveyPanel.getByText('해당 조건의 조사 기록이 없습니다.', { exact: true })).toBeVisible();
+  }
+  await page.getByLabel('조사 상태', { exact: true }).selectOption('all');
+  const searchCandidate = linkedCandidates[0] ?? publicSurvey.candidates[0];
+  assert.ok(searchCandidate, 'The expanded survey must contain actual discovered source URLs');
+  await page.getByLabel('조사 대장 검색', { exact: true }).fill(searchCandidate.id);
+  const searchMatches = publicSurvey.candidates.filter(row => JSON.stringify(row).toLocaleLowerCase().includes(searchCandidate.id.toLocaleLowerCase()));
+  await assertSurveyCandidatePage(surveyPanel, searchMatches);
+  const searchedCandidate = surveyPanel.locator(`[data-candidate-id="${searchCandidate.id}"]`);
+  await expect(searchedCandidate.locator('h3 a')).toHaveAttribute('href', searchCandidate.url);
+  if (searchCandidate.source_ids?.length) {
+    const sourceId = searchCandidate.source_ids[0];
+    await searchedCandidate.getByRole('button', { name: `${sourceId} 근거 보기`, exact: true }).click();
+    await expect(drawer.locator(`.research-source-link[data-source-id="${sourceId}"]`)).toHaveAttribute('href', researchCatalog.records.find(record => record.id === sourceId).url);
+    await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
+  }
+  await page.getByLabel('조사 대장 검색', { exact: true }).fill('rx-qa-no-matching-discovery-8cd1cb');
+  await assertSurveyCandidatePage(surveyPanel, []);
+  await page.getByLabel('조사 대장 검색', { exact: true }).fill('');
+  await assertSurveyCandidatePage(surveyPanel, publicSurvey.candidates);
+  const pendingSurveyDownload = page.waitForEvent('download');
+  await surveyPanel.getByRole('link', { name: '조사 대장 JSON', exact: true }).click();
+  const surveyDownload = await pendingSurveyDownload;
+  assert.equal(surveyDownload.suggestedFilename(), 'rx-survey.json');
+  const surveyPath = path.join(output, 'rx-survey.json');
+  await surveyDownload.saveAs(surveyPath);
+  assert.deepEqual(JSON.parse(await readFile(surveyPath, 'utf8')), publicSurvey);
+  const databasePath = path.join(output, 'rx-research.sqlite');
+  await writeFile(databasePath, await databaseResponse.body());
+  await assertSurveyDatabase(databasePath, publicSurvey);
+  const afterSurvey = await exportSnapshot(page, 'after-survey-navigation', currentDate);
+  assertResearchSnapshot(afterSurvey, researchCatalog.records, currentDate);
+  assert.deepEqual(afterSurvey.research_claims, currentSnapshot.research_claims, 'Survey browsing must not promote or change source claims');
+  await screenshot(page, 'desktop-source-survey.png', false);
+  await page.reload({ waitUntil: 'networkidle' });
+  await expect(page.locator('main h1')).toContainText('Source Survey');
+  assert.equal(new URL(page.url()).hash, '#survey');
+  report.survey_metrics = { candidates: publicSurvey.candidates.length, linked: linkedCandidates.length, unlinked: unlinkedCandidates.length, collections: publicSurvey.collections.length, runs: publicSurvey.runs.length };
+  report.checks.push('Source Survey totals, search, status filters and 40-row pagination match its public JSON; linked source drawers preserve exact evidence and the survey route reloads');
+  report.checks.push('Downloaded SQLite preserves Sources/Claims and all three survey tables; unreviewed discoveries remain metadata with automatic verification disabled and never alter the graph catalog');
 
   await navigate(page, 'Briefing Studio');
   const briefing = page.getByTestId('period-briefing');
   const periods = [
-    { value: 'daily', label: '일간', start: '2026-10-30' },
-    { value: 'weekly', label: '주간', start: '2026-10-24' },
-    { value: 'monthly', label: '월간', start: '2026-10-01' },
+    { value: 'daily', label: '일간', start: currentDate },
+    { value: 'weekly', label: '주간', start: weeklyStart },
+    { value: 'monthly', label: '월간', start: monthlyStart },
   ];
   for (const period of periods) {
     await briefing.getByRole('group', { name: '브리핑 기간', exact: true }).getByRole('button', { name: period.label, exact: true }).click();
-    const rows = researchAtDate('2026-10-30').filter(row => row.published_at >= period.start);
+    const rows = researchAtDate(currentDate).filter(row => row.published_at >= period.start);
     await expect(briefing).toHaveAttribute('data-period', period.value);
     await expect(page.getByTestId('brief-window')).toContainText(period.start);
-    await expect(page.getByTestId('brief-window')).toContainText('2026-10-30');
+    await expect(page.getByTestId('brief-window')).toContainText(currentDate);
     await expect(page.getByTestId('brief-new-count')).toHaveText(`${rows.length}건`);
     if (rows.length > 4) await briefing.getByRole('button', { name: `신규 문서 ${rows.length}건 모두 보기`, exact: true }).click();
     assert.deepEqual(sorted(await briefing.locator('[data-brief-source]').evaluateAll(elements => elements.map(element => element.getAttribute('data-brief-source')))), sorted(rows.map(row => row.id)), `${period.value} sources must follow the actual publication window`);
@@ -625,12 +752,12 @@ try {
     const pendingBrief = page.waitForEvent('download');
     await briefing.getByRole('button', { name: '기간 JSON', exact: true }).click();
     const briefDownload = await pendingBrief;
-    assert.equal(briefDownload.suggestedFilename(), `rx-briefing-${period.value}-2026-10-30.json`);
+    assert.equal(briefDownload.suggestedFilename(), `rx-briefing-${period.value}-${currentDate}.json`);
     const briefPath = path.join(output, briefDownload.suggestedFilename());
     await briefDownload.saveAs(briefPath);
     const exportedBrief = JSON.parse(await readFile(briefPath, 'utf8'));
     assert.equal(exportedBrief.bounds.start, period.start);
-    assert.equal(exportedBrief.bounds.end, '2026-10-30');
+    assert.equal(exportedBrief.bounds.end, currentDate);
     assert.deepEqual(sorted(exportedBrief.withinPeriod.map(row => row.id)), sorted(rows.map(row => row.id)));
     assert.deepEqual(sorted(exportedBrief.claims.map(row => row.id)), sorted(claimRows(rows).map(row => row.id)));
     assert.deepEqual(Object.fromEntries(exportedBrief.groups.map(group => [group.originKey, sorted(group.records.map(row => row.id))])), groupedSourceIds(rows), 'Briefing source groups must preserve the actual lineage members');
@@ -709,7 +836,7 @@ try {
   assert.equal(storedReview.events.length, 2);
   assert.equal(storedReview.events[1].previous_verdict, 'support');
   assert.equal(storedReview.events[1].verdict, 'challenge');
-  assert.ok(storedReview.events.every(event => event.fact_promotion === false && event.actor === 'local_browser_user' && event.as_of === '2026-10-30' && event.mode === 'known'));
+  assert.ok(storedReview.events.every(event => event.fact_promotion === false && event.actor === 'local_browser_user' && event.as_of === currentDate && event.mode === 'known'));
   const pendingReviews = page.waitForEvent('download');
   await workbench.getByRole('button', { name: '개인 검토 JSON', exact: true }).click();
   const reviewDownload = await pendingReviews;
@@ -718,9 +845,9 @@ try {
   assert.deepEqual(JSON.parse(await readFile(reviewPath, 'utf8')).events, storedReview.events);
   await page.reload({ waitUntil: 'networkidle' });
   await expect(page.locator(`article[data-review-evidence="${reviewEvidenceId}"]`).getByTestId('review-current')).toContainText(revisedReason);
-  await page.getByLabel('정보 기준일', { exact: true }).fill('2026-10-29');
+  await page.getByLabel('정보 기준일', { exact: true }).fill(shiftDay(currentDate, -1));
   await expect(page.getByTestId('review-current')).toHaveCount(0);
-  await page.getByLabel('정보 기준일', { exact: true }).fill('2026-10-30');
+  await page.getByLabel('정보 기준일', { exact: true }).fill(currentDate);
   await expect(page.getByTestId('review-current')).toHaveCount(1);
   await navigate(page, 'Time Machine');
   await page.getByRole('button', { name: 'Retrospective', exact: true }).click();
@@ -730,7 +857,7 @@ try {
   await page.getByRole('button', { name: 'As-known-at', exact: true }).click();
   await navigate(page, 'Hypothesis War Room');
   await expect(page.getByTestId('review-current')).toHaveCount(1);
-  const afterReview = await exportSnapshot(page, 'after-personal-review', '2026-10-30');
+  const afterReview = await exportSnapshot(page, 'after-personal-review', currentDate);
   assert.deepEqual(afterReview.research_claims, currentSnapshot.research_claims, 'Personal assessment must not mutate source claims');
   await screenshot(page, 'desktop-hypothesis-review.png', false);
   report.checks.push('War Room exposes challenges, requires reasons, appends personal review history, persists on reload and isolates date/mode without promoting facts');
@@ -809,8 +936,8 @@ try {
   }
   await navigate(mobile, '3D Universe', true);
   await mobile.getByLabel('그래프 레이어', { exact: true }).selectOption('evidence');
-  const mobileEvidence = await exportSnapshot(mobile, 'mobile-evidence-layer', '2026-10-30');
-  assertResearchSnapshot(mobileEvidence, researchCatalog.records, '2026-10-30');
+  const mobileEvidence = await exportSnapshot(mobile, 'mobile-evidence-layer', currentDate);
+  assertResearchSnapshot(mobileEvidence, researchCatalog.records, currentDate);
   assert.deepEqual(sorted(mobileEvidence.graph.nodes.map(node => node.id)), sorted(currentSnapshot.graph.nodes.filter(isEvidenceNode).map(node => node.id)));
   await assertGraphParity(mobile, mobileEvidence, { flat: true });
   await noHorizontalOverflow(mobile, 'Mobile evidence-layer controls');
@@ -824,13 +951,21 @@ try {
   await mobile.getByRole('button', { name: '탐색 초기화', exact: true }).click();
   await mobile.getByLabel('중심 노드', { exact: true }).selectOption('sds');
   await mobile.getByLabel('탐색 깊이', { exact: true }).selectOption('2');
-  const mobileNeighbors = await exportSnapshot(mobile, 'mobile-sds-two-hops', '2026-10-30');
+  const mobileNeighbors = await exportSnapshot(mobile, 'mobile-sds-two-hops', currentDate);
   assertNeighborhood(mobileNeighbors, currentSnapshot.graph, 'sds', 2);
   await assertGraphParity(mobile, mobileNeighbors, { flat: true });
   await noHorizontalOverflow(mobile, 'Mobile two-hop exploration');
   await screenshot(mobile, 'mobile-universe-two-hop.png');
   await mobile.getByRole('button', { name: '탐색 초기화', exact: true }).click();
   report.checks.push('Mobile can switch evidence layers, open a merged source with both claims, and explore two-hop neighborhoods with the same exported graph and no overflow');
+  await navigate(mobile, 'Source Survey', true);
+  const mobileSurvey = mobile.getByTestId('source-survey');
+  await assertSurveyCandidatePage(mobileSurvey, publicSurvey.candidates);
+  await mobile.getByLabel('조사 상태', { exact: true }).selectOption('unreviewed');
+  await assertSurveyCandidatePage(mobileSurvey, unlinkedCandidates);
+  await noHorizontalOverflow(mobile, 'Mobile Source Survey unlinked discoveries');
+  await screenshot(mobile, 'mobile-source-survey.png', false);
+  report.checks.push('Mobile Source Survey preserves discovery pagination and unlinked status filtering without horizontal overflow');
   await navigate(mobile, 'Evidence Vault', true);
   await screenshot(mobile, 'mobile-evidence-vault.png', false);
   await navigate(mobile, 'Command Center', true);

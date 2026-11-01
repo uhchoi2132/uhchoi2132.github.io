@@ -1,0 +1,115 @@
+{
+  "collections": [
+    {
+      "url": "https://miracom-inc.com/kr/customer-support/insight-reports/dn6",
+      "publisher": "미라콤아이앤씨",
+      "label": "인사이트 리포트 총54개·더 보기형"
+    },
+    {
+      "url": "https://miracom-inc.com/kr/customer-support/news/dn2",
+      "publisher": "미라콤아이앤씨",
+      "label": "언론보도 총7개·더 보기형"
+    },
+    {
+      "url": "https://miracom-inc.com/kr/customer-support/miracom-focus/dn14",
+      "publisher": "미라콤아이앤씨",
+      "label": "M-FOCUS 총16개·더 보기형"
+    },
+    {
+      "url": "https://www.miracom-inc.com/user/Board/comm_notice.do?BD_NO=1&LANG_CH=KO",
+      "publisher": "미라콤아이앤씨",
+      "label": "레거시 공지사항·행사"
+    },
+    {
+      "url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/list.html",
+      "publisher": "삼성SDI",
+      "label": "공식 뉴스 목록"
+    },
+    {
+      "url": "https://www.samsungsem.com/kr/newsroom/news/list.do",
+      "publisher": "삼성전기",
+      "label": "뉴스 최신기사·현재 추출에 검색 결과 없음"
+    },
+    {
+      "url": "https://www.samsungshi.com/Ko/Notice_news.aspx",
+      "publisher": "삼성중공업",
+      "label": "공식 뉴스 목록·웹 열람 도구 접근 실패"
+    },
+    {
+      "url": "https://blog.samsungshi.com/category/SHI%EB%8A%94%20%EC%A7%80%EA%B8%88?page=1",
+      "publisher": "삼성중공업",
+      "label": "공식 블로그 SHI는 지금"
+    },
+    {
+      "url": "https://semes.com/ko/media/newsroom/view",
+      "publisher": "세메스",
+      "label": "뉴스룸·최신 페이지에 2026 7개 및 2025년8월 이전 목록"
+    },
+    {
+      "url": "https://news.samsungdisplay.com/",
+      "publisher": "삼성디스플레이",
+      "label": "공식 뉴스룸"
+    },
+    {
+      "url": "https://miracom-inc.com/kr/customer-support/library/dn5",
+      "publisher": "미라콤아이앤씨",
+      "label": "라이브러리 총 66개, 브로슈어/동영상/구축사례, 첫 5개 표시 및 JS 목록"
+    },
+    {
+      "url": "https://samsungena.com/kr/newsroom/news/list",
+      "publisher": "삼성E&A",
+      "label": "기업뉴스 총 99페이지, 페이지당 6개"
+    },
+    {
+      "url": "https://samsungshi.com/ESG/Kor/sub5.aspx",
+      "publisher": "삼성중공업",
+      "label": "공식 보고서 목록: 2026 지속가능/안전보건환경 보고서 href 수집 필요"
+    },
+    {
+      "url": "https://samsungsem.com/kr/sustainability/library.do",
+      "publisher": "삼성전기",
+      "label": "2025-2026 지속가능경영보고서 다운로드 application/download"
+    },
+    {
+      "url": "https://www.samsungshi.com/ESG/Kor/sub1.aspx?sub=sub1_3",
+      "publisher": "삼성중공업",
+      "label": "ESG 스토리, 해커톤 제조 AI 파일럿 등, 전체목록 추가탐색"
+    }
+  ],
+  "urls": [
+    "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/darkfactory-ax-rx-manufacturing",
+    "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html",
+    "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html",
+    "https://samsungsdi.co.kr/sdi-now/sdi-news/4803.html",
+    "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4941.html",
+    "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=248",
+    "https://blog.samsungshi.com/906",
+    "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10161",
+    "https://www.samsungsem.com/kr/newsroom/news/view.do?id=10041",
+    "https://samsungsem.com/kr/newsroom/news/view.do?id=10627",
+    "https://sea.samsungena.com/kr/sustainability/social/safety",
+    "https://miracom-inc.com/kr/service/smart-factory/ax/ai-engineer",
+    "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/mc",
+    "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/qms",
+    "https://miracom-inc.com/kr/service/smart-factory/equipment-connectivity",
+    "https://www.semes.com/ko/company/corporate-overview",
+    "https://miracom-inc.com/kr/company/capability/smart-factory",
+    "https://sea.samsungena.com/kr/newsroom/news/view?idx=15836",
+    "https://samsungena.com/kr/newsroom/news/view?idx=15838",
+    "https://miracom-inc.com/kr/solution/smart-factory/highway101",
+    "https://miracom-inc.com/kr/service/smart-factory/fems-carbon-management",
+    "https://miracom-inc.com/kr/solution/smart-factory/nexplant-mesplus/ees",
+    "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-data",
+    "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/carbon-regulation-manufacturing-response",
+    "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/ramen-food-smartfactory-case",
+    "https://miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20MES_EN.pdf",
+    "https://www.miracom-inc.com/upload/userUpload/brochure/en/Nexplant%20MESplus%20QMS_EN.pdf",
+    "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=251",
+    "https://www.samsungshi.com/Ko/Notice_news_view.aspx?no=249",
+    "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html",
+    "https://semes.com/ko/product/process",
+    "https://miracom-inc.com/kr/diagnosis/digital-factory",
+    "https://samsungsem.com/files/fileDown.do?key=f00a309b-ce27-4c55-9943-e52b7553f76a",
+    "https://samsungshi.com/ESG/Kor/sub1_3_view.aspx?no=77"
+  ]
+}

@@ -1,3 +1,4 @@
+import expansionData from './knowledge-expansion.json' with { type: 'json' };
 /** Reviewed names from the existing source inventory; aliases identify text, not business dependencies. */
 export type KnowledgeKind = 'company' | 'organization' | 'technology' | 'product' | 'factory' | 'project' | 'contract' | 'claim' | 'source' | 'event' | 'hypothesis' | 'question' | 'evidence';
 export type OntologyType = 'Company' | 'Organization' | 'Product' | 'Robot' | 'Technology' | 'Factory' | 'Project' | 'Contract' | 'Claim' | 'Source' | 'Event' | 'Hypothesis' | 'Question' | 'Paper' | 'Patent' | 'Keyword';
@@ -210,7 +211,14 @@ export function layerPosition(cluster: KnowledgeCluster, layer: KnowledgeLayer, 
   const z = (layer === 'sources' ? -1.6 : layer === 'claims' ? 1.45 : 0) + Math.sin(index * 2.399) * .65;
   return [center[0] + Math.cos(angle) * radius, center[1] + Math.sin(angle) * radius * .86, z].map(value => Number(value.toFixed(4))) as Position;
 }
-export const ontologyDefinitions: OntologyDefinition[] = [...legacyDefinitions, ...extraDefinitions];
+interface ExpandedEntity { id: string; title: string; ontology_type: OntologyType; aliases: string[]; cluster?: KnowledgeCluster }
+const existingIds = new Set([...legacyDefinitions, ...extraDefinitions].map(item => item.id));
+const expandedDefinitions: OntologyDefinition[] = (expansionData.entities as ExpandedEntity[]).filter(item => !existingIds.has(item.id)).map(item => ({
+  id: item.id, title: item.title, ontology_type: item.ontology_type, aliases: item.aliases,
+  kind: kindFor(item.ontology_type), cluster: item.cluster ?? 'research', layer: 'entities',
+  description: identityDescription(item.title, item.ontology_type), position: [0, 0, 0], size: item.ontology_type === 'Company' ? .14 : .105,
+}));
+export const ontologyDefinitions: OntologyDefinition[] = [...legacyDefinitions, ...extraDefinitions, ...expandedDefinitions];
 for (const cluster of Object.keys(CLUSTER_CENTERS) as KnowledgeCluster[]) {
   const items = ontologyDefinitions.filter(item => item.cluster === cluster).sort((a, b) => a.id.localeCompare(b.id));
   items.forEach((item, index) => { item.position = layerPosition(cluster, 'entities', index, items.length); });

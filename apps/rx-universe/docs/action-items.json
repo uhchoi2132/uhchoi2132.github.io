@@ -1,5 +1,5 @@
 {
-  "version": "2.5",
+  "version": "2.6",
   "updated_at": "2026-10-31",
   "items": [
     {
@@ -273,6 +273,25 @@
         "AI-013"
       ],
       "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41217857834"
+    },
+    {
+      "id": "AI-018",
+      "priority": "P1",
+      "title": "공식 출처 조사 범위 확장과 발견·검토 대장 공개",
+      "status": "in_progress",
+      "acceptance": [
+        "공식 뉴스룸·IR·제품·연구·행사·관계사·파트너의 조사 경로와 접근 공백을 기록한다.",
+        "발견 URL은 실행별 관측을 보존하고 canonical URL로 합치며 자동으로 주장이나 사실을 생성하지 않는다.",
+        "새로 검토한 자료의 주장과 관계를 원문에 연결하고 날짜·출처군 충돌을 검증한다.",
+        "Source Survey의 검색·상태·페이지와 다운로드 JSON·SQLite가 일치하는지 검증한다.",
+        "검토한 근거 수와 전체 발견 URL을 구분하여 공개 배포한다."
+      ],
+      "dependencies": [
+        "AI-001",
+        "AI-003",
+        "AI-013",
+        "AI-017"
+      ]
     }
   ],
   "validation": {

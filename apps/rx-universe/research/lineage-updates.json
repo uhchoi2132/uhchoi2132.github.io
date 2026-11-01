@@ -1,0 +1,680 @@
+[
+  {
+    "record_id": "sds-011",
+    "origin_key": "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "reviewer": "ecosystem_editorial_review",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-eco-013"
+      ],
+      "source_urls": [
+        "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+        "https://www.linkedin.com/posts/waldenrobotics_we-spend-a-lot-of-time-talking-about-robots-activity-7487929613239840769-efJo"
+      ],
+      "document_origin_url": "https://www.waldenrobotics.com/news/walden-samsung-sds-partnership",
+      "rationale": "같은 Walden-SDS 제조 PoC 설명을 재현한 공식 게시물로 보수적으로 하나의 협력 출처군으로 처리한다. LinkedIn의 미확인 게시일은 수정하지 않는다.",
+      "review_method": "inventory_evidence_review",
+      "exceptions": []
+    }
+  },
+  {
+    "record_id": "se-016",
+    "origin_key": "sfa-rainbow:2026-09-30-mou",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "reviewer": "ecosystem_editorial_review",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-eco-015"
+      ],
+      "source_urls": [
+        "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/",
+        "https://zdnet.co.kr/view/?no=20260929183802"
+      ],
+      "document_origin_url": "https://www.sfa.co.kr/공지사항/pr영상-sfa-x-레인보우로보틱스-제조의-미래를-바꾸다/",
+      "rationale": "SFA 공식 본문과 ZDNet 보도는 동일 AI 자율제조·로봇 MOU를 다룬다. 원문의 발표일과 협약일은 별도 보존한다.",
+      "review_method": "inventory_evidence_review",
+      "exceptions": []
+    }
+  },
+  {
+    "record_id": "mi-015",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "reviewer": "public_source_editorial_review",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "source_urls": [
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4761.html",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4887.html"
+      ],
+      "related_record_ids": [
+        "x-mf-003",
+        "x-mf-030"
+      ],
+      "document_origin_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/4781.html",
+      "rationale": "3월 2일·9일 Interbattery 예고와 4월 28일 실적 자료의 샘플 공개 회고는 같은 전시 사건이다. 새 배포나 독립 검증 사건으로 중복 집계하지 않는다.",
+      "review_method": "source_text_review",
+      "exceptions": []
+    }
+  },
+  {
+    "record_id": "mi-016",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "reviewer": "public_source_editorial_review",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "source_urls": [
+        "https://ir.edaily.co.kr/News/Read?k=03995046645617840",
+        "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html"
+      ],
+      "related_record_ids": [
+        "x-mf-002"
+      ],
+      "document_origin_url": "https://www.samsungsdi.co.kr/sdi-now/sdi-news/5065.html",
+      "rationale": "이데일리 Q3 실적 보도와 삼성SDI 공식 Q3 발표가 동일한 실적 설명을 전달하므로 하나의 발표 계보로 묶는다.",
+      "review_method": "source_text_review",
+      "exceptions": []
+    }
+  },
+  {
+    "record_id": "media-001",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-001"
+      ],
+      "source_urls": [
+        "https://zdnet.co.kr/view/?no=20260908143333",
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "media-002",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-001"
+      ],
+      "source_urls": [
+        "https://www.newspim.com/news/view/20260908000734",
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "media-003",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-001"
+      ],
+      "source_urls": [
+        "https://zdnet.co.kr/view/?no=20260908122517",
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "mi-001",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-001"
+      ],
+      "source_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-004",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-001"
+      ],
+      "source_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260908.html",
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-010",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-001"
+      ],
+      "source_urls": [
+        "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-014",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-001"
+      ],
+      "source_urls": [
+        "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "media-001",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-017"
+      ],
+      "source_urls": [
+        "https://zdnet.co.kr/view/?no=20260908143333",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "media-002",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-017"
+      ],
+      "source_urls": [
+        "https://www.newspim.com/news/view/20260908000734",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "media-003",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-017"
+      ],
+      "source_urls": [
+        "https://zdnet.co.kr/view/?no=20260908122517",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "mi-001",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-017"
+      ],
+      "source_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-004",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-017"
+      ],
+      "source_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260908.html",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-010",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-017"
+      ],
+      "source_urls": [
+        "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-014",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-017"
+      ],
+      "source_urls": [
+        "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-003",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-019"
+      ],
+      "source_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260903.html",
+        "https://www.samsungsds.com/us/news/1295365_5933.html"
+      ],
+      "rationale": "공식 영문 RX ART 결과 발표는 8월31일~9월1일 미국 워크숍을 설명하는 기존 국문 발표의 언어판이다. 영문 게시일 9월8일을 국문 게시일 9월3일로 덮어쓰지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "media-001",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-020"
+      ],
+      "source_urls": [
+        "https://zdnet.co.kr/view/?no=20260908143333",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "media-002",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-020"
+      ],
+      "source_urls": [
+        "https://www.newspim.com/news/view/20260908000734",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "media-003",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-020"
+      ],
+      "source_urls": [
+        "https://zdnet.co.kr/view/?no=20260908122517",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "mi-001",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-020"
+      ],
+      "source_urls": [
+        "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-004",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-020"
+      ],
+      "source_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260908.html",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-010",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-020"
+      ],
+      "source_urls": [
+        "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-014",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-020"
+      ],
+      "source_urls": [
+        "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-005",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-021"
+      ],
+      "source_urls": [
+        "https://www.samsungsds.com/kr/news/ss-261029.html",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-007",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-021"
+      ],
+      "source_urls": [
+        "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung_SDS_3Q26_Script_Eng_261029.pdf",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-013",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-021"
+      ],
+      "source_urls": [
+        "https://files.newsis.com/view/NISX20261029_0003846643",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-018",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-021"
+      ],
+      "source_urls": [
+        "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%203Q26%20Earnings%20Release_1.pdf",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-002",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-022"
+      ],
+      "source_urls": [
+        "https://www.samsungsds.com/kr/news/ss-260730.html",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-006",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-022"
+      ],
+      "source_urls": [
+        "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/Samsung_SDS_2Q26_Script_Eng_260730_1.pdf",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-008",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-023"
+      ],
+      "source_urls": [
+        "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/SDS_1Q2026_Full_ConferenceCall_Script_ENG_2.pdf",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%201%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_KR_2.pdf"
+      ],
+      "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-005",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-030"
+      ],
+      "source_urls": [
+        "https://www.samsungsds.com/kr/news/ss-261029.html",
+        "https://www.samsungsds.com/en/news/fr-261030.html"
+      ],
+      "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-007",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-030"
+      ],
+      "source_urls": [
+        "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung_SDS_3Q26_Script_Eng_261029.pdf",
+        "https://www.samsungsds.com/en/news/fr-261030.html"
+      ],
+      "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-013",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-030"
+      ],
+      "source_urls": [
+        "https://files.newsis.com/view/NISX20261029_0003846643",
+        "https://www.samsungsds.com/en/news/fr-261030.html"
+      ],
+      "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  },
+  {
+    "record_id": "sds-018",
+    "review": {
+      "reviewed_at": "2026-10-31",
+      "decision": "shared_origin",
+      "basis": "same_company_event",
+      "related_record_ids": [
+        "x-sds-030"
+      ],
+      "source_urls": [
+        "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%203Q26%20Earnings%20Release_1.pdf",
+        "https://www.samsungsds.com/en/news/fr-261030.html"
+      ],
+      "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+      "exceptions": [],
+      "review_method": "inventory_evidence_review"
+    }
+  }
+]

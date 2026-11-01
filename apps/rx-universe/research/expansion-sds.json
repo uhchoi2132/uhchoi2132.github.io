@@ -1,0 +1,4714 @@
+{
+  "records": [
+    {
+      "id": "x-sds-001",
+      "title": "삼성SDS, '리얼 서밋 2026' 9월 8일 개최",
+      "url": "https://www.samsungsds.com/kr/news/sds-260901.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-09-01",
+      "event_date": null,
+      "scheduled_event_date": "2026-09-08",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "walden",
+        "real-summit-2026"
+      ],
+      "origin_key": "samsung-sds:2026-09-08-real-summit-rx",
+      "summary_ko": "삼성SDS는 REAL Summit 2026의 제조 트랙을 포함한 산업별 발표 세션을 예고했다.",
+      "excerpt": "월든 로보틱스",
+      "claim": {
+        "text": "삼성SDS는 REAL Summit 2026의 제조 트랙을 포함한 산업별 발표 세션을 예고했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-001",
+          "text": "삼성SDS는 REAL Summit 2026의 제조 트랙을 포함한 산업별 발표 세션을 예고했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-001",
+          "verification": "manual_report",
+          "evidence_locator": "본문 24–36행; 게시일 15행",
+          "limitations": [
+            "사전 행사 안내이며 발표·시연 완료나 신규 고객 계약을 입증하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-001:2",
+          "text": "삼성SDS는 Walden Robotics를 국내외 AI 파트너로 소개하며 REAL Summit 2026 세션 발표 참여를 예고했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-001",
+          "verification": "manual_report",
+          "evidence_locator": "본문 24–36행; 게시일 15행",
+          "limitations": [
+            "사전 행사 안내이며 발표·시연 완료나 신규 고객 계약을 입증하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "사전 행사 안내이며 발표·시연 완료나 신규 고객 계약을 입증하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "본문 24–36행; 게시일 15행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "media-001",
+          "media-002",
+          "media-003",
+          "mi-001",
+          "sds-004",
+          "sds-010",
+          "sds-014",
+          "x-sds-017",
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/sds-260901.html",
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [
+          {
+            "with_record_id": "sds-019",
+            "reason": "9월1일 공식 자료는 9월8일 REAL Summit 행사 개최 안내이고, 동시기 언론 자료는 SDS America·삼성전자 연구 채용 공고 취재이다. 같은 날짜의 별도 원천이다."
+          }
+        ],
+        "document_origin_url": "https://www.samsungsds.com/kr/news/sds-260901.html",
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "id": "x-sds-002",
+      "title": "삼성SDS, 충청·전라 제조기업과 AX 혁신 전략 공유",
+      "url": "https://www.samsungsds.com/kr/news/id-260609.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-05-28",
+      "event_date": "2026-05-28",
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "private-5g",
+        "harim",
+        "erp",
+        "mes"
+      ],
+      "origin_key": "samsung-sds:industry-day-2026-05-28",
+      "summary_ko": "삼성SDS는 제조 Industry Day에서 로봇과 제어 시스템의 실시간 데이터 송수신을 지원하는 5G 특화망 구축 사례를 소개했다.",
+      "excerpt": "로봇과 제어 시스템 간 실시간 데이터 송수신",
+      "claim": {
+        "text": "삼성SDS는 제조 Industry Day에서 로봇과 제어 시스템의 실시간 데이터 송수신을 지원하는 5G 특화망 구축 사례를 소개했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-002",
+          "text": "삼성SDS는 제조 Industry Day에서 로봇과 제어 시스템의 실시간 데이터 송수신을 지원하는 5G 특화망 구축 사례를 소개했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-002",
+          "verification": "manual_report",
+          "evidence_locator": "본문 23–33행; 게시일 15행",
+          "limitations": [
+            "세미나에서 소개된 사례이며 로봇 현장명·기종·90일 가동·유료 RX 운영 여부는 공개하지 않는다.",
+            "18개사는 하림 ERP 범위이며 RX 고객 수가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-002:2",
+          "text": "삼성SDS는 하림그룹 주요 18개 계열사를 연결하는 One ERP 구축 사례를 소개했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-002",
+          "verification": "manual_report",
+          "evidence_locator": "본문 23–33행; 게시일 15행",
+          "limitations": [
+            "세미나에서 소개된 사례이며 로봇 현장명·기종·90일 가동·유료 RX 운영 여부는 공개하지 않는다.",
+            "18개사는 하림 ERP 범위이며 RX 고객 수가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "세미나에서 소개된 사례이며 로봇 현장명·기종·90일 가동·유료 RX 운영 여부는 공개하지 않는다.",
+        "18개사는 하림 ERP 범위이며 RX 고객 수가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "본문 23–33행; 게시일 15행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-015"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/id-260609.html",
+          "https://www.samsungsds.com/kr/event/mr-industryday-2026-0528.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://www.samsungsds.com/kr/news/id-260609.html",
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "id": "x-sds-003",
+      "title": "삼성전기 차세대 ERP 구축 완료",
+      "url": "https://www.samsungsds.com/kr/news/se-260420.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-04-20",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "semco",
+        "erp",
+        "mes",
+        "scm",
+        "bw"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/news/se-260420.html",
+      "summary_ko": "삼성SDS는 삼성전기의 차세대 ERP 구축 프로젝트를 완료했다고 발표했다.",
+      "excerpt": "ERP, MES, SCM",
+      "claim": {
+        "text": "삼성SDS는 삼성전기의 차세대 ERP 구축 프로젝트를 완료했다고 발표했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-003",
+          "text": "삼성SDS는 삼성전기의 차세대 ERP 구축 프로젝트를 완료했다고 발표했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-003",
+          "verification": "manual_report",
+          "evidence_locator": "본문 26–39행; 게시일 15행",
+          "limitations": [
+            "제조 기업의 ERP 구축 완료 주장이다. 로봇 오케스트레이션 상용화·RX 반복매출과 구분한다.",
+            "공급자·고객 인용 발표로 독립 성능 감사 자료가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-003:2",
+          "text": "삼성전기 MIS그룹장 인용문은 ERP·MES·SCM 데이터를 단일 BW 데이터베이스로 통합했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-003",
+          "verification": "manual_report",
+          "evidence_locator": "본문 26–39행; 게시일 15행",
+          "limitations": [
+            "제조 기업의 ERP 구축 완료 주장이다. 로봇 오케스트레이션 상용화·RX 반복매출과 구분한다.",
+            "공급자·고객 인용 발표로 독립 성능 감사 자료가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "production",
+      "limitations": [
+        "제조 기업의 ERP 구축 완료 주장이다. 로봇 오케스트레이션 상용화·RX 반복매출과 구분한다.",
+        "공급자·고객 인용 발표로 독립 성능 감사 자료가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "본문 26–39행; 게시일 15행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-027"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/se-260420.html",
+          "https://www.samsungsds.com/kr/insights/next-generation-erp-conversion.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://www.samsungsds.com/kr/news/se-260420.html",
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "id": "x-sds-004",
+      "title": "첼로스퀘어 콘퍼런스 2026: 에이전틱 AI 공급망",
+      "url": "https://www.samsungsds.com/kr/news/cs-260402.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-04-02",
+      "event_date": "2026-04-02",
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "digital-twin",
+        "supply-chain-control"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/news/cs-260402.html",
+      "summary_ko": "삼성SDS는 첼로스퀘어 콘퍼런스에서 생산·운송·재고 데이터를 통합하는 자동화 컨트롤 타워 방향을 제시했다.",
+      "excerpt": "디지털 트윈 기반 시뮬레이션",
+      "claim": {
+        "text": "삼성SDS는 첼로스퀘어 콘퍼런스에서 생산·운송·재고 데이터를 통합하는 자동화 컨트롤 타워 방향을 제시했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-004",
+          "text": "삼성SDS는 첼로스퀘어 콘퍼런스에서 생산·운송·재고 데이터를 통합하는 자동화 컨트롤 타워 방향을 제시했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-004",
+          "verification": "manual_report",
+          "evidence_locator": "본문 26–37행",
+          "limitations": [
+            "물류 운영 방향·전망이며 특정 공장 로봇 운영 완료·수익 실적이 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-004:2",
+          "text": "삼성SDS는 창고의 작업자·자동화 설비·AI 역할 분담을 위한 디지털 트윈 시뮬레이션 중요성을 제시했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-004",
+          "verification": "manual_report",
+          "evidence_locator": "본문 26–37행",
+          "limitations": [
+            "물류 운영 방향·전망이며 특정 공장 로봇 운영 완료·수익 실적이 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "물류 운영 방향·전망이며 특정 공장 로봇 운영 완료·수익 실적이 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "본문 26–37행"
+    },
+    {
+      "id": "x-sds-005",
+      "title": "Embodied Agent, 가상 세계를 넘어 AI의 손을 잡다",
+      "url": "https://www.samsungsds.com/kr/insights/embodied-agent-physical-ai.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-08-28",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "physical-ai",
+        "robot-learning"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/insights/embodied-agent-physical-ai.html",
+      "summary_ko": "삼성SDS 인사이트 필자는 로봇이 안정적으로 행동하려면 사람 시범에서 힘 조절과 실패 후 회복까지 학습해야 한다고 설명한다.",
+      "excerpt": "실패 후 회복",
+      "claim": {
+        "text": "삼성SDS 인사이트 필자는 로봇이 안정적으로 행동하려면 사람 시범에서 힘 조절과 실패 후 회복까지 학습해야 한다고 설명한다.",
+        "kind": "inference"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-005",
+          "text": "삼성SDS 인사이트 필자는 로봇이 안정적으로 행동하려면 사람 시범에서 힘 조절과 실패 후 회복까지 학습해야 한다고 설명한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-005",
+          "verification": "manual_report",
+          "evidence_locator": "Executive Summary 21–25행; 게시일 17행",
+          "limitations": [
+            "기고문의 기술·UX 설명이며 삼성SDS 제품 구현 또는 고객 배포를 입증하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "기고문의 기술·UX 설명이며 삼성SDS 제품 구현 또는 고객 배포를 입증하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Executive Summary 21–25행; 게시일 17행"
+    },
+    {
+      "id": "x-sds-006",
+      "title": "디지털 트윈의 진화 방향 – 시각화를 넘어 의사결정 시스템으로",
+      "url": "https://www.samsungsds.com/kr/insights/the-evolution-of-digital-twin.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-03-20",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "digital-twin",
+        "mes",
+        "physical-ai",
+        "vla"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/insights/the-evolution-of-digital-twin.html",
+      "summary_ko": "삼성SDS 인사이트 필자는 설비·MES·ERP·품질 데이터를 같은 의미로 해석하기 어렵다는 점을 기존 디지털 트윈의 한계로 지적한다.",
+      "excerpt": "안전·품질 리스크",
+      "claim": {
+        "text": "삼성SDS 인사이트 필자는 설비·MES·ERP·품질 데이터를 같은 의미로 해석하기 어렵다는 점을 기존 디지털 트윈의 한계로 지적한다.",
+        "kind": "inference"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-006",
+          "text": "삼성SDS 인사이트 필자는 설비·MES·ERP·품질 데이터를 같은 의미로 해석하기 어렵다는 점을 기존 디지털 트윈의 한계로 지적한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-006",
+          "verification": "manual_report",
+          "evidence_locator": "본문 37–40행; 게시일 17행",
+          "limitations": [
+            "필자의 산업 분석이며 삼성 제조 현장 완전 자율화의 검증 자료가 아니다.",
+            "다른 기업 실적 수치를 삼성SDS KPI로 옮기지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-006:2",
+          "text": "같은 글은 시뮬레이션 최적화 결과의 현장 적용에 안전·품질 검토가 필요하다고 설명한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-006",
+          "verification": "manual_report",
+          "evidence_locator": "본문 37–40행; 게시일 17행",
+          "limitations": [
+            "필자의 산업 분석이며 삼성 제조 현장 완전 자율화의 검증 자료가 아니다.",
+            "다른 기업 실적 수치를 삼성SDS KPI로 옮기지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "필자의 산업 분석이며 삼성 제조 현장 완전 자율화의 검증 자료가 아니다.",
+        "다른 기업 실적 수치를 삼성SDS KPI로 옮기지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "본문 37–40행; 게시일 17행"
+    },
+    {
+      "id": "x-sds-007",
+      "title": "AI 시대, PLM은 어떻게 진화해야 하는가",
+      "url": "https://www.samsungsds.com/kr/insights/plm-evolution-in-the-ai-era.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-08-19",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "plm",
+        "erp",
+        "mes",
+        "digital-thread"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/insights/plm-evolution-in-the-ai-era.html",
+      "summary_ko": "삼성SDS 디지털PLM팀은 Digital Thread가 PLM·ERP·MES의 분산 데이터를 연결하는 기반이라고 설명한다.",
+      "excerpt": "PLM, ERP, MES",
+      "claim": {
+        "text": "삼성SDS 디지털PLM팀은 Digital Thread가 PLM·ERP·MES의 분산 데이터를 연결하는 기반이라고 설명한다.",
+        "kind": "inference"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-007",
+          "text": "삼성SDS 디지털PLM팀은 Digital Thread가 PLM·ERP·MES의 분산 데이터를 연결하는 기반이라고 설명한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-007",
+          "verification": "manual_report",
+          "evidence_locator": "Executive Summary 23–26행; 로드맵 78–98행",
+          "limitations": [
+            "전환 방향과 서비스 설명이며 모든 시스템의 실제 연결 완료·공개 API 명세가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-007:2",
+          "text": "해당 글은 데이터 정비와 연결을 거쳐 AI 에이전트를 단계적으로 적용하는 PLM 전환 로드맵을 제시한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-007",
+          "verification": "manual_report",
+          "evidence_locator": "Executive Summary 23–26행; 로드맵 78–98행",
+          "limitations": [
+            "전환 방향과 서비스 설명이며 모든 시스템의 실제 연결 완료·공개 API 명세가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "전환 방향과 서비스 설명이며 모든 시스템의 실제 연결 완료·공개 API 명세가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Executive Summary 23–26행; 로드맵 78–98행"
+    },
+    {
+      "id": "x-sds-008",
+      "title": "AI 시대 공급망 계획의 패러다임 전환, Decision-Centric Planning",
+      "url": "https://www.samsungsds.com/kr/insights/decision-centric-planning-supply-chain.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-07-24",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "dcp",
+        "scm"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/insights/decision-centric-planning-supply-chain.html",
+      "summary_ko": "삼성SDS 인사이트 필자는 공급망 이벤트 감지·영향 평가·계획 재수립을 연결하는 의사결정 중심 계획을 설명한다.",
+      "excerpt": "Decision-Centric Planning",
+      "claim": {
+        "text": "삼성SDS 인사이트 필자는 공급망 이벤트 감지·영향 평가·계획 재수립을 연결하는 의사결정 중심 계획을 설명한다.",
+        "kind": "inference"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-008",
+          "text": "삼성SDS 인사이트 필자는 공급망 이벤트 감지·영향 평가·계획 재수립을 연결하는 의사결정 중심 계획을 설명한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-008",
+          "verification": "manual_report",
+          "evidence_locator": "Executive Summary 21–25행; 운영 루프 31–35행",
+          "limitations": [
+            "분석가 제안이며 SDS 로봇 스케줄러의 구현 구조나 실측 성공률이 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "분석가 제안이며 SDS 로봇 스케줄러의 구현 구조나 실측 성공률이 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Executive Summary 21–25행; 운영 루프 31–35행"
+    },
+    {
+      "id": "x-sds-009",
+      "title": "Agentic AI - 제조업의 새로운 성장 엔진",
+      "url": "https://www.samsungsds.com/kr/insights/agentic-ai-the-new-engine-for-manufacturing-growth.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2025-11-21",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "mes",
+        "erp",
+        "manufacturing-agent",
+        "mcp"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/insights/agentic-ai-the-new-engine-for-manufacturing-growth.html",
+      "summary_ko": "삼성SDS는 제조 Agentic AI 활용 예시로 공정 모니터링·불량 분석·예측 유지보수를 설명한다.",
+      "excerpt": "MES, ERP",
+      "claim": {
+        "text": "삼성SDS는 제조 Agentic AI 활용 예시로 공정 모니터링·불량 분석·예측 유지보수를 설명한다.",
+        "kind": "inference"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-009",
+          "text": "삼성SDS는 제조 Agentic AI 활용 예시로 공정 모니터링·불량 분석·예측 유지보수를 설명한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-009",
+          "verification": "manual_report",
+          "evidence_locator": "본문 63–70행; 게시일 17행; 기반 행사 설명 21행",
+          "limitations": [
+            "2025년 9월 발표를 바탕으로 11월 게시한 글이며 사건 월과 게시일을 구분한다.",
+            "일반화한 활용 예시이며 실명 고객의 로봇 유료 상시 운영 증거가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-009:2",
+          "text": "같은 글은 협업 에이전트가 MES·ERP와 연계해 정보를 모으고 판단하는 방식을 설명한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-009",
+          "verification": "manual_report",
+          "evidence_locator": "본문 63–70행; 게시일 17행; 기반 행사 설명 21행",
+          "limitations": [
+            "2025년 9월 발표를 바탕으로 11월 게시한 글이며 사건 월과 게시일을 구분한다.",
+            "일반화한 활용 예시이며 실명 고객의 로봇 유료 상시 운영 증거가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "2025년 9월 발표를 바탕으로 11월 게시한 글이며 사건 월과 게시일을 구분한다.",
+        "일반화한 활용 예시이며 실명 고객의 로봇 유료 상시 운영 증거가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "본문 63–70행; 게시일 17행; 기반 행사 설명 21행"
+    },
+    {
+      "id": "x-sds-010",
+      "title": "Nexplant MES: Scheduling & Dispatching, Manufacturing Operation, Tool Control",
+      "url": "https://www.samsungsds.com/kr/mes/nexplant-mes.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "mes",
+        "nexplant-sd",
+        "nexplant-mo",
+        "nexplant-tc",
+        "mcs",
+        "equipment-engineering",
+        "secs"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/mes/nexplant-mes.html",
+      "summary_ko": "삼성SDS 제품문서는 Nexplant MES의 Scheduling & Dispatching을 생산 예측·계획·실시간 작업 할당 통합 도구로 설명한다.",
+      "excerpt": "실시간 작업 할당",
+      "claim": {
+        "text": "삼성SDS 제품문서는 Nexplant MES의 Scheduling & Dispatching을 생산 예측·계획·실시간 작업 할당 통합 도구로 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-010",
+          "text": "삼성SDS 제품문서는 Nexplant MES의 Scheduling & Dispatching을 생산 예측·계획·실시간 작업 할당 통합 도구로 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-010",
+          "verification": "manual_report",
+          "evidence_locator": "작업지시 78–100행; 생산실행 도식 113–120행; 설비제어 142–170행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시된 제품 설명이며 신규 RX 로봇 플랫폼의 출시·지원 기종·Job/Task API를 증명하지 않는다.",
+            "MOS/MCS/TC의 기존 제조 제어 용어를 로봇 오케스트레이션의 동일 계층으로 간주하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-010:2",
+          "text": "문서 도식은 Scheduling & Dispatching과 Manufacturing Operation 사이의 최적 Lot 정보 연결을 표시한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-010",
+          "verification": "manual_report",
+          "evidence_locator": "작업지시 78–100행; 생산실행 도식 113–120행; 설비제어 142–170행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시된 제품 설명이며 신규 RX 로봇 플랫폼의 출시·지원 기종·Job/Task API를 증명하지 않는다.",
+            "MOS/MCS/TC의 기존 제조 제어 용어를 로봇 오케스트레이션의 동일 계층으로 간주하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-010:3",
+          "text": "문서 도식은 Manufacturing Operation에서 Material Control로 Lot 반송을 연결한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-010",
+          "verification": "manual_report",
+          "evidence_locator": "작업지시 78–100행; 생산실행 도식 113–120행; 설비제어 142–170행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시된 제품 설명이며 신규 RX 로봇 플랫폼의 출시·지원 기종·Job/Task API를 증명하지 않는다.",
+            "MOS/MCS/TC의 기존 제조 제어 용어를 로봇 오케스트레이션의 동일 계층으로 간주하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-010:4",
+          "text": "Nexplant Tool Control은 설비와 생산 실행·설비 엔지니어링 간 인터페이스와 원격 제어를 제공한다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-010",
+          "verification": "manual_report",
+          "evidence_locator": "작업지시 78–100행; 생산실행 도식 113–120행; 설비제어 142–170행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시된 제품 설명이며 신규 RX 로봇 플랫폼의 출시·지원 기종·Job/Task API를 증명하지 않는다.",
+            "MOS/MCS/TC의 기존 제조 제어 용어를 로봇 오케스트레이션의 동일 계층으로 간주하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-010:5",
+          "text": "Tool Control 문서는 SECS-II·SECS-I·HSMS 등 설비 통신 규격을 안내한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-010",
+          "verification": "manual_report",
+          "evidence_locator": "작업지시 78–100행; 생산실행 도식 113–120행; 설비제어 142–170행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시된 제품 설명이며 신규 RX 로봇 플랫폼의 출시·지원 기종·Job/Task API를 증명하지 않는다.",
+            "MOS/MCS/TC의 기존 제조 제어 용어를 로봇 오케스트레이션의 동일 계층으로 간주하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "게시된 제품 설명이며 신규 RX 로봇 플랫폼의 출시·지원 기종·Job/Task API를 증명하지 않는다.",
+        "MOS/MCS/TC의 기존 제조 제어 용어를 로봇 오케스트레이션의 동일 계층으로 간주하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "작업지시 78–100행; 생산실행 도식 113–120행; 설비제어 142–170행"
+    },
+    {
+      "id": "x-sds-011",
+      "title": "팩토리 솔루션: Samsung SDS Nexplant",
+      "url": "https://www.samsungsds.com/kr/manufacturing/manufacturing.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "mes",
+        "brightics-iot",
+        "brightics-ai",
+        "nexplant-3dex"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/manufacturing/manufacturing.html",
+      "summary_ko": "삼성SDS 팩토리 솔루션 페이지는 제조·물류·시설 지능화와 MES·Brightics AI·Brightics IoT·3D 데이터 활용을 제품군으로 안내한다.",
+      "excerpt": "Data collection, Operation and Management",
+      "claim": {
+        "text": "삼성SDS 팩토리 솔루션 페이지는 제조·물류·시설 지능화와 MES·Brightics AI·Brightics IoT·3D 데이터 활용을 제품군으로 안내한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-011",
+          "text": "삼성SDS 팩토리 솔루션 페이지는 제조·물류·시설 지능화와 MES·Brightics AI·Brightics IoT·3D 데이터 활용을 제품군으로 안내한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-011",
+          "verification": "manual_report",
+          "evidence_locator": "제품군 233–245행; 제조·물류 259–270행; Brightics IoT 308–316행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시일 미상이며 일부 하위 제품 링크는 오류 페이지로 연결된다.",
+            "상품군 안내를 모든 구성품의 현재 판매·지원 보장 또는 공통 RX API로 해석하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-011:2",
+          "text": "해당 페이지는 Brightics IoT를 IoT 장치와 빅데이터·기존 시스템을 연결하는 플랫폼으로 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-011",
+          "verification": "manual_report",
+          "evidence_locator": "제품군 233–245행; 제조·물류 259–270행; Brightics IoT 308–316행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시일 미상이며 일부 하위 제품 링크는 오류 페이지로 연결된다.",
+            "상품군 안내를 모든 구성품의 현재 판매·지원 보장 또는 공통 RX API로 해석하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "게시일 미상이며 일부 하위 제품 링크는 오류 페이지로 연결된다.",
+        "상품군 안내를 모든 구성품의 현재 판매·지원 보장 또는 공통 RX API로 해석하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "제품군 233–245행; 제조·물류 259–270행; Brightics IoT 308–316행"
+    },
+    {
+      "id": "x-sds-012",
+      "title": "Nexplant 3D eXcellence: 제조 3D 데이터 활용 플랫폼",
+      "url": "https://www.samsungsds.com/kr/manufacturing-3d/nexplant-3d-excellence.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "nexplant-3dex",
+        "erp",
+        "scm",
+        "digital-twin"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/manufacturing-3d/nexplant-3d-excellence.html",
+      "summary_ko": "삼성SDS는 Nexplant 3D eXcellence가 설계 3D 정보를 변환·통합·시각화한다고 설명한다.",
+      "excerpt": "3D와 IoT 데이터의 융합",
+      "claim": {
+        "text": "삼성SDS는 Nexplant 3D eXcellence가 설계 3D 정보를 변환·통합·시각화한다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-012",
+          "text": "삼성SDS는 Nexplant 3D eXcellence가 설계 3D 정보를 변환·통합·시각화한다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-012",
+          "verification": "manual_report",
+          "evidence_locator": "본문 19–33행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "공식 공지 검색 목록에 2026-03-05 판매·기술지원 종료 정책 제목이 별도로 발견되어 현재 지원 여부 확인이 필요하다.",
+            "제품 페이지 존재만으로 현재 판매·장기 지원·로봇 디지털 트윈 배포를 보장하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-012:2",
+          "text": "해당 제품문서는 ERP·SCM 데이터 연계와 3D·IoT 데이터 융합을 안내한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-012",
+          "verification": "manual_report",
+          "evidence_locator": "본문 19–33행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "공식 공지 검색 목록에 2026-03-05 판매·기술지원 종료 정책 제목이 별도로 발견되어 현재 지원 여부 확인이 필요하다.",
+            "제품 페이지 존재만으로 현재 판매·장기 지원·로봇 디지털 트윈 배포를 보장하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "공식 공지 검색 목록에 2026-03-05 판매·기술지원 종료 정책 제목이 별도로 발견되어 현재 지원 여부 확인이 필요하다.",
+        "제품 페이지 존재만으로 현재 판매·장기 지원·로봇 디지털 트윈 배포를 보장하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "본문 19–33행"
+    },
+    {
+      "id": "x-sds-013",
+      "title": "Samsung SDS Research: Physical AI 연구 분야",
+      "url": "https://www.samsungsds.com/kr/technology-research/research-areas.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "sds-research",
+        "rfm",
+        "multi-robot-control"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/technology-research/research-areas.html",
+      "summary_ko": "삼성SDS 연구 분야 페이지는 이종 로봇 제어를 위한 RFM 파인튜닝·데이터 최적화를 연구 항목으로 제시한다.",
+      "excerpt": "멀티 로봇 제어 및 운영",
+      "claim": {
+        "text": "삼성SDS 연구 분야 페이지는 이종 로봇 제어를 위한 RFM 파인튜닝·데이터 최적화를 연구 항목으로 제시한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-013",
+          "text": "삼성SDS 연구 분야 페이지는 이종 로봇 제어를 위한 RFM 파인튜닝·데이터 최적화를 연구 항목으로 제시한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-013",
+          "verification": "manual_report",
+          "evidence_locator": "AI 연구 분야 39–48행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "연구 분야 소개이며 연구 완료·제품 출시·실증 성능을 입증하지 않는다.",
+            "페이지의 전체 연구인력 수를 RX 조직 인원으로 사용하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-013:2",
+          "text": "같은 페이지는 멀티 로봇 제어·운영 기술을 Physical AI 연구 항목으로 제시한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-013",
+          "verification": "manual_report",
+          "evidence_locator": "AI 연구 분야 39–48행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "연구 분야 소개이며 연구 완료·제품 출시·실증 성능을 입증하지 않는다.",
+            "페이지의 전체 연구인력 수를 RX 조직 인원으로 사용하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "연구 분야 소개이며 연구 완료·제품 출시·실증 성능을 입증하지 않는다.",
+        "페이지의 전체 연구인력 수를 RX 조직 인원으로 사용하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "AI 연구 분야 39–48행"
+    },
+    {
+      "id": "x-sds-014",
+      "title": "한국산업단지공단: 산업용 Private 5G 공유 모델",
+      "url": "https://www.samsungsds.com/kr/case-study/kicox-private-5g-shared-core.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "kicox",
+        "private-5g",
+        "hupyeong",
+        "geodu",
+        "namchuncheon"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/case-study/kicox-private-5g-shared-core.html",
+      "summary_ko": "삼성SDS 고객사례는 후평산업단지의 Private 5G 코어를 거두·남춘천산업단지가 공유하는 구조를 설명한다.",
+      "excerpt": "코어는 하나, 사용은 세 산단",
+      "claim": {
+        "text": "삼성SDS 고객사례는 후평산업단지의 Private 5G 코어를 거두·남춘천산업단지가 공유하는 구조를 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-014",
+          "text": "삼성SDS 고객사례는 후평산업단지의 Private 5G 코어를 거두·남춘천산업단지가 공유하는 구조를 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-014",
+          "verification": "manual_report",
+          "evidence_locator": "요약 17–20행; QoS 65행; 공유 구조 71–85행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시일·단계별 완료일을 확인하지 못했으며 계획 설명과 사례 진술이 함께 있다.",
+            "83개 관리 산단을 83개 로봇 배포로 계산하지 않고 30% 비용 효과를 RX SW 성능으로 사용하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-014:2",
+          "text": "해당 사례는 자율주행 로봇 제어 신호의 우선 전송을 위한 트래픽별 QoS 설정을 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-014",
+          "verification": "manual_report",
+          "evidence_locator": "요약 17–20행; QoS 65행; 공유 구조 71–85행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "게시일·단계별 완료일을 확인하지 못했으며 계획 설명과 사례 진술이 함께 있다.",
+            "83개 관리 산단을 83개 로봇 배포로 계산하지 않고 30% 비용 효과를 RX SW 성능으로 사용하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "게시일·단계별 완료일을 확인하지 못했으며 계획 설명과 사례 진술이 함께 있다.",
+        "83개 관리 산단을 83개 로봇 배포로 계산하지 않고 30% 비용 효과를 RX SW 성능으로 사용하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "요약 17–20행; QoS 65행; 공유 구조 71–85행"
+    },
+    {
+      "id": "x-sds-015",
+      "title": "삼성SDS Industry Day 충청·전라권 행사 프로그램",
+      "url": "https://www.samsungsds.com/kr/event/mr-industryday-2026-0528.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": "2026-05-28",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "private-5g",
+        "plm",
+        "harim"
+      ],
+      "origin_key": "samsung-sds:industry-day-2026-05-28",
+      "summary_ko": "삼성SDS 행사 프로그램은 제조 데이터플랫폼·PLM·OT 보안·Physical AI용 5G 특화망 세션을 편성했다.",
+      "excerpt": "Physical AI를 위한 필수 인프라",
+      "claim": {
+        "text": "삼성SDS 행사 프로그램은 제조 데이터플랫폼·PLM·OT 보안·Physical AI용 5G 특화망 세션을 편성했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-015",
+          "text": "삼성SDS 행사 프로그램은 제조 데이터플랫폼·PLM·OT 보안·Physical AI용 5G 특화망 세션을 편성했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-015",
+          "verification": "manual_report",
+          "evidence_locator": "일정 17행; Agenda 25–36행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "행사 일정은 게시일이 아니며 프로그램만으로 실제 발표나 현장 구축 완료를 확정하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "행사 일정은 게시일이 아니며 프로그램만으로 실제 발표나 현장 구축 완료를 확정하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "일정 17행; Agenda 25–36행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-002"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/event/mr-industryday-2026-0528.html",
+          "https://www.samsungsds.com/kr/news/id-260609.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://www.samsungsds.com/kr/event/mr-industryday-2026-0528.html",
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "id": "x-sds-016",
+      "title": "삼성SDS Industry Day 제조·유통·서비스 행사 프로그램",
+      "url": "https://www.samsungsds.com/kr/event/mr-industryday-2026-0417.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": "2026-04-17",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "plm",
+        "private-5g",
+        "palantir"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/event/mr-industryday-2026-0417.html",
+      "summary_ko": "삼성SDS Industry Day 프로그램은 제조 트랙에 PLM 혁신과 Physical AI용 5G 특화망 세션을 포함한다.",
+      "excerpt": "Physical AI를 위한 필수 인프라",
+      "claim": {
+        "text": "삼성SDS Industry Day 프로그램은 제조 트랙에 PLM 혁신과 Physical AI용 5G 특화망 세션을 포함한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-016",
+          "text": "삼성SDS Industry Day 프로그램은 제조 트랙에 PLM 혁신과 Physical AI용 5G 특화망 세션을 포함한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-016",
+          "verification": "manual_report",
+          "evidence_locator": "일정 17행; 세션 24–49행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "원문 일정의 2026-04-17과 수요일 표기가 달력상 맞지 않아 일정 확인이 필요하다.",
+            "공동 행사 발표를 SDS–Palantir 사업 계약·제품 의존성으로 해석하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-016:2",
+          "text": "동일 프로그램의 인사이트 세션에는 Palantir의 기업 AI 접근법 발표가 기재돼 있다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-016",
+          "verification": "manual_report",
+          "evidence_locator": "일정 17행; 세션 24–49행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "원문 일정의 2026-04-17과 수요일 표기가 달력상 맞지 않아 일정 확인이 필요하다.",
+            "공동 행사 발표를 SDS–Palantir 사업 계약·제품 의존성으로 해석하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "원문 일정의 2026-04-17과 수요일 표기가 달력상 맞지 않아 일정 확인이 필요하다.",
+        "공동 행사 발표를 SDS–Palantir 사업 계약·제품 의존성으로 해석하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "일정 17행; 세션 24–49행"
+    },
+    {
+      "id": "x-sds-017",
+      "title": "REAL Summit 2026 발표자료·영상 안내",
+      "url": "https://www.samsungsds.com/kr/event/realsummit2026.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "real-summit-2026"
+      ],
+      "origin_key": "samsung-sds:2026-09-08-real-summit-rx",
+      "summary_ko": "삼성SDS 행사 페이지는 REAL Summit 2026 키노트 영상과 세션 발표자료가 공개됐다고 안내한다.",
+      "excerpt": "키노트 발표 영상과 세션별 발표자료",
+      "claim": {
+        "text": "삼성SDS 행사 페이지는 REAL Summit 2026 키노트 영상과 세션 발표자료가 공개됐다고 안내한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-017",
+          "text": "삼성SDS 행사 페이지는 REAL Summit 2026 키노트 영상과 세션 발표자료가 공개됐다고 안내한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-017",
+          "verification": "manual_report",
+          "evidence_locator": "본문 14–19행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "외부 발표자료 사이트는 반복 타임아웃으로 자료 자체를 열람하지 못했다.",
+            "안내문을 영상 전체 시청 또는 개별 RX 세션 내용 확인으로 처리하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "외부 발표자료 사이트는 반복 타임아웃으로 자료 자체를 열람하지 못했다.",
+        "안내문을 영상 전체 시청 또는 개별 RX 세션 내용 확인으로 처리하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "본문 14–19행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "media-001",
+          "media-002",
+          "media-003",
+          "mi-001",
+          "sds-004",
+          "sds-010",
+          "sds-014",
+          "x-sds-001",
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/event/realsummit2026.html",
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://www.samsungsds.com/kr/news/sds-260901.html",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://www.samsungsds.com/kr/event/realsummit2026.html",
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "id": "x-sds-018",
+      "title": "World IT Show 2026 삼성SDS 참가 안내",
+      "url": "https://www.samsungsds.com/kr/event/world-it-show-2026.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": "2026-04-22",
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "manufacturing-agent"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/event/world-it-show-2026.html",
+      "summary_ko": "삼성SDS는 World IT Show 2026 부스에서 제조를 포함한 산업별 AI Agent 활용을 선보인다고 안내했다.",
+      "excerpt": "제조, 유통, 금융, 공공",
+      "claim": {
+        "text": "삼성SDS는 World IT Show 2026 부스에서 제조를 포함한 산업별 AI Agent 활용을 선보인다고 안내했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-018",
+          "text": "삼성SDS는 World IT Show 2026 부스에서 제조를 포함한 산업별 AI Agent 활용을 선보인다고 안내했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-018",
+          "verification": "manual_report",
+          "evidence_locator": "본문 17–19행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "행사·홍보 안내이며 제조 현장 유료 운영·로봇 배포 실적이 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "demo",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "행사·홍보 안내이며 제조 현장 유료 운영·로봇 배포 실적이 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "본문 17–19행"
+    },
+    {
+      "id": "x-sds-019",
+      "title": "Samsung SDS Hosts RX ART 2026 in the U.S.",
+      "url": "https://www.samsungsds.com/us/news/1295365_5933.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-09-08",
+      "event_date": "2026-08-31",
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "walden",
+        "roboforce",
+        "semco",
+        "semes",
+        "shi",
+        "samsung-ea",
+        "samsung-display",
+        "company-g"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/news/sds-260903.html",
+      "summary_ko": "삼성SDS 미국 공식 발표는 Walden 로봇으로 삼성전기·세메스의 부품 취급·소모품 교체 작업 적용 가능성을 검증했다고 설명한다.",
+      "excerpt": "validated its applicability",
+      "claim": {
+        "text": "삼성SDS 미국 공식 발표는 Walden 로봇으로 삼성전기·세메스의 부품 취급·소모품 교체 작업 적용 가능성을 검증했다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-019",
+          "text": "삼성SDS 미국 공식 발표는 Walden 로봇으로 삼성전기·세메스의 부품 취급·소모품 교체 작업 적용 가능성을 검증했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-019",
+          "verification": "manual_report",
+          "evidence_locator": "본문 23–26행; 게시일 9행",
+          "limitations": [
+            "국문 9월 3일 발표의 미국 언어판으로 독립 증거를 추가하지 않는다. 미국판 게시일은 9월 8일이다.",
+            "공동 적용 가능성 검증이며 해당 고객 공장 상시 가동·유료 계약을 입증하지 않는다.",
+            "G사의 실명을 Genesis AI로 추정하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-019:2",
+          "text": "같은 발표는 RoboForce 기술을 삼성중공업·삼성E&A 유형의 야외 작업에 적용해 자동화 가능성을 확인했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-019",
+          "verification": "manual_report",
+          "evidence_locator": "본문 23–26행; 게시일 9행",
+          "limitations": [
+            "국문 9월 3일 발표의 미국 언어판으로 독립 증거를 추가하지 않는다. 미국판 게시일은 9월 8일이다.",
+            "공동 적용 가능성 검증이며 해당 고객 공장 상시 가동·유료 계약을 입증하지 않는다.",
+            "G사의 실명을 Genesis AI로 추정하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-019:3",
+          "text": "같은 발표는 삼성디스플레이와 같은 정밀 작업 환경에 익명 G사의 조작 AI를 접목해 자동화 가능성을 검증했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-019",
+          "verification": "manual_report",
+          "evidence_locator": "본문 23–26행; 게시일 9행",
+          "limitations": [
+            "국문 9월 3일 발표의 미국 언어판으로 독립 증거를 추가하지 않는다. 미국판 게시일은 9월 8일이다.",
+            "공동 적용 가능성 검증이며 해당 고객 공장 상시 가동·유료 계약을 입증하지 않는다.",
+            "G사의 실명을 Genesis AI로 추정하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "pilot",
+      "limitations": [
+        "국문 9월 3일 발표의 미국 언어판으로 독립 증거를 추가하지 않는다. 미국판 게시일은 9월 8일이다.",
+        "공동 적용 가능성 검증이며 해당 고객 공장 상시 가동·유료 계약을 입증하지 않는다.",
+        "G사의 실명을 Genesis AI로 추정하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "본문 23–26행; 게시일 9행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "sds-003"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/us/news/1295365_5933.html",
+          "https://www.samsungsds.com/kr/news/sds-260903.html"
+        ],
+        "rationale": "공식 영문 RX ART 결과 발표는 8월31일~9월1일 미국 워크숍을 설명하는 기존 국문 발표의 언어판이다. 영문 게시일 9월8일을 국문 게시일 9월3일로 덮어쓰지 않는다.",
+        "exceptions": [
+          {
+            "with_record_id": "media-001",
+            "reason": "영문 RX ART는 미국에서 8월31일~9월1일 진행한 로봇 워크숍 결과이고, 대상 자료는 서울 9월8일 REAL Summit 발화이다. 영문 게시일이 같아도 행사·장소·발화가 다르다."
+          },
+          {
+            "with_record_id": "media-002",
+            "reason": "영문 RX ART는 미국에서 8월31일~9월1일 진행한 로봇 워크숍 결과이고, 대상 자료는 서울 9월8일 REAL Summit 발화이다. 영문 게시일이 같아도 행사·장소·발화가 다르다."
+          },
+          {
+            "with_record_id": "media-003",
+            "reason": "영문 RX ART는 미국에서 8월31일~9월1일 진행한 로봇 워크숍 결과이고, 대상 자료는 서울 9월8일 REAL Summit 발화이다. 영문 게시일이 같아도 행사·장소·발화가 다르다."
+          },
+          {
+            "with_record_id": "sds-004",
+            "reason": "영문 RX ART는 미국에서 8월31일~9월1일 진행한 로봇 워크숍 결과이고, 대상 자료는 서울 9월8일 REAL Summit 발화이다. 영문 게시일이 같아도 행사·장소·발화가 다르다."
+          },
+          {
+            "with_record_id": "x-sds-020",
+            "reason": "영문 RX ART는 미국에서 8월31일~9월1일 진행한 로봇 워크숍 결과이고, 대상 자료는 서울 9월8일 REAL Summit 발화이다. 영문 게시일이 같아도 행사·장소·발화가 다르다."
+          }
+        ],
+        "document_origin_url": "https://www.samsungsds.com/us/news/1295365_5933.html",
+        "review_method": "source_text_review"
+      }
+    },
+    {
+      "id": "x-sds-020",
+      "title": "Samsung SDS REAL Summit 2026: RX business and platform roadmap",
+      "url": "https://www.samsungsds.com/us/news/1295412_5933.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-09-08",
+      "event_date": "2026-09-08",
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "orchestrator",
+        "mes"
+      ],
+      "origin_key": "samsung-sds:2026-09-08-real-summit-rx",
+      "summary_ko": "삼성SDS 미국 공식 발표는 2027년부터 생산설비와 로봇을 연결·운영하는 오케스트레이션 플랫폼을 선보일 계획이라고 설명한다.",
+      "excerpt": "connects and operates production equipment and robots",
+      "claim": {
+        "text": "삼성SDS 미국 공식 발표는 2027년부터 생산설비와 로봇을 연결·운영하는 오케스트레이션 플랫폼을 선보일 계획이라고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-020",
+          "text": "삼성SDS 미국 공식 발표는 2027년부터 생산설비와 로봇을 연결·운영하는 오케스트레이션 플랫폼을 선보일 계획이라고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-020",
+          "verification": "manual_report",
+          "evidence_locator": "RX 단락 58–62행; 게시일 9행",
+          "limitations": [
+            "국문 동일 발표의 언어판이며 독립 원출처로 계산하지 않는다.",
+            "430개 기존 MES 고객을 RX 고객 수로 사용하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "국문 동일 발표의 언어판이며 독립 원출처로 계산하지 않는다.",
+        "430개 기존 MES 고객을 RX 고객 수로 사용하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "RX 단락 58–62행; 게시일 9행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "media-001",
+          "media-002",
+          "media-003",
+          "mi-001",
+          "sds-004",
+          "sds-010",
+          "sds-014",
+          "x-sds-001",
+          "x-sds-017"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/us/news/1295412_5933.html",
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://www.samsungsds.com/kr/news/sds-260901.html",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html"
+        ],
+        "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://www.samsungsds.com/us/news/1295412_5933.html",
+        "review_method": "source_text_review"
+      }
+    },
+    {
+      "id": "x-sds-021",
+      "title": "삼성SDS 2026년 3분기 컨퍼런스콜 국문 스크립트",
+      "url": "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "walden",
+        "rainbow",
+        "genesis-ai",
+        "roboforce",
+        "affiliate-poc",
+        "orchestrator"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/news/ss-261029.html",
+      "summary_ko": "삼성SDS 국문 Q3 IR은 Walden·레인보우로보틱스·Genesis AI·RoboForce와 피지컬 AI 생태계를 구축하겠다고 설명한다.",
+      "excerpt": "실제 생산 라인에 투입하는 파일럿",
+      "claim": {
+        "text": "삼성SDS 국문 Q3 IR은 Walden·레인보우로보틱스·Genesis AI·RoboForce와 피지컬 AI 생태계를 구축하겠다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-021",
+          "text": "삼성SDS 국문 Q3 IR은 Walden·레인보우로보틱스·Genesis AI·RoboForce와 피지컬 AI 생태계를 구축하겠다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-021",
+          "verification": "manual_report",
+          "evidence_locator": "PDF p10–11 (0-based P9–P10), RX 신사업 단락",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "본문에 개별 게시일이 없어 URL 경로의 날짜를 게시일로 대신 사용하지 않았다.",
+            "영문 스크립트·같은 분기 발표와 같은 출처 계보이다.",
+            "10여 건 PoC는 생산라인 가동 완료·유료 배포 수가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-021:2",
+          "text": "국문 Q3 IR은 삼성 계열사 현장에서 10여 개 실증 사업을 추진 중이라고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-021",
+          "verification": "manual_report",
+          "evidence_locator": "PDF p10–11 (0-based P9–P10), RX 신사업 단락",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "본문에 개별 게시일이 없어 URL 경로의 날짜를 게시일로 대신 사용하지 않았다.",
+            "영문 스크립트·같은 분기 발표와 같은 출처 계보이다.",
+            "10여 건 PoC는 생산라인 가동 완료·유료 배포 수가 아니다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-021:3",
+          "text": "국문 Q3 IR은 실증 결과를 실제 생산라인 투입 파일럿으로 발전시킬 계획이라고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-021",
+          "verification": "manual_report",
+          "evidence_locator": "PDF p10–11 (0-based P9–P10), RX 신사업 단락",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "본문에 개별 게시일이 없어 URL 경로의 날짜를 게시일로 대신 사용하지 않았다.",
+            "영문 스크립트·같은 분기 발표와 같은 출처 계보이다.",
+            "10여 건 PoC는 생산라인 가동 완료·유료 배포 수가 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "pilot",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "본문에 개별 게시일이 없어 URL 경로의 날짜를 게시일로 대신 사용하지 않았다.",
+        "영문 스크립트·같은 분기 발표와 같은 출처 계보이다.",
+        "10여 건 PoC는 생산라인 가동 완료·유료 배포 수가 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "PDF p10–11 (0-based P9–P10), RX 신사업 단락",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "sds-005",
+          "sds-007",
+          "sds-013",
+          "sds-018"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf",
+          "https://www.samsungsds.com/kr/news/ss-261029.html",
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung_SDS_3Q26_Script_Eng_261029.pdf",
+          "https://files.newsis.com/view/NISX20261029_0003846643",
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%203Q26%20Earnings%20Release_1.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf",
+        "review_method": "inventory_evidence_review"
+      },
+      "lineage_reviews": [
+        {
+          "reviewed_at": "2026-10-31",
+          "decision": "shared_origin",
+          "basis": "same_company_event",
+          "related_record_ids": [
+            "x-sds-030"
+          ],
+          "source_urls": [
+            "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf",
+            "https://www.samsungsds.com/en/news/fr-261030.html"
+          ],
+          "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+          "exceptions": [],
+          "review_method": "inventory_evidence_review"
+        }
+      ]
+    },
+    {
+      "id": "x-sds-022",
+      "title": "삼성SDS 2026년 2분기 실적발표 국문 스크립트",
+      "url": "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "walden",
+        "samsung-venture-investment",
+        "toyota",
+        "mes",
+        "orchestrator"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/news/ss-260730.html",
+      "summary_ko": "삼성SDS 국문 Q2 IR은 2026년 6월 삼성벤처투자를 통해 Walden Robotics에 전략적으로 투자했다고 설명한다.",
+      "excerpt": "삼성벤처투자를 통해",
+      "claim": {
+        "text": "삼성SDS 국문 Q2 IR은 2026년 6월 삼성벤처투자를 통해 Walden Robotics에 전략적으로 투자했다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-022",
+          "text": "삼성SDS 국문 Q2 IR은 2026년 6월 삼성벤처투자를 통해 Walden Robotics에 전략적으로 투자했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-022",
+          "verification": "manual_report",
+          "evidence_locator": "PDF p12–13 (P11–P12), 피지컬 AI 단락",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "본문 게시일 미확인. 영문 Q2 IR·분기 공식 발표와 같은 출처 계보이다.",
+            "Toyota 가동은 삼성SDS가 설명한 파트너 사례이며 Toyota 원문·가동 KPI를 독립 확인하지 않았다.",
+            "투자액·지분율·RX 전용 예산은 이 발언에서 확인되지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-022:2",
+          "text": "국문 Q2 IR은 Walden 로봇이 2026년 2월부터 Toyota 북미 생산라인에서 운영되고 있다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-022",
+          "verification": "manual_report",
+          "evidence_locator": "PDF p12–13 (P11–P12), 피지컬 AI 단락",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "본문 게시일 미확인. 영문 Q2 IR·분기 공식 발표와 같은 출처 계보이다.",
+            "Toyota 가동은 삼성SDS가 설명한 파트너 사례이며 Toyota 원문·가동 KPI를 독립 확인하지 않았다.",
+            "투자액·지분율·RX 전용 예산은 이 발언에서 확인되지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-022:3",
+          "text": "국문 Q2 IR은 다양한 로봇의 통합 제어를 MES와 연계하는 오케스트레이션 사업 추진 계획을 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-022",
+          "verification": "manual_report",
+          "evidence_locator": "PDF p12–13 (P11–P12), 피지컬 AI 단락",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "본문 게시일 미확인. 영문 Q2 IR·분기 공식 발표와 같은 출처 계보이다.",
+            "Toyota 가동은 삼성SDS가 설명한 파트너 사례이며 Toyota 원문·가동 KPI를 독립 확인하지 않았다.",
+            "투자액·지분율·RX 전용 예산은 이 발언에서 확인되지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "본문 게시일 미확인. 영문 Q2 IR·분기 공식 발표와 같은 출처 계보이다.",
+        "Toyota 가동은 삼성SDS가 설명한 파트너 사례이며 Toyota 원문·가동 KPI를 독립 확인하지 않았다.",
+        "투자액·지분율·RX 전용 예산은 이 발언에서 확인되지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "PDF p12–13 (P11–P12), 피지컬 AI 단락",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "sds-002",
+          "sds-006"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf",
+          "https://www.samsungsds.com/kr/news/ss-260730.html",
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/Samsung_SDS_2Q26_Script_Eng_260730_1.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf",
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "id": "x-sds-023",
+      "title": "삼성SDS 2026년 1분기 실적발표 국문 스크립트",
+      "url": "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%201%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_KR_2.pdf",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "physical-ai",
+        "kkr"
+      ],
+      "origin_key": "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/SDS_1Q2026_Full_ConferenceCall_Script_ENG_2.pdf",
+      "summary_ko": "삼성SDS 국문 Q1 IR은 제조·물류 혁신을 위한 Physical AI 기술·플랫폼 기업 인수를 추진할 계획이라고 설명한다.",
+      "excerpt": "Physical AI",
+      "claim": {
+        "text": "삼성SDS 국문 Q1 IR은 제조·물류 혁신을 위한 Physical AI 기술·플랫폼 기업 인수를 추진할 계획이라고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-023",
+          "text": "삼성SDS 국문 Q1 IR은 제조·물류 혁신을 위한 Physical AI 기술·플랫폼 기업 인수를 추진할 계획이라고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-023",
+          "verification": "manual_report",
+          "evidence_locator": "PDF p7 (P6), 전략적 M&A 단락 116–123행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "영문 Q1 스크립트와 동일 발표의 언어판이다.",
+            "인수 계획을 완료 거래로 기록하지 않고 전사 중장기 투자액을 RX SW 예산에 배정하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "announcement",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "영문 Q1 스크립트와 동일 발표의 언어판이다.",
+        "인수 계획을 완료 거래로 기록하지 않고 전사 중장기 투자액을 RX SW 예산에 배정하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "PDF p7 (P6), 전략적 M&A 단락 116–123행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "sds-008"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%201%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_KR_2.pdf",
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/SDS_1Q2026_Full_ConferenceCall_Script_ENG_2.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%201%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_KR_2.pdf",
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "id": "x-sds-024",
+      "title": "AMHS: 삼성SDS 제조 물류 자동화 솔루션",
+      "url": "https://www.samsungsds.com/kr/amhs/nexplant-amhs.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "product",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "amhs",
+        "mcs",
+        "sems",
+        "acs",
+        "agv",
+        "scs",
+        "stocker",
+        "hcm",
+        "nexplant-mo"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/amhs/nexplant-amhs.html",
+      "summary_ko": "삼성SDS AMHS 제품문서는 SCS의 Stocker 제어와 ACS의 AGV 제어를 구분한다.",
+      "excerpt": "ACS, AGV제어",
+      "claim": {
+        "text": "삼성SDS AMHS 제품문서는 SCS의 Stocker 제어와 ACS의 AGV 제어를 구분한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-024",
+          "text": "삼성SDS AMHS 제품문서는 SCS의 Stocker 제어와 ACS의 AGV 제어를 구분한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-024",
+          "verification": "manual_report",
+          "evidence_locator": "역할표 47–66행; FAQ 70–72행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "표준 인터페이스라는 설명은 그룹 공통 로봇 API 공개 또는 모든 기종 호환 보장을 뜻하지 않는다.",
+            "기존 장치 제어의 Route/Job 용어를 신규 SDS RX Job/Task 규격과 동일시하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-024:2",
+          "text": "AMHS 문서는 HCM을 MOS 표준 인터페이스로 안내한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-024",
+          "verification": "manual_report",
+          "evidence_locator": "역할표 47–66행; FAQ 70–72행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "표준 인터페이스라는 설명은 그룹 공통 로봇 API 공개 또는 모든 기종 호환 보장을 뜻하지 않는다.",
+            "기존 장치 제어의 Route/Job 용어를 신규 SDS RX Job/Task 규격과 동일시하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-024:3",
+          "text": "AMHS 문서는 공장 단위에서 MCS의 물류제어와 SEMS의 통합관제를 구분한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-024",
+          "verification": "manual_report",
+          "evidence_locator": "역할표 47–66행; FAQ 70–72행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "표준 인터페이스라는 설명은 그룹 공통 로봇 API 공개 또는 모든 기종 호환 보장을 뜻하지 않는다.",
+            "기존 장치 제어의 Route/Job 용어를 신규 SDS RX Job/Task 규격과 동일시하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-024:4",
+          "text": "AMHS FAQ는 필요에 따라 타사 제어 컨트롤러·하드웨어를 연동하는 표준 인터페이스를 제공한다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-024",
+          "verification": "manual_report",
+          "evidence_locator": "역할표 47–66행; FAQ 70–72행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "표준 인터페이스라는 설명은 그룹 공통 로봇 API 공개 또는 모든 기종 호환 보장을 뜻하지 않는다.",
+            "기존 장치 제어의 Route/Job 용어를 신규 SDS RX Job/Task 규격과 동일시하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "표준 인터페이스라는 설명은 그룹 공통 로봇 API 공개 또는 모든 기종 호환 보장을 뜻하지 않는다.",
+        "기존 장치 제어의 Route/Job 용어를 신규 SDS RX Job/Task 규격과 동일시하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "역할표 47–66행; FAQ 70–72행"
+    },
+    {
+      "id": "x-sds-025",
+      "title": "하림그룹 One ERP 고객사례",
+      "url": "https://www.samsungsds.com/kr/case-study/harim-group-one-erp.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "harim",
+        "erp"
+      ],
+      "origin_key": "samsung-sds:harim-one-erp-case",
+      "summary_ko": "삼성SDS 고객사례는 하림그룹의 18개 계열사와 약 70개 사업장을 하나의 ERP로 통합했다고 설명한다.",
+      "excerpt": "18개 계열사 통합",
+      "claim": {
+        "text": "삼성SDS 고객사례는 하림그룹의 18개 계열사와 약 70개 사업장을 하나의 ERP로 통합했다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-025",
+          "text": "삼성SDS 고객사례는 하림그룹의 18개 계열사와 약 70개 사업장을 하나의 ERP로 통합했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-025",
+          "verification": "manual_report",
+          "evidence_locator": "사례 요약 18–23행; SDS 공동 추진 29행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "식품 제조 기업의 ERP 사례로 로봇 설치·RX 고객·로봇 가동 실적으로 계산하지 않는다.",
+            "공급자 고객사례이며 성과 수치를 독립 감사하지 않았다."
+          ]
+        }
+      ],
+      "commercialization_stage": "production",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "식품 제조 기업의 ERP 사례로 로봇 설치·RX 고객·로봇 가동 실적으로 계산하지 않는다.",
+        "공급자 고객사례이며 성과 수치를 독립 감사하지 않았다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "사례 요약 18–23행; SDS 공동 추진 29행"
+    },
+    {
+      "id": "x-sds-026",
+      "title": "국내 자동차 부품 제조사 스마트 공장 구축 사례",
+      "url": "https://www.samsungsds.com/kr/case-study/smart-factory-automobile.html",
+      "publisher": "Samsung SDS",
+      "published_at": null,
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "undated",
+      "entity_ids": [
+        "sds",
+        "anonymous-auto-parts",
+        "erp",
+        "mes",
+        "lot-tracking"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/case-study/smart-factory-automobile.html",
+      "summary_ko": "삼성SDS 고객사례는 익명 자동차 부품 제조사에 설비 데이터를 실시간 수집하는 생산·품질·설비 관리 체계를 구축했다고 설명한다.",
+      "excerpt": "상세한 LOT 추적",
+      "claim": {
+        "text": "삼성SDS 고객사례는 익명 자동차 부품 제조사에 설비 데이터를 실시간 수집하는 생산·품질·설비 관리 체계를 구축했다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-026",
+          "text": "삼성SDS 고객사례는 익명 자동차 부품 제조사에 설비 데이터를 실시간 수집하는 생산·품질·설비 관리 체계를 구축했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-026",
+          "verification": "manual_report",
+          "evidence_locator": "Solution 31–37행; 구축 범위 54행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "고객 실명·게시일·로봇 운영기간이 확인되지 않았다.",
+            "설비 데이터·LOT 추적 구축을 완전 무인화 또는 RX 오케스트레이션 상용화로 승격하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-026:2",
+          "text": "해당 사례는 ERP 기준정보와 생산계획·입고 예정·출하 품질·실적 정보의 인터페이스를 표준화했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-026",
+          "verification": "manual_report",
+          "evidence_locator": "Solution 31–37행; 구축 범위 54행",
+          "limitations": [
+            "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+            "고객 실명·게시일·로봇 운영기간이 확인되지 않았다.",
+            "설비 데이터·LOT 추적 구축을 완전 무인화 또는 RX 오케스트레이션 상용화로 승격하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "production",
+      "limitations": [
+        "게시일 미확인으로 최근 1년 신규 발표 및 과거 공개시점 재현에서 제외한다.",
+        "고객 실명·게시일·로봇 운영기간이 확인되지 않았다.",
+        "설비 데이터·LOT 추적 구축을 완전 무인화 또는 RX 오케스트레이션 상용화로 승격하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "unknown",
+      "evidence_locator": "Solution 31–37행; 구축 범위 54행"
+    },
+    {
+      "id": "x-sds-027",
+      "title": "차세대 ERP, 신규 구축만이 정답은 아닙니다",
+      "url": "https://www.samsungsds.com/kr/insights/next-generation-erp-conversion.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-10-27",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "semco",
+        "erp"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/news/se-260420.html",
+      "summary_ko": "삼성SDS 인사이트는 삼성전기 ERP 전환 사례의 최종 업무 중단 시간이 34시간이었다고 설명한다.",
+      "excerpt": "Business Downtime 34시간",
+      "claim": {
+        "text": "삼성SDS 인사이트는 삼성전기 ERP 전환 사례의 최종 업무 중단 시간이 34시간이었다고 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-027",
+          "text": "삼성SDS 인사이트는 삼성전기 ERP 전환 사례의 최종 업무 중단 시간이 34시간이었다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-027",
+          "verification": "manual_report",
+          "evidence_locator": "Executive Summary 25행; 사례 설명 27행; 게시일 17행",
+          "limitations": [
+            "동일 삼성전기 ERP 사례의 후속 설명이며 독립 성능 증거로 추가 계산하지 않는다.",
+            "내부 기준선과 기존 보도자료 기준선 차이를 원문이 지적하므로 새 기준선 수치는 KPI로 확정하지 않는다.",
+            "ERP 전환 시간은 로봇 복구시간이 아니다."
+          ]
+        }
+      ],
+      "commercialization_stage": "production",
+      "limitations": [
+        "동일 삼성전기 ERP 사례의 후속 설명이며 독립 성능 증거로 추가 계산하지 않는다.",
+        "내부 기준선과 기존 보도자료 기준선 차이를 원문이 지적하므로 새 기준선 수치는 KPI로 확정하지 않는다.",
+        "ERP 전환 시간은 로봇 복구시간이 아니다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Executive Summary 25행; 사례 설명 27행; 게시일 17행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-003"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/insights/next-generation-erp-conversion.html",
+          "https://www.samsungsds.com/kr/news/se-260420.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://www.samsungsds.com/kr/insights/next-generation-erp-conversion.html",
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "id": "x-sds-028",
+      "title": "온디바이스 AI가 가져올 새로운 기회: AI 워크로드의 변화와 AI-RAN, 하이브리드 AI, 오케스트레이션 솔루션",
+      "url": "https://www.samsungsds.com/kr/insights/new-opportunities-come-out-of-on-device-ai.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-07-15",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "physical-ai",
+        "on-device-ai",
+        "edge-ai"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/insights/new-opportunities-come-out-of-on-device-ai.html",
+      "summary_ko": "삼성SDS에 게재된 김지현의 인사이트는 로컬 소형 모델·실시간 엣지 추론·복잡한 클라우드 추론을 분담하는 하이브리드 AI 구조를 제시한다.",
+      "excerpt": "단말과 엣지와 클라우드",
+      "claim": {
+        "text": "삼성SDS에 게재된 김지현의 인사이트는 로컬 소형 모델·실시간 엣지 추론·복잡한 클라우드 추론을 분담하는 하이브리드 AI 구조를 제시한다.",
+        "kind": "inference"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-028",
+          "text": "삼성SDS에 게재된 김지현의 인사이트는 로컬 소형 모델·실시간 엣지 추론·복잡한 클라우드 추론을 분담하는 하이브리드 AI 구조를 제시한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-028",
+          "verification": "manual_report",
+          "evidence_locator": "온디바이스 AI란 무엇이고 왜 부상하는가, 41–56행; 게시일 16행",
+          "limitations": [
+            "외부 필자의 기술 분석이며 삼성SDS RX 제품의 실제 배치 아키텍처·API·고객 계약을 공개한 문서가 아니다.",
+            "본문의 타사 제품·투자·발표 주장은 별도 1차 검증하지 않아 추출하지 않았다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-028:2",
+          "text": "해당 인사이트는 로봇 모델 학습용 현실 멀티모달 데이터의 수집 경로로 온디바이스 장치를 제시한다.",
+          "kind": "inference",
+          "origin_record_id": "x-sds-028",
+          "verification": "manual_report",
+          "evidence_locator": "온디바이스 AI란 무엇이고 왜 부상하는가, 41–56행; 게시일 16행",
+          "limitations": [
+            "외부 필자의 기술 분석이며 삼성SDS RX 제품의 실제 배치 아키텍처·API·고객 계약을 공개한 문서가 아니다.",
+            "본문의 타사 제품·투자·발표 주장은 별도 1차 검증하지 않아 추출하지 않았다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "외부 필자의 기술 분석이며 삼성SDS RX 제품의 실제 배치 아키텍처·API·고객 계약을 공개한 문서가 아니다.",
+        "본문의 타사 제품·투자·발표 주장은 별도 1차 검증하지 않아 추출하지 않았다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "온디바이스 AI란 무엇이고 왜 부상하는가, 41–56행; 게시일 16행"
+    },
+    {
+      "id": "x-sds-029",
+      "title": "ERP 전문가 인터뷰 | AI 시대, ERP 혁신을 위한 삼성SDS의 전략",
+      "url": "https://www.samsungsds.com/kr/insights/an-erp-innovation-strategy-in-the-ai-era.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-06-26",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "erp",
+        "sap"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/insights/an-erp-innovation-strategy-in-the-ai-era.html",
+      "summary_ko": "삼성SDS ERP 담당 인터뷰는 ERP 컨설팅·구축·운영과 인프라·데이터 이전·보안을 연결하는 End-to-End 지원 역량을 설명한다.",
+      "excerpt": "ERP 컨설팅/구축/운영",
+      "claim": {
+        "text": "삼성SDS ERP 담당 인터뷰는 ERP 컨설팅·구축·운영과 인프라·데이터 이전·보안을 연결하는 End-to-End 지원 역량을 설명한다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-029",
+          "text": "삼성SDS ERP 담당 인터뷰는 ERP 컨설팅·구축·운영과 인프라·데이터 이전·보안을 연결하는 End-to-End 지원 역량을 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-029",
+          "verification": "manual_report",
+          "evidence_locator": "Q1·Q4·Q6, 31–32·46·52행; 게시일 17행",
+          "limitations": [
+            "제조를 포함한 기업 업무 시스템의 지원 범위에 대한 회사 설명이다. RX 로봇 오케스트레이션 구현·유료 수주·반복매출의 증거로 사용하지 않는다.",
+            "SAP 파트너십의 정확한 체결일은 이 인터뷰에 없으므로 사건일을 생성하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-029:2",
+          "text": "해당 인터뷰는 삼성SDS가 전년에 SAP와 Premium Supplier 파트너십을 체결했다고 설명한다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-029",
+          "verification": "manual_report",
+          "evidence_locator": "Q1·Q4·Q6, 31–32·46·52행; 게시일 17행",
+          "limitations": [
+            "제조를 포함한 기업 업무 시스템의 지원 범위에 대한 회사 설명이다. RX 로봇 오케스트레이션 구현·유료 수주·반복매출의 증거로 사용하지 않는다.",
+            "SAP 파트너십의 정확한 체결일은 이 인터뷰에 없으므로 사건일을 생성하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "unknown",
+      "limitations": [
+        "제조를 포함한 기업 업무 시스템의 지원 범위에 대한 회사 설명이다. RX 로봇 오케스트레이션 구현·유료 수주·반복매출의 증거로 사용하지 않는다.",
+        "SAP 파트너십의 정확한 체결일은 이 인터뷰에 없으므로 사건일을 생성하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Q1·Q4·Q6, 31–32·46·52행; 게시일 17행"
+    },
+    {
+      "id": "x-sds-030",
+      "title": "Samsung SDS Announces Third-Quarter 2026 Financial Results",
+      "url": "https://www.samsungsds.com/en/news/fr-261030.html",
+      "publisher": "Samsung SDS",
+      "published_at": "2026-10-30",
+      "event_date": null,
+      "scheduled_event_date": null,
+      "source_type": "official",
+      "verification": "manual_report",
+      "audit_status": "unarchived",
+      "archive_url": null,
+      "content_sha256": null,
+      "verification_note": "2026-10-31 연결 웹 도구로 해당 원문 문장/표를 열람한 수동 보고. 원문 보관본·내용 해시·독립 실증 감사는 미확보.",
+      "scope": "in_window",
+      "entity_ids": [
+        "sds",
+        "team-rex",
+        "rainbow",
+        "walden",
+        "roboforce"
+      ],
+      "origin_key": "https://www.samsungsds.com/kr/news/ss-261029.html",
+      "summary_ko": "삼성SDS는 영문 3분기 실적발표에서 Rainbow Robotics·Walden Robotics 등을 포함하는 Team REX 로봇 파트너십을 구성했다고 설명했다.",
+      "excerpt": "currently conducting pilot testing",
+      "claim": {
+        "text": "삼성SDS는 영문 3분기 실적발표에서 Rainbow Robotics·Walden Robotics 등을 포함하는 Team REX 로봇 파트너십을 구성했다고 설명했다.",
+        "kind": "official_statement"
+      },
+      "claims": [
+        {
+          "id": "claim:x-sds-030",
+          "text": "삼성SDS는 영문 3분기 실적발표에서 Rainbow Robotics·Walden Robotics 등을 포함하는 Team REX 로봇 파트너십을 구성했다고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-030",
+          "verification": "manual_report",
+          "evidence_locator": "Formed Global Physical AI Partnerships and Acquired an Air Cargo Specialist for Future Growth, 41–43행; 게시일 9행",
+          "limitations": [
+            "10월29일 국문 3분기 발표와 같은 회사 실적발표의 영문판이다. 별도 독립 증거로 가산하지 않는다.",
+            "회사의 pilot testing 표현이며 상시 유료 운영·90일 가동·RX 매출은 확인하지 않는다. IR의 PoC 수와 본문의 pilot 표현을 동일 성숙도 지표로 합산하지 않는다."
+          ]
+        },
+        {
+          "id": "claim:x-sds-030:2",
+          "text": "삼성SDS는 영문 3분기 실적발표에서 삼성 관계사 현장의 pilot testing을 진행 중이며 결과에 따라 적용 범위와 참여 관계사를 확대할 계획이라고 설명했다.",
+          "kind": "official_statement",
+          "origin_record_id": "x-sds-030",
+          "verification": "manual_report",
+          "evidence_locator": "Formed Global Physical AI Partnerships and Acquired an Air Cargo Specialist for Future Growth, 41–43행; 게시일 9행",
+          "limitations": [
+            "10월29일 국문 3분기 발표와 같은 회사 실적발표의 영문판이다. 별도 독립 증거로 가산하지 않는다.",
+            "회사의 pilot testing 표현이며 상시 유료 운영·90일 가동·RX 매출은 확인하지 않는다. IR의 PoC 수와 본문의 pilot 표현을 동일 성숙도 지표로 합산하지 않는다."
+          ]
+        }
+      ],
+      "commercialization_stage": "pilot",
+      "limitations": [
+        "10월29일 국문 3분기 발표와 같은 회사 실적발표의 영문판이다. 별도 독립 증거로 가산하지 않는다.",
+        "회사의 pilot testing 표현이며 상시 유료 운영·90일 가동·RX 매출은 확인하지 않는다. IR의 PoC 수와 본문의 pilot 표현을 동일 성숙도 지표로 합산하지 않는다."
+      ],
+      "accessed_at": "2026-10-31",
+      "date_basis": "page",
+      "evidence_locator": "Formed Global Physical AI Partnerships and Acquired an Air Cargo Specialist for Future Growth, 41–43행; 게시일 9행",
+      "lineage_review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "sds-005",
+          "sds-007",
+          "sds-013",
+          "sds-018",
+          "x-sds-021"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/en/news/fr-261030.html",
+          "https://www.samsungsds.com/kr/news/ss-261029.html",
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung_SDS_3Q26_Script_Eng_261029.pdf",
+          "https://files.newsis.com/view/NISX20261029_0003846643",
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%203Q26%20Earnings%20Release_1.pdf",
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+        ],
+        "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+        "exceptions": [],
+        "document_origin_url": "https://www.samsungsds.com/en/news/fr-261030.html",
+        "review_method": "source_text_review"
+      }
+    }
+  ],
+  "queries": [
+    {
+      "query": "site:samsungsds.com/kr 2026 로봇 오케스트레이션",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/insights 2026 피지컬 AI 제조",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr 2025 2026 Nexplant MES 제조",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/insights \"2026\" \"제조\" \"로봇\" -limitations -infra -rise",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com \"Nexplant 3D eXcellence\" \"2026-03-05\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com \"Nexplant MES\" \"v3.3\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/notice \"Nexplant 3D eXcellence 판매\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/insights \"2026\" \"디지털 트윈\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:youtube.com \"Samsung SDS\" \"RX\" \"2026\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com \"2026\" \"RX\" -state -ss-261029 -sds20260908 -sds-260903 -ai-festa",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com \"Nexplant\" \"2026\" -state -Sustainability",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:youtube.com/@SamsungSDS \"로봇\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/event \"제조\" \"2026\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/insights \"Agentic AI - 제조업의 새로운 성장 엔진\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/vod \"제조\" \"2026\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/vod \"로봇\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com \"Nexplant 3D eXcellence 판매 및 기술지원 종료 정책\" -notice_list",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/case-study \"제조\" \"ERP\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr \"하림\" \"One ERP\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr \"5G\" \"로봇\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr \"Nexplant\" \"Material Control\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:realsummit2026.com 제조 로봇 pdf",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com Nexplant MES 발표자료 PDF",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/insights \"온디바이스\" \"2026\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com/kr/insights \"ERP\" \"인터뷰\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31"
+    },
+    {
+      "query": "site:samsungsds.com \"Nexplant MES v3.3\" \"2026\"",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31",
+      "notes": "관련 개별 발표자료/영상 전문은 확보하지 못함; 공식 영문 현황판 및 RX ART 동일 본문 대체 URL 발견"
+    },
+    {
+      "query": "site:image.samsungsds.com \"Nexplant\" \"2026\" pdf",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31",
+      "notes": "관련 개별 발표자료/영상 전문은 확보하지 못함; 공식 영문 현황판 및 RX ART 동일 본문 대체 URL 발견"
+    },
+    {
+      "query": "site:samsungsds.com \"RX ART\" 발표 자료",
+      "category": "official_collection_research",
+      "accessed_at": "2026-10-31",
+      "notes": "관련 개별 발표자료/영상 전문은 확보하지 못함; 공식 영문 현황판 및 RX ART 동일 본문 대체 URL 발견"
+    }
+  ],
+  "coverage": [
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "전체 현황판 기간 경계 확인 및 0~44 링크 열기",
+      "query_or_page": "2026-10-29~2025-10-30; 다음 항목 2025-09-22",
+      "accessed_at": "2026-10-31",
+      "status": "period_index_exhausted",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/ss-261029.html",
+        "https://www.samsungsds.com/kr/news/sds20260930.html",
+        "https://www.samsungsds.com/kr/news/sds20260915.html",
+        "https://www.samsungsds.com/kr/news/sds20260908.html",
+        "https://www.samsungsds.com/kr/news/sds-260903.html",
+        "https://www.samsungsds.com/kr/news/sds-260901.html",
+        "https://www.samsungsds.com/kr/news/sds-260824.html",
+        "https://www.samsungsds.com/kr/news/sds-2608013.html",
+        "https://www.samsungsds.com/kr/news/sds-2608011.html",
+        "https://www.samsungsds.com/kr/news/sds-260803.html",
+        "https://www.samsungsds.com/kr/news/ss-260730.html",
+        "https://www.samsungsds.com/kr/news/anthropic-partnership-260724.html",
+        "https://www.samsungsds.com/kr/news/npu-260720.html",
+        "https://www.samsungsds.com/kr/news/aiex-260623.html",
+        "https://www.samsungsds.com/kr/news/xb-260610.html",
+        "https://www.samsungsds.com/kr/news/axs-260609.html",
+        "https://www.samsungsds.com/kr/news/id-260609.html",
+        "https://www.samsungsds.com/kr/news/dn-260609.html",
+        "https://www.samsungsds.com/kr/news/to-260609.html",
+        "https://www.samsungsds.com/kr/news/bw-260430.html",
+        "https://www.samsungsds.com/kr/news/cgpt-260427.html",
+        "https://www.samsungsds.com/kr/news/ss-260423.html",
+        "https://www.samsungsds.com/kr/news/gc-260423.html",
+        "https://www.samsungsds.com/kr/news/id-260422.html",
+        "https://www.samsungsds.com/kr/news/se-260420.html",
+        "https://www.samsungsds.com/kr/news/kkr-260415.html",
+        "https://www.samsungsds.com/kr/news/cai-260414.html",
+        "https://www.samsungsds.com/kr/news/wr-260407.html",
+        "https://www.samsungsds.com/kr/news/cs-260402.html",
+        "https://www.samsungsds.com/kr/news/gpu-260323.html",
+        "https://www.samsungsds.com/kr/news/id-260319.html",
+        "https://www.samsungsds.com/kr/news/sds-260318.html",
+        "https://www.samsungsds.com/kr/news/soil-260317.html",
+        "https://www.samsungsds.com/kr/news/ce-260305.html",
+        "https://www.samsungsds.com/kr/news/cs-260223.html",
+        "https://www.samsungsds.com/kr/news/manifest-260211.html",
+        "https://www.samsungsds.com/kr/news/enterpriseai-260128.html",
+        "https://www.samsungsds.com/kr/news/results-260122.html",
+        "https://www.samsungsds.com/kr/news/gumi-260108.html",
+        "https://www.samsungsds.com/kr/news/ces-260108.html",
+        "https://www.samsungsds.com/kr/news/aicom-260107.html",
+        "https://www.samsungsds.com/kr/news/openai-251223.html",
+        "https://www.samsungsds.com/kr/news/c-251125.html",
+        "https://www.samsungsds.com/kr/news/s-oil-251117.html",
+        "https://www.samsungsds.com/kr/news/251030-3q.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/ss-261029.html",
+        "https://www.samsungsds.com/kr/news/sds20260930.html",
+        "https://www.samsungsds.com/kr/news/sds20260915.html",
+        "https://www.samsungsds.com/kr/news/sds20260908.html",
+        "https://www.samsungsds.com/kr/news/sds-260903.html",
+        "https://www.samsungsds.com/kr/news/sds-260901.html",
+        "https://www.samsungsds.com/kr/news/sds-260824.html",
+        "https://www.samsungsds.com/kr/news/sds-2608013.html",
+        "https://www.samsungsds.com/kr/news/sds-2608011.html",
+        "https://www.samsungsds.com/kr/news/sds-260803.html",
+        "https://www.samsungsds.com/kr/news/ss-260730.html",
+        "https://www.samsungsds.com/kr/news/anthropic-partnership-260724.html",
+        "https://www.samsungsds.com/kr/news/npu-260720.html",
+        "https://www.samsungsds.com/kr/news/aiex-260623.html",
+        "https://www.samsungsds.com/kr/news/xb-260610.html",
+        "https://www.samsungsds.com/kr/news/axs-260609.html",
+        "https://www.samsungsds.com/kr/news/id-260609.html",
+        "https://www.samsungsds.com/kr/news/dn-260609.html",
+        "https://www.samsungsds.com/kr/news/to-260609.html",
+        "https://www.samsungsds.com/kr/news/bw-260430.html",
+        "https://www.samsungsds.com/kr/news/cgpt-260427.html",
+        "https://www.samsungsds.com/kr/news/ss-260423.html",
+        "https://www.samsungsds.com/kr/news/gc-260423.html",
+        "https://www.samsungsds.com/kr/news/id-260422.html",
+        "https://www.samsungsds.com/kr/news/se-260420.html",
+        "https://www.samsungsds.com/kr/news/kkr-260415.html",
+        "https://www.samsungsds.com/kr/news/cai-260414.html",
+        "https://www.samsungsds.com/kr/news/wr-260407.html",
+        "https://www.samsungsds.com/kr/news/cs-260402.html",
+        "https://www.samsungsds.com/kr/news/gpu-260323.html",
+        "https://www.samsungsds.com/kr/news/id-260319.html",
+        "https://www.samsungsds.com/kr/news/sds-260318.html",
+        "https://www.samsungsds.com/kr/news/soil-260317.html",
+        "https://www.samsungsds.com/kr/news/ce-260305.html",
+        "https://www.samsungsds.com/kr/news/cs-260223.html",
+        "https://www.samsungsds.com/kr/news/manifest-260211.html",
+        "https://www.samsungsds.com/kr/news/enterpriseai-260128.html",
+        "https://www.samsungsds.com/kr/news/results-260122.html",
+        "https://www.samsungsds.com/kr/news/gumi-260108.html",
+        "https://www.samsungsds.com/kr/news/ces-260108.html",
+        "https://www.samsungsds.com/kr/news/aicom-260107.html",
+        "https://www.samsungsds.com/kr/news/openai-251223.html",
+        "https://www.samsungsds.com/kr/news/c-251125.html",
+        "https://www.samsungsds.com/kr/news/s-oil-251117.html",
+        "https://www.samsungsds.com/kr/news/251030-3q.html"
+      ],
+      "notes": "기간 내 공식 보도자료 45개를 제목·날짜 기준 선별하고 링크 응답을 확인했다. 관련 자료 본문은 별도 정독했다. 링크45는 2025-09-22로 기간 밖. 공식 도메인의 외부 언론 재인용 목록은 보도자료와 별도이며 여기의 45개에는 포함하지 않는다."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "existing_catalog",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/ss-261029.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/ss-261029.html"
+      ],
+      "notes": "기존 81자료에 같은 URL 존재; 별도 신규 문서로 중복 생성하지 않음."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260930.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260930.html"
+      ],
+      "notes": "AI 인프라 헬릭스 투자이며 RX SW 귀속 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260915.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260915.html"
+      ],
+      "notes": "일반 Claude 파트너 자격; RX 기술 관계 미확인"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "existing_catalog",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260908.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds20260908.html"
+      ],
+      "notes": "기존 81자료에 같은 URL 존재; 별도 신규 문서로 중복 생성하지 않음."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "existing_catalog",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260903.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260903.html"
+      ],
+      "notes": "기존 81자료에 같은 URL 존재; 별도 신규 문서로 중복 생성하지 않음."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "included_new",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260901.html"
+      ],
+      "notes": "관련 본문 문장 확인 후 신규 기록에 추가."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260824.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260824.html"
+      ],
+      "notes": "대학 네트워크 사업; 본문 로봇 언급 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds-2608013.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds-2608013.html"
+      ],
+      "notes": "정부 업무 협업; 물리 로봇과 무관"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds-2608011.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds-2608011.html"
+      ],
+      "notes": "일반 GPU 컴퓨팅 공급"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260803.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260803.html"
+      ],
+      "notes": "국가 AI 데이터센터 인프라"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "existing_catalog",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/ss-260730.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/ss-260730.html"
+      ],
+      "notes": "기존 81자료에 같은 URL 존재; 별도 신규 문서로 중복 생성하지 않음."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/anthropic-partnership-260724.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/anthropic-partnership-260724.html"
+      ],
+      "notes": "범용 기업 AI 파트너십"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/npu-260720.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/npu-260720.html"
+      ],
+      "notes": "범용 NPUaaS 서비스"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/aiex-260623.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/aiex-260623.html"
+      ],
+      "notes": "공공 AI 행사"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/xb-260610.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/xb-260610.html"
+      ],
+      "notes": "일반 AI·클라우드 보안 협력"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/axs-260609.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/axs-260609.html"
+      ],
+      "notes": "범용 AX 전략 행사로 RX 구체 자료 미확인"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "included_new",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/id-260609.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/id-260609.html"
+      ],
+      "notes": "관련 본문 문장 확인 후 신규 기록에 추가."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/dn-260609.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/dn-260609.html"
+      ],
+      "notes": "디지털 자산 투자"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/to-260609.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/to-260609.html"
+      ],
+      "notes": "토큰증권 플랫폼"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/bw-260430.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/bw-260430.html"
+      ],
+      "notes": "정부 협업도구"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/cgpt-260427.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/cgpt-260427.html"
+      ],
+      "notes": "교육기관 생성형 AI"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/ss-260423.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/ss-260423.html"
+      ],
+      "notes": "전사 분기 실적; RX 상세는 국문 IR 스크립트로 추출"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/gc-260423.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/gc-260423.html"
+      ],
+      "notes": "일반 클라우드·보안 협력"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/id-260422.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/id-260422.html"
+      ],
+      "notes": "금융 산업 세미나"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "included_new",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/se-260420.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/se-260420.html"
+      ],
+      "notes": "관련 본문 문장 확인 후 신규 기록에 추가."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "existing_catalog",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/kkr-260415.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/kkr-260415.html"
+      ],
+      "notes": "기존 81자료에 같은 URL 존재; 별도 신규 문서로 중복 생성하지 않음."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/cai-260414.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/cai-260414.html"
+      ],
+      "notes": "국회 AI 업무 지원"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/wr-260407.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/wr-260407.html"
+      ],
+      "notes": "금융 AI 에이전트"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "included_new",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/cs-260402.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/cs-260402.html"
+      ],
+      "notes": "관련 본문 문장 확인 후 신규 기록에 추가."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/gpu-260323.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/gpu-260323.html"
+      ],
+      "notes": "일반 GPU 서비스"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/id-260319.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/id-260319.html"
+      ],
+      "notes": "공공 AX 세미나"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260318.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/sds-260318.html"
+      ],
+      "notes": "주주총회 일반 AI 전략; RX 사업 사실 추가 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/soil-260317.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/soil-260317.html"
+      ],
+      "notes": "일반 ITO·데이터센터 이전으로 제조 로봇 연결 근거 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/ce-260305.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/ce-260305.html"
+      ],
+      "notes": "범용 ChatGPT Enterprise 공급"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/cs-260223.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/cs-260223.html"
+      ],
+      "notes": "일반 사이버 보안 위협"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/manifest-260211.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/manifest-260211.html"
+      ],
+      "notes": "국제 물류·운임 의사결정; 제조 현장 로봇과 직접 연결 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/enterpriseai-260128.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/enterpriseai-260128.html"
+      ],
+      "notes": "범용 ChatGPT Enterprise 행사"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/results-260122.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/results-260122.html"
+      ],
+      "notes": "전사 실적; RX 별도 성과 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/gumi-260108.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/gumi-260108.html"
+      ],
+      "notes": "AI 데이터센터; RX SW 예산과 별개"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/ces-260108.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/ces-260108.html"
+      ],
+      "notes": "일반 업무 AI 에이전트 전략"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/aicom-260107.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/aicom-260107.html"
+      ],
+      "notes": "AI 컴퓨팅센터"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/openai-251223.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/openai-251223.html"
+      ],
+      "notes": "일반 기업용 AI 리셀러 계약"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/c-251125.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/c-251125.html"
+      ],
+      "notes": "정기 임원 인사; RX 역할 추가 확인 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/s-oil-251117.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/s-oil-251117.html"
+      ],
+      "notes": "일반 ITO 계약; RX 로봇 관계 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "개별 공식 링크 범위 선별",
+      "query_or_page": "title/date triage; selected relevant articles full-text review",
+      "accessed_at": "2026-10-31",
+      "status": "excluded_scope",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/news/251030-3q.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/news/251030-3q.html"
+      ],
+      "notes": "전사 분기 실적; RX 별도 성과 없음"
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/insights/state.html",
+      "publisher": "Samsung SDS",
+      "method": "전체 현황판의 기간 내 모든 제목·날짜 138건 순차 확인 → RX·제조 SW 관련 항목 본문 선별 열람",
+      "query_or_page": "현황판 No.1092 (2026-10-30)부터 No.955 (2025-10-31)까지 138개 제목; 다음 No.954 (2025-10-29)는 기간 밖",
+      "accessed_at": "2026-10-31",
+      "status": "title_date_boundary_complete_content_partial",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/insights/embodied-agent-physical-ai.html",
+        "https://www.samsungsds.com/kr/insights/the-evolution-of-digital-twin.html",
+        "https://www.samsungsds.com/kr/insights/plm-evolution-in-the-ai-era.html",
+        "https://www.samsungsds.com/kr/insights/decision-centric-planning-supply-chain.html",
+        "https://www.samsungsds.com/kr/insights/agentic-ai-the-new-engine-for-manufacturing-growth.html",
+        "https://www.samsungsds.com/kr/insights/next-generation-erp-conversion.html",
+        "https://www.samsungsds.com/kr/insights/new-opportunities-come-out-of-on-device-ai.html",
+        "https://www.samsungsds.com/kr/insights/an-erp-innovation-strategy-in-the-ai-era.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/insights/embodied-agent-physical-ai.html",
+        "https://www.samsungsds.com/kr/insights/the-evolution-of-digital-twin.html",
+        "https://www.samsungsds.com/kr/insights/plm-evolution-in-the-ai-era.html",
+        "https://www.samsungsds.com/kr/insights/decision-centric-planning-supply-chain.html",
+        "https://www.samsungsds.com/kr/insights/agentic-ai-the-new-engine-for-manufacturing-growth.html",
+        "https://www.samsungsds.com/kr/insights/next-generation-erp-conversion.html",
+        "https://www.samsungsds.com/kr/insights/new-opportunities-come-out-of-on-device-ai.html",
+        "https://www.samsungsds.com/kr/insights/an-erp-innovation-strategy-in-the-ai-era.html"
+      ],
+      "notes": "기간 내 전체 제목·날짜를 확인했고 직접 RX, 제조 자동화, MES/ERP/PLM/공급망·디지털 트윈·Physical AI 관련 본문을 선별했다. 일반 금융·보안·클라우드·범용 챗봇·GPU 인프라 글은 직접 제조·로봇 연결이 없는 제목 기준으로 제외했다. 138개 본문을 모두 읽거나 1092개 전체 아티클을 전수 수집했다는 의미는 아니다. 기존 등록된 로봇/Physical AI 3개 글은 신규 중복 등록하지 않았다.",
+      "title_date_rows_reviewed": 138
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/manufacturing/manufacturing.html",
+      "publisher": "Samsung SDS",
+      "method": "제품군 링크 추적 및 MES/AMHS/3D 본문 정독",
+      "query_or_page": "제품 역할표·FAQ·제조 제어 도식",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/mes/nexplant-mes.html",
+        "https://www.samsungsds.com/kr/manufacturing/manufacturing.html",
+        "https://www.samsungsds.com/kr/manufacturing-3d/nexplant-3d-excellence.html",
+        "https://www.samsungsds.com/kr/amhs/nexplant-amhs.html",
+        "https://www.samsungsds.com/kr/sep/sep.html",
+        "https://www.samsungsds.com/kr/iot-platform/brightics-iot.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/mes/nexplant-mes.html",
+        "https://www.samsungsds.com/kr/manufacturing/manufacturing.html",
+        "https://www.samsungsds.com/kr/manufacturing-3d/nexplant-3d-excellence.html",
+        "https://www.samsungsds.com/kr/amhs/nexplant-amhs.html"
+      ],
+      "notes": "SEP와 Brightics IoT 상세는 미국 오류 페이지로 이동. 제품 게시일이 없어 모두 현재 설명으로만 유지한다."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/investor/ir_events/earnings-release.html",
+      "publisher": "Samsung SDS",
+      "method": "2026 Q1–Q3 및 2025 Q4 국문 스크립트 링크 탐색·RX 단락 열람",
+      "query_or_page": "2026 Q1/Q2/Q3, 2025 Q4",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%201%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_KR_2.pdf"
+      ],
+      "reviewed_urls": [
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf",
+        "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%201%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_KR_2.pdf"
+      ],
+      "notes": "Q1/Q2/Q3 국문 스크립트를 신규 기록화. 기존 영문판과 계보 공유. 2025 Q4 스크립트는 RX 핵심 추가 자료로 채택하지 않음. 발표자료 이미지 슬라이드 전체·오디오 전사 완독은 미완료. PDF 경로 날짜를 게시일로 생성하지 않는다."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/event/index.html",
+      "publisher": "Samsung SDS",
+      "method": "목록 열기·도메인 검색·행사 프로그램 확인",
+      "query_or_page": "제조 Industry Day, REAL Summit, World IT Show, AI FESTA",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/event/mr-industryday-2026-0528.html",
+        "https://www.samsungsds.com/kr/event/mr-industryday-2026-0417.html",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html",
+        "https://www.samsungsds.com/kr/event/world-it-show-2026.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/event/mr-industryday-2026-0528.html",
+        "https://www.samsungsds.com/kr/event/mr-industryday-2026-0417.html",
+        "https://www.samsungsds.com/kr/event/realsummit2026.html",
+        "https://www.samsungsds.com/kr/event/world-it-show-2026.html"
+      ],
+      "notes": "동적 목록 항목과 더보기가 텍스트 도구에 완전히 노출되지 않아 전체 페이지네이션 완료 불가. REAL Summit 외부 자료 사이트는 2회 타임아웃. 프로그램의 행사일을 게시일로 대체하지 않음."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/case-study/state.html",
+      "publisher": "Samsung SDS",
+      "method": "공식 사례 현황판+도메인 검색",
+      "query_or_page": "하림 / Private 5G / 자동차 부품",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/case-study/kicox-private-5g-shared-core.html",
+        "https://www.samsungsds.com/kr/case-study/harim-group-one-erp.html",
+        "https://www.samsungsds.com/kr/case-study/smart-factory-automobile.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/case-study/kicox-private-5g-shared-core.html",
+        "https://www.samsungsds.com/kr/case-study/harim-group-one-erp.html",
+        "https://www.samsungsds.com/kr/case-study/smart-factory-automobile.html"
+      ],
+      "notes": "목록 89개 항목 중 제조 관련 사례를 선별. 게시일 없는 사례를 최근 1년 성과로 계산하지 않음. 전체 사례 본문 전수 열람은 아님."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/vod/index.html",
+      "publisher": "Samsung SDS",
+      "method": "공식 동영상 목록·YouTube 도메인 검색",
+      "query_or_page": "제조 / 로봇 / Samsung SDS RX 2026",
+      "accessed_at": "2026-10-31",
+      "status": "partial",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/vod/index.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/vod/index.html"
+      ],
+      "notes": "공식 목록의 제목과 링크만 확인했다. RX 영상 전문·자막·촬영일·가동 상태를 검증하지 못해 영상 신규 실증 주장은 추가하지 않았다."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/etc/license/index.html",
+      "publisher": "Samsung SDS",
+      "method": "목록 열기·검색 색인 대조",
+      "query_or_page": "",
+      "accessed_at": "2026-10-31",
+      "status": "dynamic_list_unavailable",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/etc/license/index.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/etc/license/index.html"
+      ],
+      "notes": "검색 색인에는 Nexplant MES v3.3/2026.06.18이 보이나 직접 열린 목록은 비어 상세 PDF를 확보하지 못했다. 출시일이나 라이선스 변경 사실로 등록하지 않았다."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/notice/notice_list.html",
+      "publisher": "Samsung SDS",
+      "method": "목록 열기·검색 색인 대조",
+      "query_or_page": "",
+      "accessed_at": "2026-10-31",
+      "status": "dynamic_list_unavailable",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/notice/notice_list.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/notice/notice_list.html"
+      ],
+      "notes": "검색 색인에서 2026-03-05 Nexplant 3D eXcellence 판매·기술지원 종료 정책을 발견했으나 상세 원문 URL 미확보. 현행 지원 여부는 미확인으로 제품 기록에 경고했다."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/sitemap.xml",
+      "publisher": "Samsung SDS",
+      "method": "사이트맵 열기",
+      "query_or_page": "",
+      "accessed_at": "2026-10-31",
+      "status": "access_blocked",
+      "discovered_urls": [
+        "https://www.samsungsds.com/sitemap.xml"
+      ],
+      "reviewed_urls": [],
+      "notes": "연결 웹 도구가 application/xml 형식을 지원하지 않아 목록을 읽지 못함. robots.txt도 도구 접근 오류. 전수 수집 완료로 표시하지 않음."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/enterprise-asset/nexplant_mes_ppt_kr.html",
+      "publisher": "Samsung SDS",
+      "method": "공식 제품의 발표자료 다운로드 링크 열기",
+      "query_or_page": "Nexplant MES 발표자료",
+      "accessed_at": "2026-10-31",
+      "status": "registration_required",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/enterprise-asset/nexplant_mes_ppt_kr.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/enterprise-asset/nexplant_mes_ppt_kr.html"
+      ],
+      "notes": "안내와 이름·직무·이메일·전화·회사·동의 입력 양식까지 열람. 양식을 제출하지 않았으며 발표자료 PDF 본문을 확보하지 못했다. 제품 페이지의 공개 모듈 설명만 기록했다."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/kr/enterprise-asset/Nexplant-Asset-Management.html",
+      "publisher": "Samsung SDS",
+      "method": "공식 EAM 제품 발표자료 링크 열기",
+      "query_or_page": "Nexplant Asset Management 발표자료",
+      "accessed_at": "2026-10-31",
+      "status": "registration_required",
+      "discovered_urls": [
+        "https://www.samsungsds.com/kr/enterprise-asset/Nexplant-Asset-Management.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/kr/enterprise-asset/Nexplant-Asset-Management.html"
+      ],
+      "notes": "공개 안내와 개인정보 입력 양식까지 열람. 발표자료 전문·발행일은 미확보여서 최근 1년 자료나 신규 주장으로 등록하지 않았다."
+    },
+    {
+      "collection_url": "https://www.realsummit2026.com/Breakout?category=AX+Practice",
+      "publisher": "Samsung SDS / REAL Summit",
+      "method": "검색 색인에서 제조 세션 탐색 후 외부 행사 상세 열기 재시도",
+      "query_or_page": "site:realsummit2026.com 제조 로봇 pdf",
+      "accessed_at": "2026-10-31",
+      "status": "access_timeout",
+      "discovered_urls": [
+        "https://www.realsummit2026.com/",
+        "https://www.realsummit2026.com/Breakout?category=AX+Practice"
+      ],
+      "reviewed_urls": [],
+      "notes": "본 사이트 및 Breakout 상세 접근이 타임아웃되어 발표자료 PDF·제조 세션 영상/자막을 확보하지 못했다. 삼성SDS 자체 행사 안내는 별도 기록 x-sds-017로 보존한다."
+    },
+    {
+      "collection_url": "https://www.samsungsds.com/en/news/state.html",
+      "publisher": "Samsung SDS",
+      "method": "영문 전체 현황판 날짜·제목 순차 확인, RX 관련 언어판 대조",
+      "query_or_page": "No.234(2026-10-30)~191(2025-11-03) 총44개; 다음 No.190은 2025-09-25",
+      "accessed_at": "2026-10-31",
+      "status": "title_date_boundary_complete_content_partial",
+      "title_date_rows_reviewed": 44,
+      "discovered_urls": [
+        "https://www.samsungsds.com/en/news/fr-261030.html",
+        "https://www.samsungsds.com/us/news/1295356_5933.html",
+        "https://www.samsungsds.com/us/news/1295365_5933.html",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "reviewed_urls": [
+        "https://www.samsungsds.com/en/news/fr-261030.html",
+        "https://www.samsungsds.com/us/news/1295356_5933.html",
+        "https://www.samsungsds.com/us/news/1295365_5933.html",
+        "https://www.samsungsds.com/us/news/1295412_5933.html"
+      ],
+      "notes": "영문 제목·날짜44개를 확인했으며 RX 관련 최신3분기 발표와 행사 언어판 본문을 열람했다. 일반 클라우드·보안·모빌리티·인사·금융 등은 직접 RX 관련성이 없어 제목 단계 제외. 44개 본문 전수 열람은 아니다. RX ART 영문은 1295356(9/3)과1295365(9/8) 두 URL에 같은 본문이 있다. 후자는 x-sds-019로 보존, 전자는 같은 국문 원천 sds-003의 추가 언어판 URL로 여기만 기록하여 독립 주장 수를 늘리지 않았다."
+    }
+  ],
+  "relations": [
+    {
+      "id": "x-sds-rel-001",
+      "from": "sds",
+      "to": "private-5g",
+      "type": "describes",
+      "label": "로봇·제어시스템 연결 구축 사례 소개",
+      "claim_id": "claim:x-sds-002",
+      "status": "reported",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "삼성SDS",
+      "to_title": "Private 5G",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-002",
+      "from": "sds",
+      "to": "harim",
+      "type": "implements_for",
+      "label": "One ERP 구축 사례 소개",
+      "claim_id": "claim:x-sds-002:2",
+      "status": "reported",
+      "rationale": "ERP 제조 데이터 통합 관계이며 RX 로봇 고객 또는 유료 가동으로 전환하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "하림그룹",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-003",
+      "from": "sds",
+      "to": "semco",
+      "type": "implements_for",
+      "label": "차세대 ERP 구축 완료 발표",
+      "claim_id": "claim:x-sds-003",
+      "status": "reported",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "삼성SDS",
+      "to_title": "삼성전기",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-004",
+      "from": "erp",
+      "to": "bw",
+      "type": "data_integrated_into",
+      "label": "삼성전기 사례의 데이터 통합",
+      "claim_id": "claim:x-sds-003:2",
+      "status": "reported",
+      "rationale": "삼성전기 ERP 사례에 한정된 데이터 연결이며 모든 고객의 일반 제품 구조로 확장하지 않는다.",
+      "from_title": "ERP",
+      "to_title": "Business Warehouse 통합 DB",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-005",
+      "from": "mes",
+      "to": "bw",
+      "type": "data_integrated_into",
+      "label": "삼성전기 사례의 데이터 통합",
+      "claim_id": "claim:x-sds-003:2",
+      "status": "reported",
+      "rationale": "삼성전기 ERP 사례에 한정된 데이터 연결이며 모든 고객의 일반 제품 구조로 확장하지 않는다.",
+      "from_title": "MES",
+      "to_title": "Business Warehouse 통합 DB",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-006",
+      "from": "scm",
+      "to": "bw",
+      "type": "data_integrated_into",
+      "label": "삼성전기 사례의 데이터 통합",
+      "claim_id": "claim:x-sds-003:2",
+      "status": "reported",
+      "rationale": "삼성전기 ERP 사례에 한정된 데이터 연결이며 모든 고객의 일반 제품 구조로 확장하지 않는다.",
+      "from_title": "SCM",
+      "to_title": "Business Warehouse 통합 DB",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-007",
+      "from": "mes",
+      "to": "nexplant-sd",
+      "type": "has_component",
+      "label": "생산 예측·계획·작업 할당 도구",
+      "claim_id": "claim:x-sds-010",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "MES",
+      "to_title": "Nexplant Scheduling & Dispatching",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-008",
+      "from": "nexplant-sd",
+      "to": "nexplant-mo",
+      "type": "exchanges_with",
+      "label": "최적 Lot 정보 연결",
+      "claim_id": "claim:x-sds-010:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Scheduling & Dispatching",
+      "to_title": "Nexplant Manufacturing Operation",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-009",
+      "from": "nexplant-mo",
+      "to": "mcs",
+      "type": "requests",
+      "label": "Lot 반송 연결",
+      "claim_id": "claim:x-sds-010:3",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Manufacturing Operation",
+      "to_title": "Nexplant MCS",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-010",
+      "from": "nexplant-tc",
+      "to": "nexplant-mo",
+      "type": "interfaces_with",
+      "label": "설비·생산실행 인터페이스",
+      "claim_id": "claim:x-sds-010:4",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Tool Control",
+      "to_title": "Nexplant Manufacturing Operation",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-011",
+      "from": "nexplant-tc",
+      "to": "equipment-engineering",
+      "type": "interfaces_with",
+      "label": "설비 엔지니어링 인터페이스",
+      "claim_id": "claim:x-sds-010:4",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Tool Control",
+      "to_title": "설비 엔지니어링",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-012",
+      "from": "nexplant-tc",
+      "to": "secs",
+      "type": "uses",
+      "label": "SECS 통신 규격 안내",
+      "claim_id": "claim:x-sds-010:5",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Tool Control",
+      "to_title": "SECS 설비 통신 규격",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-013",
+      "from": "nexplant-3dex",
+      "to": "erp",
+      "type": "integrates_with",
+      "label": "제품문서의 ERP 데이터 연계",
+      "claim_id": "claim:x-sds-012:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant 3D eXcellence",
+      "to_title": "ERP",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-014",
+      "from": "nexplant-3dex",
+      "to": "scm",
+      "type": "integrates_with",
+      "label": "제품문서의 SCM 데이터 연계",
+      "claim_id": "claim:x-sds-012:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant 3D eXcellence",
+      "to_title": "SCM",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-015",
+      "from": "sds-research",
+      "to": "rfm",
+      "type": "researches",
+      "label": "이종 로봇 RFM 파인튜닝·데이터 최적화",
+      "claim_id": "claim:x-sds-013",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Samsung SDS Research",
+      "to_title": "로봇 파운데이션 모델",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-016",
+      "from": "sds-research",
+      "to": "multi-robot-control",
+      "type": "researches",
+      "label": "멀티 로봇 제어·운영 연구",
+      "claim_id": "claim:x-sds-013:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Samsung SDS Research",
+      "to_title": "멀티 로봇 제어·운영 기술",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-017",
+      "from": "kicox",
+      "to": "private-5g",
+      "type": "describes",
+      "label": "산단 코어 공유 사례",
+      "claim_id": "claim:x-sds-014",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "한국산업단지공단",
+      "to_title": "Private 5G",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-018",
+      "from": "walden",
+      "to": "semco",
+      "type": "validated_use_case_for",
+      "label": "부품 취급·소모품 교체 적용 가능성 검증",
+      "claim_id": "claim:x-sds-019",
+      "status": "reported",
+      "rationale": "삼성SDS가 조정한 사용사례 검증에 귀속한다. 파트너와 법인의 직접 계약·생산라인 설치·유료 운영을 뜻하지 않는다.",
+      "from_title": "Walden Robotics",
+      "to_title": "삼성전기",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-019",
+      "from": "walden",
+      "to": "semes",
+      "type": "validated_use_case_for",
+      "label": "부품 취급·소모품 교체 적용 가능성 검증",
+      "claim_id": "claim:x-sds-019",
+      "status": "reported",
+      "rationale": "삼성SDS가 조정한 사용사례 검증에 귀속한다. 파트너와 법인의 직접 계약·생산라인 설치·유료 운영을 뜻하지 않는다.",
+      "from_title": "Walden Robotics",
+      "to_title": "세메스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-020",
+      "from": "roboforce",
+      "to": "shi",
+      "type": "validated_use_case_for",
+      "label": "야외 작업 자동화 가능성 검증",
+      "claim_id": "claim:x-sds-019:2",
+      "status": "reported",
+      "rationale": "해당 법인 유형의 조선·플랜트 작업 사례에 대한 적용 가능성 검증이다. 상시 현장 운영 또는 유료 수주와 구분한다.",
+      "from_title": "RoboForce",
+      "to_title": "삼성중공업",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-021",
+      "from": "roboforce",
+      "to": "samsung-ea",
+      "type": "validated_use_case_for",
+      "label": "야외 작업 자동화 가능성 검증",
+      "claim_id": "claim:x-sds-019:2",
+      "status": "reported",
+      "rationale": "해당 법인 유형의 조선·플랜트 작업 사례에 대한 적용 가능성 검증이다. 상시 현장 운영 또는 유료 수주와 구분한다.",
+      "from_title": "RoboForce",
+      "to_title": "삼성E&A",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-022",
+      "from": "company-g",
+      "to": "samsung-display",
+      "type": "validated_use_case_for",
+      "label": "정밀 조작 자동화 가능성 검증",
+      "claim_id": "claim:x-sds-019:3",
+      "status": "reported",
+      "rationale": "원문은 G사로 익명 처리한다. Genesis AI와 동일 법인으로 추정하지 않는다.",
+      "from_title": "익명 G사",
+      "to_title": "삼성디스플레이",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-023",
+      "from": "sds",
+      "to": "walden",
+      "type": "plans_ecosystem_with",
+      "label": "피지컬 AI 생태계 구축 추진",
+      "claim_id": "claim:x-sds-021",
+      "status": "undated_current",
+      "rationale": "IR의 계획 표현에 귀속한다. 게시일 미상으로 현재 관측만 허용하며 계약·독점 관계·완료 제품 통합으로 승격하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "Walden Robotics",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-024",
+      "from": "sds",
+      "to": "rainbow",
+      "type": "plans_ecosystem_with",
+      "label": "피지컬 AI 생태계 구축 추진",
+      "claim_id": "claim:x-sds-021",
+      "status": "undated_current",
+      "rationale": "IR의 계획 표현에 귀속한다. 게시일 미상으로 현재 관측만 허용하며 계약·독점 관계·완료 제품 통합으로 승격하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "레인보우로보틱스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-025",
+      "from": "sds",
+      "to": "genesis-ai",
+      "type": "plans_ecosystem_with",
+      "label": "피지컬 AI 생태계 구축 추진",
+      "claim_id": "claim:x-sds-021",
+      "status": "undated_current",
+      "rationale": "IR의 계획 표현에 귀속한다. 게시일 미상으로 현재 관측만 허용하며 계약·독점 관계·완료 제품 통합으로 승격하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "Genesis AI",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-026",
+      "from": "sds",
+      "to": "roboforce",
+      "type": "plans_ecosystem_with",
+      "label": "피지컬 AI 생태계 구축 추진",
+      "claim_id": "claim:x-sds-021",
+      "status": "undated_current",
+      "rationale": "IR의 계획 표현에 귀속한다. 게시일 미상으로 현재 관측만 허용하며 계약·독점 관계·완료 제품 통합으로 승격하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "RoboForce",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-027",
+      "from": "sds",
+      "to": "samsung-venture-investment",
+      "type": "invests_via",
+      "label": "Walden 전략적 투자 경로 설명",
+      "claim_id": "claim:x-sds-022",
+      "status": "undated_current",
+      "rationale": "Walden 투자 경로에 한정된다. 보유 지분·펀드 구조·전결 권한을 추정하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "삼성벤처투자",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-028",
+      "from": "walden",
+      "to": "toyota",
+      "type": "reported_operates_at",
+      "label": "Toyota 북미 생산라인 운영 설명",
+      "claim_id": "claim:x-sds-022:2",
+      "status": "undated_current",
+      "rationale": "삼성SDS의 파트너 설명이다. Toyota 원문·가동기간 KPI의 독립 확인은 없으며 현재 관측만 표시한다.",
+      "from_title": "Walden Robotics",
+      "to_title": "Toyota 북미 생산라인",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Factory"
+    },
+    {
+      "id": "x-sds-rel-029",
+      "from": "scs",
+      "to": "stocker",
+      "type": "controls",
+      "label": "제품 역할표의 Stocker 제어",
+      "claim_id": "claim:x-sds-024",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Stocker Control System",
+      "to_title": "Stocker",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-030",
+      "from": "acs",
+      "to": "agv",
+      "type": "controls",
+      "label": "제품 역할표의 AGV 제어",
+      "claim_id": "claim:x-sds-024",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "AGV Control System",
+      "to_title": "AGV",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-sds-rel-031",
+      "from": "hcm",
+      "to": "nexplant-mo",
+      "type": "interfaces_with",
+      "label": "MOS 표준 인터페이스",
+      "claim_id": "claim:x-sds-024:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Host Communication Module",
+      "to_title": "Nexplant Manufacturing Operation",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-032",
+      "from": "amhs",
+      "to": "mcs",
+      "type": "has_component",
+      "label": "공장 단위 물류제어",
+      "claim_id": "claim:x-sds-024:3",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Samsung SDS AMHS",
+      "to_title": "Nexplant MCS",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-033",
+      "from": "amhs",
+      "to": "sems",
+      "type": "has_component",
+      "label": "공장 단위 통합관제",
+      "claim_id": "claim:x-sds-024:3",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Samsung SDS AMHS",
+      "to_title": "Smart EQ Management System",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-034",
+      "from": "harim",
+      "to": "erp",
+      "type": "uses",
+      "label": "One ERP 통합 고객사례",
+      "claim_id": "claim:x-sds-025",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "하림그룹",
+      "to_title": "ERP",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-035",
+      "from": "sds",
+      "to": "erp",
+      "type": "provides",
+      "label": "ERP 컨설팅·구축·운영 지원",
+      "claim_id": "claim:x-sds-029",
+      "status": "official_statement",
+      "rationale": "인터뷰에서 설명한 기업 업무 시스템 지원 역할이다. 로봇 제어 제품 구현으로 해석하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "ERP",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-036",
+      "from": "sds",
+      "to": "sap",
+      "type": "partners_with",
+      "label": "Premium Supplier 파트너십 설명",
+      "claim_id": "claim:x-sds-029:2",
+      "status": "official_statement",
+      "rationale": "ERP 담당 인터뷰의 파트너십 설명이며 정확한 체결일은 미상이다.",
+      "from_title": "삼성SDS",
+      "to_title": "SAP",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    }
+  ],
+  "entities": [
+    {
+      "id": "sds",
+      "title": "삼성SDS",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "semco",
+      "title": "삼성전기",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "walden",
+      "title": "Walden Robotics",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "roboforce",
+      "title": "RoboForce",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "rainbow",
+      "title": "레인보우로보틱스",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "genesis-ai",
+      "title": "Genesis AI",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "semes",
+      "title": "세메스",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "shi",
+      "title": "삼성중공업",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "samsung-ea",
+      "title": "삼성E&A",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "samsung-display",
+      "title": "삼성디스플레이",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "company-g",
+      "title": "익명 G사",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "sds-research",
+      "title": "Samsung SDS Research",
+      "ontology_type": "Organization"
+    },
+    {
+      "id": "rfm",
+      "title": "로봇 파운데이션 모델",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "multi-robot-control",
+      "title": "멀티 로봇 제어·운영 기술",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "mes",
+      "title": "MES",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "nexplant-sd",
+      "title": "Nexplant Scheduling & Dispatching",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "nexplant-mo",
+      "title": "Nexplant Manufacturing Operation",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "nexplant-tc",
+      "title": "Nexplant Tool Control",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "mcs",
+      "title": "Nexplant MCS",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "secs",
+      "title": "SECS 설비 통신 규격",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "equipment-engineering",
+      "title": "설비 엔지니어링",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "amhs",
+      "title": "Samsung SDS AMHS",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "acs",
+      "title": "AGV Control System",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "agv",
+      "title": "AGV",
+      "ontology_type": "Robot"
+    },
+    {
+      "id": "scs",
+      "title": "Stocker Control System",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "stocker",
+      "title": "Stocker",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "hcm",
+      "title": "Host Communication Module",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "sems",
+      "title": "Smart EQ Management System",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "erp",
+      "title": "ERP",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "scm",
+      "title": "SCM",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "bw",
+      "title": "Business Warehouse 통합 DB",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "nexplant-3dex",
+      "title": "Nexplant 3D eXcellence",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "private-5g",
+      "title": "Private 5G",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "kicox",
+      "title": "한국산업단지공단",
+      "ontology_type": "Organization"
+    },
+    {
+      "id": "harim",
+      "title": "하림그룹",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "samsung-venture-investment",
+      "title": "삼성벤처투자",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "toyota",
+      "title": "Toyota 북미 생산라인",
+      "ontology_type": "Factory"
+    },
+    {
+      "id": "orchestrator",
+      "title": "Robot Orchestration",
+      "ontology_type": "Product"
+    },
+    {
+      "id": "sap",
+      "title": "SAP",
+      "ontology_type": "Company"
+    },
+    {
+      "id": "on-device-ai",
+      "title": "온디바이스 AI",
+      "ontology_type": "Technology"
+    },
+    {
+      "id": "edge-ai",
+      "title": "엣지 추론",
+      "ontology_type": "Technology"
+    }
+  ],
+  "lineage_updates": [
+    {
+      "record_id": "media-001",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-001"
+        ],
+        "source_urls": [
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://www.samsungsds.com/kr/news/sds-260901.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "media-002",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-001"
+        ],
+        "source_urls": [
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://www.samsungsds.com/kr/news/sds-260901.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "media-003",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-001"
+        ],
+        "source_urls": [
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://www.samsungsds.com/kr/news/sds-260901.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "mi-001",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-001"
+        ],
+        "source_urls": [
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+          "https://www.samsungsds.com/kr/news/sds-260901.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-004",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-001"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.samsungsds.com/kr/news/sds-260901.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-010",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-001"
+        ],
+        "source_urls": [
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://www.samsungsds.com/kr/news/sds-260901.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-014",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-001"
+        ],
+        "source_urls": [
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://www.samsungsds.com/kr/news/sds-260901.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "media-001",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-017"
+        ],
+        "source_urls": [
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "media-002",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-017"
+        ],
+        "source_urls": [
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "media-003",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-017"
+        ],
+        "source_urls": [
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "mi-001",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-017"
+        ],
+        "source_urls": [
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-004",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-017"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-010",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-017"
+        ],
+        "source_urls": [
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-014",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-017"
+        ],
+        "source_urls": [
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://www.samsungsds.com/kr/event/realsummit2026.html"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-003",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-019"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/sds-260903.html",
+          "https://www.samsungsds.com/us/news/1295365_5933.html"
+        ],
+        "rationale": "공식 영문 RX ART 결과 발표는 8월31일~9월1일 미국 워크숍을 설명하는 기존 국문 발표의 언어판이다. 영문 게시일 9월8일을 국문 게시일 9월3일로 덮어쓰지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "media-001",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://zdnet.co.kr/view/?no=20260908143333",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "media-002",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://www.newspim.com/news/view/20260908000734",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "media-003",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://zdnet.co.kr/view/?no=20260908122517",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "mi-001",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://miracom-inc.com/kr/customer-support/insight-reports/dn6/manufacturing-ax-rx-strategy",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-004",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/sds20260908.html",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-010",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://www.linkedin.com/posts/waldenrobotics_at-real-summit-2026-in-seoul-our-head-of-activity-7506720227913584641-QI5b",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-014",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-020"
+        ],
+        "source_urls": [
+          "https://en.sedaily.com/technology/2026/09/12/samsung-sds-builds-10-company-robot-alliance-for-physical-ai",
+          "https://www.samsungsds.com/us/news/1295412_5933.html"
+        ],
+        "rationale": "공식 영문 REAL Summit 발표와 기존 9월8일 국문 발표·현장 기사는 같은 서울 REAL Summit 공개 행사를 원천으로 한다. 언어판 및 기사별 추가 주장은 보존하지만 독립 현장 가동 검증으로 가산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-005",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-021"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/ss-261029.html",
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-007",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-021"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung_SDS_3Q26_Script_Eng_261029.pdf",
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-013",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-021"
+        ],
+        "source_urls": [
+          "https://files.newsis.com/view/NISX20261029_0003846643",
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-018",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-021"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%203Q26%20Earnings%20Release_1.pdf",
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%202026Q3_Script_Kor_%EC%B5%9C%EC%A2%85_2.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-002",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-022"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/ss-260730.html",
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-006",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-022"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/Samsung_SDS_2Q26_Script_Eng_260730_1.pdf",
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/08/03/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%202%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_260730_1.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-008",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-023"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/SDS_1Q2026_Full_ConferenceCall_Script_ENG_2.pdf",
+          "https://image.samsungsds.com/kr/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/04/23/%EC%82%BC%EC%84%B1SDS%202026%EB%85%84%201%EB%B6%84%EA%B8%B0%20%EC%8B%A4%EC%A0%81%EB%B0%9C%ED%91%9C%20%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8_KR_2.pdf"
+        ],
+        "rationale": "같은 공식 행사·실적발표 또는 제품 구축 사례를 다룬 자료이다. 문서별 추가 주장은 보존하되 같은 회사의 공개 발화 계보를 독립 실증으로 중복 계산하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-005",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-030"
+        ],
+        "source_urls": [
+          "https://www.samsungsds.com/kr/news/ss-261029.html",
+          "https://www.samsungsds.com/en/news/fr-261030.html"
+        ],
+        "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-007",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-030"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung_SDS_3Q26_Script_Eng_261029.pdf",
+          "https://www.samsungsds.com/en/news/fr-261030.html"
+        ],
+        "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-013",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-030"
+        ],
+        "source_urls": [
+          "https://files.newsis.com/view/NISX20261029_0003846643",
+          "https://www.samsungsds.com/en/news/fr-261030.html"
+        ],
+        "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    },
+    {
+      "record_id": "sds-018",
+      "review": {
+        "reviewed_at": "2026-10-31",
+        "decision": "shared_origin",
+        "basis": "same_company_event",
+        "related_record_ids": [
+          "x-sds-030"
+        ],
+        "source_urls": [
+          "https://image.samsungsds.com/en/investor/ir_events/ear_rele/__icsFiles/afieldfile/2026/10/29/Samsung%20SDS%203Q26%20Earnings%20Release_1.pdf",
+          "https://www.samsungsds.com/en/news/fr-261030.html"
+        ],
+        "rationale": "삼성SDS 2026년 3분기 실적발표의 국문·영문 공식 발표 및 스크립트와 그 언론 인용을 같은 회사 발화 계보로 묶는다. 영문 게시일 10월30일은 보존하고 국문 게시일로 소급하지 않는다.",
+        "exceptions": [],
+        "review_method": "inventory_evidence_review"
+      }
+    }
+  ]
+}

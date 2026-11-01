@@ -1,0 +1,2838 @@
+{
+  "entities": [
+    {
+      "id": "6g-robotics",
+      "title": "6G 기반 로봇 통합 연구",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "acs",
+      "title": "AGV Control System",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "afa",
+      "title": "AFA 로봇 시각 특징 집계",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "agv",
+      "title": "AGV",
+      "ontology_type": "Robot",
+      "aliases": [
+        "AGV"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "ai-kitchen",
+      "title": "AI Kitchen 로봇 콘셉트",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "amhs",
+      "title": "Samsung SDS AMHS",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "amr-wireless-charging",
+      "title": "AMR 무선충전 적용 사업",
+      "ontology_type": "Project",
+      "aliases": [
+        "AMR 무선충전 적용 사업"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "assembly-robot",
+      "title": "조립 로봇",
+      "ontology_type": "Robot",
+      "aliases": [
+        "조립 로봇"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "bw",
+      "title": "Business Warehouse 통합 DB",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "chemtopia-mes-conference-2026",
+      "title": "켐토피아 MES·탄소 데이터 컨퍼런스",
+      "ontology_type": "Event",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "co-vla",
+      "title": "Co-VLA 양팔 협응 모델",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "company-g",
+      "title": "익명 G사",
+      "ontology_type": "Company",
+      "aliases": [
+        "익명 G사"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "config-intelligence",
+      "title": "Config Intelligence",
+      "ontology_type": "Company",
+      "aliases": [
+        "Config Intelligence"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "cosmos",
+      "title": "NVIDIA Cosmos",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "dataiku",
+      "title": "데이터이쿠",
+      "ontology_type": "Company",
+      "aliases": [
+        "데이터이쿠"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "demo-pose",
+      "title": "DeMo-Pose",
+      "ontology_type": "Technology",
+      "aliases": [
+        "DeMo-Pose"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "design-robot-tests",
+      "title": "디지털 트윈·물리 로봇 설계 검증",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "digital-twin",
+      "title": "디지털 트윈",
+      "ontology_type": "Technology",
+      "aliases": [
+        "디지털 트윈"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "dremo-minimo",
+      "title": "Dremo & Minimo 로봇 콘셉트",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "dx-advisory",
+      "title": "DX 미래기술 자문 역할",
+      "ontology_type": "Organization",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "embodied-physical-ai",
+      "title": "Embodied & Physical AI",
+      "ontology_type": "Technology",
+      "aliases": [
+        "Embodied & Physical AI"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "ena-smart-patrol-robot",
+      "title": "Smart Patrol Robot",
+      "ontology_type": "Robot",
+      "aliases": [
+        "Smart Patrol Robot"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "environment-safety-robot",
+      "title": "디지털 트윈 환경안전 로봇",
+      "ontology_type": "Robot",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "equipment-engineering",
+      "title": "설비 엔지니어링",
+      "ontology_type": "Technology",
+      "aliases": [
+        "설비 엔지니어링"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "erp",
+      "title": "ERP",
+      "ontology_type": "Technology",
+      "aliases": [
+        "ERP"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "fluid-reality",
+      "title": "Fluid Reality",
+      "ontology_type": "Company",
+      "aliases": [
+        "Fluid Reality"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "flyp",
+      "title": "플라잎",
+      "ontology_type": "Company",
+      "aliases": [
+        "플라잎"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "foundry-automation",
+      "title": "Samsung Foundry Fab Automation",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "genesis-ai",
+      "title": "Genesis AI",
+      "ontology_type": "Company",
+      "aliases": [
+        "Genesis AI"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "grpc",
+      "title": "gRPC",
+      "ontology_type": "Technology",
+      "aliases": [
+        "gRPC"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "gtc-2026",
+      "title": "NVIDIA GTC 2026 제조 AI 세션",
+      "ontology_type": "Event",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "gumi-data-center",
+      "title": "구미 AI 데이터센터",
+      "ontology_type": "Project",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "gwangju-factory",
+      "title": "광주 디지털 트윈 혁신 허브 공장",
+      "ontology_type": "Factory",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "haenam-ai-dc",
+      "title": "해남 솔라시도 AI 데이터센터",
+      "ontology_type": "Project",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "harim",
+      "title": "하림그룹",
+      "ontology_type": "Company",
+      "aliases": [
+        "하림그룹"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "hcm",
+      "title": "Host Communication Module",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "highway101",
+      "title": "Highway101",
+      "ontology_type": "Product",
+      "aliases": [
+        "Highway101"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "humanoid-business",
+      "title": "휴머노이드 로봇 사업",
+      "ontology_type": "Project",
+      "aliases": [
+        "휴머노이드 로봇 사업"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "humanoid-camera-module",
+      "title": "휴머노이드 카메라 모듈",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "isaac-sim",
+      "title": "NVIDIA Isaac Sim",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "kaist",
+      "title": "KAIST",
+      "ontology_type": "Organization",
+      "aliases": [
+        "KAIST"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "kicox",
+      "title": "한국산업단지공단",
+      "ontology_type": "Organization",
+      "aliases": [
+        "한국산업단지공단"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "latent-aware-controller",
+      "title": "Latent-Aware Controller",
+      "ontology_type": "Technology",
+      "aliases": [
+        "Latent-Aware Controller"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "latent-world-memory",
+      "title": "Latent World Memory for Physical AI",
+      "ontology_type": "Project",
+      "aliases": [
+        "Latent World Memory for Physical AI"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "leel-upperhouse-security",
+      "title": "르엘 어퍼하우스 보안로봇 도입",
+      "ontology_type": "Project",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "lightwheel",
+      "title": "Lightwheel",
+      "ontology_type": "Company",
+      "aliases": [
+        "Lightwheel"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "logistics-robot",
+      "title": "물류 로봇",
+      "ontology_type": "Robot",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "long-horizon-agent",
+      "title": "물리 영역 장기 과업 에이전트",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "manufacturing-dual-arm-v2",
+      "title": "제조 특화 AI 양팔로봇 V2",
+      "ontology_type": "Robot",
+      "aliases": [
+        "제조 특화 AI 양팔로봇 V2"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "mcs",
+      "title": "Nexplant MCS",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "mes",
+      "title": "MES",
+      "ontology_type": "Technology",
+      "aliases": [
+        "MES"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "mesplus-ees",
+      "title": "Nexplant MESplus EES",
+      "ontology_type": "Product",
+      "aliases": [
+        "Nexplant MESplus EES"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "mesplus-mc",
+      "title": "Nexplant MESplus MC",
+      "ontology_type": "Product",
+      "aliases": [
+        "Nexplant MESplus MC"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "mesplus-qms",
+      "title": "Nexplant MESplus QMS",
+      "ontology_type": "Product",
+      "aliases": [
+        "Nexplant MESplus QMS"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "metro-wm",
+      "title": "Metro-WM",
+      "ontology_type": "Technology",
+      "aliases": [
+        "Metro-WM"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "miracom",
+      "title": "미라콤아이앤씨",
+      "ontology_type": "Company",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "miracom-ai-engineer",
+      "title": "AI 엔지니어 서비스",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "miracom-anonymous-food-case",
+      "title": "익명 식음료 A사 MES 구축 사례",
+      "ontology_type": "Project",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "miracom-fems",
+      "title": "FEMS·탄소 관리",
+      "ontology_type": "Product",
+      "aliases": [
+        "FEMS·탄소 관리"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "mistral",
+      "title": "Mistral AI",
+      "ontology_type": "Company",
+      "aliases": [
+        "Mistral AI"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "mujoco",
+      "title": "MuJoCo",
+      "ontology_type": "Product",
+      "aliases": [
+        "MuJoCo"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "multi-robot-control",
+      "title": "멀티 로봇 제어·운영 기술",
+      "ontology_type": "Technology",
+      "aliases": [
+        "멀티 로봇 제어·운영 기술"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "newton",
+      "title": "Newton",
+      "ontology_type": "Product",
+      "aliases": [
+        "Newton"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "nexplant-3dex",
+      "title": "Nexplant 3D eXcellence",
+      "ontology_type": "Product",
+      "aliases": [
+        "Nexplant 3D eXcellence"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "nexplant-mo",
+      "title": "Nexplant Manufacturing Operation",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "nexplant-sd",
+      "title": "Nexplant Scheduling & Dispatching",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "nexplant-tc",
+      "title": "Nexplant Tool Control",
+      "ontology_type": "Product",
+      "aliases": [
+        "Nexplant Tool Control"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "oht",
+      "title": "Overhead Hoist Transport",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "omniverse",
+      "title": "NVIDIA Omniverse",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "onprem-chip-ai",
+      "title": "반도체 온프레미스 AI",
+      "ontology_type": "Project",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "operating-robot",
+      "title": "운영 로봇",
+      "ontology_type": "Robot",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "pha",
+      "title": "PHA",
+      "ontology_type": "Company",
+      "aliases": [
+        "PHA"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "private-5g",
+      "title": "Private 5G",
+      "ontology_type": "Technology",
+      "aliases": [
+        "Private 5G"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "rainbow",
+      "title": "레인보우로보틱스",
+      "ontology_type": "Company",
+      "aliases": [
+        "레인보우로보틱스"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "rb-y1",
+      "title": "RB-Y1",
+      "ontology_type": "Robot",
+      "aliases": [
+        "RB-Y1"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "rb-y1c",
+      "title": "RB-Y1C",
+      "ontology_type": "Robot",
+      "aliases": [
+        "RB-Y1C"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "rbc-os",
+      "title": "RBC 로봇 운영 시스템",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "rbc-series",
+      "title": "RBC 시리즈",
+      "ontology_type": "Robot",
+      "aliases": [
+        "RBC 시리즈"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "rby-ai-framework",
+      "title": "레인보우 VLA 인프라",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "rby1-sdk",
+      "title": "RB-Y1 SDK",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "rby2",
+      "title": "RBY2",
+      "ontology_type": "Robot",
+      "aliases": [
+        "RBY2"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "refrigerator-cable-simulation",
+      "title": "냉장고 케이블 삽입 시뮬레이션",
+      "ontology_type": "Project",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "roboforce",
+      "title": "RoboForce",
+      "ontology_type": "Company",
+      "aliases": [
+        "RoboForce"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "robomolmo",
+      "title": "RoboMolmo",
+      "ontology_type": "Project",
+      "aliases": [
+        "RoboMolmo"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "robot-foundation-model",
+      "title": "로봇 파운데이션 모델",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "robot-manipulation",
+      "title": "로봇 조작·항법·추론",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "s1",
+      "title": "에스원",
+      "ontology_type": "Company",
+      "aliases": [
+        "에스원"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "samsung-display",
+      "title": "삼성디스플레이",
+      "ontology_type": "Company",
+      "aliases": [
+        "삼성디스플레이"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "samsung-ea",
+      "title": "삼성E&A",
+      "ontology_type": "Company",
+      "aliases": [
+        "삼성E&A"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "samsung-epc-contech-2026",
+      "title": "2026 콘테크 공모전",
+      "ontology_type": "Event",
+      "aliases": [
+        "2026 콘테크 공모전"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "samsung-manufacturing-simready",
+      "title": "삼성 제조 SimReady 자산",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "samsung-unspecified",
+      "title": "삼성 (해당 원문 법인 미특정)",
+      "ontology_type": "Organization",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "samsung-venture",
+      "title": "삼성벤처투자",
+      "ontology_type": "Company",
+      "aliases": [
+        "삼성벤처투자"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "samsung-ventures",
+      "title": "Samsung Ventures",
+      "ontology_type": "Company",
+      "aliases": [
+        "Samsung Ventures"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "sap",
+      "title": "SAP",
+      "ontology_type": "Company",
+      "aliases": [
+        "SAP"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "scm",
+      "title": "SCM",
+      "ontology_type": "Technology",
+      "aliases": [
+        "SCM"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "scs",
+      "title": "Stocker Control System",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "sdi",
+      "title": "삼성SDI",
+      "ontology_type": "Company",
+      "aliases": [
+        "삼성SDI"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "sdic",
+      "title": "Samsung Design Innovation Center",
+      "ontology_type": "Organization",
+      "aliases": [],
+      "cluster": "electronics"
+    },
+    {
+      "id": "sds",
+      "title": "삼성SDS",
+      "ontology_type": "Company",
+      "aliases": [
+        "삼성SDS"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "sds-research",
+      "title": "Samsung SDS Research",
+      "ontology_type": "Organization",
+      "aliases": [
+        "Samsung SDS Research"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "se",
+      "title": "삼성전자",
+      "ontology_type": "Company",
+      "aliases": [
+        "삼성전자"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "secs",
+      "title": "SECS 설비 통신 규격",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "semco",
+      "title": "삼성전기",
+      "ontology_type": "Company",
+      "aliases": [
+        "삼성전기"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "semco-actuator",
+      "title": "고신뢰성 액츄에이터",
+      "ontology_type": "Product",
+      "aliases": [
+        "고신뢰성 액츄에이터"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "semes",
+      "title": "세메스",
+      "ontology_type": "Company",
+      "aliases": [
+        "세메스"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "semes-line-automation",
+      "title": "SEMES Line Automation",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "semes-oht",
+      "title": "OHT 물류자동화",
+      "ontology_type": "Product",
+      "aliases": [
+        "OHT 물류자동화"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "sems",
+      "title": "Smart EQ Management System",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "sds"
+    },
+    {
+      "id": "sfa",
+      "title": "SFA",
+      "ontology_type": "Company",
+      "aliases": [
+        "SFA"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "shi",
+      "title": "삼성중공업",
+      "ontology_type": "Company",
+      "aliases": [
+        "삼성중공업"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "shi-data-ai-pilot",
+      "title": "삼성중공업 데이터 AI 플랫폼 파일럿",
+      "ontology_type": "Project",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "shi-pipe-robofab",
+      "title": "파이프 로보팹",
+      "ontology_type": "Factory",
+      "aliases": [
+        "파이프 로보팹"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "shi-pipe-vision-ai",
+      "title": "배관 제작 비전 AI·통합 관리",
+      "ontology_type": "Technology",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "shi-sedh",
+      "title": "S-EDH 설계 자동화 플랫폼",
+      "ontology_type": "Product",
+      "aliases": [
+        "S-EDH 설계 자동화 플랫폼"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "snu",
+      "title": "서울대학교",
+      "ontology_type": "Organization",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "solid-state-battery",
+      "title": "로봇용 전고체 배터리",
+      "ontology_type": "Product",
+      "aliases": [],
+      "cluster": "robotics"
+    },
+    {
+      "id": "sr-robot-platform-team",
+      "title": "Samsung Research Robot Platform팀",
+      "ontology_type": "Organization",
+      "aliases": [
+        "Samsung Research Robot Platform팀"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "sra-robotlab",
+      "title": "SRA Robot Intelligence Lab",
+      "ontology_type": "Organization",
+      "aliases": [
+        "SRA Robot Intelligence Lab"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "start",
+      "title": "SRA START",
+      "ontology_type": "Project",
+      "aliases": [
+        "SRA START"
+      ],
+      "cluster": "electronics"
+    },
+    {
+      "id": "stocker",
+      "title": "Stocker",
+      "ontology_type": "Product",
+      "aliases": [
+        "Stocker"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "team-rex",
+      "title": "Team REX",
+      "ontology_type": "Organization",
+      "aliases": [
+        "Team REX"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "toyota",
+      "title": "Toyota 북미 생산라인",
+      "ontology_type": "Factory",
+      "aliases": [
+        "Toyota 북미 생산라인"
+      ],
+      "cluster": "sds"
+    },
+    {
+      "id": "udp",
+      "title": "UDP",
+      "ontology_type": "Technology",
+      "aliases": [
+        "UDP"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "walden",
+      "title": "Walden Robotics",
+      "ontology_type": "Company",
+      "aliases": [
+        "Walden Robotics"
+      ],
+      "cluster": "robotics"
+    },
+    {
+      "id": "ypowerone",
+      "title": "와이파워원",
+      "ontology_type": "Company",
+      "aliases": [
+        "와이파워원"
+      ],
+      "cluster": "robotics"
+    }
+  ],
+  "relations": [
+    {
+      "id": "x-mf-edge-ena-contech",
+      "from": "samsung-ea",
+      "to": "samsung-epc-contech-2026",
+      "type": "organizes",
+      "label": "스마트 제조·로보틱스 기술 모집",
+      "claim_id": "claim:x-mf-018",
+      "status": "planned",
+      "rationale": "공모전 모집 발표입니다. 게시일·본문 일자 충돌로 사건일을 미확정 유지합니다.",
+      "from_title": "삼성E&A",
+      "to_title": "2026 콘테크 공모전",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Event"
+    },
+    {
+      "id": "x-mf-edge-ena-patrol",
+      "from": "samsung-ea",
+      "to": "ena-smart-patrol-robot",
+      "type": "operates",
+      "label": "현장 안전 순찰 로봇 운영 소개",
+      "claim_id": "claim:x-mf-011",
+      "status": "undated_current",
+      "rationale": "현재 안전 페이지 설명만으로 연결합니다. 도입일·현장명·로봇 공급사·운영 기간을 생성하지 않습니다.",
+      "from_title": "삼성E&A",
+      "to_title": "Smart Patrol Robot",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-mf-edge-food-mes",
+      "from": "miracom-anonymous-food-case",
+      "to": "mes",
+      "type": "uses",
+      "label": "MES·ERP 실적 연계와 원료 역추적",
+      "claim_id": "claim:x-mf-025:2",
+      "status": "reported",
+      "rationale": "원문은 미라콤 MES를 언급하며 브랜드·배포 버전·운영 시작일은 확인되지 않았습니다.",
+      "from_title": "익명 식음료 A사 MES 구축 사례",
+      "to_title": "MES",
+      "from_ontology_type": "Project",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-mf-edge-miracom-ai",
+      "from": "miracom",
+      "to": "miracom-ai-engineer",
+      "type": "provides",
+      "label": "제조 AI 의사결정 지원 안내",
+      "claim_id": "claim:x-mf-012",
+      "status": "undated_current",
+      "rationale": "현재 서비스 기능 설명입니다. 로봇 공통 플랫폼 출시나 자율 생산 달성 근거가 아닙니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "AI 엔지니어 서비스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-carbon-event",
+      "from": "miracom",
+      "to": "chemtopia-mes-conference-2026",
+      "type": "presents_at",
+      "label": "MES와 제품별 탄소 추적 발표",
+      "claim_id": "claim:x-mf-023",
+      "status": "reported",
+      "rationale": "발표 행사에 한정합니다. 전년도 MOU의 신규 체결이나 유료 사업 수주로 중복 집계하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "켐토피아 MES·탄소 데이터 컨퍼런스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Event"
+    },
+    {
+      "id": "x-mf-edge-miracom-ees",
+      "from": "miracom",
+      "to": "mesplus-ees",
+      "type": "provides",
+      "label": "FDC·EPT·RMS 설비 엔지니어링",
+      "claim_id": "claim:x-mf-022",
+      "status": "undated_current",
+      "rationale": "설비 분석 제품의 모듈 구성 설명으로 로봇 운영 KPI나 불량률 목표 달성을 확정하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "Nexplant MESplus EES",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-fems",
+      "from": "miracom",
+      "to": "miracom-fems",
+      "type": "provides",
+      "label": "설비 에너지·LOT 탄소 추적",
+      "claim_id": "claim:x-mf-021",
+      "status": "undated_current",
+      "rationale": "현재 서비스 기능 안내로 정확한 발표·도입 날짜는 알려져 있지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "FEMS·탄소 관리",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-food-case",
+      "from": "miracom",
+      "to": "miracom-anonymous-food-case",
+      "type": "implements",
+      "label": "설비·전자저울·작업 지시 연결",
+      "claim_id": "claim:x-mf-025",
+      "status": "reported",
+      "rationale": "미라콤이 소개한 익명 구축 사례입니다. 고객 실명·계약액·로봇 적용 여부를 추정하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "익명 식음료 A사 MES 구축 사례",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-mf-edge-miracom-h101",
+      "from": "miracom",
+      "to": "highway101",
+      "type": "provides",
+      "label": "이기종 애플리케이션·메시지 통합",
+      "claim_id": "claim:x-mf-020",
+      "status": "undated_current",
+      "rationale": "공식 EAI/MOM 제품 설명으로 범위를 제한합니다. 그룹 공통 RX API를 추정하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "Highway101",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-mc",
+      "from": "miracom",
+      "to": "mesplus-mc",
+      "type": "provides",
+      "label": "SECS/GEM·OPC 설비 연계 안내",
+      "claim_id": "claim:x-mf-013",
+      "status": "undated_current",
+      "rationale": "설비 데이터·제어 제품의 현재 설명이며 모든 로봇 기종 지원을 의미하지 않습니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "Nexplant MESplus MC",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-miracom-qms",
+      "from": "miracom",
+      "to": "mesplus-qms",
+      "type": "provides",
+      "label": "품질·설비·공정 연계 분석",
+      "claim_id": "claim:x-mf-014",
+      "status": "undated_current",
+      "rationale": "QMS 제품 기능을 해당 회사에 귀속합니다. 고객별 실측 품질 성과는 미확인입니다.",
+      "from_title": "미라콤아이앤씨",
+      "to_title": "Nexplant MESplus QMS",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-oht-se",
+      "from": "semes-oht",
+      "to": "se",
+      "type": "supplied_to",
+      "label": "양산라인 물류자동화",
+      "claim_id": "claim:x-mf-016",
+      "status": "undated_current",
+      "rationale": "공식 기업개요에 명시된 고객 연결입니다. 삼성전자 RX 조직의 구매 권한이나 SDS API 연계를 뜻하지 않습니다.",
+      "from_title": "OHT 물류자동화",
+      "to_title": "삼성전자",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-mf-edge-pipe-vision",
+      "from": "shi-pipe-robofab",
+      "to": "shi-pipe-vision-ai",
+      "type": "uses",
+      "label": "설계·물류·정렬·용접 통합",
+      "claim_id": "claim:x-mf-007:2",
+      "status": "reported",
+      "rationale": "공식 공장 소개가 명시한 자동화 구성입니다. SDS 또는 미라콤 연계를 추가하지 않습니다.",
+      "from_title": "파이프 로보팹",
+      "to_title": "배관 제작 비전 AI·통합 관리",
+      "from_ontology_type": "Factory",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-mf-edge-sdi-demo",
+      "from": "sdi",
+      "to": "solid-state-battery",
+      "type": "showcases",
+      "label": "인터배터리 샘플 공개 회고",
+      "claim_id": "claim:x-mf-030",
+      "status": "reported",
+      "rationale": "4월 실적 발표가 3월 전시 공개를 회고합니다. 미리 발표한 mi-015와 같은 출처 그룹으로 중복을 제한합니다.",
+      "from_title": "삼성SDI",
+      "to_title": "로봇용 전고체 배터리",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-sdi-sample",
+      "from": "sdi",
+      "to": "solid-state-battery",
+      "type": "develops",
+      "label": "휴머노이드 샘플 출하·고객 평가",
+      "claim_id": "claim:x-mf-002",
+      "status": "reported",
+      "rationale": "공식 3분기 발표의 샘플 출하 단계이며 양산·유료 공급 완료로 바꾸지 않습니다.",
+      "from_title": "삼성SDI",
+      "to_title": "로봇용 전고체 배터리",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-sdi-target",
+      "from": "sdi",
+      "to": "solid-state-battery",
+      "type": "plans_supply",
+      "label": "2027년 양산·휴머노이드 공급 추진",
+      "claim_id": "claim:x-mf-004",
+      "status": "planned",
+      "rationale": "정기 주총이 설명한 계획입니다. 미래 목표 시점의 경과만으로 양산을 확정하지 않습니다.",
+      "from_title": "삼성SDI",
+      "to_title": "로봇용 전고체 배터리",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-semco-actuator",
+      "from": "semco",
+      "to": "semco-actuator",
+      "type": "researches",
+      "label": "피지컬 AI 차세대 기술 확보 계획",
+      "claim_id": "claim:x-mf-009:2",
+      "status": "planned",
+      "rationale": "2025년 4분기 실적 발표의 2026년 전략이며 로봇 부품 실매출 수치는 아닙니다.",
+      "from_title": "삼성전기",
+      "to_title": "고신뢰성 액츄에이터",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-semco-camera",
+      "from": "semco",
+      "to": "humanoid-camera-module",
+      "type": "develops",
+      "label": "휴머노이드 카메라 사업 기회 추진",
+      "claim_id": "claim:x-mf-008",
+      "status": "planned",
+      "rationale": "주총의 성장 제품 전략입니다. 생산·납품 완료를 확정하지 않습니다.",
+      "from_title": "삼성전기",
+      "to_title": "휴머노이드 카메라 모듈",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-semes-line",
+      "from": "semes",
+      "to": "semes-line-automation",
+      "type": "describes",
+      "label": "Stocker·OHT 무인 반송·보관",
+      "claim_id": "claim:x-mf-031",
+      "status": "undated_current",
+      "rationale": "현재 제품 분야 설명이며 별도 신규 납품 사건을 만들지 않습니다.",
+      "from_title": "세메스",
+      "to_title": "SEMES Line Automation",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-mf-edge-semes-oht",
+      "from": "semes",
+      "to": "semes-oht",
+      "type": "supplies",
+      "label": "삼성전자 양산라인 공급 소개",
+      "claim_id": "claim:x-mf-016",
+      "status": "undated_current",
+      "rationale": "기업개요의 과거 공급 설명으로 최초 납품일·규모를 특정하지 않습니다.",
+      "from_title": "세메스",
+      "to_title": "OHT 물류자동화",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-shi-ai-pilot",
+      "from": "shi",
+      "to": "shi-data-ai-pilot",
+      "type": "conducts",
+      "label": "공정 데이터 AI 플랫폼 도입 파일럿",
+      "claim_id": "claim:x-mf-033:2",
+      "status": "undated_current",
+      "rationale": "파일럿에서 공정·운영 데이터로 모델을 검증했다는 회사 설명이며 상시 운영 완료로 승격하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "삼성중공업 데이터 AI 플랫폼 파일럿",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-mf-edge-shi-contech",
+      "from": "shi",
+      "to": "samsung-epc-contech-2026",
+      "type": "organizes",
+      "label": "EPC 3사 공동 공모전",
+      "claim_id": "claim:x-mf-018",
+      "status": "planned",
+      "rationale": "같은 모집 발표의 공동 주최 범위이며 3건의 독립 근거로 세지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "2026 콘테크 공모전",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Event"
+    },
+    {
+      "id": "x-mf-edge-shi-dataiku",
+      "from": "shi",
+      "to": "dataiku",
+      "type": "partners_with",
+      "label": "제조 현장 AI 해커톤 협력",
+      "claim_id": "claim:x-mf-033",
+      "status": "undated_current",
+      "rationale": "일 단위 게시일을 모르는 공식 2025-12 자료의 협력 설명입니다. 계약액·유료 고객 관계를 추정하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "데이터이쿠",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-mf-edge-shi-kaist",
+      "from": "shi",
+      "to": "kaist",
+      "type": "partners_with",
+      "label": "공정 로봇·스마트조선소 공동 연구",
+      "claim_id": "claim:x-mf-006",
+      "status": "reported",
+      "rationale": "연구센터 출범 및 연구 분야 발표입니다. 결과 기술의 현장 상용화를 뜻하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "KAIST",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "x-mf-edge-shi-pipe",
+      "from": "shi",
+      "to": "shi-pipe-robofab",
+      "type": "operates",
+      "label": "로봇 배관 공장 가동 발표",
+      "claim_id": "claim:x-mf-007",
+      "status": "reported",
+      "rationale": "2026년 3월 16일 준공·가동 발표이며 3월 19일 블로그 게시와 분리합니다. 90일 가동률이나 실제 생산량을 확인하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "파이프 로보팹",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Factory"
+    },
+    {
+      "id": "x-mf-edge-shi-sedh",
+      "from": "shi",
+      "to": "shi-sedh",
+      "type": "showcases",
+      "label": "오프쇼어 코리아 자동화 기술 소개",
+      "claim_id": "claim:x-mf-028",
+      "status": "reported",
+      "rationale": "2026 전시 소개에 한정하며 선박 하이브리드 인증을 로봇 인증으로 전용하지 않습니다.",
+      "from_title": "삼성중공업",
+      "to_title": "S-EDH 설계 자동화 플랫폼",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-mf-edge-shi-snu",
+      "from": "shi",
+      "to": "snu",
+      "type": "partners_with",
+      "label": "미래선박기술 연구센터 협약",
+      "claim_id": "claim:x-mf-029",
+      "status": "reported",
+      "rationale": "산학협력 역할 설명입니다. KAIST AI·로보틱스 분야와 서울대 원천·에너지 분야를 분리합니다.",
+      "from_title": "삼성중공업",
+      "to_title": "서울대학교",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "x-rel-x-se-001-001",
+      "from": "se",
+      "to": "sr-robot-platform-team",
+      "type": "has_organization",
+      "label": "공개 인사자료에 Robot Platform팀 명시",
+      "claim_id": "claim:x-se-001",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Samsung Research Robot Platform팀",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "x-rel-x-se-002-002",
+      "from": "se",
+      "to": "dx-advisory",
+      "type": "announces_role",
+      "label": "AI·로보틱스 전략 자문 예정",
+      "claim_id": "claim:x-se-002-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "DX 미래기술 자문 역할",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "x-rel-x-se-003-003",
+      "from": "se",
+      "to": "gwangju-factory",
+      "type": "develops",
+      "label": "디지털 트윈 공장 구축 계획",
+      "claim_id": "claim:x-se-003",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "광주 디지털 트윈 혁신 허브 공장",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Factory"
+    },
+    {
+      "id": "x-rel-x-se-003-004",
+      "from": "sds",
+      "to": "haenam-ai-dc",
+      "type": "develops",
+      "label": "210MW AI 데이터센터 추진 계획",
+      "claim_id": "claim:x-se-003-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "해남 솔라시도 AI 데이터센터",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-004-005",
+      "from": "sds",
+      "to": "gumi-data-center",
+      "type": "develops",
+      "label": "구미1공장 AI 데이터센터 전환 계획",
+      "claim_id": "claim:x-se-004",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "구미 AI 데이터센터",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-005-006",
+      "from": "se",
+      "to": "embodied-physical-ai",
+      "type": "researches",
+      "label": "물리적 상호작용 연구 분야 소개",
+      "claim_id": "claim:x-se-005",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Embodied & Physical AI",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-006-007",
+      "from": "se",
+      "to": "6g-robotics",
+      "type": "researches",
+      "label": "6G 로봇 네트워크 통합 방향 제안",
+      "claim_id": "claim:x-se-006",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "6G 기반 로봇 통합 연구",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-007-008",
+      "from": "se",
+      "to": "afa",
+      "type": "researches",
+      "label": "공동저자의 AFA 로봇 정책 연구",
+      "claim_id": "claim:x-se-007",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "AFA 로봇 시각 특징 집계",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-008-009",
+      "from": "se",
+      "to": "metro-wm",
+      "type": "researches",
+      "label": "달성 가능한 하위 목표 검색 연구",
+      "claim_id": "claim:x-se-008",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Metro-WM",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-009-010",
+      "from": "se",
+      "to": "mistral",
+      "type": "partners_with",
+      "label": "반도체 온프레미스 AI 전략 협력",
+      "claim_id": "claim:x-se-009",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Mistral AI",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-rel-x-se-009-011",
+      "from": "se",
+      "to": "onprem-chip-ai",
+      "type": "develops",
+      "label": "결함 탐지·장비 최적화 적용 계획",
+      "claim_id": "claim:x-se-009-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "반도체 온프레미스 AI",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-010-012",
+      "from": "se",
+      "to": "omniverse",
+      "type": "plans_to_use",
+      "label": "디지털 트윈 제조 확장 계획",
+      "claim_id": "claim:x-se-010",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "NVIDIA Omniverse",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-010-013",
+      "from": "se",
+      "to": "gtc-2026",
+      "type": "presents_at",
+      "label": "제조 AI·디지털 트윈 세션 발표 계획",
+      "claim_id": "claim:x-se-010-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "NVIDIA GTC 2026 제조 AI 세션",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Event"
+    },
+    {
+      "id": "x-rel-x-se-011-014",
+      "from": "se",
+      "to": "dremo-minimo",
+      "type": "announces",
+      "label": "어린이 로봇 콘셉트 공개",
+      "claim_id": "claim:x-se-011",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Dremo & Minimo 로봇 콘셉트",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-rel-x-se-011-015",
+      "from": "se",
+      "to": "ai-kitchen",
+      "type": "announces",
+      "label": "주방 로봇 선행 콘셉트 소개",
+      "claim_id": "claim:x-se-011-02",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "AI Kitchen 로봇 콘셉트",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-rel-x-se-012-016",
+      "from": "se",
+      "to": "co-vla",
+      "type": "researches",
+      "label": "양팔 협응 구조화 행동 연구",
+      "claim_id": "claim:x-se-012",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Co-VLA 양팔 협응 모델",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-012-017",
+      "from": "co-vla",
+      "to": "latent-aware-controller",
+      "type": "uses_method",
+      "label": "관절 명령 수준 협응 조정",
+      "claim_id": "claim:x-se-012-02",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "Co-VLA 양팔 협응 모델",
+      "to_title": "Latent-Aware Controller",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-013-018",
+      "from": "sdic",
+      "to": "design-robot-tests",
+      "type": "uses",
+      "label": "시뮬레이션과 로봇 시험 교차 검증",
+      "claim_id": "claim:x-se-013",
+      "status": "reported",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "Samsung Design Innovation Center",
+      "to_title": "디지털 트윈·물리 로봇 설계 검증",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-017-024",
+      "from": "se",
+      "to": "demo-pose",
+      "type": "researches",
+      "label": "RGB·깊이 융합 물체 자세 추정 연구",
+      "claim_id": "claim:x-se-017",
+      "status": "research",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "DeMo-Pose",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-018-020",
+      "from": "sra-robotlab",
+      "to": "robot-manipulation",
+      "type": "researches",
+      "label": "로봇 지능 연구 주제 공개",
+      "claim_id": "claim:x-se-018",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "SRA Robot Intelligence Lab",
+      "to_title": "로봇 조작·항법·추론",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-018-021",
+      "from": "sra-robotlab",
+      "to": "fluid-reality",
+      "type": "funds",
+      "label": "프로젝트 지원을 연구실이 명시",
+      "claim_id": "claim:x-se-018-03",
+      "status": "undated_current",
+      "rationale": "공식 연구실 페이지에 지원 대상 이름이 기재되어 있다. 시점·금액·지분 투자 방식은 미공개다.",
+      "from_title": "SRA Robot Intelligence Lab",
+      "to_title": "Fluid Reality",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-rel-x-se-018-022",
+      "from": "sra-robotlab",
+      "to": "config-intelligence",
+      "type": "funds",
+      "label": "프로젝트 지원을 연구실이 명시",
+      "claim_id": "claim:x-se-018-03",
+      "status": "undated_current",
+      "rationale": "공식 연구실 페이지에 지원 대상 이름이 기재되어 있다. 시점·금액·지분 투자 방식은 미공개다.",
+      "from_title": "SRA Robot Intelligence Lab",
+      "to_title": "Config Intelligence",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-rel-x-se-019-023",
+      "from": "start",
+      "to": "latent-world-memory",
+      "type": "selects",
+      "label": "2026 로봇 연구 선정 과제",
+      "claim_id": "claim:x-se-019",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "SRA START",
+      "to_title": "Latent World Memory for Physical AI",
+      "from_ontology_type": "Project",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-019-024",
+      "from": "start",
+      "to": "robomolmo",
+      "type": "selects",
+      "label": "2026 전신 모바일 조작 연구 선정",
+      "claim_id": "claim:x-se-019-02",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "SRA START",
+      "to_title": "RoboMolmo",
+      "from_ontology_type": "Project",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-020-025",
+      "from": "start",
+      "to": "long-horizon-agent",
+      "type": "calls_for_research",
+      "label": "물리·디지털 장기 실행 연구 공모",
+      "claim_id": "claim:x-se-020",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "SRA START",
+      "to_title": "물리 영역 장기 과업 에이전트",
+      "from_ontology_type": "Project",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-021-026",
+      "from": "se",
+      "to": "foundry-automation",
+      "type": "develops",
+      "label": "제조 장비 스케줄링 설명",
+      "claim_id": "claim:x-se-021",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "Samsung Foundry Fab Automation",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-rel-x-se-021-027",
+      "from": "foundry-automation",
+      "to": "oht",
+      "type": "uses",
+      "label": "FOUP 운송·자동 복구·우회 설명",
+      "claim_id": "claim:x-se-021-02",
+      "status": "undated_current",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "Samsung Foundry Fab Automation",
+      "to_title": "Overhead Hoist Transport",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-rel-x-se-022-028",
+      "from": "se",
+      "to": "operating-robot",
+      "type": "plans_to_deploy",
+      "label": "생산라인 점진 도입 설명",
+      "claim_id": "claim:x-se-022-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "운영 로봇",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-rel-x-se-022-029",
+      "from": "se",
+      "to": "logistics-robot",
+      "type": "plans_to_deploy",
+      "label": "생산라인 점진 도입 설명",
+      "claim_id": "claim:x-se-022-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "물류 로봇",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-rel-x-se-022-030",
+      "from": "se",
+      "to": "assembly-robot",
+      "type": "plans_to_deploy",
+      "label": "생산라인 점진 도입 설명",
+      "claim_id": "claim:x-se-022-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "조립 로봇",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-rel-x-se-022-031",
+      "from": "se",
+      "to": "environment-safety-robot",
+      "type": "plans_to_deploy",
+      "label": "위험 설비 환경 추가 도입 계획",
+      "claim_id": "claim:x-se-022-03",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "디지털 트윈 환경안전 로봇",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-rel-x-se-023-032",
+      "from": "se",
+      "to": "humanoid-business",
+      "type": "targets",
+      "label": "2026년 가시적 진전 목표",
+      "claim_id": "claim:x-se-023",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "휴머노이드 로봇 사업",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "x-rel-x-se-023-033",
+      "from": "se",
+      "to": "digital-twin",
+      "type": "plans_to_adopt",
+      "label": "전사 효율 개선을 위한 도입 계획",
+      "claim_id": "claim:x-se-023-02",
+      "status": "planned",
+      "rationale": "공개 원문의 해당 주장에 귀속한 관계이다. 독립 실측이나 미공개 권한을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "디지털 트윈",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-001",
+      "from": "sds",
+      "to": "private-5g",
+      "type": "describes",
+      "label": "로봇·제어시스템 연결 구축 사례 소개",
+      "claim_id": "claim:x-sds-002",
+      "status": "reported",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "삼성SDS",
+      "to_title": "Private 5G",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-002",
+      "from": "sds",
+      "to": "harim",
+      "type": "implements_for",
+      "label": "One ERP 구축 사례 소개",
+      "claim_id": "claim:x-sds-002:2",
+      "status": "reported",
+      "rationale": "ERP 제조 데이터 통합 관계이며 RX 로봇 고객 또는 유료 가동으로 전환하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "하림그룹",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-003",
+      "from": "sds",
+      "to": "semco",
+      "type": "implements_for",
+      "label": "차세대 ERP 구축 완료 발표",
+      "claim_id": "claim:x-sds-003",
+      "status": "reported",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "삼성SDS",
+      "to_title": "삼성전기",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-004",
+      "from": "erp",
+      "to": "bw",
+      "type": "data_integrated_into",
+      "label": "삼성전기 사례의 데이터 통합",
+      "claim_id": "claim:x-sds-003:2",
+      "status": "reported",
+      "rationale": "삼성전기 ERP 사례에 한정된 데이터 연결이며 모든 고객의 일반 제품 구조로 확장하지 않는다.",
+      "from_title": "ERP",
+      "to_title": "Business Warehouse 통합 DB",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-005",
+      "from": "mes",
+      "to": "bw",
+      "type": "data_integrated_into",
+      "label": "삼성전기 사례의 데이터 통합",
+      "claim_id": "claim:x-sds-003:2",
+      "status": "reported",
+      "rationale": "삼성전기 ERP 사례에 한정된 데이터 연결이며 모든 고객의 일반 제품 구조로 확장하지 않는다.",
+      "from_title": "MES",
+      "to_title": "Business Warehouse 통합 DB",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-006",
+      "from": "scm",
+      "to": "bw",
+      "type": "data_integrated_into",
+      "label": "삼성전기 사례의 데이터 통합",
+      "claim_id": "claim:x-sds-003:2",
+      "status": "reported",
+      "rationale": "삼성전기 ERP 사례에 한정된 데이터 연결이며 모든 고객의 일반 제품 구조로 확장하지 않는다.",
+      "from_title": "SCM",
+      "to_title": "Business Warehouse 통합 DB",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-007",
+      "from": "mes",
+      "to": "nexplant-sd",
+      "type": "has_component",
+      "label": "생산 예측·계획·작업 할당 도구",
+      "claim_id": "claim:x-sds-010",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "MES",
+      "to_title": "Nexplant Scheduling & Dispatching",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-008",
+      "from": "nexplant-sd",
+      "to": "nexplant-mo",
+      "type": "exchanges_with",
+      "label": "최적 Lot 정보 연결",
+      "claim_id": "claim:x-sds-010:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Scheduling & Dispatching",
+      "to_title": "Nexplant Manufacturing Operation",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-009",
+      "from": "nexplant-mo",
+      "to": "mcs",
+      "type": "requests",
+      "label": "Lot 반송 연결",
+      "claim_id": "claim:x-sds-010:3",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Manufacturing Operation",
+      "to_title": "Nexplant MCS",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-010",
+      "from": "nexplant-tc",
+      "to": "nexplant-mo",
+      "type": "interfaces_with",
+      "label": "설비·생산실행 인터페이스",
+      "claim_id": "claim:x-sds-010:4",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Tool Control",
+      "to_title": "Nexplant Manufacturing Operation",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-011",
+      "from": "nexplant-tc",
+      "to": "equipment-engineering",
+      "type": "interfaces_with",
+      "label": "설비 엔지니어링 인터페이스",
+      "claim_id": "claim:x-sds-010:4",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Tool Control",
+      "to_title": "설비 엔지니어링",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-012",
+      "from": "nexplant-tc",
+      "to": "secs",
+      "type": "uses",
+      "label": "SECS 통신 규격 안내",
+      "claim_id": "claim:x-sds-010:5",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant Tool Control",
+      "to_title": "SECS 설비 통신 규격",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-013",
+      "from": "nexplant-3dex",
+      "to": "erp",
+      "type": "integrates_with",
+      "label": "제품문서의 ERP 데이터 연계",
+      "claim_id": "claim:x-sds-012:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant 3D eXcellence",
+      "to_title": "ERP",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-014",
+      "from": "nexplant-3dex",
+      "to": "scm",
+      "type": "integrates_with",
+      "label": "제품문서의 SCM 데이터 연계",
+      "claim_id": "claim:x-sds-012:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Nexplant 3D eXcellence",
+      "to_title": "SCM",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-015",
+      "from": "sds-research",
+      "to": "robot-foundation-model",
+      "type": "researches",
+      "label": "이종 로봇 RFM 파인튜닝·데이터 최적화",
+      "claim_id": "claim:x-sds-013",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Samsung SDS Research",
+      "to_title": "로봇 파운데이션 모델",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-016",
+      "from": "sds-research",
+      "to": "multi-robot-control",
+      "type": "researches",
+      "label": "멀티 로봇 제어·운영 연구",
+      "claim_id": "claim:x-sds-013:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Samsung SDS Research",
+      "to_title": "멀티 로봇 제어·운영 기술",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-017",
+      "from": "kicox",
+      "to": "private-5g",
+      "type": "describes",
+      "label": "산단 코어 공유 사례",
+      "claim_id": "claim:x-sds-014",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "한국산업단지공단",
+      "to_title": "Private 5G",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-018",
+      "from": "walden",
+      "to": "semco",
+      "type": "validated_use_case_for",
+      "label": "부품 취급·소모품 교체 적용 가능성 검증",
+      "claim_id": "claim:x-sds-019",
+      "status": "reported",
+      "rationale": "삼성SDS가 조정한 사용사례 검증에 귀속한다. 파트너와 법인의 직접 계약·생산라인 설치·유료 운영을 뜻하지 않는다.",
+      "from_title": "Walden Robotics",
+      "to_title": "삼성전기",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-019",
+      "from": "walden",
+      "to": "semes",
+      "type": "validated_use_case_for",
+      "label": "부품 취급·소모품 교체 적용 가능성 검증",
+      "claim_id": "claim:x-sds-019",
+      "status": "reported",
+      "rationale": "삼성SDS가 조정한 사용사례 검증에 귀속한다. 파트너와 법인의 직접 계약·생산라인 설치·유료 운영을 뜻하지 않는다.",
+      "from_title": "Walden Robotics",
+      "to_title": "세메스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-020",
+      "from": "roboforce",
+      "to": "shi",
+      "type": "validated_use_case_for",
+      "label": "야외 작업 자동화 가능성 검증",
+      "claim_id": "claim:x-sds-019:2",
+      "status": "reported",
+      "rationale": "해당 법인 유형의 조선·플랜트 작업 사례에 대한 적용 가능성 검증이다. 상시 현장 운영 또는 유료 수주와 구분한다.",
+      "from_title": "RoboForce",
+      "to_title": "삼성중공업",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-021",
+      "from": "roboforce",
+      "to": "samsung-ea",
+      "type": "validated_use_case_for",
+      "label": "야외 작업 자동화 가능성 검증",
+      "claim_id": "claim:x-sds-019:2",
+      "status": "reported",
+      "rationale": "해당 법인 유형의 조선·플랜트 작업 사례에 대한 적용 가능성 검증이다. 상시 현장 운영 또는 유료 수주와 구분한다.",
+      "from_title": "RoboForce",
+      "to_title": "삼성E&A",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-022",
+      "from": "company-g",
+      "to": "samsung-display",
+      "type": "validated_use_case_for",
+      "label": "정밀 조작 자동화 가능성 검증",
+      "claim_id": "claim:x-sds-019:3",
+      "status": "reported",
+      "rationale": "원문은 G사로 익명 처리한다. Genesis AI와 동일 법인으로 추정하지 않는다.",
+      "from_title": "익명 G사",
+      "to_title": "삼성디스플레이",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-023",
+      "from": "sds",
+      "to": "walden",
+      "type": "plans_ecosystem_with",
+      "label": "피지컬 AI 생태계 구축 추진",
+      "claim_id": "claim:x-sds-021",
+      "status": "undated_current",
+      "rationale": "IR의 계획 표현에 귀속한다. 게시일 미상으로 현재 관측만 허용하며 계약·독점 관계·완료 제품 통합으로 승격하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "Walden Robotics",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-024",
+      "from": "sds",
+      "to": "rainbow",
+      "type": "plans_ecosystem_with",
+      "label": "피지컬 AI 생태계 구축 추진",
+      "claim_id": "claim:x-sds-021",
+      "status": "undated_current",
+      "rationale": "IR의 계획 표현에 귀속한다. 게시일 미상으로 현재 관측만 허용하며 계약·독점 관계·완료 제품 통합으로 승격하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "레인보우로보틱스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-025",
+      "from": "sds",
+      "to": "genesis-ai",
+      "type": "plans_ecosystem_with",
+      "label": "피지컬 AI 생태계 구축 추진",
+      "claim_id": "claim:x-sds-021",
+      "status": "undated_current",
+      "rationale": "IR의 계획 표현에 귀속한다. 게시일 미상으로 현재 관측만 허용하며 계약·독점 관계·완료 제품 통합으로 승격하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "Genesis AI",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-026",
+      "from": "sds",
+      "to": "roboforce",
+      "type": "plans_ecosystem_with",
+      "label": "피지컬 AI 생태계 구축 추진",
+      "claim_id": "claim:x-sds-021",
+      "status": "undated_current",
+      "rationale": "IR의 계획 표현에 귀속한다. 게시일 미상으로 현재 관측만 허용하며 계약·독점 관계·완료 제품 통합으로 승격하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "RoboForce",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-027",
+      "from": "sds",
+      "to": "samsung-venture",
+      "type": "invests_via",
+      "label": "Walden 전략적 투자 경로 설명",
+      "claim_id": "claim:x-sds-022",
+      "status": "undated_current",
+      "rationale": "Walden 투자 경로에 한정된다. 보유 지분·펀드 구조·전결 권한을 추정하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "삼성벤처투자",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "x-sds-rel-028",
+      "from": "walden",
+      "to": "toyota",
+      "type": "reported_operates_at",
+      "label": "Toyota 북미 생산라인 운영 설명",
+      "claim_id": "claim:x-sds-022:2",
+      "status": "undated_current",
+      "rationale": "삼성SDS의 파트너 설명이다. Toyota 원문·가동기간 KPI의 독립 확인은 없으며 현재 관측만 표시한다.",
+      "from_title": "Walden Robotics",
+      "to_title": "Toyota 북미 생산라인",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Factory"
+    },
+    {
+      "id": "x-sds-rel-029",
+      "from": "scs",
+      "to": "stocker",
+      "type": "controls",
+      "label": "제품 역할표의 Stocker 제어",
+      "claim_id": "claim:x-sds-024",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Stocker Control System",
+      "to_title": "Stocker",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-030",
+      "from": "acs",
+      "to": "agv",
+      "type": "controls",
+      "label": "제품 역할표의 AGV 제어",
+      "claim_id": "claim:x-sds-024",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "AGV Control System",
+      "to_title": "AGV",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "x-sds-rel-031",
+      "from": "hcm",
+      "to": "nexplant-mo",
+      "type": "interfaces_with",
+      "label": "MOS 표준 인터페이스",
+      "claim_id": "claim:x-sds-024:2",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Host Communication Module",
+      "to_title": "Nexplant Manufacturing Operation",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-032",
+      "from": "amhs",
+      "to": "mcs",
+      "type": "has_component",
+      "label": "공장 단위 물류제어",
+      "claim_id": "claim:x-sds-024:3",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Samsung SDS AMHS",
+      "to_title": "Nexplant MCS",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-033",
+      "from": "amhs",
+      "to": "sems",
+      "type": "has_component",
+      "label": "공장 단위 통합관제",
+      "claim_id": "claim:x-sds-024:3",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "Samsung SDS AMHS",
+      "to_title": "Smart EQ Management System",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "x-sds-rel-034",
+      "from": "harim",
+      "to": "erp",
+      "type": "uses",
+      "label": "One ERP 통합 고객사례",
+      "claim_id": "claim:x-sds-025",
+      "status": "undated_current",
+      "rationale": "공식 원문에 귀속한 설명이며 독립 실증 검증은 아니다. 원문 한계와 게시 시점을 유지한다.",
+      "from_title": "하림그룹",
+      "to_title": "ERP",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-035",
+      "from": "sds",
+      "to": "erp",
+      "type": "provides",
+      "label": "ERP 컨설팅·구축·운영 지원",
+      "claim_id": "claim:x-sds-029",
+      "status": "official_statement",
+      "rationale": "인터뷰에서 설명한 기업 업무 시스템 지원 역할이다. 로봇 제어 제품 구현으로 해석하지 않는다.",
+      "from_title": "삼성SDS",
+      "to_title": "ERP",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "x-sds-rel-036",
+      "from": "sds",
+      "to": "sap",
+      "type": "partners_with",
+      "label": "Premium Supplier 파트너십 설명",
+      "claim_id": "claim:x-sds-029:2",
+      "status": "official_statement",
+      "rationale": "ERP 담당 인터뷰의 파트너십 설명이며 정확한 체결일은 미상이다.",
+      "from_title": "삼성SDS",
+      "to_title": "SAP",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-001",
+      "from": "rainbow",
+      "to": "flyp",
+      "type": "partners_with",
+      "label": "제조용 양팔로봇 공동 개발",
+      "claim_id": "claim:x-eco-001",
+      "status": "reported",
+      "rationale": "양사의 공동 개발 발표에 귀속한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "플라잎",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-002",
+      "from": "rainbow",
+      "to": "manufacturing-dual-arm-v2",
+      "type": "develops",
+      "label": "AI 양팔로봇 V2 개발 추진",
+      "claim_id": "claim:x-eco-001",
+      "status": "planned",
+      "rationale": "공동 개발 계획이며 출시 완료로 표시하지 않는다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "제조 특화 AI 양팔로봇 V2",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-003",
+      "from": "flyp",
+      "to": "manufacturing-dual-arm-v2",
+      "type": "develops",
+      "label": "조립·체결 AI 결합 추진",
+      "claim_id": "claim:x-eco-001:2",
+      "status": "planned",
+      "rationale": "플라잎 AI와 레인보우 하드웨어를 결합하는 개발 계획이다.",
+      "from_title": "플라잎",
+      "to_title": "제조 특화 AI 양팔로봇 V2",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-004",
+      "from": "rainbow",
+      "to": "ypowerone",
+      "type": "partners_with",
+      "label": "AMR 무선충전 MOU",
+      "claim_id": "claim:x-eco-002",
+      "status": "reported",
+      "rationale": "3사 업무협약에 귀속하며 유료 계약으로 승격하지 않는다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "와이파워원",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-005",
+      "from": "rainbow",
+      "to": "pha",
+      "type": "partners_with",
+      "label": "AMR 무선충전 MOU",
+      "claim_id": "claim:x-eco-002",
+      "status": "reported",
+      "rationale": "공식 발표에 명시된 3사 업무협약의 당사자 관계입니다. 업무협약을 유료 수주나 상시 가동 계약으로 승격하지 않습니다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "PHA",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-006",
+      "from": "rainbow",
+      "to": "amr-wireless-charging",
+      "type": "develops",
+      "label": "무선충전 적용 사업 추진",
+      "claim_id": "claim:x-eco-002",
+      "status": "planned",
+      "rationale": "MOU의 적용 사업 범위를 프로젝트로 모델링한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "AMR 무선충전 적용 사업",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "xe-rel-007",
+      "from": "rainbow",
+      "to": "s1",
+      "type": "partners_with",
+      "label": "AI 보안로봇 도입 협약",
+      "claim_id": "claim:x-eco-003",
+      "status": "reported",
+      "rationale": "에스원을 삼성전자나 SDS와 동일 법인으로 합치지 않는다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "에스원",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-008",
+      "from": "s1",
+      "to": "leel-upperhouse-security",
+      "type": "develops",
+      "label": "보안체계·로봇 결합 계획",
+      "claim_id": "claim:x-eco-003:2",
+      "status": "planned",
+      "rationale": "미래 단지 보안체계 통합 계획이다.",
+      "from_title": "에스원",
+      "to_title": "르엘 어퍼하우스 보안로봇 도입",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "xe-rel-009",
+      "from": "rainbow",
+      "to": "leel-upperhouse-security",
+      "type": "deploys_at",
+      "label": "보안로봇 도입 계획",
+      "claim_id": "claim:x-eco-003",
+      "status": "planned",
+      "rationale": "도입 협약을 계획 상태로 명시한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "르엘 어퍼하우스 보안로봇 도입",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "xe-rel-010",
+      "from": "rainbow",
+      "to": "rb-y1",
+      "type": "develops",
+      "label": "RB-Y1 연구 플랫폼",
+      "claim_id": "claim:x-eco-004",
+      "status": "undated_current",
+      "rationale": "현재 공식 제품 설명에 귀속한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RB-Y1",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-011",
+      "from": "rb-y1",
+      "to": "rby1-sdk",
+      "type": "controlled_via",
+      "label": "SDK를 통한 제어 안내",
+      "claim_id": "claim:x-eco-004:3",
+      "status": "undated_current",
+      "rationale": "공식 제품 페이지의 SDK 기반 제어·활용 안내에 귀속합니다. SDK만 사용해야 한다거나 다른 인터페이스가 불가능하다는 필수 의존성을 주장하지 않습니다.",
+      "from_title": "RB-Y1",
+      "to_title": "RB-Y1 SDK",
+      "from_ontology_type": "Robot",
+      "to_ontology_type": "Product",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-004:2",
+        "reviewed_at": "2026-10-31",
+        "reason": "기존 주장은 PC 분리 및 언어 지원만 설명했다. SDK 제어 설명을 별도 최소 주장으로 보존하고 필수 의존성 표현을 제거했다."
+      }
+    },
+    {
+      "id": "xe-rel-012",
+      "from": "rainbow",
+      "to": "rby-ai-framework",
+      "type": "develops",
+      "label": "VLA 인프라 구축",
+      "claim_id": "claim:x-eco-005",
+      "status": "undated_current",
+      "rationale": "공식 전략에 나타난 개발 범위만 연결한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "레인보우 VLA 인프라",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "xe-rel-013",
+      "from": "rby-ai-framework",
+      "to": "isaac-sim",
+      "type": "supports",
+      "label": "시뮬레이션 환경 지원",
+      "claim_id": "claim:x-eco-005:2",
+      "status": "undated_current",
+      "rationale": "공식 페이지의 VLA 프레임워크 기능 설명이다.",
+      "from_title": "레인보우 VLA 인프라",
+      "to_title": "NVIDIA Isaac Sim",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-014",
+      "from": "rby-ai-framework",
+      "to": "mujoco",
+      "type": "supports",
+      "label": "시뮬레이션 환경 지원",
+      "claim_id": "claim:x-eco-005:2",
+      "status": "undated_current",
+      "rationale": "공식 페이지의 VLA 프레임워크 기능 설명이다.",
+      "from_title": "레인보우 VLA 인프라",
+      "to_title": "MuJoCo",
+      "from_ontology_type": "Technology",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-015",
+      "from": "rainbow",
+      "to": "rb-y1c",
+      "type": "develops",
+      "label": "산업 안전 인증 추진",
+      "claim_id": "claim:x-eco-005:3",
+      "status": "planned",
+      "rationale": "차세대 제품의 인증 추진이며 인증 완료가 아니다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RB-Y1C",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-016",
+      "from": "rainbow",
+      "to": "rby2",
+      "type": "develops",
+      "label": "산업 안전 인증 추진",
+      "claim_id": "claim:x-eco-005:3",
+      "status": "planned",
+      "rationale": "차세대 제품의 인증 추진이며 인증 완료가 아니다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RBY2",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Robot"
+    },
+    {
+      "id": "xe-rel-017",
+      "from": "rainbow",
+      "to": "rbc-os",
+      "type": "develops",
+      "label": "자체 실시간 운영 시스템",
+      "claim_id": "claim:x-eco-006",
+      "status": "undated_current",
+      "rationale": "자체 개발 시스템이라는 공급사 설명이다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RBC 로봇 운영 시스템",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-018",
+      "from": "rbc-series",
+      "to": "rbc-os",
+      "type": "controlled_via",
+      "label": "RBC 실시간 제어",
+      "claim_id": "claim:x-eco-006",
+      "status": "undated_current",
+      "rationale": "공식 제품 설명의 RBC 제어 운영 시스템 사용 관계입니다. 다른 제어 방식의 불가능성이나 제품의 필수 공급 의존성을 추가로 주장하지 않습니다.",
+      "from_title": "RBC 시리즈",
+      "to_title": "RBC 로봇 운영 시스템",
+      "from_ontology_type": "Robot",
+      "to_ontology_type": "Product",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-006",
+        "reviewed_at": "2026-10-31",
+        "reason": "공식 제품 설명의 RBC 제어 운영 시스템 사용 관계입니다. 다른 제어 방식의 불가능성이나 제품의 필수 공급 의존성을 추가로 주장하지 않습니다."
+      }
+    },
+    {
+      "id": "xe-rel-019",
+      "from": "rainbow",
+      "to": "rby1-sdk",
+      "type": "develops",
+      "label": "Python·C++ SDK 공개",
+      "claim_id": "claim:x-eco-007",
+      "status": "undated_current",
+      "rationale": "공식 조직 저장소의 SDK 공개에 귀속한다.",
+      "from_title": "레인보우로보틱스",
+      "to_title": "RB-Y1 SDK",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-020",
+      "from": "rby1-sdk",
+      "to": "grpc",
+      "type": "uses_protocol",
+      "label": "고수준 비실시간 명령 채널",
+      "claim_id": "claim:x-eco-008",
+      "status": "undated_current",
+      "rationale": "공식 문서의 고수준 비실시간 명령·설정 채널이 사용하는 gRPC를 구분합니다. SDK의 모든 기능이 이 프로토콜에 필수 의존한다고 일반화하지 않습니다.",
+      "from_title": "RB-Y1 SDK",
+      "to_title": "gRPC",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-008",
+        "reviewed_at": "2026-10-31",
+        "reason": "공식 문서의 고수준 비실시간 명령·설정 채널이 사용하는 gRPC를 구분합니다. SDK의 모든 기능이 이 프로토콜에 필수 의존한다고 일반화하지 않습니다."
+      }
+    },
+    {
+      "id": "xe-rel-021",
+      "from": "rby1-sdk",
+      "to": "udp",
+      "type": "uses_protocol",
+      "label": "저수준 실시간 제어 채널",
+      "claim_id": "claim:x-eco-008:2",
+      "status": "undated_current",
+      "rationale": "공식 문서의 저수준 실시간 제어 채널이 사용하는 UDP를 구분합니다. 문서상 500Hz 사양을 독립 측정 성능이나 전체 SDK 의존성으로 해석하지 않습니다.",
+      "from_title": "RB-Y1 SDK",
+      "to_title": "UDP",
+      "from_ontology_type": "Product",
+      "to_ontology_type": "Technology",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-008:2",
+        "reviewed_at": "2026-10-31",
+        "reason": "공식 문서의 저수준 실시간 제어 채널이 사용하는 UDP를 구분합니다. 문서상 500Hz 사양을 독립 측정 성능이나 전체 SDK 의존성으로 해석하지 않습니다."
+      }
+    },
+    {
+      "id": "xe-rel-022",
+      "from": "samsung-unspecified",
+      "to": "newton",
+      "type": "plans_use",
+      "label": "VLA 합성데이터 생성에 사용 계획",
+      "claim_id": "claim:x-eco-009",
+      "status": "planned",
+      "rationale": "법인이 특정되지 않은 Samsung의 미래 활용 계획에 귀속합니다. 실제 배포 완료나 플랫폼 필수 의존성을 뜻하지 않습니다.",
+      "from_title": "삼성 (해당 원문 법인 미특정)",
+      "to_title": "Newton",
+      "from_ontology_type": "Organization",
+      "to_ontology_type": "Product",
+      "reviewed_correction": {
+        "previous_type": "depends_on",
+        "previous_claim_id": "claim:x-eco-009",
+        "reviewed_at": "2026-10-31",
+        "reason": "법인이 특정되지 않은 Samsung의 미래 활용 계획에 귀속합니다. 실제 배포 완료나 플랫폼 필수 의존성을 뜻하지 않습니다."
+      }
+    },
+    {
+      "id": "xe-rel-023",
+      "from": "lightwheel",
+      "to": "samsung-manufacturing-simready",
+      "type": "develops",
+      "label": "삼성 제조용 시뮬레이션 자산",
+      "claim_id": "claim:x-eco-009:2",
+      "status": "reported",
+      "rationale": "케이블 조작 등 제조 워크플로용 자산 생성이라는 NVIDIA 설명이다.",
+      "from_title": "Lightwheel",
+      "to_title": "삼성 제조 SimReady 자산",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Technology"
+    },
+    {
+      "id": "xe-rel-024",
+      "from": "rb-y1",
+      "to": "refrigerator-cable-simulation",
+      "type": "deploys_at",
+      "label": "냉장고 조립 시뮬레이션",
+      "claim_id": "claim:x-eco-009:3",
+      "status": "research",
+      "rationale": "물리 현장 배포가 아닌 영상 5의 시뮬레이션 사례다.",
+      "from_title": "RB-Y1",
+      "to_title": "냉장고 케이블 삽입 시뮬레이션",
+      "from_ontology_type": "Robot",
+      "to_ontology_type": "Project"
+    },
+    {
+      "id": "xe-rel-025",
+      "from": "se",
+      "to": "cosmos",
+      "type": "uses",
+      "label": "Cosmos 기반 로보틱스 개발",
+      "claim_id": "claim:x-eco-010",
+      "status": "reported",
+      "rationale": "개발 활용 관계이며 Cosmos 자체 개발 소유권을 뜻하지 않는다.",
+      "from_title": "삼성전자",
+      "to_title": "NVIDIA Cosmos",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Product"
+    },
+    {
+      "id": "xe-rel-026",
+      "from": "roboforce",
+      "to": "sds",
+      "type": "partners_with",
+      "label": "산업용 로봇 적용·잠재 배치 검토",
+      "claim_id": "claim:x-eco-012",
+      "status": "reported",
+      "rationale": "RoboForce가 삼성SDS와 산업용 로봇 적용을 검토하는 협력을 직접 발표했다.",
+      "from_title": "RoboForce",
+      "to_title": "삼성SDS",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-027",
+      "from": "roboforce",
+      "to": "team-rex",
+      "type": "partners_with",
+      "label": "Team REX 창립 멤버라고 발표",
+      "claim_id": "claim:x-eco-012:2",
+      "status": "reported",
+      "rationale": "본문이 창립 멤버라고 명시하며 지배·소유·계약권 관계를 뜻하지 않는다.",
+      "from_title": "RoboForce",
+      "to_title": "Team REX",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Organization"
+    },
+    {
+      "id": "xe-rel-028",
+      "from": "walden",
+      "to": "sds",
+      "type": "partners_with",
+      "label": "핵심 제조 활용사례 PoC 협력",
+      "claim_id": "claim:x-eco-013",
+      "status": "reported",
+      "rationale": "Walden 공식 본문과 삼성SDS 인용문이 공동 PoC를 명시한다.",
+      "from_title": "Walden Robotics",
+      "to_title": "삼성SDS",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-029",
+      "from": "samsung-ventures",
+      "to": "walden",
+      "type": "funds",
+      "label": "투자 참여 발표·개별 금액 미공개",
+      "claim_id": "claim:x-eco-014",
+      "status": "reported",
+      "rationale": "투자 참여자에 Samsung Ventures가 명시된다. 전체 3억 달러를 삼성 투자액으로 합산하지 않는다.",
+      "from_title": "Samsung Ventures",
+      "to_title": "Walden Robotics",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    },
+    {
+      "id": "xe-rel-030",
+      "from": "sfa",
+      "to": "rainbow",
+      "type": "partners_with",
+      "label": "AI 자율제조·로봇 공동 R&D MOU",
+      "claim_id": "claim:x-eco-015",
+      "status": "reported",
+      "rationale": "SFA 공식 웹 본문이 체결일과 협력 범위를 명시한다.",
+      "from_title": "SFA",
+      "to_title": "레인보우로보틱스",
+      "from_ontology_type": "Company",
+      "to_ontology_type": "Company"
+    }
+  ],
+  "entity_id_remap": {
+    "gumi-ai-dc": "gumi-data-center",
+    "samsungena": "samsung-ea",
+    "rfm": "robot-foundation-model",
+    "samsung-venture-investment": "samsung-venture"
+  }
+}

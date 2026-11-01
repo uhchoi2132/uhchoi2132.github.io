@@ -1,0 +1,222 @@
+{
+  "collections": [
+    {
+      "url": "https://research.samsung.com/publications",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "publications landing, filters 2025/2026, robotics / IROS / ICRA"
+    },
+    {
+      "url": "https://research.samsung.com/blog",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "blog landing"
+    },
+    {
+      "url": "https://research.samsung.com/robotics",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "robotics research area"
+    },
+    {
+      "url": "https://news.samsung.com/kr/tag/로봇",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "first page"
+    },
+    {
+      "url": "https://news.samsung.com/global/tag/robotics",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "first page"
+    },
+    {
+      "url": "https://news.samsung.com/kr/tag/스마트공장",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "first page"
+    },
+    {
+      "url": "https://news.samsung.com/kr/스마트공장",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "first page"
+    },
+    {
+      "url": "https://news.samsung.com/global/tag/physical-ai",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "first page"
+    },
+    {
+      "url": "https://research.samsung.com/hashsearch?q=Robot",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "Robot"
+    },
+    {
+      "url": "https://research.samsung.com/hashsearch?q=Manipulation",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "Manipulation"
+    },
+    {
+      "url": "https://research.samsung.com/hashsearch?q=Robotics",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "Robotics"
+    },
+    {
+      "url": "https://research.samsung.com/hashsearch?q=Physical",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "Physical"
+    },
+    {
+      "url": "https://research.samsung.com/hashsearch?q=VLA",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "VLA"
+    },
+    {
+      "url": "https://research.samsung.com/artificial-intelligence",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "Embodied & Physical AI section"
+    },
+    {
+      "url": "https://news.samsung.com/global/category/corporate/technology",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "pages 1,2,3,4"
+    },
+    {
+      "url": "https://news.samsung.com/global/category/products/semiconductors",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "pages 1,2,3"
+    },
+    {
+      "url": "https://news.samsung.com/global/tag/samsung-ai-factory",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "single page"
+    },
+    {
+      "url": "https://research.samsung.com/blog/DeMo-Pose-Depth-Monocular-Modality-Fusion-for-Object-Pose-Estimation",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "ICASSP 2026 series; DeMo-Pose"
+    },
+    {
+      "url": "https://research.samsung.com/events",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "공식 연구 행사 목록"
+    },
+    {
+      "url": "https://research.samsung.com/saif",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "AI Forum 2026 일정과 세션"
+    },
+    {
+      "url": "https://saif2026.com/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "AI Forum 2026 행사 사이트·직접열람 timeout"
+    },
+    {
+      "url": "https://stckorea.com/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "STC 2025/2026 공식 행사·직접열람 timeout"
+    },
+    {
+      "url": "https://sra.samsung.com/collaboration/start/apply/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "START 2026 individual CFP PDFs"
+    },
+    {
+      "url": "https://sra.samsung.com/collaboration/start/recipients/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "START 2025/2026 선정 과제 목록"
+    },
+    {
+      "url": "https://sra.samsung.com/research-area/robotics-intelligence/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "Robot Intelligence Lab 공식 연구 주제"
+    },
+    {
+      "url": "https://research.samsung.com/research-papers/paper/search",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "Publications 서버 경로·동적 결과 누락"
+    },
+    {
+      "url": "https://semiconductor.samsung.com/sait/event/global-research-outreach/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "SAIT GRO 2026 연구공모"
+    },
+    {
+      "url": "https://www.samsung.com/global/ir/ir-events-presentations/events/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "공식 IR 행사 목록"
+    },
+    {
+      "url": "https://sra.samsung.com/publications/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "full extracted list, search Robot and 2026"
+    },
+    {
+      "url": "https://developer.samsung.com/events/en?year=2026",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "2026 English events"
+    },
+    {
+      "url": "https://www.samsung.com/global/ir/financial-information/earnings-release/",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "2025 Q3/Q4 and 2026 Q1/Q2/Q3 results presentations, webcast links and script"
+    },
+    {
+      "url": "https://news.samsung.com/kr/videos",
+      "publisher": "Samsung Electronics / Samsung Research",
+      "label": "pages 1–6 through 2025-10-21; page 7 inaccessible"
+    }
+  ],
+  "urls": [
+    "https://arxiv.org/html/2511.10762v1",
+    "https://arxiv.org/html/2603.27533v1",
+    "https://arxiv.org/html/2606.20285v1",
+    "https://arxiv.org/html/2609.31868v1",
+    "https://developer.samsung.com/events/en?year=2026",
+    "https://download.semiconductor.samsung.com/resources/others/1-2-multi-agent-closed-loop-task-planner-for-sdl-gro-cfp.docx",
+    "https://download.semiconductor.samsung.com/resources/others/2026-gro-brochure.pdf",
+    "https://download.semiconductor.samsung.com/resources/others/3-1-human-machine-interface-gro-cfp.docx",
+    "https://download.semiconductor.samsung.com/resources/others/3-2-physical-ai-computing-gro-cfp.docx",
+    "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2025_3Q_conference_eng.pdf",
+    "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2025_4Q_conference_eng.pdf",
+    "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_1Q_conference_eng.pdf",
+    "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_2Q_conference_eng.pdf",
+    "https://images.samsung.com/is/content/samsung/assets/global/ir/docs/2026_3Q_conference_eng.pdf",
+    "https://irsvc.teletogether.com/sec/2025Q3/eng/eng.php",
+    "https://irsvc.teletogether.com/sec/2025Q4/eng/eng.php",
+    "https://irsvc.teletogether.com/sec/2026Q1/eng/eng.php",
+    "https://irsvc.teletogether.com/sec/2026Q2/eng/eng.php",
+    "https://irsvc.teletogether.com/sec/2026Q3/eng/eng.php",
+    "https://irsvc.teletogether.com/sec/pdf/2025Q4_script_eng.pdf",
+    "https://news.samsung.com/ca/samsung-electronics-announces-strategy-to-transition-global-manufacturing-into-ai-driven-factories-by-2030",
+    "https://news.samsung.com/global/samsung-advances-galaxy-ai-and-its-connected-ecosystem-at-mwc-2026",
+    "https://news.samsung.com/global/samsung-and-mistral-ai-announce-strategic-partnership-for-intelligence-driven-semiconductor-infrastructure",
+    "https://news.samsung.com/global/samsung-electronics-and-asml-expand-strategic-collaboration-for-next-generation-semiconductor-manufacturing",
+    "https://news.samsung.com/global/samsung-electronics-announces-new-leadership-at-the-visual-display-business",
+    "https://news.samsung.com/global/samsung-electronics-announces-strategy-to-transition-global-manufacturing-into-ai-driven-factories-by-2030",
+    "https://news.samsung.com/global/samsung-hosts-silicon-valley-future-wireless-summit-2026",
+    "https://news.samsung.com/global/samsung-teams-with-nvidia-to-lead-the-transformation-of-global-intelligent-manufacturing-through-new-ai-megafactory",
+    "https://news.samsung.com/global/samsung-unveils-hbm4e-showcasing-comprehensive-ai-solutions-nvidia-partnership-and-vision-at-nvidia-gtc-2026",
+    "https://news.samsung.com/global/samsung-wins-two-red-dot-award-design-concept-best-of-the-best-awards",
+    "https://news.samsung.com/kr/삼성-국내에-향후-5년간-450조원-투자",
+    "https://news.samsung.com/kr/삼성-미래-성장-위해-충청에-140조원-투자-계획",
+    "https://news.samsung.com/kr/삼성-미래-성장-위해-호남에-425조원-투자",
+    "https://news.samsung.com/kr/삼성전자-2026년-정기-임원-인사",
+    "https://news.samsung.com/kr/삼성전자-b-iot-적용한-팩토리얼-성수-국내-최초-글로벌",
+    "https://news.samsung.com/kr/삼성전자-사장단-인사",
+    "https://news.samsung.com/kr/삼성전자-인간-중심-디자인-경쟁력-강화idea·레드닷",
+    "https://news.samsung.com/kr/삼성전자-필리핀-복합단지-개발사업에-통합-운영-솔",
+    "https://news.samsung.com/sg/samsung-electronics-announces-strategy-to-transition-global-manufacturing-into-ai-driven-factories-by-2030",
+    "https://news.samsung.com/us/interview-inside-sdic-samsung-advancing-wearables-computational-design/",
+    "https://research.samsung.com/artificial-intelligence",
+    "https://research.samsung.com/blog/6G-Vertical-New-Start-Point-of-Vertical-Integration",
+    "https://research.samsung.com/blog/EHC-MM-Embodied-Holistic-Control-for-Mobile-Manipulation",
+    "https://research.samsung.com/research-papers/Attentive-Feature-Aggregation-or-How-Policies-Learn-to-Stop-Worrying-about-Robustness-and-Attend-to-Task-Relevant-Visual-Cues",
+    "https://semiconductor.samsung.com/foundry/manufacturing/fab-automation/",
+    "https://sra.samsung.com/collaboration/start/recipients/",
+    "https://sra.samsung.com/research-area/robotics-intelligence/",
+    "https://sra.samsung.com/wp-content/uploads/2026/02/SRA-START-Brochure_26.pdf",
+    "https://sra.samsung.com/wp-content/uploads/2026/03/1.1_START-CFP-Brief_Unifying-3D-Understanding-memory-and-prediction.pdf",
+    "https://sra.samsung.com/wp-content/uploads/2026/03/1.2_START-CFP-Brief_Foundation-models-for-close-human-robot-interaction.pdf",
+    "https://sra.samsung.com/wp-content/uploads/2026/03/2.1_START-CFP-Brief_Multimodal-Reasoning-Agents-for-Complex-Long-Horizon-Tasks.pdf",
+    "https://sra.samsung.com/wp-content/uploads/2026/03/2.2_START-CFP-Brief_Next-Generation-Self-Evolving-Artificial-Agents.pdf",
+    "https://sra.samsung.com/wp-content/uploads/2026/03/2026-START-CFP-Abstract-Proposal_guidelines.pdf",
+    "https://www.samsung.com/global/ir/reports-disclosures/public-disclosure-view.84517/",
+    "https://www.youtube.com/watch?v=N7J4hdrvsZA"
+  ],
+  "notes": "자동 수집 후보 목록이며 URL 등록은 본문 검토·기간·관련성 통과를 뜻하지 않는다. expansion-electronics의 coverage를 확인할 것."
+}

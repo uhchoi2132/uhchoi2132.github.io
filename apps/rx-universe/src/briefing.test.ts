@@ -16,19 +16,17 @@ const fixtureCatalog = (records: ResearchRecord[]): ResearchCatalog => ({
   records, queries: [],
 });
 
-test('catalog publication windows distinguish no news today, four weekly and nine monthly documents', () => {
-  const daily = briefingFor('2026-10-30', 'known', 'daily');
-  const weekly = briefingFor('2026-10-30', 'known', 'weekly');
-  const monthly = briefingFor('2026-10-30', 'known', 'monthly');
-  assert.equal(daily.withinPeriod.length, 0);
-  assert.equal(daily.latest, null);
-  assert.equal(daily.candidates.length, 0);
-  assert.equal(weekly.withinPeriod.length, 4);
-  assert.deepEqual(weekly.withinPeriod.map(record => record.id).sort(), ['mi-002', 'mi-016', 'sds-005', 'sds-013']);
-  assert.equal(monthly.withinPeriod.length, 9);
-  assert.equal(weekly.groups.length, 3, 'Q3 press release and its news report are a shared origin');
-  assert.equal(weekly.candidates.length, 3);
-  assert.ok(monthly.cumulative.length > monthly.withinPeriod.length);
+test('catalog briefing periods match an independent publication-date inventory', () => {
+  const end = catalog.meta.window_end;
+  const starts = { daily: end, weekly: new Date(Date.parse(end) - 6 * 86400000).toISOString().slice(0, 10), monthly: end.slice(0, 7) + '-01' };
+  for (const period of ['daily', 'weekly', 'monthly'] as const) {
+    const result = briefingFor(end, 'known', period);
+    const expected = catalog.records.filter(record => record.scope === 'in_window' && record.date_basis !== 'unknown' && record.published_at && record.published_at >= starts[period] && record.published_at >= catalog.meta.window_start && record.published_at <= end);
+    assert.deepEqual(result.withinPeriod.map(record => record.id).sort(), expected.map(record => record.id).sort());
+    assert.equal(result.groups.length, new Set(expected.map(record => record.origin_key)).size);
+    assert.ok(result.candidates.length <= result.groups.length);
+    assert.ok(result.cumulative.length >= result.withinPeriod.length);
+  }
 });
 
 test('inclusive UTC windows use actual equal-length previous periods across month and year boundaries', () => {
@@ -46,7 +44,7 @@ test('inclusive UTC windows use actual equal-length previous periods across mont
   assert.equal(leapDay.previousStart, '2024-01-03');
   assert.equal(periodBounds('2026-02-30'), null);
   assert.equal(periodBounds('invalid'), null);
-  assert.equal(periodBounds('2027-01-01')!.end, '2026-10-30');
+  assert.equal(periodBounds('2027-01-01')!.end, catalog.meta.window_end);
 });
 
 test('as-known briefing cannot leak later claims or undated discoveries; published future plans stay announcements', () => {
@@ -89,7 +87,7 @@ test('multiple claims survive flattening while reprints remain document counts w
 
 test('candidate has bounded attribution, source-linked limits and no automatic high-impact verification', () => {
   const current = briefingFor('2026-10-30', 'known', 'weekly');
-  const sds = current.candidates.find(candidate => candidate.source.id === 'sds-005')!;
+  const sds = current.candidates.find(candidate => candidate.relatedSources.some(source => source.id === 'sds-005'))!;
   assert.ok(sds);
   assert.equal(sds.stage, 'pilot');
   assert.equal(sds.status, 'review_candidate');
