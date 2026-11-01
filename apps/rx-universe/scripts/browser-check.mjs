@@ -463,6 +463,83 @@ async function assertSurfaceRenderer(page, surface, renderer = '3d') {
     await expect(rendered.locator('canvas')).toHaveCount(0);
   }
 }
+async function assertMobileSurfaceFraming(page, surface, label, screenshotName) {
+  const rendered = page.getByTestId('terrain-surface');
+  const renderer = await rendered.getAttribute('data-renderer');
+  const stage = rendered.locator('.surface-stage');
+  const stageBox = await stage.boundingBox();
+  assert.ok(stageBox && stageBox.width > 0 && stageBox.height > 0);
+  let projectedPoints;
+  if (renderer === '3d') {
+    const camera = await surfaceCamera(page);
+    await expect(rendered).toHaveAttribute('data-camera-fov', /[0-9]/);
+    await expect(rendered).toHaveAttribute('data-camera-aspect', /[0-9]/);
+    const fov = Number(await rendered.getAttribute('data-camera-fov')) * Math.PI / 180;
+    const aspect = Number(await rendered.getAttribute('data-camera-aspect'));
+    assert.ok(fov > 0 && fov < Math.PI && aspect > 0);
+    // Project the actual exported mesh through the observed camera. This uses
+    // no renderer-provided framing score and no fixed screenshot coordinates.
+    const [qx, qy, qz, qw] = camera.quaternion;
+    const inverse = [-qx, -qy, -qz];
+    const cross = (a, b) => [a[1] * b[2] - a[2] * b[1], a[2] * b[0] - a[0] * b[2], a[0] * b[1] - a[1] * b[0]];
+    projectedPoints = surface.field.heights.map((height, index) => {
+      const x = surface.bounds.minX + (index % surface.field.columns) / (surface.field.columns - 1) * (surface.bounds.maxX - surface.bounds.minX);
+      const z = surface.bounds.minZ + Math.floor(index / surface.field.columns) / (surface.field.rows - 1) * (surface.bounds.maxZ - surface.bounds.minZ);
+      const translated = [x - camera.position[0], height - camera.position[1], z - camera.position[2]];
+      const twiceCross = cross(inverse, translated).map(value => 2 * value);
+      const correction = cross(inverse, twiceCross);
+      const local = translated.map((value, axis) => value + qw * twiceCross[axis] + correction[axis]);
+      assert.ok(local[2] < 0, 'The fitted evidence surface must remain in front of the camera');
+      const normalizedX = local[0] / (-local[2] * Math.tan(fov / 2) * aspect);
+      const normalizedY = local[1] / (-local[2] * Math.tan(fov / 2));
+      return { x: (normalizedX + 1) * stageBox.width / 2, y: (1 - normalizedY) * stageBox.height / 2 };
+    });
+  } else {
+    const faces = await page.getByTestId('terrain-surface-2d').locator('polygon').evaluateAll(elements => elements.map(element => {
+      const box = element.getBoundingClientRect(); return { left: box.left, top: box.top, right: box.right, bottom: box.bottom };
+    }));
+    assert.ok(faces.length > 0, 'The fallback must contain actual surface faces');
+    projectedPoints = faces.flatMap(face => [{ x: face.left - stageBox.x, y: face.top - stageBox.y }, { x: face.right - stageBox.x, y: face.bottom - stageBox.y }]);
+  }
+  const rawBounds = {
+    left: Math.min(...projectedPoints.map(point => point.x)), right: Math.max(...projectedPoints.map(point => point.x)),
+    top: Math.min(...projectedPoints.map(point => point.y)), bottom: Math.max(...projectedPoints.map(point => point.y)),
+  };
+  const bounds = { left: Math.max(0, rawBounds.left), right: Math.min(stageBox.width, rawBounds.right), top: Math.max(0, rawBounds.top), bottom: Math.min(stageBox.height, rawBounds.bottom) };
+  const widthRatio = (bounds.right - bounds.left) / stageBox.width;
+  const heightRatio = (bounds.bottom - bounds.top) / stageBox.height;
+  const visiblePointRatio = projectedPoints.filter(point => point.x >= 0 && point.x <= stageBox.width && point.y >= 0 && point.y <= stageBox.height).length / projectedPoints.length;
+  assert.ok(widthRatio >= .70, `${label}: actual terrain covers only ${(widthRatio * 100).toFixed(1)}% of the mobile frame width`);
+  assert.ok(heightRatio >= .28, `${label}: actual terrain covers only ${(heightRatio * 100).toFixed(1)}% of the mobile frame height`);
+  assert.ok(visiblePointRatio >= .90, `${label}: framing clips ${((1 - visiblePointRatio) * 100).toFixed(1)}% of terrain sample points`);
+  const labels = await stage.locator('.surface-region-label, .surface-flat-region rect').evaluateAll(elements => elements.flatMap(element => {
+    const style = getComputedStyle(element), box = element.getBoundingClientRect();
+    if (style.display === 'none' || style.visibility === 'hidden' || !box.width || !box.height) return [];
+    return [{ left: box.left, right: box.right, top: box.top, bottom: box.bottom }];
+  }));
+  const coveredArea = labels.reduce((sum, box) => sum + Math.max(0, Math.min(bounds.right, box.right - stageBox.x) - Math.max(bounds.left, box.left - stageBox.x)) * Math.max(0, Math.min(bounds.bottom, box.bottom - stageBox.y) - Math.max(bounds.top, box.top - stageBox.y)), 0);
+  const labelAreaRatio = coveredArea / ((bounds.right - bounds.left) * (bounds.bottom - bounds.top));
+  assert.ok(labelAreaRatio <= .35, `${label}: region labels cover ${(labelAreaRatio * 100).toFixed(1)}% of the terrain bounding area`);
+  const imageTarget = renderer === '3d' ? rendered.locator('canvas') : page.getByTestId('terrain-surface-2d');
+  const png = await imageTarget.screenshot({ path: path.join(output, screenshotName), animations: 'disabled', style: '.toast { visibility: hidden !important; }' });
+  report.screenshots.push(screenshotName);
+  // Brightness is descriptive only: art direction may change. Geometry framing
+  // and label occlusion are the acceptance gates; saved crops support review.
+  const luminance = await page.evaluate(async bytes => {
+    const bitmap = await createImageBitmap(new Blob([Uint8Array.from(bytes)], { type: 'image/png' }));
+    const canvas = document.createElement('canvas'); canvas.width = bitmap.width; canvas.height = bitmap.height;
+    const context = canvas.getContext('2d'); context.drawImage(bitmap, 0, 0);
+    const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data, values = [];
+    for (let y = Math.floor(canvas.height * .05); y < canvas.height * .95; y += 2) for (let x = Math.floor(canvas.width * .05); x < canvas.width * .95; x += 2) {
+      const index = (y * canvas.width + x) * 4; values.push(.2126 * pixels[index] + .7152 * pixels[index + 1] + .0722 * pixels[index + 2]);
+    }
+    values.sort((a, b) => a - b); const percentile = fraction => Number(values[Math.floor((values.length - 1) * fraction)].toFixed(2));
+    bitmap.close();
+    return { p10: percentile(.1), median: percentile(.5), p90: percentile(.9), p99: percentile(.99), fraction_above_p10_plus_12: values.filter(value => value > percentile(.1) + 12).length / values.length };
+  }, [...png]);
+  report.terrain_mobile_framing ??= [];
+  report.terrain_mobile_framing.push({ label, renderer, frame: { width: stageBox.width, height: stageBox.height }, width_ratio: widthRatio, height_ratio: heightRatio, visible_point_ratio: visiblePointRatio, label_area_ratio: labelAreaRatio, luminance, screenshot: screenshotName });
+}
 async function assertLandscapeChain(page, snapshot, sourceId = 'media-001') {
   const source = researchCatalog.records.find(record => record.id === sourceId);
   const eligibleClaims = claimRows([source]).filter(claim => snapshot.terrain_surface.scope.eligibleNodeIds.includes(claim.id));
@@ -1628,6 +1705,7 @@ try {
   await assertSurfaceRenderer(fallback, fallbackTerrain.terrain_surface, '2d');
   await assertLandscapeChain(fallback, fallbackTerrain);
   await noHorizontalOverflow(fallback, 'Mobile width WebGL-unavailable terrain');
+  await assertMobileSurfaceFraming(fallback, fallbackTerrain.terrain_surface, 'Mobile WebGL fallback terrain', 'mobile-terrain-fallback-surface.png');
   await screenshot(fallback, 'mobile-webgl-unavailable-terrain.png', true);
   const fallbackTerrainExport = await exportSnapshot(fallback, 'fallback-terrain-mobile', currentDate);
   assert.deepEqual(fallbackTerrainExport.terrain_surface, fallbackTerrain.terrain_surface, 'WebGL failure and mobile width must not alter the evidence surface');
@@ -1654,6 +1732,7 @@ try {
     await assertSurfaceRenderer(mobile, mobileTerrain.terrain_surface, '3d');
     await expect(mobile.getByRole('button', { name: '3D 지형', exact: true })).toHaveAttribute('aria-pressed', 'true');
     await noHorizontalOverflow(mobile, 'Mobile actual 3D evidence landscape');
+    await assertMobileSurfaceFraming(mobile, mobileTerrain.terrain_surface, 'Mobile default 3D terrain', 'mobile-terrain-canvas.png');
     await screenshot(mobile, 'mobile-3d-evidence-terrain.png', true);
     await assertLandscapeChain(mobile, mobileTerrain);
     await mobile.getByRole('button', { name: '2D 지형', exact: true }).click();
@@ -1661,6 +1740,7 @@ try {
     const mobileFlat = await exportSnapshot(mobile, 'mobile-terrain-2d', currentDate);
     assert.deepEqual(mobileFlat.terrain_surface, mobileTerrain.terrain_surface, 'Mobile 2D rendering must preserve the exact same height field and evidence');
     await noHorizontalOverflow(mobile, 'Mobile equivalent 2D evidence landscape');
+    await assertMobileSurfaceFraming(mobile, mobileTerrain.terrain_surface, 'Mobile selected 2D terrain', 'mobile-terrain-2d-surface.png');
     await screenshot(mobile, 'mobile-2d-evidence-terrain.png', true);
     await mobile.getByRole('button', { name: '3D 지형', exact: true }).click();
     await assertSurfaceRenderer(mobile, mobileTerrain.terrain_surface, '3d');

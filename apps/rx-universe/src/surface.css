@@ -8,6 +8,7 @@
 .terrain-surface .surface-region-label { display: block; min-width: 113px; padding: 7px 11px; border: 1px solid #7395b347; border-radius: 5px; color: #c4e0eb; background: #0b1924df; box-shadow: 0 4px 18px #020b1580; backdrop-filter: blur(5px); text-align: left; pointer-events: auto; white-space: nowrap; }
 .terrain-surface .surface-region-label:hover, .terrain-surface .surface-region-label.is-selected { background: #142b3ce8; border-color: var(--surface-color); }
 .terrain-surface .surface-region-label b { display: block; color: #d4ecf4; font-size: 11px; font-weight: 500; letter-spacing: -.15px; }
+.terrain-surface .surface-region-compact-count { display: none; }
 .terrain-surface .surface-region-label small { display: block; margin-top: 4px; font-size: 8px; color: #7c9aaf; }
 .terrain-surface .surface-region-label small > span { display: inline-block; margin-left: 9px; color: var(--surface-color); font-family: 'IBM Plex Mono', monospace; }
 .terrain-surface .surface-evidence-label { position: relative; display: flex; align-items: center; gap: 8px; width: max-content; max-width: 270px; padding: 10px 12px; border: 1px solid #70bbb9; border-radius: 5px; color: #d5eeef; background: #0e2732f2; font-size: 11px; line-height: 1.6; text-align: left; pointer-events: auto; box-shadow: 0 5px 24px #0007; overflow-wrap: anywhere; }
@@ -37,8 +38,11 @@
 .terrain-surface .surface-relation-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 6px; padding: 0 20px 15px; }.terrain-surface .surface-relation-list button { display: flex; justify-content: space-between; gap: 9px; text-align: left; padding: 8px 10px; background: #142b3c; border: 1px solid #2e4a62; border-radius: 4px; color: #a9c6d4; font-size: 10px; }.terrain-surface .surface-relation-list span { color: #789eb4; white-space: nowrap; font-size: 8px; }
 .terrain-surface button:focus-visible, .terrain-surface summary:focus-visible, .terrain-surface input:focus-visible, .terrain-surface [role="button"]:focus-visible { outline: 2px solid #a2dfdc; outline-offset: 2px; }
 @media (max-width: 760px) {
-  .terrain-surface .surface-stage { height: 520px; }.terrain-surface .surface-corner-label { left: 15px; top: 18px; font-size: 7px; letter-spacing: 1.1px; }.terrain-surface .surface-corner-label small { display: none; }
-  .terrain-surface .surface-region-label { min-width: 82px; padding: 6px 8px; }.terrain-surface .surface-region-label b { font-size: 10px; }.terrain-surface .surface-region-label small { font-size: 7px; }.terrain-surface .surface-region-label small > span { display: block; margin: 3px 0 0; font-size: 8px; }
+  .terrain-surface .surface-stage { height: 380px; }.terrain-surface .surface-corner-label { left: 15px; top: 18px; font-size: 7px; letter-spacing: 1.1px; }.terrain-surface .surface-corner-label small { display: none; }
+  .terrain-surface .surface-region-label { min-width: 0; padding: 4px 5px; border-radius: 4px; box-shadow: 0 2px 8px #020b1545; background: #0b1924d9; }
+  .terrain-surface .surface-region-label b { display: flex; align-items: center; gap: 5px; font-size: 9px; line-height: 1.3; letter-spacing: -.3px; }
+  .terrain-surface .surface-region-label small { display: none; }
+  .terrain-surface .surface-region-label .surface-region-compact-count { display: inline; color: var(--surface-color); font: 8px 'IBM Plex Mono', monospace; }
   .terrain-surface .surface-evidence-label { max-width: 210px; font-size: 10px; }.terrain-surface .surface-stage-caption { left: 15px; right: 15px; bottom: 15px; font-size: 8px; }
   .terrain-surface .surface-region-strip { justify-content: flex-start; gap: 7px; padding: 12px 15px; }.terrain-surface .surface-region-strip button { min-height: 36px; font-size: 10px; padding-inline: 10px; }
   .terrain-surface .surface-access summary { min-height: 43px; padding: 13px 16px; }.terrain-surface .surface-evidence-list { padding-inline: 13px; }.terrain-surface .surface-list-search { margin-inline: 15px; }.terrain-surface .surface-flat-zoom { right: 14px; top: 13px; }

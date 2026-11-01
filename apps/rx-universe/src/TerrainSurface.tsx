@@ -1,7 +1,7 @@
 import React, { Component, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Html, Line, OrbitControls } from '@react-three/drei';
-import { BufferGeometry, Color, Float32BufferAttribute, Spherical, Vector3, type PerspectiveCamera } from 'three';
+import { BufferGeometry, Color, Float32BufferAttribute, Fog, Spherical, Vector3, type PerspectiveCamera } from 'three';
 import { ArrowUpRight, List, Search } from 'lucide-react';
 import type { KnowledgeCluster, KnowledgeGraph } from './knowledge';
 import { sampleTerrainHeight, surfaceRelations, type TerrainSurface as SurfaceModel } from './terrain-surface';
@@ -63,7 +63,7 @@ function CameraRig({ model, action, host, snapshot }: {
   model: SurfaceModel; action?: TerrainSurfaceProps['cameraAction']; host: React.RefObject<HTMLDivElement | null>;
   snapshot: React.RefObject<CameraSnapshot | null>;
 }) {
-  const { camera, controls, size, invalidate, gl } = useThree();
+  const { camera, controls, size, invalidate, gl, scene } = useThree();
   const initialized = useRef(false), lastAction = useRef(0);
   const fit = useCallback((reset: boolean) => {
     const orbit = controls as unknown as { target: Vector3; update: () => void } | null;
@@ -72,13 +72,15 @@ function CameraRig({ model, action, host, snapshot }: {
     const perspective = camera as PerspectiveCamera;
     const fov = perspective.fov * Math.PI / 180;
     const aspect = Math.max(.35, size.width / Math.max(1, size.height));
-    const direction = reset ? new Vector3(.72, .69, 1) : camera.position.clone().sub(orbit.target).normalize();
+    // A narrower viewport gets a more elevated, nearly frontal initial view:
+    // the five regions spread across the visible surface instead of stacking.
+    const direction = reset ? (size.width < 600 ? new Vector3(.12, 1.1, 1) : new Vector3(.72, .69, 1)) : camera.position.clone().sub(orbit.target).normalize();
     direction.normalize();
     const right = new Vector3(0, 1, 0).cross(direction).normalize(), up = direction.clone().cross(right).normalize();
     const corners: Vector3[] = [];
     for (const x of [model.bounds.minX, model.bounds.maxX]) for (const y of [0, 7]) for (const z of [model.bounds.minZ, model.bounds.maxZ]) corners.push(new Vector3(x, y, z).sub(center));
     const span = (axis: Vector3) => Math.max(...corners.map(p => p.dot(axis))) - Math.min(...corners.map(p => p.dot(axis)));
-    const distance = Math.max(span(up) / (2 * Math.tan(fov / 2)), span(right) / (2 * Math.tan(fov / 2) * aspect)) * 1.03 + span(direction) * .10;
+    const distance = (Math.max(span(up) / (2 * Math.tan(fov / 2)), span(right) / (2 * Math.tan(fov / 2) * aspect)) * 1.03 + span(direction) * .10) * (size.width < 600 ? 1.07 : 1);
     camera.position.copy(center.clone().add(direction.normalize().multiplyScalar(distance)));
     orbit.target.copy(center); camera.lookAt(center); perspective.updateProjectionMatrix(); orbit.update(); invalidate();
   }, [camera, controls, size.width, size.height, model.bounds, invalidate]);
@@ -109,9 +111,16 @@ function CameraRig({ model, action, host, snapshot }: {
   }, [action?.token, action?.type, controls, camera, invalidate]);
   useFrame(() => {
     const orbit = controls as unknown as { target?: Vector3 } | null;
+    // Fog follows viewing distance. Fixed far=108 previously erased a mobile
+    // width-fitted surface even though its geometry and lights were correct.
+    if (scene.fog instanceof Fog && orbit?.target) {
+      const distance = camera.position.distanceTo(orbit.target);
+      scene.fog.near = distance + 6; scene.fog.far = distance + 65;
+    }
     const current = { position: camera.position.toArray(), target: orbit?.target?.toArray() ?? [0, 0, 0], quaternion: camera.quaternion.toArray() };
     snapshot.current = current;
-    const values = { cameraPosition: JSON.stringify(current.position), cameraTarget: JSON.stringify(current.target), cameraQuaternion: JSON.stringify(current.quaternion), cameraReady: String(Boolean(orbit?.target)) };
+    const perspective = camera as PerspectiveCamera;
+    const values = { cameraPosition: JSON.stringify(current.position), cameraTarget: JSON.stringify(current.target), cameraQuaternion: JSON.stringify(current.quaternion), cameraReady: String(Boolean(orbit?.target)), cameraFov: String(perspective.fov), cameraAspect: String(perspective.aspect) };
     for (const element of [host.current, gl.domElement]) if (element) for (const [key, value] of Object.entries(values)) if (element.dataset[key] !== value) element.dataset[key] = value;
   }); return null;
 }
@@ -206,7 +215,7 @@ function SurfaceScene({ model, graph, selected, selectedCluster, onNode, onRelat
       <mesh rotation={[-Math.PI / 2, 0, 0]}><ringGeometry args={[selectedCluster === region.id ? .39 : .22, selectedCluster === region.id ? .42 : .24, 36]}/><meshBasicMaterial color={colors[region.id]} transparent opacity={.8}/></mesh>
       <Line points={[[0, 0, 0], [0, 1.45, 0]]} color={colors[region.id]} lineWidth={.7} transparent opacity={.6} raycast={() => undefined}/>
       <Html portal={portal as React.ComponentProps<typeof Html>['portal']} center position={[0, 1.7, 0]} style={{ pointerEvents: 'none' }}>
-        <button className={`surface-region-label${selectedCluster === region.id ? ' is-selected' : ''}`} data-surface-region-id={region.id} aria-label={`${region.label} 지형 구역 선택`} aria-pressed={selectedCluster === region.id} onClick={() => onRegion(region.id)} style={{ '--surface-color': colors[region.id] } as React.CSSProperties}><b>{region.label.split(' · ')[0]}</b><small>{region.label.split(' · ').slice(1).join(' · ')}<span>{countFor(region, model.metric)} {metricLabel(model.metric)}</span></small></button>
+        <button className={`surface-region-label${selectedCluster === region.id ? ' is-selected' : ''}`} data-surface-region-id={region.id} aria-label={`${region.label} 지형 구역 선택`} aria-pressed={selectedCluster === region.id} onClick={() => onRegion(region.id)} style={{ '--surface-color': colors[region.id] } as React.CSSProperties}><b>{region.label.split(' · ')[0]}<span className="surface-region-compact-count">{countFor(region, model.metric)}</span></b><small>{region.label.split(' · ').slice(1).join(' · ')}<span>{countFor(region, model.metric)} {metricLabel(model.metric)}</span></small></button>
       </Html>
     </group>)}
     <OrbitControls makeDefault enablePan enableZoom enableDamping={false} minDistance={10} maxDistance={160} minPolarAngle={.28} maxPolarAngle={Math.PI / 2 - .075}/>
@@ -217,7 +226,13 @@ function SurfaceScene({ model, graph, selected, selectedCluster, onNode, onRelat
 const project = (x: number, height: number, z: number): [number, number] => [520 + (x - z) * 12.1, 301 + (x + z) * 5.2 - height * 22];
 function FlatSurface({ model, graph, selected, selectedCluster, onNode, onRelation, onRegion, cameraAction }: TerrainSurfaceProps) {
   const [zoom, setZoom] = useState(1);
+  const [compact, setCompact] = useState(() => typeof window !== 'undefined' && window.matchMedia('(max-width: 760px)').matches);
   const id = useId().replace(/:/g, '');
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 760px)');
+    const update = () => setCompact(query.matches);
+    query.addEventListener('change', update); return () => query.removeEventListener('change', update);
+  }, []);
   useEffect(() => {
     if (!cameraAction?.token) return;
     if (cameraAction.type === 'fit' || cameraAction.type === 'reset') setZoom(1);
@@ -241,7 +256,7 @@ function FlatSurface({ model, graph, selected, selectedCluster, onNode, onRelati
   const paths = useMemo(() => relationPaths(model, graph, selected), [model, graph, selected]);
   const activate = (event: React.KeyboardEvent, callback: () => void) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); callback(); } };
   return <div className="surface-flat-wrap">
-    <svg data-testid="terrain-surface-2d" data-flat-face-count={faces.length} data-flat-zoom={zoom} className="surface-flat" viewBox={`${520 - 520 / zoom} ${310 - 310 / zoom} ${1040 / zoom} ${620 / zoom}`} role="group" aria-label="동일 근거 높이를 표시한 등각 지형 지도">
+    <svg data-testid="terrain-surface-2d" data-flat-face-count={faces.length} data-flat-zoom={zoom} className="surface-flat" viewBox={`${520 - (compact ? 470 : 520) / zoom} ${310 - (compact ? 250 : 310) / zoom} ${(compact ? 940 : 1040) / zoom} ${(compact ? 500 : 620) / zoom}`} role="group" aria-label="동일 근거 높이를 표시한 등각 지형 지도">
       <defs><radialGradient id={`${id}-ground`}><stop offset="0" stopColor="#142b3b"/><stop offset="1" stopColor="#08121e"/></radialGradient></defs>
       <rect x="-800" y="-800" width="2600" height="2200" fill={`url(#${id}-ground)`}/>
       {faces.map(face => <polygon key={face.key} points={face.points} fill={face.color} stroke={face.color} strokeWidth=".4"/>)}
@@ -278,7 +293,7 @@ export function TerrainSurface(props: TerrainSurfaceProps) {
   useEffect(() => {
     if (renderer !== '2d' || !host.current) return;
     // Do not present a stale WebGL buffer or camera as the active SVG rendering.
-    for (const key of ['renderedHeightMin', 'renderedHeightMax', 'renderedPeakPosition', 'renderedVertexCount', 'renderedHeightFingerprint', 'cameraPosition', 'cameraTarget', 'cameraQuaternion']) delete host.current.dataset[key];
+    for (const key of ['renderedHeightMin', 'renderedHeightMax', 'renderedPeakPosition', 'renderedVertexCount', 'renderedHeightFingerprint', 'cameraPosition', 'cameraTarget', 'cameraQuaternion', 'cameraFov', 'cameraAspect']) delete host.current.dataset[key];
     host.current.dataset.cameraReady = 'false';
   }, [renderer]);
   const visibleAnchors = model.evidenceAnchors.filter(anchor => !query || `${anchor.title} ${anchor.nodeId}`.toLowerCase().includes(query.toLowerCase()));
