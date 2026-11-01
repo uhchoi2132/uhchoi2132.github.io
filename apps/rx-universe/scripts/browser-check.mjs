@@ -472,6 +472,7 @@ try {
   await navigate(page, '3D Universe');
   await page.getByRole('button', { name: '2D', exact: true }).click();
   await assertGraphParity(page, currentSnapshot, { flat: true });
+  const fullGraphViewBox = await page.locator('.graph-stage svg[role="group"]').getAttribute('viewBox');
   await page.locator('.filter-tabs').getByRole('button', { name: '조직 · 기업', exact: true }).click();
   const companySnapshot = await exportSnapshot(page, 'filtered-companies', currentDate);
   assertResearchSnapshot(companySnapshot, researchCatalog.records, currentDate);
@@ -480,6 +481,7 @@ try {
   assert.deepEqual(sorted(companySnapshot.graph.nodes.map(node => node.id)), sorted(currentSnapshot.graph.nodes.filter(node => ['organization', 'company'].includes(node.kind)).map(node => node.id)));
   await assertGraphParity(page, companySnapshot, { flat: true });
   assertStableLayout(currentSnapshot.graph, companySnapshot.graph, 'Company filter');
+  assert.equal(await page.locator('.graph-stage svg[role="group"]').getAttribute('viewBox'), fullGraphViewBox, 'Changing a filter must preserve the 2D viewport until explicit fit/navigation');
   await assertGraphIndexParity(page, companySnapshot);
   await page.getByLabel('검색 주변 연결 포함', { exact: true }).uncheck();
   await page.getByLabel('엔티티 검색', { exact: true }).fill('SAMSUNG');

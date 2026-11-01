@@ -73,16 +73,20 @@ function CameraRig({ bounds, action }: { bounds: Boundaries; action: CameraActio
     orbit?.target?.set(x, y, z);
     orbit?.update?.(); invalidate();
   }, [camera, size.width, size.height, controls, x, y, z, width, height, depth, invalidate]);
-  useEffect(fit, [fit]);
+  // A date/filter changes membership, not the user's camera position.
+  const fitRef = useRef(fit); fitRef.current = fit;
+  const lastAction = useRef(0);
+  useEffect(() => { fitRef.current(); }, [camera, controls, size.width, size.height]);
   useEffect(() => {
-    if (!action.nonce) return;
-    if (action.type === 'fit' || action.type === 'reset') { fit(); return; }
-    const center = new Vector3(x, y, z);
+    if (!action.nonce || action.nonce === lastAction.current) return;
+    lastAction.current = action.nonce;
+    if (action.type === 'fit' || action.type === 'reset') { fitRef.current(); return; }
+    const center = (controls as unknown as { target?: Vector3 } | null)?.target?.clone() ?? new Vector3(x, y, z);
     const offset = camera.position.clone().sub(center);
     const length = Math.max(2, Math.min(180, offset.length() * (action.type === 'in' ? .78 : 1.28)));
     camera.position.copy(center.add(offset.setLength(length)));
     (controls as unknown as { update?: () => void } | null)?.update?.(); invalidate();
-  }, [action, camera, controls, fit, invalidate, x, y, z]);
+  }, [action, camera, controls, invalidate]);
   return null;
 }
 function GraphNode({ node, label, emphasized, selected, onSelect, onFocusNode, onHover, portal }: {
@@ -188,7 +192,9 @@ function FlatGraph({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, h
   const [clientSize, setClientSize] = useState({ width: 800, height: 500 });
   const drag = useRef<{ x: number; y: number; panX: number; panY: number } | null>(null);
   const position = (node: KnowledgeNode): [number, number] => [node.position[0] * 50, -node.position[1] * 50];
-  const bounds = graphBounds(graph.nodes), width = Math.max(660, bounds.span[0] * 50 + 150), height = Math.max(370, bounds.span[1] * 50 + 110);
+  const currentBounds = useRef(graphBounds(graph.nodes)); currentBounds.current = graphBounds(graph.nodes);
+  const [bounds, setBounds] = useState(() => currentBounds.current);
+  const width = Math.max(660, bounds.span[0] * 50 + 150), height = Math.max(370, bounds.span[1] * 50 + 110);
   const cx = bounds.center[0] * 50, cy = -bounds.center[1] * 50;
   // SVG preserveAspectRatio="xMidYMid meet" scales by the limiting dimension.
   // Convert screen pixels back to viewBox units so labels remain readable at fit and after zoom.
@@ -201,8 +207,7 @@ function FlatGraph({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, h
     const observer = new ResizeObserver(measure); observer.observe(svg);
     return () => observer.disconnect();
   }, []);
-  useEffect(() => setViewport({ zoom: 1, x: 0, y: 0 }), [cx, cy, width, height]);
-  useEffect(() => { if (!action.nonce) return; if (action.type === 'in') zoom(1.25); else if (action.type === 'out') zoom(.8); else setViewport({ zoom: 1, x: 0, y: 0 }); }, [action, zoom]);
+  useEffect(() => { if (!action.nonce) return; if (action.type === 'in') zoom(1.25); else if (action.type === 'out') zoom(.8); else { setBounds(currentBounds.current); setViewport({ zoom: 1, x: 0, y: 0 }); } }, [action, zoom]);
   useEffect(() => {
     const svg = svgRef.current; if (!svg) return;
     const wheel = (event: WheelEvent) => { event.preventDefault(); zoom(event.deltaY > 0 ? .9 : 1.1); };
@@ -214,7 +219,7 @@ function FlatGraph({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, h
     onPointerDown={event => { if ((event.target as Element).closest('[data-node-id],[data-edge-id]')) return; drag.current = { x: event.clientX, y: event.clientY, panX: viewport.x, panY: viewport.y }; event.currentTarget.setPointerCapture(event.pointerId); }}
     onPointerMove={event => { if (!drag.current) return; const rect = event.currentTarget.getBoundingClientRect(); setViewport(value => ({ ...value, x: drag.current!.panX - (event.clientX - drag.current!.x) * width / value.zoom / rect.width, y: drag.current!.panY - (event.clientY - drag.current!.y) * height / value.zoom / rect.height })); }}
     onPointerUp={() => { drag.current = null; }} onPointerCancel={() => { drag.current = null; }}
-    onKeyDown={event => { if (event.target !== event.currentTarget) return; if (event.key === '+' || event.key === '=') { event.preventDefault(); zoom(1.25); } else if (event.key === '-') { event.preventDefault(); zoom(.8); } else if (event.key === '0') setViewport({ zoom: 1, x: 0, y: 0 }); else if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) { event.preventDefault(); setViewport(value => ({ ...value, x: value.x + (event.key === 'ArrowRight' ? 40 : event.key === 'ArrowLeft' ? -40 : 0) / value.zoom, y: value.y + (event.key === 'ArrowDown' ? 40 : event.key === 'ArrowUp' ? -40 : 0) / value.zoom })); } }}>
+    onKeyDown={event => { if (event.target !== event.currentTarget) return; if (event.key === '+' || event.key === '=') { event.preventDefault(); zoom(1.25); } else if (event.key === '-') { event.preventDefault(); zoom(.8); } else if (event.key === '0') { event.preventDefault(); setBounds(currentBounds.current); setViewport({ zoom: 1, x: 0, y: 0 }); } else if (['ArrowUp', 'ArrowDown', 'ArrowLeft', 'ArrowRight'].includes(event.key)) { event.preventDefault(); setViewport(value => ({ ...value, x: value.x + (event.key === 'ArrowRight' ? 40 : event.key === 'ArrowLeft' ? -40 : 0) / value.zoom, y: value.y + (event.key === 'ArrowDown' ? 40 : event.key === 'ArrowUp' ? -40 : 0) / value.zoom })); } }}>
     <defs>{['#568f9b', '#a38dcd', '#ce8b83', '#aa9365'].map((color, i) => <marker key={color} id={`${markerId}-${i}`} viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto" markerUnits="userSpaceOnUse"><path d="M 0 1 L 7 4 L 0 7" fill="none" stroke={color} strokeWidth="1.2"/></marker>)}</defs>
     {graph.relations.map(relation => {
       const from = nodes.get(relation.from), to = nodes.get(relation.to); if (!from || !to) return null;
