@@ -595,6 +595,9 @@ try {
   await expect(page.locator('.path-controls')).toContainText('인과관계·실행 순서를 뜻하지 않습니다');
   await assertGraphParity(page, pathSnapshot, { flat: true });
   const pathSvg = page.locator('.graph-stage svg[role="group"]');
+  const preservedViewBox = await pathSvg.getAttribute('viewBox');
+  await page.getByRole('button', { name: '그래프 화면 맞춤', exact: true }).click();
+  await expect(pathSvg).not.toHaveAttribute('viewBox', preservedViewBox);
   const originalViewBox = await pathSvg.getAttribute('viewBox');
   await page.getByRole('button', { name: '그래프 확대', exact: true }).click();
   await expect(pathSvg).not.toHaveAttribute('viewBox', originalViewBox);
