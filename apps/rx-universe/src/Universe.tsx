@@ -1,5 +1,5 @@
 import React, { Component, useCallback, useEffect, useId, useMemo, useRef, useState } from 'react';
-import { Canvas, useThree, type ThreeEvent } from '@react-three/fiber';
+import { Canvas, useFrame, useThree, type ThreeEvent } from '@react-three/fiber';
 import { Html, Line, OrbitControls } from '@react-three/drei';
 import { BufferGeometry, Color, Float32BufferAttribute, Vector3, type PerspectiveCamera } from 'three';
 import { Focus, Minus, Plus, RotateCcw } from 'lucide-react';
@@ -59,7 +59,19 @@ function semanticLabels(graph: KnowledgeGraph): Set<string> {
   return labels;
 }
 function CameraRig({ bounds, action }: { bounds: Boundaries; action: CameraAction }) {
-  const { camera, size, invalidate, controls } = useThree();
+  const { camera, size, invalidate, controls, gl } = useThree();
+  // Observe the rendered camera without React state updates. Browser regressions
+  // compare the real view, not graph coordinates or a separately cached target.
+  useFrame(() => {
+    const orbit = controls as unknown as { target?: Vector3 } | null;
+    const state = {
+      cameraPosition: JSON.stringify(camera.position.toArray()),
+      cameraTarget: JSON.stringify(orbit?.target?.toArray() ?? [0, 0, 0]),
+      cameraQuaternion: JSON.stringify(camera.quaternion.toArray()),
+      cameraReady: String(Boolean(orbit?.target)),
+    };
+    for (const [key, value] of Object.entries(state)) if (gl.domElement.dataset[key] !== value) gl.domElement.dataset[key] = value;
+  });
   const [x, y, z] = bounds.center, [width, height, depth] = bounds.span;
   const fit = useCallback(() => {
     const perspective = camera as PerspectiveCamera;
@@ -179,11 +191,13 @@ function ContextLossFallback({ onLost }: { onLost: () => void }) {
 }
 function Scene({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, highlighted, emphasized, onHover, action, portal }: GraphRendererProps & { portal: LabelPortal }) {
   const bounds = graphBounds(graph.nodes), radius = Math.max(...bounds.span) / 2;
+  const maxDistance = useRef(Math.max(180, radius * 12));
   return <>
     <CameraRig bounds={bounds} action={action}/>
     <GraphEdges graph={graph} highlighted={highlighted} onSelectRelation={onSelectRelation} portal={portal}/>
     {graph.nodes.map(node => <GraphNode key={node.id} node={node} label={labelIds.has(node.id)} emphasized={!highlighted || emphasized.has(node.id)} selected={node.id === highlighted} onSelect={onSelect} onFocusNode={onFocusNode} onHover={onHover} portal={portal}/>)}
-    <OrbitControls makeDefault target={bounds.center} enablePan enableZoom minDistance={2} maxDistance={Math.max(180, radius * 12)} enableDamping={false}/>
+    {/* CameraRig initializes/explicitly fits the target; membership changes must not retarget or clamp the view. */}
+    <OrbitControls makeDefault enablePan enableZoom minDistance={2} maxDistance={maxDistance.current} enableDamping={false}/>
   </>;
 }
 function FlatGraph({ graph, onSelect, onSelectRelation, onFocusNode, labelIds, highlighted, emphasized, onHover, action }: GraphRendererProps) {

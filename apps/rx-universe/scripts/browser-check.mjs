@@ -119,6 +119,24 @@ async function screenshot(page, filename, fullPage = true) {
   await page.screenshot({ path: path.join(output, filename), fullPage, animations: 'disabled', style: '.toast { visibility: hidden !important; }' });
   report.screenshots.push(filename);
 }
+async function cameraState(page) {
+  const canvas = page.locator('.graph-stage canvas');
+  await expect(canvas).toHaveAttribute('data-camera-ready', 'true');
+  // OrbitControls updates before the frame snapshot; two frames also let React
+  // effects from a changed date/filter settle before testing preservation.
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  return canvas.evaluate(element => ({
+    position: JSON.parse(element.dataset.cameraPosition),
+    target: JSON.parse(element.dataset.cameraTarget),
+    quaternion: JSON.parse(element.dataset.cameraQuaternion),
+  }));
+}
+function assertCameraPreserved(actual, expected, context) {
+  for (const key of ['position', 'target', 'quaternion']) {
+    assert.equal(actual[key].length, expected[key].length);
+    assert.ok(actual[key].every((value, index) => Math.abs(value - expected[key][index]) < 1e-6), `${context}: camera ${key} changed from ${JSON.stringify(expected[key])} to ${JSON.stringify(actual[key])}`);
+  }
+}
 async function exportSnapshot(page, label, date) {
   const pending = page.waitForEvent('download');
   await page.getByRole('button', { name: '스냅샷 내보내기', exact: true }).click();
@@ -459,6 +477,26 @@ try {
     full_graph_nodes: currentSnapshot.graph.nodes.length, full_graph_relations: currentSnapshot.graph.relations.length,
     region_nodes: clusterSnapshot.graph.nodes.length, region_relations: clusterSnapshot.graph.relations.length,
   };
+  const fittedCamera = await cameraState(page);
+  await page.getByRole('button', { name: '그래프 확대', exact: true }).click();
+  await expect.poll(async () => (await cameraState(page)).position).not.toEqual(fittedCamera.position);
+  const userCamera = await cameraState(page);
+  await page.locator('.filter-tabs').getByRole('button', { name: '조직 · 기업', exact: true }).click();
+  await expect.poll(async () => Number(await page.locator('.universe-visual').getAttribute('data-node-count'))).toBeLessThan(currentSnapshot.graph.nodes.length);
+  assertCameraPreserved(await cameraState(page), userCamera, 'Organization filter');
+  await page.locator('.filter-tabs').getByRole('button', { name: '전체', exact: true }).click();
+  await expect(page.locator('.universe-visual')).toHaveAttribute('data-node-count', String(currentSnapshot.graph.nodes.length));
+  assertCameraPreserved(await cameraState(page), userCamera, 'Restoring the full graph');
+  await page.getByLabel('정보 기준일', { exact: true }).fill('2026-09-01');
+  await expect.poll(async () => Number(await page.locator('.universe-visual').getAttribute('data-node-count'))).toBeLessThan(currentSnapshot.graph.nodes.length);
+  assertCameraPreserved(await cameraState(page), userCamera, 'Historical date');
+  await page.getByLabel('정보 기준일', { exact: true }).fill(currentDate);
+  await expect(page.locator('.universe-visual')).toHaveAttribute('data-node-count', String(currentSnapshot.graph.nodes.length));
+  assertCameraPreserved(await cameraState(page), userCamera, 'Restoring the current date');
+  await page.getByRole('button', { name: '그래프 화면 맞춤', exact: true }).click();
+  await expect.poll(async () => (await cameraState(page)).position).not.toEqual(userCamera.position);
+  assertCameraPreserved(await cameraState(page), fittedCamera, 'Explicit fit restores the full-graph view');
+  report.checks.push('A user-zoomed 3D camera retains position, orientation and orbit target across type/date changes; explicit fit alone restores the full-graph view');
   await page.getByRole('button', { name: '2D', exact: true }).click();
   await assertGraphParity(page, currentSnapshot, { flat: true });
   report.checks.push('Topic regions use real graph document/claim/source-group counts; keyboard selection produces the same filtered map, object list and export, and overview/full-map navigation restores all objects');

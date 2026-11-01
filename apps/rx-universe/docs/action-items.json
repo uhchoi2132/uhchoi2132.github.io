@@ -298,7 +298,7 @@
       "id": "AI-019",
       "priority": "P1",
       "title": "주제 지형·일관된 목록 탐색·공개정보 두 시점 비교",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "기존 그래프를 고정 주제 구역으로 요약하고 구역에서 객체·주장·원문으로 이동한다.",
         "구역·검색·레이어·관계 필터의 가시 ID 집합을 지도·목록·내보내기에 공통 적용한다.",
@@ -310,7 +310,8 @@
         "AI-003",
         "AI-017",
         "AI-018"
-      ]
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41264957454"
     }
   ],
   "validation": {
@@ -336,5 +337,15 @@
     "unit_tests_passed": 62,
     "browser_scenarios_passed": 26,
     "scope": "v2.6 확장 DB·조사 대장 1차 인수 기록. 추가 수집 기록과 v2.7 UX는 최종 CI에서 재검증한다."
+  },
+  "knowledge_validation": {
+    "commit": "f26bd66ed78578ea2d860231c2ff40535fcdd191",
+    "run_url": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41264957454",
+    "unit_tests_passed": 79,
+    "browser_scenarios_passed": 31,
+    "build": "passed",
+    "graph_nodes": 661,
+    "graph_relations": 1620,
+    "scope": "v2.7 주제 지형·두 시점 비교와 확장 DB의 검증 브랜치 인수 결과. 공개 main 배포도 동일 검증을 통과한 산출물만 게시한다."
   }
 }

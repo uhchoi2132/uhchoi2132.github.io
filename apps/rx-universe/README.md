@@ -107,8 +107,12 @@ npm run dev
 
 로컬 주소: `http://localhost:5173/rx-universe/`
 
+v2.7 통합 검증 브랜치에서 단위 테스트 79개·브라우저 시나리오 31개와 빌드가 통과했습니다([실행 기록](https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41264957454)). 실제 측정 규모와 환경은 [지식 지형 검증 기록](docs/knowledge-terrain.md#인수-검증-기록)에 기록했습니다. 공개 배포는 main의 별도 검증 결과로 확인합니다.
+
 - `src/research.test.ts`: 공개·사건·예정 날짜, 다중 주장 보존, 출처 계보, SQLite 무결성·재생성 검사
 - `src/knowledge.test.ts`: 관계별 실제 주장 연결, 과거 시점 누출 방지, 날짜 미상 현재 표시, 계획·계약 구분과 가설 근거 매핑
+- `src/graph-view.test.ts`, `src/terrain.test.ts`: 공통 가시 ID·구역 집계·검색·레이어·좌표 안정성
+- `src/temporal-comparison.test.ts`: 두 시점의 실제 공개·관측·그래프 차이, 미래정보 배제와 미지원 이력 명시
 - `src/reviews.test.ts`: 검토 사유·판정 제한, 변경 이력, 저장 복원, 날짜·모드 분리와 손상된 기록 거부
 - `src/briefing.test.ts`: 독립적으로 계산한 실제 게시일 기간별 문서, 동일 길이 비교, 출처 그룹, 다중 주장, 미래정보 배제와 하드웨어 계약 경계
 - `scripts/browser-check.mjs`: 생산 빌드의 데스크톱·모바일·그래프·시점·검토·브리핑·내보내기 검증과 스크린샷
