@@ -18,7 +18,7 @@ jobs:
         run: python3 -m unittest discover -s scripts -p test_collect_official_inventory.py
       - name: Enumerate public official collections and record access gaps
         working-directory: apps/rx-universe
-        run: python3 scripts/collect-official-inventory.py --output research/survey/crawl-20261031-expanded.json
+        run: python3 scripts/collect-targeted-inventory.py --output research/survey/crawl-20261101-targeted.json
       - name: Preserve inventory for relevance and evidence review
         if: always()
         uses: actions/upload-artifact@v4
