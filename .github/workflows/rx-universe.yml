@@ -52,7 +52,26 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: rx-browser-evidence
-          path: apps/rx-universe/test-results
+          path: |
+            apps/rx-universe/test-results/browser-report.json
+            apps/rx-universe/test-results/*.png
+          compression-level: 9
+      - name: Store browser snapshot downloads
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rx-browser-snapshots
+          path: |
+            apps/rx-universe/test-results/*.json
+            !apps/rx-universe/test-results/browser-report.json
+          compression-level: 9
+      - name: Store browser database download
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rx-browser-database
+          path: apps/rx-universe/test-results/*.sqlite
+          compression-level: 9
       - uses: actions/upload-pages-artifact@v3
         with:
           path: _site

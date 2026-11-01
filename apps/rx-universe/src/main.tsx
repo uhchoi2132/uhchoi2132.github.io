@@ -10,6 +10,7 @@ import { graphView, type GraphViewOptions } from './graph-view';
 import { defaultExploration, ExplorationControls, GraphIndex } from './GraphExplorer';
 import KnowledgeTerrain from './KnowledgeTerrain';
 import { knowledgeEvolution } from './knowledge-evolution';
+import { terrainSurface, type TerrainMetric } from './terrain-surface';
 import { CLUSTER_LABELS, type KnowledgeCluster } from './knowledge-ontology';
 import { compareSnapshots } from './temporal-comparison';
 import TimeComparison from './TimeComparison';
@@ -56,6 +57,7 @@ function App() {
   const [filter, setFilter] = useState('all');
   const [exploration, setExploration] = useState<GraphViewOptions>(defaultExploration);
   const [terrainOverview, setTerrainOverview] = useState(true);
+  const [terrainSettings, setTerrainSettings] = useState<{ metric: TerrainMetric; includeUndated: boolean }>({ metric: 'claims', includeUndated: false });
   const [comparisonStart, setComparisonStart] = useState<string | null>(null);
   const [selected, setSelected] = useState<Selection | null>(null);
   const [date, setDate] = useState(RESEARCH_DATE);
@@ -74,6 +76,7 @@ function App() {
   const completeGraph = useMemo(() => graphAt(date, temporal, timeOptions), [date, temporal, timeOptions]);
   const visibleGraph = useMemo(() => graphView(completeGraph, filter, search, exploration), [completeGraph, filter, search, exploration]);
   const showTerrain = page === 'universe' && terrainOverview;
+  const surface = useMemo(() => showTerrain ? terrainSurface(visibleGraph, date, terrainSettings) : null, [showTerrain, visibleGraph, date, terrainSettings]);
   const comparison = useMemo(() => page === 'time' && comparisonStart ? compareSnapshots(comparisonStart, date, temporal, { time: timeOptions, view: exploration, filter, search }) : null, [page, comparisonStart, date, temporal, timeOptions, exploration, filter, search]);
   const weekly = briefingFor(date, temporal, 'weekly');
   const selectedRelation = completeGraph.relations.find(relation => selected?.kind === 'relation' && relation.id === selected.id);
@@ -142,9 +145,10 @@ function App() {
   function download() {
     const claims = researchClaims(snapshotSources);
     const payload = {
-      title: 'SAMSUNG RX Intelligence Universe', version: '2.8', as_of: timeOptions.eventAsOf ?? date, event_as_of: timeOptions.eventAsOf ?? null, selected_knowledge_date: date, known_at: temporal === 'known' ? date : RESEARCH_DATE, mode: temporal,
+      title: 'SAMSUNG RX Intelligence Universe', version: '2.9', as_of: timeOptions.eventAsOf ?? date, event_as_of: timeOptions.eventAsOf ?? null, selected_knowledge_date: date, known_at: temporal === 'known' ? date : RESEARCH_DATE, mode: temporal,
       generated_at: new Date().toISOString(), graph: visibleGraph, entities: visibleGraph.nodes, relations: visibleGraph.relations,
       claims, research_claims: claims, research_records: snapshotSources, research_counts: stats, hypotheses: hypothesisAssessments(date, temporal, timeOptions), view: { filter, search, exploration, presentation: showTerrain ? 'topic_overview' : 'relation_graph' }, comparison, knowledge_evolution: showTerrain ? knowledgeEvolution(visibleGraph, date) : null,
+      terrain_surface: surface ? { ...surface, field: { columns: surface.field.columns, rows: surface.field.rows, heights: surface.field.heights, minHeight: surface.field.minHeight, maxHeight: surface.field.maxHeight }, contours: surface.contours.map(item => ({ level: item.level, segmentCount: item.segments.length / 6 })), export_note: '좌표와 삼각형 인덱스는 고정 bounds·columns·rows로 재구성합니다. 높이는 실제 렌더링에 사용한 격자이며 등고선은 같은 높이에서 계산합니다.' } : null,
       collection_status: 'manual_research_snapshot', automatic_collection_status: 'not_connected', last_successful_update: null,
       research_collected_at: catalog.meta.researched_at, research_claim_status: 'source_attributed_not_independently_verified',
       scope_policy: '게시일 미상 자료는 관측일 이후 별도 발견 목록으로 제공하고 공개일 기반 시점 집계에서 제외합니다. 기간 밖 배경 자료는 최신 전체 목록에서만 제공합니다. 그래프에는 화면과 같은 필터를 적용합니다.',
@@ -156,13 +160,13 @@ function App() {
   }
   const graph = <div className="graph-stage" data-graph-node-count={visibleGraph.nodes.length} data-graph-relation-count={visibleGraph.relations.length} data-graph-node-positions={JSON.stringify(Object.fromEntries(visibleGraph.nodes.map(node => [node.id, node.position])))}>
     <div className="graph-topline"><span className="micro">RX KNOWLEDGE GRAPH · EVIDENCE-LINKED</span></div>
-    {showTerrain ? <KnowledgeTerrain graph={visibleGraph} knownAt={date} onSource={id => setSelected({ kind: 'source', id })} onOpenDate={openEvolutionDate} selectedCluster={exploration.cluster} onSelectRegion={selectRegion} onShowGraph={() => { resetExploration(); setTerrainOverview(false); }}/> : <Suspense fallback={<div className="empty">Universe 불러오는 중…</div>}><Universe graph={visibleGraph} mode={mode} filter="all" search="" selectedNodeId={selectedNode?.id || (exploration.hops === 1 ? exploration.focusNodeId : undefined)} onFocusNode={focusGraph} onSelect={id => setSelected({ kind: 'entity', id })} onSelectRelation={id => setSelected({ kind: 'relation', id })}/></Suspense>}
+    {showTerrain ? <KnowledgeTerrain graph={visibleGraph} surface={surface!} settings={terrainSettings} onSettingsChange={setTerrainSettings} knownAt={date} onSource={id => setSelected({ kind: 'source', id })} onOpenDate={openEvolutionDate} selectedCluster={exploration.cluster} onSelectRegion={selectRegion} onShowGraph={() => { resetExploration(); setTerrainOverview(false); }}/> : <Suspense fallback={<div className="empty">Universe 불러오는 중…</div>}><Universe graph={visibleGraph} mode={mode} filter="all" search="" selectedNodeId={selectedNode?.id || (exploration.hops === 1 ? exploration.focusNodeId : undefined)} onFocusNode={focusGraph} onSelect={id => setSelected({ kind: 'entity', id })} onSelectRelation={id => setSelected({ kind: 'relation', id })}/></Suspense>}
   </div>;
   const modeControls = <div className="segmented"><button className={mode === '3d' ? 'selected' : ''} onClick={() => setMode('3d')}>3D</button><button className={mode === '2d' ? 'selected' : ''} onClick={() => setMode('2d')}>2D</button></div>;
-  return <div className="app">
+  return <div className={`app ${showTerrain ? 'landscape-workspace' : ''}`}>
     <aside className={`sidebar ${mobile ? 'open' : ''}`}>
       <a href="#command" onClick={event => { event.preventDefault(); go('command'); }} className="brand"><div className="brand-mark"><Network size={25}/></div><div><b>SAMSUNG <span>RX</span></b><small>INTELLIGENCE UNIVERSE</small></div></a>
-      <div className="workspace-label">STRATEGIC WORKSPACE <span>v2.8</span></div>
+      <div className="workspace-label">STRATEGIC WORKSPACE <span>v2.9</span></div>
       <nav>{nav.map(item => <button key={item.id} className={page === item.id ? 'nav active' : 'nav'} onClick={() => go(item.id)}><item.icon size={17}/><span>{item.name}</span>{item.id === 'universe' && <small>3D</small>}{page === item.id && <div className="active-dot"/>}</button>)}</nav>
       <div className="sidebar-section"><span className="micro">INTELLIGENCE CYCLE</span><div className="cycle">{['Observe', 'Verify', 'Connect', 'Infer', 'Challenge', 'Monitor', 'Brief'].map(step => <div key={step}><i/>{step}</div>)}</div></div>
       <div className="sidebar-bottom"><div className="system-card"><div><span className="amber-dot"/> Public research workspace</div><p>수동 조사 반영 · 자동 수집 미연결</p><button onClick={() => setModal('status')}>운영 상태 보기 <ArrowRight size={13}/></button></div><button className="side-help" onClick={() => setModal('help')}><CircleHelp size={17}/>워크스페이스 가이드<ExternalLink size={13}/></button><p className="workspace-access-note">로그인 없이 공개 열람<br/>개인 검토는 이 브라우저에 저장됩니다.</p></div>
@@ -183,7 +187,7 @@ function App() {
     {page === 'factory' && <><section className="panel factory-panel"><div className="panel-head"><div><Box size={17}/><h2>Execution Architecture</h2></div><span className="tag">CONCEPTUAL WORKFLOW</span></div><div className="factory-flow">{['MES', 'Job', 'Task Graph', 'Scheduling', 'Dispatch', 'RCS / API', 'Robot', 'KPI'].map((label, index) => <React.Fragment key={label}><div className="factory-stage"><span>0{index + 1}</span><Box size={24}/><b>{label}</b><small>{['생산 계획', '작업 목표', '태스크 분해', '자원 배정', '명령 전달', '제어 연동', '현장 실행', '성과 측정'][index]}</small></div>{index < 7 && <ArrowRight size={16}/>}</React.Fragment>)}</div><div className="factory-note"><CircleHelp size={16}/>설계 워크플로입니다. 실시간 설비·MES 연결과 운영 시뮬레이션은 미구현입니다.</div></section><div className="info-grid"><Info title="Human intervention" text="사람 개입률 · 공개 근거 및 실측값 없음"/><Info title="Recovery time" text="오류 복구시간 · 공개 근거 및 실측값 없음"/><Info title="Deployment repeatability" text="유료 상시 운영 · 다공장 반복 배포는 추가 검증 필요"/></div><section className="panel factory-cases"><div className="panel-head"><div><Database size={17}/><h2>사례별 사업화 단계</h2></div></div><p>관계사 실증과 외부 하드웨어 계약을 구분합니다. 장비 대금수령은 SDS RX 소프트웨어 반복매출이 아닙니다.</p><ResearchSourceList records={snapshotSources.filter(source => ['sds-005', 'tech-017', 'mi-006'].includes(source.id))} limit={3}/></section></>}
     {page === 'briefing' && <BriefingPanel date={date} mode={temporal} onSelectCandidate={candidate => setSelected({ kind: 'signal', id: candidate.id, candidate })}/>}
     {page === 'actions' && <ActionPlan/>}
-    <footer className="main-footer"><span>SAMSUNG RX <b>INTELLIGENCE UNIVERSE</b></span><span>PUBLIC RESEARCH · v2.8 · 출처와 해석을 구분합니다.</span></footer></main></div>
+    <footer className="main-footer"><span>SAMSUNG RX <b>INTELLIGENCE UNIVERSE</b></span><span>PUBLIC RESEARCH · v2.9 · 출처와 해석을 구분합니다.</span></footer></main></div>
     {selected && <><div className="drawer-backdrop" onClick={() => setSelected(null)}/><aside className="detail-drawer" role="dialog" aria-modal="true" aria-labelledby="detail-title" tabIndex={-1} data-relation-id={selectedRelation?.id} data-selection-kind={selected.kind} data-signal-id={selectedSignal?.id}><div className="drawer-top"><span className="micro">{selectedSignal ? 'SIGNAL REVIEW CANDIDATE' : selectedRelation ? 'RELATION PROVENANCE' : 'CONNECTED EVIDENCE'}</span><button className="icon-btn" aria-label="상세 닫기" onClick={() => setSelected(null)}><X size={20}/></button></div><span className="tag">{selectedSignal ? 'REVIEW CANDIDATE · 성립 미확인' : selectedRelation?.inferred ? 'ANALYST INFERENCE' : selectedRelation ? 'SOURCE-ATTRIBUTED' : selectedNode?.ontology_type || 'SOURCE'}</span><h2 id="detail-title">{drawerTitle}</h2><p>{selectedRelation?.rationale || selectedNode?.description || selectedSource?.summary_ko || selectedSignal?.priorityReason}</p>
       {selectedNode && <><div className="node-metadata">{selectedNode.ontology_type} · {relatedRelations.length}개 연결 · {selectedSources.length}개 자료<br/>{selectedNode.aliases?.filter(alias => alias !== selectedNode.title).join(' · ')}</div><div className="node-explore-actions"><button className="button" onClick={() => focusGraph(selectedNode.id)}>주변 1단계 탐색</button><button className="button" onClick={() => pathEndpoint(selectedNode.id, 'pathFrom')}>경로 시작으로 지정</button><button className="button" onClick={() => pathEndpoint(selectedNode.id, 'pathTo')}>경로 도착으로 지정</button></div></>}
       {selectedRelation && <div className="relation-endpoints"><button onClick={() => setSelected({ kind: 'entity', id: selectedRelation.from })}>{completeGraph.nodes.find(node => node.id === selectedRelation.from)?.title || selectedRelation.from}</button><ArrowRight size={14}/><button onClick={() => setSelected({ kind: 'entity', id: selectedRelation.to })}>{completeGraph.nodes.find(node => node.id === selectedRelation.to)?.title || selectedRelation.to}</button></div>}

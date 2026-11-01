@@ -372,6 +372,132 @@ async function assertEvolutionDetail(page, expected, context) {
   await assertEvolutionElement(detail, expected, context);
   assert.deepEqual(sorted(await detail.locator('[data-evolution-source-id]').evaluateAll(elements => elements.map(element => element.getAttribute('data-evolution-source-id')))), expected.contributingSourceIds, `${context}: every contributing source must remain reachable`);
 }
+function expectedSurfaceContributions(graph, date, metric, includeUndated = false) {
+  const sources = new Map(researchCatalog.records.map(record => [record.id, record]));
+  const claims = new Map(researchCatalog.records.flatMap(record => claimRows([record]).map(claim => [claim.id, { record, claim }])));
+  const selected = graph.nodes.flatMap(node => {
+    const claim = claims.get(node.id);
+    const isSource = node.ontology_type === 'Source';
+    if (metric === 'claims' ? node.ontology_type !== 'Claim' : !isSource) return [];
+    const record = isSource ? sources.get(node.id.replace(/^source:/, '')) : claim?.record;
+    assert.ok(record, `Surface contribution ${node.id} must resolve to a catalog source`);
+    if (!usableVerification(record.verification) || (claim && !usableVerification(claim.claim.verification ?? record.verification))) return [];
+    const dated = record.scope === 'in_window' && record.published_at && ['page', 'search_index'].includes(record.date_basis)
+      && record.published_at >= researchCatalog.meta.window_start && record.published_at <= date;
+    const undated = includeUndated && record.scope === 'undated' && record.published_at === null && record.accessed_at.slice(0, 10) <= date;
+    if (!dated && !undated) return [];
+    assert.ok(node.position[0] >= -20 && node.position[0] <= 20 && -node.position[1] >= -14 && -node.position[1] <= 16, 'Current graph fixture evidence must lie inside the fixed terrain bounds');
+    return [{ node, record, isSource }];
+  });
+  const unique = values => sorted(new Set(values));
+  return {
+    nodeIds: unique(selected.map(item => item.node.id)), sourceIds: unique(selected.map(item => item.record.id)),
+    claimIds: unique(selected.filter(item => !item.isSource).map(item => item.node.id)),
+    sourceGroupKeys: unique(selected.map(item => originKey(item.record))),
+    publishedNodeIds: unique(selected.filter(item => item.record.published_at !== null).map(item => item.node.id)),
+    undatedNodeIds: unique(selected.filter(item => item.record.published_at === null).map(item => item.node.id)),
+  };
+}
+function assertSurfaceModel(surface, graph, date, metric = 'claims', includeUndated = false) {
+  assert.equal(surface.valid, true);
+  assert.equal(surface.knownAt, date);
+  assert.equal(surface.metric, metric);
+  assert.equal(surface.includeUndated, includeUndated);
+  assert.deepEqual(surface.contributions, expectedSurfaceContributions(graph, date, metric, includeUndated), 'Terrain contributions must use only actual visible, published evidence for the selected metric');
+  assert.deepEqual(sorted(surface.scope.nodeIds), sorted(graph.nodes.map(node => node.id)));
+  assert.deepEqual(sorted(surface.evidenceAnchors.map(anchor => anchor.nodeId)), surface.contributions.nodeIds);
+  assert.equal(surface.kernelAnchors.length, metric === 'sourceGroups' ? surface.contributions.sourceGroupKeys.length : surface.contributions.nodeIds.length, 'Each source group gets one kernel even when several republications are visible');
+  assert.deepEqual(surface.bounds, { minX: -20, maxX: 20, minZ: -14, maxZ: 16 });
+  const { field } = surface;
+  assert.equal(field.heights.length, field.columns * field.rows);
+  if (field.positions) assert.equal(field.positions.length, field.heights.length * 3);
+  if (field.indices) assert.equal(field.indices.length, (field.columns - 1) * (field.rows - 1) * 6);
+  assert.ok(field.heights.every(height => Number.isFinite(height) && height >= 0));
+  assert.equal(field.maxHeight, Math.max(...field.heights));
+  assert.equal(field.minHeight, Math.min(...field.heights));
+  if (surface.contributions.nodeIds.length) assert.ok(field.maxHeight > 0 && field.maxHeight > field.minHeight, 'Real evidence must create a non-flat surface');
+  else assert.ok(field.heights.every(height => height === 0), 'No selected evidence must produce a flat zero surface');
+  if (field.positions) for (let index = 0; index < field.heights.length; index++) assert.equal(field.positions[index * 3 + 1], field.heights[index], 'Actual mesh vertices must use the exported evidence height field');
+  for (const anchor of surface.anchors) {
+    const node = graph.nodes.find(item => item.id === anchor.nodeId);
+    assert.ok(node, 'Terrain must not invent marker identities');
+    assert.equal(anchor.x, node.position[0]);
+    assert.equal(anchor.z, -node.position[1]);
+  }
+  for (const key of ['dateNormalization', 'confidenceMeasured', 'sourceGroupsAreIndependentEvidence']) assert.equal(surface.semantics[key], false);
+}
+function assertSurfaceLayoutStable(before, after, context) {
+  assert.deepEqual(before.bounds, after.bounds, `${context}: terrain bounds must remain fixed`);
+  assert.equal(before.field.columns, after.field.columns);
+  assert.equal(before.field.rows, after.field.rows);
+  if (before.field.positions && after.field.positions) for (let index = 0; index < before.field.positions.length; index += 3) {
+    assert.equal(before.field.positions[index], after.field.positions[index], `${context}: mesh horizontal x drifted`);
+    assert.equal(before.field.positions[index + 2], after.field.positions[index + 2], `${context}: mesh horizontal z drifted`);
+  }
+  const prior = new Map(before.anchors.map(anchor => [anchor.nodeId, anchor]));
+  for (const anchor of after.anchors) if (prior.has(anchor.nodeId)) {
+    assert.equal(anchor.x, prior.get(anchor.nodeId).x, `${context}: marker x drifted`);
+    assert.equal(anchor.z, prior.get(anchor.nodeId).z, `${context}: marker z drifted`);
+  }
+}
+async function surfaceCamera(page) {
+  const surface = page.getByTestId('terrain-surface');
+  await expect(surface).toHaveAttribute('data-camera-ready', 'true');
+  await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+  return surface.evaluate(element => ({ position: JSON.parse(element.dataset.cameraPosition), target: JSON.parse(element.dataset.cameraTarget), quaternion: JSON.parse(element.dataset.cameraQuaternion) }));
+}
+async function assertSurfaceRenderer(page, surface, renderer = '3d') {
+  const rendered = page.getByTestId('terrain-surface');
+  await expect(rendered).toHaveAttribute('data-renderer', renderer);
+  await expect(rendered).toHaveAttribute('data-height-fingerprint', surface.fingerprint);
+  for (const [attribute, key] of [['data-contribution-node-ids', 'nodeIds'], ['data-contribution-source-ids', 'sourceIds'], ['data-contribution-claim-ids', 'claimIds'], ['data-contribution-source-group-keys', 'sourceGroupKeys']]) assert.deepEqual(sorted(JSON.parse(await rendered.getAttribute(attribute))), surface.contributions[key], 'Renderer evidence IDs must agree with the exported current terrain');
+  assert.deepEqual(JSON.parse(await rendered.getAttribute('data-surface-anchors')), surface.anchors.map(anchor => ({ id: anchor.nodeId, x: anchor.x, z: anchor.z, height: anchor.height, contributes: anchor.contributes })), 'Rendered marker coordinates and heights must match the canonical surface anchors');
+  if (renderer === '3d') {
+    await expect(rendered.locator('canvas')).toBeVisible();
+    await expect(rendered).toHaveAttribute('data-rendered-height-fingerprint', /^float32-fnv1a-[0-9a-f]{8}$/);
+    await expect(rendered).toHaveAttribute('data-rendered-vertex-count', String(surface.field.heights.length));
+    await expect.poll(async () => Math.abs(Number(await rendered.getAttribute('data-rendered-height-max')) - surface.field.maxHeight) < 1e-5, { message: 'GPU geometry height must match the evidence field within Float32 precision' }).toBe(true);
+    await expect.poll(async () => Math.abs(Number(await rendered.getAttribute('data-rendered-height-min')) - surface.field.minHeight) < 1e-5).toBe(true);
+  } else {
+    await expect(page.getByTestId('terrain-surface-2d')).toBeVisible();
+    await expect(rendered.locator('canvas')).toHaveCount(0);
+  }
+}
+async function assertLandscapeChain(page, snapshot, sourceId = 'media-001') {
+  const source = researchCatalog.records.find(record => record.id === sourceId);
+  const eligibleClaims = claimRows([source]).filter(claim => snapshot.terrain_surface.scope.eligibleNodeIds.includes(claim.id));
+  assert.ok(eligibleClaims.length > 0, 'The chain fixture must contain an eligible real claim');
+  const access = page.getByTestId('terrain-surface').locator('.surface-access');
+  if (await access.getAttribute('open') === null) await access.locator('summary').click();
+  const firstClaim = eligibleClaims[0];
+  const button = access.locator(`.surface-evidence-list button[data-surface-node-id="${firstClaim.id}"]`);
+  await button.focus();
+  await page.keyboard.press('Enter');
+  await access.locator('summary').click();
+  const chain = page.getByTestId('landscape-chain');
+  await expect(chain).toHaveAttribute('data-current-source-id', sourceId);
+  const ids = JSON.parse(await chain.getAttribute('data-chain-node-ids'));
+  assert.deepEqual(sorted(ids), sorted([...eligibleClaims.map(claim => claim.id), `source:${sourceId}`]), 'The chain must consist of this source’s actual eligible claims and its original document');
+  assert.equal(ids.at(-1), `source:${sourceId}`);
+  while (await chain.getByRole('button', { name: '이전 근거', exact: true }).isEnabled()) await chain.getByRole('button', { name: '이전 근거', exact: true }).click();
+  await expect(chain.getByRole('button', { name: '이전 근거', exact: true })).toBeDisabled();
+  for (const [index, id] of ids.entries()) {
+    const claim = eligibleClaims.find(item => item.id === id);
+    await expect(chain).toHaveAttribute('data-current-node-id', id);
+    await expect(chain).toHaveAttribute('data-current-claim-id', claim?.id ?? '');
+    await expect(chain.locator('h4')).toHaveText(claim?.text ?? source.title);
+    await chain.getByRole('button', { name: '근거 상세 펼치기', exact: true }).click();
+    await expect(page.getByTestId('landscape-chain-detail')).toHaveAttribute('data-source-id', sourceId);
+    await expect(page.getByTestId('landscape-chain-detail')).toHaveAttribute('data-claim-id', claim?.id ?? '');
+    await chain.getByRole('button', { name: '근거 상세 접기', exact: true }).click();
+    await expect(page.getByTestId('landscape-chain-detail')).toHaveCount(0);
+    if (index < ids.length - 1) await chain.getByRole('button', { name: '다음 근거', exact: true }).click();
+  }
+  await expect(chain.getByRole('button', { name: '다음 근거', exact: true })).toBeDisabled();
+  await chain.getByRole('button', { name: '원문 근거 열기', exact: true }).click();
+  await expect(page.locator(`.detail-drawer .research-source-link[data-source-id="${sourceId}"]`)).toHaveAttribute('href', source.url);
+  await page.getByRole('button', { name: '상세 닫기', exact: true }).click();
+}
 async function assertTerrainParity(page, snapshot) {
   const terrain = page.getByTestId('terrain-overview');
   await expect(terrain).toBeVisible();
@@ -518,6 +644,99 @@ try {
   await assertTerrainParity(page, currentSnapshot);
   await noHorizontalOverflow(page, 'Desktop topic overview');
   await screenshot(page, 'desktop-topic-overview.png', false);
+  {
+    const currentTerrain = await exportSnapshot(page, 'terrain-current-claims', currentDate);
+    assertSurfaceModel(currentTerrain.terrain_surface, currentTerrain.graph, currentDate);
+    await assertSurfaceRenderer(page, currentTerrain.terrain_surface);
+    const terrain = page.getByTestId('terrain-surface');
+    const initialCamera = await surfaceCamera(page);
+    await page.getByRole('button', { name: '지형 확대', exact: true }).focus();
+    await page.keyboard.press('Enter');
+    await expect.poll(async () => (await surfaceCamera(page)).position).not.toEqual(initialCamera.position);
+    const chosenCamera = await surfaceCamera(page);
+    const currentBufferFingerprint = await terrain.getAttribute('data-rendered-height-fingerprint');
+    const currentCanvas = await terrain.locator('canvas').screenshot({ path: path.join(output, 'desktop-terrain-current-canvas.png'), animations: 'disabled' });
+    report.screenshots.push('desktop-terrain-current-canvas.png');
+    await page.getByLabel('지형 기준일', { exact: true }).fill('2026-09-01');
+    const pastTerrain = await exportSnapshot(page, 'terrain-september-claims', '2026-09-01');
+    assertSurfaceModel(pastTerrain.terrain_surface, pastTerrain.graph, '2026-09-01');
+    await assertSurfaceRenderer(page, pastTerrain.terrain_surface);
+    assertSurfaceLayoutStable(currentTerrain.terrain_surface, pastTerrain.terrain_surface, 'Historical cutoff');
+    assertCameraPreserved(await surfaceCamera(page), chosenCamera, 'Terrain historical cutoff');
+    assert.notEqual(pastTerrain.terrain_surface.fingerprint, currentTerrain.terrain_surface.fingerprint);
+    assert.notEqual(await terrain.getAttribute('data-rendered-height-fingerprint'), currentBufferFingerprint, 'Actual mesh geometry must change when published evidence accumulates');
+    assert.ok(pastTerrain.terrain_surface.field.heights.every((height, index) => height <= currentTerrain.terrain_surface.field.heights[index] + 1e-10), 'Earlier evidence must not become taller through date-dependent normalization');
+    const pastCanvas = await terrain.locator('canvas').screenshot({ path: path.join(output, 'desktop-terrain-september-canvas.png'), animations: 'disabled' });
+    report.screenshots.push('desktop-terrain-september-canvas.png');
+    assert.ok(!currentCanvas.equals(pastCanvas), 'The actual WebGL surface must visibly change across evidence dates');
+    await page.getByLabel('지형 기준일', { exact: true }).fill(currentDate);
+    const metricModels = { claims: currentTerrain.terrain_surface };
+    for (const metric of ['documents', 'sourceGroups']) {
+      await page.getByLabel('지형 집계 지표', { exact: true }).selectOption(metric);
+      const metricSnapshot = await exportSnapshot(page, `terrain-current-${metric}`, currentDate);
+      assertSurfaceModel(metricSnapshot.terrain_surface, metricSnapshot.graph, currentDate, metric);
+      await assertSurfaceRenderer(page, metricSnapshot.terrain_surface);
+      assertSurfaceLayoutStable(currentTerrain.terrain_surface, metricSnapshot.terrain_surface, `Terrain ${metric} metric`);
+      assertCameraPreserved(await surfaceCamera(page), chosenCamera, `Terrain ${metric} metric`);
+      metricModels[metric] = metricSnapshot.terrain_surface;
+    }
+    assert.equal(new Set(Object.values(metricModels).map(model => model.fingerprint)).size, 3, 'Distinct actual evidence metrics must produce distinct field geometry in this catalog');
+    await page.getByLabel('지형 집계 지표', { exact: true }).selectOption('claims');
+    await page.getByLabel('게시일 미상 관측자료 포함', { exact: true }).check();
+    const observedTerrain = await exportSnapshot(page, 'terrain-include-undated', currentDate);
+    assertSurfaceModel(observedTerrain.terrain_surface, observedTerrain.graph, currentDate, 'claims', true);
+    assert.ok(observedTerrain.terrain_surface.contributions.undatedNodeIds.length > 0);
+    assert.ok(currentTerrain.terrain_surface.contributions.undatedNodeIds.length === 0);
+    assert.ok(observedTerrain.terrain_surface.field.heights.every((height, index) => height >= currentTerrain.terrain_surface.field.heights[index] - 1e-10));
+    await assertSurfaceRenderer(page, observedTerrain.terrain_surface);
+    assertCameraPreserved(await surfaceCamera(page), chosenCamera, 'Including undated observations');
+    await page.getByLabel('게시일 미상 관측자료 포함', { exact: true }).uncheck();
+    await assertSurfaceRenderer(page, currentTerrain.terrain_surface);
+    await page.locator('.filter-tabs').getByRole('button', { name: '조직 · 기업', exact: true }).click();
+    const emptyTerrain = await exportSnapshot(page, 'terrain-entity-only-flat', currentDate);
+    assertSurfaceModel(emptyTerrain.terrain_surface, emptyTerrain.graph, currentDate);
+    assert.equal(emptyTerrain.terrain_surface.contributions.nodeIds.length, 0);
+    await assertSurfaceRenderer(page, emptyTerrain.terrain_surface);
+    assertCameraPreserved(await surfaceCamera(page), chosenCamera, 'Empty evidence filter');
+    await page.getByRole('button', { name: '필터 초기화', exact: true }).click();
+    await assertSurfaceRenderer(page, currentTerrain.terrain_surface);
+    await page.getByRole('button', { name: '지형 시점 초기화', exact: true }).click();
+    await expect.poll(async () => (await surfaceCamera(page)).position).not.toEqual(chosenCamera.position);
+    await noHorizontalOverflow(page, 'Desktop actual 3D evidence landscape');
+    await screenshot(page, 'desktop-3d-evidence-terrain.png', true);
+    report.terrain_surface_metrics = { current_date: currentDate, historical_date: '2026-09-01', grid_vertices: currentTerrain.terrain_surface.field.heights.length,
+      current_contribution_count: currentTerrain.terrain_surface.contributions.nodeIds.length, historical_contribution_count: pastTerrain.terrain_surface.contributions.nodeIds.length,
+      current_max_height: currentTerrain.terrain_surface.field.maxHeight, historical_max_height: pastTerrain.terrain_surface.field.maxHeight,
+      rendered_buffer_fingerprint: currentBufferFingerprint, metric_kernel_counts: Object.fromEntries(Object.entries(metricModels).map(([metric, model]) => [metric, model.kernelAnchors.length])) };
+    report.checks.push('Actual 3D terrain mesh heights accumulate from dated evidence, change with document/claim/group metrics and explicit undated inclusion, while fixed horizontal coordinates and the user camera survive every change');
+
+    await page.getByRole('button', { name: '이전 월', exact: true }).click();
+    const previousMonth = new Date(Date.UTC(Number(currentDate.slice(0, 4)), Number(currentDate.slice(5, 7)) - 1, 0)).toISOString().slice(0, 10);
+    await expect(page.getByLabel('지형 기준일', { exact: true })).toHaveValue(previousMonth);
+    await page.getByRole('button', { name: '다음 월', exact: true }).click();
+    await expect(page.getByLabel('지형 기준일', { exact: true })).toHaveValue(currentDate);
+    const dateSlider = page.getByLabel('지형 기준일 슬라이더', { exact: true });
+    await dateSlider.focus();
+    await page.keyboard.press('ArrowLeft');
+    await expect(page.getByLabel('지형 기준일', { exact: true })).toHaveValue(shiftDay(currentDate, -1));
+    await page.getByLabel('지형 기준일', { exact: true }).fill('2026-07-31');
+    await page.getByRole('button', { name: '월별 축적 재생', exact: true }).click();
+    await expect(page.getByLabel('지형 기준일', { exact: true })).not.toHaveValue('2026-07-31');
+    await page.getByRole('button', { name: '월별 축적 일시정지', exact: true }).click();
+    const pausedDate = await page.getByLabel('지형 기준일', { exact: true }).inputValue();
+    assert.ok(pausedDate > '2026-07-31' && pausedDate <= currentDate);
+    await page.waitForTimeout(1950);
+    await expect(page.getByLabel('지형 기준일', { exact: true })).toHaveValue(pausedDate);
+    await expect(page.getByRole('button', { name: '월별 축적 재생', exact: true })).toHaveAttribute('aria-pressed', 'false');
+    await page.getByLabel('지형 기준일', { exact: true }).fill(currentDate);
+    await assertSurfaceRenderer(page, currentTerrain.terrain_surface);
+    await assertLandscapeChain(page, currentTerrain);
+    await page.getByRole('button', { name: '2D 지형', exact: true }).click();
+    await assertSurfaceRenderer(page, currentTerrain.terrain_surface, '2d');
+    await page.getByRole('button', { name: '3D 지형', exact: true }).click();
+    await assertSurfaceRenderer(page, currentTerrain.terrain_surface);
+    report.checks.push('Terrain month navigation, keyboard day slider and play/pause update the real cutoff; evidence next/previous and expand/collapse show exact eligible claims and original source URLs in both display modes');
+  }
   {
     await page.getByRole('button', { name: '근거의 시간축', exact: true }).click();
     await expect(page.getByTestId('knowledge-evolution')).toBeVisible();
@@ -1398,6 +1617,21 @@ try {
   await expect(fallback.locator('.detail-drawer .research-source-link[data-source-id="media-001"]')).toBeVisible();
   await screenshot(fallback, 'desktop-webgl-unavailable-2d.png', false);
   report.checks.push('Disabling all WebGL contexts on desktop automatically preserves the expanded 2D graph, exact relation evidence and merged-claim source navigation');
+  await fallback.getByRole('button', { name: '상세 닫기', exact: true }).click();
+  await navigate(fallback, '3D Universe', false, { overview: true });
+  const fallbackTerrain = await exportSnapshot(fallback, 'fallback-terrain-desktop', currentDate);
+  assertSurfaceModel(fallbackTerrain.terrain_surface, fallbackTerrain.graph, currentDate);
+  await assertSurfaceRenderer(fallback, fallbackTerrain.terrain_surface, '2d');
+  await expect(fallback.getByTestId('terrain-surface')).toContainText('3D를 사용할 수 없어 동일 근거의 등각 지도로 표시합니다.');
+  await screenshot(fallback, 'desktop-webgl-unavailable-terrain.png', true);
+  await fallback.setViewportSize({ width: 390, height: 844 });
+  await assertSurfaceRenderer(fallback, fallbackTerrain.terrain_surface, '2d');
+  await assertLandscapeChain(fallback, fallbackTerrain);
+  await noHorizontalOverflow(fallback, 'Mobile width WebGL-unavailable terrain');
+  await screenshot(fallback, 'mobile-webgl-unavailable-terrain.png', true);
+  const fallbackTerrainExport = await exportSnapshot(fallback, 'fallback-terrain-mobile', currentDate);
+  assert.deepEqual(fallbackTerrainExport.terrain_surface, fallbackTerrain.terrain_surface, 'WebGL failure and mobile width must not alter the evidence surface');
+  report.checks.push('WebGL failure uses the same calculated height field in a true 2D terrain at desktop and mobile widths, preserving full source/claim navigation and every exported contribution');
 
   const mobileContext = await browser.newContext({ viewport: { width: 390, height: 844 }, deviceScaleFactor: 1, isMobile: true, hasTouch: true, reducedMotion: 'reduce' });
   const mobile = currentPage = await mobileContext.newPage();
@@ -1414,6 +1648,24 @@ try {
   await assertTerrainParity(mobile, currentSnapshot);
   await noHorizontalOverflow(mobile, 'Mobile topic overview');
   await screenshot(mobile, 'mobile-topic-overview.png', false);
+  {
+    const mobileTerrain = await exportSnapshot(mobile, 'mobile-terrain-current', currentDate);
+    assertSurfaceModel(mobileTerrain.terrain_surface, mobileTerrain.graph, currentDate);
+    await assertSurfaceRenderer(mobile, mobileTerrain.terrain_surface, '3d');
+    await expect(mobile.getByRole('button', { name: '3D 지형', exact: true })).toHaveAttribute('aria-pressed', 'true');
+    await noHorizontalOverflow(mobile, 'Mobile actual 3D evidence landscape');
+    await screenshot(mobile, 'mobile-3d-evidence-terrain.png', true);
+    await assertLandscapeChain(mobile, mobileTerrain);
+    await mobile.getByRole('button', { name: '2D 지형', exact: true }).click();
+    await assertSurfaceRenderer(mobile, mobileTerrain.terrain_surface, '2d');
+    const mobileFlat = await exportSnapshot(mobile, 'mobile-terrain-2d', currentDate);
+    assert.deepEqual(mobileFlat.terrain_surface, mobileTerrain.terrain_surface, 'Mobile 2D rendering must preserve the exact same height field and evidence');
+    await noHorizontalOverflow(mobile, 'Mobile equivalent 2D evidence landscape');
+    await screenshot(mobile, 'mobile-2d-evidence-terrain.png', true);
+    await mobile.getByRole('button', { name: '3D 지형', exact: true }).click();
+    await assertSurfaceRenderer(mobile, mobileTerrain.terrain_surface, '3d');
+    report.checks.push('A WebGL-capable mobile opens the real 3D terrain, follows exact claim-to-source chains, and switches to an equivalent 2D height field without dropping evidence or overflowing');
+  }
   {
     await mobile.getByRole('button', { name: '근거의 시간축', exact: true }).click();
     const mobileEvolution = await exportSnapshot(mobile, 'mobile-knowledge-evolution', currentDate);

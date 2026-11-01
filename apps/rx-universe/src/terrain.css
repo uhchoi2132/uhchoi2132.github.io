@@ -22,33 +22,7 @@
 .knowledge-terrain .terrain-scope { display: flex; align-items: center; gap: 7px; padding-right: 23px; border-right: 1px solid #30424d; color: #a8bebd; }
 .knowledge-terrain .terrain-scope-dot { width: 4px; height: 4px; border: 1px solid #99bfb3; border-radius: 50%; }
 .knowledge-terrain .terrain-summary-end { margin-left: auto; font-size: 9px; color: #728a98; }
-.knowledge-terrain .terrain-map-shell { position: relative; background: #0b151f; }
-.knowledge-terrain .terrain-map-caption { position: absolute; z-index: 1; top: 17px; left: 27px; right: 27px; display: flex; justify-content: space-between; color: #67808f; font: 8px/1.4 'IBM Plex Mono', monospace; letter-spacing: 1.3px; pointer-events: none; }
-.knowledge-terrain .terrain-map-caption span:last-child { font-family: inherit; font-size: 9px; letter-spacing: .1px; }
-.knowledge-terrain .terrain-map { display: block; width: 100%; max-height: 580px; }
-.knowledge-terrain .terrain-map-frame { fill: none; stroke: #3f5867; stroke-width: .8; opacity: .5; }
-.knowledge-terrain .terrain-map-crosshair { fill: none; stroke: #56717f; stroke-width: .8; opacity: .35; }
-.knowledge-terrain .terrain-map-region { cursor: pointer; color: var(--region-color); }
-.knowledge-terrain .terrain-contour { fill: currentColor; fill-opacity: .018; stroke: currentColor; stroke-opacity: .38; stroke-width: .9; vector-effect: non-scaling-stroke; }
-.knowledge-terrain .terrain-contour-2 { fill-opacity: .025; stroke-opacity: .48; }
-.knowledge-terrain .terrain-contour-3 { fill-opacity: .035; stroke-opacity: .58; }
-.knowledge-terrain .terrain-map-region:hover .terrain-contour, .knowledge-terrain .terrain-map-region.is-selected .terrain-contour { fill-opacity: .055; stroke-opacity: .85; }
-.knowledge-terrain .terrain-map-region.is-selected .terrain-contour-1 { stroke-width: 1.6; stroke-opacity: 1; }
-.knowledge-terrain .terrain-map-region.is-empty { color: #7d8c99; }
-.knowledge-terrain .terrain-region-dot { fill: currentColor; }
-.knowledge-terrain .terrain-map-title { fill: #e3ecf0; font-size: 17px; font-weight: 500; letter-spacing: -.4px; }
-.knowledge-terrain .terrain-map-subtitle { fill: #91a6b3; font-size: 10px; letter-spacing: .3px; }
-.knowledge-terrain .terrain-map-count { fill: currentColor; font: 10px 'IBM Plex Mono', sans-serif; }
-.knowledge-terrain .terrain-count-separator { fill: #5f7989; }
-.knowledge-terrain .terrain-map-index { fill: currentColor; opacity: .7; font: 9px 'IBM Plex Mono', monospace; letter-spacing: 1px; }
-.knowledge-terrain .terrain-region-arrow { fill: none; stroke: currentColor; stroke-width: 1; opacity: .6; }
-.knowledge-terrain .terrain-map-key { display: flex; justify-content: center; align-items: center; gap: 12px; padding: 0 25px 22px; color: #829aa9; }
-.knowledge-terrain .terrain-map-key p { display: flex; align-items: baseline; flex-wrap: wrap; justify-content: center; column-gap: 12px; row-gap: 5px; margin: 0; font-size: 9px; line-height: 1.7; }
-.knowledge-terrain .terrain-map-key b { color: #adc3cd; font-size: 10px; font-weight: 500; }
-.knowledge-terrain .terrain-key-rings { position: relative; flex: 0 0 33px; height: 25px; }
-.knowledge-terrain .terrain-key-rings i { position: absolute; top: 0; left: 0; width: 33px; height: 25px; border: 1px solid #526f7d; border-radius: 48% 56% 50% 45%; }
-.knowledge-terrain .terrain-key-rings i:nth-child(2) { inset: 4px 5px; width: 23px; height: 17px; }
-.knowledge-terrain .terrain-key-rings i:nth-child(3) { inset: 8px 10px; width: 13px; height: 9px; }
+.terrain-loading { display: grid; place-items: center; min-height: 560px; color: #9bb9c7; background: #071321; }
 .knowledge-terrain .terrain-region-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 1px; border-top: 1px solid #293c48; border-bottom: 1px solid #293c48; background: #293c48; }
 .knowledge-terrain .terrain-region-button { position: relative; display: flex; flex-direction: column; align-items: stretch; min-width: 0; padding: 17px 17px 13px; text-align: left; border: 0; border-radius: 0; background: #111d27; color: #d2e0e6; font-family: inherit; }
 .knowledge-terrain .terrain-region-button:hover { background: #172632; }
@@ -82,7 +56,6 @@
   .knowledge-terrain .terrain-summary { flex-wrap: wrap; gap: 13px 19px; padding: 14px 20px; }
   .knowledge-terrain .terrain-scope { flex-basis: 100%; border: 0; padding: 0; }
   .knowledge-terrain .terrain-summary-end { display: none; }
-  .knowledge-terrain .terrain-map-shell { display: none; }
   .knowledge-terrain .terrain-region-list { grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 0; }
   .knowledge-terrain .terrain-region-button { min-height: 190px; padding: 18px 20px 15px; }
   .knowledge-terrain .terrain-region-button:last-child { grid-column: 1 / -1; }
@@ -107,3 +80,33 @@
 .terrain-presentation button[aria-pressed="true"] { background: #203b3b; border-color: #5b9b91; color: #b2e4d6; }
 .terrain-presentation span { margin-left: auto; color: #8fa5b3; font-size: 10px; }
 @container (max-width: 680px) { .terrain-presentation { padding: 12px 20px; }.terrain-presentation span { flex-basis: 100%; margin: 3px 0 0; line-height: 1.7; } }
+
+/* Let the evidence landscape occupy the workspace rather than a stack of introduction cards. */
+.landscape-workspace main { padding-top: 20px; }
+.landscape-workspace .page-heading { margin-bottom: 14px; align-items: center; }
+.landscape-workspace .page-heading .eyebrow, .landscape-workspace .page-heading > div > p { display: none; }
+.landscape-workspace .page-heading h1 { font-size: 24px; margin-top: 0; }
+.landscape-workspace .context-bar { padding-block: 7px; margin-bottom: 14px; }
+.landscape-workspace .universe-panel > .panel-head { display: none; }
+.landscape-workspace .knowledge-terrain .terrain-heading { padding: 14px 20px; gap: 14px; }
+.landscape-workspace .knowledge-terrain .terrain-eyebrow { margin-bottom: 7px; }
+.landscape-workspace .knowledge-terrain .terrain-heading h2 { font-size: 21px; }
+.landscape-workspace .knowledge-terrain .terrain-intro { display: none; }
+.landscape-workspace .knowledge-terrain .terrain-summary { padding: 8px 20px; min-height: 38px; }
+.landscape-workspace .terrain-presentation { padding: 8px 16px; }
+.landscape-workspace .terrain-presentation button { min-height: 34px; padding-block: 6px; }
+@media (max-width: 760px) {
+  .landscape-workspace main { padding-top: 14px; }
+  .landscape-workspace .page-heading { align-items: flex-start; gap: 10px; }
+  .landscape-workspace .page-heading h1 { font-size: 23px; }
+  .landscape-workspace .context-bar { display: none; }
+  .landscape-workspace .knowledge-terrain .terrain-heading { flex-direction: row; align-items: center; padding: 12px 13px; }
+  .landscape-workspace .knowledge-terrain .terrain-heading h2 { font-size: 18px; }
+  .landscape-workspace .knowledge-terrain .terrain-eyebrow { font-size: 7px; letter-spacing: 1px; }
+  .landscape-workspace .knowledge-terrain .terrain-graph-button { min-height: 35px; padding: 7px; gap: 5px; font-size: 9px; }
+  .landscape-workspace .knowledge-terrain .terrain-graph-button > svg:first-child { display: none; }
+  .landscape-workspace .knowledge-terrain .terrain-summary { padding: 8px 13px; gap: 8px 14px; }
+  .landscape-workspace .knowledge-terrain .terrain-scope { display: none; }
+  .landscape-workspace .terrain-presentation { padding: 7px 12px; }
+  .landscape-workspace .terrain-presentation > span { display: none; }
+}
