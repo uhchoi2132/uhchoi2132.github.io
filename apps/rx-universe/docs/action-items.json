@@ -334,7 +334,7 @@
       "id": "AI-021",
       "priority": "P1",
       "title": "실제 근거로 형성되는 연속 지형과 시간 재생·원문 체인",
-      "status": "in_progress",
+      "status": "completed",
       "acceptance": [
         "고정된 전체 좌표계에서 공개 근거의 위치·수에 따라 실제 높이 격자와 등고선을 생성한다.",
         "날짜별 정규화 없이 자료 추가에 따라 높이가 누적되며 미상 자료는 명시적으로 켠 경우만 관측일 이후 반영한다.",
@@ -345,7 +345,8 @@
       "dependencies": [
         "AI-019",
         "AI-020"
-      ]
+      ],
+      "validation_run": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41270609555"
     }
   ],
   "validation": {
@@ -393,5 +394,16 @@
     "months": 13,
     "topics": 5,
     "scope": "v2.8 주제별 공개근거의 월간·누적 분포, 원문 및 과거 지형 탐색의 검증 브랜치 인수 결과. 공개 main 배포도 같은 검사와 공개 데이터 대조를 통과해야 한다."
+  },
+  "surface_validation": {
+    "commit": "4747b30986f6562407829b790df124dc22a8c0e1",
+    "run_url": "https://github.com/uhchoi2132/uhchoi2132.github.io/actions/runs/41270609555",
+    "unit_tests_passed": 96,
+    "browser_scenarios_passed": 40,
+    "build": "passed",
+    "graph_nodes": 661,
+    "graph_relations": 1620,
+    "grid_vertices": 5120,
+    "scope": "v2.9 연속 지형·근거 체인·시간 재생 및 모바일 실제 mesh 프레이밍의 검증 브랜치 인수 결과. 공개 main은 같은 검사와 비인증 JSON·SQLite 대조를 반복한다."
   }
 }
